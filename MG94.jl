@@ -161,18 +161,20 @@ for i in 1:n_codons
                 end
             end
 
+            AA_i = map_codons_to_amino_acids([codon_i])
+            AA_j = map_codons_to_amino_acids([codon_j])
+
             if debug == true
                 println("i: $i")
                 println("j: $j")
                 println("codon_i: $codon_i")
                 println("codon_j: $codon_j")
                 println("count_difference: $(count_differences(codon_i, codon_j))")
+                println("AA_i: $AA_i")
+                println("AA_j: $AA_j")
                 println("rate: $rate")
                 println()
             end
-
-            AA_i = map_codons_to_amino_acids([codon_i])
-            AA_j = map_codons_to_amino_acids([codon_j])
 
             # Populate the rate matrix Q
             if AA_i == AA_j
