@@ -170,8 +170,8 @@ for i in 1:n_codons
                 println("codon_i: $codon_i")
                 println("codon_j: $codon_j")
                 println("count_difference: $(count_differences(codon_i, codon_j))")
-                println("AA_i: $AA_i")
-                println("AA_j: $AA_j")
+                println("AA_i: $(AA_i[1])")
+                println("AA_j: $(AA_j[1])")
                 println("rate: $rate")
                 println()
             end
