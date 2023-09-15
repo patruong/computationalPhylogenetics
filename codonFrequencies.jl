@@ -1,4 +1,7 @@
 
+module CodonFrequencies
+
+export generate_codon_frequencies
 
 function generate_nucleotide_frequencies(freq_list::Vector{Float64}, nucleotides::Vector{Char}=['A', 'C', 'G', 'T'])
     if length(freq_list) != length(nucleotides)
@@ -60,13 +63,13 @@ function generate_codon_frequencies(freq_list::Vector{Float64}, nucleotide_list:
 
 end
 
+end  # module
 
 # Define nucleotide frequencies
-freq_list = [0.2, 0.3, 0.3, 0.2]
-nucleotide_list = ['A', 'C', 'G', 'T']
-debug = true
+# freq_list = [0.2, 0.3, 0.3, 0.2]
+# nucleotide_list = ['A', 'C', 'G', 'T']
+# debug = true
+# codon_frequencies = generate_codon_frequencies(freq_list, nucleotide_list, debug)
+# codon_frequencies
 
-codon_frequencies = generate_codon_frequencies(freq_list, nucleotide_list, debug)
 
-
-codon_frequencies

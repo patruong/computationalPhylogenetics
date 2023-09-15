@@ -1,5 +1,8 @@
 # Define the parameters for the MG94 model
-ω = 1.0  # Nonsynonymous/synonymous rate ratio
+α = 1.0 # synonymous rate 
+β = 1.0 # Nonsynonymous rate
+#ω = 1.0  # Nonsynonymous/synonymous rate ratio
+ω = β / α
 κ = 2.0  # Transition/transversion rate ratio
 debug = true # debug message true or false
 
@@ -19,22 +22,22 @@ Q = zeros(n_codons, n_codons)
 
 function map_codon_to_base(codon::Int)
     non_stop_codons = [
-        "ATA", "ATC", "ATT", "ATG",
-        "ACA", "ACC", "ACG", "ACT",
-        "AAC", "AAT", "AAA", "AAG",
-        "AGC", "AGT", "AGA", "AGG",
-        "CTA", "CTC", "CTG", "CTT",
-        "CCA", "CCC", "CCG", "CCT",
-        "CAC", "CAT", "CAA", "CAG",
-        "CGA", "CGC", "CGG", "CGT",
-        "GTA", "GTC", "GTG", "GTT",
-        "GCA", "GCC", "GCG", "GCT",
-        "GAC", "GAT", "GAA", "GAG",
-        "GGA", "GGC", "GGG", "GGT",
-        "TCA", "TCC", "TCG", "TCT",
-        "TTC", "TTT", "TTA", "TTG",
-        "TAC", "TAT", "TGC", "TGT",
-        "TGG"
+        "AUA", "AUC", "AUU", "AUG",
+        "ACA", "ACC", "ACG", "ACU",
+        "AAC", "AAU", "AAA", "AAG",
+        "AGC", "AGU", "AGA", "AGG",
+        "CUA", "CUC", "CUG", "CUU",
+        "CCA", "CCC", "CCG", "CCU",
+        "CAC", "CAU", "CAA", "CAG",
+        "CGA", "CGC", "CGG", "CGU",
+        "GUA", "GUC", "GUG", "GUU",
+        "GCA", "GCC", "GCG", "GCU",
+        "GAC", "GAU", "GAA", "GAG",
+        "GGA", "GGC", "GGG", "GGU",
+        "UCA", "UCC", "UCG", "UCU",
+        "UUC", "UUU", "UUA", "UUG",
+        "UAC", "UAU", "UGC", "UGU",
+        "UGG"
     ]
 
     if codon < 1 || codon > 61
@@ -63,22 +66,22 @@ function map_codons_to_amino_acids(codon_list)
     # amino_acids = map_codons_to_amino_acids(non_stop_codons)
     # println(amino_acids)
     codon_to_amino_acid = Dict(
-        "ATA" => "I", "ATC" => "I", "ATT" => "I", "ATG" => "M",
-        "ACA" => "T", "ACC" => "T", "ACG" => "T", "ACT" => "T",
-        "AAC" => "N", "AAT" => "N", "AAA" => "K", "AAG" => "K",
-        "AGC" => "S", "AGT" => "S", "AGA" => "R", "AGG" => "R",
-        "CTA" => "L", "CTC" => "L", "CTG" => "L", "CTT" => "L",
-        "CCA" => "P", "CCC" => "P", "CCG" => "P", "CCT" => "P",
-        "CAC" => "H", "CAT" => "H", "CAA" => "Q", "CAG" => "Q",
-        "CGA" => "R", "CGC" => "R", "CGG" => "R", "CGT" => "R",
-        "GTA" => "V", "GTC" => "V", "GTG" => "V", "GTT" => "V",
-        "GCA" => "A", "GCC" => "A", "GCG" => "A", "GCT" => "A",
-        "GAC" => "D", "GAT" => "D", "GAA" => "E", "GAG" => "E",
-        "GGA" => "G", "GGC" => "G", "GGG" => "G", "GGT" => "G",
-        "TCA" => "S", "TCC" => "S", "TCG" => "S", "TCT" => "S",
-        "TTC" => "F", "TTT" => "F", "TTA" => "L", "TTG" => "L",
-        "TAC" => "Y", "TAT" => "Y", "TAA" => "_", "TAG" => "_",
-        "TGC" => "C", "TGT" => "C", "TGA" => "_", "TGG" => "W"
+        "AUA" => "I", "AUC" => "I", "AUU" => "I", "AUG" => "M",
+        "ACA" => "U", "ACC" => "T", "ACG" => "U", "ACU" => "U",
+        "AAC" => "N", "AAU" => "N", "AAA" => "K", "AAG" => "K",
+        "AGC" => "S", "AGU" => "S", "AGA" => "R", "AGG" => "R",
+        "CUA" => "L", "CUC" => "L", "CUG" => "L", "CUU" => "L",
+        "CCA" => "P", "CCC" => "P", "CCG" => "P", "CCU" => "P",
+        "CAC" => "H", "CAU" => "H", "CAA" => "Q", "CAG" => "Q",
+        "CGA" => "R", "CGC" => "R", "CGG" => "R", "CGU" => "R",
+        "GUA" => "V", "GUC" => "V", "GUG" => "V", "GUU" => "V",
+        "GCA" => "A", "GCC" => "A", "GCG" => "A", "GCU" => "A",
+        "GAC" => "D", "GAU" => "D", "GAA" => "E", "GAG" => "E",
+        "GGA" => "G", "GGC" => "G", "GGG" => "G", "GGU" => "G",
+        "UCA" => "S", "UCC" => "S", "UCG" => "S", "UCU" => "S",
+        "UUC" => "F", "UUU" => "F", "UUA" => "L", "UUG" => "L",
+        "UAC" => "Y", "UAU" => "Y", "UAA" => "_", "UAG" => "_",
+        "UGC" => "C", "UGU" => "C", "UGA" => "_", "UGG" => "W"
     )
 
     # Initialize an empty array to store the amino acids
@@ -189,6 +192,7 @@ for i in 1:n_codons
 end
 
 
+# Q_ij are the instantaneous rates
 # Fill the diagonal of the rate matrix with negative values
 for i in 1:n_codons
     Q[i, i] = -sum(Q[i, :])
