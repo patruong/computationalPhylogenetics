@@ -1,7 +1,7 @@
 
 module CodonFrequencies
 
-export generate_codon_frequencies
+export generate_codon_frequencies, generate_nucleotide_frequencies
 
 function generate_nucleotide_frequencies(freq_list::Vector{Float64}, nucleotides::Vector{Char}=['A', 'C', 'G', 'T'])
     if length(freq_list) != length(nucleotides)
@@ -17,7 +17,7 @@ function generate_nucleotide_frequencies(freq_list::Vector{Float64}, nucleotides
     return nucleotide_frequencies
 end
 
-function generate_codon_frequencies(freq_list::Vector{Float64}, nucleotide_list::Vector{Char}, debug::Bool=false)
+function generate_codon_frequencies(freq_list::Vector{Float64}, nucleotide_list::Vector{Char}, remove_stop_codon::Bool=true, debug::Bool=false)
     nucleotide_frequencies = generate_nucleotide_frequencies(freq_list, nucleotide_list)
 
     # List of all codons (including stop codons)
@@ -59,11 +59,51 @@ function generate_codon_frequencies(freq_list::Vector{Float64}, nucleotide_list:
         end
     end
 
+    if remove_stop_codon == true
+        function if_not_stop_codon(codon)
+            stop_codons = Set(["TAG", "TGA", "TAA", "UAA", "UGA", "UAG"])
+            return !(codon in stop_codons)
+        end
+
+        filter!(kv -> if_not_stop_codon(kv[1]), codon_frequencies)
+    end
+    codon_frequencies = sort(collect(codon_frequencies))
     return codon_frequencies
 
 end
 
+function dict_to_list(dictionary)
+    # Usage example 
+    # Create a dictionary
+    # my_dict = Dict(
+    #     "A" => 1,
+    #     "B" => 2,
+    #     "C" => 3
+    # )
+    # keys_list, values_list = dict_to_list(my_dict)
+
+    # Initialize empty lists for keys and values
+    keys_list = []
+    values_list = []
+
+    # Extract keys and values from the dictionary
+    for (key, value) in dictionary
+        push!(keys_list, key)
+        push!(values_list, value)
+    end
+    return keys_list, values_list
+end
+
+function generate_codon_frequencies_key_values(freq_list::Vector{Float64}, nucleotide_list::Vector{Char}, remove_stop_codon::Bool=true, debug::Bool=false)
+    codon_frequency_dictionary = generate_codon_frequencies(freq_list, nucleotide_list, remove_stop_codon, debug)
+    #println(codon_frequency_dictionary)
+    codon_list, equilibrium_frequency_list = dict_to_list(codon_frequency_dictionary)
+    return codon_list, equilibrium_frequency_list
+end
+
 end  # module
+
+
 
 # Define nucleotide frequencies
 # freq_list = [0.2, 0.3, 0.3, 0.2]

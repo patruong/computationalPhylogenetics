@@ -1,0 +1,135 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=33;
+	taxlabels
+	NM_001131132_Pongo_abelii
+	NM_001135696_Macaca_mulatta
+	NM_001371415_Homo_sapiens
+	XM_003261084_Nomascus_leucogenys
+	XM_004866100_Heterocephalus_glaber
+	XM_005593037_Macaca_fascicularis
+	XM_008696415_Ursus_maritimus
+	XM_008974180_Pan_paniscus
+	XM_008988993_Callithrix_jacchus
+	XM_010366065_Rhinopithecus_roxellana
+	XM_011735203_Macaca_nemestrina
+	XM_011995533_Mandrillus_leucophaeus
+	XM_012035808_Cercocebus_atys
+	XM_012638731_Propithecus_coquereli
+	XM_015126958_Macaca_mulatta
+	XM_016942979_Pan_troglodytes
+	XM_019019204_Gorilla_gorilla_gorilla
+	XM_023199053_Piliocolobus_tephrosceles
+	XM_024240245_Pongo_abelii
+	XM_025857612_Callorhinus_ursinus
+	XM_027533928_Bos_indicus_x_Bos_taurus
+	XM_032285963_Sapajus_apella
+	XM_034996559_Mirounga_leonina
+	XM_037822651_Choloepus_didactylus
+	XM_042974087_Panthera_tigris
+	bat_Cynopterus_brachyotis
+	bat_Hipposideros_pratti
+	bat_Molossus_molossus
+	bat_Pipistrellus_kuhlii
+	bat_Pteronotus_parnellii
+	bat_Rhinolophus_sinicus
+	bat_Rousettus_aegyptiacus
+	bat_Trachops_cirrhosus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (((XM_027533928_Bos_indicus_x_Bos_taurus[&!color=#0011ff]:0.097072,(XM_042974087_Panthera_tigris[&!color=#0011ff]:0.038016,(XM_008696415_Ursus_maritimus[&!color=#0011ff]:0.026578,(XM_025857612_Callorhinus_ursinus[&!color=#0011ff]:0.010792,XM_034996559_Mirounga_leonina[&!color=#0011ff]:0.013146)[&!color=#0011ff]:0.016655)[&!color=#0011ff]:0.020486)[&!color=#0011ff]:0.024236)[&!color=#0011ff]:0.004293,(((bat_Trachops_cirrhosus[&!color=#0011ff]:0.054859,bat_Pteronotus_parnellii[&!color=#0011ff]:0.073242)[&!color=#0011ff]:0.031545,(bat_Molossus_molossus[&!color=#0011ff]:0.050069,bat_Pipistrellus_kuhlii[&!color=#0011ff]:0.077642)[&!color=#0011ff]:0.013897)[&!color=#0011ff]:0.02302,((bat_Rousettus_aegyptiacus[&!color=#0011ff]:0.034579,bat_Cynopterus_brachyotis[&!color=#0011ff]:0.026107)[&!color=#0011ff]:0.050054,(bat_Rhinolophus_sinicus[&!color=#0011ff]:0.05451,bat_Hipposideros_pratti[&!color=#0011ff]:0.056537)[&!color=#0011ff]:0.020719)[&!color=#0011ff]:0.007899)[&!color=#0011ff]:0.010951)[&!color=#0011ff]:0.007055,(XM_037822651_Choloepus_didactylus[&!color=#ff0015]:0.109894,(XM_004866100_Heterocephalus_glaber[&!color=#ff0015]:0.089026,(XM_012638731_Propithecus_coquereli[&!color=#ff0015]:0.059331,((XM_008988993_Callithrix_jacchus[&!color=#ff0015]:0.013892,XM_032285963_Sapajus_apella[&!color=#ff0015]:0.009029)[&!color=#ff0015]:0.023702,((XM_003261084_Nomascus_leucogenys[&!color=#ff0015]:0.009461,((NM_001131132_Pongo_abelii[&!color=#ff0015]:0.001288,XM_024240245_Pongo_abelii[&!color=#ff0015]:0.0)[&!color=#ff0015]:0.006667,(XM_019019204_Gorilla_gorilla_gorilla[&!color=#ff0015]:0.005165,(NM_001371415_Homo_sapiens[&!color=#ff0015]:0.002582,(XM_008974180_Pan_paniscus[&!color=#ff0015]:8.6E-4,XM_016942979_Pan_troglodytes[&!color=#ff0015]:4.27E-4)[&!color=#ff0015]:0.003017)[&!color=#ff0015]:0.0)[&!color=#ff0015]:0.005397)[&!color=#ff0015]:8.73E-4)[&!color=#ff0015]:0.006432,((XM_010366065_Rhinopithecus_roxellana[&!color=#ff0015]:0.004273,XM_023199053_Piliocolobus_tephrosceles[&!color=#ff0015]:0.005695)[&!color=#ff0015]:8.07E-4,((XM_011995533_Mandrillus_leucophaeus[&!color=#ff0015]:0.002317,XM_012035808_Cercocebus_atys[&!color=#ff0015]:0.001117)[&!color=#ff0015]:0.002596,(XM_011735203_Macaca_nemestrina[&!color=#ff0015]:0.0,(NM_001135696_Macaca_mulatta[&!color=#ff0015]:0.003439,(XM_005593037_Macaca_fascicularis[&!color=#ff0015]:4.29E-4,XM_015126958_Macaca_mulatta[&!color=#ff0015]:8.59E-4)[&!color=#ff0015]:4.29E-4)[&!color=#ff0015]:0.0)[&!color=#ff0015]:0.001454)[&!color=#ff0015]:0.003571)[&!color=#ff0015]:0.010536)[&!color=#ff0015]:0.011709)[&!color=#ff0015]:0.039424)[&!color=#ff0015]:0.006182)[&!color=#ff0015]:0.012235)[&!color=#ff0015]:0.007055)[&!color=#0011ff];
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

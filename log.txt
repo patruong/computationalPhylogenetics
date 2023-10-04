@@ -1,6 +1,69 @@
 Current:
 
+make Q matrices with every metod on codon_molecular
+Why are MG94_F3x4 and MG94_F61 not the same within MolecularEvolution?
 
+Generate Q (with MolecularEvolution.MG94_F3x4) with simulated data...
+Cleanup the code to generate a Q 
+Compare benjamins Q to my Q matrix
+Read up on sample_down! in the script MolecularEvolution.jl/src/core/algorithms/generative.jl 
+Reread the idea about partitions.
+Make a script to generate loads of different Q
+Read up on the other codon models
+Try to get my MG94 model working with Benjamins test run
+Try to get contrastFEL working
+Continue go through that tutorial we had up
+
+Notes:
+FUBAR and Contrast-FEL manuscript for details.
+
+Good slides for making project introduction slides
+https://www.slideshare.net/bcbbslides/selection-analysis-using-hyphy
+
+Dunn Labs web book about Phylogenetic Biology
+http://dunnlab.org/phylogenetic_biology/simulation.html
+
+Simulate data
+http://hyphy.org/methods/stand-alone-analyses/
+https://data.hyphy.org/web/busteds/
+
+2023-10-02
+We can simulate branches stochastically
+Contrast-FEL simulation (is this the same as HyPhy simulation)
+
+2023-09-27
+So the GTRmat can be assigned
+The F3x4 parameter is estimated from our data, but we are supposed to simulate the sequences, which is a bit strange? I need to look into this more.
+
+I guess we can assign the F3x4 matrix as well, if not i will get corrected. 
+2023-09-21
+check and try to understand sample_down!()
+- what is isroot (core/nodes/AbstractTreeNodes.jl)
+- what forward! (models/new_model_template.jl)
+	Actually forward is in each specific model
+	e.g. 
+	models/continuous_models/brownian_motion.jl
+	models/continuous_models/ornstein_uhlenbeck.jl
+	...
+	models/compound_models/swm.jl
+	etc.
+Gaussian Partitions used to integrate data between different nodes.
+
+compound_model/svm.jl - is this completed?
+
+
+2023-09-20
+My MG94 code is not exactly the same as Bens. The genetic_code struct from CodonMolecular.jl makes it quite hard to see what is going on.
+
+I am not sure how the Q matrix is build from F3x4 and GTRMat.
+
+What is the issue of comparing Q?
+The order of the codons?
+genetic_code and attemping to see what is happening?
+Is my MG94, the same as using nuc_model(GTPmat) + F3x4 model?
+
+2023-09-18
+Input the Q matrix in diagonalizedCTMC() and it should work (alt. the generalizedCTMC)
 
 2023-09-15
 Good source for codon model MG94

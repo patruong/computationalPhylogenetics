@@ -1,0 +1,23 @@
+configfile: "config.yaml"
+
+
+#rule compute:
+#    input:
+#        expand("results/report_recomputed_fdr.tsv"),
+#        expand("results/PS/msstats_input.csv"),
+#        expand("results/PS/msqrob2_input.csv"),
+#        expand("results/PS/triqler_input.csv")
+
+rule script1:
+    output:
+        "output1.txt"
+    shell:
+        "python script1.py"
+
+#rule script2:
+#    input:
+#        "output1.txt"
+#    output:
+#        "output2.txt"
+#    shell:
+#        "python script2.py"
