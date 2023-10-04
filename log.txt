@@ -27,6 +27,12 @@ Simulate data
 http://hyphy.org/methods/stand-alone-analyses/
 https://data.hyphy.org/web/busteds/
 
+2023-10-04
+How do we convert newick tree to .nex
+How do we visualize newick tree (https://github.com/veg/hyphy-analyses/tree/master/LabelTrees)
+We need to label the grouped simulated by SimulateMG94 with colour for difFUBAR to identify groups (G1, G2...)
+Run example
+
 2023-10-02
 We can simulate branches stochastically
 Contrast-FEL simulation (is this the same as HyPhy simulation)

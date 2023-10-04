@@ -3,6 +3,8 @@
 # Get the current directory
 script_directory=$(pwd)
 
+./refresh.sh
+
 # Loop through the scripts in the directory and execute them
 for script in "$script_directory"/simulate*.sh; do
     if [ -f "$script" ]; then
