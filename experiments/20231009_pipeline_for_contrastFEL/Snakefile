@@ -11,8 +11,8 @@ rule run_difFUBAR:
     input:
         script = "run_difFUBAR.jl",
     params:
-        fasta_file = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.1",
-        tree_file = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.nwk",
+        fasta_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.24.settings.replicate.1",
+        tree_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.24.nwk",
         verbosity = 1,
         exports = "true",
         iters = 2500,
