@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+compute             1
+run_difFUBAR        2
+total               3
+
+Select jobs to execute...
+
+[Tue Oct 10 23:45:47 2023]
+rule run_difFUBAR:
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.75
+    jobid: 1
+    reason: Missing output files: output/pos_thresh_0.75
+    wildcards: iPos_thresh=0.75
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 10 23:45:47 2023]
+rule run_difFUBAR:
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.95
+    jobid: 2
+    reason: Missing output files: output/pos_thresh_0.95
+    wildcards: iPos_thresh=0.95
+    resources: tmpdir=/tmp
+
+ImproperOutputException in rule run_difFUBAR in file /home/ptruong/git/computationalPhylogenetics/experiments/20231009_pipeline_for_contrastFEL/Snakefile_null, line 10:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR:
+    output: output/pos_thresh_0.95
+    wildcards: iPos_thresh=0.95
+    affected files:
+        output/pos_thresh_0.95
+Removing output files of failed job run_difFUBAR since they might be corrupted:
+output/pos_thresh_0.95
+Skipped removing non-empty directory output/pos_thresh_0.95
+ImproperOutputException in rule run_difFUBAR in file /home/ptruong/git/computationalPhylogenetics/experiments/20231009_pipeline_for_contrastFEL/Snakefile_null, line 10:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR:
+    output: output/pos_thresh_0.75
+    wildcards: iPos_thresh=0.75
+    affected files:
+        output/pos_thresh_0.75
+Removing output files of failed job run_difFUBAR since they might be corrupted:
+output/pos_thresh_0.75
+Skipped removing non-empty directory output/pos_thresh_0.75
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-10T234547.572886.snakemake.log

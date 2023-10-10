@@ -27,6 +27,16 @@ Simulate data
 http://hyphy.org/methods/stand-alone-analyses/
 https://data.hyphy.org/web/busteds/
 
+2023-10-10
+Fixed Snakemake skript for Heisenberg
+Installed everything on Heisenberg
+ToDo 
+Can we make this so it automatically iterates through all the sims
+Can we run contrast-FEL as well?
+Run Snakemake on null script
+Write script to make the actual plots
+Colouring is a bit funky, but it is ok for now I guess.
+
 2023-10-04
 How do we convert newick tree to .nex
 How do we visualize newick tree (https://github.com/veg/hyphy-analyses/tree/master/LabelTrees)

@@ -1,6 +1,7 @@
 # Define the parameters as variables
 #iters = [1000, 2500]
-POS_THRESH = [0.75, 0.95]
+POS_THRESH = [0.9, 0.95]
+REPLICATE =  []
 
 rule compute:
     input:

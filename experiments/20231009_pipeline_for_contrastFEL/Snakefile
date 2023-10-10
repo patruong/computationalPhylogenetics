@@ -1,40 +1,48 @@
 # Define the parameters as variables
 #iters = [1000, 2500]
 POS_THRESH = [0.75, 0.95]
+NULL_dataset = ["ladder-64-0.1-0.5", "random-64-0.1-0.5", "symmetric-64-0.1-0.5"]
+REPLICATE_null =  [i for i in range(100)]
+REPLICATE_omnibusMulti = [i for i in range(1,6)]
+SIMULATION_omnibusMulti = [i for i in range(100)]
 
 rule compute:
     input:
-        expand("output/pos_thresh_{iPos_thresh}", iPos_thresh = POS_THRESH),
+        expand("output/null/pos_thresh_{iPos_thresh}/{iData}/replicate.{iRep}", iPos_thresh = POS_THRESH, iRep = REPLICATE_null, iData = NULL_dataset),
+        expand("output/omnibus_multi/pos_thresh_{iPos_thresh}/sim.{iSim}.replicate.{iRep}", iPos_thresh = POS_THRESH, iSim = SIMULATION_omnibusMulti,iRep = REPLICATE_omnibusMulti),
 
 
-rule run_difFUBAR:
+rule run_difFUBAR_on_null:
     input:
         script = "run_difFUBAR.jl",
     params:
-        fasta_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.24.settings.replicate.1",
-        tree_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.24.nwk",
+        fasta_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/replicate.replicate.{iRep}",
+        tree_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/tree.nwk",
         verbosity = 1,
         exports = "true",
         iters = 2500,
         pos_thresh = "{iPos_thresh}"
     output:
-        output_dir = "output/pos_thresh_{iPos_thresh}"
+        output_dir = "output/null/pos_thresh_{iPos_thresh}/{iData}/replicate.{iRep}"
     shell:
         "julia {input.script} -f {params.fasta_file} -t {params.tree_file} -o {output.output_dir} \
             --verbosity {params.verbosity} --exports {params.exports} --iters {params.iters} \
             --pos_thresh {params.pos_thresh}"
 
-# Rule to run the Julia script with different parameter files
-#rule run_julia:
-#    input:
-#        script="run_difFUBAR.jl",
-#        params=expand("params_{iter}_{pos_thresh}.txt", iter=iters, pos_thresh=pos_thresh)
-#    output:
-#        done=directory("output/{iter}_{pos_thresh}/done.txt")
-#    shell:
-#        "julia {input.script} {input.params} > {output.done}"
-#
-## Rule to define the final target
-#rule final_target:
-#    input:
-#        expand("output/{iter}_{pos_thresh}/done.txt", iter=iters, pos_thresh=pos_thresh)
+rule run_difFUBAR_on_omnibusMulti:
+    input:
+        script = "run_difFUBAR.jl",
+    params:
+        fasta_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.{iSim}.settings.replicate.{iRep}",
+        tree_file = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.{iSim}.nwk",
+        verbosity = 1,
+        exports = "true",
+        iters = 2500,
+        pos_thresh = "{iPos_thresh}"
+    output:
+        output_dir = "output/omnibus_multi/pos_thresh_{iPos_thresh}/sim.{iSim}.replicate.{iRep}"
+    shell:
+        "julia {input.script} -f {params.fasta_file} -t {params.tree_file} -o {output.output_dir} \
+            --verbosity {params.verbosity} --exports {params.exports} --iters {params.iters} \
+            --pos_thresh {params.pos_thresh}"
+
