@@ -59,13 +59,14 @@ function main()
     pairwise_comparisons = [[i, j] for i in comparisons_idx for j in comparisons_idx if i < j]
 
     for tag_pos in pairwise_comparisons
-        analysis_name = ("/" * join(tag_pos, "v") * "/" *  parsed_args["output_dir"])  
+        analysis_name = ("/" * join(tag_pos, "v") * "/" * parsed_args["output_dir"])
         analysis_tags, analysis_tag_colors, remove_tags = select_analysis_tags_from_newick_tree(original_tags, tag_colors, tag_pos)
         cleaned_tree = remove_tags_from_newick_tree(treestring, remove_tags)
 
         difFUBAR(seqnames, seqs, cleaned_tree, analysis_tags, analysis_tag_colors, analysis_name;
             pos_thresh=parsed_args["pos_thresh"], iters=parsed_args["iters"], verbosity=parsed_args["verbosity"],
             exports=parsed_args["exports"], code=MolecularEvolution.universal_code)
+    end
 end
 
 main()
