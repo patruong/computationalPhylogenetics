@@ -1,0 +1,40 @@
+# Define the parameters as variables
+#iters = [1000, 2500]
+POS_THRESH = [0.75, 0.95]
+
+rule compute:
+    input:
+        expand("output/pos_thresh_{iPos_thresh}", iPos_thresh = POS_THRESH),
+
+
+rule run_difFUBAR:
+    input:
+        script = "run_difFUBAR.jl",
+    params:
+        fasta_file = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.1",
+        tree_file = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.nwk",
+        verbosity = 1,
+        exports = "true",
+        iters = 2500,
+        pos_thresh = "{iPos_thresh}"
+    output:
+        output_dir = "output/pos_thresh_{iPos_thresh}/null"
+    shell:
+        "julia {input.script} -f {params.fasta_file} -t {params.tree_file} -o {output.output_dir} \
+            --verbosity {params.verbosity} --exports {params.exports} --iters {params.iters} \
+            --pos_thresh {params.pos_thresh}"
+
+# Rule to run the Julia script with different parameter files
+#rule run_julia:
+#    input:
+#        script="run_difFUBAR.jl",
+#        params=expand("params_{iter}_{pos_thresh}.txt", iter=iters, pos_thresh=pos_thresh)
+#    output:
+#        done=directory("output/{iter}_{pos_thresh}/done.txt")
+#    shell:
+#        "julia {input.script} {input.params} > {output.done}"
+#
+## Rule to define the final target
+#rule final_target:
+#    input:
+#        expand("output/{iter}_{pos_thresh}/done.txt", iter=iters, pos_thresh=pos_thresh)

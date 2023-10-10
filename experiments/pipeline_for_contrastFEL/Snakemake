@@ -1,0 +1,25 @@
+# Define the parameters as variables
+iters = [1000, 2500]
+pos_thresh = [0.9, 0.95]
+
+
+rule run_julia:
+input:
+    script="run_difFUBAR.jl"
+shell:
+    julia {input.script}
+
+# Rule to run the Julia script with different parameter files
+#rule run_julia:
+#    input:
+#        script="run_difFUBAR.jl",
+#        params=expand("params_{iter}_{pos_thresh}.txt", iter=iters, pos_thresh=pos_thresh)
+#    output:
+#        done=directory("output/{iter}_{pos_thresh}/done.txt")
+#    shell:
+#        "julia {input.script} {input.params} > {output.done}"
+#
+## Rule to define the final target
+#rule final_target:
+#    input:
+#        expand("output/{iter}_{pos_thresh}/done.txt", iter=iters, pos_thresh=pos_thresh)

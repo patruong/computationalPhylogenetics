@@ -1,0 +1,3 @@
+NameError in file /home/ptruong/git/computationalPhylogenetics/experiments/20231009_pipeline_for_contrastFEL/Snakefile, line 15:
+name 'iPos_thresh' is not defined
+  File "/home/ptruong/git/computationalPhylogenetics/experiments/20231009_pipeline_for_contrastFEL/Snakefile", line 15, in <module>

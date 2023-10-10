@@ -1,0 +1,1 @@
+The hyphy sim files are missing some values, but we could still parse the nwk string seperately form the simulated files and take only the FASTA from the simulated file... that should work..

@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+compute             1
+run_difFUBAR        2
+total               3
+
+Select jobs to execute...
+
+[Mon Oct  9 16:40:04 2023]
+rule run_difFUBAR:
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.9
+    jobid: 1
+    reason: Missing output files: output/pos_thresh_0.9
+    wildcards: iPos_thresh=0.9
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 16:40:04 2023]
+rule run_difFUBAR:
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.95
+    jobid: 2
+    reason: Missing output files: output/pos_thresh_0.95
+    wildcards: iPos_thresh=0.95
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 16:40:25 2023]
+Error in rule run_difFUBAR:
+    jobid: 1
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.9
+    shell:
+        julia run_difFUBAR.jl -f /../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.1 -t /../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.new -o output/pos_thresh_0.9             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.9
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 16:40:25 2023]
+Error in rule run_difFUBAR:
+    jobid: 2
+    input: run_difFUBAR.jl
+    output: output/pos_thresh_0.95
+    shell:
+        julia run_difFUBAR.jl -f /../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.1 -t /../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.new -o output/pos_thresh_0.95             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-09T164004.608580.snakemake.log
