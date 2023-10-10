@@ -59,7 +59,7 @@ function main()
     pairwise_comparisons = [[i, j] for i in comparisons_idx for j in comparisons_idx if i < j]
 
     for tag_pos in pairwise_comparisons
-        analysis_name = ("/" * join(tag_pos, "v") * "/" * parsed_args["output_dir"])
+        analysis_name = parsed_args["output_dir"] * ("/" * join(tag_pos, "v") * "/" * "results")
         analysis_tags, analysis_tag_colors, remove_tags = select_analysis_tags_from_newick_tree(original_tags, tag_colors, tag_pos)
         cleaned_tree = remove_tags_from_newick_tree(treestring, remove_tags)
 
