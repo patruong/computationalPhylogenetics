@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_contrastFEL_run/run_difFUBAR_null/Snakefile, line 12:
+Missing input files for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=ladder-64-0.1-0.5, iRep=100
+    affected files:
+        run_difFUBAR.jl

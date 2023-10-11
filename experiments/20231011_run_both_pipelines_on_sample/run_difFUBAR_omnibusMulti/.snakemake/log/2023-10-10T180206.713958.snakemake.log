@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule compute in file /home/ptruong/git/computationalPhylogenetics/experiments/20231009_pipeline_for_contrastFEL/Snakefile_old, line 5:
+Missing input files for rule compute:
+    affected files:
+        output/pos_thresh_0.95
+        output/pos_thresh_0.9

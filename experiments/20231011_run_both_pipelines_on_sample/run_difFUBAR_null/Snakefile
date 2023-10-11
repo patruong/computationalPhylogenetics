@@ -1,0 +1,27 @@
+# Define the parameters as variables
+#iters = [1000, 2500]
+POS_THRESH = [0.75, 0.95]
+NULL_dataset = ["ladder-64-0.1-0.5", "random-64-0.1-0.5", "symmetric-64-0.1-0.5"]
+REPLICATE_null =  [100]
+
+
+rule compute:
+    input:
+        expand("output/null/pos_thresh_{iPos_thresh}/{iData}/replicate.{iRep}", iPos_thresh = POS_THRESH, iRep = REPLICATE_null, iData = NULL_dataset),
+
+rule run_difFUBAR_on_null:
+    input:
+        script = "run_difFUBAR.jl",
+    params:
+        fasta_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/replicate.replicate.{iRep}",
+        tree_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/tree.nwk",
+        verbosity = 1,
+        exports = "true",
+        iters = 2500,
+        pos_thresh = "{iPos_thresh}"
+    output:
+        output_dir = "output/null/pos_thresh_{iPos_thresh}/{iData}/replicate.{iRep}"
+    shell:
+        "julia {input.script} -f {params.fasta_file} -t {params.tree_file} -o {output.output_dir} \
+            --verbosity {params.verbosity} --exports {params.exports} --iters {params.iters} \
+            --pos_thresh {params.pos_thresh}"

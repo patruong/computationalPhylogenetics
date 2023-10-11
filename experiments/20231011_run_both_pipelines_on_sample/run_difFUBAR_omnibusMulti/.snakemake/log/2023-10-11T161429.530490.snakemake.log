@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti        2
+total                               3
+
+Select jobs to execute...
+
+[Wed Oct 11 16:14:29 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    jobid: 1
+    reason: Missing output files: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    wildcards: iPos_thresh=0.75, iSim=0, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 16:14:29 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    jobid: 2
+    reason: Missing output files: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=0, iRep=1
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Wed Oct 11 16:14:42 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 1
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    shell:
+        julia run_difFUBAR.jl -f ../../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.0.settings.replicate.1 -t ../../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.0.nwk -o output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.75
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 16:14:42 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    shell:
+        julia run_difFUBAR.jl -f ../../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.0.settings.replicate.1 -t ../../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.0.nwk -o output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-10-11T161429.530490.snakemake.log

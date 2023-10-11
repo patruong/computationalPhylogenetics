@@ -1,0 +1,3 @@
+NameError in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_contrastFEL_run/run_difFUBAR_omnibusMulti/Snakefile, line 11:
+name 'REPLICATE_null' is not defined
+  File "/home/ptruong/git/computationalPhylogenetics/experiments/20231011_contrastFEL_run/run_difFUBAR_omnibusMulti/Snakefile", line 11, in <module>
