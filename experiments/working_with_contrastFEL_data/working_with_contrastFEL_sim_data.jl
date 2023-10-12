@@ -12,8 +12,6 @@ using MolecularEvolution, FASTX, CodonMolecularEvolution
 cd("/home/ptruong/git/computationalPhylogenetics/")
 
 
-
-
 function import_hyphy_simulated_FASTA(file_name)
     # Import data generated using https://github.com/veg/hyphy-analyses/tree/master/SimulateMG94
     sequence_names = []
@@ -147,12 +145,6 @@ treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree("outp
 @time con_lik_matrix, _, codon_param_vec, alphagrid, omegagrid, _ = CodonMolecularEvolution.difFUBAR_grid(tree, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 73 s
 @time alloc_grid, theta = CodonMolecularEvolution.difFUBAR_sample(con_lik_matrix, iters, verbosity=verbosity)
 @time df = CodonMolecularEvolution.difFUBAR_tabulate(analysis_name, pos_thresh, alloc_grid, codon_param_vec, alphagrid, omegagrid, tag_colors; verbosity=verbosity, exports=exports)
-
-
-
-## import simulated file without the bottom tree
-
-
 
 
 function import_hyphy_simulated_data(file_name)

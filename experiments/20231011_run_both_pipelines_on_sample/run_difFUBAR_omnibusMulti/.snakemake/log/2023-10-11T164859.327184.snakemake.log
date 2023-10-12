@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 7
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti        2
+total                               3
+
+Select jobs to execute...
+
+[Wed Oct 11 16:48:59 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    jobid: 2
+    reason: Missing output files: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=0, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 16:48:59 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR.jl
+    output: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    jobid: 1
+    reason: Missing output files: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    wildcards: iPos_thresh=0.75, iSim=0, iRep=1
+    resources: tmpdir=/tmp
+
+ImproperOutputException in rule run_difFUBAR_on_omnibusMulti in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_omnibusMulti/Snakefile, line 10:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_omnibusMulti:
+    output: output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+    wildcards: iPos_thresh=0.75, iSim=0, iRep=1
+    affected files:
+        output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+Removing output files of failed job run_difFUBAR_on_omnibusMulti since they might be corrupted:
+output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+Skipped removing non-empty directory output/omnibus_multi/pos_thresh_0.75/sim.0.replicate.1
+ImproperOutputException in rule run_difFUBAR_on_omnibusMulti in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_omnibusMulti/Snakefile, line 10:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_omnibusMulti:
+    output: output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=0, iRep=1
+    affected files:
+        output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+Removing output files of failed job run_difFUBAR_on_omnibusMulti since they might be corrupted:
+output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+Skipped removing non-empty directory output/omnibus_multi/pos_thresh_0.95/sim.0.replicate.1
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-11T164859.327184.snakemake.log

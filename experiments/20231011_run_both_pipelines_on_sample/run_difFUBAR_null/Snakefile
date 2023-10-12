@@ -13,8 +13,8 @@ rule run_difFUBAR_on_null:
     input:
         script = "run_difFUBAR.jl",
     params:
-        fasta_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/replicate.replicate.{iRep}",
-        tree_file = "../../contrastFEL_data/null/datasets/null/64/{iData}/tree.nwk",
+        fasta_file = "../../../contrastFEL_data/null/datasets/null/64/{iData}/replicate.replicate.{iRep}",
+        tree_file = "../../../contrastFEL_data/null/datasets/null/64/{iData}/tree.nwk",
         verbosity = 1,
         exports = "true",
         iters = 2500,

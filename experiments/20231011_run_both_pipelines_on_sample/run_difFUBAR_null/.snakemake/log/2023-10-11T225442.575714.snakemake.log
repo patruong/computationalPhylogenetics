@@ -1,0 +1,129 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+compute                     1
+run_difFUBAR_on_null        6
+total                       7
+
+Select jobs to execute...
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    jobid: 4
+    reason: Missing output files: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=ladder-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    jobid: 5
+    reason: Missing output files: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=random-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    jobid: 3
+    reason: Missing output files: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=symmetric-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    jobid: 1
+    reason: Missing output files: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=ladder-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    jobid: 2
+    reason: Missing output files: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=random-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:54:42 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    jobid: 6
+    reason: Missing output files: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=symmetric-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=random-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=symmetric-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=random-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=symmetric-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=ladder-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+ImproperOutputException in rule run_difFUBAR_on_null in file /home/ptruong/git/computationalPhylogenetics/experiments/20231011_run_both_pipelines_on_sample/run_difFUBAR_null/Snakefile, line 12:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_null:
+    output: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=ladder-64-0.1-0.5, iRep=100
+    affected files:
+        output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+Removing output files of failed job run_difFUBAR_on_null since they might be corrupted:
+output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+Skipped removing non-empty directory output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-11T225442.575714.snakemake.log

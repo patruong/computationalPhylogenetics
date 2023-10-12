@@ -1,0 +1,129 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 6
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+compute                     1
+run_difFUBAR_on_null        6
+total                       7
+
+Select jobs to execute...
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    jobid: 4
+    reason: Missing output files: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=ladder-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    jobid: 5
+    reason: Missing output files: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=random-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    jobid: 3
+    reason: Missing output files: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=symmetric-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    jobid: 1
+    reason: Missing output files: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=ladder-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    jobid: 2
+    reason: Missing output files: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.75, iData=random-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 11 22:29:33 2023]
+rule run_difFUBAR_on_null:
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    jobid: 6
+    reason: Missing output files: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    wildcards: iPos_thresh=0.95, iData=symmetric-64-0.1-0.5, iRep=100
+    resources: tmpdir=/tmp
+
+[Wed Oct 11 22:29:54 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 6
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/symmetric-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/symmetric-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.95/symmetric-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 22:29:55 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 4
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/ladder-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/ladder-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.95/ladder-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 22:30:01 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 2
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.75/random-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.75
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 22:30:02 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 1
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/ladder-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/ladder-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.75/ladder-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.75
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 22:30:02 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 5
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.95/random-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct 11 22:30:02 2023]
+Error in rule run_difFUBAR_on_null:
+    jobid: 3
+    input: run_difFUBAR.jl
+    output: output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100
+    shell:
+        julia run_difFUBAR.jl -f ../../contrastFEL_data/null/datasets/null/64/symmetric-64-0.1-0.5/replicate.replicate.100 -t ../../contrastFEL_data/null/datasets/null/64/symmetric-64-0.1-0.5/tree.nwk -o output/null/pos_thresh_0.75/symmetric-64-0.1-0.5/replicate.100             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.75
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-11T222933.169060.snakemake.log
