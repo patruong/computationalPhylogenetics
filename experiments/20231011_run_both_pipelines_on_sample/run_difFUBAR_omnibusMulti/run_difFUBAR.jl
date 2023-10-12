@@ -58,6 +58,26 @@ function main()
     comparisons_idx = [i for i in 1:length(original_tags)]
     pairwise_comparisons = [[i, j] for i in comparisons_idx for j in comparisons_idx if i < j]
 
+    # Printout for information
+    group_name = ["$i = $(original_tags[i])" for i in 1:length(original_tags)]
+    pairwise_comparisons_names = [[original_tags[i], original_tags[j]] for i in comparisons_idx for j in comparisons_idx if i < j]
+
+    # group_name printout
+    group_meta_data_file_name = "group_meta_data.txt"
+    group_meta_data_file = open(group_meta_data_file_name, "w")
+    for element in group_name
+        println(group_meta_data_file, "Groups")
+        println(group_meta_data_file, element)
+    end
+    println(group_meta_data_file, "")
+
+    # pairwise comparison printout
+    for element in pairwise_comparisons_names
+        println(group_meta_data_file, "Comparisons")
+        println(group_meta_data_file, element)
+    end
+    close(group_meta_data_file)
+
     for tag_pos in pairwise_comparisons
         analysis_name = parsed_args["output_dir"] * ("/" * join(tag_pos, "v") * "/" * "results")
         analysis_tags, analysis_tag_colors, remove_tags = select_analysis_tags_from_newick_tree(original_tags, tag_colors, tag_pos)
@@ -71,12 +91,35 @@ end
 
 main()
 
-#fasta = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/replicate.replicate.1"
-#tree = "../../contrastFEL_data/null/datasets/null/64/random-64-0.1-0.5/tree.nwk"
+#fasta = "../../contrastFEL_data/omnibus-multi/datasets/omnibus-multi/sims.9.settings.replicate.1"
+#tree = "../../contrastFEL_data//omnibus-multi/datasets/omnibus-multi/sims.9.nwk"
 #seqnames, seqs = import_hyphy_simulated_FASTA(fasta)
 #treestring_group_labeled, treestring, group_tags, original_tags, tag_colors = import_grouped_label_tree(tree)
-
-# Parameters
+#Parameters
+#
+#comparisons_idx = [i for i in 1:length(original_tags)]
+#pairwise_comparisons = [[i, j] for i in comparisons_idx for j in comparisons_idx if i < j]
+#
+## Printout for information
+#group_name = ["$i = $(original_tags[i])" for i in 1:length(original_tags)]
+#pairwise_comparisons_names = [[original_tags[i], original_tags[j]] for i in comparisons_idx for j in comparisons_idx if i < j]
+#
+## group_name printout
+#group_meta_data_file_name = "group_meta_data.txt"
+#group_meta_data_file = open(group_meta_data_file_name, "w")
+#for element in group_name
+#    println(group_meta_data_file, "Groups")
+#    println(group_meta_data_file, element)
+#end
+#println(group_meta_data_file, "")
+#
+## pairwise comparison printout
+#for element in pairwise_comparisons_names
+#    println(group_meta_data_file, "Comparisons")
+#    println(group_meta_data_file, element)
+#end
+#close(group_meta_data_file)
+#
 #exports = true
 #verbosity = 1
 #iters = 2500
@@ -92,6 +135,5 @@ main()
 #treestring_group_labeled, treestring, group_tags, original_tags, tag_colors = import_grouped_label_tree(tree_file)
 #difFUBAR(seqnames, seqs, treestring, original_tags, tag_colors, analysis_name;
 #    pos_thresh=pos_thresh, iters=iters, verbosity=verbosity, exports=exports, code=MolecularEvolution.universal_code)
-
-
-
+#
+#
