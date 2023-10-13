@@ -78,7 +78,7 @@ function main()
     end
     close(group_meta_data_file)
 
-    for tag_pos in pairwise_comparisons
+    for tag_pos in pairwise_comparisons_names
         analysis_name = parsed_args["output_dir"] * ("/" * join(tag_pos, "v") * "/" * "results")
         analysis_tags, analysis_tag_colors, remove_tags = select_analysis_tags_from_newick_tree(original_tags, tag_colors, tag_pos)
         cleaned_tree = remove_tags_from_newick_tree(treestring, remove_tags)
