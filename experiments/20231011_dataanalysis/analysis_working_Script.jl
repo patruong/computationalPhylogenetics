@@ -153,8 +153,15 @@ contrastFEL_omnibusMulti_data_dir = basedir * "run_contrastFEL_omnibus_multi/"
 readdir(contrastFEL_omnibusMulti_data_dir, join=true)
 
 file_name = contrastFEL_omnibusMulti_data_dir * "sims.0.settings.replicate.1.FEL.json"
-
 df = read_contrastFEL_output_JSON(file_name)
+CSV.write("output_file.csv", df)
+
+names(df)
+
+
+# We only do analysis on specific beta1 vs beta2 it seems, and we do that for every group. So that should be fine. 
+
+
 
 
 

@@ -1,0 +1,1611 @@
+{
+ "model":{
+   "EFV":    {
+{0.01929014233974128} 
+    {0.01622765628659735} 
+    {0.01769443322434847} 
+    {0.01623235001696338} 
+    {0.01622972861556908} 
+    {0.01365311115696728} 
+    {0.01488718145152558} 
+    {0.0136570602190682} 
+    {0.01769333756976861} 
+    {0.01488435883925134} 
+    {0.01622971850752687} 
+    {0.01488866403069913} 
+    {0.01623137334257151} 
+    {0.01365449476855555} 
+    {0.01488869012427688} 
+    {0.01365844423085596} 
+    {0.01929347190999687} 
+    {0.0162304572572039} 
+    {0.0176974873676262} 
+    {0.0162351517977301} 
+    {0.01623252994386946} 
+    {0.01365546774884741} 
+    {0.0148897510498042} 
+    {0.01365941749257523} 
+    {0.01769639152393115} 
+    {0.01488692795033367} 
+    {0.01623251983408255} 
+    {0.01489123388487797} 
+    {0.01623417495475959} 
+    {0.01365685159925362} 
+    {0.01489125998295959} 
+    {0.01366080174325} 
+    {0.01929016859459878} 
+    {0.01622767837325673} 
+    {0.01769445730736531} 
+    {0.01623237211001117} 
+    {0.01622975070504901} 
+    {0.01365312973954077} 
+    {0.01488720171373104} 
+    {0.01365707880701657} 
+    {0.01769336165129421} 
+    {0.01488437909761509} 
+    {0.01622974059699304} 
+    {0.01488868429492246} 
+    {0.01623139543428999} 
+    {0.01365451335301221} 
+    {0.01488871038853572} 
+    {0.01365846282068804} 
+    {0.02076650239408051} 
+    {0.02077250895233895} 
+    {0.02076915434971678} 
+    {0.01747186164905264} 
+    {0.01905109917256209} 
+    {0.01747691525667933} 
+    {0.01904748708074087} 
+    {0.02076914141447345} 
+    {0.0190529964264485} 
+    {0.02077125910388647} 
+    {0.01747363225429919} 
+    {0.01905302981835274} 
+    {0.01747868637406045} 
+    },
+   "Equilibrium frequency estimator":"Corrected 3x4 frequency estimator",
+   "ID":"simulator.substitution_model",
+   "Q":    {
+{"", "simulator.substitution_model.theta_AC*beta*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*beta*0.2337453776869083", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AT*beta*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*beta*0.2337453776869083", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", "", ""} 
+    {"", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", "", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "simulator.substitution_model.theta_AT*beta*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", "", ""} 
+    {"simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*beta*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", "", ""} 
+    {"", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", "", ""} 
+    {"", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2990038356551464"} 
+    {"simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*beta*0.2337453776869083", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.2336518389716439", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.2336518389716439", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.2990038356551464", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.2990038356551464", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2336518389716439", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2990038356551464"} 
+    {"simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*beta*0.2337453776869083", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2336921683896183", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2990038356551464"} 
+    {"", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966", "", ""} 
+    {"", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_AG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2337313136034966"} 
+    {"", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*alpha*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*alpha*0.2337453776869083", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", "", ""} 
+    {"", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_AC*alpha*0.2777775", "", "simulator.substitution_model.theta_CG*alpha*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", "", ""} 
+    {"", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*alpha*0.23367778810339", "", "simulator.substitution_model.theta_GT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966", ""} 
+    {"", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "simulator.substitution_model.theta_AT*alpha*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*alpha*0.2547993342097017", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2547835568149736", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337313136034966"} 
+    {"", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", "", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966", ""} 
+    {"", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "simulator.substitution_model.theta_AG*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CG*beta*0.2337076295815298", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2337313136034966"} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AC*beta*0.23367778810339", "simulator.substitution_model.theta_AG*alpha*0.2547993342097017", "simulator.substitution_model.theta_AT*beta*0.2337453776869083"} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "", "simulator.substitution_model.theta_AC*beta*0.2777775", "", "simulator.substitution_model.theta_CG*beta*0.2547993342097017", "simulator.substitution_model.theta_CT*alpha*0.2337453776869083"} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*alpha*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "", "simulator.substitution_model.theta_AG*alpha*0.2777775", "simulator.substitution_model.theta_CG*beta*0.23367778810339", "", "simulator.substitution_model.theta_GT*beta*0.2337453776869083"} 
+    {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_AT*beta*0.2336518389716439", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2336921683896183", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "simulator.substitution_model.theta_GT*beta*0.2336521569835915", "", "simulator.substitution_model.theta_AT*beta*0.2777775", "", "", "", "simulator.substitution_model.theta_CT*beta*0.2337076295815298", "", "", "simulator.substitution_model.theta_GT*beta*0.2547835568149736", "simulator.substitution_model.theta_AT*beta*0.2777775", "simulator.substitution_model.theta_CT*alpha*0.23367778810339", "simulator.substitution_model.theta_GT*beta*0.2547993342097017", ""} 
+    },
+   "alphabet":    {
+{"AAA", "AAC", "AAG", "AAT", "ACA", "ACC", "ACG", "ACT", "AGA", "AGC", "AGG", "AGT", "ATA", "ATC", "ATG", "ATT", "CAA", "CAC", "CAG", "CAT", "CCA", "CCC", "CCG", "CCT", "CGA", "CGC", "CGG", "CGT", "CTA", "CTC", "CTG", "CTT", "GAA", "GAC", "GAG", "GAT", "GCA", "GCC", "GCG", "GCT", "GGA", "GGC", "GGG", "GGT", "GTA", "GTC", "GTG", "GTT", "TAC", "TAT", "TCA", "TCC", "TCG", "TCT", "TGC", "TGG", "TGT", "TTA", "TTC", "TTG", "TTT"} 
+    },
+   "bases":    {
+{"A", "C", "G", "T"} 
+    },
+   "branch-length-string":"0.05888392960524094*simulator.substitution_model.theta_GT*alpha+0.2916374429049448*simulator.substitution_model.theta_GT*beta+0.1354994125280253*simulator.substitution_model.theta_CT*alpha+0.2151052928084076*simulator.substitution_model.theta_CT*beta+0.05886675304670659*simulator.substitution_model.theta_CG*alpha+0.2916505948090215*simulator.substitution_model.theta_CG*beta+0.0717822104730694*simulator.substitution_model.theta_AT*alpha+0.2786537842410506*simulator.substitution_model.theta_AT*beta+0.1190703566772678*simulator.substitution_model.theta_AG*alpha+0.2524309597208058*simulator.substitution_model.theta_AG*beta+0.0876166671369822*simulator.substitution_model.theta_AC*alpha+0.262815720090049*simulator.substitution_model.theta_AC*beta",
+   "canonical":0,
+   "constrain-branch-length":"models.codon.MG_REV.ConstrainBranchLength",
+   "defineQ":"models.codon.MG_REV._DefineQ",
+   "description":"The Muse-Gaut 94 codon-substitution model coupled with the general time reversible (GTR) model of nucleotide substitution",
+   "efv-id":"simulator.substitution_model_pi",
+   "frequency-estimator":"frequencies.empirical.corrected.CF3x4",
+   "get-branch-length":"",
+   "matrix-id":"simulator.substitution_model_Q",
+   "parameters":{
+     "empirical":9,
+     "global":{
+       "Substitution rate from nucleotide A to nucleotide C":"simulator.substitution_model.theta_AC",
+       "Substitution rate from nucleotide A to nucleotide G":"simulator.substitution_model.theta_AG",
+       "Substitution rate from nucleotide A to nucleotide T":"simulator.substitution_model.theta_AT",
+       "Substitution rate from nucleotide C to nucleotide G":"simulator.substitution_model.theta_CG",
+       "Substitution rate from nucleotide C to nucleotide T":"simulator.substitution_model.theta_CT",
+       "Substitution rate from nucleotide G to nucleotide T":"simulator.substitution_model.theta_GT"
+      },
+     "local":{
+       "non-synonymous rate":"beta",
+       "synonymous rate":"alpha"
+      }
+    },
+   "post-definition":"models.generic.post.definition",
+   "q_ij":"models.codon.MG_REV._GenerateRate",
+   "reversible":1,
+   "set-branch-length":"models.codon.MG_REV.set_branch_length",
+   "stop":    {
+{"TAA", "TAG", "TGA"} 
+    },
+   "time":"models.DNA.generic.Time",
+   "translation-table":{
+     "AAA":"K",
+     "AAC":"N",
+     "AAG":"K",
+     "AAT":"N",
+     "ACA":"T",
+     "ACC":"T",
+     "ACG":"T",
+     "ACT":"T",
+     "AGA":"R",
+     "AGC":"S",
+     "AGG":"R",
+     "AGT":"S",
+     "ATA":"I",
+     "ATC":"I",
+     "ATG":"M",
+     "ATT":"I",
+     "CAA":"Q",
+     "CAC":"H",
+     "CAG":"Q",
+     "CAT":"H",
+     "CCA":"P",
+     "CCC":"P",
+     "CCG":"P",
+     "CCT":"P",
+     "CGA":"R",
+     "CGC":"R",
+     "CGG":"R",
+     "CGT":"R",
+     "CTA":"L",
+     "CTC":"L",
+     "CTG":"L",
+     "CTT":"L",
+     "GAA":"E",
+     "GAC":"D",
+     "GAG":"E",
+     "GAT":"D",
+     "GCA":"A",
+     "GCC":"A",
+     "GCG":"A",
+     "GCT":"A",
+     "GGA":"G",
+     "GGC":"G",
+     "GGG":"G",
+     "GGT":"G",
+     "GTA":"V",
+     "GTC":"V",
+     "GTG":"V",
+     "GTT":"V",
+     "TAA":"X",
+     "TAC":"Y",
+     "TAG":"X",
+     "TAT":"Y",
+     "TCA":"S",
+     "TCC":"S",
+     "TCG":"S",
+     "TCT":"S",
+     "TGA":"X",
+     "TGC":"C",
+     "TGG":"W",
+     "TGT":"C",
+     "TTA":"L",
+     "TTC":"F",
+     "TTG":"L",
+     "TTT":"F"
+    },
+   "type":"local"
+  },
+ "simulator.site.profile":{
+   "rates":    {
+{0, 0.26, 0.26, 0.26, 0.26} 
+    {0.89, 0, 0, 0, 0} 
+    {0.97, 0, 0, 0, 0} 
+    {0.01, 3.66, 3.66, 3.66, 3.66} 
+    {0.03, 0.01, 0.57, 0, 1.3} 
+    {0.24, 1.1, 1.1, 1.1, 1.1} 
+    {0.04, 0.21, 0.21, 0.21, 0.21} 
+    {2.16, 1, 1, 1, 1} 
+    {0.01, 0.77, 0.77, 0.77, 0.77} 
+    {0.15, 0.11, 0.11, 0.11, 0.11} 
+    {1.21, 0.02, 0.02, 0.58, 1.45} 
+    {2.74, 0, 0, 0, 0} 
+    {2.44, 0.04, 0.04, 0.04, 0.04} 
+    {2.58, 0.83, 0.83, 0.83, 0.83} 
+    {0.52, 0.12, 0.31, 1.75, 0.86} 
+    {1.31, 0.93, 0.93, 0.93, 0.93} 
+    {1.9, 0.89, 0.01, 0.03, 0.08} 
+    {0.89, 0.15, 0.15, 0.15, 0.15} 
+    {0, 0.22, 0.22, 0.22, 0.22} 
+    {0.03, 0.37, 0.37, 0.37, 0.37} 
+    {4.67, 1.42, 1.42, 1.42, 1.42} 
+    {1.11, 0.19, 0.19, 0.19, 0.19} 
+    {1.74, 1.22, 1.22, 1.22, 1.22} 
+    {1.75, 0.44, 0.44, 0.44, 0.44} 
+    {0.59, 0.07000000000000001, 0.07000000000000001, 0.16, 0.22} 
+    {0.21, 0.13, 0.13, 0.13, 0.13} 
+    {2.81, 0.01, 0.01, 0.01, 0.01} 
+    {1.7, 0.13, 0.02, 0, 0.21} 
+    {0.28, 0.11, 0.11, 0.11, 0.11} 
+    {0.5600000000000001, 0.38, 0.28, 0.78, 0.62} 
+    {0.37, 0.65, 0.65, 0.65, 0.65} 
+    {3.6, 0.38, 0.38, 0.38, 0.38} 
+    {0.07000000000000001, 0.42, 0.42, 0.42, 0.42} 
+    {2.02, 0.05, 0.05, 0.05, 0.05} 
+    {2.13, 0.05, 0.05, 0.05, 0.05} 
+    {0.14, 0.27, 0.27, 0.27, 0.27} 
+    {0.42, 0.02, 0.02, 0.1, 0.21} 
+    {0.03, 0.05, 0.05, 0.05, 0.05} 
+    {1.2, 0.84, 0.84, 0.84, 0.84} 
+    {0.01, 0, 0, 0, 0} 
+    {0.08, 0.61, 0.61, 0.61, 0.61} 
+    {0.43, 0.76, 0.33, 0.1, 0} 
+    {2.74, 0, 0, 0, 0} 
+    {0.45, 0, 0, 0, 0} 
+    {3.67, 0.18, 0.18, 0.18, 0.18} 
+    {0.19, 0.02, 0.16, 0, 1.54} 
+    {3.85, 0.39, 0.39, 0.39, 0.39} 
+    {0.13, 0.1, 0.1, 0.1, 0.1} 
+    {0.89, 0.06, 0.06, 0.06, 0.06} 
+    {1, 0.01, 0.01, 0.01, 0.01} 
+    {1.35, 0.22, 0.22, 0.22, 0.22} 
+    {0.68, 0.17, 0.17, 0.17, 0.17} 
+    {0.09, 0.32, 0.35, 0.11, 0.17} 
+    {2.66, 3.17, 3.17, 3.17, 3.17} 
+    {0.05, 0.24, 0.24, 0.24, 0.24} 
+    {0.2, 0.74, 0.74, 0.74, 0.74} 
+    {0.47, 1.24, 0.17, 0.54, 0.32} 
+    {0.9399999999999999, 0.03, 0.03, 0.03, 0.03} 
+    {0.02, 0.21, 0.21, 0.21, 0.21} 
+    {0.33, 3.23, 3.23, 3.23, 3.23} 
+    {0.63, 0.47, 0.47, 0.47, 0.47} 
+    {1.26, 0.24, 0.24, 0.24, 0.24} 
+    {0.24, 0, 0, 0, 0} 
+    {0.19, 1, 1, 1, 1} 
+    {0.74, 0.03, 0.03, 0.03, 0.03} 
+    {2.9, 0.27, 0.27, 0.27, 0.27} 
+    {0.42, 0.08, 0.03, 0.03, 0.79} 
+    {1.37, 0.01, 0.01, 0.01, 0.01} 
+    {1.47, 0.93, 0.93, 0.93, 0.93} 
+    {3.6, 0.83, 0.83, 0.83, 0.83} 
+    {0.48, 0.25, 1.83, 0.58, 0.04} 
+    {0.05, 0.12, 0.12, 0.12, 0.12} 
+    {0.96, 1.84, 1.84, 1.84, 1.84} 
+    {0.26, 0, 0, 0, 0} 
+    {2.99, 0, 0, 0, 0} 
+    {0, 0.13, 0.13, 0.13, 0.13} 
+    {3.92, 0.2, 0.2, 0.2, 0.2} 
+    {0.6, 0, 0, 0, 0} 
+    {0.12, 1.34, 0.01, 0.14, 0.78} 
+    {0.24, 0.31, 0.31, 0.31, 0.31} 
+    {1.04, 0.39, 0.39, 0.39, 0.39} 
+    {0.32, 0.01, 0.01, 0.01, 0.01} 
+    {0.57, 0.02, 0.02, 0.02, 0.02} 
+    {0.13, 0.01, 0.01, 0.01, 0.01} 
+    {0.02, 0.45, 0.45, 0.45, 0.45} 
+    {0.87, 0.5, 0.5, 0.5, 0.5} 
+    {1.01, 0.02, 0.02, 0.02, 0.02} 
+    {1.68, 1.14, 1.14, 1.14, 1.14} 
+    {0.07000000000000001, 1.02, 1.02, 1.02, 1.02} 
+    {0.07000000000000001, 1.55, 1.55, 1.55, 1.55} 
+    {1.47, 0.43, 0.43, 0.43, 0.43} 
+    {0, 0.65, 0.65, 0.65, 0.65} 
+    {0, 0.2, 0.2, 0.2, 0.2} 
+    {0.29, 0.63, 0.63, 0.63, 0.63} 
+    {0.09, 0.15, 0.15, 0.15, 0.15} 
+    {3.89, 0.08, 0.08, 0.08, 0.08} 
+    {0, 0, 0, 0, 0} 
+    {0, 1.27, 1.27, 1.27, 1.27} 
+    {1.28, 0.09, 0.09, 0.09, 0.09} 
+    {1.09, 0.02, 0.02, 0.02, 0.02} 
+    {0.3, 0.59, 0.59, 0.59, 0.59} 
+    {0.62, 0.18, 0.18, 0.18, 0.18} 
+    {0, 0, 0, 0, 0} 
+    {1, 0.39, 0.39, 0.39, 0.39} 
+    {0.07000000000000001, 0.01, 0.01, 0.01, 0.01} 
+    {0.89, 0.04, 0.04, 0.04, 0.04} 
+    {0.35, 0.04, 0.04, 0.04, 0.04} 
+    {0, 0.11, 0.11, 0.11, 0.11} 
+    {1.23, 0.17, 0.17, 0.17, 0.17} 
+    {0.41, 0.15, 0.15, 0.15, 0.15} 
+    {0.19, 0, 0, 0, 0} 
+    {0.09, 0.71, 0.64, 0.26, 0.16} 
+    {0.36, 0.09, 0.09, 0.09, 0.09} 
+    {0.47, 0.52, 0.52, 0.52, 0.52} 
+    {0.26, 3.21, 0, 0.26, 0} 
+    {0.35, 0.98, 0.98, 0.98, 0.98} 
+    {0.42, 0.27, 0.27, 0.27, 0.27} 
+    {0.16, 0.06, 0.06, 0.06, 0.06} 
+    {0.59, 1.33, 1.33, 1.33, 1.33} 
+    {2.17, 0.02, 0.83, 0.26, 0.4} 
+    {0.41, 0, 0, 0, 0} 
+    {0.85, 0.07000000000000001, 0.04, 0.39, 0.01} 
+    {0.54, 0.61, 0.61, 0.61, 0.61} 
+    {0.21, 0.14, 0.14, 0.14, 0.14} 
+    {0.87, 0.02, 0.02, 0.02, 0.02} 
+    {0.18, 1.91, 0.33, 1.47, 0.66} 
+    {0.26, 0.4, 0.4, 0.4, 0.4} 
+    {0.5, 0.21, 0.21, 0.21, 0.21} 
+    {0.13, 0.44, 0.44, 0.44, 0.44} 
+    {0.29, 0.72, 0.08, 1.74, 0} 
+    {3.09, 0.1, 0.1, 0.1, 0.1} 
+    {0.47, 0.11, 0.11, 0.11, 0.11} 
+    {1.06, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001} 
+    {0.02, 0.43, 0.43, 0.43, 0.43} 
+    {0.57, 0.54, 0.54, 0.54, 0.54} 
+    {3.51, 0.01, 0.01, 0.01, 0.01} 
+    {0.02, 1.08, 1.08, 1.08, 1.08} 
+    {0.89, 0, 0, 0, 0} 
+    {0.4, 0, 0, 0, 0} 
+    {0.55, 0.16, 0.16, 0.16, 0.16} 
+    {0.8, 0.01, 0.01, 0.01, 0.01} 
+    {0, 0.02, 0.02, 0.02, 0.02} 
+    {0.29, 0, 0, 0, 0} 
+    {0.57, 0.06, 0.06, 0.06, 0.06} 
+    {0.24, 1.63, 1.63, 1.63, 1.63} 
+    {0.01, 0, 0, 0, 0} 
+    {4.26, 0.01, 0.01, 0.01, 0.01} 
+    {2.56, 0.5, 0.5, 0.5, 0.5} 
+    {0.02, 2.35, 2.35, 2.35, 2.35} 
+    {0.91, 0.23, 0.23, 0.23, 0.23} 
+    {0.03, 0.16, 0.16, 0.16, 0.16} 
+    {0.75, 0.14, 2.77, 0, 0.2} 
+    {0.55, 0.05, 0.05, 0.05, 0.05} 
+    {5.53, 0.03, 0.03, 0.03, 0.03} 
+    {0.51, 0.04, 0.04, 0.04, 0.04} 
+    {1.41, 0.33, 0.33, 0.33, 0.33} 
+    {0.24, 0.29, 0.29, 0.05, 0.16} 
+    {0.14, 0.05, 0.05, 0.05, 0.05} 
+    {0.37, 1.01, 1.01, 1.01, 1.01} 
+    {0.08, 0.17, 0.17, 0.17, 0.17} 
+    {0.04, 0, 0, 0, 0} 
+    {0, 0.13, 0.13, 0.13, 0.13} 
+    {2.07, 0.08, 0.08, 0.08, 0.08} 
+    {0.11, 0, 2.17, 0.06, 0.22} 
+    {0, 0.34, 0.34, 0.34, 0.34} 
+    {0.2, 0, 0, 0, 0} 
+    {1.91, 0.86, 0.86, 0.86, 0.86} 
+    {0.4, 0.03, 0.03, 0.03, 0.03} 
+    {1.26, 0.99, 0.07000000000000001, 0.86, 0.75} 
+    {0.03, 0.26, 0.26, 0.26, 0.26} 
+    {0.8100000000000001, 0, 0, 0, 0} 
+    {0.08, 0.39, 0.14, 0.93, 0.18} 
+    {0.27, 0.01, 0.01, 0.01, 0.01} 
+    {0.49, 0.51, 0.51, 0.51, 0.51} 
+    {0.03, 0.44, 0.44, 0.44, 0.44} 
+    {0.35, 0.06, 0.06, 0.06, 0.06} 
+    {2.93, 0.31, 0.31, 0.31, 0.31} 
+    {3.63, 1.87, 1.87, 1.87, 1.87} 
+    {0.6, 0.12, 0.12, 0.12, 0.12} 
+    {0.12, 0, 0, 0, 0} 
+    {1.64, 0.17, 0.17, 0.17, 0.17} 
+    {0.06, 0.03, 0.19, 0.91, 0.35} 
+    {4.28, 0.02, 0.02, 0.02, 0.02} 
+    {0.02, 0, 0, 0, 0} 
+    {0.05, 0, 0, 0, 0} 
+    {0.75, 0.06, 0.06, 0.06, 0.06} 
+    {0.02, 0.29, 0, 0.1, 0.23} 
+    {0.12, 0, 0, 0, 0} 
+    {0.01, 0.12, 0.12, 0.12, 0.12} 
+    {3.9, 0, 0, 0, 0} 
+    {2.58, 1.47, 1.47, 1.47, 1.47} 
+    {1.43, 0, 0, 0, 0} 
+    {1.26, 0.41, 0.41, 0.41, 0.41} 
+    {1.28, 0.82, 0.82, 0.82, 0.82} 
+    {2.87, 0, 0, 0, 0} 
+    {2.37, 0, 0, 0, 0} 
+    {2.42, 0.58, 0.58, 0.58, 0.58} 
+    {0.13, 0.07000000000000001, 0.11, 0.5, 0.03} 
+    {0.39, 1.56, 1.56, 1.56, 1.56} 
+    {4.54, 0.02, 0.02, 0.02, 0.02} 
+    {2.67, 0.6899999999999999, 0.6899999999999999, 0.6899999999999999, 0.6899999999999999} 
+    {1.7, 0.31, 0.31, 0.31, 0.31} 
+    {1.85, 0.11, 0.11, 0.11, 0.11} 
+    {2.45, 0.46, 0.46, 0.46, 0.46} 
+    {0.34, 0.14, 0.14, 0.14, 0.14} 
+    {0, 0.03, 0.03, 0.03, 0.03} 
+    {1.23, 0.32, 0.32, 0.32, 0.32} 
+    {0.03, 1.56, 1.56, 1.56, 1.56} 
+    {0.25, 0.08, 0.08, 0.08, 0.08} 
+    {0.92, 0.01, 0.01, 0.01, 0.01} 
+    {0.01, 0.07000000000000001, 0.31, 1.83, 0.32} 
+    {3.11, 0, 0, 0, 0} 
+    {0.74, 0, 0, 0, 0} 
+    {0.72, 0.01, 0.01, 0.01, 0.01} 
+    {0.25, 0.16, 0.16, 0.16, 0.16} 
+    {0.06, 2.65, 2.65, 2.65, 2.65} 
+    {0.64, 1.42, 1.42, 1.42, 1.42} 
+    {0.97, 0.25, 0.04, 0.04, 0.03} 
+    {0.01, 0.16, 0.16, 0.16, 0.16} 
+    {2.48, 0.25, 0.25, 0.25, 0.25} 
+    {0.1, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001} 
+    {3.29, 1.57, 1.57, 1.57, 1.57} 
+    {1.15, 0.77, 0, 0.28, 0} 
+    {0.7, 0.68, 0.68, 0.68, 0.68} 
+    {0.55, 0.11, 0.11, 0.11, 0.11} 
+    {0.64, 0.05, 0.05, 0.05, 0.05} 
+    {0.78, 0.01, 0.01, 0.01, 0.01} 
+    {0.48, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001} 
+    {0.2, 0.55, 0.07000000000000001, 0.04, 0.26} 
+    {0.37, 0.02, 0.02, 0.02, 0.02} 
+    {0.77, 0, 0, 0, 0} 
+    {0.33, 1.87, 1.87, 1.87, 1.87} 
+    {0.64, 0, 0, 0, 0} 
+    {0.54, 0, 0, 0, 0} 
+    {0.91, 0, 1.47, 0.06, 0.11} 
+    {1.43, 0.01, 0.01, 0.01, 0.01} 
+    {0.08, 0.52, 0.52, 0.52, 0.52} 
+    {0.31, 0.21, 0.21, 0.21, 0.21} 
+    {0.39, 0.23, 0.23, 0.23, 0.23} 
+    {1.02, 0.52, 0.09, 0.31, 0.41} 
+    {5.88, 1.88, 1.88, 1.88, 1.88} 
+    {0.19, 0.03, 0.03, 0.03, 0.03} 
+    {0.53, 0, 0, 0, 0} 
+    {2.21, 0, 0, 0.47, 0.91} 
+    {0.86, 0.1, 0.1, 0.1, 0.1} 
+    {0.73, 0, 0, 0, 0} 
+    {4.31, 0.45, 0.45, 0.45, 0.45} 
+    {2.85, 0.01, 0.01, 0.01, 0.01} 
+    {0.9399999999999999, 0.45, 0.45, 0.45, 0.45} 
+    {4.15, 0.01, 0.01, 0.01, 0.01} 
+    {0.2, 0.66, 0.66, 0.66, 0.66} 
+    {1.64, 0.55, 0.55, 0.55, 0.55} 
+    {0.19, 0.04, 0.04, 0.04, 0.04} 
+    {0.34, 0, 0, 0, 0} 
+    {2.24, 0.05, 0.05, 0.05, 0.05} 
+    {2.71, 0.21, 0.21, 0.21, 0.21} 
+    {1.53, 0, 0, 0, 0} 
+    {1.52, 0.32, 0.32, 0.32, 0.32} 
+    {0.83, 0.41, 0.41, 0.41, 0.41} 
+    {1.52, 0.05, 0.05, 0.05, 0.05} 
+    {0.26, 0.17, 0.17, 0.17, 0.17} 
+    {0.24, 0.67, 0.67, 0.67, 0.67} 
+    {0.01, 1.09, 1.09, 1.09, 1.09} 
+    {0.91, 0.35, 0.35, 0.35, 0.35} 
+    {0.21, 1.45, 1.45, 1.45, 1.45} 
+    {1.06, 0.18, 0.18, 0.18, 0.18} 
+    {0.55, 0.7, 0.7, 0.7, 0.7} 
+    {0.86, 0.34, 0.34, 0.34, 0.34} 
+    {0.08, 0.25, 0.25, 0.25, 0.25} 
+    {0.43, 0.8, 0.8, 0.8, 0.8} 
+    {0.03, 0, 0, 0, 0} 
+    {4.11, 0.01, 0.01, 0.01, 0.01} 
+    {2.92, 0.65, 0.65, 0.65, 0.65} 
+    {1.39, 0.25, 0.25, 0.25, 0.25} 
+    {0.89, 0.48, 0.48, 0.48, 0.48} 
+    {0.41, 0.13, 0.13, 0.13, 0.13} 
+    {0.66, 0.65, 0.14, 0.31, 2.43} 
+    {2.87, 0.59, 0.59, 0.59, 0.59} 
+    {1.02, 0.03, 0.03, 0.03, 0.03} 
+    {1.77, 0.01, 0.01, 0.01, 0.01} 
+    {1.06, 0.67, 0.67, 0.67, 0.67} 
+    {0.09, 0.42, 0.42, 0.42, 0.42} 
+    {0.24, 1.48, 1.48, 1.48, 1.48} 
+    {0.38, 0.04, 0.04, 0.04, 0.04} 
+    {0.46, 0.14, 0.14, 0.14, 0.14} 
+    {3.32, 0, 0, 0, 0} 
+    {3.16, 0.86, 0.86, 0.86, 0.86} 
+    {1.15, 0.03, 0.03, 0.03, 0.03} 
+    {0.16, 0.31, 0.31, 0.31, 0.31} 
+    {3.95, 0.01, 0.01, 0.01, 0.01} 
+    {0.15, 0.01, 0.01, 0.01, 0.01} 
+    {1.49, 0, 0, 0, 0} 
+    {0.01, 0.34, 0.87, 1.04, 0.01} 
+    {0, 0.03, 0.03, 0.03, 0.03} 
+    {0.02, 0.03, 0.03, 0.03, 0.03} 
+    {1.79, 0.34, 0.34, 0.34, 0.34} 
+    {1.31, 0.05, 0.05, 0.05, 0.05} 
+    {0.86, 0, 0, 0, 0} 
+    {0.02, 1.34, 1.34, 1.34, 1.34} 
+    {0.67, 0.47, 0.47, 0.47, 0.47} 
+    {1.17, 0.04, 0.04, 0.04, 0.04} 
+    {0.97, 0.04, 0.04, 0.04, 0.04} 
+    {0.55, 1.43, 0.82, 0.97, 0.33} 
+    {0.12, 0.02, 0.01, 0.08, 0.14} 
+    {0.34, 1.17, 0, 0, 0.9} 
+    {0.02, 0.03, 0.03, 0.03, 0.03} 
+    {0.01, 0.71, 0.71, 0.71, 0.71} 
+    {3.68, 1.24, 1.24, 1.24, 1.24} 
+    {0.24, 0.02, 0.02, 0.02, 0.02} 
+    {1.38, 1.25, 1.25, 1.25, 1.25} 
+    {0.64, 0.21, 0.21, 0.21, 0.21} 
+    {0.01, 0.26, 0.26, 0.26, 0.26} 
+    {0.03, 4.77, 4.77, 4.77, 4.77} 
+    {1.93, 0.01, 0.01, 0.01, 0.01} 
+    {0.75, 0.09, 0.09, 0.09, 0.09} 
+    {0.54, 0.38, 0.38, 0.38, 0.38} 
+    {1.07, 0.8, 0.8, 0.8, 0.8} 
+    {0.21, 0.05, 0.05, 0.05, 0.05} 
+    {0.16, 0.58, 0.58, 0.58, 0.58} 
+    {0.01, 0.34, 0.34, 0.34, 0.34} 
+    {1.28, 0.35, 0.35, 0.35, 0.35} 
+    {0.5, 0.75, 0.75, 0.75, 0.75} 
+    {0.06, 0.16, 0.01, 0, 0.31} 
+    {0, 0, 0, 0, 0} 
+    {0.65, 0.29, 0.29, 0.29, 0.29} 
+    {0.07000000000000001, 0.53, 0.53, 0.53, 0.53} 
+    {1.9, 0.1, 0.1, 0.1, 0.1} 
+    {0.55, 0, 0, 0, 0} 
+    {2.4, 0.25, 0.25, 0.25, 0.25} 
+    {0.35, 0.01, 0.01, 0.01, 0.01} 
+    {1.06, 0.02, 0.02, 0.02, 0.02} 
+    {1.06, 0.71, 0.78, 0.25, 0.5600000000000001} 
+    {1.05, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001} 
+    {1.11, 0.18, 0.18, 0.18, 0.18} 
+    {0.02, 0.11, 0.11, 0.11, 0.11} 
+    {2.03, 0.55, 0.55, 0.55, 0.55} 
+    {1.49, 0.3, 0.3, 0.3, 0.3} 
+    {0.12, 0.07000000000000001, 0.02, 0.38, 0.03} 
+    {0.01, 0.8, 0.8, 0.8, 0.8} 
+    {0.43, 3.93, 3.93, 3.93, 3.93} 
+    {0.01, 0, 0, 0, 0} 
+    {0.14, 0.01, 0.01, 0.01, 0.01} 
+    {0.19, 0.04, 0.04, 0.04, 0.04} 
+    {0.72, 0.18, 0.18, 0.18, 0.18} 
+    {0.14, 2.3, 2.3, 2.3, 2.3} 
+    {0, 0.3, 0.3, 0.3, 0.3} 
+    {0.34, 0.39, 0.39, 0.39, 0.39} 
+    {0.89, 0.12, 0.12, 0.12, 0.12} 
+    {6.82, 0.34, 0.34, 0.34, 0.34} 
+    {0.93, 0.11, 0.11, 0.11, 0.11} 
+    {0.68, 0.02, 0.02, 0.02, 0.02} 
+    {0.04, 0.14, 0.14, 0.14, 0.14} 
+    {0.97, 1.21, 1.21, 1.21, 1.21} 
+    {3.38, 0.46, 0.46, 0.46, 0.46} 
+    {0.05, 0.03, 0.03, 0.03, 0.03} 
+    {0, 0.15, 0.15, 0.15, 0.15} 
+    {0.71, 0.12, 0.12, 0.12, 0.12} 
+    {0.34, 0.44, 0.44, 0.44, 0.44} 
+    {0.91, 1.46, 1.46, 1.46, 1.46} 
+    {3.56, 0.06, 0.06, 0.06, 0.06} 
+    {1.03, 0.44, 0.44, 0.44, 0.44} 
+    {0.14, 4.97, 0.07000000000000001, 0.35, 0.21} 
+    {0, 1.4, 0.03, 0, 2.17} 
+    {0.09, 0.08, 0.08, 0.08, 0.08} 
+    {0.34, 2.87, 2.87, 2.87, 2.87} 
+    {4.2, 0.51, 0.51, 0.51, 0.51} 
+    {0.66, 0.4, 0.4, 0.4, 0.4} 
+    {0.04, 0, 0, 0, 0} 
+    {0.39, 0.19, 0.19, 0.19, 0.19} 
+    {0.29, 0.02, 0.12, 0.12, 0.3} 
+    {0.39, 0.27, 0.27, 0.27, 0.27} 
+    {0.41, 0.11, 0.11, 0.11, 0.11} 
+    {0.78, 0.05, 0.05, 0.05, 0.05} 
+    {0.61, 0.35, 0.35, 0.35, 0.35} 
+    {0.12, 0.01, 0.01, 0.01, 0.01} 
+    {0.95, 0.14, 0.14, 0.14, 0.14} 
+    {3.37, 0.9, 0.9, 0.9, 0.9} 
+    {0.08, 0.48, 0.48, 0.48, 0.48} 
+    {0.21, 0.05, 0.05, 0.05, 0.05} 
+    {0.33, 0.34, 0.34, 0.34, 0.34} 
+    {0.5600000000000001, 1.51, 1.01, 0, 0.72} 
+    {0.08, 0, 0, 0, 0} 
+    {0.16, 0.34, 0.34, 0.34, 0.34} 
+    {1.22, 0.13, 0.13, 0.13, 0.13} 
+    {0.58, 0.54, 0.54, 0.54, 0.54} 
+    {0.02, 0.85, 0.85, 0.85, 0.85} 
+    {1.48, 0.02, 0.02, 0.02, 0.02} 
+    {0.92, 0.02, 0.02, 0.02, 0.02} 
+    {0.54, 0.03, 1.63, 0.17, 0} 
+    {0.19, 0, 0, 0, 0} 
+    {2.3, 1.31, 1.31, 1.31, 1.31} 
+    {0.02, 1.03, 1.03, 1.03, 1.03} 
+    {0.89, 0.53, 0.53, 0.53, 0.53} 
+    {1.8, 0, 0, 0, 0} 
+    {0.37, 0.1, 0.1, 0.1, 0.1} 
+    {0.44, 0.09, 0.09, 0.09, 0.09} 
+    {0.93, 0.06, 0.06, 0.06, 0.06} 
+    {0.5, 0, 0.61, 0.47, 0} 
+    {3.16, 0.15, 0.15, 0.15, 0.15} 
+    {2.4, 2.13, 2.13, 2.13, 2.13} 
+    {0.28, 0, 0, 0, 0} 
+    {0.21, 0.11, 0.11, 0.68, 0.33} 
+    {0.11, 0.23, 0.23, 0.23, 0.23} 
+    {0.13, 0.59, 0.59, 0.59, 0.59} 
+    {1.02, 0.01, 0.01, 0.01, 0.01} 
+    {2.73, 0.5, 0.5, 0.5, 0.5} 
+    {0.04, 0, 0, 0, 0} 
+    {0.03, 0.43, 0.43, 0.43, 0.43} 
+    {0.07000000000000001, 0.53, 0.53, 0.53, 0.53} 
+    {1.87, 0, 0, 0, 0} 
+    {0.13, 0, 0, 0, 0} 
+    {1.49, 0.18, 0.18, 0.18, 0.18} 
+    {2.01, 2.38, 2.38, 2.38, 2.38} 
+    {0.49, 0.25, 0.25, 0.25, 0.25} 
+    {0.08, 0.08, 0.08, 0.08, 0.08} 
+    {0.23, 0.93, 0.93, 0.93, 0.93} 
+    {0.07000000000000001, 0.03, 0.03, 0.03, 0.03} 
+    {0.05, 0.22, 0.22, 0.22, 0.22} 
+    {0.35, 0, 0.09, 1.41, 0.8100000000000001} 
+    {0.53, 0.04, 0, 0.19, 0.06} 
+    {0.79, 2.53, 0.84, 0.84, 0} 
+    {2.06, 0.01, 0.01, 0.01, 0.01} 
+    {0.31, 0, 0, 0, 0} 
+    {0.83, 1.99, 1.99, 1.99, 1.99} 
+    {1.26, 0.84, 0.84, 0.84, 0.84} 
+    {1.46, 0.02, 0.02, 0.02, 0.02} 
+    {0.18, 0.17, 0.17, 0.17, 0.17} 
+    {0.13, 1.18, 1.18, 1.18, 1.18} 
+    {0.16, 0.03, 0.03, 0.03, 0.03} 
+    {0.36, 0.22, 0.03, 0.02, 2.14} 
+    {0.3, 0.41, 0.41, 0.41, 0.41} 
+    {1.77, 0.09, 0.09, 0.09, 0.09} 
+    {3.89, 1.27, 1.27, 1.27, 1.27} 
+    {0.57, 0.73, 0.08, 0.47, 0.04} 
+    {1.2, 0.1, 0.1, 0.1, 0.1} 
+    {0.77, 0.01, 0.01, 0.01, 0.01} 
+    {0.03, 0.5, 0.95, 0.01, 0} 
+    {0.06, 0, 0, 0, 0} 
+    {0.29, 0.53, 0.53, 0.53, 0.53} 
+    {2.28, 0.02, 0.02, 0.02, 0.02} 
+    {0.6, 0.19, 0.19, 0.19, 0.19} 
+    {1.01, 0, 0, 0, 0} 
+    {0.42, 0.38, 0.38, 0.38, 0.38} 
+    {0.03, 0.79, 0, 0.95, 0.06} 
+    {1.17, 0.08, 0.08, 0.08, 0.08} 
+    {0.12, 0.92, 1.02, 0.06, 0.04} 
+    {1.01, 0.27, 0.27, 0.27, 0.27} 
+    {2.69, 0.66, 0.66, 0.66, 0.66} 
+    {0.01, 0.15, 0.15, 0.15, 0.15} 
+    {0.02, 0.08, 0.08, 0.08, 0.08} 
+    {1.53, 0.41, 0.41, 0.41, 0.41} 
+    {0.43, 0.45, 0.45, 0.45, 0.45} 
+    {0.14, 0.16, 0.16, 0.16, 0.16} 
+    {0.09, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001, 0.5600000000000001} 
+    {0.19, 0.35, 0.35, 0.35, 0.35} 
+    {0.59, 0.45, 0.45, 0.45, 0.45} 
+    {3.22, 0.11, 0.11, 0.11, 0.11} 
+    {0.74, 0.02, 0.02, 0.02, 0.02} 
+    {0.03, 0.21, 0.21, 0.21, 0.21} 
+    {2.23, 0.02, 0.02, 0.02, 0.02} 
+    {2.26, 0.37, 0.67, 0, 0.03} 
+    {0.08, 0.1, 0.1, 0.1, 0.1} 
+    {0.11, 0.17, 0.17, 0.17, 0.17} 
+    {3.53, 0.62, 0.62, 0.62, 0.62} 
+    {0.45, 0.25, 0.25, 0.25, 0.25} 
+    {0.45, 0.01, 0.01, 0.01, 0.01} 
+    {0.28, 2.04, 2.04, 2.04, 2.04} 
+    {0.33, 0.03, 0.03, 0.03, 0.03} 
+    {0.11, 0.26, 0.26, 0.26, 0.26} 
+    {3.38, 0, 0, 0, 0} 
+    {0.16, 1.25, 0.27, 0.4, 0.34} 
+    {1.29, 0.25, 0.25, 0.25, 0.25} 
+    {1.6, 0.08, 0.08, 0.08, 0.08} 
+    {0.5, 0.11, 0.11, 0.11, 0.11} 
+    {0.34, 0.04, 0.04, 0.04, 0.04} 
+    {0.1, 1.07, 1.07, 1.07, 1.07} 
+    {0.27, 0.01, 1.89, 1, 1.96} 
+    {0, 0.03, 0.03, 0.03, 0.03} 
+    {2.14, 0, 0, 0, 0} 
+    {0.93, 0.61, 0.61, 0.61, 0.61} 
+    {0.87, 0.05, 0.59, 1.17, 0.41} 
+    {0.74, 0.3, 0.3, 0.3, 0.3} 
+    {1.38, 0.15, 0.15, 0.15, 0.15} 
+    {0.09, 0.91, 0.91, 0.91, 0.91} 
+    {0.06, 0, 0, 0, 0} 
+    {0, 0, 0, 0, 0} 
+    {0.88, 0.4, 0.38, 0.59, 0.6899999999999999} 
+    {2.07, 3.23, 3.23, 3.23, 3.23} 
+    {0.07000000000000001, 0.26, 0.26, 0.26, 0.26} 
+    {0.5600000000000001, 1.27, 1.27, 1.27, 1.27} 
+    {0.05, 0, 0, 0, 0} 
+    {0.04, 0.55, 0.55, 0.55, 0.55} 
+    {0.39, 1.58, 1.58, 1.58, 1.58} 
+    {0.71, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001} 
+    {0.36, 0.14, 0.14, 0.14, 0.14} 
+    {3.71, 0.01, 0.01, 0.01, 0.01} 
+    {1.23, 0.06, 0.06, 0.06, 0.06} 
+    {0.03, 0.2, 0.2, 0.2, 0.2} 
+    {0.42, 0, 0, 0, 0} 
+    {2.3, 0.03, 0.03, 0.03, 0.03} 
+    {0.02, 0.78, 0.78, 0.78, 0.78} 
+    {0.64, 0.64, 0.64, 0.64, 0.64} 
+    {0.05, 3.21, 3.21, 3.21, 3.21} 
+    {1.01, 0.05, 0.05, 0.05, 0.05} 
+    {0.8100000000000001, 0.3, 0.3, 0.3, 0.3} 
+    {0.22, 0.08, 0.08, 0.08, 0.08} 
+    {0, 0.01, 0, 1.5, 0.25} 
+    {1.8, 1.92, 1.92, 1.92, 1.92} 
+    {1.25, 0.12, 0.6899999999999999, 1.23, 0.73} 
+    {0.37, 0.1, 0.1, 0.1, 0.1} 
+    {1.15, 0.02, 0.02, 0.02, 0.02} 
+    {0.22, 0, 7.48, 0.99, 0} 
+    {0.02, 0.22, 0.22, 0.22, 0.22} 
+    {2.03, 1.07, 1.07, 1.07, 1.07} 
+    {0.44, 0, 0, 0, 0} 
+    {1.77, 0, 0, 0.09, 0.01} 
+    {1.43, 0.02, 0.04, 1.17, 0} 
+    {1.88, 0.28, 0.28, 0.28, 0.28} 
+    {1.25, 1.28, 1.28, 1.28, 1.28} 
+    {0.46, 0.73, 0.73, 0.73, 0.73} 
+    {0.59, 0.24, 0.24, 0.24, 0.24} 
+    {1.18, 0, 0, 0, 0} 
+    {3.57, 0, 0, 0, 0} 
+    {1.07, 0.71, 0.71, 0.71, 0.71} 
+    {0.2, 0, 0, 0, 0} 
+    {0.03, 0, 0, 0, 0} 
+    {0.04, 0, 0, 0, 0} 
+    {0.03, 2.1, 2.1, 2.1, 2.1} 
+    {1.61, 0.42, 0.42, 0.42, 0.42} 
+    {0.11, 0.01, 0.01, 0.01, 0.01} 
+    {0.96, 0, 0, 0, 0} 
+    {0.29, 0, 0, 0, 0} 
+    {1.13, 0.04, 0.04, 0.04, 0.04} 
+    {0.52, 0, 0, 0, 0} 
+    {1.9, 0.04, 0.04, 0.04, 0.04} 
+    {0.62, 0.33, 0.33, 0.33, 0.33} 
+    {0.05, 0.14, 0.14, 0.42, 0.86} 
+    {0.01, 0, 0, 0, 0} 
+    {0.65, 0.33, 0.33, 0.33, 0.33} 
+    {1.86, 0.16, 0.16, 0.16, 0.16} 
+    {0.22, 0.76, 0.76, 0.76, 0.76} 
+    {0.08, 0.03, 0.07000000000000001, 0.14, 0} 
+    {0.39, 0.37, 0.37, 0.37, 0.37} 
+    {1.06, 0, 0, 0, 0} 
+    {1.11, 0.8, 0.8, 0.8, 0.8} 
+    {3.24, 0.16, 0.16, 0.16, 0.16} 
+    {0.25, 0.15, 0.15, 0.15, 0.15} 
+    {0.1, 0.09, 0.09, 0.09, 0.09} 
+    {0.24, 0.43, 0.43, 0.43, 0.43} 
+    {1.3, 0.02, 0.02, 0.02, 0.02} 
+    {0.38, 0.2, 0.18, 0.04, 0.03} 
+    {0.08, 0.85, 0.85, 0.85, 0.85} 
+    {0.33, 0.93, 0.93, 0.93, 0.93} 
+    {2.99, 0.76, 0.76, 0.76, 0.76} 
+    {5.51, 0, 0.52, 0.01, 0.05} 
+    {1.87, 0.19, 0.83, 2.27, 0.26} 
+    {2.51, 0.86, 0.34, 0, 0.1} 
+    {0.23, 0, 0, 0, 0} 
+    {0, 0.36, 0.36, 0.36, 0.36} 
+    {0.37, 0, 0.05, 0, 0.04} 
+    {4.48, 0.01, 0.01, 0.01, 0.01} 
+    {0.55, 0.02, 0.02, 0.02, 0.02} 
+    {0.41, 0.63, 0.63, 0.63, 0.63} 
+    {0.2, 0.26, 0.26, 0.26, 0.26} 
+    {1.58, 0, 0, 0, 0} 
+    {0.44, 0.75, 0.75, 0.75, 0.75} 
+    {0.01, 0.25, 0.48, 0.03, 0} 
+    {2.7, 0, 0, 0, 0} 
+    {0.08, 0.14, 0.14, 0.14, 0.14} 
+    {1.18, 0.44, 0.5, 0.54, 0.06} 
+    {2.25, 0.14, 0.14, 0.14, 0.14} 
+    {7.65, 0.06, 0.06, 0.06, 0.06} 
+    {0.1, 1.38, 0.79, 0, 0.32} 
+    {0.53, 0.32, 0.32, 0.32, 0.32} 
+    {0.01, 0.03, 0.03, 0.03, 0.03} 
+    {3.91, 0.01, 0.01, 0.01, 0.01} 
+    {1.41, 0.35, 0.35, 0.35, 0.35} 
+    {1.75, 0.67, 0.67, 0.67, 0.67} 
+    {0.13, 0, 0, 0, 0} 
+    {6.65, 0.77, 0.77, 0.77, 0.77} 
+    {0.22, 0.03, 0.03, 0.03, 0.03} 
+    {1.29, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001, 0.07000000000000001} 
+    {0.49, 0.59, 0.59, 0.59, 0.59} 
+    {0.72, 0.91, 0.91, 0.91, 0.91} 
+    {0.96, 0.09, 0.09, 0.09, 0.09} 
+    {0.01, 0.13, 0.13, 0.13, 0.13} 
+    {0.32, 0.16, 0.16, 0.16, 0.16} 
+    },
+   "variables":{
+     "0":"simulator.omega.class0",
+     "1":"simulator.omega.class1",
+     "2":"simulator.omega.class2",
+     "3":"simulator.omega.class3"
+    }
+  },
+ "tree":{
+   "annotated_string":"((((((N64{GROUP_3},N65{GROUP_3})N160{GROUP_3},(N66{GROUP_3},N67{GROUP_3})N161{GROUP_3})N208{GROUP_3},((N68{GROUP_3},N69{GROUP_3})N162{GROUP_3},(N70{GROUP_1},N71{GROUP_1})N163{GROUP_0})N209{GROUP_0})N232{GROUP_0},(((N72{GROUP_0},N73{GROUP_2})N164{GROUP_2},(N74{GROUP_2},N75{GROUP_2})N165{GROUP_1})N210{GROUP_1},((N76{GROUP_1},N77{GROUP_2})N166{GROUP_3},(N78{GROUP_3},N79{GROUP_3})N167{GROUP_3})N211{GROUP_3})N233{GROUP_3})N244{GROUP_3},((((N80{GROUP_1},N81{GROUP_1})N168{GROUP_3},(N82{GROUP_3},N83{GROUP_0})N169{GROUP_0})N212{GROUP_3},((N84{GROUP_2},N85{GROUP_0})N170{GROUP_0},(N86{GROUP_1},N87{GROUP_1})N171{GROUP_1})N213{GROUP_1})N234{GROUP_1},(((N88{GROUP_1},N89{GROUP_1})N172{GROUP_1},(N90{GROUP_3},N91{GROUP_3})N173{GROUP_3})N214{GROUP_3},((N92{GROUP_2},N93{GROUP_1})N174{GROUP_1},(N94{GROUP_1},N95{GROUP_2})N175{GROUP_2})N215{GROUP_0})N235{GROUP_2})N245{GROUP_1})N250{GROUP_3},(((((N96{GROUP_3},N97{GROUP_3})N176{GROUP_3},(N98{GROUP_3},N99{GROUP_3})N177{GROUP_0})N216{GROUP_3},((N100{GROUP_2},N101{GROUP_0})N178{GROUP_3},(N102{GROUP_3},N103{GROUP_3})N179{GROUP_3})N217{GROUP_1})N236{GROUP_1},(((N104{GROUP_1},N105{GROUP_0})N180{GROUP_2},(N106{GROUP_0},N107{GROUP_0})N181{GROUP_0})N218{GROUP_3},((N108{GROUP_3},N109{GROUP_3})N182{GROUP_0},(N110{GROUP_0},N111{GROUP_0})N183{GROUP_0})N219{GROUP_0})N237{GROUP_0})N246{GROUP_1},((((N112{GROUP_1},N113{GROUP_0})N184{GROUP_0},(N114{GROUP_3},N115{GROUP_3})N185{GROUP_3})N220{GROUP_3},((N116{GROUP_3},N117{GROUP_0})N186{GROUP_0},(N118{GROUP_0},N119{GROUP_2})N187{GROUP_2})N221{GROUP_1})N238{GROUP_1},(((N120{GROUP_1},N121{GROUP_2})N188{GROUP_2},(N122{GROUP_2},N123{GROUP_2})N189{GROUP_0})N222{GROUP_3},((N124{GROUP_3},N125{GROUP_1})N190{GROUP_2},(N126{GROUP_1},N127{GROUP_1})N191{GROUP_0})N223{GROUP_3})N239{GROUP_0})N247{GROUP_3})N251{GROUP_3},((((((N0{GROUP_0},N1{GROUP_1})N128{GROUP_1},(N2{GROUP_1},N3{GROUP_3})N129{GROUP_2})N192{GROUP_1},((N4{GROUP_1},N5{GROUP_2})N130{GROUP_2},(N6{GROUP_1},N7{GROUP_0})N131{GROUP_3})N193{GROUP_3})N224{GROUP_0},(((N8{GROUP_2},N9{GROUP_2})N132{GROUP_2},(N10{GROUP_3},N11{GROUP_0})N133{GROUP_1})N194{GROUP_3},((N12{GROUP_3},N13{GROUP_0})N134{GROUP_0},(N14{GROUP_2},N15{GROUP_2})N135{GROUP_2})N195{GROUP_1})N225{GROUP_3})N240{GROUP_3},((((N16{GROUP_3},N17{GROUP_3})N136{GROUP_3},(N18{GROUP_1},N19{GROUP_1})N137{GROUP_1})N196{GROUP_3},((N20{GROUP_0},N21{GROUP_0})N138{GROUP_3},(N22{GROUP_3},N23{GROUP_3})N139{GROUP_2})N197{GROUP_0})N226{GROUP_1},(((N24{GROUP_1},N25{GROUP_1})N140{GROUP_2},(N26{GROUP_2},N27{GROUP_2})N141{GROUP_2})N198{GROUP_1},((N28{GROUP_1},N29{GROUP_1})N142{GROUP_3},(N30{GROUP_3},N31{GROUP_3})N143{GROUP_3})N199{GROUP_0})N227{GROUP_3})N241{GROUP_3})N248{GROUP_0},(((((N32{GROUP_2},N33{GROUP_3})N144{GROUP_2},(N34{GROUP_2},N35{GROUP_2})N145{GROUP_2})N200{GROUP_1},((N36{GROUP_0},N37{GROUP_0})N146{GROUP_2},(N38{GROUP_2},N39{GROUP_3})N147{GROUP_0})N201{GROUP_0})N228{GROUP_2},(((N40{GROUP_3},N41{GROUP_2})N148{GROUP_0},(N42{GROUP_0},N43{GROUP_0})N149{GROUP_2})N202{GROUP_1},((N44{GROUP_1},N45{GROUP_2})N150{GROUP_2},(N46{GROUP_2},N47{GROUP_2})N151{GROUP_2})N203{GROUP_2})N229{GROUP_3})N242{GROUP_3},((((N48{GROUP_3},N49{GROUP_0})N152{GROUP_0},(N50{GROUP_2},N51{GROUP_3})N153{GROUP_1})N204{GROUP_3},((N52{GROUP_3},N53{GROUP_2})N154{GROUP_0},(N54{GROUP_1},N55{GROUP_3})N155{GROUP_2})N205{GROUP_2})N230{GROUP_0},(((N56{GROUP_1},N57{GROUP_1})N156{GROUP_3},(N58{GROUP_3},N59{GROUP_3})N157{GROUP_3})N206{GROUP_0},((N60{GROUP_0},N61{GROUP_1})N158{GROUP_3},(N62{GROUP_3},N63{GROUP_1})N159{GROUP_1})N207{GROUP_1})N231{GROUP_0})N243{GROUP_0})N249{GROUP_2})N252{GROUP_1});",
+   "branch length":{
+     "N0":0.03898386461986917,
+     "N1":0.06346104873603868,
+     "N10":0.06395038438088183,
+     "N100":0.02637117614728905,
+     "N101":0.2104936165456779,
+     "N102":0.0008601933354981771,
+     "N103":0.03400159563790971,
+     "N104":0.1546461778550587,
+     "N105":0.1018001697736045,
+     "N106":0.1177371901384842,
+     "N107":0.02921571333721174,
+     "N108":0.04083072416841539,
+     "N109":0.01873706877165549,
+     "N11":0.04264529769328344,
+     "N110":0.09214769082757215,
+     "N111":0.1145335066831368,
+     "N112":0.06369460668907995,
+     "N113":0.2238535272990603,
+     "N114":0.01027698834352408,
+     "N115":0.05866976971796626,
+     "N116":0.08824373132898453,
+     "N117":0.01185140621393285,
+     "N118":0.1051294631653653,
+     "N119":0.06564124970318068,
+     "N12":0.1047072710323968,
+     "N120":0.07472897714113573,
+     "N121":0.1059559008682543,
+     "N122":0.1060245971060431,
+     "N123":0.03630636869471324,
+     "N124":0.1696489762781981,
+     "N125":0.01463538706861805,
+     "N126":0.007954097746210993,
+     "N127":0.1222441842380369,
+     "N128":0.1020923745285104,
+     "N129":0.006974761065867576,
+     "N13":0.01989641832508998,
+     "N130":0.01634610398566723,
+     "N131":0.02474066758033024,
+     "N132":0.05180793506334019,
+     "N133":0.0001883299439811365,
+     "N134":0.07949210559809315,
+     "N135":0.09843410356332349,
+     "N136":0.008073921876394954,
+     "N137":0.06292153490014098,
+     "N138":0.05634710857288729,
+     "N139":0.1601809389372782,
+     "N14":0.05810552056173692,
+     "N140":0.02969097610396508,
+     "N141":0.01515009078003099,
+     "N142":0.04659382662655503,
+     "N143":0.02612655091041662,
+     "N144":0.03638277833337493,
+     "N145":0.07455212158698125,
+     "N146":0.01306576579397238,
+     "N147":0.06013762205671355,
+     "N148":0.002143809990412314,
+     "N149":0.06481356121752323,
+     "N15":0.03203420582778962,
+     "N150":0.1596307949177924,
+     "N151":0.04104738857902587,
+     "N152":0.01920896790631221,
+     "N153":0.166288188764327,
+     "N154":0.06980796571148586,
+     "N155":0.03278630547549861,
+     "N156":0.1148618575490526,
+     "N157":0.05779813992231696,
+     "N158":0.06403669027221157,
+     "N159":0.1276497179127205,
+     "N16":0.004834354118382968,
+     "N160":0.08193941890531123,
+     "N161":0.007213308665536131,
+     "N162":0.02027007157675669,
+     "N163":0.06292723806972365,
+     "N164":0.04281039773900524,
+     "N165":0.008506837571650695,
+     "N166":0.009756553700598298,
+     "N167":0.04655325103837456,
+     "N168":0.05459130672925834,
+     "N169":0.1980950414579565,
+     "N17":0.5919409572140237,
+     "N170":0.1494856762096736,
+     "N171":0.0411477486182673,
+     "N172":0.008227512591554241,
+     "N173":0.07657101432394434,
+     "N174":0.05431172346972105,
+     "N175":0.01085090073479968,
+     "N176":0.06690348024382622,
+     "N177":0.07365252734034426,
+     "N178":0.08103999642399941,
+     "N179":0.03775559229308342,
+     "N18":0.1371388440470084,
+     "N180":0.07894446003971881,
+     "N181":0.04182669229187695,
+     "N182":0.02631668105499032,
+     "N183":0.01736259035993883,
+     "N184":0.009167960966045685,
+     "N185":0.0009801488756579272,
+     "N186":0.01433995919597384,
+     "N187":0.06197382724876239,
+     "N188":0.1492681117774574,
+     "N189":0.1608577160817728,
+     "N19":0.001521574467335385,
+     "N190":0.1152812405142726,
+     "N191":0.01113645704789342,
+     "N192":0.01866950603264055,
+     "N193":0.0631964301291527,
+     "N194":0.04888767273740472,
+     "N195":0.06495392544546283,
+     "N196":0.1000280351592015,
+     "N197":0.008075866790230873,
+     "N198":0.01066531313903909,
+     "N199":0.0205403521804741,
+     "N2":0.01170940886662735,
+     "N20":0.0001433569929124969,
+     "N200":0.3440683858288841,
+     "N201":0.06976064118270182,
+     "N202":0.02092231090553588,
+     "N203":0.1312588692560121,
+     "N204":0.05593410869406327,
+     "N205":0.08920943141395575,
+     "N206":0.04724540096797453,
+     "N207":0.01900219177306188,
+     "N208":0.108076994560953,
+     "N209":0.07169518001554179,
+     "N21":0.06719878706141347,
+     "N210":0.02711072148294712,
+     "N211":0.1304370928104923,
+     "N212":0.03757158009696349,
+     "N213":0.018484917407881,
+     "N214":0.130785441698223,
+     "N215":0.009414701391561406,
+     "N216":0.03382356936000988,
+     "N217":0.0838225293772617,
+     "N218":0.04344492513427268,
+     "N219":0.03736295737771348,
+     "N22":0.02874539510618592,
+     "N220":0.01987237181599242,
+     "N221":0.004891359293268044,
+     "N222":0.008698070242687646,
+     "N223":0.007487010620316943,
+     "N224":0.1080854134445944,
+     "N225":0.06083305152853219,
+     "N226":0.01374074258220938,
+     "N227":0.02270317880920478,
+     "N228":0.02257298035385679,
+     "N229":0.01999526609507501,
+     "N23":0.2634399151682335,
+     "N230":0.01655893172487082,
+     "N231":0.01497332292843875,
+     "N232":0.03523404740435723,
+     "N233":0.003389726866727959,
+     "N234":0.07096216696284313,
+     "N235":0.006724428759811764,
+     "N236":0.05037484920858307,
+     "N237":0.05202018496647319,
+     "N238":0.1375813740942,
+     "N239":0.001887280246336632,
+     "N24":0.3356742434016733,
+     "N240":0.06020145960282602,
+     "N241":0.03306567121173565,
+     "N242":0.01738977356514435,
+     "N243":0.2010105142982278,
+     "N244":0.007041809909684941,
+     "N245":0.07049079848613431,
+     "N246":0.06618318192287634,
+     "N247":0.003835450129464087,
+     "N248":0.1193108917169924,
+     "N249":0.1868467636344257,
+     "N25":0.1421651021065327,
+     "N250":0.002699311491283059,
+     "N251":0.0605506576233258,
+     "N252":0.04873417688794953,
+     "N26":0.02501933757806839,
+     "N27":0.07854459803483795,
+     "N28":0.2701549912284152,
+     "N29":0.1619418447163998,
+     "N3":0.07514499157459385,
+     "N30":0.07185510561849272,
+     "N31":0.005573383861213641,
+     "N32":0.02918146288510012,
+     "N33":0.07164509033056411,
+     "N34":0.4372306142152123,
+     "N35":0.01652416870483783,
+     "N36":0.1424032054270898,
+     "N37":0.03700389371094539,
+     "N38":0.01596097790717717,
+     "N39":0.006383894584447043,
+     "N4":0.01907652522167396,
+     "N40":0.1417523771692257,
+     "N41":0.03544744027825555,
+     "N42":0.003505986779219375,
+     "N43":0.06932369657417792,
+     "N44":0.02674769387491396,
+     "N45":0.00170361814164509,
+     "N46":0.1067838513322712,
+     "N47":0.2269247627869168,
+     "N48":0.1177548878549683,
+     "N49":0.03082740279782658,
+     "N5":0.0355271930875331,
+     "N50":0.04918122146636864,
+     "N51":0.02364224302855243,
+     "N52":0.001705540425715966,
+     "N53":0.003470790937503762,
+     "N54":0.08031671871262329,
+     "N55":0.03979264097845667,
+     "N56":0.05939205206277681,
+     "N57":0.07319142856695092,
+     "N58":0.04100678762742387,
+     "N59":0.1389816692182327,
+     "N6":0.02726198241912729,
+     "N60":0.1160928555537899,
+     "N61":0.0003145614070269495,
+     "N62":0.07003356079884114,
+     "N63":0.03106046225890935,
+     "N64":0.004843117909554002,
+     "N65":0.01306792594760782,
+     "N66":0.01193958607972607,
+     "N67":0.1637717192831714,
+     "N68":0.06599154430015304,
+     "N69":0.06867825212675718,
+     "N7":0.06142709726448099,
+     "N70":0.04602791782347537,
+     "N71":0.06088700536054871,
+     "N72":0.190454014277059,
+     "N73":0.03621551491914725,
+     "N74":0.0244129112175811,
+     "N75":0.0497443204541566,
+     "N76":1.20538114287804e-05,
+     "N77":0.004559143850903302,
+     "N78":0.04201521981352921,
+     "N79":0.1661262134306636,
+     "N8":0.04275205408237058,
+     "N80":0.009410162301891531,
+     "N81":0.0003728700662479513,
+     "N82":0.04071075558367668,
+     "N83":0.01373711016497238,
+     "N84":0.02220272576979369,
+     "N85":0.05370871996425202,
+     "N86":0.04685866653085832,
+     "N87":0.1959987768403704,
+     "N88":0.1188528050467611,
+     "N89":0.2081526633167528,
+     "N9":0.02715768552444448,
+     "N90":0.03299730834110265,
+     "N91":0.03290227665855525,
+     "N92":0.08536614441266613,
+     "N93":0.002920748890317013,
+     "N94":0.001083773704842031,
+     "N95":0.03290185946128545,
+     "N96":0.1312453208730802,
+     "N97":0.1102974960164016,
+     "N98":0.1237258548946865,
+     "N99":0.06400070847877889
+    },
+   "file":"/Users/sergei/Dropbox/Work/FEL-contrast/datasets/omnibus-multi/sims.2.nwk",
+   "meta":{
+    },
+   "model_list":    {
+{"GROUP_0", "GROUP_1", "GROUP_2", "GROUP_3"} 
+    },
+   "model_map":{
+     "N0":"GROUP_0",
+     "N1":"GROUP_1",
+     "N10":"GROUP_3",
+     "N100":"GROUP_2",
+     "N101":"GROUP_0",
+     "N102":"GROUP_3",
+     "N103":"GROUP_3",
+     "N104":"GROUP_1",
+     "N105":"GROUP_0",
+     "N106":"GROUP_0",
+     "N107":"GROUP_0",
+     "N108":"GROUP_3",
+     "N109":"GROUP_3",
+     "N11":"GROUP_0",
+     "N110":"GROUP_0",
+     "N111":"GROUP_0",
+     "N112":"GROUP_1",
+     "N113":"GROUP_0",
+     "N114":"GROUP_3",
+     "N115":"GROUP_3",
+     "N116":"GROUP_3",
+     "N117":"GROUP_0",
+     "N118":"GROUP_0",
+     "N119":"GROUP_2",
+     "N12":"GROUP_3",
+     "N120":"GROUP_1",
+     "N121":"GROUP_2",
+     "N122":"GROUP_2",
+     "N123":"GROUP_2",
+     "N124":"GROUP_3",
+     "N125":"GROUP_1",
+     "N126":"GROUP_1",
+     "N127":"GROUP_1",
+     "N128":"GROUP_1",
+     "N129":"GROUP_2",
+     "N13":"GROUP_0",
+     "N130":"GROUP_2",
+     "N131":"GROUP_3",
+     "N132":"GROUP_2",
+     "N133":"GROUP_1",
+     "N134":"GROUP_0",
+     "N135":"GROUP_2",
+     "N136":"GROUP_3",
+     "N137":"GROUP_1",
+     "N138":"GROUP_3",
+     "N139":"GROUP_2",
+     "N14":"GROUP_2",
+     "N140":"GROUP_2",
+     "N141":"GROUP_2",
+     "N142":"GROUP_3",
+     "N143":"GROUP_3",
+     "N144":"GROUP_2",
+     "N145":"GROUP_2",
+     "N146":"GROUP_2",
+     "N147":"GROUP_0",
+     "N148":"GROUP_0",
+     "N149":"GROUP_2",
+     "N15":"GROUP_2",
+     "N150":"GROUP_2",
+     "N151":"GROUP_2",
+     "N152":"GROUP_0",
+     "N153":"GROUP_1",
+     "N154":"GROUP_0",
+     "N155":"GROUP_2",
+     "N156":"GROUP_3",
+     "N157":"GROUP_3",
+     "N158":"GROUP_3",
+     "N159":"GROUP_1",
+     "N16":"GROUP_3",
+     "N160":"GROUP_3",
+     "N161":"GROUP_3",
+     "N162":"GROUP_3",
+     "N163":"GROUP_0",
+     "N164":"GROUP_2",
+     "N165":"GROUP_1",
+     "N166":"GROUP_3",
+     "N167":"GROUP_3",
+     "N168":"GROUP_3",
+     "N169":"GROUP_0",
+     "N17":"GROUP_3",
+     "N170":"GROUP_0",
+     "N171":"GROUP_1",
+     "N172":"GROUP_1",
+     "N173":"GROUP_3",
+     "N174":"GROUP_1",
+     "N175":"GROUP_2",
+     "N176":"GROUP_3",
+     "N177":"GROUP_0",
+     "N178":"GROUP_3",
+     "N179":"GROUP_3",
+     "N18":"GROUP_1",
+     "N180":"GROUP_2",
+     "N181":"GROUP_0",
+     "N182":"GROUP_0",
+     "N183":"GROUP_0",
+     "N184":"GROUP_0",
+     "N185":"GROUP_3",
+     "N186":"GROUP_0",
+     "N187":"GROUP_2",
+     "N188":"GROUP_2",
+     "N189":"GROUP_0",
+     "N19":"GROUP_1",
+     "N190":"GROUP_2",
+     "N191":"GROUP_0",
+     "N192":"GROUP_1",
+     "N193":"GROUP_3",
+     "N194":"GROUP_3",
+     "N195":"GROUP_1",
+     "N196":"GROUP_3",
+     "N197":"GROUP_0",
+     "N198":"GROUP_1",
+     "N199":"GROUP_0",
+     "N2":"GROUP_1",
+     "N20":"GROUP_0",
+     "N200":"GROUP_1",
+     "N201":"GROUP_0",
+     "N202":"GROUP_1",
+     "N203":"GROUP_2",
+     "N204":"GROUP_3",
+     "N205":"GROUP_2",
+     "N206":"GROUP_0",
+     "N207":"GROUP_1",
+     "N208":"GROUP_3",
+     "N209":"GROUP_0",
+     "N21":"GROUP_0",
+     "N210":"GROUP_1",
+     "N211":"GROUP_3",
+     "N212":"GROUP_3",
+     "N213":"GROUP_1",
+     "N214":"GROUP_3",
+     "N215":"GROUP_0",
+     "N216":"GROUP_3",
+     "N217":"GROUP_1",
+     "N218":"GROUP_3",
+     "N219":"GROUP_0",
+     "N22":"GROUP_3",
+     "N220":"GROUP_3",
+     "N221":"GROUP_1",
+     "N222":"GROUP_3",
+     "N223":"GROUP_3",
+     "N224":"GROUP_0",
+     "N225":"GROUP_3",
+     "N226":"GROUP_1",
+     "N227":"GROUP_3",
+     "N228":"GROUP_2",
+     "N229":"GROUP_3",
+     "N23":"GROUP_3",
+     "N230":"GROUP_0",
+     "N231":"GROUP_0",
+     "N232":"GROUP_0",
+     "N233":"GROUP_3",
+     "N234":"GROUP_1",
+     "N235":"GROUP_2",
+     "N236":"GROUP_1",
+     "N237":"GROUP_0",
+     "N238":"GROUP_1",
+     "N239":"GROUP_0",
+     "N24":"GROUP_1",
+     "N240":"GROUP_3",
+     "N241":"GROUP_3",
+     "N242":"GROUP_3",
+     "N243":"GROUP_0",
+     "N244":"GROUP_3",
+     "N245":"GROUP_1",
+     "N246":"GROUP_1",
+     "N247":"GROUP_3",
+     "N248":"GROUP_0",
+     "N249":"GROUP_2",
+     "N25":"GROUP_1",
+     "N250":"GROUP_3",
+     "N251":"GROUP_3",
+     "N252":"GROUP_1",
+     "N26":"GROUP_2",
+     "N27":"GROUP_2",
+     "N28":"GROUP_1",
+     "N29":"GROUP_1",
+     "N3":"GROUP_3",
+     "N30":"GROUP_3",
+     "N31":"GROUP_3",
+     "N32":"GROUP_2",
+     "N33":"GROUP_3",
+     "N34":"GROUP_2",
+     "N35":"GROUP_2",
+     "N36":"GROUP_0",
+     "N37":"GROUP_0",
+     "N38":"GROUP_2",
+     "N39":"GROUP_3",
+     "N4":"GROUP_1",
+     "N40":"GROUP_3",
+     "N41":"GROUP_2",
+     "N42":"GROUP_0",
+     "N43":"GROUP_0",
+     "N44":"GROUP_1",
+     "N45":"GROUP_2",
+     "N46":"GROUP_2",
+     "N47":"GROUP_2",
+     "N48":"GROUP_3",
+     "N49":"GROUP_0",
+     "N5":"GROUP_2",
+     "N50":"GROUP_2",
+     "N51":"GROUP_3",
+     "N52":"GROUP_3",
+     "N53":"GROUP_2",
+     "N54":"GROUP_1",
+     "N55":"GROUP_3",
+     "N56":"GROUP_1",
+     "N57":"GROUP_1",
+     "N58":"GROUP_3",
+     "N59":"GROUP_3",
+     "N6":"GROUP_1",
+     "N60":"GROUP_0",
+     "N61":"GROUP_1",
+     "N62":"GROUP_3",
+     "N63":"GROUP_1",
+     "N64":"GROUP_3",
+     "N65":"GROUP_3",
+     "N66":"GROUP_3",
+     "N67":"GROUP_3",
+     "N68":"GROUP_3",
+     "N69":"GROUP_3",
+     "N7":"GROUP_0",
+     "N70":"GROUP_1",
+     "N71":"GROUP_1",
+     "N72":"GROUP_0",
+     "N73":"GROUP_2",
+     "N74":"GROUP_2",
+     "N75":"GROUP_2",
+     "N76":"GROUP_1",
+     "N77":"GROUP_2",
+     "N78":"GROUP_3",
+     "N79":"GROUP_3",
+     "N8":"GROUP_2",
+     "N80":"GROUP_1",
+     "N81":"GROUP_1",
+     "N82":"GROUP_3",
+     "N83":"GROUP_0",
+     "N84":"GROUP_2",
+     "N85":"GROUP_0",
+     "N86":"GROUP_1",
+     "N87":"GROUP_1",
+     "N88":"GROUP_1",
+     "N89":"GROUP_1",
+     "N9":"GROUP_2",
+     "N90":"GROUP_3",
+     "N91":"GROUP_3",
+     "N92":"GROUP_2",
+     "N93":"GROUP_1",
+     "N94":"GROUP_1",
+     "N95":"GROUP_2",
+     "N96":"GROUP_3",
+     "N97":"GROUP_3",
+     "N98":"GROUP_3",
+     "N99":"GROUP_3"
+    },
+   "partitioned":{
+     "N0":"leaf",
+     "N1":"leaf",
+     "N10":"leaf",
+     "N100":"leaf",
+     "N101":"leaf",
+     "N102":"leaf",
+     "N103":"leaf",
+     "N104":"leaf",
+     "N105":"leaf",
+     "N106":"leaf",
+     "N107":"leaf",
+     "N108":"leaf",
+     "N109":"leaf",
+     "N11":"leaf",
+     "N110":"leaf",
+     "N111":"leaf",
+     "N112":"leaf",
+     "N113":"leaf",
+     "N114":"leaf",
+     "N115":"leaf",
+     "N116":"leaf",
+     "N117":"leaf",
+     "N118":"leaf",
+     "N119":"leaf",
+     "N12":"leaf",
+     "N120":"leaf",
+     "N121":"leaf",
+     "N122":"leaf",
+     "N123":"leaf",
+     "N124":"leaf",
+     "N125":"leaf",
+     "N126":"leaf",
+     "N127":"leaf",
+     "N128":"internal",
+     "N129":"internal",
+     "N13":"leaf",
+     "N130":"internal",
+     "N131":"internal",
+     "N132":"internal",
+     "N133":"internal",
+     "N134":"internal",
+     "N135":"internal",
+     "N136":"internal",
+     "N137":"internal",
+     "N138":"internal",
+     "N139":"internal",
+     "N14":"leaf",
+     "N140":"internal",
+     "N141":"internal",
+     "N142":"internal",
+     "N143":"internal",
+     "N144":"internal",
+     "N145":"internal",
+     "N146":"internal",
+     "N147":"internal",
+     "N148":"internal",
+     "N149":"internal",
+     "N15":"leaf",
+     "N150":"internal",
+     "N151":"internal",
+     "N152":"internal",
+     "N153":"internal",
+     "N154":"internal",
+     "N155":"internal",
+     "N156":"internal",
+     "N157":"internal",
+     "N158":"internal",
+     "N159":"internal",
+     "N16":"leaf",
+     "N160":"internal",
+     "N161":"internal",
+     "N162":"internal",
+     "N163":"internal",
+     "N164":"internal",
+     "N165":"internal",
+     "N166":"internal",
+     "N167":"internal",
+     "N168":"internal",
+     "N169":"internal",
+     "N17":"leaf",
+     "N170":"internal",
+     "N171":"internal",
+     "N172":"internal",
+     "N173":"internal",
+     "N174":"internal",
+     "N175":"internal",
+     "N176":"internal",
+     "N177":"internal",
+     "N178":"internal",
+     "N179":"internal",
+     "N18":"leaf",
+     "N180":"internal",
+     "N181":"internal",
+     "N182":"internal",
+     "N183":"internal",
+     "N184":"internal",
+     "N185":"internal",
+     "N186":"internal",
+     "N187":"internal",
+     "N188":"internal",
+     "N189":"internal",
+     "N19":"leaf",
+     "N190":"internal",
+     "N191":"internal",
+     "N192":"internal",
+     "N193":"internal",
+     "N194":"internal",
+     "N195":"internal",
+     "N196":"internal",
+     "N197":"internal",
+     "N198":"internal",
+     "N199":"internal",
+     "N2":"leaf",
+     "N20":"leaf",
+     "N200":"internal",
+     "N201":"internal",
+     "N202":"internal",
+     "N203":"internal",
+     "N204":"internal",
+     "N205":"internal",
+     "N206":"internal",
+     "N207":"internal",
+     "N208":"internal",
+     "N209":"internal",
+     "N21":"leaf",
+     "N210":"internal",
+     "N211":"internal",
+     "N212":"internal",
+     "N213":"internal",
+     "N214":"internal",
+     "N215":"internal",
+     "N216":"internal",
+     "N217":"internal",
+     "N218":"internal",
+     "N219":"internal",
+     "N22":"leaf",
+     "N220":"internal",
+     "N221":"internal",
+     "N222":"internal",
+     "N223":"internal",
+     "N224":"internal",
+     "N225":"internal",
+     "N226":"internal",
+     "N227":"internal",
+     "N228":"internal",
+     "N229":"internal",
+     "N23":"leaf",
+     "N230":"internal",
+     "N231":"internal",
+     "N232":"internal",
+     "N233":"internal",
+     "N234":"internal",
+     "N235":"internal",
+     "N236":"internal",
+     "N237":"internal",
+     "N238":"internal",
+     "N239":"internal",
+     "N24":"leaf",
+     "N240":"internal",
+     "N241":"internal",
+     "N242":"internal",
+     "N243":"internal",
+     "N244":"internal",
+     "N245":"internal",
+     "N246":"internal",
+     "N247":"internal",
+     "N248":"internal",
+     "N249":"internal",
+     "N25":"leaf",
+     "N250":"internal",
+     "N251":"internal",
+     "N252":"internal",
+     "N26":"leaf",
+     "N27":"leaf",
+     "N28":"leaf",
+     "N29":"leaf",
+     "N3":"leaf",
+     "N30":"leaf",
+     "N31":"leaf",
+     "N32":"leaf",
+     "N33":"leaf",
+     "N34":"leaf",
+     "N35":"leaf",
+     "N36":"leaf",
+     "N37":"leaf",
+     "N38":"leaf",
+     "N39":"leaf",
+     "N4":"leaf",
+     "N40":"leaf",
+     "N41":"leaf",
+     "N42":"leaf",
+     "N43":"leaf",
+     "N44":"leaf",
+     "N45":"leaf",
+     "N46":"leaf",
+     "N47":"leaf",
+     "N48":"leaf",
+     "N49":"leaf",
+     "N5":"leaf",
+     "N50":"leaf",
+     "N51":"leaf",
+     "N52":"leaf",
+     "N53":"leaf",
+     "N54":"leaf",
+     "N55":"leaf",
+     "N56":"leaf",
+     "N57":"leaf",
+     "N58":"leaf",
+     "N59":"leaf",
+     "N6":"leaf",
+     "N60":"leaf",
+     "N61":"leaf",
+     "N62":"leaf",
+     "N63":"leaf",
+     "N64":"leaf",
+     "N65":"leaf",
+     "N66":"leaf",
+     "N67":"leaf",
+     "N68":"leaf",
+     "N69":"leaf",
+     "N7":"leaf",
+     "N70":"leaf",
+     "N71":"leaf",
+     "N72":"leaf",
+     "N73":"leaf",
+     "N74":"leaf",
+     "N75":"leaf",
+     "N76":"leaf",
+     "N77":"leaf",
+     "N78":"leaf",
+     "N79":"leaf",
+     "N8":"leaf",
+     "N80":"leaf",
+     "N81":"leaf",
+     "N82":"leaf",
+     "N83":"leaf",
+     "N84":"leaf",
+     "N85":"leaf",
+     "N86":"leaf",
+     "N87":"leaf",
+     "N88":"leaf",
+     "N89":"leaf",
+     "N9":"leaf",
+     "N90":"leaf",
+     "N91":"leaf",
+     "N92":"leaf",
+     "N93":"leaf",
+     "N94":"leaf",
+     "N95":"leaf",
+     "N96":"leaf",
+     "N97":"leaf",
+     "N98":"leaf",
+     "N99":"leaf"
+    },
+   "rooted":0,
+   "string":"((((((N64,N65)N160,(N66,N67)N161)N208,((N68,N69)N162,(N70,N71)N163)N209)N232,(((N72,N73)N164,(N74,N75)N165)N210,((N76,N77)N166,(N78,N79)N167)N211)N233)N244,((((N80,N81)N168,(N82,N83)N169)N212,((N84,N85)N170,(N86,N87)N171)N213)N234,(((N88,N89)N172,(N90,N91)N173)N214,((N92,N93)N174,(N94,N95)N175)N215)N235)N245)N250,(((((N96,N97)N176,(N98,N99)N177)N216,((N100,N101)N178,(N102,N103)N179)N217)N236,(((N104,N105)N180,(N106,N107)N181)N218,((N108,N109)N182,(N110,N111)N183)N219)N237)N246,((((N112,N113)N184,(N114,N115)N185)N220,((N116,N117)N186,(N118,N119)N187)N221)N238,(((N120,N121)N188,(N122,N123)N189)N222,((N124,N125)N190,(N126,N127)N191)N223)N239)N247)N251,((((((N0,N1)N128,(N2,N3)N129)N192,((N4,N5)N130,(N6,N7)N131)N193)N224,(((N8,N9)N132,(N10,N11)N133)N194,((N12,N13)N134,(N14,N15)N135)N195)N225)N240,((((N16,N17)N136,(N18,N19)N137)N196,((N20,N21)N138,(N22,N23)N139)N197)N226,(((N24,N25)N140,(N26,N27)N141)N198,((N28,N29)N142,(N30,N31)N143)N199)N227)N241)N248,(((((N32,N33)N144,(N34,N35)N145)N200,((N36,N37)N146,(N38,N39)N147)N201)N228,(((N40,N41)N148,(N42,N43)N149)N202,((N44,N45)N150,(N46,N47)N151)N203)N229)N242,((((N48,N49)N152,(N50,N51)N153)N204,((N52,N53)N154,(N54,N55)N155)N205)N230,(((N56,N57)N156,(N58,N59)N157)N206,((N60,N61)N158,(N62,N63)N159)N207)N231)N243)N249)N252)",
+   "string_with_lengths":"((((((N64:0.004843117909554002,N65:0.01306792594760782)N160:0.08193941890531123,(N66:0.01193958607972607,N67:0.1637717192831714)N161:0.007213308665536131)N208:0.108076994560953,((N68:0.06599154430015304,N69:0.06867825212675718)N162:0.02027007157675669,(N70:0.04602791782347537,N71:0.06088700536054871)N163:0.06292723806972365)N209:0.07169518001554179)N232:0.03523404740435723,(((N72:0.190454014277059,N73:0.03621551491914725)N164:0.04281039773900524,(N74:0.0244129112175811,N75:0.0497443204541566)N165:0.008506837571650695)N210:0.02711072148294712,((N76:1.20538114287804e-05,N77:0.004559143850903302)N166:0.009756553700598298,(N78:0.04201521981352921,N79:0.1661262134306636)N167:0.04655325103837456)N211:0.1304370928104923)N233:0.003389726866727959)N244:0.007041809909684941,((((N80:0.009410162301891531,N81:0.0003728700662479513)N168:0.05459130672925834,(N82:0.04071075558367668,N83:0.01373711016497238)N169:0.1980950414579565)N212:0.03757158009696349,((N84:0.02220272576979369,N85:0.05370871996425202)N170:0.1494856762096736,(N86:0.04685866653085832,N87:0.1959987768403704)N171:0.0411477486182673)N213:0.018484917407881)N234:0.07096216696284313,(((N88:0.1188528050467611,N89:0.2081526633167528)N172:0.008227512591554241,(N90:0.03299730834110265,N91:0.03290227665855525)N173:0.07657101432394434)N214:0.130785441698223,((N92:0.08536614441266613,N93:0.002920748890317013)N174:0.05431172346972105,(N94:0.001083773704842031,N95:0.03290185946128545)N175:0.01085090073479968)N215:0.009414701391561406)N235:0.006724428759811764)N245:0.07049079848613431)N250:0.002699311491283059,(((((N96:0.1312453208730802,N97:0.1102974960164016)N176:0.06690348024382622,(N98:0.1237258548946865,N99:0.06400070847877889)N177:0.07365252734034426)N216:0.03382356936000988,((N100:0.02637117614728905,N101:0.2104936165456779)N178:0.08103999642399941,(N102:0.0008601933354981771,N103:0.03400159563790971)N179:0.03775559229308342)N217:0.0838225293772617)N236:0.05037484920858307,(((N104:0.1546461778550587,N105:0.1018001697736045)N180:0.07894446003971881,(N106:0.1177371901384842,N107:0.02921571333721174)N181:0.04182669229187695)N218:0.04344492513427268,((N108:0.04083072416841539,N109:0.01873706877165549)N182:0.02631668105499032,(N110:0.09214769082757215,N111:0.1145335066831368)N183:0.01736259035993883)N219:0.03736295737771348)N237:0.05202018496647319)N246:0.06618318192287634,((((N112:0.06369460668907995,N113:0.2238535272990603)N184:0.009167960966045685,(N114:0.01027698834352408,N115:0.05866976971796626)N185:0.0009801488756579272)N220:0.01987237181599242,((N116:0.08824373132898453,N117:0.01185140621393285)N186:0.01433995919597384,(N118:0.1051294631653653,N119:0.06564124970318068)N187:0.06197382724876239)N221:0.004891359293268044)N238:0.1375813740942,(((N120:0.07472897714113573,N121:0.1059559008682543)N188:0.1492681117774574,(N122:0.1060245971060431,N123:0.03630636869471324)N189:0.1608577160817728)N222:0.008698070242687646,((N124:0.1696489762781981,N125:0.01463538706861805)N190:0.1152812405142726,(N126:0.007954097746210993,N127:0.1222441842380369)N191:0.01113645704789342)N223:0.007487010620316943)N239:0.001887280246336632)N247:0.003835450129464087)N251:0.0605506576233258,((((((N0:0.03898386461986917,N1:0.06346104873603868)N128:0.1020923745285104,(N2:0.01170940886662735,N3:0.07514499157459385)N129:0.006974761065867576)N192:0.01866950603264055,((N4:0.01907652522167396,N5:0.0355271930875331)N130:0.01634610398566723,(N6:0.02726198241912729,N7:0.06142709726448099)N131:0.02474066758033024)N193:0.0631964301291527)N224:0.1080854134445944,(((N8:0.04275205408237058,N9:0.02715768552444448)N132:0.05180793506334019,(N10:0.06395038438088183,N11:0.04264529769328344)N133:0.0001883299439811365)N194:0.04888767273740472,((N12:0.1047072710323968,N13:0.01989641832508998)N134:0.07949210559809315,(N14:0.05810552056173692,N15:0.03203420582778962)N135:0.09843410356332349)N195:0.06495392544546283)N225:0.06083305152853219)N240:0.06020145960282602,((((N16:0.004834354118382968,N17:0.5919409572140237)N136:0.008073921876394954,(N18:0.1371388440470084,N19:0.001521574467335385)N137:0.06292153490014098)N196:0.1000280351592015,((N20:0.0001433569929124969,N21:0.06719878706141347)N138:0.05634710857288729,(N22:0.02874539510618592,N23:0.2634399151682335)N139:0.1601809389372782)N197:0.008075866790230873)N226:0.01374074258220938,(((N24:0.3356742434016733,N25:0.1421651021065327)N140:0.02969097610396508,(N26:0.02501933757806839,N27:0.07854459803483795)N141:0.01515009078003099)N198:0.01066531313903909,((N28:0.2701549912284152,N29:0.1619418447163998)N142:0.04659382662655503,(N30:0.07185510561849272,N31:0.005573383861213641)N143:0.02612655091041662)N199:0.0205403521804741)N227:0.02270317880920478)N241:0.03306567121173565)N248:0.1193108917169924,(((((N32:0.02918146288510012,N33:0.07164509033056411)N144:0.03638277833337493,(N34:0.4372306142152123,N35:0.01652416870483783)N145:0.07455212158698125)N200:0.3440683858288841,((N36:0.1424032054270898,N37:0.03700389371094539)N146:0.01306576579397238,(N38:0.01596097790717717,N39:0.006383894584447043)N147:0.06013762205671355)N201:0.06976064118270182)N228:0.02257298035385679,(((N40:0.1417523771692257,N41:0.03544744027825555)N148:0.002143809990412314,(N42:0.003505986779219375,N43:0.06932369657417792)N149:0.06481356121752323)N202:0.02092231090553588,((N44:0.02674769387491396,N45:0.00170361814164509)N150:0.1596307949177924,(N46:0.1067838513322712,N47:0.2269247627869168)N151:0.04104738857902587)N203:0.1312588692560121)N229:0.01999526609507501)N242:0.01738977356514435,((((N48:0.1177548878549683,N49:0.03082740279782658)N152:0.01920896790631221,(N50:0.04918122146636864,N51:0.02364224302855243)N153:0.166288188764327)N204:0.05593410869406327,((N52:0.001705540425715966,N53:0.003470790937503762)N154:0.06980796571148586,(N54:0.08031671871262329,N55:0.03979264097845667)N155:0.03278630547549861)N205:0.08920943141395575)N230:0.01655893172487082,(((N56:0.05939205206277681,N57:0.07319142856695092)N156:0.1148618575490526,(N58:0.04100678762742387,N59:0.1389816692182327)N157:0.05779813992231696)N206:0.04724540096797453,((N60:0.1160928555537899,N61:0.0003145614070269495)N158:0.06403669027221157,(N62:0.07003356079884114,N63:0.03106046225890935)N159:0.1276497179127205)N207:0.01900219177306188)N231:0.01497332292843875)N243:0.2010105142982278)N249:0.1868467636344257)N252:0.04873417688794953)"
+  }
+}
