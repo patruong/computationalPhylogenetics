@@ -122,13 +122,34 @@ for i in 1:num_sites
     con_lik_matrix[:, i] .= exp.(log_con_lik_matrix[:, i] .- site_scalers[i])
 end
 
+##########################
+# one iteration of loop ##
+##########################
+
+row_ind = 1
+cp = codon_param_vec[row_ind]
+#for (row_ind, cp) in enumerate(codon_param_vec)
+alpha = cp[1]
+omegas = cp[2:end]
+tagged_models = N_Omegas_model_func(tags, omegas, alpha, GTRmat, F3x4_freqs, code)
 
 
+felsenstein!(tree, tagged_models)
+#This combine!() is needed because the current site_LLs function applies to a partition
+#And after a felsenstein pass, you don't have the eq freqs factored in.
+#We could make a version of log_likelihood() that returns the partitions instead of just the sum
+combine!.(tree.message, tree.parent_message)
+log_con_lik_matrix[row_ind, :] .= MolecularEvolution.site_LLs(tree.message[1]) #Check that these grab the scaling constants as well!
+#end
 
+########## END
+
+tagged_models
 
 
 ############
 ## Comment 
+# It's something in tagged_models = N_omegas_model_func
 # Understand how the grid is built... we only need to compute one axis #
 # alpha (12) x omega1 (12) x omega2 (12) x omega_background (7)
 # 12*12*12*7 = 12096
@@ -138,4 +159,7 @@ end
 # so this is what we don't need to compute everything for... 
 # 
 # Look at the structure as we build up codon_param_vec
-
+#
+# Understand how alpha and beta related to felsenstein
+#
+#

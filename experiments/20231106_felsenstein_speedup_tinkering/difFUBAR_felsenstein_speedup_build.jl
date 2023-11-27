@@ -1,8 +1,6 @@
 using Revise # for code dev
 # dev ~/git/CodonMolecularEvolution.jl/ # in package environment
 # dev ~/git/MolecularEvolution.jl/ # in package environment
-
-
 using MolecularEvolution #read_fasta
 using CodonMolecularEvolution
 using Compose
@@ -11,14 +9,14 @@ using Cairo
 
 
 cd("/home/ptruong/git/computationalPhylogenetics/experiments/20231106_felsenstein_speedup_tinkering")
-analysis_name = "nobackground/Ace2"
-seqnames, seqs = read_fasta("data/Ace2_tiny_test.fasta");
-treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree("data/Ace2_no_background.nex")
+analysis_name = "Ace2"
+seqnames, seqs = read_fasta("data/Ace2_reallytiny.fasta");
+treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree("data/ACE2_reallytiny_tagged.nex")
 #df, results = difFUBAR(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=false, verbosity=0)
 
 #difFUBAR(seqnames, seqs, treestring, tags, tag_colors, outpath; pos_thresh=0.95, iters=2500, verbosity=1, exports=true, code=MolecularEvolution.universal_code)
 #analysis_name = outpath
-@time tree, tags, tag_colors, analysis_name = CodonMolecularEvolution.difFUBAR_init(analysis_name, treestring, tags, tag_colors, exports=false, verbosity=1)
+@time tree, tags, tag_colors, analysis_name = CodonMolecularEvolution.difFUBAR_init(analysis_name, treestring, tags, tag_colors, exports=true, verbosity=1)
 @time code = MolecularEvolution.universal_code
 
 seqnames
@@ -128,16 +126,20 @@ tagged_models = N_Omegas_model_func(tags, omegas, alpha, GTRmat, F3x4_freqs, cod
 felsenstein!(tree)
 
 img = tree_draw(tree)
-img |> PDF("imgout.pdf", 10cm, 10cm)
+img |> PDF("imgout_.pdf", 10cm, 10cm)
 
 
 
 ##### 
 # Tabulate
 ########
+using DataFrames
+using CSV
 
 verbosity = 1
 pos_thresh = 0.95
+exports = true
+
 function collapse_counts(param_vec, count_vec; cases=nothing)
     if isnothing(cases)
         cases = sort(union(param_vec))
@@ -203,7 +205,7 @@ end
 
 #Exporting site data
 df = DataFrame()
-df[!, "Codon Sites"] = [1:num_sites;]
+df[!, "Codon Sites"] = [1:(num_sites+1);]
 df[!, "P(ω1 > ω2)"] = [d[1] for d in detections]
 df[!, "P(ω2 > ω1)"] = [d[2] for d in detections]
 df[!, "P(ω1 > 1)"] = [d[3] for d in detections]
@@ -221,6 +223,10 @@ sites = [1:num_sites;]
 if isnothing(sites_to_plot)
     sites_to_plot = detected_sites
 end
+
+
+@time alloc_grid, theta = CodonMolecularEvolution.difFUBAR_sample(con_lik_matrix, 2500, verbosity=1)
+@time df = CodonMolecularEvolution.difFUBAR_tabulate(analysis_name, 0.95, alloc_grid, codon_param_vec, alphagrid, omegagrid, tag_colors; verbosity=1, exports=true)
 
 
 
