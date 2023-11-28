@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti     2660
+total                            2661
+
+Select jobs to execute...
+
+[Mon Nov 27 21:39:06 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.211.replicate.3
+    jobid: 1058
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.211.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=211, iRep=3
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

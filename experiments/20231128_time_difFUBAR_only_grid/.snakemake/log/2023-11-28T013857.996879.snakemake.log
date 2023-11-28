@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 7
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti        1
+total                               2
+
+Select jobs to execute...
+
+[Tue Nov 28 01:38:58 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim_test
+    jobid: 1
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim_test
+    wildcards: iPos_thresh=0.95
+    resources: tmpdir=/tmp
+
+ImproperOutputException in rule run_difFUBAR_on_omnibusMulti in file /home/ptruong/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/Snakefile, line 16:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule run_difFUBAR_on_omnibusMulti:
+    output: output/omnibus/pos_thresh_0.95/sim_test
+    wildcards: iPos_thresh=0.95
+    affected files:
+        output/omnibus/pos_thresh_0.95/sim_test
+Removing output files of failed job run_difFUBAR_on_omnibusMulti since they might be corrupted:
+output/omnibus/pos_thresh_0.95/sim_test
+Skipped removing non-empty directory output/omnibus/pos_thresh_0.95/sim_test
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-28T013857.996879.snakemake.log

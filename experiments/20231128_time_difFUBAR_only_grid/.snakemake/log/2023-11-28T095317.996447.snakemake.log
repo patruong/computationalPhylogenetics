@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 7
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti        1
+total                               2
+
+Select jobs to execute...
+
+[Tue Nov 28 09:53:18 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim_test
+    jobid: 1
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim_test
+    wildcards: iPos_thresh=0.95
+    resources: tmpdir=/tmp
+
+[Tue Nov 28 09:57:22 2023]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Tue Nov 28 09:57:22 2023]
+localrule compute:
+    input: output/omnibus/pos_thresh_0.95/sim_test
+    jobid: 0
+    reason: Input files updated by another job: output/omnibus/pos_thresh_0.95/sim_test
+    resources: tmpdir=/tmp
+
+[Tue Nov 28 09:57:22 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-11-28T095317.996447.snakemake.log
