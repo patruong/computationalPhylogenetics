@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 39
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti        1
+total                               2
+
+Select jobs to execute...
+
+[Tue Nov 28 16:55:52 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer_only_grid.jl
+    output: output/omnibus/only_grid/pos_thresh_0.95/sim.345.replicate.1
+    jobid: 1
+    reason: Missing output files: output/omnibus/only_grid/pos_thresh_0.95/sim.345.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=345, iRep=1
+    resources: tmpdir=/tmp
+
+[Tue Nov 28 16:57:59 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 1
+    input: run_difFUBAR_timer_only_grid.jl
+    output: output/omnibus/only_grid/pos_thresh_0.95/sim.345.replicate.1
+    shell:
+        julia run_difFUBAR_timer_only_grid.jl -f ../../contrastFEL_data/omnibus//sims.345.settings.replicate.1 -t ../../contrastFEL_data/omnibus//sims.345.nwk -o output/omnibus/only_grid/pos_thresh_0.95/sim.345.replicate.1             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-28T165552.764648.snakemake.log

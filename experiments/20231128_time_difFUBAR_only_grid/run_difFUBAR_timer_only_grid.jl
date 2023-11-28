@@ -95,7 +95,7 @@ function main()
         cleaned_tree = remove_tags_from_newick_tree(treestring, remove_tags)
 
 
-        @time tree, tags, tag_colors, analysis_name = CodonMolecularEvolution.difFUBAR_init(analysis_name, treestring, analysis_tags, analysis_tag_colors, exports=false, verbosity=1)
+        @time tree, tags, tag_colors, analysis_name = CodonMolecularEvolution.difFUBAR_init(analysis_name, treestring, analysis_tags, analysis_tag_colors, exports=true, verbosity=1)
         @time code = MolecularEvolution.universal_code
         @time tree, alpha, beta, GTRmat, F3x4_freqs, eq_freqs = CodonMolecularEvolution.difFUBAR_global_fit(seqnames, seqs, tree, CodonMolecularEvolution.generate_tag_stripper(tags), code, verbosity=1) #60s
 
@@ -142,6 +142,11 @@ function main()
 
     # output times
     output_filename = parsed_args["output_dir"] * "/time_results.csv"
+
+    # make path if it does not exist
+    if !isdir(parsed_args["output_dir"])
+        mkdir(parsed_args["output_dir"])
+    end
 
     CSV.write(output_filename, df)
 
