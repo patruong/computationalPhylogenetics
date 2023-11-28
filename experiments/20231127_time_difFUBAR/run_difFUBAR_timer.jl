@@ -4,6 +4,9 @@ Pkg.activate("environments/CodonMolecularEvolution")
 # dev ~/git/CodonMolecularEvolution.jl/ # in package environment
 using MolecularEvolution, FASTX, CodonMolecularEvolution
 using ArgParse
+using CSV
+using DataFrames
+
 
 # setwd
 #cd("/home/ptruong/git/computationalPhylogenetics/")
@@ -106,11 +109,26 @@ function main()
         times = [parsed_args["output_dir"], tag_pos, time_difFUBAR, time_difFUBAR_prune_max, time_difFUBAR_prune_patrick]
         push!(time_rows, times)
     end
+
+    print(time_rows)
+    data = time_rows
+    # Convert to DataFrame
+    df = DataFrame(output_dir=[data[1][1]],
+        tag_pos=[data[1][2]],
+        time_difFUBAR=[data[1][3]],
+        time_difFUBAR_prune_max=[data[1][4]],
+        time_difFUBAR_prune_patrick=[data[1][5]])
+
+    # Print DataFrame
+
     # output times
     output_filename = parsed_args["output_dir"] * "/time_results.csv"
-    open(output_filename, "w") do f
-        writecsv(f, time_rows)
-    end
+
+    CSV.write(output_filename, df)
+
+    #open(output_filename, "w") do f
+    #    CSV.write(f, time_rows)
+    #end
 end
 
 main()
