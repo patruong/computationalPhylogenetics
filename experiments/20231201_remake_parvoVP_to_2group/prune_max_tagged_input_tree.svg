@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.2"
+     width="150mm" height="34mm" viewBox="0 0 150 34"
+     stroke="none"
+     fill="#000000"
+     stroke-width="0.3"
+     font-size="3.88"
+>
+<defs>
+  <marker id="arrow" markerWidth="15" markerHeight="7" refX="5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L15,3.5 L0,7 z" stroke="context-stroke" fill="context-stroke"/>
+  </marker>
+</defs>
+<g stroke-opacity="1" stroke-width="0.3" id="img-b9741edd-1">
+  <g transform="translate(13.2,1.55)" stroke="#847A4E">
+    <path fill="none" d="M-9.45,0 L9.45,0 " class="primitive"/>
+  </g>
+  <g transform="translate(41.25,32.45)" stroke="#956651">
+    <path fill="none" d="M-37.5,0 L37.5,0 " class="primitive"/>
+  </g>
+  <g transform="translate(3.75,17)" stroke="#000000">
+    <path fill="none" d="M0,0 L0,0 " class="primitive"/>
+  </g>
+  <g transform="translate(3.75,17)" stroke="#000000">
+    <path fill="none" d="M0,15.45 L0,-15.45 " class="primitive"/>
+  </g>
+</g>
+<g fill-opacity="1" id="img-b9741edd-2">
+  <g transform="translate(22.64,1.55)" fill="#847A4E">
+    <circle cx="0" cy="0" r="0.75" class="primitive"/>
+  </g>
+  <g transform="translate(78.75,32.45)" fill="#956651">
+    <circle cx="0" cy="0" r="0.75" class="primitive"/>
+  </g>
+  <g transform="translate(3.75,17)" fill="#000000">
+    <circle cx="0" cy="0" r="0.75" class="primitive"/>
+  </g>
+</g>
+<g stroke-opacity="1" fill-opacity="1" font-size="1.41" stroke-width="0.1" id="img-b9741edd-3">
+  <g transform="translate(24.52,1.55)" stroke="#000000">
+    <g class="primitive">
+      <text dy="0.35em"></text>
+    </g>
+  </g>
+  <g transform="translate(80.62,32.45)" stroke="#000000">
+    <g class="primitive">
+      <text dy="0.35em"></text>
+    </g>
+  </g>
+  <g transform="translate(5.63,17)" stroke="#000000">
+    <g class="primitive">
+      <text dy="0.35em"></text>
+    </g>
+  </g>
+</g>
+</svg>
