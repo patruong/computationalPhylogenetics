@@ -4,7 +4,6 @@ using Revise # for code dev
 using MolecularEvolution #read_fasta
 using CodonMolecularEvolution
 using Compose
-using Cairo
 using ArgParse
 using CSV
 using DataFrames

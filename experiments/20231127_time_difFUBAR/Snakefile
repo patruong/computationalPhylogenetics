@@ -1,7 +1,8 @@
 # Define the parameters as variables
 POS_THRESH = [0.95]
 #REPLICATE_omnibusMulti = [1, 2, 3, 4, 5]
-#SIMULATION_omnibusMulti = [i for i in range(532)] 
+REPLICATE_omnibusMulti = [1]
+SIMULATION_omnibusMulti = [i for i in range(532)] 
 
 #REPLICATE_omnibusMulti = [1]
 #SIMULATION_omnibusMulti = [1] 
@@ -26,7 +27,7 @@ rule run_difFUBAR_on_omnibusMulti:
         iters = 2500,
         pos_thresh = "{iPos_thresh}"
     output:
-        output_dir = "output/omnibus/pos_thresh_{iPos_thresh}/sim.{iSim}.replicate.{iRep}"
+        output_dir = directory("output/omnibus/pos_thresh_{iPos_thresh}/sim.{iSim}.replicate.{iRep}")
         #output_dir = "output/omnibus/pos_thresh_{iPos_thresh}/sim_test"
         #output_dir = directory("output/omnibus/pos_thresh_{iPos_thresh}/sim_test")  # Use directory() to indicate it's a directory
     shell:

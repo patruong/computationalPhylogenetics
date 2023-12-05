@@ -1,0 +1,548 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 39
+Rules claiming more threads will be scaled down.
+Job stats:
+job                             count
+----------------------------  -------
+compute                             1
+run_difFUBAR_on_omnibusMulti     2660
+total                            2661
+
+Select jobs to execute...
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.1
+    jobid: 136
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.27.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=27, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.166.replicate.5
+    jobid: 835
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.166.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=166, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.164.replicate.1
+    jobid: 821
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.164.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=164, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.18.replicate.4
+    jobid: 94
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.18.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=18, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.1
+    jobid: 66
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.13.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=13, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.292.replicate.4
+    jobid: 1464
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.292.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=292, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.295.replicate.3
+    jobid: 1478
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.295.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=295, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.2
+    jobid: 2122
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.424.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=424, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.429.replicate.5
+    jobid: 2150
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.429.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=429, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.2
+    jobid: 67
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.13.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=13, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.18.replicate.5
+    jobid: 95
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.18.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=18, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.2
+    jobid: 137
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.27.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=27, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.164.replicate.2
+    jobid: 822
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.164.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=164, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.167.replicate.1
+    jobid: 836
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.167.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=167, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.292.replicate.5
+    jobid: 1465
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.292.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=292, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.295.replicate.4
+    jobid: 1479
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.295.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=295, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.3
+    jobid: 2123
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.424.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=424, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.430.replicate.1
+    jobid: 2151
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.430.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=430, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.3
+    jobid: 68
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.13.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=13, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:24 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.19.replicate.1
+    jobid: 96
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.19.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=19, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.3
+    jobid: 138
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.27.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=27, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.164.replicate.3
+    jobid: 823
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.164.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=164, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.167.replicate.2
+    jobid: 837
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.167.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=167, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.293.replicate.1
+    jobid: 1466
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.293.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=293, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.295.replicate.5
+    jobid: 1480
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.295.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=295, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.4
+    jobid: 2124
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.424.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=424, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.430.replicate.2
+    jobid: 2152
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.430.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=430, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.4
+    jobid: 69
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.13.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=13, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.19.replicate.2
+    jobid: 97
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.19.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=19, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.4
+    jobid: 139
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.27.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=27, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.164.replicate.4
+    jobid: 824
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.164.replicate.4
+    wildcards: iPos_thresh=0.95, iSim=164, iRep=4
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.167.replicate.3
+    jobid: 838
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.167.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=167, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.293.replicate.2
+    jobid: 1467
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.293.replicate.2
+    wildcards: iPos_thresh=0.95, iSim=293, iRep=2
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.296.replicate.1
+    jobid: 1481
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.296.replicate.1
+    wildcards: iPos_thresh=0.95, iSim=296, iRep=1
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.5
+    jobid: 2125
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.424.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=424, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.430.replicate.3
+    jobid: 2153
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.430.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=430, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.5
+    jobid: 70
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.13.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=13, iRep=5
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.19.replicate.3
+    jobid: 98
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.19.replicate.3
+    wildcards: iPos_thresh=0.95, iSim=19, iRep=3
+    resources: tmpdir=/tmp
+
+
+[Mon Nov 27 21:37:25 2023]
+rule run_difFUBAR_on_omnibusMulti:
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.5
+    jobid: 140
+    reason: Missing output files: output/omnibus/pos_thresh_0.95/sim.27.replicate.5
+    wildcards: iPos_thresh=0.95, iSim=27, iRep=5
+    resources: tmpdir=/tmp
+
+[Mon Nov 27 21:37:36 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 1464
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.292.replicate.4
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.292.settings.replicate.4 -t ../../contrastFEL_data/omnibus/sims.292.nwk -o output/omnibus/pos_thresh_0.95/sim.292.replicate.4             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 835
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.166.replicate.5
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.166.settings.replicate.5 -t ../../contrastFEL_data/omnibus/sims.166.nwk -o output/omnibus/pos_thresh_0.95/sim.166.replicate.5             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2122
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.2
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.424.settings.replicate.2 -t ../../contrastFEL_data/omnibus/sims.424.nwk -o output/omnibus/pos_thresh_0.95/sim.424.replicate.2             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2150
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.429.replicate.5
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.429.settings.replicate.5 -t ../../contrastFEL_data/omnibus/sims.429.nwk -o output/omnibus/pos_thresh_0.95/sim.429.replicate.5             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2151
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.430.replicate.1
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.430.settings.replicate.1 -t ../../contrastFEL_data/omnibus/sims.430.nwk -o output/omnibus/pos_thresh_0.95/sim.430.replicate.1             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2153
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.430.replicate.3
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.430.settings.replicate.3 -t ../../contrastFEL_data/omnibus/sims.430.nwk -o output/omnibus/pos_thresh_0.95/sim.430.replicate.3             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 70
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.5
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.13.settings.replicate.5 -t ../../contrastFEL_data/omnibus/sims.13.nwk -o output/omnibus/pos_thresh_0.95/sim.13.replicate.5             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 2123
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.424.replicate.3
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.424.settings.replicate.3 -t ../../contrastFEL_data/omnibus/sims.424.nwk -o output/omnibus/pos_thresh_0.95/sim.424.replicate.3             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:37 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 837
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.167.replicate.2
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.167.settings.replicate.2 -t ../../contrastFEL_data/omnibus/sims.167.nwk -o output/omnibus/pos_thresh_0.95/sim.167.replicate.2             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 823
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.164.replicate.3
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.164.settings.replicate.3 -t ../../contrastFEL_data/omnibus/sims.164.nwk -o output/omnibus/pos_thresh_0.95/sim.164.replicate.3             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 1480
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.295.replicate.5
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.295.settings.replicate.5 -t ../../contrastFEL_data/omnibus/sims.295.nwk -o output/omnibus/pos_thresh_0.95/sim.295.replicate.5             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 97
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.19.replicate.2
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.19.settings.replicate.2 -t ../../contrastFEL_data/omnibus/sims.19.nwk -o output/omnibus/pos_thresh_0.95/sim.19.replicate.2             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 66
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.13.replicate.1
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.13.settings.replicate.1 -t ../../contrastFEL_data/omnibus/sims.13.nwk -o output/omnibus/pos_thresh_0.95/sim.13.replicate.1             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 138
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.3
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.27.settings.replicate.3 -t ../../contrastFEL_data/omnibus/sims.27.nwk -o output/omnibus/pos_thresh_0.95/sim.27.replicate.3             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Nov 27 21:37:38 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 94
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.18.replicate.4
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.18.settings.replicate.4 -t ../../contrastFEL_data/omnibus/sims.18.nwk -o output/omnibus/pos_thresh_0.95/sim.18.replicate.4             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Terminating processes on user request, this might take some time.
+[Mon Nov 27 21:37:39 2023]
+Error in rule run_difFUBAR_on_omnibusMulti:
+    jobid: 137
+    input: run_difFUBAR_timer.jl
+    output: output/omnibus/pos_thresh_0.95/sim.27.replicate.2
+    shell:
+        julia run_difFUBAR_timer.jl -f ../../contrastFEL_data/omnibus/sims.27.settings.replicate.2 -t ../../contrastFEL_data/omnibus/sims.27.nwk -o output/omnibus/pos_thresh_0.95/sim.27.replicate.2             --verbosity 1 --exports true --iters 2500             --pos_thresh 0.95
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Cancelling snakemake on user request.

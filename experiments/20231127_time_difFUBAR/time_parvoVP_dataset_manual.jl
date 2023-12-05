@@ -12,13 +12,14 @@ using DataFrames
 
 
 # Parvo data
-cd("/home/ptruong/git/computationalPhylogenetics/experiments/20231106_felsenstein_speedup_tinkering")
+cd("/home/ptruong/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR")
 file_dir = "/home/ptruong/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/data/" # original data
 fasta = file_dir * "ParvoVP.fasta"
 tree_file = file_dir * "ParvoVP.nex"
 analysis_name = "ParvoVP"
 seqnames, seqs = read_fasta(fasta);
 treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree(tree_file)
+
 
 time_difFUBAR_init = @elapsed tree, tags, tag_colors, analysis_name = CodonMolecularEvolution.difFUBAR_init(analysis_name, treestring, tags, tag_colors, exports=true, verbosity=1)
 
@@ -52,3 +53,33 @@ df = DataFrame(output_dir=[data[1][1]],
 output_filename = parsed_args["output_dir"] * "/time_results.csv"
 
 CSV.write(output_filename, df)
+
+################
+# output trees #
+################
+
+function model_ind(str::String, tags::Vector{String})
+    ind = length(tags) + 1
+    for (i, t) in enumerate(tags)
+        if occursin(t, str)
+            ind = i
+        end
+    end
+    return ind
+end
+
+strip_tags_from_name = CodonMolecularEvolution.generate_tag_stripper(tags)
+
+function print_tree(tree, name)
+    #Replace with Phylo.jl based plot?
+    color_dict = Dict(zip(getnodelist(tree), [tag_colors[model_ind(n.name, tags)] for n in getnodelist(tree)]))
+    label_dict = Dict(zip(getnodelist(tree), [strip_tags_from_name(n.name) for n in getnodelist(tree)]))
+    img = tree_draw(tree, canvas_height=(3 + length(getleaflist(tree)) / 5)cm,
+        draw_labels=true, dot_color_dict=color_dict,
+        line_color_dict=color_dict, line_width=0.3, min_dot_size=0.01,
+        nodelabel_dict=label_dict)
+    img |> SVG(analysis_name * name, 15cm, (3 + length(getleaflist(tree)) / 5)cm)
+end
+
+print_tree(tree_prune_1, "_prune_1.svg")
+print_tree(tree_prune_2, "_prune_2.svg")
