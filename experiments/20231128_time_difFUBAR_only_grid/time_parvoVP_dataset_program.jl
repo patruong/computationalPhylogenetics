@@ -65,6 +65,9 @@ function main()
     tree_no_prune = deepcopy(tree)
     tree_prune_1 = deepcopy(tree)
     tree_prune_2 = deepcopy(tree)
+    tree_prune_3 = deepcopy(tree)
+    tree_prune_4 = deepcopy(tree)
+    tree_prune_5 = deepcopy(tree)
 
 
     times = []
@@ -72,21 +75,34 @@ function main()
     time_difFUBAR_grid = @elapsed con_lik_matrix_no_prune, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid(tree_no_prune, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 50s
     push!(times, time_difFUBAR_grid)
 
-    time_difFUBAR_grid_prune_max = @elapsed con_lik_matrix_prune_1, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_1(tree_prune_1, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 28s
-    push!(times, time_difFUBAR_grid_prune_max)
+    #time_difFUBAR_grid_prune_max = @elapsed con_lik_matrix_prune_1, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_1(tree_prune_1, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 28s
+    #push!(times, time_difFUBAR_grid_prune_max)
 
-    time_difFUBAR_grid_prune_patrick = @elapsed con_lik_matrix_prune_2, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_2(tree_prune_2, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
-    push!(times, time_difFUBAR_grid_prune_patrick)
+    #time_difFUBAR_grid_prune_patrick = @elapsed con_lik_matrix_prune_2, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_2(tree_prune_2, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
+    #push!(times, time_difFUBAR_grid_prune_patrick)
+
+    #time_difFUBAR_grid_prune_patrick_max = @elapsed con_lik_matrix_prune_3, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_1(tree_prune_1, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 28s
+    #push!(times, time_difFUBAR_grid_prune_patrick_max)
+
+    #time_difFUBAR_grid_prune_patrick_max_child = @elapsed con_lik_matrix_prune_4, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_2(tree_prune_2, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
+    #push!(times, time_difFUBAR_grid_prune_patrick_max_child)
+
+    #time_difFUBAR_prune_final = @elapsed con_lik_matrix_prune_5, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_13(tree_prune_1, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 28s
+    #push!(times, time_difFUBAR_prune_final)
 
     data = times
-    # Convert to DataFrame
-    df = DataFrame(output_dir=[data[1][1]],
-        time_difFUBAR_grid=[data[1][2]],
-        time_difFUBAR_grid_prune_max=[data[1][3]],
-        time_difFUBAR_grid_prune_patrick=[data[1][4]])
 
+    println(data)
+    # Convert to DataFrame
+    #df = DataFrame(time_difFUBAR_grid=[data[1][1]],
+    #    time_difFUBAR_grid_prune_max=[data[1][2]],
+    #    time_difFUBAR_grid_prune_patrick=[data[1][3]],
+    #    time_difFUBAR_grid_prune_patrick_max=[data[1][4]],
+    #    time_difFUBAR_grid_prune_patrick_max_child=[data[1][5]],
+    #    time_difFUBAR_prune_final=[data[1][6]])
+    df = DataFrame(time_difFUBAR_grid=[data[1][1]])
     # output times
-    output_filename = parsed_args["output_dir"] * "/" * "ParvoVP" * "/time_results.csv"
+    output_filename = parsed_args["output_dir"] * "/" * "ParvoVP" * "/time_results_no_prune.csv"
 
     CSV.write(output_filename, df)
 end

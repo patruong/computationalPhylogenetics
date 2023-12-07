@@ -1,9 +1,9 @@
 # Define the parameters as variables
 POS_THRESH = [0.95]
 #REPLICATE_omnibusMulti = [1, 2, 3, 4, 5]
-REPLICATE_omnibusMulti = [1]
-#SIMULATION_omnibusMulti = [i for i in range(532)] 
-SIMULATION_omnibusMulti = [345]
+REPLICATE_omnibusMulti = [1, 2, 3, 4, 5]
+SIMULATION_omnibusMulti = [i for i in range(532)] 
+#SIMULATION_omnibusMulti = [345]
 
 #REPLICATE_omnibusMulti = [1]
 #SIMULATION_omnibusMulti = [1] 

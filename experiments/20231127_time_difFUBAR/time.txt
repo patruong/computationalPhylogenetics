@@ -1,0 +1,85 @@
+se) patrick@swizzle:~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR$ ./run_timer_parvoVP_dataset.sh                                                                                
+Parsed args:
+  treefile  =>  data/ParvoVP.nex
+  FASTAfile  =>  data/ParvoVP.fasta
+  output_dir  =>  output
+  verbosity  =>  1
+  exports  =>  true
+  iters  =>  2500
+  pos_thresh  =>  0.95
+working dir:/home/patrick/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: output/ParvoVP_tagged_input_tree.svg.                                            
+  0.000001 seconds
+Step 2: Optimizing global codon model parameters.
+154.565157 seconds (9.12 M allocations: 45.161 GiB, 0.54% gc time, 2.01% compilation time)
+Step 3: Calculating grid of 12096-by-750 conditional likelihood values (the slowest step). Currently on:
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0%                                                        
+
+difFUBAR_grid time
+Any[2783.891416943]
+
+
+difFUBAR_grid_prune_max time
+Any[2783.891416943]
+
+Step 3: Calculating grid of 12096-by-750 conditional likelihood values (the slowest step). Currently on:
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0%                                                        
+
+difFUBAR_grid_prune_patrick time
+Any[2783.891416943, 29.782931778]
+
+
+### Run 2
+
+
+se) patrick@swizzle:~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR$ ./run_timer_parvoVP_dataset.sh                                                                                
+Parsed args:
+  treefile  =>  data/ParvoVP.nex
+  FASTAfile  =>  data/ParvoVP.fasta
+  output_dir  =>  output
+  verbosity  =>  1
+  exports  =>  true
+  iters  =>  2500
+  pos_thresh  =>  0.95
+working dir:/home/patrick/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: output/ParvoVP_tagged_input_tree.svg.                                            
+  0.000001 seconds
+Step 2: Optimizing global codon model parameters.
+154.795712 seconds (9.09 M allocations: 45.159 GiB, 0.52% gc time, 2.01% compilation time)
+Run prune max
+Step 3: Calculating grid of 12096-by-750 conditional likelihood values (the slowest step). Currently on:                                                                                                  
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0%                                                        
+
+difFUBAR_grid_prune_max time
+Any[753.842906569]
+
+Run prune patrick
+Step 3: Calculating grid of 12096-by-750 conditional likelihood values (the slowest step). Currently on:                                                                                                  
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0%                                                        
+
+difFUBAR_grid_prune_patrick time
+Any[753.842906569, 30.087008412]
+
+IM FINISEHD
+
+ERROR: LoadError: BoundsError: attempt to access Float64 at index [2]
+Stacktrace:
+ [1] getindex(x::Float64, i::Int64)
+   @ Base ./number.jl:98
+ [2] main()
+   @ Main ~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/time_parvoVP_dataset_program.jl:97                                                                                          
+ [3] top-level scope
+   @ ~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/time_parvoVP_dataset_program.jl:109                                                                                              
+in expression starting at /home/patrick/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/time_parvoVP_dataset_program.jl:109 
+IM FINISEHD
+ERROR: LoadError: BoundsError: attempt to access Float64 at index [2]
+Stacktrace:
+ [1] getindex(x::Float64, i::Int64)
+   @ Base ./number.jl:98
+ [2] main()
+   @ Main ~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/time_parvoVP_dataset_program.jl:94                                                                                          
+ [3] top-level scope
+   @ ~/git/computationalPhylogenetics/experiments/20231127_time_difFUBAR/time_parvoVP_dataset_program.jl:106 
+
+
+
