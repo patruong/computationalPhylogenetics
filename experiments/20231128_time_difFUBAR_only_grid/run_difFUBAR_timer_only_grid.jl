@@ -103,6 +103,9 @@ function main()
         tree_no_prune = deepcopy(tree)
         tree_prune_1 = deepcopy(tree)
         tree_prune_2 = deepcopy(tree)
+        tree_prune_3 = deepcopy(tree)
+        tree_prune_4 = deepcopy(tree)
+        tree_prune_5 = deepcopy(tree)
 
         time_difFUBAR = @elapsed con_lik_matrix_no_prune, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid(tree_no_prune, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 50s
 
@@ -110,7 +113,15 @@ function main()
 
         time_difFUBAR_prune_patrick = @elapsed con_lik_matrix_prune_2, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_2(tree_prune_2, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
 
-        times = [parsed_args["output_dir"], tag_pos, time_difFUBAR, time_difFUBAR_prune_max, time_difFUBAR_prune_patrick]
+        time_difFUBAR_prune_patrick_max = @elapsed con_lik_matrix_prune_3, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_3(tree_prune_3, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
+
+        time_difFUBAR_prune_patrick_max_child = @elapsed con_lik_matrix_prune_4, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_pruned_4(tree_prune_4, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
+
+        time_difFUBAR_prune_final = @elapsed con_lik_matrix_prune_5, log_con_lik_matrix, codon_param_vec, alphagrid, omegagrid, param_kinds = CodonMolecularEvolution.difFUBAR_grid_final(tree_prune_5, tags, GTRmat, F3x4_freqs, code, verbosity=1, foreground_grid=6, background_grid=4) # 21s
+
+
+        times = [parsed_args["output_dir"], tag_pos, time_difFUBAR, time_difFUBAR_prune_max, time_difFUBAR_prune_patrick, time_difFUBAR_prune_patrick_max, time_difFUBAR_prune_patrick_max_child, time_difFUBAR_prune_final]
+
         push!(time_rows, times)
 
         #time_difFUBAR = @elapsed difFUBAR(seqnames, seqs, cleaned_tree, analysis_tags, analysis_tag_colors, analysis_name_no_prune;
@@ -125,8 +136,8 @@ function main()
         #    pos_thresh=parsed_args["pos_thresh"], iters=parsed_args["iters"], verbosity=parsed_args["verbosity"],
         #    exports=parsed_args["exports"], code=MolecularEvolution.universal_code)
 
-        times = [parsed_args["output_dir"], tag_pos, time_difFUBAR, time_difFUBAR_prune_max, time_difFUBAR_prune_patrick]
-        push!(time_rows, times)
+        #times = [parsed_args["output_dir"], tag_pos, time_difFUBAR, time_difFUBAR_prune_max, time_difFUBAR_prune_patrick]
+        #push!(time_rows, times)
     end
 
     print(time_rows)
@@ -136,7 +147,10 @@ function main()
         tag_pos=[data[1][2]],
         time_difFUBAR=[data[1][3]],
         time_difFUBAR_prune_max=[data[1][4]],
-        time_difFUBAR_prune_patrick=[data[1][5]])
+        time_difFUBAR_prune_patrick=[data[1][5]],
+        time_difFUBAR_prune_patrick_max=[data[1][6]],
+        time_difFUBAR_prune_patrick_max_child=[data[1][7]],
+        time_difFUBAR_prune_final=[data[1][8]])
 
     # Print DataFrame
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the command you want to run
-SNAKEMAKE_COMMAND="snakemake -c39 --rerun-incomplete"
+SNAKEMAKE_COMMAND="snakemake -c20 --rerun-incomplete"
 
 # Start an infinite loop
 while true; do
