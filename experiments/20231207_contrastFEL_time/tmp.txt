@@ -1,0 +1,85 @@
+
+Analysis Description
+--------------------
+FEL-contrast (Fixed Effects Likelihood) investigates whether or not
+selective pressures differ between two or more sets of branches at a
+site. Site-specific synonymous (alpha) and non-synonymous (beta, one per
+branch set) substitution rates are estimated and then beta rates are
+tested for equality at each site. LRT and permutation tests ar used to
+assess significance at each site, and FDR is applied alignment wide to
+call sites with different selective profiles
+
+- __Additional information__: http://www.hyphy.org/methods/other/fel-contrast/
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree; only single partition
+data are supported
+
+- __Citation__: Kosakovsky Pond SL, Frost SDW, Grossman Z, Gravenor MB, Richman DD,
+Leigh Brown AJ (2006) Adaptation to Different Human Populations by HIV-1
+Revealed by Codon-Based Analyses. PLoS Comput Biol 2(6): e62.
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.5
+
+
+>code –> Universal
+>Loaded a multiple sequence alignment with **100** sequences, **400** codons, and **1** partitions from `/home/patrick/git/computationalPhylogenetics/experiments/20231207_contrastFEL_time/data/sim/sim.replicate.1.nex`
+
+>branch-set –> G1
+
+>srv –> Yes
+
+>permutations –> Yes
+
+>Select nominal p-value threshold to use when testing for selection (FDR correction will be performed on all sites) (permissible range = [0,1], default value = 0.1): 
+>p-value –> 1.00
+
+>Select nominal the q-value threshold to use when testing for selection (FDR reporting) (permissible range = [0,1], default value = 0.2): 
+>q-value –> 1.00
+
+
+### Branches to use as the test set in the FEL-contrast analysis
+Selected 2 sets of branches to test
+
+* Selected 60 branches in group _G1_ : `TAX18, TAX7, Node2, TAX13, TAX75, Node7, TAX93, TAX52, Node11, TAX16, TAX14, Node14, Node10, Node6, TAX8, TAX44, Node19, TAX71, TAX15, Node23, TAX34, TAX2, TAX67, Node28, Node26, Node22, Node18, TAX92, TAX58, TAX46, Node35, TAX86, TAX74, Node38, Node34, Node32, TAX6, TAX64, TAX22, TAX83, Node46, Node44, Node42, TAX69, TAX51, TAX87, Node52, Node50, TAX97, TAX33, Node56, TAX88, TAX82, Node59, Node55, Node49, Node41, Node31, Node17, Node5`
+* 137 branches are in the background group : `TAX42, TAX10, TAX76, Node66, Node64, TAX80, TAX27, TAX35, Node73, TAX3, TAX72, Node76, Node72, Node70, TAX100, TAX37, Node80, TAX91, TAX23, TAX73, Node86, Node84, TAX38, TAX95, TAX29, Node92, Node90, TAX54, TAX99, Node96, TAX25, TAX49, Node100, TAX26, TAX5, TAX94, Node105, Node103, Node99, Node95, Node89, Node83, Node79, Node69, Node63, TAX21, TAX28, Node110, TAX62, TAX77, TAX59, TAX53, Node118, Node116, TAX78, TAX81, Node122, TAX98, TAX89, Node125, Node121, Node115, Node113, Node109, TAX4, TAX40, Node130, TAX31, TAX17, TAX48, TAX90, Node137, Node135, Node133, Node129, TAX19, TAX63, Node143, TAX79, TAX50, Node146, Node142, TAX60, TAX41, TAX56, TAX61, Node154, Node152, Node150, TAX9, TAX70, Node158, TAX47, TAX55, TAX43, Node163, Node161, Node157, Node149, Node141, TAX1, TAX20, TAX24, TAX84, TAX30, TAX65, TAX36, TAX68, Node179, Node177, Node175, Node173, Node171, Node169, Node167, TAX39, TAX85, Node183, TAX66, TAX96, Node187, TAX11, TAX45, Node191, TAX12, TAX32, TAX57, Node196, Node194, Node190, Node186, Node182, Node166, Node140, Node128, Node108, Node62`
+
+### **1** test will be performed at each site
+
+
+### Obtaining the global omega estimate based on relative GTR branch lengths and nucleotide substitution biases
+* Log(L) = -98958.03, AIC-c = 198344.36 (213 estimated parameters)
+* non-synonymous/synonymous rate ratio for *G1* = 9723.1296
+* non-synonymous/synonymous rate ratio for *background* = 10000.0000
+
+### Improving branch lengths, nucleotide substitution biases, and global dN/dS ratios under a full codon model
+* Log(L) = -92508.56
+* non-synonymous/synonymous rate ratio for *G1* =   1.3828
+* non-synonymous/synonymous rate ratio for *background* = 10000.0000
+
+### For partition 1 these sites are significant at p <=1
+
+| Codon  |     alpha      |             beta             |        substitutions         |                  test                  |LRT p-value|Permutation p-value|
+|:------:|:--------------:|:----------------------------:|:----------------------------:|:--------------------------------------:|:---------:|:-----------------:|
+|   1    |        0.536   |        1.186 -   6508.001    |              10              |                overall                 |  0.0000   |      0.0500       |
+|   2    |    10000.000   |        0.894 -   3038.892    |              27              |                overall                 |  0.0000   |      0.0500       |
+|   3    |     8536.288   |        1.447 -   1670.720    |              19              |                overall                 |  0.0000   |      0.0500       |
+|   4    |    10000.000   |        2.513 -   2470.750    |              24              |                overall                 |  0.0000   |      0.0500       |
+|   5    |    10000.000   |        0.778 -   2947.464    |              29              |                overall                 |  0.0000   |      0.0500       |
+|   6    |        0.415   |        1.811 -  10000.000    |              14              |                overall                 |  0.0000   |      0.0500       |
+|   7    |    10000.000   |        2.897 -   2334.118    |              19              |                overall                 |  0.0000   |      0.0500       |
+|   8    |     8424.904   |        1.289 -   2846.642    |              23              |                overall                 |  0.0000   |      0.0500       |
+|   9    |    10000.000   |        1.156 -   2139.673    |              19              |                overall                 |  0.0000   |      0.0500       |
+|   10   |     9212.456   |        1.300 -   3927.757    |              25              |                overall                 |  0.0000   |      0.1000       |
+|   11   |    10000.000   |        1.663 -   2701.809    |              12              |                overall                 |  0.0000   |      0.0500       |
+|   12   |        6.261   |        1.524 -      2.742    |              14              |                overall                 |  0.5054   |      1.0000       |
+|   13   |        0.874   |        1.446 -  10000.000    |              13              |                overall                 |  0.0000   |      0.0500       |
+|   14   |        0.616   |        4.193 -   5810.563    |              19              |                overall                 |  0.0000   |      0.1000       |
+|   15   |    10000.000   |        0.933 -   3032.916    |              15              |                overall                 |  0.0000   |      0.0500       |
+|   16   |    10000.000   |        2.749 -   1868.347    |              24              |                overall                 |  0.0000   |      0.0500       |
+|   17   |        0.554   |        1.825 -  10000.000    |              15              |                overall                 |  0.0000   |      0.0500       |
+|   18   |        6.245   |        1.023 -   5296.233    |              11              |                overall                 |  0.0000   |      0.0500       |
+|   19   |    10000.000   |        0.760 -   3296.859    |              29              |                overall                 |  0.0000   |      0.0500       |
