@@ -1,0 +1,59 @@
+Analysis Description
+--------------------
+Simulate codon data using the MG94 model of sequence evolution
+
+- __Requirements__: a phylogenetic tree with branch lengths and other annotations
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.1
+
+Random generator seed (0 to use default initialization) : seed: 0
+code: Universal
+/home/ptruong/git/computationalPhylogenetics/SimulateMG94/CD2.nwk
+CD2.nwk
+
+The number of codons per alignment (permissible range = [1,10000000], default value = 300, integer): sites: 400
+The number of replicate alignments to generate (permissible range = [1,10000000], default value = 1, integer): replicates: 1
+Use a specific root sequence to simulate from (overrides --sites) : root-seq: None
+Use the following file extension : extension: .nex
+Base frequencies specification : base-frequencies: HIV
+>Nucleotide frequencies used for simulator
+{
+{0.41, 0.34, 0.41} 
+{0.16, 0.2, 0.12} 
+{0.25, 0.17, 0.14} 
+{0.18, 0.28, 0.33} 
+}
+frequency-estimator: CF3x4
+Substitution model module : model: MG94
+Relative AC rate (permissible range = [0,1000], default value = 0.5): AC: 0.5
+Relative AT rate (permissible range = [0,1000], default value = 0.5): AT: 0.5
+Relative CG rate (permissible range = [0,1000], default value = 0.5): CG: 0.5
+Relative CT rate (permissible range = [0,1000], default value = 1): CT: 1.0
+Relative GT rate (permissible range = [0,1000], default value = 0.5): GT: 0.5
+Branch variation module : branch-variation: partitioned
+dN/dS ratio for branches Others (permissible range = [0,1000], default value = 1): omega-Others: 0.25
+dN/dS ratio for branches Primates (permissible range = [0,1000], default value = 1): omega-Primates: 1.5
+Site variation module : site-variation: constant
+Branch length statistics (per site)
+
+|     Metric     |     Value      |
+|:--------------:|:--------------:|
+|     Count      |    400.000     |
+|      Mean      |     1.572      |
+|     Median     |     1.572      |
+|      Min       |     1.572      |
+|      Max       |     1.572      |
+|      2.5%      |     1.572      |
+|     97.5%      |     1.572      |
+|      Sum       |    628.858     |
+|    Std.Dev     |     0.000      |
+|    Variance    |     0.000      |
+|      COV       |     0.000      |
+|    Skewness    |     1.000      |
+|    Kurtosis    |     1.000      |
+|    Sq. sum     |    1257.716    |
+|  Non-negative  |    400.000     |

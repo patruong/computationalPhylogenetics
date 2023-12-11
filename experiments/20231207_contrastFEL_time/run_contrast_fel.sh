@@ -12,5 +12,6 @@
 #(time hyphy contrast-fel --alignment data/ParvoVP.fasta --tree data/ParvoVP_modified_no_color.nex --branch-set FELINE --branch-set CANINE --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
 #(time hyphy contrast-fel --alignment data/ParvoVP.fasta --tree data/ParvoVP_modified_no_color.nex --branch-set FELINE --branch-set CANINE --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
 
-(time hyphy contrast-fel --alignment data/ParvoVP.fasta  --tree data/datamonkey_tree/tree.nex --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
+#(time hyphy contrast-fel --alignment data/ParvoVP.fasta  --tree data/datamonkey_tree/tree_tag.nwk --branch-set FELINE --branch-set CANINE --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
 
+(time hyphy contrast-fel --alignment ParvoVP_removed_duplicates.fasta  --tree data/datamonkey_tree/tree_tag.nwk --branch-set FELINE --branch-set CANINE --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt

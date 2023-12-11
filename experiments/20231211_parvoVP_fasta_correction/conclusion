@@ -1,0 +1,6 @@
+We have duplicate sequences but 371 unique names. 
+
+- We need to remove the duplicate sequences (take the first occuring sequence)
+- Relabel the fasta and send it to data-monkey to get a new tree
+- Fix the tree with my script.
+- Run contrast-FEL

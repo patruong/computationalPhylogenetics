@@ -1,3 +1,7 @@
 
-Error:The number of tree tips in 'BxvNFmav.tree_0'(320) is not equal to the number of sequences in the data filter associated with the tree (371).
-The number of tree tips in 'BxvNFmav.tree_0'(320) is not equal to the number of sequences in the data filter associated with the tree (371).
+Error:Unexpected node name, in the following string context #NEXUS
+b <ERROR HERE> egin trees;
+	tree tree_1 = [&R] 
+Unexpected node name, in the following string context #NEXUS
+b <ERROR HERE> egin trees;
+	tree tree_1 = [&R] 

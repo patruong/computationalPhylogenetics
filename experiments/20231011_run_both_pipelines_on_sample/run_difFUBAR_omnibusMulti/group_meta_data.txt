@@ -1,0 +1,21 @@
+Groups
+1 = {GROUP_3}
+Groups
+2 = {GROUP_1}
+Groups
+3 = {GROUP_0}
+Groups
+4 = {GROUP_2}
+
+Comparisons
+["{GROUP_3}", "{GROUP_1}"]
+Comparisons
+["{GROUP_3}", "{GROUP_0}"]
+Comparisons
+["{GROUP_3}", "{GROUP_2}"]
+Comparisons
+["{GROUP_1}", "{GROUP_0}"]
+Comparisons
+["{GROUP_1}", "{GROUP_2}"]
+Comparisons
+["{GROUP_0}", "{GROUP_2}"]
