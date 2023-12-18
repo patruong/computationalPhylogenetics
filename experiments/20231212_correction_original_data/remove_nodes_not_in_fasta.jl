@@ -94,6 +94,11 @@ result_string = replace(input_string, pattern => s -> "")
 result_string
 
 
+# write .nex tree for contrast-FEL run
 MolecularEvolution.write_nexus("ParvoVP_removed_duplicates.nex", tree)
 
-
+# write Newick tree for difFUBAR run
+nwk_string = MolecularEvolution.newick(tree)
+file = open("ParvoVP_removed_duplicates.nwk", "w")
+write(file, nwk_string)
+close(file)
