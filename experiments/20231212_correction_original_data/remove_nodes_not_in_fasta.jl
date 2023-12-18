@@ -79,6 +79,7 @@ for node in getleaflist(tree)
     print(specie)
     println(group)
     println(node.name)
+    node.name = specie * group
 end
 
 
