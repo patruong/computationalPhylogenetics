@@ -1,0 +1,37 @@
+Feline Panleukopenia
+https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=Feline%20panleukopenia%20virus,%20taxid:10786&utm_source=data-hub
+
+Canine ParvoVP
+https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=Canine%20parvovirus,%20taxid:10788&utm_source=nuccore&utm_medium=referral
+
+Feline viruses 1040
+Canine viruses 7118
+
+7118/1040 = 6.844230769230769 (virus ratio)
+We should keep this ratio when building the datasets
+
+In the supplied parvoVP form Ben we have 371 sequences so we can
+
+we can solve the equation system
+
+x+y = 371
+x/y = 7118/1040
+
+to maintain the ratio of feline to canine viruses. This gives us 
+
+x = 324
+y = 47
+
+So we have 3 dataset
+
+All data (1040 Feline, 7118 Canine)
+Big subset (200 Feline, 1360 Canine)
+Small subset (47 Feline, 324 Canine)
+
+We can continue after this by adding on the mink and other species in bens dataset
+
+
+Good article using contrast-FEL and describing how they processed the data
+https://www.nature.com/articles/s41467-022-30485-3#data-availability
+
+
