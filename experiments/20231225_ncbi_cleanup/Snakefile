@@ -1,0 +1,102 @@
+import os
+
+# input files
+fasta_file = ["canine_parvovirus.fasta","feline_panleukopenia.fasta"]
+
+# output directories
+output_dir = "output"
+fasta_dir = "fasta"
+alignment_dir = "alignment"
+tree_dir = "tree"
+
+# output files
+fasta_concat_output_file = "parvo_panleu.fasta"
+fasta_concat_transformed_output_file = fasta_concat_output_file[:-6] + "_trans.fasta"
+fasta_concat_transformed_tagged_output_file = fasta_concat_output_file[:-6] + "_trans_tagged.fasta"
+mafft_output_file = fasta_concat_transformed_tagged_output_file[:-6] + "_aligned.fasta"
+tree_output_file = mafft_output_file[:-6] + ".nwk"
+
+concat_fasta_output = os.path.join(output_dir, fasta_dir, fasta_concat_output_file)
+processed_fasta_output = os.path.join(output_dir, fasta_dir,fasta_concat_transformed_output_file)
+processed_fasta_tagged_output = os.path.join(output_dir, fasta_dir, fasta_concat_transformed_tagged_output_file)
+mafft_output = os.path.join(output_dir, alignment_dir, mafft_output_file)
+tree_output = os.path.join(output_dir, tree_dir, tree_output_file)
+
+# parameters
+## process_fasta, process_fasta_tagged
+group1_n = 324
+group2_n = 47
+
+
+# Create a rule to compute
+rule compute:
+    input:
+        expand(os.path.join(output_dir, "info.txt")),
+        expand(concat_fasta_output),
+        expand(processed_fasta_output),
+        expand(processed_fasta_tagged_output),
+        expand(mafft_output),
+        expand(tree_output)
+
+rule generate_info:
+    output:
+        os.path.join(output_dir, "info.txt")
+    shell:
+        """
+        echo "In default run use" > {output}
+        echo "" >> {output}
+        echo "--fasta_file 'parvo_panleu_trans.fasta'" >> {output}
+        echo "--nexus_file 'parvo_panleu_trans_tagged_fixed_aligned.nwk'" >> {output}
+        echo "" >> {output}
+        echo "in difFUBAR." >> {output}
+        """
+
+rule concate_fasta:
+    input:
+        files=fasta_file
+    output:
+        concat_fasta_output
+    shell:
+        "cat {input.files} > {output}"
+
+rule process_fasta:
+    input:
+        fasta_file = concat_fasta_output
+    params:
+        group1_n = group1_n,
+        group2_n = group2_n
+    output:
+        output = processed_fasta_output
+    shell:
+        "python process_fasta.py {input.fasta_file} --group1 Canine --group2 Feline --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output}"
+
+rule process_fasta_tagged:
+    input:
+        fasta_file = concat_fasta_output
+    params:
+        group1_n = group1_n,
+        group2_n = group2_n
+    output:
+        output = processed_fasta_tagged_output
+    shell:
+        "python process_fasta.py {input.fasta_file} --tagged --group1 Canine --group2 Feline --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output}"
+
+rule sequence_alignment_mafft:
+    input:
+        fasta_file = processed_fasta_tagged_output
+    output:
+        output = mafft_output
+    shell:
+        "mafft --auto {input.fasta_file} > {output.output}"
+
+rule build_tree:
+    input:
+        fasta_file = mafft_output
+    output:
+        output = tree_output
+    shell:
+        "fasttree -nt -gtr {input.fasta_file} > {output.output}"
+
+ 
+
+
