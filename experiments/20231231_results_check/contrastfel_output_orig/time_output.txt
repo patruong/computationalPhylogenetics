@@ -1,0 +1,1587 @@
+
+Analysis Description
+--------------------
+FEL-contrast (Fixed Effects Likelihood) investigates whether or not
+selective pressures differ between two or more sets of branches at a
+site. Site-specific synonymous (alpha) and non-synonymous (beta, one per
+branch set) substitution rates are estimated and then beta rates are
+tested for equality at each site. LRT and permutation tests ar used to
+assess significance at each site, and FDR is applied alignment wide to
+call sites with different selective profiles
+
+- __Additional information__: http://www.hyphy.org/methods/other/fel-contrast/
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree; only single partition
+data are supported
+
+- __Citation__: Kosakovsky Pond SL, Frost SDW, Grossman Z, Gravenor MB, Richman DD,
+Leigh Brown AJ (2006) Adaptation to Different Human Populations by HIV-1
+Revealed by Codon-Based Analyses. PLoS Comput Biol 2(6): e62.
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.5
+
+
+>code –> Universal
+
+>Loaded a multiple sequence alignment with **371** sequences, **750** codons, and **1** partitions from `/home/patrick/git/computationalPhylogenetics/experiments/20231229_contraste_fel_original_data_rerun/ParvoVP.fasta`
+
+>branch-set –> {
+ "0":"G1",
+ "1":"G2"
+}
+
+>srv –> Yes
+
+>permutations –> Yes
+
+>Select nominal p-value threshold to use when testing for selection (FDR correction will be performed on all sites) (permissible range = [0,1], default value = 0.1): 
+>p-value –> 1.00
+
+>Select nominal the q-value threshold to use when testing for selection (FDR reporting) (permissible range = [0,1], default value = 0.2): 
+>q-value –> 1.00
+
+
+### Branches to use as the test set in the FEL-contrast analysis
+Selected 3 sets of branches to test
+
+* Selected 81 branches in group _G1_ : `KP769859_1_Feline_panleukopenia_virus_isolate_MG13, KX434462_1_Feline_panleukopenia_virus_strain_FPV_I, MN127780_1_Feline_panleukopenia_virus_isolate_19R8, Node4, MN451652_1_Feline_panleukopenia_virus_isolate_BFPV, KX434461_1_Feline_panleukopenia_virus_strain_FPV_I, MT178243_1_Feline_panleukopenia_virus_isolate_SY_0, EF988660_1_Feline_panleukopenia_virus_strain_XJ_1, Node13, KP280068_1_Feline_panleukopenia_virus_isolate_HRB_, MG764510_1_Feline_panleukopenia_virus_isolate_FPV_, MZ357122_1_MAG_Feline_panleukopenia_virus_isolate, Node19, Node17, KX900570_1_Feline_panleukopenia_virus_isolate_HH_1, MW091487_1_Feline_panleukopenia_virus_isolate_Gian, MZ357119_1_MAG_Feline_panleukopenia_virus_isolate, Node25, MG764511_1_Feline_panleukopenia_virus_isolate_FPV_, KX685354_1_Feline_panleukopenia_virus_strain_HN_ZZ, Node28, Node24, Node22, Node16, Node12, Node10, Node8, MH165481_1_Feline_panleukopenia_virus_strain_FPV_B, MN127781_1_Feline_panleukopenia_virus_isolate_19R1, MH165482_1_Feline_panleukopenia_virus_strain_FPV_B, Node34, Node32, EU659112_1_Feline_panleukopenia_virus_isolate_FPV_, X55115_1_Feline_panleukopenia_virus_FPV_NS1_VP1, OM640096_1_Feline_panleukopenia_virus_strain_K1830, MN862745_1_Feline_panleukopenia_virus_isolate_FPV_, Node42, Node40, Node38, MF069446_1_Feline_panleukopenia_virus_strain_FPV_R, EU659115_1_Feline_panleukopenia_virus_isolate_FPV_, MZ357120_1_MAG_Feline_panleukopenia_virus_isolate, MN908257_1_Feline_panleukopenia_virus_isolate_MHS2, MW650831_1_Feline_panleukopenia_virus_isolate_FPV_, MW659466_1_Feline_panleukopenia_virus_strain_FPV_S, MW811187_1_Feline_panleukopenia_virus_strain_FPV_S, Node54, Node52, Node50, Node48, MZ362883_1_Feline_parvovirus_isolate_AP__Roseworth, EU659114_1_Feline_panleukopenia_virus_isolate_FPV_, EU659113_1_Feline_panleukopenia_virus_isolate_FPV_, Node62, MF069447_1_Feline_panleukopenia_virus_strain_FPV_R, EU659111_1_Feline_panleukopenia_virus_isolate_FVP_, M38246_1_Feline_panleukopenia_virus_NS_1_protein_a, Node68, Node66, MN862743_1_Feline_panleukopenia_virus_isolate_FPV_, MF069445_1_Feline_panleukopenia_virus_strain_FPV_R, Node72, MN862744_1_Feline_panleukopenia_virus_isolate_FPV_, MN862747_1_Feline_panleukopenia_virus_isolate_FPV_, MN862746_1_Feline_panleukopenia_virus_isolate_FPV_, MN862748_1_Feline_panleukopenia_virus_isolate_FPV_, MN862749_1_Feline_panleukopenia_virus_isolate_FPV_, Node81, Node79, Node77, Node75, Node71, Node65, Node61, Node59, Node47, Node45, Node37, Node31, Node7, Node3`
+* 19 branches are in the background group : `Node56, Node99, Node246, Node289, Node287, Node320, Node318, Node316, Node362, Node391, Node389, Node387, Node446, Node444, Node711, Node709, Node707, Node705, Node84`
+* Selected 639 branches in group _G2_ : `NC_001539_1_Canine_parvovirus_complete_genome, MW650832_1_Canine_parvovirus_isolate_NL_35_D_nonst, Node86, MN747143_1_Mink_enteritis_virus_strain_MEV_HB18_c, MN451655_1_Canine_parvovirus_isolate_CPV12_comple, MN451665_1_Canine_parvovirus_isolate_CPV50_comple, MN451664_1_Canine_parvovirus_isolate_CPV48_comple, Node94, Node92, EU659116_1_Canine_parvovirus_isolate_CPV_5_us_79_n, MN451695_1_Canine_parvovirus_isolate_RDPV124_comp, MN451693_1_Canine_parvovirus_isolate_RDPV122_comp, Node97, Node91, Node89, Node85, JN867618_1_Canine_parvovirus_isolate_CPV_Raccoon_W, JN867610_1_Canine_parvovirus_isolate_CPV_Raccoon_V, JN867611_1_Canine_parvovirus_isolate_CPV_Raccoon_K, MN451691_1_Canine_parvovirus_isolate_RACCPV1_comp, JN867612_1_Canine_parvovirus_isolate_CPV_Raccoon_T, Node110, Node108, Node106, JN867613_1_Canine_parvovirus_isolate_CPV_Raccoon_F, JN867614_1_Canine_parvovirus_isolate_CPV_Raccoon_V, JN867616_1_Canine_parvovirus_isolate_CPV_Raccoon_G, JN867617_1_Canine_parvovirus_isolate_CPV_Raccoon_3, JN867615_1_Canine_parvovirus_isolate_CPV_Raccoon_G, Node119, Node117, Node115, Node113, Node105, Node103, D26079_1_Canine_parvovirus_DNA_complete_genome, MG763189_1_Canine_parvovirus_isolate_CPV_L_comple, EU659118_1_Canine_parvovirus_isolate_CPV_13_us_81, Node125, Node123, MN451667_1_Canine_parvovirus_isolate_CPV58_comple, MN451656_1_Canine_parvovirus_isolate_CPV27_comple, Node131, MN451659_1_Canine_parvovirus_isolate_CPV31_comple, MN451670_1_Canine_parvovirus_isolate_CPV87_comple, OM640102_1_Canine_parvovirus_2_strain_LSD39_compl, Node136, Node134, Node130, MN451658_1_Canine_parvovirus_isolate_CPV30_comple, MN451661_1_Canine_parvovirus_isolate_CPV35_comple, Node140, MN451657_1_Canine_parvovirus_isolate_CPV29_comple, MN451669_1_Canine_parvovirus_isolate_CPV81_comple, OM640099_1_Canine_parvovirus_2_strain_KH18_comple, Node145, Node143, Node139, Node129, MN451673_1_Canine_parvovirus_isolate_CPV307_compl, AY742933_1_Canine_parvovirus_strain_CPV_339_nonstr, AJ564427_2_Canine_parvovirus_ns_gene_for_non_struc, LC270891_1_Canine_parvovirus_2b_NS1_NS2_VP1_VP2, MF069443_1_Canine_parvovirus_strain_CPV_Raccoon_RC, MN862741_1_Canine_parvovirus_isolate_CPV_2_America, MF069442_1_Canine_parvovirus_strain_CPV_Raccoon_RC, Node160, Node158, MT981020_1_Carnivore_protoparvovirus_1_strain_IZSS, MG434742_1_Carnivore_protoparvovirus_1_strain_CPV_, MG434740_1_Carnivore_protoparvovirus_1_strain_CPV_, MG434739_1_Carnivore_protoparvovirus_1_strain_CPV_, Node169, Node167, MG434741_1_Carnivore_protoparvovirus_1_strain_CPV_, MG434743_1_Carnivore_protoparvovirus_1_strain_CPV_, Node173, MT981022_1_Carnivore_protoparvovirus_1_strain_IZSS, MG434738_1_Carnivore_protoparvovirus_1_strain_CPV_, Node176, Node172, Node166, Node164, MK144546_1_Canine_parvovirus_2a_isolate_K01708_3_N, KF366250_1_Canine_parvovirus_isolate_CPV_915_H_ns1, KR002797_1_Canine_parvovirus_2a_strain_CPV_CN_JL4_, KR002794_1_Canine_parvovirus_2a_strain_CPV_CN_HB3_, Node185, EU310373_2_Canine_parvovirus_isolate_cpv_nj01_06, KR002795_1_Canine_parvovirus_2a_strain_CPV_CN_JL1_, Node188, Node184, Node182, Node180, MF423125_1_Canine_parvovirus_isolate_CPV_Coyote_C6, KR002798_1_Canine_parvovirus_2a_strain_CPV_CN_JL5_, OM640097_1_Canine_parvovirus_2_strain_CMP10_compl, Node194, Node192, KF638400_1_Canine_parvovirus_isolate_s5_nonstructu, MH476588_1_Canine_parvovirus_strain_Canine_China_1, MF134808_1_Canine_parvovirus_strain_CPV_BJ03_17_no, JX660690_1_Canine_parvovirus_isolate_SC02_2011_non, Node201, Node199, Node197, Node191, Node179, Node163, Node157, Node155, Node153, Node151, Node149, MN451674_1_Canine_parvovirus_isolate_CPV353_compl, MF177281_1_Canine_parvovirus_2a_isolate_UY6_non_st, MF177246_1_Canine_parvovirus_2b_isolate_Arg50_non_, MF177241_1_Canine_parvovirus_2a_isolate_Arg9_non_s, MF177258_1_Canine_parvovirus_2b_isolate_BRA03_13_n, MF177256_1_Canine_parvovirus_2b_isolate_BRA05_13_n, Node213, Node211, Node209, Node207, Node205, AY742934_1_Canine_parvovirus_strain_CPV_447_nonstr, JN033694_1_Canine_parvovirus_strain_Laika_1993_co, MF177224_1_Canine_parvovirus_2a_isolate_43_97_non_, MF177231_1_Canine_parvovirus_2a_isolate_260_00_non, MT981023_1_Carnivore_protoparvovirus_1_strain_IZSS, KX434457_1_Canine_parvovirus_strain_CPV_IZSSI_987_, AY742935_1_Canine_parvovirus_strain_CPV_U6_nonstru, MW653256_1_Canine_parvovirus_2a_strain_2a_6_Iran, Node229, Node227, Node225, Node223, Node221, Node219, Node217, MN451672_1_Canine_parvovirus_isolate_CPV305_compl, AY742932_1_Canine_parvovirus_strain_CPV_193_nonstr, Node234, EU659120_1_Canine_parvovirus_isolate_CPV_411a_us_9, EU659119_1_Canine_parvovirus_isolate_CPV_410_us_00, Node239, MF177226_1_Canine_parvovirus_2b_isolate_1_99_non_s, MN451662_1_Canine_parvovirus_isolate_CPV36_comple, MN451666_1_Canine_parvovirus_isolate_CPV54_comple, MN451663_1_Canine_parvovirus_isolate_CPV39_comple, Node244, Node242, Node238, MF177232_1_Canine_parvovirus_2b_isolate_201_98_non, MF177225_1_Canine_parvovirus_2b_isolate_242_98_non, Node250, MF177259_1_Canine_parvovirus_2b_isolate_BRA02_13_n, MF177251_1_Canine_parvovirus_2b_isolate_BRA01_13_n, Node254, MF177280_1_Canine_parvovirus_2b_isolate_E6_non_str, MN451677_1_Canine_parvovirus_isolate_CPV604_compl, MF423124_1_Canine_parvovirus_isolate_CPV_Coyote_C5, MW653254_1_Canine_parvovirus_strain_CPV_18_Iran_c, Node261, Node259, Node257, Node253, Node249, Node237, Node233, MW539053_1_Canine_parvovirus_2b_isolate_I1_comple, JQ268284_1_Canine_parvovirus_2b_strain_CPV_LZ2_co, KR002793_1_Canine_parvovirus_2b_strain_CPV_CN_HB1_, KR002799_1_Canine_parvovirus_2b_strain_CPV_CN_JL6_, Node272, MT648206_1_Canine_parvovirus_isolate_CPV_AHmas3_c, KR002796_1_Canine_parvovirus_2b_strain_CPV_CN_JL3_, Node275, Node271, MT165692_1_Canine_parvovirus_strain_NewCPV_2b_Chin, MT441832_1_Canine_parvovirus_strain_ABT_CPV_MVC_03, MF805791_1_Canine_parvovirus_strain_Canine_China_0, MF805790_1_Canine_parvovirus_strain_Canine_China_0, MF805793_1_Canine_parvovirus_strain_Canine_China_0, MF805798_1_Canine_parvovirus_strain_Canine_China_1, MF805794_1_Canine_parvovirus_strain_Canine_China_0, Node285, Node283, MT648209_1_Canine_parvovirus_isolate_CPV_AHmas17, MN661243_1_Canine_parvovirus_strain_CPV_new_2a_var, KX618915_1_Canine_parvovirus_strain_2a_non_structu, MW653250_1_Canine_parvovirus_2a_strain_CPV_22_Iran, Node297, Node295, Node293, JQ686671_1_Canine_parvovirus_isolate_CPV_2a_non_st, MT394163_1_Canine_parvovirus_isolate_QD_12_comple, MH476580_1_Canine_parvovirus_strain_Canine_China_1, MH476589_1_Canine_parvovirus_strain_Canine_China_2, Node305, Node303, Node301, KR002792_1_Canine_parvovirus_2a_strain_CPV_CN_SH1_, MH476593_1_Canine_parvovirus_strain_Canine_China_2, KT382542_1_Canine_parvovirus_isolate_CPV_SH14_com, Node311, Node309, MG583676_1_Canine_parvovirus_2a_strain_CPV_CN_ya1_, MW653249_1_Canine_parvovirus_2a_strain_CPV_2_Iran, KY403998_1_Canine_parvovirus_strain_CPV_YH_comple, KR002805_1_Canine_parvovirus_2a_strain_CPV_CN_SD19, KR002803_1_Canine_parvovirus_2a_strain_CPV_CN_SD10, Node314, Node308, Node300, Node292, Node282, Node280, Node278, Node270, Node268, Node266, MZ362881_1_Canine_parvovirus_2b_isolate_Emerald_Qu, MK306289_1_Canine_parvovirus_isolate_Korea_CPV2c_1, MH711894_1_Canine_parvovirus_2c_strain_CU24_compl, Node326, MH476587_1_Canine_parvovirus_strain_Canine_China_1, MG013488_1_Canine_parvovirus_isolate_CPV_SH1516_c, MH711902_1_Canine_parvovirus_2c_strain_CU21_compl, Node333, MT648210_1_Canine_parvovirus_isolate_CPV_AHcf4_co, MH476584_1_Canine_parvovirus_strain_Canine_China_1, Node337, MT394167_1_Canine_parvovirus_isolate_QD_20_comple, MN451678_1_Canine_parvovirus_isolate_CPV605_compl, MT840292_1_Carnivore_protoparvovirus_1_strain_IZSS, MK895489_1_Carnivore_protoparvovirus_1_strain_IZSS, Node345, MT840293_1_Carnivore_protoparvovirus_1_strain_IZSS, MN451682_1_Canine_parvovirus_isolate_CPV609_compl, Node349, MT840294_1_Carnivore_protoparvovirus_1_strain_IZSS, MK895488_1_Carnivore_protoparvovirus_1_strain_IZSS, Node353, MT840290_1_Carnivore_protoparvovirus_1_strain_IZSS, MK895487_1_Carnivore_protoparvovirus_1_strain_IZSS, MK895486_1_Carnivore_protoparvovirus_1_strain_IZSS, MT840291_1_Carnivore_protoparvovirus_1_strain_IZSS, MK895490_1_Carnivore_protoparvovirus_1_strain_IZSS, Node360, Node358, Node356, Node352, Node348, Node344, Node342, Node340, Node336, Node332, MK806281_1_Carnivore_protoparvovirus_1_strain_IZSS, MK806283_1_Carnivore_protoparvovirus_1_strain_IZSS, MK806285_1_Carnivore_protoparvovirus_1_strain_IZSS, Node368, Node366, MK806279_1_Carnivore_protoparvovirus_1_strain_IZSS, MK806284_1_Carnivore_protoparvovirus_1_strain_IZSS, Node372, MT394165_1_Canine_parvovirus_isolate_QD_202_compl, MT648207_1_Canine_parvovirus_isolate_CPV_AHmas9_c, Node378, MT648203_1_Canine_parvovirus_isolate_CPV_AHhf27_c, MK306290_1_Canine_parvovirus_isolate_Korea_CPV2c_2, Node382, OM640098_1_Canine_parvovirus_2_strain_FM4_complet, OK094440_1_Canine_parvovirus_isolate_VNUA_CPV175_B, OK094443_1_Canine_parvovirus_isolate_VNUA_CPV380_H, MF510157_1_Canine_parvovirus_strain_CPV_IZSSI_2743, OM523076_1_Canine_parvovirus_strain_W54_partial_g, Node385, Node381, Node377, MH476581_1_Canine_parvovirus_strain_Canine_China_1, MN451680_1_Canine_parvovirus_isolate_CPV607_compl, MN451687_1_Canine_parvovirus_isolate_CPV614_compl, Node398, OM523077_1_Canine_parvovirus_strain_W25_partial_g, MT648205_1_Canine_parvovirus_isolate_CPV_mas2_com, Node401, Node397, Node395, MW650830_1_Canine_parvovirus_isolate_CPV_SH2001_no, MW811189_1_Canine_parvovirus_2c_strain_CPV_SH2003, Node405, MH476592_1_Canine_parvovirus_strain_Canine_China_2, OM523072_1_Canine_parvovirus_strain_W17_partial_g, OM523071_1_Canine_parvovirus_strain_W21_partial_g, Node410, Node408, Node404, Node394, Node376, OK094439_1_Canine_parvovirus_isolate_VNUA_CPV153_V, OK094438_1_Canine_parvovirus_isolate_VNUA_CPV152_H, Node415, MN519258_1_Canine_parvovirus_strain_CPV_JL19_NS1, MN832850_1_Canine_parvovirus_2c_isolate_Taiwan_201, MT648202_1_Canine_parvovirus_isolate_CPV_AHhf7_co, MH660909_1_Canine_parvovirus_2c_strain_5_MGL_comp, Node422, Node420, Node418, Node414, OM523074_1_Canine_parvovirus_strain_W66_partial_g, MH476583_1_Canine_parvovirus_strain_Canine_China_1, Node427, MT165693_1_Canine_parvovirus_strain_CPV_2c_China_S, MW811188_1_Canine_parvovirus_2c_strain_CPV_SH2002, MF805796_1_Canine_parvovirus_strain_Canine_China_0, MH476585_1_Canine_parvovirus_strain_Canine_China_1, Node435, OM523073_1_Canine_parvovirus_strain_W07_partial_g, OM523070_1_Canine_parvovirus_strain_W33_partial_g, MF805789_1_Canine_parvovirus_strain_Canine_China_0, MF805792_1_Canine_parvovirus_strain_Canine_China_0, MF805797_1_Canine_parvovirus_strain_Canine_China_0, MF805795_1_Canine_parvovirus_strain_Canine_China_0, Node442, Node440, Node438, Node434, Node432, Node430, Node426, MT892649_1_Canine_parvovirus_isolate_China_XY_com, OM523075_1_Canine_parvovirus_strain_W65_partial_g, MT010564_1_Canine_parvovirus_isolate_CPV_AHhf1_co, Node453, MK388674_1_Canine_parvovirus_isolate_HB2017_compl, MT648204_1_Canine_parvovirus_isolate_CPV_AHhf28_c, Node456, Node452, Node450, OK094442_1_Canine_parvovirus_isolate_VNUA_CPV379_V, OK094444_1_Canine_parvovirus_isolate_VNUA_CPV384_B, Node460, MZ614963_1_Canine_parvovirus_isolate_China_XA_2_p, MZ614964_1_Canine_parvovirus_isolate_China_BJ_1_p, Node464, MT106228_1_Canine_parvovirus_2c_strain_HN07_parti, LC214969_1_Canine_parvovirus_2c_NS1_VP2_genes_for, MT106236_1_Canine_parvovirus_2c_strain_DN02_parti, MT106233_1_Canine_parvovirus_2c_strain_DN01_parti, Node472, Node470, Node468, MT106231_1_Canine_parvovirus_2c_strain_HN30_parti, MT106229_1_Canine_parvovirus_2c_strain_HN04_parti, Node476, MT106230_1_Canine_parvovirus_2c_strain_HN08_parti, MT106237_1_Canine_parvovirus_2c_strain_HCM03_part, Node480, MT106232_1_Canine_parvovirus_2c_strain_HCM09_part, MT106235_1_Canine_parvovirus_2c_strain_HN06_parti, MT106234_1_Canine_parvovirus_2c_strain_HCM01_part, Node485, Node483, Node479, Node475, Node467, Node463, Node459, Node449, Node425, Node413, Node375, Node371, Node365, Node331, Node329, Node325, Node323, Node265, MZ666398_1_Carnivore_protoparvovirus_1_strain_SDS2, MZ666397_1_Carnivore_protoparvovirus_1_strain_SDS2, Node491, MF177271_1_Canine_parvovirus_2c_isolate_E26_non_st, MF177266_1_Canine_parvovirus_2c_isolate_E13_non_st, Node494, Node490, MN451676_1_Canine_parvovirus_isolate_CPV603_compl, MF416372_1_Canine_parvovirus_2_isolate_NYC_Bronx_p, Node498, MN451684_1_Canine_parvovirus_isolate_CPV611_compl, MN451686_1_Canine_parvovirus_isolate_CPV613_compl, MT448705_1_Canine_parvovirus_nonstructural_protein, MT448703_1_Canine_parvovirus_nonstructural_protein, MT448702_1_Canine_parvovirus_nonstructural_protein, Node507, Node505, Node503, Node501, Node497, Node489, MF177228_1_Canine_parvovirus_2c_isolate_485_09_non, MT448706_1_Canine_parvovirus_nonstructural_protein, Node511, MW889114_1_Canine_parvovirus_2c_strain_CPV20_comp, MW889119_1_Canine_parvovirus_2c_strain_CPV25_comp, MW889112_1_Canine_parvovirus_2c_strain_CPV18_comp, Node518, Node516, MW889095_1_Canine_parvovirus_2a_strain_CPV01_comp, MW889103_1_Canine_parvovirus_2a_strain_CPV09_comp, MW889115_1_Canine_parvovirus_2a_strain_CPV21_comp, Node524, Node522, MW889118_1_Canine_parvovirus_2b_strain_CPV24_comp, MF177268_1_Canine_parvovirus_2a_isolate_E19_non_st, MF177265_1_Canine_parvovirus_2a_isolate_E12_non_st, Node531, MF177269_1_Canine_parvovirus_2b_isolate_E20_non_st, MW889101_1_Canine_parvovirus_2b_strain_CPV07_comp, Node534, Node530, MW889099_1_Canine_parvovirus_2b_strain_CPV05_comp, MW889117_1_Canine_parvovirus_2c_strain_CPV23_comp, MF177277_1_Canine_parvovirus_2a_isolate_E36_non_st, MF177276_1_Canine_parvovirus_2a_isolate_E35_non_st, Node542, MW889111_1_Canine_parvovirus_2a_strain_CPV17_comp, MW889113_1_Canine_parvovirus_2a_strain_CPV19_comp, MW889105_1_Canine_parvovirus_2a_strain_CPV11_comp, Node548, MW889104_1_Canine_parvovirus_2a_strain_CPV10_comp, MW889096_1_Canine_parvovirus_2a_strain_CPV02_comp, Node552, MW889100_1_Canine_parvovirus_2a_strain_CPV06_comp, MW889109_1_Canine_parvovirus_2a_strain_CPV15_comp, MW889098_1_Canine_parvovirus_2a_strain_CPV04_comp, Node557, Node555, Node551, Node547, Node545, Node541, Node539, Node537, Node529, Node527, Node521, Node515, MN451679_1_Canine_parvovirus_isolate_CPV606_compl, MF457594_1_Canine_parvovirus_strain_OH20219_compl, Node561, KM457127_1_Canine_parvovirus_2c_isolate_UY326_com, MF177230_1_Canine_parvovirus_2c_isolate_57_10_non_, KM457126_1_Canine_parvovirus_2c_isolate_UY318_com, Node568, KM457106_1_Canine_parvovirus_2c_isolate_UY55_comp, MF177240_1_Canine_parvovirus_2c_isolate_189_02_non, MF510158_1_Canine_parvovirus_strain_CPV_IZSSI_4111, MT981024_1_Carnivore_protoparvovirus_1_strain_IZSS, Node575, Node573, Node571, Node567, MN451675_1_Canine_parvovirus_isolate_CPV601_compl, EU659121_1_Canine_parvovirus_isolate_CPV_411b__us_, AY742936_1_Canine_parvovirus_strain_CPV_395_nonstr, Node582, MW732025_1_Canine_parvovirus_strain_CN10_non_struc, MW732024_1_Canine_parvovirus_strain_CN20_non_struc, Node586, MW732023_1_Canine_parvovirus_strain_CN14_non_struc, MW732026_1_Canine_parvovirus_strain_RVC50_KNA_non_, Node589, Node585, Node581, Node579, MF177243_1_Canine_parvovirus_2c_isolate_Arg32_non_, MW889097_1_Canine_parvovirus_2c_strain_CPV03_comp, Node595, MF177262_1_Canine_parvovirus_2c_isolate_Py1_non_st, MF177229_1_Canine_parvovirus_2c_isolate_368_12_17, KM457122_1_Canine_parvovirus_2c_isolate_UY258_com, Node601, MF177273_1_Canine_parvovirus_2c_isolate_E29_non_st, KM457124_1_Canine_parvovirus_2c_isolate_UY307_com, Node604, Node600, Node598, Node594, MF177248_1_Canine_parvovirus_2c_isolate_Arg68_non_, MF177247_1_Canine_parvovirus_2c_isolate_Arg66_non_, MF177249_1_Canine_parvovirus_2c_isolate_Arg71_non_, MF177285_1_Canine_parvovirus_2c_isolate_UY269_non_, MF177283_1_Canine_parvovirus_2c_isolate_UY181_non_, MF177284_1_Canine_parvovirus_2c_isolate_UY196_non_, Node616, Node614, Node612, Node610, Node608, KM457116_1_Canine_parvovirus_2c_isolate_UY185_com, KM457109_1_Canine_parvovirus_2c_isolate_UY95_comp, KM457128_1_Canine_parvovirus_2c_isolate_UY346_com, MF177286_1_Canine_parvovirus_2c_isolate_UY375_non_, KM457123_1_Canine_parvovirus_2c_isolate_UY261_com, KM457120_1_Canine_parvovirus_2c_isolate_UY242_com, Node627, Node625, Node623, Node621, Node619, Node607, Node593, MN451690_1_Canine_parvovirus_isolate_CPV617_compl, MN451685_1_Canine_parvovirus_isolate_CPV612_compl, Node632, MF177254_1_Canine_parvovirus_2c_isolate_BRA04_10_n, MF177250_1_Canine_parvovirus_2c_isolate_BRA01_10_n, Node636, MF177252_1_Canine_parvovirus_2c_isolate_BRA02_10_n, MH800217_1_Canine_parvovirus_2c_isolate_CoatiPV_20, MF177257_1_Canine_parvovirus_2c_isolate_BRA02_14_n, MF177255_1_Canine_parvovirus_2c_isolate_BRA01_14_n, Node644, Node642, MF177261_1_Canine_parvovirus_2c_isolate_BRA04_13_n, MF177260_1_Canine_parvovirus_2c_isolate_BRA01_12_n, MF177253_1_Canine_parvovirus_2c_isolate_BRA03_10_n, Node649, Node647, Node641, Node639, Node635, Node631, MF177272_1_Canine_parvovirus_2c_isolate_E28_non_st, KU508693_1_Canine_parvovirus_2c_isolate_LW_non_str, KM457115_1_Canine_parvovirus_2c_isolate_UY173_com, KM457114_1_Canine_parvovirus_2c_isolate_UY169_com, Node657, Node655, Node653, KM457117_1_Canine_parvovirus_2c_isolate_UY187_com, KM457131_1_Canine_parvovirus_2c_isolate_UY368_com, KM457103_1_Canine_parvovirus_2c_isolate_UY12_comp, Node664, Node662, MT448704_1_Canine_parvovirus_nonstructural_protein, KM457108_1_Canine_parvovirus_2c_isolate_UY82_comp, Node668, MF177244_1_Canine_parvovirus_2c_isolate_Arg33_non_, MW889116_1_Canine_parvovirus_2c_strain_CPV22_comp, MW889106_1_Canine_parvovirus_2c_strain_CPV12_comp, MW889110_1_Canine_parvovirus_2c_strain_CPV16_comp, MW889108_1_Canine_parvovirus_2c_strain_CPV14_comp, Node678, Node676, Node674, MF177274_1_Canine_parvovirus_2c_isolate_E31_non_st, KM457118_1_Canine_parvovirus_2c_isolate_UY190_com, KM457110_1_Canine_parvovirus_2c_isolate_UY101_com, Node684, Node682, MF177263_1_Canine_parvovirus_2c_isolate_E1_non_str, MF177267_1_Canine_parvovirus_2c_isolate_E16_non_st, MF177264_1_Canine_parvovirus_2c_isolate_E10_non_st, Node690, MF177270_1_Canine_parvovirus_2c_isolate_E23_non_st, MW889120_1_Canine_parvovirus_2c_strain_CPV26_comp, Node693, Node689, Node687, Node681, Node673, Node671, Node667, Node661, KM457107_1_Canine_parvovirus_2c_isolate_UY72_comp, MF177282_1_Canine_parvovirus_2c_isolate_UY21_non_s, KM457121_1_Canine_parvovirus_2c_isolate_UY247_com, Node699, Node697, KM457142_1_Canine_parvovirus_2c_isolate_UY370c_co, MW653253_1_Canine_parvovirus_2c_strain_CPV_19_Iran, KM457112_1_Canine_parvovirus_2c_isolate_UY135_com, KM457125_1_Canine_parvovirus_2c_isolate_UY317_com, MF177239_1_Canine_parvovirus_2c_isolate_288_01_non, MF177234_1_Canine_parvovirus_2c_isolate_347_03_non, Node703, MF177242_1_Canine_parvovirus_2c_isolate_Arg26_non_, KM457111_1_Canine_parvovirus_2c_isolate_UY120_com, Node716, KM457119_1_Canine_parvovirus_2c_isolate_UY235_com, MF177227_1_Canine_parvovirus_2c_isolate_202_09_non, MF177278_1_Canine_parvovirus_2c_isolate_E4_non_str, Node721, Node719, Node715, KM457130_1_Canine_parvovirus_2c_isolate_UY354_com, KM457129_1_Canine_parvovirus_2c_isolate_UY349_com, Node726, MF177238_1_Canine_parvovirus_2c_isolate_114_05_non, MF177235_1_Canine_parvovirus_2c_isolate_283_06_non, Node729, Node725, MF177236_1_Canine_parvovirus_2c_isolate_244_04_non, MF177237_1_Canine_parvovirus_2c_isolate_188_07_non, Node733, KM457104_1_Canine_parvovirus_2c_isolate_UY47_comp, KM457113_1_Canine_parvovirus_2c_isolate_UY152_com, KM457105_1_Canine_parvovirus_2c_isolate_UY52_comp, Node738, Node736, Node732, Node724, Node714, Node702, Node696, Node660, Node652, Node630, Node592, Node578, Node566, Node564, Node560, Node514, Node510, Node488, Node264, Node232, Node216, Node204, Node148, Node128, Node122, Node102`
+
+### **1** test will be performed at each site
+
+
+### Obtaining the global omega estimate based on relative GTR branch lengths and nucleotide substitution biases
+* Log(L) = -10727.09, AIC-c = 22970.30 (756 estimated parameters)
+* non-synonymous/synonymous rate ratio for *G1* =   0.1326
+* non-synonymous/synonymous rate ratio for *G2* =   0.1090
+* non-synonymous/synonymous rate ratio for *background* =   0.9425
+
+### Improving branch lengths, nucleotide substitution biases, and global dN/dS ratios under a full codon model
+* Log(L) = -10727.09
+* non-synonymous/synonymous rate ratio for *G1* =   0.1326
+* non-synonymous/synonymous rate ratio for *G2* =   0.1090
+* non-synonymous/synonymous rate ratio for *background* =   0.9444
+
+### For partition 1 these sites are significant at p <=1
+
+| Codon  |     alpha      |             beta             |        substitutions         |                  test                  |LRT p-value|Permutation p-value|
+|:------:|:--------------:|:----------------------------:|:----------------------------:|:--------------------------------------:|:---------:|:-----------------:|
+|   1    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  167   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  239   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  262   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  299   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  340   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  349   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  485   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  497   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  684   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  717   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  735   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   2    |        1.143   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   3    |        1.570   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   4    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   5    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   62   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   86   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  114   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  156   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  165   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  342   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  450   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  506   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  524   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  538   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  545   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  622   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  652   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  680   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   6    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   12   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   7    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  233   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  357   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  422   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  440   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  449   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  498   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  563   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  574   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  647   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  686   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  706   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  747   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   8    |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   9    |        0.377   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   10   |        1.280   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   11   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   13   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  177   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  209   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  481   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  540   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  547   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  604   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  633   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  662   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  697   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   14   |        0.000   |        1.367 :      0.000    |             1, 1             |                G1 vs G2                |  0.3129   |      0.2500       |
+|   15   |        1.218   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.5256   |      0.0500       |
+|   16   |        3.180   |        0.000 :      0.000    |             0, 9             |                G1 vs G2                |  0.1553   |      0.0500       |
+|   17   |        0.000   |        1.642 :      0.000    |             1, 6             |                G1 vs G2                |  0.8408   |      1.0000       |
+|   18   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   19   |        0.356   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   20   |        0.400   |        1.501 :      0.000    |             1, 3             |                G1 vs G2                |  0.5274   |      1.0000       |
+|   21   |        0.714   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.5255   |      0.2000       |
+|   22   |        5.947   |        1.584 :      0.000    |             1, 5             |                G1 vs G2                |  0.3079   |      1.0000       |
+|   23   |        0.000   |        9.882 :      0.000    |             6, 3             |                G1 vs G2                |  0.0010   |      0.0500       |
+|   24   |        3.526   |        2.463 :      0.000    |             1, 7             |                G1 vs G2                |  0.3232   |      0.2000       |
+|   25   |        8.144   |        0.000 :      0.000    |            0, 13             |                G1 vs G2                |  0.0441   |      0.0500       |
+|   26   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3682   |      0.5000       |
+|   27   |        0.422   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   28   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  138   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  168   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  242   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  300   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  505   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   29   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3691   |      1.0000       |
+|   30   |        0.000   |        1.450 :      0.000    |             1, 2             |                G1 vs G2                |  0.5499   |      1.0000       |
+|   31   |        8.777   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.9998   |      0.0500       |
+|   32   |        0.000   |        4.304 :    123.805    |             3, 4             |                G1 vs G2                |  0.1713   |      0.5000       |
+|   33   |        0.000   |        2.556 :      0.000    |             2, 4             |                G1 vs G2                |  0.3840   |      1.0000       |
+|   34   |        6.982   |        0.000 :      0.000    |             1, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   35   |        1.586   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   36   |        0.715   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   37   |        1.592   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   38   |        1.143   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   39   |        3.177   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   40   |        2.633   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   41   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   63   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   77   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  103   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  133   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  150   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  151   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  152   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  153   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  218   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  329   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  478   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  520   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  605   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  638   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  645   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  696   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  698   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  702   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  704   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   42   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   72   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  376   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  508   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  509   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  544   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  566   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  610   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  617   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  630   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  676   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  727   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   43   |        3.179   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   44   |        1.506   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   45   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   57   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  274   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  589   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  619   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  678   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   46   |        1.810   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   47   |        1.211   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9997   |      1.0000       |
+|   48   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      0.1000       |
+|   49   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  234   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  588   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   50   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   59   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   66   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   96   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   51   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   93   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  173   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  309   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  408   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  446   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  462   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  476   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  516   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  570   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  582   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  663   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  715   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  716   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   52   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  170   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  188   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  194   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  260   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  284   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  486   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  526   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  558   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  603   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   53   |        1.576   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   54   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   85   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  131   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  166   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  174   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  240   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  289   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  326   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  365   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  368   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  371   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  373   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  404   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  417   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  438   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  455   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  499   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  518   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  542   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  598   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  601   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  628   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  646   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  653   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  713   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  729   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   55   |        1.587   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   56   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   78   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  587   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  723   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  726   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   58   |        0.000   |        3.468 :      0.000    |             2, 0             |                G1 vs G2                |  0.0089   |      0.1667       |
+|   60   |        0.329   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5253   |      0.3333       |
+|   61   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   97   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  111   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  263   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  282   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  323   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  355   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  494   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  500   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  703   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   64   |        1.572   |        1.522 :      0.000    |             1, 1             |                G1 vs G2                |  0.0646   |      0.0500       |
+|   65   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5253   |      0.1667       |
+|   67   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  184   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  241   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  243   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  413   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  464   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  493   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  534   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  675   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   68   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3686   |      0.0714       |
+|   69   |        0.810   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   70   |        0.000   |        1.371 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      1.0000       |
+|   71   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      1.0000       |
+|   73   |        0.000   |        2.760 :      0.000    |             2, 2             |                G1 vs G2                |  0.1477   |      0.1667       |
+|   74   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      0.0769       |
+|   75   |        3.155   |        1.717 :      0.000    |             1, 4             |                G1 vs G2                |  0.5301   |      1.0000       |
+|   76   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   79   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   80   |        0.810   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   81   |        1.181   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   82   |        5.835   |        0.000 :      0.000    |             2, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   83   |        9.060   |        0.000 :      0.000    |            6, 13             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   84   |        0.713   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  0.3687   |      0.2500       |
+|   87   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   92   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   99   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  169   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  265   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  279   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  291   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  405   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  425   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  571   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  600   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  637   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  677   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  679   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   88   |        1.580   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   89   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      1.0000       |
+|   90   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  108   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  109   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  217   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  287   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  307   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  351   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  409   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  434   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  456   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  519   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  546   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  586   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  640   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  654   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  665   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  693   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  701   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   91   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  104   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  370   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  385   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  472   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|   94   |        1.597   |        1.445 :      0.000    |             1, 1             |                G1 vs G2                |  0.0641   |      0.1250       |
+|   95   |        1.616   |        0.000 :      0.000    |             2, 2             |                G1 vs G2                |  0.9993   |      0.0500       |
+|   98   |        0.000   |        1.599 :      0.000    |             1, 0             |                G1 vs G2                |  0.0643   |      0.0556       |
+|  100   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  224   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  275   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  283   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  286   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  292   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  366   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  374   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  380   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  445   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  580   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  636   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  694   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  695   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  711   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  101   |        0.357   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      0.5000       |
+|  102   |        2.534   |        0.000 :      0.000    |             3, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  105   |        1.133   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  106   |        2.785   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  107   |        2.758   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  110   |        2.383   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.5256   |      0.0500       |
+|  112   |        1.575   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  113   |        1.359   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.9986   |      0.3333       |
+|  115   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  144   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  295   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  311   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  412   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  523   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  602   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  608   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  687   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  732   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  116   |        1.567   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5255   |      0.0500       |
+|  117   |        1.143   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  118   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.5000       |
+|  119   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  237   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  264   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  304   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  316   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  343   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  620   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  623   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  664   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  120   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  256   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  298   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  318   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  324   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  336   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  352   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  372   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  483   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  492   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  621   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  642   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  710   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  121   |       11.607   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  122   |        2.275   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  123   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5253   |      0.3333       |
+|  124   |        0.000   |        1.456 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      0.2500       |
+|  125   |       11.558   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  126   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      0.2500       |
+|  127   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  231   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  685   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  691   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  128   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  228   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  360   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  383   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  394   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  396   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  402   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  423   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  429   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  431   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  442   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  444   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  447   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  515   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  556   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  557   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  560   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  565   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  572   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  599   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  129   |        1.138   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  130   |        1.196   |        1.253 :      0.000    |             1, 1             |                G1 vs G2                |  0.0646   |      0.5000       |
+|  132   |        0.000   |        1.433 :      0.000    |             1, 3             |                G1 vs G2                |  0.7376   |      1.0000       |
+|  134   |        0.000   |        1.361 :      0.000    |             1, 0             |                G1 vs G2                |  0.0641   |      0.2500       |
+|  135   |        0.000   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.2708   |      0.0500       |
+|  136   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  137   |        1.280   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5251   |      0.2000       |
+|  139   |        1.552   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  0.2071   |      0.5000       |
+|  140   |        6.349   |        0.000 :      0.000    |             1, 5             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  141   |        4.147   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  142   |        1.567   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  143   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  236   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  268   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  388   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  550   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  145   |        0.811   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  146   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  147   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0769       |
+|  148   |        1.612   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  0.2020   |      0.0500       |
+|  149   |        1.145   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0556       |
+|  154   |        0.000   |        1.376 :      0.000    |             1, 6             |                G1 vs G2                |  0.7738   |      1.0000       |
+|  155   |        1.595   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  157   |        1.129   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1429       |
+|  158   |        1.568   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1000       |
+|  159   |        2.291   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.5255   |      0.3333       |
+|  160   |        1.573   |        1.592 :      0.000    |             2, 0             |                G1 vs G2                |  0.0645   |      0.0667       |
+|  161   |        0.000   |        2.534 :      0.000    |             2, 2             |                G1 vs G2                |  0.1486   |      0.0556       |
+|  162   |        0.000   |        1.351 :      0.000    |             1, 2             |                G1 vs G2                |  0.5310   |      1.0000       |
+|  163   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      0.0769       |
+|  164   |        0.000   |        1.364 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      0.5000       |
+|  171   |        0.000   |        1.373 :      0.000    |             1, 6             |                G1 vs G2                |  0.7936   |      1.0000       |
+|  172   |        6.346   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  175   |        0.000   |        1.358 :      0.000    |             1, 0             |                G1 vs G2                |  0.0644   |      0.0769       |
+|  176   |        3.214   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      0.0909       |
+|  178   |        8.272   |        0.000 :      0.000    |             0, 8             |                G1 vs G2                |  0.5266   |      0.0500       |
+|  179   |        0.000   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.2699   |      0.0500       |
+|  180   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3691   |      0.1250       |
+|  181   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  182   |        0.000   |        1.262 :      0.000    |             1, 0             |                G1 vs G2                |  0.0643   |      0.0500       |
+|  185   |        0.000   |        1.262 :      0.000    |             1, 0             |                G1 vs G2                |  0.0643   |      0.0500       |
+|  183   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  212   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  213   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  244   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  252   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  281   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  288   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  313   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  332   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  346   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  414   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  583   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  594   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  615   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  624   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  632   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  651   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  659   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  671   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  674   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  683   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  712   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  186   |        5.959   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.9995   |      1.0000       |
+|  187   |        1.138   |        1.507 :      0.000    |             1, 2             |                G1 vs G2                |  0.2931   |      0.3333       |
+|  189   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0833       |
+|  190   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  196   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  202   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  205   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  191   |        0.403   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1111       |
+|  192   |        0.356   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  193   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  207   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  415   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  459   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  514   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  681   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  708   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  742   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  195   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3690   |      0.1429       |
+|  197   |        4.888   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.5253   |      0.0556       |
+|  198   |        8.344   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  199   |        4.836   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  200   |        1.588   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  201   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.2000       |
+|  203   |        0.000   |        1.203 :      0.000    |             1, 0             |                G1 vs G2                |  0.0646   |      0.0909       |
+|  204   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  225   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  206   |        1.740   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  208   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  210   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3692   |      0.5000       |
+|  211   |        2.367   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  0.9999   |      0.0500       |
+|  214   |        3.774   |        0.000 :      0.000    |             1, 8             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  215   |        2.271   |        0.000 :      0.000    |             1, 5             |                G1 vs G2                |  0.9994   |      0.0500       |
+|  216   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.3333       |
+|  219   |       10.409   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  220   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  277   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  221   |        1.576   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  222   |        0.403   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5254   |      0.0769       |
+|  223   |        1.020   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  226   |        1.565   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  227   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5244   |      0.0500       |
+|  229   |        1.134   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  230   |        0.403   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.3333       |
+|  232   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  235   |        2.626   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9999   |      0.0500       |
+|  238   |        2.732   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.3333       |
+|  245   |        2.765   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  246   |        1.328   |        0.000 :    133.220    |             0, 1             |                G1 vs G2                |  0.9982   |      1.0000       |
+|  247   |        1.277   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  248   |        2.940   |        0.000 :      0.000    |             1, 6             |                G1 vs G2                |  0.9974   |      1.0000       |
+|  249   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.3686   |      0.5000       |
+|  250   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  590   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  251   |        2.728   |        1.541 :      0.000    |             1, 1             |                G1 vs G2                |  0.0641   |      0.1429       |
+|  253   |        0.724   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.3285   |      1.0000       |
+|  254   |        2.768   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  255   |        3.165   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  257   |        0.000   |        2.886 :      0.000    |             2, 0             |                G1 vs G2                |  0.0083   |      0.0500       |
+|  258   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  278   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  285   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  314   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  315   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  629   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  668   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  259   |        1.440   |        0.000 :    407.662    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  261   |        0.810   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  266   |        5.297   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  0.9990   |      1.0000       |
+|  267   |        7.026   |        4.400 :      0.000    |             3, 8             |                G1 vs G2                |  0.0128   |      0.3333       |
+|  269   |        0.000   |        0.000 :    127.676    |             0, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  270   |        1.577   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  271   |        1.729   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  272   |        1.141   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5244   |      0.0714       |
+|  273   |        1.148   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  276   |        2.296   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  280   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0500       |
+|  290   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0500       |
+|  293   |        3.205   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  294   |        1.271   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9994   |      1.0000       |
+|  296   |        1.605   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  297   |        2.730   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5256   |      0.1667       |
+|  301   |        1.636   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  0.9994   |      0.0500       |
+|  302   |        2.903   |        0.000 :      0.000    |             1, 9             |                G1 vs G2                |  0.9990   |      1.0000       |
+|  303   |        5.412   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9997   |      0.0588       |
+|  305   |        1.563   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.2710   |      0.1429       |
+|  306   |       11.544   |        0.000 :      0.000    |             2, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  308   |        1.537   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1429       |
+|  310   |        1.581   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  312   |        2.745   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  317   |        0.812   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9997   |      0.0500       |
+|  319   |        1.582   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  320   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5252   |      0.1667       |
+|  321   |        4.764   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9993   |      1.0000       |
+|  322   |        1.589   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  325   |        1.223   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.9997   |      1.0000       |
+|  327   |        1.141   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  328   |        3.154   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  330   |        8.023   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  331   |        2.650   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  333   |        5.670   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9999   |      0.1000       |
+|  334   |        2.773   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  335   |        2.434   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.9995   |      0.0500       |
+|  337   |        1.133   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  338   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5257   |      0.0714       |
+|  339   |        0.570   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9996   |      1.0000       |
+|  341   |        4.810   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  344   |       10.397   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      0.5000       |
+|  345   |        5.294   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9994   |      0.5000       |
+|  347   |        2.949   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  348   |        3.168   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  350   |        1.139   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  353   |        1.132   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  354   |        1.138   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  356   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5253   |      0.3333       |
+|  358   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3673   |      0.5000       |
+|  359   |        1.203   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  361   |        0.861   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  362   |        3.171   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  363   |        2.756   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  364   |        2.752   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  367   |        1.581   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2000       |
+|  369   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  375   |        2.588   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9999   |      0.2000       |
+|  377   |        5.552   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  378   |        2.774   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5246   |      0.5000       |
+|  379   |        7.342   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  0.9994   |      0.0500       |
+|  381   |        2.756   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  382   |        2.569   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.5256   |      0.0500       |
+|  384   |        0.608   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  386   |        1.130   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  387   |        3.358   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  389   |        1.596   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  390   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5254   |      0.0667       |
+|  391   |        3.047   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  392   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3682   |      0.3333       |
+|  393   |        0.329   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  395   |        1.141   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  397   |       10.472   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  398   |        0.000   |        6.190 :    106.129    |             4, 1             |                G1 vs G2                |  0.0012   |      0.0500       |
+|  399   |        0.474   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      0.1429       |
+|  400   |        0.000   |        2.917 :      0.000    |             2, 0             |                G1 vs G2                |  0.0087   |      0.0909       |
+|  401   |        1.581   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5255   |      0.1000       |
+|  403   |        5.483   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  406   |        5.532   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  407   |        1.562   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  410   |        5.889   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  411   |        4.631   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9981   |      1.0000       |
+|  416   |        1.816   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  418   |        3.451   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  0.9995   |      0.5000       |
+|  419   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  420   |        0.609   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  421   |        0.421   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  424   |        1.595   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  426   |        1.550   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1111       |
+|  427   |        5.639   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  0.9999   |      1.0000       |
+|  428   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3688   |      0.1111       |
+|  430   |        1.139   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  432   |        2.793   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  433   |        4.041   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  0.2576   |      1.0000       |
+|  435   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0500       |
+|  436   |        5.439   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  437   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5258   |      0.1429       |
+|  439   |       25.200   |        0.000 :      0.000    |             1, 8             |                G1 vs G2                |  0.9996   |      0.0500       |
+|  441   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  443   |        9.917   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  448   |        2.756   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  451   |        1.147   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  0.9998   |      1.0000       |
+|  452   |        0.660   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  453   |        0.601   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  454   |        1.149   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  457   |        3.543   |        0.000 :      0.000    |             5, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  458   |        2.773   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  460   |        1.436   |        0.000 :      0.000    |             2, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  461   |        1.576   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  463   |        1.608   |        0.000 :      0.000    |             0, 6             |                G1 vs G2                |  0.1250   |      0.1667       |
+|  465   |        0.000   |        1.237 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      0.0588       |
+|  466   |        3.212   |        1.369 :      0.000    |             1, 8             |                G1 vs G2                |  0.8690   |      1.0000       |
+|  467   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3692   |      0.1111       |
+|  468   |        0.406   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  469   |        0.000   |        1.627 :      0.000    |             1, 1             |                G1 vs G2                |  0.3045   |      0.3333       |
+|  470   |        1.562   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  471   |        2.746   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.2071   |      0.0500       |
+|  473   |        1.141   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  474   |        4.763   |        1.392 :      0.000    |             1, 3             |                G1 vs G2                |  0.0645   |      0.1429       |
+|  475   |        1.571   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  0.5250   |      1.0000       |
+|  477   |        2.748   |        1.464 :      0.000    |             1, 1             |                G1 vs G2                |  0.0643   |      0.0526       |
+|  479   |        1.269   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  480   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  482   |        3.480   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.5256   |      0.0714       |
+|  484   |        1.572   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  487   |        1.492   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5282   |      0.2500       |
+|  488   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3684   |      0.1429       |
+|  489   |        1.629   |        0.000 :    113.589    |             0, 4             |                G1 vs G2                |  0.9915   |      1.0000       |
+|  490   |        0.000   |        0.000 :      0.000    |            0, 10             |                G1 vs G2                |  0.0265   |      0.5000       |
+|  491   |        1.756   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  737   |        1.756   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  495   |        1.574   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  496   |        3.743   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  501   |        0.802   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  502   |        1.594   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  503   |        1.567   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0833       |
+|  504   |        5.602   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  507   |        1.153   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2000       |
+|  510   |        1.551   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  511   |        2.749   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  512   |        1.872   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  513   |        1.494   |        0.000 :      0.000    |             3, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  517   |        0.715   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      0.3333       |
+|  521   |        1.147   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  522   |        1.527   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2000       |
+|  525   |        0.000   |        1.383 :      0.000    |             1, 0             |                G1 vs G2                |  0.0641   |      1.0000       |
+|  527   |        0.323   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5250   |      0.0833       |
+|  528   |        0.356   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0588       |
+|  529   |        3.449   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9990   |      1.0000       |
+|  530   |        1.802   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  531   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5259   |      0.3333       |
+|  532   |        1.142   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  533   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5253   |      0.0909       |
+|  535   |       17.902   |        0.000 :      0.000    |             1, 5             |                G1 vs G2                |  0.9992   |      0.0500       |
+|  536   |        1.415   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  0.2793   |      0.2000       |
+|  537   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5253   |      0.2000       |
+|  539   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.1429       |
+|  541   |        0.000   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.2034   |      0.0500       |
+|  543   |        1.284   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.3691   |      0.5000       |
+|  548   |        1.287   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  549   |        7.976   |        0.000 :      0.000    |             3, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  551   |        1.587   |        1.198 :      0.000    |             1, 1             |                G1 vs G2                |  0.0648   |      0.3333       |
+|  552   |        1.484   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2500       |
+|  553   |        4.836   |        0.000 :      0.000    |             2, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  554   |        1.570   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  555   |        0.755   |        0.000 :      0.000    |             2, 1             |                G1 vs G2                |  0.5250   |      0.0909       |
+|  559   |        1.582   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2500       |
+|  561   |        1.359   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  562   |        1.612   |        0.000 :      0.000    |             1, 3             |                G1 vs G2                |  0.9995   |      1.0000       |
+|  564   |        2.753   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  567   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5245   |      0.3333       |
+|  568   |        1.136   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  569   |        2.745   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  573   |        3.364   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9997   |      1.0000       |
+|  575   |        5.636   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  576   |        1.135   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      0.2000       |
+|  577   |        0.000   |        1.528 :      0.000    |             1, 0             |                G1 vs G2                |  0.0643   |      0.3333       |
+|  578   |        1.143   |        1.235 :      0.000    |             1, 1             |                G1 vs G2                |  0.0648   |      0.1667       |
+|  579   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.1667       |
+|  581   |        1.768   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5256   |      0.1111       |
+|  584   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3691   |      1.0000       |
+|  585   |        0.000   |        1.414 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      0.0833       |
+|  591   |        2.277   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  592   |        0.000   |        0.000 :      0.000    |            0, 17             |                G1 vs G2                |  0.0087   |      0.0500       |
+|  593   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.0500       |
+|  595   |        1.138   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  596   |        2.953   |        0.000 :      0.000    |             1, 9             |                G1 vs G2                |  0.9994   |      0.5000       |
+|  597   |        2.147   |        0.000 :      0.000    |             2, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  606   |        0.000   |        0.000 :      0.000    |            0, 11             |                G1 vs G2                |  0.0324   |      0.0500       |
+|  607   |        1.134   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  609   |        0.404   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.1000       |
+|  611   |        4.768   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  612   |        2.785   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  613   |        0.000   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.2734   |      0.0500       |
+|  614   |        2.765   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  616   |        6.072   |        0.000 :      0.000    |             0, 4             |                G1 vs G2                |  0.9986   |      1.0000       |
+|  618   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.5000       |
+|  625   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.3333       |
+|  626   |        2.112   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.4983   |      0.0909       |
+|  627   |        1.136   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  631   |        1.151   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.2500       |
+|  634   |        1.581   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  635   |        9.159   |        0.000 :      0.000    |             1, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  639   |        1.565   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  641   |        2.758   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  643   |        0.809   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9998   |      0.0500       |
+|  644   |        1.222   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  648   |        1.567   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  649   |        2.758   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  650   |        1.127   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  655   |        3.189   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  656   |        0.000   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  657   |        3.143   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  658   |        2.742   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      0.3333       |
+|  660   |        5.284   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.9990   |      0.5000       |
+|  661   |        2.945   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  666   |        3.430   |        0.000 :      0.000    |             1, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  667   |        1.537   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  669   |        2.003   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  670   |        3.096   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  672   |        1.206   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  673   |        3.187   |        0.000 :      0.000    |             2, 1             |                G1 vs G2                |  0.9990   |      0.5000       |
+|  682   |        0.000   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.3691   |      0.3333       |
+|  688   |        5.497   |        0.000 :      0.000    |             3, 2             |                G1 vs G2                |  0.9966   |      1.0000       |
+|  689   |        3.167   |        0.000 :      0.000    |             1, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  690   |        0.850   |        0.000 :      0.000    |             2, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  692   |        0.000   |        1.456 :      0.000    |             1, 0             |                G1 vs G2                |  0.0647   |      0.0714       |
+|  699   |        1.832   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  700   |        3.480   |        0.000 :      0.000    |             2, 2             |                G1 vs G2                |  0.5256   |      1.0000       |
+|  705   |        0.422   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5253   |      0.1429       |
+|  707   |        0.762   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5255   |      0.0833       |
+|  709   |        8.644   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  714   |        9.100   |        0.000 :      0.000    |             1, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  718   |        2.765   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  719   |        3.134   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9993   |      1.0000       |
+|  720   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.1000       |
+|  721   |        1.140   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.3693   |      0.1667       |
+|  722   |        2.757   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  724   |        1.560   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  725   |        2.737   |        0.000 :      0.000    |             1, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  728   |        2.230   |        2.917 :      0.000    |             3, 1             |                G1 vs G2                |  0.0083   |      0.0500       |
+|  730   |        0.000   |        0.000 :    119.685    |             0, 0             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  731   |        2.451   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      0.0500       |
+|  733   |        1.142   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  734   |        6.476   |        0.000 :    582.887    |             0, 4             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  736   |        6.254   |        0.000 :      0.000    |             0, 5             |                G1 vs G2                |  0.5256   |      0.2000       |
+|  738   |        6.630   |        0.000 :      0.000    |             1, 6             |                G1 vs G2                |  0.5255   |      0.1667       |
+|  739   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5250   |      0.3333       |
+|  740   |        4.533   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  0.9998   |      0.0625       |
+|  741   |        1.579   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  0.5257   |      0.2000       |
+|  743   |        3.210   |        0.000 :      0.000    |             0, 2             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  744   |        0.422   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  745   |        0.000   |        0.000 :      0.000    |             0, 1             |                G1 vs G2                |  0.5255   |      0.1250       |
+|  746   |        4.853   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  748   |        1.544   |        1.599 :      0.000    |             1, 2             |                G1 vs G2                |  0.3054   |      1.0000       |
+|  749   |        1.864   |        0.000 :      0.000    |             0, 3             |                G1 vs G2                |  1.0000   |      1.0000       |
+|  750   |       18.031   |        0.000 :      0.000    |             0, 8             |                G1 vs G2                |  0.9937   |      1.0000       |
+
+### ** Found _750_ sites with different _G1 vs G2_ dN/dS at p <= 1**
+
+### ### False discovery rate correction
+There are 750 sites where the overall p-value passes the False Discovery Rate threshold of 1
+
+|     Codon     |       q-value        |
+|:-------------:|:--------------------:|
+|       398     |       0.4642949495   |
+|        23     |       0.7412489737   |
+|        58     |       0.9543765779   |
+|       293     |       1.0000000000   |
+|       291     |       1.0000000000   |
+|       304     |       1.0000000000   |
+|       299     |       1.0000000000   |
+|       292     |       1.0000000000   |
+|        12     |       1.0000000000   |
+|       306     |       1.0000000000   |
+|        13     |       1.0000000000   |
+|        28     |       1.0000000000   |
+|       296     |       1.0000000000   |
+|       295     |       1.0000000000   |
+|       468     |       1.0000000000   |
+|       298     |       1.0000000000   |
+|        27     |       1.0000000000   |
+|       300     |       1.0000000000   |
+|       275     |       1.0000000000   |
+|       278     |       1.0000000000   |
+|       276     |       1.0000000000   |
+|       277     |       1.0000000000   |
+|       282     |       1.0000000000   |
+|       281     |       1.0000000000   |
+|        18     |       1.0000000000   |
+|        19     |       1.0000000000   |
+|        34     |       1.0000000000   |
+|        35     |       1.0000000000   |
+|       279     |       1.0000000000   |
+|       663     |       1.0000000000   |
+|       678     |       1.0000000000   |
+|       677     |       1.0000000000   |
+|       668     |       1.0000000000   |
+|       659     |       1.0000000000   |
+|       747     |       1.0000000000   |
+|       679     |       1.0000000000   |
+|       676     |       1.0000000000   |
+|       680     |       1.0000000000   |
+|       671     |       1.0000000000   |
+|       440     |       1.0000000000   |
+|       681     |       1.0000000000   |
+|       438     |       1.0000000000   |
+|       666     |       1.0000000000   |
+|       665     |       1.0000000000   |
+|       667     |       1.0000000000   |
+|       662     |       1.0000000000   |
+|       664     |       1.0000000000   |
+|       661     |       1.0000000000   |
+|       654     |       1.0000000000   |
+|       657     |       1.0000000000   |
+|       655     |       1.0000000000   |
+|       656     |       1.0000000000   |
+|       287     |       1.0000000000   |
+|       315     |       1.0000000000   |
+|        52     |       1.0000000000   |
+|        10     |       1.0000000000   |
+|       322     |       1.0000000000   |
+|         9     |       1.0000000000   |
+|       309     |       1.0000000000   |
+|       313     |       1.0000000000   |
+|       312     |       1.0000000000   |
+|       314     |       1.0000000000   |
+|       204     |       1.0000000000   |
+|       311     |       1.0000000000   |
+|       319     |       1.0000000000   |
+|       233     |       1.0000000000   |
+|       232     |       1.0000000000   |
+|        45     |       1.0000000000   |
+|       229     |       1.0000000000   |
+|       226     |       1.0000000000   |
+|       208     |       1.0000000000   |
+|        11     |       1.0000000000   |
+|       316     |       1.0000000000   |
+|       318     |       1.0000000000   |
+|       231     |       1.0000000000   |
+|       274     |       1.0000000000   |
+|       323     |       1.0000000000   |
+|       328     |       1.0000000000   |
+|       307     |       1.0000000000   |
+|       329     |       1.0000000000   |
+|       327     |       1.0000000000   |
+|       330     |       1.0000000000   |
+|       285     |       1.0000000000   |
+|       289     |       1.0000000000   |
+|       288     |       1.0000000000   |
+|       286     |       1.0000000000   |
+|       284     |       1.0000000000   |
+|       283     |       1.0000000000   |
+|       324     |       1.0000000000   |
+|         6     |       1.0000000000   |
+|         5     |       1.0000000000   |
+|       332     |       1.0000000000   |
+|       334     |       1.0000000000   |
+|         7     |       1.0000000000   |
+|        53     |       1.0000000000   |
+|       326     |       1.0000000000   |
+|         8     |       1.0000000000   |
+|       202     |       1.0000000000   |
+|       336     |       1.0000000000   |
+|       670     |       1.0000000000   |
+|       455     |       1.0000000000   |
+|       730     |       1.0000000000   |
+|       732     |       1.0000000000   |
+|       742     |       1.0000000000   |
+|       737     |       1.0000000000   |
+|       733     |       1.0000000000   |
+|       714     |       1.0000000000   |
+|       693     |       1.0000000000   |
+|       734     |       1.0000000000   |
+|       450     |       1.0000000000   |
+|       735     |       1.0000000000   |
+|       743     |       1.0000000000   |
+|       447     |       1.0000000000   |
+|       446     |       1.0000000000   |
+|       448     |       1.0000000000   |
+|       715     |       1.0000000000   |
+|       718     |       1.0000000000   |
+|       729     |       1.0000000000   |
+|       454     |       1.0000000000   |
+|       744     |       1.0000000000   |
+|       391     |       1.0000000000   |
+|       453     |       1.0000000000   |
+|       452     |       1.0000000000   |
+|       442     |       1.0000000000   |
+|       708     |       1.0000000000   |
+|       445     |       1.0000000000   |
+|       709     |       1.0000000000   |
+|       441     |       1.0000000000   |
+|       698     |       1.0000000000   |
+|       710     |       1.0000000000   |
+|       706     |       1.0000000000   |
+|       711     |       1.0000000000   |
+|       701     |       1.0000000000   |
+|       713     |       1.0000000000   |
+|       712     |       1.0000000000   |
+|       689     |       1.0000000000   |
+|       695     |       1.0000000000   |
+|       691     |       1.0000000000   |
+|       696     |       1.0000000000   |
+|       694     |       1.0000000000   |
+|       697     |       1.0000000000   |
+|       686     |       1.0000000000   |
+|       687     |       1.0000000000   |
+|       690     |       1.0000000000   |
+|       684     |       1.0000000000   |
+|       685     |       1.0000000000   |
+|       716     |       1.0000000000   |
+|       624     |       1.0000000000   |
+|       623     |       1.0000000000   |
+|       388     |       1.0000000000   |
+|       634     |       1.0000000000   |
+|       630     |       1.0000000000   |
+|       436     |       1.0000000000   |
+|       637     |       1.0000000000   |
+|       456     |       1.0000000000   |
+|       457     |       1.0000000000   |
+|       629     |       1.0000000000   |
+|       628     |       1.0000000000   |
+|       635     |       1.0000000000   |
+|       674     |       1.0000000000   |
+|       377     |       1.0000000000   |
+|       675     |       1.0000000000   |
+|       669     |       1.0000000000   |
+|       672     |       1.0000000000   |
+|       653     |       1.0000000000   |
+|       633     |       1.0000000000   |
+|       636     |       1.0000000000   |
+|       749     |       1.0000000000   |
+|       632     |       1.0000000000   |
+|       647     |       1.0000000000   |
+|       724     |       1.0000000000   |
+|       723     |       1.0000000000   |
+|       683     |       1.0000000000   |
+|       389     |       1.0000000000   |
+|       642     |       1.0000000000   |
+|       725     |       1.0000000000   |
+|       722     |       1.0000000000   |
+|       717     |       1.0000000000   |
+|       726     |       1.0000000000   |
+|       449     |       1.0000000000   |
+|       727     |       1.0000000000   |
+|       644     |       1.0000000000   |
+|       651     |       1.0000000000   |
+|       650     |       1.0000000000   |
+|       652     |       1.0000000000   |
+|       646     |       1.0000000000   |
+|       649     |       1.0000000000   |
+|       645     |       1.0000000000   |
+|       638     |       1.0000000000   |
+|       641     |       1.0000000000   |
+|       639     |       1.0000000000   |
+|       640     |       1.0000000000   |
+|       228     |       1.0000000000   |
+|       361     |       1.0000000000   |
+|       360     |       1.0000000000   |
+|       362     |       1.0000000000   |
+|       196     |       1.0000000000   |
+|       359     |       1.0000000000   |
+|       190     |       1.0000000000   |
+|       112     |       1.0000000000   |
+|       109     |       1.0000000000   |
+|       115     |       1.0000000000   |
+|        57     |       1.0000000000   |
+|       114     |       1.0000000000   |
+|       357     |       1.0000000000   |
+|       365     |       1.0000000000   |
+|       364     |       1.0000000000   |
+|       366     |       1.0000000000   |
+|       200     |       1.0000000000   |
+|       355     |       1.0000000000   |
+|        55     |       1.0000000000   |
+|       363     |       1.0000000000   |
+|         1     |       1.0000000000   |
+|       368     |       1.0000000000   |
+|       370     |       1.0000000000   |
+|       369     |       1.0000000000   |
+|       102     |       1.0000000000   |
+|       395     |       1.0000000000   |
+|       394     |       1.0000000000   |
+|       464     |       1.0000000000   |
+|       462     |       1.0000000000   |
+|       461     |       1.0000000000   |
+|       393     |       1.0000000000   |
+|        59     |       1.0000000000   |
+|       104     |       1.0000000000   |
+|       106     |       1.0000000000   |
+|       460     |       1.0000000000   |
+|       105     |       1.0000000000   |
+|       380     |       1.0000000000   |
+|       122     |       1.0000000000   |
+|        97     |       1.0000000000   |
+|       121     |       1.0000000000   |
+|       111     |       1.0000000000   |
+|       100     |       1.0000000000   |
+|       120     |       1.0000000000   |
+|       119     |       1.0000000000   |
+|       108     |       1.0000000000   |
+|        99     |       1.0000000000   |
+|       117     |       1.0000000000   |
+|         3     |       1.0000000000   |
+|       184     |       1.0000000000   |
+|       173     |       1.0000000000   |
+|       183     |       1.0000000000   |
+|        61     |       1.0000000000   |
+|        62     |       1.0000000000   |
+|        78     |       1.0000000000   |
+|       192     |       1.0000000000   |
+|       193     |       1.0000000000   |
+|        79     |       1.0000000000   |
+|        77     |       1.0000000000   |
+|        76     |       1.0000000000   |
+|       372     |       1.0000000000   |
+|       177     |       1.0000000000   |
+|       174     |       1.0000000000   |
+|        63     |       1.0000000000   |
+|        67     |       1.0000000000   |
+|        66     |       1.0000000000   |
+|        69     |       1.0000000000   |
+|       374     |       1.0000000000   |
+|       373     |       1.0000000000   |
+|       181     |       1.0000000000   |
+|       194     |       1.0000000000   |
+|        80     |       1.0000000000   |
+|        54     |       1.0000000000   |
+|       352     |       1.0000000000   |
+|       354     |       1.0000000000   |
+|       348     |       1.0000000000   |
+|       351     |       1.0000000000   |
+|       199     |       1.0000000000   |
+|       343     |       1.0000000000   |
+|       346     |       1.0000000000   |
+|       340     |       1.0000000000   |
+|       342     |       1.0000000000   |
+|       341     |       1.0000000000   |
+|       349     |       1.0000000000   |
+|       172     |       1.0000000000   |
+|       169     |       1.0000000000   |
+|        72     |       1.0000000000   |
+|       165     |       1.0000000000   |
+|       170     |       1.0000000000   |
+|       166     |       1.0000000000   |
+|       371     |       1.0000000000   |
+|       198     |       1.0000000000   |
+|       168     |       1.0000000000   |
+|       167     |       1.0000000000   |
+|       459     |       1.0000000000   |
+|       260     |       1.0000000000   |
+|       259     |       1.0000000000   |
+|       261     |       1.0000000000   |
+|       271     |       1.0000000000   |
+|        38     |       1.0000000000   |
+|       262     |       1.0000000000   |
+|       242     |       1.0000000000   |
+|       220     |       1.0000000000   |
+|       263     |       1.0000000000   |
+|       265     |       1.0000000000   |
+|       264     |       1.0000000000   |
+|        36     |       1.0000000000   |
+|        43     |       1.0000000000   |
+|       247     |       1.0000000000   |
+|        42     |       1.0000000000   |
+|       243     |       1.0000000000   |
+|        44     |       1.0000000000   |
+|       258     |       1.0000000000   |
+|       270     |       1.0000000000   |
+|       273     |       1.0000000000   |
+|        37     |       1.0000000000   |
+|       269     |       1.0000000000   |
+|       268     |       1.0000000000   |
+|       219     |       1.0000000000   |
+|       237     |       1.0000000000   |
+|       236     |       1.0000000000   |
+|       225     |       1.0000000000   |
+|        50     |       1.0000000000   |
+|       214     |       1.0000000000   |
+|       207     |       1.0000000000   |
+|       239     |       1.0000000000   |
+|       234     |       1.0000000000   |
+|       240     |       1.0000000000   |
+|       206     |       1.0000000000   |
+|       241     |       1.0000000000   |
+|        49     |       1.0000000000   |
+|       223     |       1.0000000000   |
+|        46     |       1.0000000000   |
+|       224     |       1.0000000000   |
+|       218     |       1.0000000000   |
+|       221     |       1.0000000000   |
+|       217     |       1.0000000000   |
+|        51     |       1.0000000000   |
+|       213     |       1.0000000000   |
+|       209     |       1.0000000000   |
+|       212     |       1.0000000000   |
+|       244     |       1.0000000000   |
+|       153     |       1.0000000000   |
+|       150     |       1.0000000000   |
+|       156     |       1.0000000000   |
+|        82     |       1.0000000000   |
+|       155     |       1.0000000000   |
+|       151     |       1.0000000000   |
+|        92     |       1.0000000000   |
+|       131     |       1.0000000000   |
+|       129     |       1.0000000000   |
+|       152     |       1.0000000000   |
+|       141     |       1.0000000000   |
+|        56     |       1.0000000000   |
+|       146     |       1.0000000000   |
+|        85     |       1.0000000000   |
+|        96     |       1.0000000000   |
+|       458     |       1.0000000000   |
+|       103     |       1.0000000000   |
+|        83     |       1.0000000000   |
+|       143     |       1.0000000000   |
+|       144     |       1.0000000000   |
+|       142     |       1.0000000000   |
+|       145     |       1.0000000000   |
+|       128     |       1.0000000000   |
+|       252     |       1.0000000000   |
+|        41     |       1.0000000000   |
+|        40     |       1.0000000000   |
+|        88     |       1.0000000000   |
+|         4     |       1.0000000000   |
+|       254     |       1.0000000000   |
+|       250     |       1.0000000000   |
+|       205     |       1.0000000000   |
+|       255     |       1.0000000000   |
+|        39     |       1.0000000000   |
+|       256     |       1.0000000000   |
+|       136     |       1.0000000000   |
+|        91     |       1.0000000000   |
+|       138     |       1.0000000000   |
+|       127     |       1.0000000000   |
+|       125     |       1.0000000000   |
+|        93     |       1.0000000000   |
+|        86     |       1.0000000000   |
+|       133     |       1.0000000000   |
+|        90     |       1.0000000000   |
+|        87     |       1.0000000000   |
+|       188     |       1.0000000000   |
+|       443     |       1.0000000000   |
+|        15     |       1.0000000000   |
+|       736     |       1.0000000000   |
+|       581     |       1.0000000000   |
+|       110     |       1.0000000000   |
+|       482     |       1.0000000000   |
+|       700     |       1.0000000000   |
+|       201     |       1.0000000000   |
+|       738     |       1.0000000000   |
+|       618     |       1.0000000000   |
+|       297     |       1.0000000000   |
+|       382     |       1.0000000000   |
+|       338     |       1.0000000000   |
+|       162     |       1.0000000000   |
+|        75     |       1.0000000000   |
+|        30     |       1.0000000000   |
+|       154     |       1.0000000000   |
+|       132     |       1.0000000000   |
+|       487     |       1.0000000000   |
+|       437     |       1.0000000000   |
+|       741     |       1.0000000000   |
+|       531     |       1.0000000000   |
+|        20     |       1.0000000000   |
+|       178     |       1.0000000000   |
+|       118     |       1.0000000000   |
+|       189     |       1.0000000000   |
+|       216     |       1.0000000000   |
+|       579     |       1.0000000000   |
+|       539     |       1.0000000000   |
+|       435     |       1.0000000000   |
+|       401     |       1.0000000000   |
+|       126     |       1.0000000000   |
+|       222     |       1.0000000000   |
+|       390     |       1.0000000000   |
+|       625     |       1.0000000000   |
+|       163     |       1.0000000000   |
+|       593     |       1.0000000000   |
+|        71     |       1.0000000000   |
+|        21     |       1.0000000000   |
+|       707     |       1.0000000000   |
+|       116     |       1.0000000000   |
+|       290     |       1.0000000000   |
+|       280     |       1.0000000000   |
+|       745     |       1.0000000000   |
+|       159     |       1.0000000000   |
+|       720     |       1.0000000000   |
+|       147     |       1.0000000000   |
+|       171     |       1.0000000000   |
+|       439     |       1.0000000000   |
+|       339     |       1.0000000000   |
+|       325     |       1.0000000000   |
+|       317     |       1.0000000000   |
+|        47     |       1.0000000000   |
+|       562     |       1.0000000000   |
+|       294     |       1.0000000000   |
+|       379     |       1.0000000000   |
+|       335     |       1.0000000000   |
+|       186     |       1.0000000000   |
+|       418     |       1.0000000000   |
+|       573     |       1.0000000000   |
+|       375     |       1.0000000000   |
+|       333     |       1.0000000000   |
+|       235     |       1.0000000000   |
+|       427     |       1.0000000000   |
+|       211     |       1.0000000000   |
+|        31     |       1.0000000000   |
+|       740     |       1.0000000000   |
+|       303     |       1.0000000000   |
+|       643     |       1.0000000000   |
+|       451     |       1.0000000000   |
+|       215     |       1.0000000000   |
+|       246     |       1.0000000000   |
+|       411     |       1.0000000000   |
+|       113     |       1.0000000000   |
+|       660     |       1.0000000000   |
+|       616     |       1.0000000000   |
+|       248     |       1.0000000000   |
+|       466     |       1.0000000000   |
+|        17     |       1.0000000000   |
+|       489     |       1.0000000000   |
+|       688     |       1.0000000000   |
+|       750     |       1.0000000000   |
+|       673     |       1.0000000000   |
+|        95     |       1.0000000000   |
+|       719     |       1.0000000000   |
+|       301     |       1.0000000000   |
+|       596     |       1.0000000000   |
+|       345     |       1.0000000000   |
+|       321     |       1.0000000000   |
+|       529     |       1.0000000000   |
+|       302     |       1.0000000000   |
+|       266     |       1.0000000000   |
+|       535     |       1.0000000000   |
+|        89     |       1.0000000000   |
+|       551     |       1.0000000000   |
+|       578     |       1.0000000000   |
+|       463     |       1.0000000000   |
+|       161     |       1.0000000000   |
+|        73     |       1.0000000000   |
+|       164     |       1.0000000000   |
+|       585     |       1.0000000000   |
+|       692     |       1.0000000000   |
+|       124     |       1.0000000000   |
+|        70     |       1.0000000000   |
+|       465     |       1.0000000000   |
+|        16     |       1.0000000000   |
+|       135     |       1.0000000000   |
+|       179     |       1.0000000000   |
+|       305     |       1.0000000000   |
+|       536     |       1.0000000000   |
+|       613     |       1.0000000000   |
+|       433     |       1.0000000000   |
+|       148     |       1.0000000000   |
+|        32     |       1.0000000000   |
+|       541     |       1.0000000000   |
+|       471     |       1.0000000000   |
+|       139     |       1.0000000000   |
+|       130     |       1.0000000000   |
+|        25     |       1.0000000000   |
+|       606     |       1.0000000000   |
+|       134     |       1.0000000000   |
+|        94     |       1.0000000000   |
+|       251     |       1.0000000000   |
+|       490     |       1.0000000000   |
+|       592     |       1.0000000000   |
+|       728     |       1.0000000000   |
+|       400     |       1.0000000000   |
+|       267     |       1.0000000000   |
+|       257     |       1.0000000000   |
+|       525     |       1.0000000000   |
+|       160     |       1.0000000000   |
+|       175     |       1.0000000000   |
+|       474     |       1.0000000000   |
+|       203     |       1.0000000000   |
+|        64     |       1.0000000000   |
+|       577     |       1.0000000000   |
+|       185     |       1.0000000000   |
+|        98     |       1.0000000000   |
+|       182     |       1.0000000000   |
+|       477     |       1.0000000000   |
+|       187     |       1.0000000000   |
+|       555     |       1.0000000000   |
+|       475     |       1.0000000000   |
+|       739     |       1.0000000000   |
+|       137     |       1.0000000000   |
+|       527     |       1.0000000000   |
+|       378     |       1.0000000000   |
+|       626     |       1.0000000000   |
+|        33     |       1.0000000000   |
+|       227     |       1.0000000000   |
+|       567     |       1.0000000000   |
+|       272     |       1.0000000000   |
+|       320     |       1.0000000000   |
+|       705     |       1.0000000000   |
+|       533     |       1.0000000000   |
+|       537     |       1.0000000000   |
+|        74     |       1.0000000000   |
+|        48     |       1.0000000000   |
+|        60     |       1.0000000000   |
+|        65     |       1.0000000000   |
+|       356     |       1.0000000000   |
+|       123     |       1.0000000000   |
+|       197     |       1.0000000000   |
+|       721     |       1.0000000000   |
+|        26     |       1.0000000000   |
+|       358     |       1.0000000000   |
+|       392     |       1.0000000000   |
+|       249     |       1.0000000000   |
+|       488     |       1.0000000000   |
+|       253     |       1.0000000000   |
+|       748     |       1.0000000000   |
+|       469     |       1.0000000000   |
+|        22     |       1.0000000000   |
+|        24     |       1.0000000000   |
+|        14     |       1.0000000000   |
+|        68     |       1.0000000000   |
+|       682     |       1.0000000000   |
+|        29     |       1.0000000000   |
+|       543     |       1.0000000000   |
+|       210     |       1.0000000000   |
+|       467     |       1.0000000000   |
+|       584     |       1.0000000000   |
+|       428     |       1.0000000000   |
+|        84     |       1.0000000000   |
+|       195     |       1.0000000000   |
+|       180     |       1.0000000000   |
+|       140     |       1.0000000000   |
+|       530     |       1.0000000000   |
+|       610     |       1.0000000000   |
+|       492     |       1.0000000000   |
+|       494     |       1.0000000000   |
+|       493     |       1.0000000000   |
+|       611     |       1.0000000000   |
+|       612     |       1.0000000000   |
+|       617     |       1.0000000000   |
+|       608     |       1.0000000000   |
+|       386     |       1.0000000000   |
+|       607     |       1.0000000000   |
+|       396     |       1.0000000000   |
+|       496     |       1.0000000000   |
+|       498     |       1.0000000000   |
+|       497     |       1.0000000000   |
+|       383     |       1.0000000000   |
+|       472     |       1.0000000000   |
+|       501     |       1.0000000000   |
+|       470     |       1.0000000000   |
+|       397     |       1.0000000000   |
+|       495     |       1.0000000000   |
+|       500     |       1.0000000000   |
+|       499     |       1.0000000000   |
+|       434     |       1.0000000000   |
+|       603     |       1.0000000000   |
+|       600     |       1.0000000000   |
+|       605     |       1.0000000000   |
+|       599     |       1.0000000000   |
+|       604     |       1.0000000000   |
+|       601     |       1.0000000000   |
+|       558     |       1.0000000000   |
+|       556     |       1.0000000000   |
+|       557     |       1.0000000000   |
+|       602     |       1.0000000000   |
+|       619     |       1.0000000000   |
+|       595     |       1.0000000000   |
+|       615     |       1.0000000000   |
+|       431     |       1.0000000000   |
+|       614     |       1.0000000000   |
+|       387     |       1.0000000000   |
+|       432     |       1.0000000000   |
+|       597     |       1.0000000000   |
+|       429     |       1.0000000000   |
+|       594     |       1.0000000000   |
+|       430     |       1.0000000000   |
+|       598     |       1.0000000000   |
+|       481     |       1.0000000000   |
+|       402     |       1.0000000000   |
+|       505     |       1.0000000000   |
+|       504     |       1.0000000000   |
+|       513     |       1.0000000000   |
+|       509     |       1.0000000000   |
+|       508     |       1.0000000000   |
+|       406     |       1.0000000000   |
+|       524     |       1.0000000000   |
+|       516     |       1.0000000000   |
+|       403     |       1.0000000000   |
+|       506     |       1.0000000000   |
+|       514     |       1.0000000000   |
+|       704     |       1.0000000000   |
+|       703     |       1.0000000000   |
+|       444     |       1.0000000000   |
+|       746     |       1.0000000000   |
+|       702     |       1.0000000000   |
+|       622     |       1.0000000000   |
+|       512     |       1.0000000000   |
+|       515     |       1.0000000000   |
+|       510     |       1.0000000000   |
+|       511     |       1.0000000000   |
+|       526     |       1.0000000000   |
+|       473     |       1.0000000000   |
+|       381     |       1.0000000000   |
+|       476     |       1.0000000000   |
+|       376     |       1.0000000000   |
+|       478     |       1.0000000000   |
+|       486     |       1.0000000000   |
+|       483     |       1.0000000000   |
+|       480     |       1.0000000000   |
+|       485     |       1.0000000000   |
+|       479     |       1.0000000000   |
+|       484     |       1.0000000000   |
+|       502     |       1.0000000000   |
+|       523     |       1.0000000000   |
+|       518     |       1.0000000000   |
+|       407     |       1.0000000000   |
+|       408     |       1.0000000000   |
+|       491     |       1.0000000000   |
+|       404     |       1.0000000000   |
+|       521     |       1.0000000000   |
+|       520     |       1.0000000000   |
+|       405     |       1.0000000000   |
+|       519     |       1.0000000000   |
+|       554     |       1.0000000000   |
+|       337     |       1.0000000000   |
+|       157     |       1.0000000000   |
+|       310     |       1.0000000000   |
+|       609     |       1.0000000000   |
+|       101     |       1.0000000000   |
+|       522     |       1.0000000000   |
+|       658     |       1.0000000000   |
+|       627     |       1.0000000000   |
+|       158     |       1.0000000000   |
+|       353     |       1.0000000000   |
+|       191     |       1.0000000000   |
+|       107     |       1.0000000000   |
+|       420     |       1.0000000000   |
+|       586     |       1.0000000000   |
+|       568     |       1.0000000000   |
+|       591     |       1.0000000000   |
+|       569     |       1.0000000000   |
+|       424     |       1.0000000000   |
+|       230     |       1.0000000000   |
+|       350     |       1.0000000000   |
+|       631     |       1.0000000000   |
+|       542     |       1.0000000000   |
+|       544     |       1.0000000000   |
+|       331     |       1.0000000000   |
+|       648     |       1.0000000000   |
+|       503     |       1.0000000000   |
+|       731     |       1.0000000000   |
+|       576     |       1.0000000000   |
+|       399     |       1.0000000000   |
+|       367     |       1.0000000000   |
+|       517     |       1.0000000000   |
+|       176     |       1.0000000000   |
+|       699     |       1.0000000000   |
+|       559     |       1.0000000000   |
+|       344     |       1.0000000000   |
+|       238     |       1.0000000000   |
+|       507     |       1.0000000000   |
+|       308     |       1.0000000000   |
+|       245     |       1.0000000000   |
+|       552     |       1.0000000000   |
+|       426     |       1.0000000000   |
+|       149     |       1.0000000000   |
+|        81     |       1.0000000000   |
+|       347     |       1.0000000000   |
+|         2     |       1.0000000000   |
+|       528     |       1.0000000000   |
+|       417     |       1.0000000000   |
+|       571     |       1.0000000000   |
+|       570     |       1.0000000000   |
+|       410     |       1.0000000000   |
+|       538     |       1.0000000000   |
+|       413     |       1.0000000000   |
+|       572     |       1.0000000000   |
+|       575     |       1.0000000000   |
+|       423     |       1.0000000000   |
+|       409     |       1.0000000000   |
+|       422     |       1.0000000000   |
+|       532     |       1.0000000000   |
+|       412     |       1.0000000000   |
+|       564     |       1.0000000000   |
+|       419     |       1.0000000000   |
+|       563     |       1.0000000000   |
+|       385     |       1.0000000000   |
+|       565     |       1.0000000000   |
+|       560     |       1.0000000000   |
+|       384     |       1.0000000000   |
+|       534     |       1.0000000000   |
+|       553     |       1.0000000000   |
+|       561     |       1.0000000000   |
+|       421     |       1.0000000000   |
+|       415     |       1.0000000000   |
+|       416     |       1.0000000000   |
+|       540     |       1.0000000000   |
+|       589     |       1.0000000000   |
+|       414     |       1.0000000000   |
+|       545     |       1.0000000000   |
+|       549     |       1.0000000000   |
+|       550     |       1.0000000000   |
+|       548     |       1.0000000000   |
+|       546     |       1.0000000000   |
+|       547     |       1.0000000000   |
+|       583     |       1.0000000000   |
+|       580     |       1.0000000000   |
+|       582     |       1.0000000000   |
+|       425     |       1.0000000000   |
+|       574     |       1.0000000000   |
+|       566     |       1.0000000000   |
+|       587     |       1.0000000000   |
+|       621     |       1.0000000000   |
+|       620     |       1.0000000000   |
+|       590     |       1.0000000000   |
+|       588     |       1.0000000000   |
+
+Check messages.log for diagnostic messages.
+
+real	272m18.027s
+user	2217m53.012s
+sys	25m0.060s
