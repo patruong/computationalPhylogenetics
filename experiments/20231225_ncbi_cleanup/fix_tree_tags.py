@@ -1,16 +1,23 @@
+import argparse
 import os
-os.chdir("/home/patrick/git/computationalPhylogenetics/experiments/data/20231221_feline_canine_parvoVP_build/selected_sequences_based_on_length_from_full_fasta/tagged")
 
-tree_file = "parvo_panleu_trans_tagged.fasta"
+def fix_special_characters(input_file, output_file):
+    with open(input_file, "r") as file:
+        file_contents = file.read()
 
-with open(tree_file, "r") as file:
-    file_contents = file.read()
+    updated_contents = file_contents.translate(str.maketrans("ÖÄ", "{}"))
 
-updated_contents = file_contents.translate(str.maketrans("ÖÄ", "{}"))
+    with open(output_file, "w") as output_file:
+        output_file.write(updated_contents)
 
-# Specify the path to your output text file
-output_file_path = tree_file[:-6] + "_fixed.fasta"
+def main():
+    parser = argparse.ArgumentParser(description='Fix special characters in a file.')
+    parser.add_argument('input_file', help='Path to the input file')
+    parser.add_argument('output_file', help='Path to the output file')
 
-# Open the file in write mode and write the translated contents
-with open(output_file_path, "w") as output_file:
-    output_file.write(updated_contents)
+    args = parser.parse_args()
+
+    fix_special_characters(args.input_file, args.output_file)
+
+if __name__ == "__main__":
+    main()

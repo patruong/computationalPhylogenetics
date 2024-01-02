@@ -1,7 +1,8 @@
 import re
 import os
+import random
 
-os.chdir("/home/ptruong/git/computationalPhylogenetics/experiments/20231212_correction_original_data")
+os.chdir("/home/patrick/git/computationalPhylogenetics/experiments/20231212_correction_original_data")
 os.listdir()
 
 with open('ParvoVP.fasta', 'r') as f:
@@ -22,7 +23,10 @@ len(set(seq_names)) # 371 unique sequence names
 
 reduced_seq_names = []
 reduced_seqs = []
-for seq_name, seq in zip(seq_names, seqs):
+seq_list = list(zip(seq_names, seqs))
+shuffled_seq_list = seq_list.copy()  # or shuffled_seq_list = seq_list[:]
+random.shuffle(shuffled_seq_list)
+for seq_name, seq in shuffle_list:
     if seq not in reduced_seqs:
         reduced_seq_names.append(seq_name)
         reduced_seqs.append(seq)
@@ -31,7 +35,6 @@ for seq_name, seq in zip(seq_names, seqs):
 
 reduced_seq_names[0]
 reduced_seqs[0]
-
 
 # fix names ending with -
 
@@ -45,6 +48,7 @@ for seq in reduced_seq_names:
         fixed_seq_names.append(seq)
     else:
         fixed_seq_names.append(seq)
+
 fixed_seq_names
 
 added_tag_seq_names = []
@@ -61,13 +65,29 @@ for seq_name, seq in zip(fixed_seq_names, reduced_seqs):
     added_tag_seq_names.append(seq_name)
 seq_name
 
+added_tag_seq_names
+fixed_seq_names
+
+
 # For datamonkey tree
-with open("ParvoVP_removed_duplicates.fasta", "w") as file:
+with open("ParvoVP_removed_duplicates_shuffle.fasta", "w") as file:
     for seq_name, seq in zip(added_tag_seq_names, reduced_seqs):
         file.write(f"{seq_name.upper()}{seq.upper()}")
 
 # without tag for the contrast-fel local run
-with open("ParvoVP_removed_duplicates.fasta", "w") as file:
+with open("ParvoVP_removed_duplicates_shuffle.fasta", "w") as file:
     for seq_name, seq in zip(fixed_seq_names, reduced_seqs):
-        file.write(f"{seq_name.upper()}{seq.upper()}")
+        if seq_name.upper() == ">KR002805_1_CANINE_PARVOVIRUS_2A_STRAIN_CPV_CN_SD19\n":
+            print(seq_name)
+            print(seq)
+        #print(seq_name.upper())
+        #print(seq)
+        #print(f"{seq_name.upper()}{seq.upper()}")
+        file.write(seq_name.upper())
+        file.write(seq.upper())
+        #file.write(f"{seq_name.upper()}{seq.upper()}")
+
+
+
+
 

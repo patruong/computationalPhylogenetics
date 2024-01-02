@@ -10,10 +10,10 @@ using DataFrames
 using MolecularEvolution, Plots, Phylo
 
 
-cd("/home/ptruong/git/computationalPhylogenetics/experiments/20231212_correction_original_data/")
+cd("/home/patrick/git/computationalPhylogenetics/experiments/20231212_correction_original_data/")
 
 
-fasta = "ParvoVP_removed_duplicates.fasta" #parsed_args["FASTAfile"]
+fasta = "ParvoVP_removed_duplicates_shuffle.fasta" #parsed_args["FASTAfile"]
 tree_file = "ParvoVP.nex" #parsed_args["treefile"]
 analysis_name = "output" #parsed_args["output_dir"] * "/" * "ParvoVP"
 seqnames, seqs = read_fasta(fasta)
@@ -51,6 +51,8 @@ length(nodes_not_in_fasta)
 for node in getleaflist(tree)
     if node.name in nodes_not_in_fasta
         parent = node.parent
+
+        print(node.name)
         sibling = siblings(node)[1]
 
         if sibling.children != FelNode[]
@@ -85,20 +87,20 @@ end
 
 "MF177263_1_CANINE_PARVOVIRUS_2C_ISOLATE_E1_NON-STR{G2}"
 
-pattern = r"\{([^\}]+)\}"
-input_string = "MF177242_1_CANINE_PARVOVIRUS_2C_ISOLATE_ARG26_NON-{G2}"
-match_result = match(pattern, input_string)
-text_inside_braces = match_result.match
-println("Text inside {}: ", text_inside_braces)
-result_string = replace(input_string, pattern => s -> "")
-result_string
+#pattern = r"\{([^\}]+)\}"
+#input_string = "MF177242_1_CANINE_PARVOVIRUS_2C_ISOLATE_ARG26_NON-{G2}"
+#match_result = match(pattern, input_string)
+#text_inside_braces = match_result.match
+#println("Text inside {}: ", text_inside_braces)
+#result_string = replace(input_string, pattern => s -> "")
+#result_string
 
 
 # write .nex tree for contrast-FEL run
-MolecularEvolution.write_nexus("ParvoVP_removed_duplicates.nex", tree)
+MolecularEvolution.write_nexus("ParvoVP_removed_duplicates_shuffle.nex", tree)
 
 # write Newick tree for difFUBAR run
 nwk_string = MolecularEvolution.newick(tree)
-file = open("ParvoVP_removed_duplicates.nwk", "w")
+file = open("ParvoVP_removed_duplicates_shuffle.nwk", "w")
 write(file, nwk_string)
 close(file)

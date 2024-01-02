@@ -1,0 +1,6 @@
+In default run use
+
+--fasta_file 'parvo_panleu_trans.fasta'
+--nexus_file 'parvo_panleu_trans_tagged_fixed_aligned_internalNode_grouped.nwk'
+
+in difFUBAR.

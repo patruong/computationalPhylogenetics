@@ -1,4 +1,7 @@
 
-Error:Incompatible dimensions when trying to add or subtract matrices: first argument was a 0x0 matrix and the second was a 61x61 matrix.
-Error:
-Incompatible dimensions when trying to add or subtract matrices: first argument was a 0x0 matrix and the second was a 61x61 matrix.Incompatible dimensions when trying to add or subtract matrices: first argument was a 0x0 matrix and the second was a 61x61 matrix.
+Error:'FELINE' is not a valid choice passed to 'Choose sets of branches to compare. If more than one set is chosen, pairwise comparisons will be carried out in addition to a group-level difference test.' ChoiceList using redirected stdin input or keyword arguments. Valid choices are
+	Internal branches, Terminal branches, Random set of branches, Unlabeled branches
+ in call to ChoiceList(testSet, "Choose sets of branches to compare. If more than one set is chosen, pairwise comparisons will be carried out in addition to a group-level difference test.", 0, NO_SKIP, selectTheseForTesting);
+'FELINE' is not a valid choice passed to 'Choose sets of branches to compare. If more than one set is chosen, pairwise comparisons will be carried out in addition to a group-level difference test.' ChoiceList using redirected stdin input or keyword arguments. Valid choices are
+	Internal branches, Terminal branches, Random set of branches, Unlabeled branches
+ in call to ChoiceList(testSet, "Choose sets of branches to compare. If more than one set is chosen, pairwise comparisons will be carried out in addition to a group-level difference test.", 0, NO_SKIP, selectTheseForTesting);

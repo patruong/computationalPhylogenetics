@@ -13,14 +13,22 @@ tree_dir = "tree"
 fasta_concat_output_file = "parvo_panleu.fasta"
 fasta_concat_transformed_output_file = fasta_concat_output_file[:-6] + "_trans.fasta"
 fasta_concat_transformed_tagged_output_file = fasta_concat_output_file[:-6] + "_trans_tagged.fasta"
-mafft_output_file = fasta_concat_transformed_tagged_output_file[:-6] + "_aligned.fasta"
+fasta_concat_transformed_tagged_fixed_output_file = fasta_concat_transformed_tagged_output_file[:-6] + "_fixed.fasta"
+mafft_output_file = fasta_concat_transformed_tagged_fixed_output_file[:-6] + "_aligned.fasta"
 tree_output_file = mafft_output_file[:-6] + ".nwk"
+tree_grouped_internal_nodes_output_file = tree_output_file[:-4] + "_internalNode_grouped.nwk"
+tree_grouped_reroot_output_file = tree_grouped_internal_nodes_output_file[:-4] + "_rerooted.nwk"
+tree_grouped_reroot_reassigned_output_file = tree_grouped_reroot_output_file[:-4] + "_reassigned_groups.nwk"
 
 concat_fasta_output = os.path.join(output_dir, fasta_dir, fasta_concat_output_file)
 processed_fasta_output = os.path.join(output_dir, fasta_dir,fasta_concat_transformed_output_file)
 processed_fasta_tagged_output = os.path.join(output_dir, fasta_dir, fasta_concat_transformed_tagged_output_file)
+processed_fasta_tagged_fixed_output = os.path.join(output_dir, fasta_dir, fasta_concat_transformed_tagged_fixed_output_file)
 mafft_output = os.path.join(output_dir, alignment_dir, mafft_output_file)
 tree_output = os.path.join(output_dir, tree_dir, tree_output_file)
+tree_grouped_internal_nodes_output = os.path.join(output_dir, tree_dir, tree_grouped_internal_nodes_output_file)
+tree_grouped_reroot_output = os.path.join(output_dir, tree_dir, tree_grouped_reroot_output_file)
+tree_grouped_reroot_reassigned_output = os.path.join(output_dir, tree_dir, tree_grouped_reroot_reassigned_output_file)
 
 # parameters
 ## process_fasta, process_fasta_tagged
@@ -31,12 +39,13 @@ group2_n = 47
 # Create a rule to compute
 rule compute:
     input:
-        expand(os.path.join(output_dir, "info.txt")),
-        expand(concat_fasta_output),
-        expand(processed_fasta_output),
         expand(processed_fasta_tagged_output),
+        expand(processed_fasta_tagged_fixed_output),
         expand(mafft_output),
-        expand(tree_output)
+        expand(tree_output),
+        expand(tree_grouped_internal_nodes_output),
+        #expand(tree_grouped_reroot_output),
+        #expand(tree_grouped_reroot_reassigned_output)
 
 rule generate_info:
     output:
@@ -46,7 +55,7 @@ rule generate_info:
         echo "In default run use" > {output}
         echo "" >> {output}
         echo "--fasta_file 'parvo_panleu_trans.fasta'" >> {output}
-        echo "--nexus_file 'parvo_panleu_trans_tagged_fixed_aligned.nwk'" >> {output}
+        echo "--nexus_file 'parvo_panleu_trans_tagged_fixed_aligned_internalNode_grouped_rerooted_reassigned_groups.nwk'" >> {output}
         echo "" >> {output}
         echo "in difFUBAR." >> {output}
         """
@@ -66,24 +75,23 @@ rule process_fasta:
         group1_n = group1_n,
         group2_n = group2_n
     output:
-        output = processed_fasta_output
+        output = processed_fasta_output,
+        output_tagged = processed_fasta_tagged_output
     shell:
-        "python process_fasta.py {input.fasta_file} --group1 Canine --group2 Feline --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output}"
+        "python process_fasta.py {input.fasta_file} --group1 Canine --group2 Feline --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output} --output_tagged {output.output_tagged}"
 
-rule process_fasta_tagged:
+rule process_fasta_tagged_fixed:
     input:
-        fasta_file = concat_fasta_output
-    params:
-        group1_n = group1_n,
-        group2_n = group2_n
+        fasta_file = processed_fasta_tagged_output
     output:
-        output = processed_fasta_tagged_output
+        fasta_file = processed_fasta_tagged_fixed_output
     shell:
-        "python process_fasta.py {input.fasta_file} --tagged --group1 Canine --group2 Feline --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output}"
+        "python fix_tree_tags.py {input.fasta_file} {output.fasta_file}"
+
 
 rule sequence_alignment_mafft:
     input:
-        fasta_file = processed_fasta_tagged_output
+        fasta_file = processed_fasta_tagged_fixed_output
     output:
         output = mafft_output
     shell:
@@ -97,6 +105,20 @@ rule build_tree:
     shell:
         "fasttree -nt -gtr {input.fasta_file} > {output.output}"
 
- 
+rule propagate_group_tree:
+    input:
+        newick_file = tree_output
+    output:
+        output = tree_grouped_internal_nodes_output
+    shell:
+        "julia tag_internal_nodes.jl -i {input.newick_file} -o {output.output}"
 
-
+# For reroot we need to define a root to reroot on... so this step is better done manually, or we could define a function to count leafs groups
+#rule reroot_reassign_group_tree:
+#    input:
+#        newick_file = tree_grouped_internal_nodes_output,
+#    output:
+#        output_reroot = tree_grouped_reroot_output,
+#        output = tree_grouped_reroot_reassigned_output
+#    shell:
+#        "julia reroot_tree.jl -i {input.newick_file} -r {output.output_reroot} -o {output.output}"

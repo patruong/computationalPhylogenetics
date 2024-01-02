@@ -27,10 +27,9 @@ con6 = try_read_df(file_final)
 
 
 
-
 function df_comparison(df1, df2)
     try
-        return df1 == df2
+        return isapprox(df1, df2) #df1 == df2
     catch
         return missing
     end
@@ -98,5 +97,3 @@ summary_df = DataFrame(
 
 # Display the resulting DataFrame
 println(summary_df)
-
-

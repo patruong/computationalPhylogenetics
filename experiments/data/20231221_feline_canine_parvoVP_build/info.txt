@@ -34,4 +34,10 @@ We can continue after this by adding on the mink and other species in bens datas
 Good article using contrast-FEL and describing how they processed the data
 https://www.nature.com/articles/s41467-022-30485-3#data-availability
 
+# Build tree
+
+mafft --auto input.fasta > output.fasta
+fasttree -nt -gtr input.fasta > output.tree
+
+use output from fasttree together with original fasta
 
