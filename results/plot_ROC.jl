@@ -273,9 +273,9 @@ calculate_effect_size(contrastFEL_res, "beta (background)", "beta (TEST)")
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
 plot_colors = [:red, :blue, :green, :black]
 
-
-
-plot()
+linewidth = 8
+fontsize = 24
+p = plot(size=(1600, 1200))
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
@@ -287,10 +287,20 @@ for i in 1:length(plot_colors)
     difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
     contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
-    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=1.5)
-    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
+    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=linewidth)
+    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, linewidth, plot_colors[i]))
     display(p)
 end
 slope = 1
-plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
+#plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
+plot!(x -> slope * x, c=:grey, line=(:dash, linewidth), label="diagonal line", legend=:bottomright)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
+plot!(guidefont=fontsize, tickfont=fontsize, legendfont=fontsize)
+
+
+
+# Save the plot to a file in the desired folder with 1600x1200 resolution
+savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png", dpi=300)
+
+
+savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png")
