@@ -14,7 +14,7 @@
 #(time hyphy contrast-fel --alignment ParvoVP_removed_duplicates.fasta  --tree ParvoVP_datamonkey_add_group.nwk --branch-set FELINE --branch-set CANINE --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
 
 # Why does this seem to working now?
-(time hyphy contrast-fel --alignment ParvoVP.fasta  --tree ParvoVP.nwk --branch-set G1 --branch-set G2 --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
+(time hyphy contrast-fel --alignment ParvoVP.fasta  --tree ParvoVP.nwk --branch-set G1 --branch-set G2 --p-value 1.00 --q-value 1.00 --cpu 20 --output contrastfel.FEL.json) 2>&1 | tee time_output.txt hyphy_output.txt
 
 #(time hyphy contrast-fel --alignment ParvoVP_removed_duplicates.fasta  --tree ParvoVP_removed_duplicates.nex --branch-set G1 --branch-set G2 --p-value 1.00 --q-value 1.00) 2>&1 | tee time_output.txt hyphy_output.txt
 

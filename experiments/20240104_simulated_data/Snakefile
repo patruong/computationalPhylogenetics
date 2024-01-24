@@ -1,0 +1,23 @@
+SIM_PATH = "/home/patrick/git/computationalPhylogenetics/contrastFEL_data/omnibus/"
+#SUBDIRECTORIES = ["baseline", "max", "patrick", "patrick_max", "patrick_max_child", "final", "treeplot", "contrastfel"]
+
+rule all:
+    input:
+        expand("output/sim_{sim}_replicate_{replicate}", sim=range(501), replicate=range(1, 6))
+        #expand("output/sim_{sim}_replicate_{replicate}/{subdir}", sim=range(501), replicate=range(1, 6), subdir=SUBDIRECTORIES)
+
+rule run_analysis:
+    input:
+        fasta=SIM_PATH + "sims.{sim}.settings.replicate.{replicate}",
+        tree=SIM_PATH + "sims.{sim}.nwk"
+    output:
+        "output/sim_{sim}_replicate_{replicate}"
+    shell:
+        """
+        ./run_difFUBAR.sh {SIM_PATH} {input.fasta} {input.tree} {output}
+        """
+
+
+# Additional rules for other steps can be added similarly
+# You might want to add rules for treeplot and contrast-fel steps
+

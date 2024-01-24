@@ -1,15 +1,13 @@
 using DataFrames
 using CSV
 
-#cd("/home/patrick/git/computationalPhylogenetics/experiments/20231231_results_check/difFUBAR_output_orig/output/")
-cd("/home/patrick/git/computationalPhylogenetics/experiments/20240104_simulated_data/output_sim.0.rep.1")
-
-file_baseline = "baseline/_con_lik_matrix.csv"
-file_max = "max/_con_lik_matrix.csv"
-file_patrick = "patrick/_con_lik_matrix.csv"
-file_patrick_max = "patrick_max/_con_lik_matrix.csv"
-file_patrick_max_child = "patrick_max_child/_con_lik_matrix.csv"
-file_final = "final/_con_lik_matrix.csv"
+cd("/home/patrick/git/computationalPhylogenetics/experiments/20240102_rebuild_original_tree/")
+file_baseline = "output/baseline/_con_lik_matrix.csv"
+file_max = "output/max/_con_lik_matrix.csv"
+file_patrick = "output/patrick/_con_lik_matrix.csv"
+file_patrick_max = "output/patrick_max/_con_lik_matrix.csv"
+file_patrick_max_child = "output/patrick_max_child/_con_lik_matrix.csv"
+file_final = "output/final/_con_lik_matrix.csv"
 
 function try_read_df(file)
     try
@@ -99,3 +97,5 @@ summary_df = DataFrame(
 
 # Display the resulting DataFrame
 println(summary_df)
+
+

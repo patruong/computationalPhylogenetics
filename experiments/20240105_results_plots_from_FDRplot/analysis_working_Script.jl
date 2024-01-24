@@ -1,4 +1,4 @@
-cd("/home/patrick/git/computationalPhylogenetics/")
+cd("/home/ptruong/git/computationalPhylogenetics/")
 
 using Pkg
 using CSV
@@ -32,6 +32,16 @@ function read_contrastFEL_output_JSON(file_name)
 
     res = DataFrame(df_values)
     return res
+end
+
+#function read_hyphy_simulator_settings(file_name)
+#    df_python = extract_simulator_site_settings_to_tsv.get_simulation_settings_from_hyphy(file_name)
+#    df_julia = df_python |> Pandas.DataFrame #|> DataFrames.DataFrame
+#    return df_julia
+#end
+
+function read_hyphy_simulator_settings(file_name)
+    pass
 end
 
 function add_difference_cols_to_sim_settings(sim_settings, class1="simulator.omega.class0", class2="simulator.omega.class1")
@@ -87,18 +97,46 @@ function calculate_TRP_and_FPR(df, p_col)
     return res
 end
 
-function calculate_cohen_d_effect_size(df, group_1, group_2)
-    # Assuming you have a DataFrame 'df' with columns "mean(ω2)" and "mean(ω1)"
-    mean_ω1 = mean(df[!, group_1])
-    mean_ω2 = mean(df[!, group_2])
-    n_1 = length(df[!, group_1])
-    n_2 = length(df[!, group_2])
-    std_ω1 = std(df[!, group_1])
-    std_ω2 = std(df[!, group_2])
-    pooled_std = sqrt(((n_1 - 1) * std_ω1^2 + (n_2 - 1) * std_ω2^2) / (n_1 + n_2 - 2))
-    cohen_d = (mean_ω2 - mean_ω1) / pooled_std
-    return cohen_d
-end
+
+#
+#function calculate_TRP_and_FPR_difFUBAR(df)
+#    df[!, "threshold"] = df[!, "P(ω1 ≠ ω2)"]
+#
+#    function calculate_TRP_and_FPR_difFUBAR_helper(df, threshold)
+#        predictions = df[!, "P(ω1 ≠ ω2)"] .> threshold
+#        actual_difference = df[!, "actual_difference"]
+#        TP = sum(predictions .& actual_difference)
+#        TN = sum((predictions .== false) .& (actual_difference .== false))
+#        FP = sum(predictions .& (actual_difference .== false))
+#        FN = sum((predictions .== false) .& actual_difference)
+#        TPR = TP / (TP + FN)  # True Positive Rate (Sensitivity or Recall)
+#        FPR = FP / (FP + TN)  # False Positive Rate
+#        return TP, TN, FP, FN, TPR, FPR
+#    end
+#
+#    res = transform(df, AsTable([:threshold]) => ByRow(x -> (calculate_TRP_and_FPR_difFUBAR_helper(df, x.threshold))) => [:TP, :TN, :FP, :FN, :TPR, :FPR])
+#    return res
+#end
+#
+
+#function calculate_TPR_and_FPR_contrastFEL(df)
+#    df[!, "threshold"] = df[!, "P-value (overall)"]
+#
+#    function calculate_TRP_and_FPR_contrastFEL_helper(df, threshold)
+#        predictions = df[!, "P-value (overall)"] .< threshold
+#        actual_difference = df[!, "actual_difference"]
+#        TP = sum(predictions .& actual_difference)
+#        TN = sum((predictions .== false) .& (actual_difference .== false))
+#        FP = sum(predictions .& (actual_difference .== false))
+#        FN = sum((predictions .== false) .& actual_difference)
+#        TPR = TP / (TP + FN)  # True Positive Rate (Sensitivity or Recall)
+#        FPR = FP / (FP + TN)  # False Positive Rate
+#        return TP, TN, FP, FN, TPR, FPR
+#    end
+#
+#    res = transform(df, AsTable([:threshold]) => ByRow(x -> (calculate_TRP_and_FPR_contrastFEL_helper(df, x.threshold))) => [:TP, :TN, :FP, :FN, :TPR, :FPR])
+#    return res
+#end
 
 function calculate_effect_size(df, group_1, group_2)
     #df[!, "actual_effect_difference"] = abs.(df[!, group_1] - df[!, group_2])
@@ -146,17 +184,11 @@ function read_in_simulator_settings(sim)
 end
 
 
-function filter_on(df, col_name, lower_bound, upper_bound, keep_null)
-    #predictions = lower_bound .< df[!, col_name] .< upper_bound
-    filtered_df = filter(row -> lower_bound <= row[col_name] <= upper_bound, df)
-    if keep_null == true
-        null_df = filter(row -> row[col_name] == 0, df)
-        filtered_df = vcat(filtered_df, null_df)
-    end
+function filter_on_effect_size(df, lower_bound, upper_bound)
+    predictions = lower_bound .< df[!, "effect_size"] .< upper_bound
+    filtered_df = filter(row -> lower_bound < row.effect_size < upper_bound, df)
     return filtered_df
 end
-
-
 
 function calculate_TPR_and_FPR_list(df_list, p_col)
     TPR_and_FPR_list = []
@@ -167,42 +199,7 @@ function calculate_TPR_and_FPR_list(df_list, p_col)
     return TPR_and_FPR_list
 end
 
-function calculate_ROC_values_threshold(df, threshold_col, threshold)
-    diff = df[df[!, threshold_col].>=threshold, :] # predicted true, no diff
-    no_diff = df[df[!, threshold_col].<threshold, :] # predicted false, no diff
 
-    TP = sum(diff[!, "actual_difference"]) #TP
-    FP = sum(diff[!, "actual_difference"] .== false) #FP
-    FN = sum(no_diff[!, "actual_difference"]) #FN
-    TN = sum(no_diff[!, "actual_difference"] .== false) #TN
-
-    TPR = TP / (TP + FN)
-    FPR = FP / (FP + TN)
-    return TP, FP, FN, TN, TPR, FPR
-end
-
-function calculate_ROC_threshold(df, threshold_col)
-    # Create an empty DataFrame to store the results
-    result_df = DataFrame(
-        Threshold=Float64[],
-        TP=Int[],
-        FP=Int[],
-        FN=Int[],
-        TN=Int[],
-        TPR=Float64[],
-        FPR=Float64[]
-    )
-
-    threshold_slices = [-Inf, collect(0:0.001:1)..., Inf]
-    threshold_slices .+= rand(length(threshold_slices)) .* 0.00000001
-
-    for i in threshold_slices
-        TP, FP, FN, TN, TPR, FPR = calculate_ROC_values_threshold(df, threshold_col, i)
-        push!(result_df, (i, TP, FP, FN, TN, TPR, FPR))
-    end
-
-    return result_df
-end
 
 # sim.0.replicate.1 
 
@@ -223,7 +220,7 @@ pos_thresh = 0.95
 #sims = [182, 250, 421, 466, 500]
 #sims = [182, 250, 421, 466] # sim 500 totally breaks
 #reps = [1, 2]
-sims = collect(0:550) # sim 500 totally breaks contrast-FEL
+sims = collect(150:250) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
 
@@ -239,8 +236,8 @@ for sim in sims
             simulator_settings, settings_cols = read_in_simulator_settings(sim)
             difFUBAR_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
             contrastFEL_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
-            difFUBAR_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
-            contrastFEL_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
+            difFUBAR_res[!, "actual_effect_difference"] = simulator_settings[!, settings_cols[1]]
+            contrastFEL_res[!, "actual_effect_difference"] = simulator_settings[!, settings_cols[1]]
             # Append the current batch of data to the aggregated DataFrames
             append!(aggregated_difFUBAR_res, difFUBAR_res)
             append!(aggregated_contrastFEL_res, contrastFEL_res)
@@ -270,37 +267,110 @@ contrastFEL_res[!, "1-Pvalue"] = 1 .- contrastFEL_res[!, "P-value (overall)"]
 calculate_effect_size(difFUBAR_res, "mean(ω1)", "mean(ω2)")
 calculate_effect_size(contrastFEL_res, "beta (background)", "beta (TEST)")
 
+# Last step
+#difFUBAR_res = calculate_TRP_and_FPR(difFUBAR_res, "P(ω1 ≠ ω2)")
+#contrastFEL_res = calculate_TRP_and_FPR(contrastFEL_res, "1-Pvalue")
+
+#difFUBAR_res_list = [filter_on_effect_size(difFUBAR_res, 0, 0.25),
+#    filter_on_effect_size(difFUBAR_res, 0.25, 0.5),
+#    filter_on_effect_size(difFUBAR_res, 0.5, 3.0),
+#    filter_on_effect_size(difFUBAR_res, 3.0, Inf)]
+#
+#contrastFEL_res_list = [filter_on_effect_size(contrastFEL_res, 0, 0.25),
+#    filter_on_effect_size(contrastFEL_res, 0.25, 0.5),
+#    filter_on_effect_size(contrastFEL_res, 0.5, 3.0),
+#    filter_on_effect_size(contrastFEL_res, 3.0, Inf)]
+#    
+#difFUBAR_res_list = calculate_TPR_and_FPR_list(difFUBAR_res_list, "P(ω1 ≠ ω2)")
+#contrastFEL_res_list = calculate_TPR_and_FPR_list(contrastFEL_res_list, "1-Pvalue")
+
+
+
+#calculate_TRP_and_FPR(difFUBAR_res, "P(ω1 ≠ ω2)")
+#calculate_TRP_and_FPR(contrastFEL_res, "1-Pvalue")
+
+
+
+
+
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
 plot_colors = [:red, :blue, :green, :black]
 
-linewidth = 6
-fontsize = 20
-p = plot(size=(1600, 1200))
+plot()
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
-    #difFUBAR_plot = calculate_TRP_and_FPR(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound), "P(ω1 ≠ ω2)")
-    #contrastFEL_plot = calculate_TRP_and_FPR(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound), "1-Pvalue")
+    difFUBAR_plot = calculate_TRP_and_FPR(filter_on_effect_size(difFUBAR_res, lower_bound, upper_bound), "P(ω1 ≠ ω2)")
+    contrastFEL_plot = calculate_TRP_and_FPR(filter_on_effect_size(contrastFEL_res, lower_bound, upper_bound), "1-Pvalue")
 
     #difFUBAR_plot = filter_on_effect_size(difFUBAR_res, lower_bound, upper_bound)
     #contrastFEL_plot = filter_on_effect_size(contrastFEL_res, lower_bound, upper_bound)
-    difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
-    contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
-    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=linewidth)
-    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, linewidth, plot_colors[i]))
+    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=1.5)
+    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
     display(p)
 end
 slope = 1
-#plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
-plot!(x -> slope * x, c=:grey, line=(:dash, linewidth), label="diagonal line", legend=:bottomright)
+plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
-plot!(guidefont=fontsize, tickfont=fontsize, legendfont=fontsize)
+
+
+filter_on_effect_size(contrastFEL_res, 3.0, Inf)
+
+#CSV.write("check_difFUBAR.csv", difFUBAR_res)
+#CSV.write("check_contrastFEL.csv", contrastFEL_res)
 
 
 
-# Save the plot to a file in the desired folder with 1600x1200 resolution
-savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png")
 
 
-savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png")
+
+
+
+
+
+
+plot!(filter_on_effect_size(difFUBAR_res, 0, 0.25).FPR, filter_on_effect_size(difFUBAR_res, 0, 0.25).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:red, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 0.25, 0.5).FPR, filter_on_effect_size(difFUBAR_res, 0.25, 0.5).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:blue, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 0.5, 3.0).FPR, filter_on_effect_size(difFUBAR_res, 0.5, 3.0).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:green, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 3.0, Inf).FPR, filter_on_effect_size(difFUBAR_res, 3.0, Inf).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:black, linewidth=2)
+
+
+contrastFEL_res
+
+# Write the code so we are aggregating all the simulated data
+
+########### Cohen d effect size.... but in the plot he uses absolut difference between beta1 and beta2
+df = difFUBAR_res
+group_1 = "mean(ω1)"
+group_2 = "mean(ω2)"
+function calculate_cohen_d_effect_size(df, group_1, group_2)
+    # Assuming you have a DataFrame 'df' with columns "mean(ω2)" and "mean(ω1)"
+    mean_ω1 = mean(df[!, group_1])
+    mean_ω2 = mean(df[!, group_2])
+    n_1 = length(df[!, group_1])
+    n_2 = length(df[!, group_2])
+    std_ω1 = std(df[!, group_1])
+    std_ω2 = std(df[!, group_2])
+    pooled_std = sqrt(((n_1 - 1) * std_ω1^2 + (n_2 - 1) * std_ω2^2) / (n_1 + n_2 - 2))
+    cohen_d = (mean_ω2 - mean_ω1) / pooled_std
+    return cohen_d
+end
+calculate_cohen_d_effect_size(df, group_1, group_2)
+
+
+df = contrastFEL_res
+group_1 = "beta (background)"
+group_2 = "beta (TEST)"
+calculate_cohen_d_effect_size(df, group_1, group_2)
+
+
+#println("Cohen's d Effect Size: $cohen_d")
+
+# 0.75 effect size 
+
+df =
+    difFUBAR_res
+contrastFEL_res
+# incorporate different effect size filtering.
+

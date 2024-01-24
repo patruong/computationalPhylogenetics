@@ -1,4 +1,4 @@
-cd("/home/patrick/git/computationalPhylogenetics/")
+cd("/home/ptruong/git/computationalPhylogenetics/")
 
 using Pkg
 using CSV
@@ -223,7 +223,7 @@ pos_thresh = 0.95
 #sims = [182, 250, 421, 466, 500]
 #sims = [182, 250, 421, 466] # sim 500 totally breaks
 #reps = [1, 2]
-sims = collect(0:550) # sim 500 totally breaks contrast-FEL
+sims = collect(300:350) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
 
@@ -273,9 +273,9 @@ calculate_effect_size(contrastFEL_res, "beta (background)", "beta (TEST)")
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
 plot_colors = [:red, :blue, :green, :black]
 
-linewidth = 6
-fontsize = 20
-p = plot(size=(1600, 1200))
+
+
+plot()
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
@@ -287,20 +287,118 @@ for i in 1:length(plot_colors)
     difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
     contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
-    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=linewidth)
-    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, linewidth, plot_colors[i]))
+    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=plot_colors[i], linewidth=1.5)
+    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
     display(p)
 end
 slope = 1
-#plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
-plot!(x -> slope * x, c=:grey, line=(:dash, linewidth), label="diagonal line", legend=:bottomright)
+plot!(x -> slope * x, c=:grey, line=:dash, label="diagonal line", legend=:bottomright)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
-plot!(guidefont=fontsize, tickfont=fontsize, legendfont=fontsize)
+
+
+filter_on_effect_size(contrastFEL_res, 3.0, Inf)
+
+#CSV.write("check_difFUBAR.csv", difFUBAR_res)
+#CSV.write("check_contrastFEL.csv", contrastFEL_res)
 
 
 
-# Save the plot to a file in the desired folder with 1600x1200 resolution
-savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png")
+# Implement fixed thresholding
 
 
-savefig("/home/patrick/git/computationalPhylogenetics/results/ROC_curve.png")
+# under threshold so this is 
+lower_bound = 0.25
+upper_bound = 0.5
+df = filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true)
+result_df = calculate_ROC_threshold(df, "P(ω1 ≠ ω2)")
+
+
+lower_bound = 0.25
+upper_bound = 0.5
+
+
+result_df = calculate_ROC_threshold(df, "P(ω1 ≠ ω2)")
+
+
+
+# We want to check something with the actual effect size
+lower_bound = 0.25
+upper_bound = 0.5
+df = filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound)
+df = filter_on(difFUBAR_res, "effect_size", lower_bound, upper_bound)
+df = calculate_TRP_and_FPR(df, "P(ω1 ≠ ω2)")
+plot(df.FPR, df.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=:red, linewidth=1.5)
+
+
+df = filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound)
+df = calculate_TRP_and_FPR(df, "P(ω1 ≠ ω2)")
+CSV.write("check_difFUBAR_actual_effect_filter.csv", df)
+
+df = filter_on(difFUBAR_res, "effect_size", lower_bound, upper_bound)
+df = calculate_TRP_and_FPR(df, "P(ω1 ≠ ω2)")
+CSV.write("check_difFUBAR_effect_size_filter.csv", df)
+
+
+lower_bound = 0.5
+upper_bound = 1
+df = calculate_TRP_and_FPR(difFUBAR_res, "P(ω1 ≠ ω2)")
+df = filter_on(df, "actual_effect_difference", lower_bound, upper_bound)
+df = filter_on(df, "effect_size", lower_bound, upper_bound)
+plot!(df.FPR, df.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=:green, linewidth=1.5)
+
+
+
+# We want to check something with the actual effect size
+lower_bound = 0.25
+upper_bound = 0.5
+df = filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound)
+df = calculate_TRP_and_FPR(df, "1-Pvalue")
+plot!(df.FPR, df.TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR, $lower_bound to $upper_bound", linecolor=:red, linewidth=1.5)
+
+
+
+#df = filter_on(contrastFEL_res, "effect_size", 0.25, 0.5)
+
+CSV.write("check.csv", df)
+
+
+
+
+
+
+
+
+
+plot!(filter_on_effect_size(difFUBAR_res, 0, 0.25).FPR, filter_on_effect_size(difFUBAR_res, 0, 0.25).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:red, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 0.25, 0.5).FPR, filter_on_effect_size(difFUBAR_res, 0.25, 0.5).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:blue, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 0.5, 3.0).FPR, filter_on_effect_size(difFUBAR_res, 0.5, 3.0).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:green, linewidth=2)
+plot!(filter_on_effect_size(difFUBAR_res, 3.0, Inf).FPR, filter_on_effect_size(difFUBAR_res, 3.0, Inf).TPR, xlabel="FPR", ylabel="TPR", label="difFUBAR", linecolor=:black, linewidth=2)
+
+
+contrastFEL_res
+
+# Write the code so we are aggregating all the simulated data
+
+########### Cohen d effect size.... but in the plot he uses absolut difference between beta1 and beta2
+df = difFUBAR_res
+group_1 = "mean(ω1)"
+group_2 = "mean(ω2)"
+
+calculate_cohen_d_effect_size(df, group_1, group_2)
+
+
+df = contrastFEL_res
+group_1 = "beta (background)"
+group_2 = "beta (TEST)"
+calculate_cohen_d_effect_size(df, group_1, group_2)
+
+
+#println("Cohen's d Effect Size: $cohen_d")
+
+# 0.75 effect size 
+
+df =
+    difFUBAR_res
+contrastFEL_res
+# incorporate different effect size filtering.
+

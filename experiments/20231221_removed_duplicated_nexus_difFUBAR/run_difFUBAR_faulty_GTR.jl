@@ -9,9 +9,11 @@ using CSV
 using DataFrames
 using MolecularEvolution, Plots, Phylo
 
-cd("/home/patrick/git/computationalPhylogenetics/experiments/20240112_bad_GTR_matrix")
+
+cd("/home/patrick/git/computationalPhylogenetics/experiments/20231221_removed_duplicated_nexus_difFUBAR")
+
 # params 
-output_csv = "output"
+
 exports = true
 verbosity = 1
 fasta = "ParvoVP_removed_duplicates.fasta" #parsed_args["FASTAfile"]
