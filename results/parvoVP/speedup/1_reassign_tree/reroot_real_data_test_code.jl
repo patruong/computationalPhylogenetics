@@ -3,11 +3,11 @@ using CodonMolecularEvolution
 using Compose
 using ArgParse
 
-dir = "/home/patrick/git/computationalPhylogenetics/experiments/20240102_rebuild_original_tree/"
+dir = "/home/patrick/git/computationalPhylogenetics/results/parvoVP/speedup/1_reassign_tree/"
 cd(dir)
 analysis_name = "output_reroot_test"
-fasta_file = dir * "ParvoVP.fasta"
-newick_file = dir * "ParvoVP.nwk"
+fasta_file = dir * "../../ParvoVP.fasta"
+newick_file = dir * "../../ParvoVP.nwk"
 #fasta_file = dir * "sim_tree_fixed/sim.replicate.1.nex"
 #newick_file = dir * "sim_tree_fixed/sim_tree_fixed.nwk"
 exports = true
