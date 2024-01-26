@@ -1,0 +1,8 @@
+Note that We need to use the reader for hyphy that is this
+
+seqnames, seqs = import_hyphy_simulated_FASTA(fasta_file)
+
+instead of the regular 
+
+seqnames, seqs = read_fasta(fasta_file)
+

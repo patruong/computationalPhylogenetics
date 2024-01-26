@@ -9,9 +9,13 @@ using CSV
 using DataFrames
 using Tables
 
-cd("/home/patrick/git/computationalPhylogenetics/results/parvoVP/speedup/2_pruned_tree_img")
-fasta_file = "../../ParvoVP.fasta"
-newick_file = "../1_reassign_tree/ParvoVP_regrouped.nwk"
+cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/pruned_tree_sim_data")
+
+
+sim = 50
+rep = 2
+fasta_file = "../../../contrastFEL_data/omnibus/sims.$sim.settings.replicate.$rep"
+newick_file = "../../../contrastFEL_data/omnibus/sims.$sim.nwk"
 output_csv = "output_"
 analysis_name = "analysis"
 exports = true
@@ -118,9 +122,9 @@ pure_clades = traverse_tree_to_check_for_pure_clades(pure_clades, tree)
 
 subtree_1 = pure_clades[1]
 subtree_2 = pure_clades[2]
-save_tree(subtree_1, "subtree1.svg")
-save_tree(subtree_2, "subtree2.svg")
+save_tree(subtree_1, "sim.$sim.rep.$rep.subtree1.svg")
+save_tree(subtree_2, "sim.$sim.rep.$rep.subtree2.svg")
 
 con_lik_matrix, _, codon_param_vec, alphagrid, omegagrid, _ = CodonMolecularEvolution.difFUBAR_grid_pruned_3(tree, tags, GTRmat, F3x4_freqs, MolecularEvolution.universal_code,
     verbosity=verbosity, foreground_grid=6, background_grid=4)
-save_tree(tree, "pruned_tree.svg")
+save_tree(tree, "sim.$sim.rep.$rep.pruned_tree.svg")
