@@ -1,0 +1,165 @@
+rule all:
+    input:
+        nextclade_results ="results/nextclade_output/nextclade.tsv",
+
+input_fasta = "data/combined.fasta",
+input_reference_sequence = "data/reference.fasta",
+input_metadata = "data/combined_meta.tsv",
+input_clades = "data/clades.tsv"
+
+rule alignment:
+    message:
+        """
+        Aligning sequences to {input.reference}
+          - filling gaps with N
+        """
+    input:
+        sequences = input_fasta,
+        reference = input_reference_sequence
+    output:
+        alignment = "results/alignment.fasta"
+    shell:
+        """
+        augur align \
+            --sequences {input.sequences} \
+            --reference-sequence {input.reference} \
+            --output {output.alignment} \
+            --fill-gaps
+        """
+
+rule build_tree:
+    message:
+        """
+        Building Tree
+        """
+    input:
+        alignment = rules.alignment.output,
+        reference = input_reference_sequence
+    params:
+        method = "iqtree"
+    output:
+        tree = "results/tree_raw.nwk"
+    shell:
+        """
+        augur tree --method {params.method} --alignment {input.alignment}  --output {output.tree} --vcf-reference {input.reference}
+        """
+
+rule refine_tree:
+    message:
+        """
+        Refining tree
+          - estimate timetree
+          - use {params.coalescent} coalescent timescale
+        """
+    input:
+        tree = rules.build_tree.output.tree,
+        alignment = rules.alignment.output,
+        metadata = input_metadata
+    params:
+        coalescent = "opt",
+        meta_id_columns = "accession_id"
+    output:
+        tree = "results/tree.nwk",
+        node_data = "results/branch_lengths.json"
+    shell:
+        """
+        augur refine \
+            --tree {input.tree} \
+            --alignment {input.alignment} \
+            --metadata {input.metadata} \
+            --output-tree {output.tree} \
+            --output-node-data {output.node_data} \
+            --coalescent {params.coalescent} \
+            --metadata-id-columns {params.meta_id_columns}
+        """
+rule ancestral:
+    message: "Reconstructing ancestral sequences and mutations"
+    input:
+        tree = rules.refine_tree.output.tree,
+        alignment = rules.alignment.output,
+        reference = input_reference_sequence
+    output:
+        node_data = "results/nt_muts.json"
+    params:
+        inference = "joint"
+    shell:
+        """
+        augur ancestral --tree {input.tree} --alignment {input.alignment} --output-node-data {output.node_data} --inference {params.inference} --root-sequence {input.reference}
+        """
+
+rule traits:
+    message: "Inferring ancestral traits for {params.columns!s}"
+    input:
+        tree = rules.refine_tree.output.tree,
+        metadata = input_metadata
+    output:
+        node_data = "results/traits.json",
+    params:
+        columns = "country",
+        metadata_id_column = "lineage", # I think this is lineage
+    shell:
+        """
+        augur traits \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --output-node-data {output.node_data} \
+            --columns {params.columns} \
+            --confidence \
+            --metadata-id-columns {params.metadata_id_column}
+        """
+
+rule clades:
+    message: "Assigning clades"
+    input:
+        tree = rules.refine_tree.output.tree,
+        mutations = rules.ancestral.output.node_data,
+        clades = input_clades
+    output:
+        node_data = "results/clades.json",
+    shell:
+        """
+        augur clades --tree {input.tree} --mutations {input.mutations} --clades {input.clades} --output-node-data {output.node_data}
+        """
+
+rule export:
+    message: "Exporting data files for for auspice"
+    input:
+        tree = rules.refine_tree.output.tree,
+        metadata = input_metadata,
+        branch_lengths = rules.refine_tree.output.node_data,
+        traits = rules.traits.output.node_data,
+        nt_muts = rules.ancestral.output.node_data,
+        clades = rules.clades.output.node_data
+    params:
+        metadata_columns = "accession_id"
+    output:
+        auspice_json = "results/tree.json",
+    shell: #colouring not working...
+        """
+        augur export v2 \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --metadata-id-columns {params.metadata_columns} \
+            --color-by-metadata who \
+            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.clades} \
+            --include-root-sequence \
+            --output {output.auspice_json}
+        """
+
+rule nextclade:
+    input:
+        input_fasta = input_fasta,
+        input_reference = input_reference_sequence,
+        auspice_tree = rules.export.output.auspice_json,
+    output:
+        output_dir = "results/nextclade_output/",
+        output_tsv = "results/nextclade_output/nextclade.tsv"
+    shell:
+        """
+        nextclade run \
+            --input-tree {input.auspice_tree} \
+            --output-all {output.output_dir} \
+            --output-tsv {output.output_tsv} \ 
+            --input-ref {input.input_reference} \
+            {input.input_fasta}  
+        """
