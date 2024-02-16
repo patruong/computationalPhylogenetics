@@ -6,6 +6,8 @@ using JSON
 using DataFrames
 using Plots
 using Statistics
+using KernelDensity
+
 cd("/home/patrick/git/computationalPhylogenetics/")
 
 function read_contrastFEL_output_JSON(file_name)
@@ -236,8 +238,8 @@ end
 
 
 pos_thresh = 0.95
-sims = collect(343:343) #343
-reps = collect(1:1) #1 
+sims = collect(0:500)
+reps = collect(1:5)
 
 # Initialize variables to store aggregated results
 aggregated_difFUBAR_res = DataFrame()
@@ -264,40 +266,61 @@ for sim in sims
     end
 end
 
+
 difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
+contrastFEL_res[!, "1-Pvalue"] = 1 .- contrastFEL_res[!, "P-value (overall)"]
+contrastFEL_res[!, "Codon Sites"] = contrastFEL_res[!, "Codon_site"]
+
 joined_res = merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
 
-names(joined_res)
-joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.999, :]
-joined_res[!, "contrastFEL_1-Pvalue"]
-
-scatter(
-    joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"],
-    joined_res[!, "contrastFEL_1-Pvalue"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)",
-    ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
-    legend=false,
-    alpha=0.5,
-    size=(800, 600),
-    color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1]
-)
-
-#names(joined_res)
-#joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"] .> 0.999, :]
-#§   joined_res[!, "contrastFEL_1-Pvalue"]
 
 
+function get_variance_from_sim(df, col_name, sim)
+    filtered_df = df[contains.(df.id, "sim.$sim"), :]
+    filtered_df = filtered_df[filtered_df[!, "Codon Sites"].==1, :]
+    variance = var(filtered_df[!, col_name])
+    return variance
+end
 
 
+function get_sim_variances(df, col_name, sims)
+    variances = []
+    for sim in sims
+        sim = string(sim)
+        variance = get_variance_from_sim(df, col_name, sim)
+        push!(variances, variance)
+    end
+    return variances
+end
 
-savefig("results/hyphySim/disagreement_between_difFUBAR_contrastFEL/scatter_plot.png")
 
+# plot
+difFUBAR_var = get_sim_variances(difFUBAR_res, "P(ω1 ≠ ω2)", sims)
+contrastFEL_var = get_sim_variances(contrastFEL_res, "1-Pvalue", sims)
 
+variance_df = DataFrame(difFUBAR_var=difFUBAR_var, contrastFEL_var=contrastFEL_var)
 
-#############################################
-# Certain ContrasteFEL, uncertain difFUBAR ##
-#############################################
+variance_df.difFUBAR_var = convert(Vector{Float64}, variance_df.difFUBAR_var)
+variance_df.contrastFEL_var = convert(Vector{Float64}, variance_df.contrastFEL_var)
 
+variance_df = variance_df[.!isnan.(variance_df.difFUBAR_var), :]
+variance_df = variance_df[.!isnan.(variance_df.contrastFEL_var), :]
 
+difFUBAR_density = kde(variance_df.difFUBAR_var)
+contrastFEL_density = kde(variance_df.contrastFEL_var)
+
+# Plot the distributions using KDEs with truncated x-axis at 0
+plot(difFUBAR_density.x, difFUBAR_density.density .* 0.01, label="difFUBAR P(ω1 ≠ ω2)", xlims=(0, Inf), linewidth=2)
+plot!(contrastFEL_density.x, contrastFEL_density.density .* 0.01, label="contrastFEL 1-Pvalue", xlims=(0, Inf), linewidth=2)
+
+# Add labels and title
+xlabel!("Variance")
+ylabel!("Density")
+title!("Distribution of variance")
+
+# Display the plot
+plot!(legend=:topright)  # Adjust legend position if needed
+
+cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/distribution_of_variation")
+savefig("distribution_of_variation.png")
