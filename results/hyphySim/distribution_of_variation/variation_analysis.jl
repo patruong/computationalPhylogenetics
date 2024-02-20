@@ -275,7 +275,6 @@ contrastFEL_res[!, "Codon Sites"] = contrastFEL_res[!, "Codon_site"]
 joined_res = merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
 
 
-
 function get_variance_from_sim(df, col_name, sim)
     filtered_df = df[contains.(df.id, "sim.$sim"), :]
     filtered_df = filtered_df[filtered_df[!, "Codon Sites"].==1, :]
@@ -315,12 +314,12 @@ plot(difFUBAR_density.x, difFUBAR_density.density .* 0.01, label="difFUBAR P(ω1
 plot!(contrastFEL_density.x, contrastFEL_density.density .* 0.01, label="contrastFEL 1-Pvalue", xlims=(0, Inf), linewidth=2)
 
 # Add labels and title
-xlabel!("Variance")
+xlabel!("Variance of P(ω1 ≠ ω2) / 1-Pvalue")
 ylabel!("Density")
-title!("Distribution of variance")
+title!("Variance of P(ω1 ≠ ω2) / 1-Pvalue")
 
 # Display the plot
 plot!(legend=:topright)  # Adjust legend position if needed
 
-cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/distribution_of_variation")
-savefig("distribution_of_variation.png")
+plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/distribution_of_variation/"
+savefig(plot_dir * "distribution_of_variation.png")

@@ -503,6 +503,36 @@ title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "1_histogram_all_contrastFEL_max_of_alpha_betas.png")
 
+
+
+names(difFUBAR_res)
+x5 = df_col_prefix(joined_res, "mean(α)")[!, "difFUBAR_mean(α)"]
+histogram(x5, label="Alpha (no filter)", alpha=0.5, density=true)
+xlabel!("mean(α)")
+ylabel!("Count")
+title!("difFUBAR alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "1_histogram_all_difFUBAR_alpha.png")
+
+
+x6 = df_col_prefix(joined_res, "mean(ω1)")[!, "difFUBAR_mean(ω1)"]
+histogram(x6, label="mean(ω1) (no filter)", alpha=0.5, density=true)
+xlabel!("mean(ω1)")
+ylabel!("Count")
+title!("difFUBAR ω1")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "1_histogram_all_difFUBAR_omega_1.png")
+
+
+x7 = df_col_prefix(joined_res, "mean(ω2)")[!, "difFUBAR_mean(ω2)"]
+histogram(x7, label="mean(ω2) (no filter)", alpha=0.5, density=true)
+xlabel!("mean(ω2)")
+ylabel!("Count")
+title!("difFUBAR ω2")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "1_histogram_all_difFUBAR_omega_2.png")
+
+
 #######################################
 # Plot of filtered data (faulty data) #
 #######################################
@@ -553,6 +583,32 @@ title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "2_histogram_filtered_bottom_right_contrastFEL_max_of_alpha_betas.png")
 
+
+x5 = df_col_prefix(filtered_joined_res, "mean(α)")[!, "difFUBAR_mean(α)"]
+histogram(x5, label="Alpha (no filter) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true)
+xlabel!("mean(α)")
+ylabel!("Count")
+title!("difFUBAR alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "2_histogram_filtered_bottom_right_difFUBAR_alpha.png")
+
+
+x6 = df_col_prefix(filtered_joined_res, "mean(ω1)")[!, "difFUBAR_mean(ω1)"]
+histogram(x6, label="mean(ω1) (no filter) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true)
+xlabel!("mean(ω1)")
+ylabel!("Count")
+title!("difFUBAR ω1")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "2_histogram_filtered_bottom_right_difFUBAR_omega_1.png")
+
+
+x7 = df_col_prefix(filtered_joined_res, "mean(ω2)")[!, "difFUBAR_mean(ω2)"]
+histogram(x7, label="mean(ω2) (no filter) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true)
+xlabel!("mean(ω2)")
+ylabel!("Count")
+title!("difFUBAR ω2")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "2_histogram_filtered_bottom_right_difFUBAR_omega_2.png")
 
 ######################################
 # Deeper analysis of difFUBAR issues #
@@ -615,6 +671,34 @@ plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "3_histogram_filtered_top_contrastFEL_max_of_alpha_betas.png")
 
 
+
+x5 = df_col_prefix(filtered_joined_res, "mean(α)")[!, "difFUBAR_mean(α)"]
+histogram(x5, label="Alpha (no filter) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true)
+xlabel!("mean(α)")
+ylabel!("Count")
+title!("difFUBAR alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_difFUBAR_alpha.png")
+
+
+x6 = df_col_prefix(filtered_joined_res, "mean(ω1)")[!, "difFUBAR_mean(ω1)"]
+histogram(x6, label="mean(ω1) (no filter) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true)
+xlabel!("mean(ω1)")
+ylabel!("Count")
+title!("difFUBAR ω1")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_difFUBAR_omega_1.png")
+
+
+x7 = df_col_prefix(filtered_joined_res, "mean(ω2)")[!, "difFUBAR_mean(ω2)"]
+histogram(x7, label="mean(ω2) (no filter) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true)
+xlabel!("mean(ω2)")
+ylabel!("Count")
+title!("difFUBAR ω2")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_difFUBAR_omega_2.png")
+
+
 #####################
 # check right axis ##
 #####################
@@ -671,6 +755,33 @@ plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "4_histogram_filtered_right_contrastFEL_max_of_alpha_betas.png")
 
 
+
+x5 = df_col_prefix(filtered_joined_res, "mean(α)")[!, "difFUBAR_mean(α)"]
+histogram(x5, label="Alpha (no filter) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true)
+xlabel!("mean(α)")
+ylabel!("Count")
+title!("difFUBAR alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "4_histogram_filtered_right_difFUBAR_alpha.png")
+
+
+x6 = df_col_prefix(filtered_joined_res, "mean(ω1)")[!, "difFUBAR_mean(ω1)"]
+histogram(x6, label="mean(ω1) (no filter) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true)
+xlabel!("mean(ω1)")
+ylabel!("Count")
+title!("difFUBAR ω1")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "4_histogram_filtered_right_difFUBAR_omega_1.png")
+
+
+x7 = df_col_prefix(filtered_joined_res, "mean(ω2)")[!, "difFUBAR_mean(ω2)"]
+histogram(x7, label="mean(ω2) (no filter) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true)
+xlabel!("mean(ω2)")
+ylabel!("Count")
+title!("difFUBAR ω2")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "4_histogram_filtered_right_difFUBAR_omega_2.png")
+
 #####################
 # check bottom axis ##
 #####################
@@ -726,6 +837,33 @@ title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "5_histogram_filtered_bottom_contrastFEL_max_of_alpha_betas.png")
 
+
+
+x5 = df_col_prefix(filtered_joined_res, "mean(α)")[!, "difFUBAR_mean(α)"]
+histogram(x5, label="Alpha (no filter) 1-Pvalue < 0.001", alpha=0.5, density=true)
+xlabel!("mean(α)")
+ylabel!("Count")
+title!("difFUBAR alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_difFUBAR_alpha.png")
+
+
+x6 = df_col_prefix(filtered_joined_res, "mean(ω1)")[!, "difFUBAR_mean(ω1)"]
+histogram(x6, label="mean(ω1) (no filter) 1-Pvalue < 0.001", alpha=0.5, density=true)
+xlabel!("mean(ω1)")
+ylabel!("Count")
+title!("difFUBAR ω1")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_difFUBAR_omega_1.png")
+
+
+x7 = df_col_prefix(filtered_joined_res, "mean(ω2)")[!, "difFUBAR_mean(ω2)"]
+histogram(x7, label="mean(ω2) (no filter) 1-Pvalue < 0.001", alpha=0.5, density=true)
+xlabel!("mean(ω2)")
+ylabel!("Count")
+title!("difFUBAR ω2")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_difFUBAR_omega_2.png")
 
 
 ###############################################
