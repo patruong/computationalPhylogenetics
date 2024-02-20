@@ -294,12 +294,12 @@ savefig(plot_dir * "1_coherence_scatterplot.png")
 # "contrastFEL_1-Pvalue"].<0.5
 #########################################
 joined_res
-filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.9, :]
-filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].<0.05, :]
+filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.99, :]
+filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].<0.01, :]
 
 scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
+    title="P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -308,8 +308,8 @@ savefig(plot_dir * "2_coherence_scatterplot_difFUBAR_certain_contrastFEL_uncerta
 # High confidence from difFUBAR and low confidence from contrastFEL are actual hits that are correctly classified by difFUBAR, but missed for contrastFEL
 
 
-csv_dir = plot_dir * "high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites_df.csv"
-CSV.write(csv_dir,filtered_joined_res)
+csv_dir = plot_dir * "2_high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites_df.csv"
+CSV.write(csv_dir, filtered_joined_res)
 
 
 #######################################################
@@ -356,7 +356,7 @@ for (key, value) in sim_dict
 end
 
 high_difFUBAR_certainty_low_contrastFEL = DataFrame(sim=sims, codon_sites=values)
-csv_dir = plot_dir * "high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites.csv"
+csv_dir = plot_dir * "2_high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites.csv"
 CSV.write(csv_dir, high_difFUBAR_certainty_low_contrastFEL)
 
 
@@ -383,7 +383,7 @@ for (key, value) in recurring_codon_errors
     push!(values, value)
 end
 recurring_faulty_sites = DataFrame(sim=sims, codon_sites=values)
-csv_dir = plot_dir * "recurring_error_codon_sites.csv"
+csv_dir = plot_dir * "2_recurring_error_codon_sites.csv"
 CSV.write(csv_dir, recurring_faulty_sites)
 
 
@@ -399,14 +399,21 @@ function select_sim_and_codon_site(df, sim_n, codon_sites)
     return filtered_joined_res
 end
 
-x1 = select_sim_and_codon_site(joined_res, 83, [38, 87, 206, 591, 658, 758]) 
+x1 = select_sim_and_codon_site(joined_res, 83, [38, 87, 206, 591, 658, 758])
 x2 = select_sim_and_codon_site(joined_res, 56, [705])  # only 3 samples
 x3 = select_sim_and_codon_site(joined_res, 175, [634])  # only 3 samples
-x4 = select_sim_and_codon_site(joined_res, 26, [324]) 
-x5 = select_sim_and_codon_site(joined_res, 347, [3, 315, 672]) 
+x4 = select_sim_and_codon_site(joined_res, 26, [324])
+x5 = select_sim_and_codon_site(joined_res, 347, [3, 315, 672])
+recurrent_error_df = vcat(x1, x2, x3, x4, x5)
 
-recurrent_error_df = vcat(x1,x2,x3,x4,x5)
-csv_dir = plot_dir * "recurring_error_codon_sites_df.csv"
+x1 = select_sim_and_codon_site(joined_res, 56, [705]) # only 3 samples
+x2 = select_sim_and_codon_site(joined_res, 175, [634])  # only 3 samples
+x3 = select_sim_and_codon_site(joined_res, 60, [238])
+x4 = select_sim_and_codon_site(joined_res, 26, [324])
+recurrent_error_df = vcat(x1, x2, x3, x4)
+
+
+csv_dir = plot_dir * "2_recurring_error_codon_sites_df.csv"
 CSV.write(csv_dir, recurrent_error_df)
 
 
@@ -461,40 +468,40 @@ df_col_prefix(joined_res, "alpha")
 df_col_prefix(joined_res, "beta")
 
 x1 = df_col_prefix(joined_res, "alpha")[!, "contrastFEL_alpha"]
-histogram(x1, label="Alpha", alpha=0.5, density=true)
+histogram(x1, label="Alpha (no filter)", alpha=0.5, density=true)
 xlabel!("Alpha")
 ylabel!("Count")
 title!("contrastFEL alpha")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_alpha.png")
+savefig(plot_dir * "1_histogram_all_contrastFEL_alpha.png")
 
 x2 = df_col_prefix(joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
-histogram(x2, label="Beta (test)", alpha=0.5, density=true)
+histogram(x2, label="Beta (test) (no filter)", alpha=0.5, density=true)
 xlabel!("Beta (test)")
 ylabel!("Count")
 title!("contrastFEL beta (test)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_beta_test.png")
+savefig(plot_dir * "1_histogram_all_contrastFEL_beta_test.png")
 
 
 x3 = df_col_prefix(joined_res, "beta")[!, "contrastFEL_beta (background)"]
-histogram(x3, label="Beta (background)", alpha=0.5, density=true)
+histogram(x3, label="Beta (background) (no filter)", alpha=0.5, density=true)
 xlabel!("Beta (background)")
 ylabel!("Count")
 title!("contrastFEL beta (background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_beta_background.png")
+savefig(plot_dir * "1_histogram_all_contrastFEL_beta_background.png")
 
 
 x = joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
 x4 = maximum.(eachrow(x))
 
-histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true)
+histogram(x4, label="max(alpha, beta(test), beta(background)) (no filter)", alpha=0.5, density=true)
 xlabel!("Max of alpha, beta(test), beta(background)")
 ylabel!("Count")
 title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_max_of_alpha_betas.png")
+savefig(plot_dir * "1_histogram_all_contrastFEL_max_of_alpha_betas.png")
 
 #######################################
 # Plot of filtered data (faulty data) #
@@ -508,30 +515,30 @@ df_col_prefix(filtered_joined_res, "alpha")
 df_col_prefix(filtered_joined_res, "beta")
 
 x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
-histogram(x1, label="Alpha", alpha=0.5, density=true, nbins=50)
+histogram(x1, label="Alpha P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true, nbins=50)
 xlabel!("Alpha")
 ylabel!("Count")
 title!("contrastFEL alpha")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_alpha.png")
+savefig(plot_dir * "2_histogram_filtered_bottom_right_contrastFEL_alpha.png")
 
 
 x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
-histogram(x2, label="Beta(test)", alpha=0.5, density=true, nbins=50)
+histogram(x2, label="Beta(test) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true, nbins=50)
 xlabel!("Beta (test)")
 ylabel!("Count")
 title!("contrastFEL beta (test)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_beta_test.png")
+savefig(plot_dir * "2_histogram_filtered_bottom_right_contrastFEL_beta_test.png")
 
 
 x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
-histogram(x3, label="Beta (background)", alpha=0.5, density=true, nbins=50)
+histogram(x3, label="Beta (background) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true, nbins=50)
 xlabel!("Beta (background)")
 ylabel!("Count")
 title!("contrastFEL beta (background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_beta_background.png")
+savefig(plot_dir * "2_histogram_filtered_bottom_right_contrastFEL_beta_background.png")
 
 
 # Make analysis of what max alpha, beta (background), beta (test)
@@ -539,12 +546,12 @@ savefig(plot_dir * "histogram_filtered_contrastFEL_beta_background.png")
 x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
 x4 = maximum.(eachrow(x))
 
-histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true, nbins=50)
+histogram(x4, label="max(alpha, beta(test), beta(background)) P(ω1 ≠ ω2) > 0.99 / contrastFEL_1-Pvalue > 0.01", alpha=0.5, density=true, nbins=50)
 xlabel!("Max of alpha, beta(test), beta(background)")
 ylabel!("Count")
 title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_max_of_alpha_betas.png")
+savefig(plot_dir * "2_histogram_filtered_bottom_right_contrastFEL_max_of_alpha_betas.png")
 
 
 ######################################
@@ -554,12 +561,12 @@ savefig(plot_dir * "histogram_filtered_contrastFEL_max_of_alpha_betas.png")
 # "contrastFEL_1-Pvalue"].>0.9
 ######################################
 
-filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].<0.5, :]
-filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].>0.9, :]
+filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].<0.50, :]
+filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].>0.99, :]
 
 scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
+    title="P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -567,6 +574,45 @@ scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!
 savefig(plot_dir * "3_coherence_scatterplot_difFUBAR_uncertain_contrastFEL_certain.png")
 # Low confidence from difFUBAR and high confidence from contrastFEL are actual hits that are incorrectly classified by contrastFEL and correctly called wrong by difFUBAR
 
+
+x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
+histogram(x1, label="Alpha P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true, nbins=50)
+xlabel!("Alpha")
+ylabel!("Count")
+title!("contrastFEL alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_contrastFEL_alpha.png")
+
+
+x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
+histogram(x2, label="Beta(test) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (test)")
+ylabel!("Count")
+title!("contrastFEL beta (test)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_contrastFEL_beta_test.png")
+
+
+x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
+histogram(x3, label="Beta (background) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (background)")
+ylabel!("Count")
+title!("contrastFEL beta (background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_contrastFEL_beta_background.png")
+
+
+# Make analysis of what max alpha, beta (background), beta (test)
+
+x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
+x4 = maximum.(eachrow(x))
+
+histogram(x4, label="max(alpha, beta(test), beta(background)) P(ω1 ≠ ω2) < 0.5 / contrastFEL_1-Pvalue > 0.99", alpha=0.5, density=true, nbins=50)
+xlabel!("Max of alpha, beta(test), beta(background)")
+ylabel!("Count")
+title!("Max of alpha, beta(test), beta(background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "3_histogram_filtered_top_contrastFEL_max_of_alpha_betas.png")
 
 
 #####################
@@ -577,7 +623,7 @@ filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.999
 
 scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="High difFUBAR certainty, all contrastFEL certainty",
+    title="P(ω1 ≠ ω2) > 0.999",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -586,30 +632,30 @@ savefig(plot_dir * "4_coherence_high_difFUBAR_certainty_all_contrastFEL.png")
 
 
 x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
-histogram(x1, label="Alpha", alpha=0.5, density=true, nbins=50)
+histogram(x1, label="Alpha P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true, nbins=50)
 xlabel!("Alpha")
 ylabel!("Count")
 title!("contrastFEL alpha")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_right_contrastFEL_alpha.png")
+savefig(plot_dir * "4_histogram_filtered_right_contrastFEL_alpha.png")
 
 
-x2 = df_col_prefix(fi ltered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
-histogram(x2, label="Beta(test)", alpha=0.5, density=true, nbins=50)
+x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
+histogram(x2, label="Beta(test) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true, nbins=50)
 xlabel!("Beta (test)")
 ylabel!("Count")
 title!("contrastFEL beta (test)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_right_contrastFEL_beta_test.png")
+savefig(plot_dir * "4_histogram_filtered_right_contrastFEL_beta_test.png")
 
 
 x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
-histogram(x3, label="Beta (background)", alpha=0.5, density=true, nbins=50)
+histogram(x3, label="Beta (background) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true, nbins=50)
 xlabel!("Beta (background)")
 ylabel!("Count")
 title!("contrastFEL beta (background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_right_contrastFEL_beta_background.png")
+savefig(plot_dir * "4_histogram_filtered_right_contrastFEL_beta_background.png")
 
 
 # Make analysis of what max alpha, beta (background), beta (test)
@@ -617,12 +663,69 @@ savefig(plot_dir * "histogram_filtered_right_contrastFEL_beta_background.png")
 x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
 x4 = maximum.(eachrow(x))
 
-histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true, nbins=50)
+histogram(x4, label="max(alpha, beta(test), beta(background)) P(ω1 ≠ ω2) > 0.999", alpha=0.5, density=true, nbins=50)
 xlabel!("Max of alpha, beta(test), beta(background)")
 ylabel!("Count")
 title!("Max of alpha, beta(test), beta(background)")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_right_contrastFEL_max_of_alpha_betas.png")
+savefig(plot_dir * "4_histogram_filtered_right_contrastFEL_max_of_alpha_betas.png")
+
+
+#####################
+# check bottom axis ##
+#####################
+
+filtered_joined_res = joined_res[joined_res[!, "contrastFEL_1-Pvalue"].<0.001, :]
+
+scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
+    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
+    title="1-Pvalue < 0.001",
+    legend=false, alpha=0.02, size=(800, 600),
+    color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
+    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
+)
+savefig(plot_dir * "5_coherence_all_difFUBAR_certainty_low_contrastFEL.png")
+
+
+x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
+histogram(x1, label="Alpha 1-Pvalue < 0.001", alpha=0.5, density=true, nbins=50)
+xlabel!("Alpha")
+ylabel!("Count")
+title!("contrastFEL alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_contrastFEL_alpha.png")
+
+
+x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
+histogram(x2, label="Beta(test) 1-Pvalue < 0.001", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (test)")
+ylabel!("Count")
+title!("contrastFEL beta (test)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_contrastFEL_beta_test.png")
+
+
+x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
+histogram(x3, label="Beta (background) 1-Pvalue < 0.001", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (background)")
+ylabel!("Count")
+title!("contrastFEL beta (background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_contrastFEL_beta_background.png")
+
+
+# Make analysis of what max alpha, beta (background), beta (test)
+
+x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
+x4 = maximum.(eachrow(x))
+
+histogram(x4, label="max(alpha, beta(test), beta(background)) 1-Pvalue < 0.001", alpha=0.5, density=true, nbins=50)
+xlabel!("Max of alpha, beta(test), beta(background)")
+ylabel!("Count")
+title!("Max of alpha, beta(test), beta(background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "5_histogram_filtered_bottom_contrastFEL_max_of_alpha_betas.png")
+
 
 
 ###############################################
