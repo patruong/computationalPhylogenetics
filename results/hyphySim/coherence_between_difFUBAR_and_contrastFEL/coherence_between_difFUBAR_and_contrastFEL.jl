@@ -329,13 +329,29 @@ for sim in sims
             push!(sim_array, filtered_joined_res[filtered_joined_res[!, "difFUBAR_id"].==simulation_name, :][!, "difFUBAR_Codon Sites"])
         end
     end
-    if sim_array != Any[]
-        if length(sim_array) > 1
-            sim_dict[sim] = sim_array
-        end
+    #if sim_array != Any[]
+    if length(sim_array) > 1
+        sim_dict[sim] = sim_array
     end
+    #end
 end
 
+
+sim_dict
+
+sims = []
+values = []
+for (key, value) in sim_dict
+    push!(sims, key)
+    push!(values, value)
+end
+
+high_difFUBAR_certainty_low_contrastFEL = DataFrame(sim=sims, codon_sites=values)
+csv_dir = plot_dir * "high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites.csv"
+CSV.write(csv_dir, high_difFUBAR_certainty_low_contrastFEL)
+
+
+sim_dict
 
 recurring_codon_errors = Dict()
 for (key, value) in sim_dict
@@ -362,19 +378,33 @@ csv_dir = plot_dir * "recurring_error_codon_sites.csv"
 CSV.write(csv_dir, recurring_faulty_sites)
 
 
-simulation_check = 83
-codon_check = 38
-sim_dict[simulation_check]
-recurring_codon_errors[simulation_check]
+
+joined_res
 
 
-diagnose_df = filter(r -> occursin("sim." * string(simulation_check), r.difFUBAR_id), joined_res)
-diagnose_df = filter(r -> occursin(string(codon_check), string(r["difFUBAR_Codon Sites"])), diagnose_df)
+function select_sim_and_codon_site(df, sim_n, codon_sites)
+    sim_n = string(sim_n)
+    target_codon_sites = codon_sites
+    target_ids = ["sim.$sim_n.rep.1", "sim.$sim_n.rep.2", "sim.$sim_n.rep.3", "sim.$sim_n.rep.4", "sim.$sim_n.rep.5"]
+    filtered_joined_res = filter(row -> row["difFUBAR_id"] ∈ target_ids && row["difFUBAR_Codon Sites"] ∈ target_codon_sites, df)
+    return filtered_joined_res
+end
 
-diagnose_df
+x1 = select_sim_and_codon_site(joined_res, 83, [38, 87, 206, 591, 658, 758]) 
+x2 = select_sim_and_codon_site(joined_res, 56, [705])  # only 3 samples
+x3 = select_sim_and_codon_site(joined_res, 175, [634])  # only 3 samples
+x4 = select_sim_and_codon_site(joined_res, 26, [324]) 
+x5 = select_sim_and_codon_site(joined_res, 347, [3, 315, 672]) 
+
+recurrent_error_df = vcat(x1,x2,x3,x4,x5)
+csv_dir = plot_dir * "recurring_error_codon_sites_df.csv"
+CSV.write(csv_dir, recurrent_error_df)
+
+
+# Fix the check of codon_sites  in bens chat 
 names(diagnose_df)
 
-selected_df = select(diagnose_df, ["difFUBAR_P(ω1 ≠ ω2)", "contrastFEL_1-Pvalue"])
+
 
 function df_col_prefix(df, prefix)
     selected_columns_values = Dict{String,Vector}()
@@ -555,7 +585,7 @@ plot!(legend=:topleft)  # Position the legend
 savefig(plot_dir * "histogram_filtered_right_contrastFEL_alpha.png")
 
 
-x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
+x2 = df_col_prefix(fi ltered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
 histogram(x2, label="Beta(test)", alpha=0.5, density=true, nbins=50)
 xlabel!("Beta (test)")
 ylabel!("Count")
