@@ -323,3 +323,29 @@ plot!(legend=:topright)  # Adjust legend position if needed
 
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/distribution_of_variation/"
 savefig(plot_dir * "distribution_of_variation.png")
+
+########################
+# p-value distribution #
+########################
+
+histogram(difFUBAR_res[!, "P(ω1 ≠ ω2)"], label="P(ω1 ≠ ω2)", alpha=0.5, density=true)
+xlabel!("P(ω1 ≠ ω2)")
+ylabel!("Count")
+title!("difFUBAR P(ω1 ≠ ω2) distribution")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "difFUBAR_posterior_distribution.png")
+
+histogram(contrastFEL_res[!, "1-Pvalue"], label="1-Pvalue", alpha=0.5, density=true)
+xlabel!("1-Pvalue")
+ylabel!("Count")
+title!("contrastFEL 1-Pvalue distribution")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "contrastFEL_pvalue_distribution.png")
+
+histogram(difFUBAR_res[!, "P(ω1 ≠ ω2)"], label="P(ω1 ≠ ω2)", alpha=0.5, density=true)
+histogram!(contrastFEL_res[!, "1-Pvalue"], label="1-Pvalue", alpha=0.5, density=true)
+xlabel!("P(ω1 ≠ ω2) / 1-Pvalue")
+ylabel!("Count")
+title!("P(ω1 ≠ ω2) / 1-Pvalue - distribution")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "contrastFEL_pvalue_distribution.png")
