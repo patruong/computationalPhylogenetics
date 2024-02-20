@@ -348,4 +348,4 @@ xlabel!("P(ω1 ≠ ω2) / 1-Pvalue")
 ylabel!("Count")
 title!("P(ω1 ≠ ω2) / 1-Pvalue - distribution")
 plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "contrastFEL_pvalue_distribution.png")
+savefig(plot_dir * "posterior_and_pvalue_distribution.png")
