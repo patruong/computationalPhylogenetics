@@ -308,6 +308,10 @@ savefig(plot_dir * "2_coherence_scatterplot_difFUBAR_certain_contrastFEL_uncerta
 # High confidence from difFUBAR and low confidence from contrastFEL are actual hits that are correctly classified by difFUBAR, but missed for contrastFEL
 
 
+csv_dir = plot_dir * "high_difFUBAR_certainty_low_contrastFEL_certainty_codon_sites_df.csv"
+CSV.write(csv_dir,filtered_joined_res)
+
+
 #######################################################
 # investigate if same codon is faulty in every sim ####
 #######################################################
@@ -338,6 +342,11 @@ end
 
 
 sim_dict
+
+
+
+
+
 
 sims = []
 values = []
