@@ -293,7 +293,7 @@ savefig(plot_dir * "1_coherence_scatterplot.png")
 # "difFUBAR_P(ω1 ≠ ω2)"].>0.9
 # "contrastFEL_1-Pvalue"].<0.5
 #########################################
-
+joined_res
 filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.9, :]
 filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].<0.05, :]
 
@@ -529,6 +529,63 @@ savefig(plot_dir * "3_coherence_scatterplot_difFUBAR_uncertain_contrastFEL_certa
 # Low confidence from difFUBAR and high confidence from contrastFEL are actual hits that are incorrectly classified by contrastFEL and correctly called wrong by difFUBAR
 
 
+
+#####################
+# check right axis ##
+#####################
+
+filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.999, :]
+
+scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
+    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
+    title="High difFUBAR certainty, all contrastFEL certainty",
+    legend=false, alpha=0.02, size=(800, 600),
+    color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
+    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
+)
+savefig(plot_dir * "4_coherence_high_difFUBAR_certainty_all_contrastFEL.png")
+
+
+x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
+histogram(x1, label="Alpha", alpha=0.5, density=true, nbins=50)
+xlabel!("Alpha")
+ylabel!("Count")
+title!("contrastFEL alpha")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "histogram_filtered_right_contrastFEL_alpha.png")
+
+
+x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
+histogram(x2, label="Beta(test)", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (test)")
+ylabel!("Count")
+title!("contrastFEL beta (test)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "histogram_filtered_right_contrastFEL_beta_test.png")
+
+
+x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
+histogram(x3, label="Beta (background)", alpha=0.5, density=true, nbins=50)
+xlabel!("Beta (background)")
+ylabel!("Count")
+title!("contrastFEL beta (background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "histogram_filtered_right_contrastFEL_beta_background.png")
+
+
+# Make analysis of what max alpha, beta (background), beta (test)
+
+x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
+x4 = maximum.(eachrow(x))
+
+histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true, nbins=50)
+xlabel!("Max of alpha, beta(test), beta(background)")
+ylabel!("Count")
+title!("Max of alpha, beta(test), beta(background)")
+plot!(legend=:topleft)  # Position the legend
+savefig(plot_dir * "histogram_filtered_right_contrastFEL_max_of_alpha_betas.png")
+
+
 ###############################################
 # How can contrastFEL be so certain on these?
 # Do we need to know this as well ?  #
@@ -539,3 +596,4 @@ filtered_joined_res[:, ["contrastFEL_actual_directional_effect_difference", "con
 names(filtered_joined_res)
 
 # This should be fine no?
+
