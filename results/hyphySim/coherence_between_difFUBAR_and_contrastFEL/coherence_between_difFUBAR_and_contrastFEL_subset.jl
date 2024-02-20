@@ -236,7 +236,7 @@ end
 
 
 pos_thresh = 0.95
-sims = collect(1:500)
+sims = collect(343:343)
 reps = collect(1:5)
 
 # Initialize variables to store aggregated results
@@ -269,273 +269,24 @@ difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
 joined_res = merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
 
+joined_res
+
 names(joined_res)
 joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"]
 joined_res[!, "contrastFEL_1-Pvalue"]
 
-# Assuming joined_res is your DataFrame
-scatter(joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], joined_res[!, "contrastFEL_1-Pvalue"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
+scatter(
+    joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"],
+    joined_res[!, "contrastFEL_1-Pvalue"],
+    color=map(x -> x == 1 ? :blue : :red, joined_res[!, "contrastFEL_actual_difference"]),
+    xlabel="difFUBAR_P(ω1 ≠ ω2)",
+    ylabel="contrastFEL_1-Pvalue",
     title="Scatter Plot of difFUBAR vs contrastFEL",
-    legend=false, alpha=0.02, size=(800, 600),
-    color=map(x -> x == 1 ? :blue : :red, joined_res[!, "contrastFEL_actual_difference"])
-    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
+    legend=false,
+    alpha=0.05,
+    size=(800, 600)
 )
+
 
 #cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL")
-
-plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot.png")
-
-#########################################
-# Deeper analysis of contrastFEL issue  
-# Filter 
-# "difFUBAR_P(ω1 ≠ ω2)"].>0.9
-# "contrastFEL_1-Pvalue"].<0.5
-#########################################
-
-filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].>0.9, :]
-filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].<0.05, :]
-
-scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
-    legend=false, alpha=0.02, size=(800, 600),
-    color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
-    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
-)
-savefig(plot_dir * "2_coherence_scatterplot_difFUBAR_certain_contrastFEL_uncertain.png")
-# High confidence from difFUBAR and low confidence from contrastFEL are actual hits that are correctly classified by difFUBAR, but missed for contrastFEL
-
-
-#######################################################
-# investigate if same codon is faulty in every sim ####
-#######################################################
-
-filtered_joined_res[!, "difFUBAR_id"]
-
-#unique_elements = unique(filtered_joined_res[!, "difFUBAR_id"])
-# go through all sim on the filtered_joined_res
-
-sims = collect(1:500)
-reps = collect(1:5)
-
-sim_dict = Dict()
-for sim in sims
-    sim_array = []
-    for rep in reps
-        simulation_name = "sim." * string(sim) * ".rep." * string(rep)
-        if !isempty(filtered_joined_res[filtered_joined_res[!, "difFUBAR_id"].==simulation_name, :][!, "difFUBAR_Codon Sites"])
-            push!(sim_array, filtered_joined_res[filtered_joined_res[!, "difFUBAR_id"].==simulation_name, :][!, "difFUBAR_Codon Sites"])
-        end
-    end
-    if sim_array != Any[]
-        if length(sim_array) > 1
-            sim_dict[sim] = sim_array
-        end
-    end
-end
-
-
-recurring_codon_errors = Dict()
-for (key, value) in sim_dict
-    if intersect(value...) != Int64[]
-        recurring_codon_errors[key] = intersect(value...)
-    end
-end
-
-
-###############################################
-# Check these manually one-by-one
-#
-# THESE ERROR ARE CONSISTENT AMONG REPLICATES #
-recurring_codon_errors #list of simulations with codon sites that are faulty in many simulations.
-
-sims = []
-values = []
-for (key, value) in recurring_codon_errors
-    push!(sims, key)
-    push!(values, value)
-end
-recurring_faulty_sites = DataFrame(sim=sims, codon_sites=values)
-csv_dir = plot_dir * "recurring_error_codon_sites.csv"
-CSV.write(csv_dir, recurring_faulty_sites)
-
-
-simulation_check = 83
-codon_check = 38
-sim_dict[simulation_check]
-recurring_codon_errors[simulation_check]
-
-
-diagnose_df = filter(r -> occursin("sim." * string(simulation_check), r.difFUBAR_id), joined_res)
-diagnose_df = filter(r -> occursin(string(codon_check), string(r["difFUBAR_Codon Sites"])), diagnose_df)
-
-diagnose_df
-names(diagnose_df)
-
-selected_df = select(diagnose_df, ["difFUBAR_P(ω1 ≠ ω2)", "contrastFEL_1-Pvalue"])
-
-function df_col_prefix(df, prefix)
-    selected_columns_values = Dict{String,Vector}()
-    for col_name in names(df)
-        if occursin(prefix, col_name)
-            selected_columns_values[col_name] = df[!, col_name]
-        end
-    end
-    selected_df = DataFrame(selected_columns_values)
-    return selected_df
-end
-
-df_col_prefix(joined_res, "contrastFEL")
-df_col_prefix(joined_res, "alpha") # ERROR
-df_col_prefix(joined_res, "beta") # ERROR
-df_col_prefix(diagnose_df, "contrastFEL")
-df_col_prefix(diagnose_df, "alpha") # ERROR 
-df_col_prefix(diagnose_df, "beta") # ERRPR
-names(df_col_prefix(diagnose_df, "contrastFEL"))
-
-names(df_col_prefix(diagnose_df, "difFUBAR"))
-
-df_col_prefix(diagnose_df, "difFUBAR")
-df_col_prefix(diagnose_df, "difFUBAR_mean")
-df_col_prefix(joined_res, "difFUBAR_mean(α)")
-
-
-
-# The contrastFEL errors when we have errors in setting alpha and beta
-df_col_prefix(filtered_joined_res, "alpha")
-
-
-####################################
-# test the code for sim 82, codon 133 - alpha and beta error
-# sim 82, codon 601 - beta error
-# sim 82, codon 604 - beta error
-
-
-
-
-################################
-# plot up distribution of beta #
-################################
-df_col_prefix(joined_res, "alpha")
-df_col_prefix(joined_res, "beta")
-
-x1 = df_col_prefix(joined_res, "alpha")[!, "contrastFEL_alpha"]
-histogram(x1, label="Alpha", alpha=0.5, density=true)
-xlabel!("Alpha")
-ylabel!("Count")
-title!("contrastFEL alpha")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_alpha.png")
-
-x2 = df_col_prefix(joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
-histogram(x2, label="Beta (test)", alpha=0.5, density=true)
-xlabel!("Beta (test)")
-ylabel!("Count")
-title!("contrastFEL beta (test)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_beta_test.png")
-
-
-x3 = df_col_prefix(joined_res, "beta")[!, "contrastFEL_beta (background)"]
-histogram(x3, label="Beta (background)", alpha=0.5, density=true)
-xlabel!("Beta (background)")
-ylabel!("Count")
-title!("contrastFEL beta (background)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_beta_background.png")
-
-
-x = joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
-x4 = maximum.(eachrow(x))
-
-histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true)
-xlabel!("Max of alpha, beta(test), beta(background)")
-ylabel!("Count")
-title!("Max of alpha, beta(test), beta(background)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_all_contrastFEL_max_of_alpha_betas.png")
-
-#######################################
-# Plot of filtered data (faulty data) #
-#######################################
-
-df_col_prefix(filtered_joined_res, "Pvalue")
-
-maximum(df_col_prefix(filtered_joined_res, "Pvalue")[!, "contrastFEL_1-Pvalue"])
-
-df_col_prefix(filtered_joined_res, "alpha")
-df_col_prefix(filtered_joined_res, "beta")
-
-x1 = df_col_prefix(filtered_joined_res, "alpha")[!, "contrastFEL_alpha"]
-histogram(x1, label="Alpha", alpha=0.5, density=true, nbins=50)
-xlabel!("Alpha")
-ylabel!("Count")
-title!("contrastFEL alpha")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_alpha.png")
-
-
-x2 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (TEST)"]
-histogram(x2, label="Beta(test)", alpha=0.5, density=true, nbins=50)
-xlabel!("Beta (test)")
-ylabel!("Count")
-title!("contrastFEL beta (test)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_beta_test.png")
-
-
-x3 = df_col_prefix(filtered_joined_res, "beta")[!, "contrastFEL_beta (background)"]
-histogram(x3, label="Beta (background)", alpha=0.5, density=true, nbins=50)
-xlabel!("Beta (background)")
-ylabel!("Count")
-title!("contrastFEL beta (background)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_beta_background.png")
-
-
-# Make analysis of what max alpha, beta (background), beta (test)
-
-x = filtered_joined_res[:, ["contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
-x4 = maximum.(eachrow(x))
-
-histogram(x4, label="max(alpha, beta(test), beta(background))", alpha=0.5, density=true, nbins=50)
-xlabel!("Max of alpha, beta(test), beta(background)")
-ylabel!("Count")
-title!("Max of alpha, beta(test), beta(background)")
-plot!(legend=:topleft)  # Position the legend
-savefig(plot_dir * "histogram_filtered_contrastFEL_max_of_alpha_betas.png")
-
-
-######################################
-# Deeper analysis of difFUBAR issues #
-# Filter 
-# "difFUBAR_P(ω1 ≠ ω2)"].<0.5
-# "contrastFEL_1-Pvalue"].>0.9
-######################################
-
-filtered_joined_res = joined_res[joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"].<0.5, :]
-filtered_joined_res = filtered_joined_res[filtered_joined_res[!, "contrastFEL_1-Pvalue"].>0.9, :]
-
-scatter(filtered_joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], filtered_joined_res[!, "contrastFEL_1-Pvalue"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
-    legend=false, alpha=0.02, size=(800, 600),
-    color=map(x -> x == 1 ? :blue : :red, filtered_joined_res[!, "contrastFEL_actual_difference"])
-    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
-)
-savefig(plot_dir * "3_coherence_scatterplot_difFUBAR_uncertain_contrastFEL_certain.png")
-# Low confidence from difFUBAR and high confidence from contrastFEL are actual hits that are incorrectly classified by contrastFEL and correctly called wrong by difFUBAR
-
-
-###############################################
-# How can contrastFEL be so certain on these?
-# Do we need to know this as well ?  #
-###############################################
-
-filtered_joined_res[:, ["contrastFEL_actual_directional_effect_difference", "contrastFEL_alpha", "contrastFEL_beta (TEST)", "contrastFEL_beta (background)"]]
-
-names(filtered_joined_res)
-
-# This should be fine no?
+savefig("coherence_scatterplot.png")

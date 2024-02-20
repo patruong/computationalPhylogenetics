@@ -281,7 +281,9 @@ scatter(
     legend=false,
     alpha=0.5,
     size=(800, 600),
-    color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1]
+    color=map(x -> x == 1 ? :blue : :red, joined_res[!, "contrastFEL_actual_difference"])
+
+    #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1]
 )
 
 #names(joined_res)
