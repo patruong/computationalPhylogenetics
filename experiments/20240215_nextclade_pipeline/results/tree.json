@@ -1,7 +1,7 @@
 {
   "version": "v2",
   "meta": {
-    "updated": "2024-02-15",
+    "updated": "2024-02-29",
     "genome_annotations": {
       "nuc": {
         "end": 29903,
@@ -57,7 +57,7 @@
       {
         "name": "MN908947",
         "node_attrs": {
-          "div": 0.00023619,
+          "div": 0.00023617,
           "clade_membership": {
             "value": "19A"
           }
@@ -142,7 +142,7 @@
             },
             "children": [
               {
-                "name": "ENA|OQ437934|OQ437934.1",
+                "name": "ENA|OQ437934|OQ437934.1__DEER_-_",
                 "node_attrs": {
                   "div": 0.00147131,
                   "clade_membership": {
@@ -171,7 +171,7 @@
                 }
               },
               {
-                "name": "ENA|OQ437943|OQ437943.1",
+                "name": "ENA|OQ437943|OQ437943.1__DEER_-_",
                 "node_attrs": {
                   "div": 0.00201924,
                   "clade_membership": {
@@ -268,7 +268,7 @@
                 },
                 "children": [
                   {
-                    "name": "ENA|OL318841|OL318841.1",
+                    "name": "ENA|OL318841|OL318841.1__DEER_-_",
                     "node_attrs": {
                       "div": 0.00123373,
                       "clade_membership": {
@@ -317,9 +317,9 @@
                     },
                     "children": [
                       {
-                        "name": "ENA|OQ437939|OQ437939.1",
+                        "name": "ENA|OQ437939|OQ437939.1__DEER_-_",
                         "node_attrs": {
-                          "div": 0.0016005499999999998,
+                          "div": 0.00160054,
                           "clade_membership": {
                             "value": "21J (Delta)"
                           }
@@ -374,7 +374,7 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437940|OQ437940.1",
+                                "name": "ENA|OQ437940|OQ437940.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.00180004,
                                   "clade_membership": {
@@ -395,7 +395,7 @@
                                 }
                               },
                               {
-                                "name": "ENA|OQ437982|OQ437982.1",
+                                "name": "ENA|OQ437982|OQ437982.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.00170062,
                                   "clade_membership": {
@@ -427,7 +427,7 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437927|OQ437927.1",
+                                "name": "ENA|OQ437927|OQ437927.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.00160322,
                                   "clade_membership": {
@@ -468,7 +468,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OQ437988|OQ437988.1",
+                                    "name": "ENA|OQ437988|OQ437988.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.0018362200000000002,
                                       "clade_membership": {
@@ -487,7 +487,7 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OQ437961|OQ437961.1",
+                                    "name": "ENA|OQ437961|OQ437961.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.00173539,
                                       "clade_membership": {
@@ -559,7 +559,7 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OQ437959|OQ437959.1",
+                            "name": "ENA|OQ437959|OQ437959.1__DEER_-_",
                             "node_attrs": {
                               "div": 0.001138,
                               "clade_membership": {
@@ -608,7 +608,7 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437948|OQ437948.1",
+                                "name": "ENA|OQ437948|OQ437948.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.00194089,
                                   "clade_membership": {
@@ -632,7 +632,7 @@
                                 }
                               },
                               {
-                                "name": "ENA|OQ437930|OQ437930.1",
+                                "name": "ENA|OQ437930|OQ437930.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.001883,
                                   "clade_membership": {
@@ -696,7 +696,7 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437989|OQ437989.1",
+                                "name": "ENA|OQ437989|OQ437989.1__DEER_-_",
                                 "node_attrs": {
                                   "div": 0.0014715999999999998,
                                   "clade_membership": {
@@ -737,7 +737,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OQ437941|OQ437941.1",
+                                    "name": "ENA|OQ437941|OQ437941.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.00170371,
                                       "clade_membership": {
@@ -764,7 +764,7 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OQ437975|OQ437975.1",
+                                    "name": "ENA|OQ437975|OQ437975.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.00164332,
                                       "clade_membership": {
@@ -829,7 +829,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OQ437983|OQ437983.1",
+                                    "name": "ENA|OQ437983|OQ437983.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.001977,
                                       "clade_membership": {
@@ -867,7 +867,7 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OQ437970|OQ437970.1",
+                                    "name": "ENA|OQ437970|OQ437970.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.0017738,
                                       "clade_membership": {
@@ -938,7 +938,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437932|OQ437932.1",
+                                        "name": "ENA|OQ437932|OQ437932.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0015705999999999997,
                                           "clade_membership": {
@@ -959,7 +959,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ437969|OQ437969.1",
+                                        "name": "ENA|OQ437969|OQ437969.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0018061599999999998,
                                           "clade_membership": {
@@ -1007,7 +1007,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OL320072|OL320072.1",
+                                        "name": "ENA|OL320072|OL320072.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00113862,
                                           "clade_membership": {
@@ -1019,7 +1019,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OL320069|OL320069.1",
+                                        "name": "ENA|OL320069|OL320069.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00113868,
                                           "clade_membership": {
@@ -1108,7 +1108,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OQ437914|OQ437914.1",
+                                    "name": "ENA|OQ437914|OQ437914.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.00147259,
                                       "clade_membership": {
@@ -1127,7 +1127,7 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OQ437955|OQ437955.1",
+                                    "name": "ENA|OQ437955|OQ437955.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.00150916,
                                       "clade_membership": {
@@ -1183,7 +1183,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437942|OQ437942.1",
+                                        "name": "ENA|OQ437942|OQ437942.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0019139500000000002,
                                           "clade_membership": {
@@ -1219,7 +1219,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ437935|OQ437935.1",
+                                        "name": "ENA|OQ437935|OQ437935.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0014878500000000002,
                                           "clade_membership": {
@@ -1259,7 +1259,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437912|OQ437912.1",
+                                        "name": "ENA|OQ437912|OQ437912.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00115088,
                                           "clade_membership": {
@@ -1296,7 +1296,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437938|OQ437938.1",
+                                            "name": "ENA|OQ437938|OQ437938.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0014766,
                                               "clade_membership": {
@@ -1330,7 +1330,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OQ437922|OQ437922.1",
+                                                "name": "ENA|OQ437922|OQ437922.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.00182139,
                                                   "clade_membership": {
@@ -1378,7 +1378,7 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OQ437954|OQ437954.1",
+                                                    "name": "ENA|OQ437954|OQ437954.1__DEER_-_",
                                                     "node_attrs": {
                                                       "div": 0.00181437,
                                                       "clade_membership": {
@@ -1428,7 +1428,7 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437926|OQ437926.1",
+                                                        "name": "ENA|OQ437926|OQ437926.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00157712,
                                                           "clade_membership": {
@@ -1448,7 +1448,7 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OQ437971|OQ437971.1",
+                                                        "name": "ENA|OQ437971|OQ437971.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00144331,
                                                           "clade_membership": {
@@ -1490,9 +1490,9 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ466563|OQ466563.1",
+                                "name": "ENA|OQ466563|OQ466563.1__DEER_-_",
                                 "node_attrs": {
-                                  "div": 0.0024079,
+                                  "div": 0.00240792,
                                   "clade_membership": {
                                     "value": "21J (Delta)"
                                   }
@@ -1565,7 +1565,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437987|OQ437987.1",
+                                        "name": "ENA|OQ437987|OQ437987.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00157399,
                                           "clade_membership": {
@@ -1622,7 +1622,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437936|OQ437936.1",
+                                            "name": "ENA|OQ437936|OQ437936.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.00153927,
                                               "clade_membership": {
@@ -1658,7 +1658,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OQ437968|OQ437968.1",
+                                                "name": "ENA|OQ437968|OQ437968.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.0016413,
                                                   "clade_membership": {
@@ -1674,7 +1674,7 @@
                                                 }
                                               },
                                               {
-                                                "name": "ENA|OQ437933|OQ437933.1",
+                                                "name": "ENA|OQ437933|OQ437933.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.00161041,
                                                   "clade_membership": {
@@ -1727,7 +1727,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437947|OQ437947.1",
+                                            "name": "ENA|OQ437947|OQ437947.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0014727899999999999,
                                               "clade_membership": {
@@ -1767,7 +1767,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OQ437980|OQ437980.1",
+                                                "name": "ENA|OQ437980|OQ437980.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.0015750599999999999,
                                                   "clade_membership": {
@@ -1791,7 +1791,7 @@
                                                 }
                                               },
                                               {
-                                                "name": "ENA|OQ437984|OQ437984.1",
+                                                "name": "ENA|OQ437984|OQ437984.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.0013742199999999998,
                                                   "clade_membership": {
@@ -1830,7 +1830,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437977|OQ437977.1",
+                                            "name": "ENA|OQ437977|OQ437977.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0015070699999999997,
                                               "clade_membership": {
@@ -1869,7 +1869,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OQ437949|OQ437949.1",
+                                                "name": "ENA|OQ437949|OQ437949.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.0013773699999999997,
                                                   "clade_membership": {
@@ -1899,7 +1899,7 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OQ437956|OQ437956.1",
+                                                    "name": "ENA|OQ437956|OQ437956.1__DEER_-_",
                                                     "node_attrs": {
                                                       "div": 0.0013717699999999998,
                                                       "clade_membership": {
@@ -1917,7 +1917,7 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OQ437920|OQ437920.1",
+                                                    "name": "ENA|OQ437920|OQ437920.1__DEER_-_",
                                                     "node_attrs": {
                                                       "div": 0.0013710699999999996,
                                                       "clade_membership": {
@@ -2009,9 +2009,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437978|OQ437978.1",
+                                        "name": "ENA|OQ437978|OQ437978.1__DEER_-_",
                                         "node_attrs": {
-                                          "div": 0.00204371,
+                                          "div": 0.0020437199999999997,
                                           "clade_membership": {
                                             "value": "21J (Delta)"
                                           }
@@ -2055,7 +2055,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ437951|OQ437951.1",
+                                        "name": "ENA|OQ437951|OQ437951.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0014907699999999998,
                                           "clade_membership": {
@@ -2109,7 +2109,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437985|OQ437985.1",
+                                        "name": "ENA|OQ437985|OQ437985.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0018473399999999998,
                                           "clade_membership": {
@@ -2142,7 +2142,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ449343|OQ449343.1",
+                                        "name": "ENA|OQ449343|OQ449343.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0017477399999999998,
                                           "clade_membership": {
@@ -2191,7 +2191,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OQ437981|OQ437981.1",
+                                    "name": "ENA|OQ437981|OQ437981.1__DEER_-_",
                                     "node_attrs": {
                                       "div": 0.0014441699999999998,
                                       "clade_membership": {
@@ -2245,7 +2245,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437950|OQ437950.1",
+                                        "name": "ENA|OQ437950|OQ437950.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0016932299999999998,
                                           "clade_membership": {
@@ -2285,7 +2285,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ449344|OQ449344.1",
+                                            "name": "ENA|OQ449344|OQ449344.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0020823799999999996,
                                               "clade_membership": {
@@ -2320,7 +2320,7 @@
                                             }
                                           },
                                           {
-                                            "name": "ENA|OQ437990|OQ437990.1",
+                                            "name": "ENA|OQ437990|OQ437990.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0015222599999999997,
                                               "clade_membership": {
@@ -2401,7 +2401,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437967|OQ437967.1",
+                                        "name": "ENA|OQ437967|OQ437967.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00184403,
                                           "clade_membership": {
@@ -2434,9 +2434,9 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ437929|OQ437929.1",
+                                        "name": "ENA|OQ437929|OQ437929.1__DEER_-_",
                                         "node_attrs": {
-                                          "div": 0.00167612,
+                                          "div": 0.00167613,
                                           "clade_membership": {
                                             "value": "21J (Delta)"
                                           }
@@ -2482,7 +2482,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437952|OQ437952.1",
+                                        "name": "ENA|OQ437952|OQ437952.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.00138717,
                                           "clade_membership": {
@@ -2525,7 +2525,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437946|OQ437946.1",
+                                            "name": "ENA|OQ437946|OQ437946.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0015088599999999999,
                                               "clade_membership": {
@@ -2563,7 +2563,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OQ437963|OQ437963.1",
+                                                "name": "ENA|OQ437963|OQ437963.1__DEER_-_",
                                                 "node_attrs": {
                                                   "div": 0.00160869,
                                                   "clade_membership": {
@@ -2602,7 +2602,7 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OQ437913|OQ437913.1",
+                                                    "name": "ENA|OQ437913|OQ437913.1__DEER_-_",
                                                     "node_attrs": {
                                                       "div": 0.0017053100000000002,
                                                       "clade_membership": {
@@ -2633,7 +2633,7 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437916|OQ437916.1",
+                                                        "name": "ENA|OQ437916|OQ437916.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00157882,
                                                           "clade_membership": {
@@ -2645,7 +2645,7 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OQ437923|OQ437923.1",
+                                                        "name": "ENA|OQ437923|OQ437923.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.0015780800000000002,
                                                           "clade_membership": {
@@ -2700,7 +2700,7 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OQ437915|OQ437915.1",
+                                        "name": "ENA|OQ437915|OQ437915.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0013147699999999998,
                                           "clade_membership": {
@@ -2721,7 +2721,7 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OQ437979|OQ437979.1",
+                                        "name": "ENA|OQ437979|OQ437979.1__DEER_-_",
                                         "node_attrs": {
                                           "div": 0.0015834399999999998,
                                           "clade_membership": {
@@ -2796,7 +2796,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437944|OQ437944.1",
+                                            "name": "ENA|OQ437944|OQ437944.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0017507299999999998,
                                               "clade_membership": {
@@ -2816,7 +2816,7 @@
                                             }
                                           },
                                           {
-                                            "name": "ENA|OQ437953|OQ437953.1",
+                                            "name": "ENA|OQ437953|OQ437953.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.00171346,
                                               "clade_membership": {
@@ -2853,7 +2853,7 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OQ437974|OQ437974.1",
+                                            "name": "ENA|OQ437974|OQ437974.1__DEER_-_",
                                             "node_attrs": {
                                               "div": 0.0012776299999999999,
                                               "clade_membership": {
@@ -2937,9 +2937,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437919|OQ437919.1",
+                                                        "name": "ENA|OQ437919|OQ437919.1__DEER_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00184866,
+                                                          "div": 0.00184867,
                                                           "clade_membership": {
                                                             "value": "21J (Delta)"
                                                           }
@@ -2958,7 +2958,7 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OQ437937|OQ437937.1",
+                                                        "name": "ENA|OQ437937|OQ437937.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00174839,
                                                           "clade_membership": {
@@ -3010,7 +3010,7 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437917|OQ437917.1",
+                                                        "name": "ENA|OQ437917|OQ437917.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.0018163799999999998,
                                                           "clade_membership": {
@@ -3030,7 +3030,7 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OQ437972|OQ437972.1",
+                                                        "name": "ENA|OQ437972|OQ437972.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.0021864,
                                                           "clade_membership": {
@@ -3120,7 +3120,7 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437931|OQ437931.1",
+                                                        "name": "ENA|OQ437931|OQ437931.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00219734,
                                                           "clade_membership": {
@@ -3145,7 +3145,7 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OQ437964|OQ437964.1",
+                                                        "name": "ENA|OQ437964|OQ437964.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00202466,
                                                           "clade_membership": {
@@ -3190,7 +3190,7 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OQ437925|OQ437925.1",
+                                                        "name": "ENA|OQ437925|OQ437925.1__DEER_-_",
                                                         "node_attrs": {
                                                           "div": 0.00208924,
                                                           "clade_membership": {
@@ -3222,7 +3222,7 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OQ437973|OQ437973.1",
+                                                            "name": "ENA|OQ437973|OQ437973.1__DEER_-_",
                                                             "node_attrs": {
                                                               "div": 0.00209598,
                                                               "clade_membership": {
@@ -3234,7 +3234,7 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OQ437924|OQ437924.1",
+                                                            "name": "ENA|OQ437924|OQ437924.1__DEER_-_",
                                                             "node_attrs": {
                                                               "div": 0.00209517,
                                                               "clade_membership": {
@@ -3274,7 +3274,7 @@
       {
         "name": "NODE_0000073",
         "node_attrs": {
-          "div": 9.821e-05,
+          "div": 9.824e-05,
           "clade_membership": {
             "value": "20B"
           }
@@ -3295,7 +3295,7 @@
           {
             "name": "NODE_0000074",
             "node_attrs": {
-              "div": 0.00037941,
+              "div": 0.00037943,
               "clade_membership": {
                 "value": "20B"
               }
@@ -3314,9 +3314,9 @@
             },
             "children": [
               {
-                "name": "ENA|OQ437976|OQ437976.1",
+                "name": "ENA|OQ437976|OQ437976.1__DEER_-_",
                 "node_attrs": {
-                  "div": 0.00138412,
+                  "div": 0.0013840900000000001,
                   "clade_membership": {
                     "value": "20B"
                   }
@@ -3354,7 +3354,7 @@
               {
                 "name": "NODE_0000075",
                 "node_attrs": {
-                  "div": 0.00093071,
+                  "div": 0.00093078,
                   "clade_membership": {
                     "value": "20B"
                   }
@@ -3387,7 +3387,7 @@
                   {
                     "name": "NODE_0000076",
                     "node_attrs": {
-                      "div": 0.00156782,
+                      "div": 0.00156789,
                       "clade_membership": {
                         "value": "20B"
                       }
@@ -3420,9 +3420,9 @@
                     },
                     "children": [
                       {
-                        "name": "ENA|OQ437986|OQ437986.1",
+                        "name": "ENA|OQ437986|OQ437986.1__DEER_-_",
                         "node_attrs": {
-                          "div": 0.0018235999999999999,
+                          "div": 0.00182367,
                           "clade_membership": {
                             "value": "20B"
                           }
@@ -3444,7 +3444,7 @@
                       {
                         "name": "NODE_0000077",
                         "node_attrs": {
-                          "div": 0.00178781,
+                          "div": 0.00178788,
                           "clade_membership": {
                             "value": "20B"
                           }
@@ -3464,9 +3464,9 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OQ437918|OQ437918.1",
+                            "name": "ENA|OQ437918|OQ437918.1__DEER_-_",
                             "node_attrs": {
-                              "div": 0.0021183,
+                              "div": 0.00211838,
                               "clade_membership": {
                                 "value": "20B"
                               }
@@ -3491,7 +3491,7 @@
                           {
                             "name": "NODE_0000078",
                             "node_attrs": {
-                              "div": 0.00182644,
+                              "div": 0.0018265,
                               "clade_membership": {
                                 "value": "20B"
                               }
@@ -3505,9 +3505,9 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437928|OQ437928.1",
+                                "name": "ENA|OQ437928|OQ437928.1__DEER_-_",
                                 "node_attrs": {
-                                  "div": 0.0020951999999999998,
+                                  "div": 0.00209526,
                                   "clade_membership": {
                                     "value": "20B"
                                   }
@@ -3528,9 +3528,9 @@
                                 }
                               },
                               {
-                                "name": "ENA|OQ437958|OQ437958.1",
+                                "name": "ENA|OQ437958|OQ437958.1__DEER_-_",
                                 "node_attrs": {
-                                  "div": 0.00209507,
+                                  "div": 0.00209514,
                                   "clade_membership": {
                                     "value": "20B"
                                   }
@@ -3559,7 +3559,7 @@
                   {
                     "name": "NODE_0000079",
                     "node_attrs": {
-                      "div": 0.00138267,
+                      "div": 0.00138274,
                       "clade_membership": {
                         "value": "20I (Alpha)"
                       }
@@ -3590,7 +3590,7 @@
                       {
                         "name": "NODE_0000080",
                         "node_attrs": {
-                          "div": 0.0023789099999999997,
+                          "div": 0.00237898,
                           "clade_membership": {
                             "value": "20I (Alpha)"
                           }
@@ -3633,9 +3633,9 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OQ437945|OQ437945.1",
+                            "name": "ENA|OQ437945|OQ437945.1__DEER_-_",
                             "node_attrs": {
-                              "div": 0.00281383,
+                              "div": 0.0028139000000000003,
                               "clade_membership": {
                                 "value": "20I (Alpha)"
                               }
@@ -3661,9 +3661,9 @@
                             }
                           },
                           {
-                            "name": "ENA|OQ437921|OQ437921.1",
+                            "name": "ENA|OQ437921|OQ437921.1__DEER_-_",
                             "node_attrs": {
-                              "div": 0.0024813199999999995,
+                              "div": 0.00248139,
                               "clade_membership": {
                                 "value": "20I (Alpha)"
                               }
@@ -3683,7 +3683,7 @@
                       {
                         "name": "NODE_0000081",
                         "node_attrs": {
-                          "div": 0.0025388,
+                          "div": 0.00253888,
                           "clade_membership": {
                             "value": "20I (Alpha)"
                           }
@@ -3731,9 +3731,9 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OQ437960|OQ437960.1",
+                            "name": "ENA|OQ437960|OQ437960.1__DEER_-_",
                             "node_attrs": {
-                              "div": 0.00281863,
+                              "div": 0.00281871,
                               "clade_membership": {
                                 "value": "20I (Alpha)"
                               }
@@ -3755,7 +3755,7 @@
                           {
                             "name": "NODE_0000082",
                             "node_attrs": {
-                              "div": 0.00267584,
+                              "div": 0.00267592,
                               "clade_membership": {
                                 "value": "20I (Alpha)"
                               }
@@ -3772,9 +3772,9 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OQ437962|OQ437962.1",
+                                "name": "ENA|OQ437962|OQ437962.1__DEER_-_",
                                 "node_attrs": {
-                                  "div": 0.0027815500000000003,
+                                  "div": 0.00278163,
                                   "clade_membership": {
                                     "value": "20I (Alpha)"
                                   }
@@ -3791,9 +3791,9 @@
                                 }
                               },
                               {
-                                "name": "ENA|OQ437957|OQ437957.1",
+                                "name": "ENA|OQ437957|OQ437957.1__DEER_-_",
                                 "node_attrs": {
-                                  "div": 0.00277297,
+                                  "div": 0.00277305,
                                   "clade_membership": {
                                     "value": "20I (Alpha)"
                                   }
@@ -3820,7 +3820,7 @@
           {
             "name": "NODE_0000083",
             "node_attrs": {
-              "div": 0.0009501500000000001,
+              "div": 0.0009502,
               "clade_membership": {
                 "value": "20B"
               }
@@ -3853,9 +3853,9 @@
             },
             "children": [
               {
-                "name": "ENA|ON840422|ON840422.1",
+                "name": "ENA|ON840422|ON840422.1__DEER_-_",
                 "node_attrs": {
-                  "div": 0.00140799,
+                  "div": 0.00140805,
                   "clade_membership": {
                     "value": "20B"
                   }
@@ -3883,7 +3883,7 @@
               {
                 "name": "NODE_0000084",
                 "node_attrs": {
-                  "div": 0.00221294,
+                  "div": 0.00221302,
                   "clade_membership": {
                     "value": "21L (BA.2)"
                   }
@@ -3946,7 +3946,7 @@
                   {
                     "name": "NODE_0000085",
                     "node_attrs": {
-                      "div": 0.00236117,
+                      "div": 0.00236125,
                       "clade_membership": {
                         "value": "21L (BA.2)"
                       }
@@ -3965,7 +3965,7 @@
                       {
                         "name": "NODE_0000086",
                         "node_attrs": {
-                          "div": 0.00245044,
+                          "div": 0.00245052,
                           "clade_membership": {
                             "value": "22A (BA.4)"
                           }
@@ -3983,9 +3983,9 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OP014649|OP014649.1",
+                            "name": "ENA|OP014649|OP014649.1__OMICRON_-_",
                             "node_attrs": {
-                              "div": 0.00258506,
+                              "div": 0.0025851399999999997,
                               "clade_membership": {
                                 "value": "22A (BA.4)"
                               }
@@ -4004,7 +4004,7 @@
                           {
                             "name": "NODE_0000087",
                             "node_attrs": {
-                              "div": 0.0024523699999999997,
+                              "div": 0.0024524499999999997,
                               "clade_membership": {
                                 "value": "22A (BA.4)"
                               }
@@ -4016,7 +4016,7 @@
                               {
                                 "name": "NODE_0000088",
                                 "node_attrs": {
-                                  "div": 0.00248586,
+                                  "div": 0.00248594,
                                   "clade_membership": {
                                     "value": "22A (BA.4)"
                                   }
@@ -4030,9 +4030,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP014801|OP014801.1",
+                                    "name": "ENA|OP014801|OP014801.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.0025868099999999997,
+                                      "div": 0.0025868899999999997,
                                       "clade_membership": {
                                         "value": "22A (BA.4)"
                                       }
@@ -4050,7 +4050,7 @@
                                   {
                                     "name": "NODE_0000089",
                                     "node_attrs": {
-                                      "div": 0.00248878,
+                                      "div": 0.00248886,
                                       "clade_membership": {
                                         "value": "22A (BA.4)"
                                       }
@@ -4060,9 +4060,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP019248|OP019248.1",
+                                        "name": "ENA|OP019248|OP019248.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00262633,
+                                          "div": 0.00262641,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4081,7 +4081,7 @@
                                       {
                                         "name": "NODE_0000090",
                                         "node_attrs": {
-                                          "div": 0.00248978,
+                                          "div": 0.00248986,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4091,9 +4091,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014809|OP014809.1",
+                                            "name": "ENA|OP014809|OP014809.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.00269423,
+                                              "div": 0.00269431,
                                               "clade_membership": {
                                                 "value": "22A (BA.4)"
                                               }
@@ -4114,7 +4114,7 @@
                                           {
                                             "name": "NODE_0000091",
                                             "node_attrs": {
-                                              "div": 0.00259099,
+                                              "div": 0.00259107,
                                               "clade_membership": {
                                                 "value": "22A (BA.4)"
                                               }
@@ -4130,9 +4130,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP014642|OP014642.1",
+                                                "name": "ENA|OP014642|OP014642.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0025930000000000003,
+                                                  "div": 0.00259308,
                                                   "clade_membership": {
                                                     "value": "22A (BA.4)"
                                                   }
@@ -4142,9 +4142,9 @@
                                                 }
                                               },
                                               {
-                                                "name": "ENA|OP014797|OP014797.1",
+                                                "name": "ENA|OP014797|OP014797.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.00272612,
+                                                  "div": 0.0027262,
                                                   "clade_membership": {
                                                     "value": "22A (BA.4)"
                                                   }
@@ -4171,7 +4171,7 @@
                               {
                                 "name": "NODE_0000092",
                                 "node_attrs": {
-                                  "div": 0.00245505,
+                                  "div": 0.00245513,
                                   "clade_membership": {
                                     "value": "22A (BA.4)"
                                   }
@@ -4183,7 +4183,7 @@
                                   {
                                     "name": "NODE_0000093",
                                     "node_attrs": {
-                                      "div": 0.00252239,
+                                      "div": 0.0025224699999999997,
                                       "clade_membership": {
                                         "value": "22A (BA.4)"
                                       }
@@ -4198,9 +4198,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP014952|OP014952.1",
+                                        "name": "ENA|OP014952|OP014952.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.0025560699999999997,
+                                          "div": 0.0025561499999999997,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4214,9 +4214,9 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OP019235|OP019235.1",
+                                        "name": "ENA|OP019235|OP019235.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00279411,
+                                          "div": 0.0027941899999999998,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4241,7 +4241,7 @@
                                   {
                                     "name": "NODE_0000094",
                                     "node_attrs": {
-                                      "div": 0.00249788,
+                                      "div": 0.00249796,
                                       "clade_membership": {
                                         "value": "22A (BA.4)"
                                       }
@@ -4255,9 +4255,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP014810|OP014810.1",
+                                        "name": "ENA|OP014810|OP014810.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00266636,
+                                          "div": 0.00266644,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4277,7 +4277,7 @@
                                       {
                                         "name": "NODE_0000095",
                                         "node_attrs": {
-                                          "div": 0.0025004800000000002,
+                                          "div": 0.00250056,
                                           "clade_membership": {
                                             "value": "22A (BA.4)"
                                           }
@@ -4287,9 +4287,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP019233|OP019233.1",
+                                            "name": "ENA|OP019233|OP019233.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0025685200000000004,
+                                              "div": 0.0025686000000000003,
                                               "clade_membership": {
                                                 "value": "22A (BA.4)"
                                               }
@@ -4306,7 +4306,7 @@
                                           {
                                             "name": "NODE_0000096",
                                             "node_attrs": {
-                                              "div": 0.0025030300000000003,
+                                              "div": 0.0025031100000000002,
                                               "clade_membership": {
                                                 "value": "22A (BA.4)"
                                               }
@@ -4316,9 +4316,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP014976|OP014976.1",
+                                                "name": "ENA|OP014976|OP014976.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0025050400000000005,
+                                                  "div": 0.0025051200000000004,
                                                   "clade_membership": {
                                                     "value": "22A (BA.4)"
                                                   }
@@ -4330,7 +4330,7 @@
                                               {
                                                 "name": "NODE_0000097",
                                                 "node_attrs": {
-                                                  "div": 0.0025050700000000003,
+                                                  "div": 0.0025051500000000003,
                                                   "clade_membership": {
                                                     "value": "22A (BA.4)"
                                                   }
@@ -4340,9 +4340,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015058|OP015058.1",
+                                                    "name": "ENA|OP015058|OP015058.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0025721900000000002,
+                                                      "div": 0.00257227,
                                                       "clade_membership": {
                                                         "value": "22A (BA.4)"
                                                       }
@@ -4359,7 +4359,7 @@
                                                   {
                                                     "name": "NODE_0000098",
                                                     "node_attrs": {
-                                                      "div": 0.0025063900000000003,
+                                                      "div": 0.0025064700000000002,
                                                       "clade_membership": {
                                                         "value": "22A (BA.4)"
                                                       }
@@ -4369,9 +4369,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014787|OP014787.1",
+                                                        "name": "ENA|OP014787|OP014787.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0026071,
+                                                          "div": 0.00260718,
                                                           "clade_membership": {
                                                             "value": "22A (BA.4)"
                                                           }
@@ -4389,7 +4389,7 @@
                                                       {
                                                         "name": "NODE_0000099",
                                                         "node_attrs": {
-                                                          "div": 0.0025087900000000003,
+                                                          "div": 0.0025088700000000003,
                                                           "clade_membership": {
                                                             "value": "22A (BA.4)"
                                                           }
@@ -4399,9 +4399,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP015505|OP015505.1",
+                                                            "name": "ENA|OP015505|OP015505.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025433200000000004,
+                                                              "div": 0.0025434000000000003,
                                                               "clade_membership": {
                                                                 "value": "22A (BA.4)"
                                                               }
@@ -4417,7 +4417,7 @@
                                                           {
                                                             "name": "NODE_0000100",
                                                             "node_attrs": {
-                                                              "div": 0.00251173,
+                                                              "div": 0.00251181,
                                                               "clade_membership": {
                                                                 "value": "22A (BA.4)"
                                                               }
@@ -4427,9 +4427,9 @@
                                                             },
                                                             "children": [
                                                               {
-                                                                "name": "ENA|OP015064|OP015064.1",
+                                                                "name": "ENA|OP015064|OP015064.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.0026796100000000002,
+                                                                  "div": 0.00267969,
                                                                   "clade_membership": {
                                                                     "value": "22A (BA.4)"
                                                                   }
@@ -4449,7 +4449,7 @@
                                                               {
                                                                 "name": "NODE_0000101",
                                                                 "node_attrs": {
-                                                                  "div": 0.0025137700000000002,
+                                                                  "div": 0.00251385,
                                                                   "clade_membership": {
                                                                     "value": "22A (BA.4)"
                                                                   }
@@ -4459,9 +4459,9 @@
                                                                 },
                                                                 "children": [
                                                                   {
-                                                                    "name": "ENA|OP014793|OP014793.1",
+                                                                    "name": "ENA|OP014793|OP014793.1__OMICRON_-_",
                                                                     "node_attrs": {
-                                                                      "div": 0.0026155,
+                                                                      "div": 0.00261558,
                                                                       "clade_membership": {
                                                                         "value": "22A (BA.4)"
                                                                       }
@@ -4479,7 +4479,7 @@
                                                                   {
                                                                     "name": "NODE_0000102",
                                                                     "node_attrs": {
-                                                                      "div": 0.00251591,
+                                                                      "div": 0.00251599,
                                                                       "clade_membership": {
                                                                         "value": "22A (BA.4)"
                                                                       }
@@ -4489,9 +4489,9 @@
                                                                     },
                                                                     "children": [
                                                                       {
-                                                                        "name": "ENA|OP015252|OP015252.1",
+                                                                        "name": "ENA|OP015252|OP015252.1__OMICRON_-_",
                                                                         "node_attrs": {
-                                                                          "div": 0.00265174,
+                                                                          "div": 0.00265183,
                                                                           "clade_membership": {
                                                                             "value": "22A (BA.4)"
                                                                           }
@@ -4508,9 +4508,9 @@
                                                                         }
                                                                       },
                                                                       {
-                                                                        "name": "ENA|OP019211|OP019211.1",
+                                                                        "name": "ENA|OP019211|OP019211.1__OMICRON_-_",
                                                                         "node_attrs": {
-                                                                          "div": 0.00282285,
+                                                                          "div": 0.00282293,
                                                                           "clade_membership": {
                                                                             "value": "22A (BA.4)"
                                                                           }
@@ -4559,7 +4559,7 @@
                       {
                         "name": "NODE_0000103",
                         "node_attrs": {
-                          "div": 0.00253712,
+                          "div": 0.00253718,
                           "clade_membership": {
                             "value": "21L (BA.2)"
                           }
@@ -4577,9 +4577,9 @@
                         },
                         "children": [
                           {
-                            "name": "ENA|OP019231|OP019231.1",
+                            "name": "ENA|OP019231|OP019231.1__OMICRON_-_",
                             "node_attrs": {
-                              "div": 0.00280368,
+                              "div": 0.00280374,
                               "clade_membership": {
                                 "value": "21L (BA.2)"
                               }
@@ -4602,7 +4602,7 @@
                           {
                             "name": "NODE_0000104",
                             "node_attrs": {
-                              "div": 0.00270191,
+                              "div": 0.00270198,
                               "clade_membership": {
                                 "value": "22C (BA.2.12.1)"
                               }
@@ -4623,9 +4623,9 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OP019209|OP019209.1",
+                                "name": "ENA|OP019209|OP019209.1__OMICRON_-_",
                                 "node_attrs": {
-                                  "div": 0.00276983,
+                                  "div": 0.0027699,
                                   "clade_membership": {
                                     "value": "22C (BA.2.12.1)"
                                   }
@@ -4642,7 +4642,7 @@
                               {
                                 "name": "NODE_0000105",
                                 "node_attrs": {
-                                  "div": 0.00270428,
+                                  "div": 0.00270435,
                                   "clade_membership": {
                                     "value": "22C (BA.2.12.1)"
                                   }
@@ -4654,7 +4654,7 @@
                                   {
                                     "name": "NODE_0000106",
                                     "node_attrs": {
-                                      "div": 0.00270653,
+                                      "div": 0.0027066,
                                       "clade_membership": {
                                         "value": "22C (BA.2.12.1)"
                                       }
@@ -4664,9 +4664,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP019215|OP019215.1",
+                                        "name": "ENA|OP019215|OP019215.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00274157,
+                                          "div": 0.00274164,
                                           "clade_membership": {
                                             "value": "22C (BA.2.12.1)"
                                           }
@@ -4680,9 +4680,9 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OP019208|OP019208.1",
+                                        "name": "ENA|OP019208|OP019208.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00287983,
+                                          "div": 0.0028799,
                                           "clade_membership": {
                                             "value": "22C (BA.2.12.1)"
                                           }
@@ -4704,7 +4704,7 @@
                                   {
                                     "name": "NODE_0000107",
                                     "node_attrs": {
-                                      "div": 0.0027072,
+                                      "div": 0.00270727,
                                       "clade_membership": {
                                         "value": "22C (BA.2.12.1)"
                                       }
@@ -4716,7 +4716,7 @@
                                       {
                                         "name": "NODE_0000108",
                                         "node_attrs": {
-                                          "div": 0.0027082399999999998,
+                                          "div": 0.00270831,
                                           "clade_membership": {
                                             "value": "22C (BA.2.12.1)"
                                           }
@@ -4728,7 +4728,7 @@
                                           {
                                             "name": "NODE_0000109",
                                             "node_attrs": {
-                                              "div": 0.00270924,
+                                              "div": 0.00270931,
                                               "clade_membership": {
                                                 "value": "22C (BA.2.12.1)"
                                               }
@@ -4738,9 +4738,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP016620|OP016620.1",
+                                                "name": "ENA|OP016620|OP016620.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.00271125,
+                                                  "div": 0.00271132,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -4752,7 +4752,7 @@
                                               {
                                                 "name": "NODE_0000110",
                                                 "node_attrs": {
-                                                  "div": 0.00271125,
+                                                  "div": 0.00271132,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -4762,9 +4762,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014653|OP014653.1",
+                                                    "name": "ENA|OP014653|OP014653.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00277897,
+                                                      "div": 0.00277904,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4781,7 +4781,7 @@
                                                   {
                                                     "name": "NODE_0000111",
                                                     "node_attrs": {
-                                                      "div": 0.00287949,
+                                                      "div": 0.00287956,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4799,9 +4799,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014836|OP014836.1",
+                                                        "name": "ENA|OP014836|OP014836.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00318225,
+                                                          "div": 0.00318232,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -4823,9 +4823,9 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OP014988|OP014988.1",
+                                                        "name": "ENA|OP014988|OP014988.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00304901,
+                                                          "div": 0.00304908,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -4851,7 +4851,7 @@
                                           {
                                             "name": "NODE_0000112",
                                             "node_attrs": {
-                                              "div": 0.00270924,
+                                              "div": 0.00270931,
                                               "clade_membership": {
                                                 "value": "22C (BA.2.12.1)"
                                               }
@@ -4863,7 +4863,7 @@
                                               {
                                                 "name": "NODE_0000113",
                                                 "node_attrs": {
-                                                  "div": 0.0027763799999999997,
+                                                  "div": 0.0027764499999999998,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -4878,9 +4878,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014658|OP014658.1",
+                                                    "name": "ENA|OP014658|OP014658.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0029791699999999997,
+                                                      "div": 0.0029792399999999998,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4899,9 +4899,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP015014|OP015014.1",
+                                                    "name": "ENA|OP015014|OP015014.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0028099299999999995,
+                                                      "div": 0.0028099999999999996,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4919,7 +4919,7 @@
                                               {
                                                 "name": "NODE_0000114",
                                                 "node_attrs": {
-                                                  "div": 0.00271195,
+                                                  "div": 0.00271202,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -4929,9 +4929,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014874|OP014874.1",
+                                                    "name": "ENA|OP014874|OP014874.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0027454,
+                                                      "div": 0.00274547,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4947,7 +4947,7 @@
                                                   {
                                                     "name": "NODE_0000115",
                                                     "node_attrs": {
-                                                      "div": 0.0027146799999999997,
+                                                      "div": 0.0027147499999999997,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -4957,9 +4957,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014834|OP014834.1",
+                                                        "name": "ENA|OP014834|OP014834.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0028137299999999995,
+                                                          "div": 0.0028137999999999995,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -4975,9 +4975,9 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OP015050|OP015050.1",
+                                                        "name": "ENA|OP015050|OP015050.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0029518899999999995,
+                                                          "div": 0.0029519599999999996,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5007,7 +5007,7 @@
                                       {
                                         "name": "NODE_0000116",
                                         "node_attrs": {
-                                          "div": 0.00270996,
+                                          "div": 0.00271003,
                                           "clade_membership": {
                                             "value": "22C (BA.2.12.1)"
                                           }
@@ -5019,7 +5019,7 @@
                                           {
                                             "name": "NODE_0000117",
                                             "node_attrs": {
-                                              "div": 0.00271237,
+                                              "div": 0.00271244,
                                               "clade_membership": {
                                                 "value": "22C (BA.2.12.1)"
                                               }
@@ -5029,9 +5029,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP015589|OP015589.1",
+                                                "name": "ENA|OP015589|OP015589.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.00277992,
+                                                  "div": 0.00277999,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -5048,7 +5048,7 @@
                                               {
                                                 "name": "NODE_0000118",
                                                 "node_attrs": {
-                                                  "div": 0.00277963,
+                                                  "div": 0.0027797,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -5063,9 +5063,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015018|OP015018.1",
+                                                    "name": "ENA|OP015018|OP015018.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00294807,
+                                                      "div": 0.00294815,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5083,9 +5083,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP019228|OP019228.1",
+                                                    "name": "ENA|OP019228|OP019228.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00288169,
+                                                      "div": 0.00288176,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5107,7 +5107,7 @@
                                           {
                                             "name": "NODE_0000119",
                                             "node_attrs": {
-                                              "div": 0.0027121099999999998,
+                                              "div": 0.00271218,
                                               "clade_membership": {
                                                 "value": "22C (BA.2.12.1)"
                                               }
@@ -5119,7 +5119,7 @@
                                               {
                                                 "name": "NODE_0000120",
                                                 "node_attrs": {
-                                                  "div": 0.0027149899999999996,
+                                                  "div": 0.0027150599999999996,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -5131,7 +5131,7 @@
                                                   {
                                                     "name": "NODE_0000121",
                                                     "node_attrs": {
-                                                      "div": 0.0027178499999999995,
+                                                      "div": 0.0027179199999999995,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5141,9 +5141,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014662|OP014662.1",
+                                                        "name": "ENA|OP014662|OP014662.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0027838799999999994,
+                                                          "div": 0.0027839499999999994,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5158,9 +5158,9 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OP019226|OP019226.1",
+                                                        "name": "ENA|OP019226|OP019226.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0028589499999999994,
+                                                          "div": 0.0028590199999999994,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5181,7 +5181,7 @@
                                                   {
                                                     "name": "NODE_0000122",
                                                     "node_attrs": {
-                                                      "div": 0.0027486399999999997,
+                                                      "div": 0.0027487099999999997,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5195,9 +5195,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP015103|OP015103.1",
+                                                        "name": "ENA|OP015103|OP015103.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0028165599999999996,
+                                                          "div": 0.0028166299999999997,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5212,9 +5212,9 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OP014838|OP014838.1",
+                                                        "name": "ENA|OP014838|OP014838.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0028494999999999996,
+                                                          "div": 0.0028495699999999996,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5236,7 +5236,7 @@
                                               {
                                                 "name": "NODE_0000123",
                                                 "node_attrs": {
-                                                  "div": 0.00271311,
+                                                  "div": 0.00271318,
                                                   "clade_membership": {
                                                     "value": "22C (BA.2.12.1)"
                                                   }
@@ -5246,9 +5246,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014841|OP014841.1",
+                                                    "name": "ENA|OP014841|OP014841.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0028143499999999998,
+                                                      "div": 0.0028144199999999998,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5266,7 +5266,7 @@
                                                   {
                                                     "name": "NODE_0000124",
                                                     "node_attrs": {
-                                                      "div": 0.00271611,
+                                                      "div": 0.00271618,
                                                       "clade_membership": {
                                                         "value": "22C (BA.2.12.1)"
                                                       }
@@ -5276,9 +5276,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP015039|OP015039.1",
+                                                        "name": "ENA|OP015039|OP015039.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00271812,
+                                                          "div": 0.00271819,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5290,7 +5290,7 @@
                                                       {
                                                         "name": "NODE_0000125",
                                                         "node_attrs": {
-                                                          "div": 0.0027821499999999997,
+                                                          "div": 0.0027822199999999997,
                                                           "clade_membership": {
                                                             "value": "22C (BA.2.12.1)"
                                                           }
@@ -5305,9 +5305,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP019256|OP019256.1",
+                                                            "name": "ENA|OP019256|OP019256.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.00291788,
+                                                              "div": 0.00291795,
                                                               "clade_membership": {
                                                                 "value": "22C (BA.2.12.1)"
                                                               }
@@ -5324,9 +5324,9 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OP019227|OP019227.1",
+                                                            "name": "ENA|OP019227|OP019227.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0030900899999999998,
+                                                              "div": 0.0030901599999999998,
                                                               "clade_membership": {
                                                                 "value": "22C (BA.2.12.1)"
                                                               }
@@ -5370,7 +5370,7 @@
                   {
                     "name": "NODE_0000126",
                     "node_attrs": {
-                      "div": 0.00231221,
+                      "div": 0.00231229,
                       "clade_membership": {
                         "value": "22B (BA.5)"
                       }
@@ -5391,7 +5391,7 @@
                       {
                         "name": "NODE_0000127",
                         "node_attrs": {
-                          "div": 0.0023456799999999997,
+                          "div": 0.0023457599999999997,
                           "clade_membership": {
                             "value": "22B (BA.5)"
                           }
@@ -5407,7 +5407,7 @@
                           {
                             "name": "NODE_0000128",
                             "node_attrs": {
-                              "div": 0.0023486299999999996,
+                              "div": 0.0023487099999999995,
                               "clade_membership": {
                                 "value": "22B (BA.5)"
                               }
@@ -5419,7 +5419,7 @@
                               {
                                 "name": "NODE_0000129",
                                 "node_attrs": {
-                                  "div": 0.0023506699999999996,
+                                  "div": 0.0023507499999999995,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5429,9 +5429,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP015021|OP015021.1",
+                                    "name": "ENA|OP015021|OP015021.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.0024513699999999996,
+                                      "div": 0.0024514499999999995,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5447,9 +5447,9 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OP019246|OP019246.1",
+                                    "name": "ENA|OP019246|OP019246.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.0024235399999999996,
+                                      "div": 0.0024236199999999996,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5468,7 +5468,7 @@
                               {
                                 "name": "NODE_0000130",
                                 "node_attrs": {
-                                  "div": 0.0025297999999999996,
+                                  "div": 0.0025298799999999995,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5486,9 +5486,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP019219|OP019219.1",
+                                    "name": "ENA|OP019219|OP019219.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.0025327999999999995,
+                                      "div": 0.0025328799999999995,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5498,9 +5498,9 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OP019222|OP019222.1",
+                                    "name": "ENA|OP019222|OP019222.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.00253181,
+                                      "div": 0.0025318899999999997,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5516,7 +5516,7 @@
                           {
                             "name": "NODE_0000131",
                             "node_attrs": {
-                              "div": 0.00234793,
+                              "div": 0.0023480099999999998,
                               "clade_membership": {
                                 "value": "22B (BA.5)"
                               }
@@ -5528,7 +5528,7 @@
                               {
                                 "name": "NODE_0000132",
                                 "node_attrs": {
-                                  "div": 0.00234994,
+                                  "div": 0.00235002,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5538,9 +5538,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP014916|OP014916.1",
+                                    "name": "ENA|OP014916|OP014916.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.00252121,
+                                      "div": 0.0025212999999999998,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5558,9 +5558,9 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OP014853|OP014853.1",
+                                    "name": "ENA|OP014853|OP014853.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.0024854,
+                                      "div": 0.00248548,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5581,7 +5581,7 @@
                               {
                                 "name": "NODE_0000133",
                                 "node_attrs": {
-                                  "div": 0.0023813,
+                                  "div": 0.0023813799999999998,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5595,9 +5595,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP015005|OP015005.1",
+                                    "name": "ENA|OP015005|OP015005.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.00241488,
+                                      "div": 0.00241496,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5613,7 +5613,7 @@
                                   {
                                     "name": "NODE_0000134",
                                     "node_attrs": {
-                                      "div": 0.00238331,
+                                      "div": 0.00238339,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5623,9 +5623,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP014636|OP014636.1",
+                                        "name": "ENA|OP014636|OP014636.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00255363,
+                                          "div": 0.00255371,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -5643,9 +5643,9 @@
                                         }
                                       },
                                       {
-                                        "name": "ENA|OP014634|OP014634.1",
+                                        "name": "ENA|OP014634|OP014634.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.0024514100000000002,
+                                          "div": 0.00245149,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -5670,7 +5670,7 @@
                       {
                         "name": "NODE_0000135",
                         "node_attrs": {
-                          "div": 0.0023142899999999997,
+                          "div": 0.0023143699999999996,
                           "clade_membership": {
                             "value": "22B (BA.5)"
                           }
@@ -5682,7 +5682,7 @@
                           {
                             "name": "NODE_0000136",
                             "node_attrs": {
-                              "div": 0.0024488599999999998,
+                              "div": 0.0024489399999999997,
                               "clade_membership": {
                                 "value": "22B (BA.5)"
                               }
@@ -5699,9 +5699,9 @@
                             },
                             "children": [
                               {
-                                "name": "ENA|OP015024|OP015024.1",
+                                "name": "ENA|OP015024|OP015024.1__OMICRON_-_",
                                 "node_attrs": {
-                                  "div": 0.0025506899999999996,
+                                  "div": 0.00255078,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5719,7 +5719,7 @@
                               {
                                 "name": "NODE_0000137",
                                 "node_attrs": {
-                                  "div": 0.00245087,
+                                  "div": 0.00245095,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5729,9 +5729,9 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "ENA|OP015373|OP015373.1",
+                                    "name": "ENA|OP015373|OP015373.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.00251853,
+                                      "div": 0.00251861,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5746,9 +5746,9 @@
                                     }
                                   },
                                   {
-                                    "name": "ENA|OP019392|OP019392.1",
+                                    "name": "ENA|OP019392|OP019392.1__OMICRON_-_",
                                     "node_attrs": {
-                                      "div": 0.00248383,
+                                      "div": 0.0024839,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5768,7 +5768,7 @@
                           {
                             "name": "NODE_0000138",
                             "node_attrs": {
-                              "div": 0.0023168299999999998,
+                              "div": 0.0023169099999999997,
                               "clade_membership": {
                                 "value": "22B (BA.5)"
                               }
@@ -5780,7 +5780,7 @@
                               {
                                 "name": "NODE_0000139",
                                 "node_attrs": {
-                                  "div": 0.00231884,
+                                  "div": 0.00231892,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -5792,7 +5792,7 @@
                                   {
                                     "name": "NODE_0000140",
                                     "node_attrs": {
-                                      "div": 0.0023833,
+                                      "div": 0.00238338,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5807,9 +5807,9 @@
                                     },
                                     "children": [
                                       {
-                                        "name": "ENA|OP014977|OP014977.1",
+                                        "name": "ENA|OP014977|OP014977.1__OMICRON_-_",
                                         "node_attrs": {
-                                          "div": 0.00255813,
+                                          "div": 0.00255821,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -5829,7 +5829,7 @@
                                       {
                                         "name": "NODE_0000141",
                                         "node_attrs": {
-                                          "div": 0.00238453,
+                                          "div": 0.00238461,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -5839,9 +5839,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014819|OP014819.1",
+                                            "name": "ENA|OP014819|OP014819.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.00248722,
+                                              "div": 0.0024873,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -5859,7 +5859,7 @@
                                           {
                                             "name": "NODE_0000142",
                                             "node_attrs": {
-                                              "div": 0.0023869900000000003,
+                                              "div": 0.0023870700000000003,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -5871,7 +5871,7 @@
                                               {
                                                 "name": "NODE_0000143",
                                                 "node_attrs": {
-                                                  "div": 0.0024206400000000004,
+                                                  "div": 0.0024207200000000003,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -5885,9 +5885,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014811|OP014811.1",
+                                                    "name": "ENA|OP014811|OP014811.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0024893300000000005,
+                                                      "div": 0.0024894100000000005,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -5902,9 +5902,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP015012|OP015012.1",
+                                                    "name": "ENA|OP015012|OP015012.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0025217600000000005,
+                                                      "div": 0.0025218300000000005,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -5924,7 +5924,7 @@
                                               {
                                                 "name": "NODE_0000144",
                                                 "node_attrs": {
-                                                  "div": 0.0023891800000000003,
+                                                  "div": 0.0023892600000000003,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -5934,9 +5934,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP014644|OP014644.1",
+                                                    "name": "ENA|OP014644|OP014644.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0025241300000000003,
+                                                      "div": 0.0025242100000000003,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -5953,9 +5953,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP019249|OP019249.1",
+                                                    "name": "ENA|OP019249|OP019249.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0024903200000000003,
+                                                      "div": 0.0024904000000000003,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -5981,7 +5981,7 @@
                                   {
                                     "name": "NODE_0000145",
                                     "node_attrs": {
-                                      "div": 0.00239887,
+                                      "div": 0.00239895,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -5999,7 +5999,7 @@
                                       {
                                         "name": "NODE_0000146",
                                         "node_attrs": {
-                                          "div": 0.00256739,
+                                          "div": 0.00256747,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6017,9 +6017,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014796|OP014796.1",
+                                            "name": "ENA|OP014796|OP014796.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.00266958,
+                                              "div": 0.00266966,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6035,9 +6035,9 @@
                                             }
                                           },
                                           {
-                                            "name": "ENA|OP014844|OP014844.1",
+                                            "name": "ENA|OP014844|OP014844.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0026010300000000003,
+                                              "div": 0.0026011100000000002,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6055,7 +6055,7 @@
                                       {
                                         "name": "NODE_0000147",
                                         "node_attrs": {
-                                          "div": 0.0024397999999999998,
+                                          "div": 0.00243988,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6069,9 +6069,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014850|OP014850.1",
+                                            "name": "ENA|OP014850|OP014850.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0025085399999999996,
+                                              "div": 0.00250862,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6088,7 +6088,7 @@
                                           {
                                             "name": "NODE_0000148",
                                             "node_attrs": {
-                                              "div": 0.0024408,
+                                              "div": 0.0024408800000000003,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6098,9 +6098,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP014943|OP014943.1",
+                                                "name": "ENA|OP014943|OP014943.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0026103199999999997,
+                                                  "div": 0.0026104100000000005,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6120,7 +6120,7 @@
                                               {
                                                 "name": "NODE_0000149",
                                                 "node_attrs": {
-                                                  "div": 0.00252077,
+                                                  "div": 0.0025208500000000003,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6135,9 +6135,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015027|OP015027.1",
+                                                    "name": "ENA|OP015027|OP015027.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00255407,
+                                                      "div": 0.0025541500000000003,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6151,9 +6151,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP019191|OP019191.1",
+                                                    "name": "ENA|OP019191|OP019191.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0025611799999999997,
+                                                      "div": 0.00256126,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6179,7 +6179,7 @@
                               {
                                 "name": "NODE_0000150",
                                 "node_attrs": {
-                                  "div": 0.00238545,
+                                  "div": 0.00238553,
                                   "clade_membership": {
                                     "value": "22B (BA.5)"
                                   }
@@ -6196,7 +6196,7 @@
                                   {
                                     "name": "NODE_0000151",
                                     "node_attrs": {
-                                      "div": 0.00241979,
+                                      "div": 0.0024198699999999997,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -6212,7 +6212,7 @@
                                       {
                                         "name": "NODE_0000152",
                                         "node_attrs": {
-                                          "div": 0.0024869999999999996,
+                                          "div": 0.0024870799999999996,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6227,9 +6227,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014624|OP014624.1",
+                                            "name": "ENA|OP014624|OP014624.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0025543499999999995,
+                                              "div": 0.0025544299999999995,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6244,9 +6244,9 @@
                                             }
                                           },
                                           {
-                                            "name": "ENA|OP014854|OP014854.1",
+                                            "name": "ENA|OP014854|OP014854.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0025543299999999996,
+                                              "div": 0.0025544099999999996,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6265,7 +6265,7 @@
                                       {
                                         "name": "NODE_0000153",
                                         "node_attrs": {
-                                          "div": 0.00255408,
+                                          "div": 0.0025541599999999998,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6282,9 +6282,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP019223|OP019223.1",
+                                            "name": "ENA|OP019223|OP019223.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0027286299999999997,
+                                              "div": 0.0027287099999999996,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6304,7 +6304,7 @@
                                           {
                                             "name": "NODE_0000154",
                                             "node_attrs": {
-                                              "div": 0.00255647,
+                                              "div": 0.00255655,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6314,9 +6314,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP016656|OP016656.1",
+                                                "name": "ENA|OP016656|OP016656.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0026244,
+                                                  "div": 0.0026244799999999998,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6333,7 +6333,7 @@
                                               {
                                                 "name": "NODE_0000155",
                                                 "node_attrs": {
-                                                  "div": 0.00255761,
+                                                  "div": 0.00255769,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6343,9 +6343,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015016|OP015016.1",
+                                                    "name": "ENA|OP015016|OP015016.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00262546,
+                                                      "div": 0.00262554,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6362,7 +6362,7 @@
                                                   {
                                                     "name": "NODE_0000156",
                                                     "node_attrs": {
-                                                      "div": 0.00255878,
+                                                      "div": 0.00255886,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6372,9 +6372,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014655|OP014655.1",
+                                                        "name": "ENA|OP014655|OP014655.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00256126,
+                                                          "div": 0.00256134,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6384,9 +6384,9 @@
                                                         }
                                                       },
                                                       {
-                                                        "name": "ENA|OP014815|OP014815.1",
+                                                        "name": "ENA|OP014815|OP014815.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0025607900000000003,
+                                                          "div": 0.0025608700000000002,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6408,7 +6408,7 @@
                                   {
                                     "name": "NODE_0000157",
                                     "node_attrs": {
-                                      "div": 0.0024181999999999997,
+                                      "div": 0.0024182799999999996,
                                       "clade_membership": {
                                         "value": "22B (BA.5)"
                                       }
@@ -6424,7 +6424,7 @@
                                       {
                                         "name": "NODE_0000158",
                                         "node_attrs": {
-                                          "div": 0.0024493299999999996,
+                                          "div": 0.0024494099999999995,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6438,9 +6438,9 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "ENA|OP014812|OP014812.1",
+                                            "name": "ENA|OP014812|OP014812.1__OMICRON_-_",
                                             "node_attrs": {
-                                              "div": 0.0025184799999999996,
+                                              "div": 0.0025185599999999995,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6457,7 +6457,7 @@
                                           {
                                             "name": "NODE_0000159",
                                             "node_attrs": {
-                                              "div": 0.0024517499999999995,
+                                              "div": 0.0024518299999999995,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6467,9 +6467,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP014828|OP014828.1",
+                                                "name": "ENA|OP014828|OP014828.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0026878599999999994,
+                                                  "div": 0.0026879299999999994,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6491,7 +6491,7 @@
                                               {
                                                 "name": "NODE_0000160",
                                                 "node_attrs": {
-                                                  "div": 0.0024543499999999997,
+                                                  "div": 0.0024544299999999996,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6503,7 +6503,7 @@
                                                   {
                                                     "name": "NODE_0000161",
                                                     "node_attrs": {
-                                                      "div": 0.0024567099999999995,
+                                                      "div": 0.0024567899999999995,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6513,9 +6513,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014825|OP014825.1",
+                                                        "name": "ENA|OP014825|OP014825.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0026603499999999997,
+                                                          "div": 0.0026604399999999996,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6536,7 +6536,7 @@
                                                       {
                                                         "name": "NODE_0000162",
                                                         "node_attrs": {
-                                                          "div": 0.0025210299999999996,
+                                                          "div": 0.0025211099999999996,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6551,9 +6551,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP015352|OP015352.1",
+                                                            "name": "ENA|OP015352|OP015352.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025693999999999995,
+                                                              "div": 0.0025694799999999994,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6567,9 +6567,9 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OP019218|OP019218.1",
+                                                            "name": "ENA|OP019218|OP019218.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0026442899999999997,
+                                                              "div": 0.0026443699999999996,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6592,7 +6592,7 @@
                                                   {
                                                     "name": "NODE_0000163",
                                                     "node_attrs": {
-                                                      "div": 0.0024879399999999997,
+                                                      "div": 0.0024880199999999996,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6608,7 +6608,7 @@
                                                       {
                                                         "name": "NODE_0000164",
                                                         "node_attrs": {
-                                                          "div": 0.00248995,
+                                                          "div": 0.00249003,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6618,9 +6618,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP014795|OP014795.1",
+                                                            "name": "ENA|OP014795|OP014795.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.00252377,
+                                                              "div": 0.00252385,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6634,9 +6634,9 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OP019407|OP019407.1",
+                                                            "name": "ENA|OP019407|OP019407.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.00269067,
+                                                              "div": 0.00269075,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6659,7 +6659,7 @@
                                                       {
                                                         "name": "NODE_0000165",
                                                         "node_attrs": {
-                                                          "div": 0.0024903599999999996,
+                                                          "div": 0.0024904399999999996,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6669,9 +6669,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP014820|OP014820.1",
+                                                            "name": "ENA|OP014820|OP014820.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025923399999999994,
+                                                              "div": 0.00259242,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6689,7 +6689,7 @@
                                                           {
                                                             "name": "NODE_0000166",
                                                             "node_attrs": {
-                                                              "div": 0.0025230799999999996,
+                                                              "div": 0.0025231699999999995,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6703,9 +6703,9 @@
                                                             },
                                                             "children": [
                                                               {
-                                                                "name": "ENA|OP014935|OP014935.1",
+                                                                "name": "ENA|OP014935|OP014935.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.0025244999999999994,
+                                                                  "div": 0.0025245899999999993,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6715,9 +6715,9 @@
                                                                 }
                                                               },
                                                               {
-                                                                "name": "ENA|OP014958|OP014958.1",
+                                                                "name": "ENA|OP014958|OP014958.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00252509,
+                                                                  "div": 0.0025251799999999997,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6741,7 +6741,7 @@
                                       {
                                         "name": "NODE_0000167",
                                         "node_attrs": {
-                                          "div": 0.0024211499999999995,
+                                          "div": 0.0024212299999999995,
                                           "clade_membership": {
                                             "value": "22B (BA.5)"
                                           }
@@ -6753,7 +6753,7 @@
                                           {
                                             "name": "NODE_0000168",
                                             "node_attrs": {
-                                              "div": 0.0024232599999999996,
+                                              "div": 0.0024233399999999995,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6763,9 +6763,9 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "ENA|OP014848|OP014848.1",
+                                                "name": "ENA|OP014848|OP014848.1__OMICRON_-_",
                                                 "node_attrs": {
-                                                  "div": 0.0024575399999999994,
+                                                  "div": 0.0024576399999999997,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6781,7 +6781,7 @@
                                               {
                                                 "name": "NODE_0000169",
                                                 "node_attrs": {
-                                                  "div": 0.0024563999999999996,
+                                                  "div": 0.0024564599999999997,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -6795,9 +6795,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015054|OP015054.1",
+                                                    "name": "ENA|OP015054|OP015054.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.0024898299999999997,
+                                                      "div": 0.00248988,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6813,7 +6813,7 @@
                                                   {
                                                     "name": "NODE_0000170",
                                                     "node_attrs": {
-                                                      "div": 0.0024593299999999996,
+                                                      "div": 0.0024593899999999997,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -6825,7 +6825,7 @@
                                                       {
                                                         "name": "NODE_0000171",
                                                         "node_attrs": {
-                                                          "div": 0.0024614099999999994,
+                                                          "div": 0.0024614699999999995,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6835,9 +6835,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP015011|OP015011.1",
+                                                            "name": "ENA|OP015011|OP015011.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025284999999999995,
+                                                              "div": 0.0025285699999999995,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6852,9 +6852,9 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OP015037|OP015037.1",
+                                                            "name": "ENA|OP015037|OP015037.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025292699999999993,
+                                                              "div": 0.0025293299999999993,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6873,7 +6873,7 @@
                                                       {
                                                         "name": "NODE_0000172",
                                                         "node_attrs": {
-                                                          "div": 0.00246134,
+                                                          "div": 0.0024614,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -6885,7 +6885,7 @@
                                                           {
                                                             "name": "NODE_0000173",
                                                             "node_attrs": {
-                                                              "div": 0.00246335,
+                                                              "div": 0.00246341,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6895,9 +6895,9 @@
                                                             },
                                                             "children": [
                                                               {
-                                                                "name": "ENA|OP015020|OP015020.1",
+                                                                "name": "ENA|OP015020|OP015020.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00256467,
+                                                                  "div": 0.00256471,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6913,9 +6913,9 @@
                                                                 }
                                                               },
                                                               {
-                                                                "name": "ENA|OP015169|OP015169.1",
+                                                                "name": "ENA|OP015169|OP015169.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00256476,
+                                                                  "div": 0.00256483,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6935,7 +6935,7 @@
                                                           {
                                                             "name": "NODE_0000174",
                                                             "node_attrs": {
-                                                              "div": 0.00246335,
+                                                              "div": 0.00246341,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -6945,9 +6945,9 @@
                                                             },
                                                             "children": [
                                                               {
-                                                                "name": "ENA|OP015010|OP015010.1",
+                                                                "name": "ENA|OP015010|OP015010.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00246536,
+                                                                  "div": 0.0024654200000000003,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6957,9 +6957,9 @@
                                                                 }
                                                               },
                                                               {
-                                                                "name": "ENA|OP014974|OP014974.1",
+                                                                "name": "ENA|OP014974|OP014974.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00256676,
+                                                                  "div": 0.00256682,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -6987,7 +6987,7 @@
                                           {
                                             "name": "NODE_0000175",
                                             "node_attrs": {
-                                              "div": 0.0024238199999999997,
+                                              "div": 0.0024238999999999997,
                                               "clade_membership": {
                                                 "value": "22B (BA.5)"
                                               }
@@ -6999,7 +6999,7 @@
                                               {
                                                 "name": "NODE_0000176",
                                                 "node_attrs": {
-                                                  "div": 0.00245745,
+                                                  "div": 0.00245753,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -7013,9 +7013,9 @@
                                                 },
                                                 "children": [
                                                   {
-                                                    "name": "ENA|OP015044|OP015044.1",
+                                                    "name": "ENA|OP015044|OP015044.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00262914,
+                                                      "div": 0.00262922,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -7033,9 +7033,9 @@
                                                     }
                                                   },
                                                   {
-                                                    "name": "ENA|OP019395|OP019395.1",
+                                                    "name": "ENA|OP019395|OP019395.1__OMICRON_-_",
                                                     "node_attrs": {
-                                                      "div": 0.00245946,
+                                                      "div": 0.00245954,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -7049,7 +7049,7 @@
                                               {
                                                 "name": "NODE_0000177",
                                                 "node_attrs": {
-                                                  "div": 0.0024572599999999997,
+                                                  "div": 0.0024573399999999997,
                                                   "clade_membership": {
                                                     "value": "22B (BA.5)"
                                                   }
@@ -7065,7 +7065,7 @@
                                                   {
                                                     "name": "NODE_0000178",
                                                     "node_attrs": {
-                                                      "div": 0.0025245299999999997,
+                                                      "div": 0.0025246099999999996,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -7080,9 +7080,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014805|OP014805.1",
+                                                        "name": "ENA|OP014805|OP014805.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.00252654,
+                                                          "div": 0.00252662,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -7094,7 +7094,7 @@
                                                       {
                                                         "name": "NODE_0000179",
                                                         "node_attrs": {
-                                                          "div": 0.00252553,
+                                                          "div": 0.0025256099999999997,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -7104,9 +7104,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP014814|OP014814.1",
+                                                            "name": "ENA|OP014814|OP014814.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.00252653,
+                                                              "div": 0.00252661,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -7116,9 +7116,9 @@
                                                             }
                                                           },
                                                           {
-                                                            "name": "ENA|OP014804|OP014804.1",
+                                                            "name": "ENA|OP014804|OP014804.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.00252653,
+                                                              "div": 0.00252661,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -7134,7 +7134,7 @@
                                                   {
                                                     "name": "NODE_0000180",
                                                     "node_attrs": {
-                                                      "div": 0.0025243899999999996,
+                                                      "div": 0.0025244699999999996,
                                                       "clade_membership": {
                                                         "value": "22B (BA.5)"
                                                       }
@@ -7149,9 +7149,9 @@
                                                     },
                                                     "children": [
                                                       {
-                                                        "name": "ENA|OP014851|OP014851.1",
+                                                        "name": "ENA|OP014851|OP014851.1__OMICRON_-_",
                                                         "node_attrs": {
-                                                          "div": 0.0025578499999999995,
+                                                          "div": 0.0025579299999999995,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -7167,7 +7167,7 @@
                                                       {
                                                         "name": "NODE_0000181",
                                                         "node_attrs": {
-                                                          "div": 0.0025582699999999996,
+                                                          "div": 0.0025583499999999996,
                                                           "clade_membership": {
                                                             "value": "22B (BA.5)"
                                                           }
@@ -7181,9 +7181,9 @@
                                                         },
                                                         "children": [
                                                           {
-                                                            "name": "ENA|OP019243|OP019243.1",
+                                                            "name": "ENA|OP019243|OP019243.1__OMICRON_-_",
                                                             "node_attrs": {
-                                                              "div": 0.0025608399999999996,
+                                                              "div": 0.0025609199999999995,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -7195,7 +7195,7 @@
                                                           {
                                                             "name": "NODE_0000182",
                                                             "node_attrs": {
-                                                              "div": 0.0025609799999999996,
+                                                              "div": 0.0025610599999999996,
                                                               "clade_membership": {
                                                                 "value": "22B (BA.5)"
                                                               }
@@ -7205,9 +7205,9 @@
                                                             },
                                                             "children": [
                                                               {
-                                                                "name": "ENA|OP019240|OP019240.1",
+                                                                "name": "ENA|OP019240|OP019240.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.00256299,
+                                                                  "div": 0.0025630699999999998,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }
@@ -7217,9 +7217,9 @@
                                                                 }
                                                               },
                                                               {
-                                                                "name": "ENA|OP019239|OP019239.1",
+                                                                "name": "ENA|OP019239|OP019239.1__OMICRON_-_",
                                                                 "node_attrs": {
-                                                                  "div": 0.0025949299999999996,
+                                                                  "div": 0.0025950099999999996,
                                                                   "clade_membership": {
                                                                     "value": "22B (BA.5)"
                                                                   }

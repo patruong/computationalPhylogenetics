@@ -156,10 +156,5 @@ rule nextclade:
         output_tsv = "results/nextclade_output/nextclade.tsv"
     shell:
         """
-        nextclade run \
-            --input-tree {input.auspice_tree} \
-            --output-all {output.output_dir} \
-            --output-tsv {output.output_tsv} \ 
-            --input-ref {input.input_reference} \
-            {input.input_fasta}  
+        nextclade run --input-tree {input.auspice_tree} --output-all {output.output_dir} --output-tsv {output.output_tsv} --input-ref {input.input_reference} {input.input_fasta}  
         """
