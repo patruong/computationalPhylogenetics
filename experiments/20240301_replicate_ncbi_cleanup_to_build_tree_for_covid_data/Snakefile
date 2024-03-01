@@ -1,5 +1,6 @@
 import os 
 
+reference_sequence = "data/reference.fasta"
 input_fasta1 = "data/deer_covid.fasta",
 input_fasta2 = "data/omicron.fasta"
 output_dir = "results"
@@ -12,9 +13,10 @@ rule all:
 rule combine_fasta:
     message:
         """
-        Combining {input.fasta1} and {input.fasta2}
+        Combining {input.reference_sequence}, {input.fasta1} and {input.fasta2}
         """
     input:
+        reference_sequence = reference_sequence,
         fasta1 = input_fasta1,
         fasta2 = input_fasta2
     output:
