@@ -23,7 +23,7 @@ rule combine_fasta:
         combined_fasta = os.path.join(output_dir, "combined.fasta")    
     shell:
         """
-        cat {input.fasta1} {input.fasta2} > {output.combined_fasta}
+        cat {input.reference_sequence} {input.fasta1} {input.fasta2} > {output.combined_fasta}
         """
 
 rule process_fasta:
