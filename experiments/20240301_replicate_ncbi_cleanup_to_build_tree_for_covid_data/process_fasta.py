@@ -85,19 +85,21 @@ def process_sequences(fasta_file, group1, group2, group1_n, group2_n, all_sequen
 
     # df_subset = df_subset[df_subset['sequence'].apply(is_stop_codon)] # this should not remove anything, because that means we have two stop codons in a row
 
-    print(f"Sampling {group1_n} from {group1} and {group2_n} from {group2}")
+    #print(f"Sampling {group1_n} from {group1} and {group2_n} from {group2}")
+    #
+    #print(len(df[df["seqname"].str.contains(group2)]))
+    #print(len(df[df["seqname"].str.contains(group1)]))
+    #print()
+    ## subset size 
+    #if all_sequences:
+    #    df_group_1 = df[df["seqname"].str.contains(group1)]
+    #    df_group_2 = df[df["seqname"].str.contains(group2)]
+    #else:
+    #    df_group_1 = df[df["seqname"].str.contains(group1)].sample(group1_n)
+    #    df_group_2 = df[df["seqname"].str.contains(group2)].sample(group2_n)
+    #df_res = pd.concat([df_group_1, df_group_2])
 
-    print(len(df[df["seqname"].str.contains(group2)]))
-    print(len(df[df["seqname"].str.contains(group1)]))
-    print()
-    # subset size 
-    if all_sequences:
-        df_group_1 = df[df["seqname"].str.contains(group1)]
-        df_group_2 = df[df["seqname"].str.contains(group2)]
-    else:
-        df_group_1 = df[df["seqname"].str.contains(group1)].sample(group1_n)
-        df_group_2 = df[df["seqname"].str.contains(group2)].sample(group2_n)
-    df_res = pd.concat([df_group_1, df_group_2])
+    df_res = df
 
     print('Transforming special characters "| ,()/.-;:" --> "__________"')
     print('Transforming double underscore "__" --> "_"')
