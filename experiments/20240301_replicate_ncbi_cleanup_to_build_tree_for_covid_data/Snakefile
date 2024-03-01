@@ -1,0 +1,69 @@
+import os 
+
+input_fasta1 = "data/deer_covid.fasta",
+input_fasta2 = "data/omicron.fasta"
+output_dir = "results"
+
+rule all:
+    input:
+        results = os.path.join(output_dir, "tree_raw.nwk")
+        #nextclade_results ="results/nextclade_output/nextclade.tsv",
+
+rule combine_fasta:
+    message:
+        """
+        Combining {input.fasta1} and {input.fasta2}
+        """
+    input:
+        fasta1 = input_fasta1,
+        fasta2 = input_fasta2
+    output:
+        combined_fasta = os.path.join(output_dir, "combined.fasta")    
+    shell:
+        """
+        cat {input.fasta1} {input.fasta2} > {output.combined_fasta}
+        """
+
+rule process_fasta:
+    message:
+        """
+        Pre-processing fasta file.
+        """
+    input:
+        fasta_file = rules.combine_fasta.output
+    params:
+        group1_n = 100,
+        group2_n = 80,
+        group1 = "human",
+        group2 = "deer"
+    output:
+        output = os.path.join(output_dir, "combined_transformed.fasta"),
+        output_tagged = os.path.join(output_dir, "combined_transformed_tagged.fasta")
+    shell:
+        "python process_fasta.py {input.fasta_file} --group1 {params.group1} --group2 {params.group2} --group1_n {params.group1_n} --group2_n {params.group2_n} --output {output.output} --output_tagged {output.output_tagged}"
+
+rule fix_fasta_tag:
+    input:
+        fasta_file = rules.process_fasta.output.output_tagged
+    output:
+        fasta_file = os.path.join(output_dir, "combined_transformed_tagged_fixed.fasta")
+    shell:
+        "python fix_tree_tags.py {input.fasta_file} {output.fasta_file}"
+
+rule sequence_alignment_mafft:
+    input:
+        fasta_file = rules.fix_fasta_tag.output
+    output:
+        output = os.path.join(output_dir, "mafft_alignment.fasta")
+    shell:
+        "mafft --auto {input.fasta_file} > {output.output}"
+
+rule build_tree:
+    input:
+        fasta_file = rules.sequence_alignment_mafft.output
+    output:
+        output = os.path.join(output_dir, "tree_raw.nwk")
+    shell:
+        "fasttree -nt -gtr {input.fasta_file} > {output.output}"
+
+
