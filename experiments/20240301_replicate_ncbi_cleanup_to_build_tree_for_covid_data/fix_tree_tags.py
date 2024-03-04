@@ -5,7 +5,8 @@ def fix_special_characters(input_file, output_file):
     with open(input_file, "r") as file:
         file_contents = file.read()
 
-    updated_contents = file_contents.translate(str.maketrans("ÖÄ", "{}"))
+    #updated_contents = file_contents.translate(str.maketrans("ÖÄ", "{}"))
+    updated_contents = file_contents.replace("-_-", "{").replace("._.", "}")
 
     with open(output_file, "w") as output_file:
         output_file.write(updated_contents)

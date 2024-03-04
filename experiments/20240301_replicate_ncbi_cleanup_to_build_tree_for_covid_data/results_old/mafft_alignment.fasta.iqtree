@@ -1,0 +1,568 @@
+IQ-TREE 2.2.6 COVID-edition built Dec  8 2023
+
+Input file name: mafft_alignment.fasta
+Type of analysis: ModelFinder + tree reconstruction
+Random seed number: 408205
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 185 sequences with 29994 nucleotide sites
+Number of constant sites: 28813 (= 96.0625% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 28813 (= 96.0625% of all sites)
+Number of parsimony informative sites: 585
+Number of distinct site patterns: 3141
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: GTR+F+I+R4
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+GTR+F+I+R4       -54725.206  110214.411 - 0.000551  110224.293 - 0.000581  113388.355 +    0.674
+GTR+F+I+R5       -54715.703  110199.406 +    0.999  110209.392 +    0.999  113389.967 +    0.301
+GTR+F+I+R3       -54738.805  110237.610 - 5.06e-09  110247.388 - 5.61e-09  113394.936 -   0.0251
+TIM2+F+I+R4      -54743.191  110246.381 -  6.3e-11  110256.159 - 6.99e-11  113403.707 - 0.000312
+TIM+F+I+R4       -54744.469  110248.937 - 1.75e-11  110258.715 - 1.95e-11  113406.263 -  8.7e-05
+TIM2+F+I+R5      -54739.693  110243.386 - 2.82e-10  110253.268 - 2.97e-10  113417.329 - 3.44e-07
+GTR+F+I+R2       -54760.387  110276.775 - 1.58e-17  110286.449 - 1.85e-17  113417.483 - 3.19e-07
+TIM+F+I+R5       -54741.323  110246.646 - 5.52e-11  110256.528 - 5.81e-11  113420.589 - 6.74e-08
+TIM2+F+I+R3      -54768.563  110293.126 - 4.45e-21  110302.801 -  5.2e-21  113433.835 - 8.96e-11
+TIM+F+I+R3       -54771.190  110298.379 - 3.22e-22  110308.054 - 3.76e-22  113439.088 - 6.49e-12
+TIM3+F+I+R4      -54768.453  110296.907 - 6.73e-22  110306.685 - 7.46e-22  113454.233 - 3.34e-15
+GTR+F+R2         -54783.971  110321.941 - 2.46e-27  110331.565 - 2.95e-27  113454.341 - 3.16e-15
+TN+F+I+R4        -54778.233  110314.466 - 1.03e-25  110324.192 - 1.18e-25  113463.483 - 3.27e-17
+TIM3+F+I+R5      -54765.084  110294.169 - 2.64e-21  110304.051 - 2.79e-21  113468.112 - 3.23e-18
+GTR+F+R3         -54783.664  110325.328 - 4.53e-28  110335.054 - 5.16e-28  113474.345 - 1.43e-19
+TN+F+I+R5        -54775.196  110312.392 - 2.92e-25  110322.222 - 3.16e-25  113478.027 - 2.27e-20
+TIM3+F+I+R3      -54794.915  110345.830 -  1.6e-32  110355.505 - 1.87e-32  113486.538 - 3.22e-22
+TN+F+I+R3        -54805.166  110364.332 - 1.54e-36  110373.956 - 1.84e-36  113496.732 - 1.97e-24
+GTR+F+I+G4       -54850.195  110454.390 - 4.27e-56  110464.013 - 5.12e-56  113586.789 - 5.48e-44
+GTR+F+I          -54864.645  110481.291 - 6.16e-62  110490.863 - 7.57e-62  113605.382 - 5.03e-48
+TVM+F+I+R4       -54907.471  110576.941 - 1.04e-82  110586.771 - 1.13e-82  113742.576 - 8.13e-78
+TVM+F+I+R3       -54928.474  110614.948 - 5.83e-91  110624.675 - 6.64e-91  113763.965 - 1.84e-82
+TPM2u+F+I+R4     -54943.270  110644.540 - 2.19e-97  110654.266 - 2.49e-97  113793.557 - 6.92e-89
+TVM+F+I+R5       -54926.968  110619.937 - 4.82e-92  110629.871 - 4.94e-92  113802.189 - 9.24e-91
+K3Pu+F+I+R4      -54950.211  110658.422 - 2.12e-100  110668.148 - 2.41e-100  113807.439 - 6.69e-92
+TPM2u+F+I+R3     -54965.078  110684.156 - 5.47e-106  110693.780 - 6.55e-106  113816.556 - 7.01e-94
+GTR+F+G4         -54970.980  110693.961 - 4.06e-108  110703.533 - 4.99e-108  113818.052 - 3.32e-94
+K3Pu+F+I+R3      -54971.097  110696.195 - 1.33e-108  110705.818 - 1.59e-108  113828.595 -  1.7e-96
+TPM2u+F+I+R5     -54963.515  110689.030 - 4.78e-107  110698.860 - 5.17e-107  113854.665 - 3.72e-102
+TPM3u+F+I+R3     -54986.618  110727.237 - 2.41e-115  110736.860 - 2.89e-115  113859.636 - 3.1e-103
+HKY+F+I+R4       -54983.171  110722.342 - 2.79e-114  110732.017 - 3.26e-114  113863.051 - 5.62e-104
+K3Pu+F+I+R5      -54969.428  110700.857 - 1.29e-109  110710.687 - 1.4e-109  113866.492 - 1.01e-104
+TPM3u+F+I+R4     -54982.197  110722.394 - 2.72e-114  110732.120 - 3.1e-114  113871.411 - 8.59e-106
+HKY+F+I+R3       -55003.549  110759.099 - 2.91e-122  110768.671 - 3.58e-122  113883.190 - 2.38e-108
+HKY+F+I+R5       -55001.882  110763.764 - 2.82e-123  110773.542 - 3.13e-123  113921.090 - 1.4e-116
+GTR+F            -55438.601  111627.202 - 9.08e-311  111636.723 - 1.15e-310  114742.984 - 4.73e-295
+F81+F+I+R3       -55759.392  112268.784 -        0  112278.305 -        0  115384.566 -        0
+F81+F+I+R4       -55756.100  112266.201 -        0  112275.824 -        0  115398.601 -        0
+SYM+I+R4         -55779.357  112316.714 -        0  112326.440 -        0  115465.731 -        0
+SYM+I+R3         -55797.827  112349.655 -        0  112359.279 -        0  115482.055 -        0
+SYM+I+R5         -55778.885  112319.770 -        0  112329.600 -        0  115485.405 -        0
+TIM3e+I+R4       -55818.902  112391.805 -        0  112401.428 -        0  115524.204 -        0
+TIMe+I+R4        -55822.624  112399.249 -        0  112408.872 -        0  115531.648 -        0
+TIM3e+I+R5       -55816.103  112390.205 -        0  112399.932 -        0  115539.223 -        0
+TIM3e+I+R3       -55838.491  112426.981 -        0  112436.502 -        0  115542.763 -        0
+TIMe+I+R5        -55820.002  112398.004 -        0  112407.730 -        0  115547.021 -        0
+TIMe+I+R3        -55843.229  112436.458 -        0  112445.979 -        0  115552.240 -        0
+TIM2e+I+R4       -55834.112  112422.224 -        0  112431.848 -        0  115554.624 -        0
+TIM2e+I+R3       -55854.103  112458.206 -        0  112467.727 -        0  115573.988 -        0
+TIM2e+I+R5       -55833.675  112425.349 -        0  112435.075 -        0  115574.366 -        0
+TNe+I+R4         -55853.101  112458.202 -        0  112467.774 -        0  115582.293 -        0
+TNe+I+R5         -55850.216  112456.432 -        0  112466.107 -        0  115597.141 -        0
+TNe+I+R3         -55874.144  112496.288 -        0  112505.758 -        0  115603.761 -        0
+TVMe+I+R3        -55996.192  112744.384 -        0  112753.957 -        0  115868.475 -        0
+TVMe+I+R4        -55993.960  112743.920 -        0  112753.595 -        0  115884.629 -        0
+TPM3+I+R3        -56035.159  112818.317 -        0  112827.788 -        0  115925.791 -        0
+TPM3+I+R4        -56033.204  112818.408 -        0  112827.980 -        0  115942.499 -        0
+K3P+I+R3         -56047.650  112843.299 -        0  112852.769 -        0  115950.773 -        0
+K3P+I+R4         -56044.955  112841.909 -        0  112851.482 -        0  115966.000 -        0
+TPM2+I+R3        -56059.955  112867.909 -        0  112877.379 -        0  115975.383 -        0
+TPM2+I+R4        -56057.250  112866.499 -        0  112876.072 -        0  115990.590 -        0
+K2P+I+R3         -56078.431  112902.862 -        0  112912.281 -        0  116002.027 -        0
+K2P+I+R4         -56075.733  112901.465 -        0  112910.986 -        0  116017.247 -        0
+JC+I+R3          -56839.571  114423.142 -        0  114432.511 -        0  117513.998 -        0
+JC+I+R4          -56837.031  114422.061 -        0  114431.531 -        0  117529.535 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+I+R4
+
+Rate parameter R:
+
+  A-C: 0.3086
+  A-G: 1.3867
+  A-T: 0.1914
+  C-G: 0.2868
+  C-T: 6.0694
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2987
+  pi(C) = 0.183
+  pi(G) = 0.1962
+  pi(T) = 0.3221
+
+Rate matrix Q:
+
+  A   -0.3562   0.05154    0.2484   0.05627
+  C   0.08415     -1.92   0.05136     1.785
+  G    0.3781   0.04789     -0.72     0.294
+  T   0.05217     1.014    0.1791    -1.245
+
+Model of rate heterogeneity: Invar+FreeRate with 4 categories
+Proportion of invariable sites: 0.7561
+Site proportion and rates:  (0.1249,2.926) (0.1089,2.935) (0.009889,27.1) (0.0001681,278.7)
+
+ Category  Relative_rate  Proportion
+  0         0              0.7561
+  1         2.926          0.1249
+  2         2.935          0.1089
+  3         27.1           0.009889
+  4         278.7          0.0001681
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -54682.8832 (s.e. 417.0130)
+Unconstrained log-likelihood (without tree): -165904.2592
+Number of free parameters (#branches + #model parameters): 382
+Akaike information criterion (AIC) score: 110129.7665
+Corrected Akaike information criterion (AICc) score: 110139.6483
+Bayesian information criterion (BIC) score: 113303.7100
+
+Total tree length (sum of branch lengths): 0.0548
+Sum of internal branch lengths: 0.0199 (36.2057% of tree length)
+
+WARNING: 95 near-zero internal branches (<0.0000) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'MN908947_WUHAN_HU_1_2019_' is drawn at root
+
++---MN908947_WUHAN_HU_1_2019_
+|
+|                                              +-------ENA_OQ437945_OQ437945_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                          +-------------------|
+|                          |                   +--ENA_OQ437921_OQ437921_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                  +-------|
+|                  |       |                     +**ENA_OQ437962_OQ437962_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                  |       +---------------------|
+|                  |                             |  +--ENA_OQ437957_OQ437957_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                  |                             +--|
+|                  |                                +------ENA_OQ437960_OQ437960_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|       +----------|
+|       |          |                 +----ENA_OQ437928_OQ437928_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|       |          |              +--|
+|       |          |              |  +----ENA_OQ437958_OQ437958_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|       |          |          +---|
+|       |          |          |   +-----ENA_OQ437918_OQ437918_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|       |          +----------|
+|       |                     +---ENA_OQ437986_OQ437986_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|  +----|
+|  |    +------------------ENA_OQ437976_OQ437976_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
++--|
+|  |               +-------ENA_ON840422_ON840422_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|  +---------------|
+|                  |                                      +--ENA_OP014916_OP014916_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                                   +**|
+|                  |                                   |  |  +**ENA_OP019222_OP019222_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                                   |  +--|
+|                  |                                   |     +**ENA_OP019219_OP019219_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                                +**|
+|                  |                                |  |  +--ENA_OP019246_OP019246_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                                |  +**|
+|                  |                                |     +--ENA_OP015021_OP015021_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                             +**|
+|                  |                             |  |        +--ENA_OP014636_OP014636_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                             |  |     +**|
+|                  |                             |  |     |  +--ENA_OP014634_OP014634_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                             |  |  +**|
+|                  |                             |  |  |  +**ENA_OP015005_OP015005_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                             |  +**|
+|                  |                             |     +--ENA_OP014853_OP014853_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          +**|
+|                  |                          |  |                 +--ENA_OP019191_OP019191_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |              +--|
+|                  |                          |  |              |  +**ENA_OP015027_OP015027_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |           +**|
+|                  |                          |  |           |  +--ENA_OP014943_OP014943_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |        +--|
+|                  |                          |  |        |  +--ENA_OP014850_OP014850_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |     +--|
+|                  |                          |  |     |  |  +--ENA_OP014796_OP014796_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |     |  +--|
+|                  |                          |  |     |     +**ENA_OP014844_OP014844_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  +**|
+|                  |                          |  |  |  |           +--ENA_OP019249_OP019249_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  |  |        +**|
+|                  |                          |  |  |  |        |  +--ENA_OP014644_OP014644_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  |  |     +**|
+|                  |                          |  |  |  |     |  |  +--ENA_OP014811_OP014811_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  |  |     |  +**|
+|                  |                          |  |  |  |     |     +--ENA_OP015012_OP015012_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  |  |  +**|
+|                  |                          |  |  |  |  |  +--ENA_OP014819_OP014819_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  |  |  +--|
+|                  |                          |  |  |     +--ENA_OP014977_OP014977_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |  +**|
+|                  |                          |     |                 +--ENA_OP019218_OP019218_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |              +--|
+|                  |                          |     |              |  +--ENA_OP015352_OP015352_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |           +**|
+|                  |                          |     |           |  +--ENA_OP014825_OP014825_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |        +**|
+|                  |                          |     |        |  |     +**ENA_OP014795_OP014795_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |        |  |  +**|
+|                  |                          |     |        |  |  |  +--ENA_OP019407_OP019407_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |        |  +**|
+|                  |                          |     |        |     |  +--ENA_OP014820_OP014820_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |        |     +**|
+|                  |                          |     |        |        |  +**ENA_OP014935_OP014935_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |        |        +**|
+|                  |                          |     |        |           +**ENA_OP014958_OP014958_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |     +**|
+|                  |                          |     |     |  +---ENA_OP014828_OP014828_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  +**|
+|                  |                          |     |  |  |                 +**ENA_OP019240_OP019240_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |              +**|
+|                  |                          |     |  |  |              |  +**ENA_OP019239_OP019239_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |           +**|
+|                  |                          |     |  |  |           |  +**ENA_OP019243_OP019243_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |        +--|
+|                  |                          |     |  |  |        |  +**ENA_OP014851_OP014851_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |     +**|
+|                  |                          |     |  |  |     |  |  +**ENA_OP014805_OP014805_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |     |  +--|
+|                  |                          |     |  |  |     |     |  +**ENA_OP014814_OP014814_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |     |     +**|
+|                  |                          |     |  |  |     |        +**ENA_OP014804_OP014804_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  |  +**|
+|                  |                          |     |  |  |  |  +**ENA_OP014848_OP014848_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |  +**|
+|                  |                          |     |  |     |     +**ENA_OP019395_OP019395_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |     |  +**|
+|                  |                          |     |  |     |  |  +--ENA_OP015044_OP015044_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |     +**|
+|                  |                          |     |  |        |  +--ENA_OP014812_OP014812_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |        +**|
+|                  |                          |     |  |           |              +--ENA_OP014974_OP014974_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           |           +**|
+|                  |                          |     |  |           |           |  +**ENA_OP015010_OP015010_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           |        +**|
+|                  |                          |     |  |           |        |  +--ENA_OP015169_OP015169_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           |     +**|
+|                  |                          |     |  |           |     |  |  +--ENA_OP015011_OP015011_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           |     |  +**|
+|                  |                          |     |  |           |     |     +--ENA_OP015037_OP015037_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           |  +**|
+|                  |                          |     |  |           |  |  +**ENA_OP015054_OP015054_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     |  |           +**|
+|                  |                          |     |  |              +--ENA_OP015020_OP015020_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |     +--|
+|                  |                          |        |              +--ENA_OP019223_OP019223_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |        |           +**|
+|                  |                          |        |           |  +**ENA_OP014655_OP014655_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |        |        +**|
+|                  |                          |        |        |  +**ENA_OP014815_OP014815_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |        |     +**|
+|                  |                          |        |     |  +--ENA_OP015016_OP015016_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |        |  +--|
+|                  |                          |        |  |  +--ENA_OP016656_OP016656_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |        +**|
+|                  |                          |           |  +--ENA_OP014624_OP014624_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                          |           +--|
+|                  |                          |              +--ENA_OP014854_OP014854_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                       +--|
+|                  |                       |  |     +**ENA_OP019392_OP019392_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                       |  |  +**|
+|                  |                       |  |  |  +--ENA_OP015373_OP015373_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  |                       |  +--|
+|                  |                       |     +--ENA_OP015024_OP015024_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                  +-----------------------|
+|                                          |                                      +----ENA_OP019211_OP019211_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                                   +**|
+|                                          |                                   |  +--ENA_OP015252_OP015252_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                                +**|
+|                                          |                                |  +--ENA_OP019233_OP019233_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                             +**|
+|                                          |                             |  +--ENA_OP014793_OP014793_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                          +**|
+|                                          |                          |  +--ENA_OP015058_OP015058_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                       +**|
+|                                          |                       |  +**ENA_OP014976_OP014976_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                    +**|
+|                                          |                    |  +**ENA_OP015505_OP015505_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |                 +**|
+|                                          |                 |  +--ENA_OP014787_OP014787_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |              +**|
+|                                          |              |  +--ENA_OP015064_OP015064_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |           +--|
+|                                          |           |  +--ENA_OP014810_OP014810_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |        +**|
+|                                          |        |  |  +----ENA_OP019235_OP019235_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |        |  +--|
+|                                          |        |     +**ENA_OP014952_OP014952_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |     +**|
+|                                          |     |  |     +--ENA_OP019248_OP019248_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |     |  |  +**|
+|                                          |     |  |  |  |     +**ENA_OP014642_OP014642_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |     |  |  |  |  +--|
+|                                          |     |  |  |  |  |  +--ENA_OP014797_OP014797_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |     |  |  |  +**|
+|                                          |     |  |  |     +--ENA_OP014809_OP014809_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |     |  +**|
+|                                          |     |     +--ENA_OP014801_OP014801_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          |  +--|
+|                                          |  |  +--ENA_OP014649_OP014649_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                          +--|
+|                                             |        +--ENA_OP019215_OP019215_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     +**|
+|                                             |     |  |                                         +--ENA_OP019208_OP019208_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                                      +**|
+|                                             |     |  |                                      |  |  +----ENA_OP019227_OP019227_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                                      |  +--|
+|                                             |     |  |                                      |     +--ENA_OP019256_OP019256_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                                   +**|
+|                                             |     |  |                                   |  |  +--ENA_OP014658_OP014658_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                                   |  +--|
+|                                             |     |  |                                   |     +**ENA_OP015014_OP015014_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                                +**|
+|                                             |     |  |                                |  +--ENA_OP014653_OP014653_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                             +**|
+|                                             |     |  |                             |  |  +--ENA_OP014834_OP014834_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                             |  +**|
+|                                             |     |  |                             |     +---ENA_OP015050_OP015050_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                          +**|
+|                                             |     |  |                          |  +--ENA_OP014841_OP014841_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                       +**|
+|                                             |     |  |                       |  +--ENA_OP019226_OP019226_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                    +**|
+|                                             |     |  |                    |  |  +--ENA_OP019228_OP019228_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                    |  +--|
+|                                             |     |  |                    |     +--ENA_OP015018_OP015018_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |                 +**|
+|                                             |     |  |                 |  +**ENA_OP016620_OP016620_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |              +**|
+|                                             |     |  |              |  |  +--ENA_OP014988_OP014988_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |              |  +--|
+|                                             |     |  |              |     +----ENA_OP014836_OP014836_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |           +**|
+|                                             |     |  |           |  |  +--ENA_OP015103_OP015103_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |           |  +**|
+|                                             |     |  |           |     +--ENA_OP014838_OP014838_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |        +**|
+|                                             |     |  |        |  +--ENA_OP014662_OP014662_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |     +**|
+|                                             |     |  |     |  +**ENA_OP015039_OP015039_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  |  +**|
+|                                             |     |  |  |  +**ENA_OP014874_OP014874_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |     |  +**|
+|                                             |     |     +--ENA_OP015589_OP015589_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             |  +--|
+|                                             |  |  +--ENA_OP019209_OP019209_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|                                             +--|
+|                                                +---ENA_OP019231_OP019231_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|
+|                                         +---------ENA_OQ437954_OQ437954_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                                      +--|
+|                                      |  |  +--ENA_OQ437926_OQ437926_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                                      |  +--|
+|                                      |     +**ENA_OQ437971_OQ437971_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                                   +**|
+|                                   |  +----------ENA_OQ437922_OQ437922_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                                +--|
+|                                |  +---ENA_OQ437938_OQ437938_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                             +--|
+|                             |  +--ENA_OQ437912_OQ437912_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                          +**|
+|                          |  |      +--ENA_OQ437914_OQ437914_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                          |  +------|
+|                          |         +--ENA_OQ437955_OQ437955_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                       +**|
+|                       |  |     +-----------ENA_OQ437942_OQ437942_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                       |  +-----|
+|                       |        +--ENA_OQ437935_OQ437935_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                    +**|
+|                    |  +--------------------------ENA_OQ466563_OQ466563_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 +--|
+|                 |  |           +----ENA_OQ437980_OQ437980_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |        +--|
+|                 |  |        |  +--ENA_OQ437984_OQ437984_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |     +**|
+|                 |  |     |  +---ENA_OQ437947_OQ437947_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |  +--|
+|                 |  |  |  |        +--ENA_OQ437956_OQ437956_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |  |  |     +**|
+|                 |  |  |  |     |  +--ENA_OQ437920_OQ437920_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |  |  |  +**|
+|                 |  |  |  |  |  +--ENA_OQ437949_OQ437949_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  |  |  +--|
+|                 |  |  |     +----ENA_OQ437977_OQ437977_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |  +--|
+|                 |     |        +--ENA_OQ437936_OQ437936_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |     |  +-----|
+|                 |     |  |     |  +**ENA_OQ437933_OQ437933_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |     |  |     +--|
+|                 |     |  |        +**ENA_OQ437968_OQ437968_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|                 |     +**|
+|                 |        +--------ENA_OQ437987_OQ437987_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              +**|
+|              |  |                         +--ENA_OQ437917_OQ437917_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |              +----------|
+|              |  |              |          +--------ENA_OQ437972_OQ437972_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |           +--|
+|              |  |           |  |          +--ENA_OQ437919_OQ437919_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |           |  +----------|
+|              |  |           |             +--ENA_OQ437937_OQ437937_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |        +**|
+|              |  |        |  |                 +-----ENA_OQ437931_OQ437931_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |        |  |              +--|
+|              |  |        |  |              |  +--ENA_OQ437964_OQ437964_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |        |  +--------------|
+|              |  |        |                 |   +--ENA_OQ437925_OQ437925_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |        |                 +---|
+|              |  |        |                     |  +**ENA_OQ437924_OQ437924_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |        |                     +--|
+|              |  |        |                        +**ENA_OQ437973_OQ437973_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |     +**|
+|              |  |     |  +---ENA_OQ437974_OQ437974_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  +--|
+|              |  |  |  |                     +**ENA_OQ437916_OQ437916_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |                  +**|
+|              |  |  |  |                  |  +**ENA_OQ437923_OQ437923_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |               +--|
+|              |  |  |  |               |  +--ENA_OQ437913_OQ437913_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |            +--|
+|              |  |  |  |            |  +--ENA_OQ437963_OQ437963_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |        +---|
+|              |  |  |  |        |   +--ENA_OQ437946_OQ437946_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |     +--|
+|              |  |  |  |     |  +--ENA_OQ437952_OQ437952_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |  +--|
+|              |  |  |  |  |  |  +---------ENA_OQ437967_OQ437967_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  |  |  +--|
+|              |  |  |  |  |     +-------ENA_OQ437929_OQ437929_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |  +**|
+|              |  |  |     |             +--ENA_OQ437944_OQ437944_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |     |  +----------|
+|              |  |  |     |  |          +--ENA_OQ437953_OQ437953_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |     +**|
+|              |  |  |        |  +--ENA_OQ437915_OQ437915_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  |  |        +--|
+|              |  |  |           +-------ENA_OQ437979_OQ437979_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |  +**|
+|              |     |        +-------------------ENA_OQ437978_OQ437978_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |     |     +**|
+|              |     |     |  +--------ENA_OQ437951_OQ437951_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |     |  +**|
+|              |     |  |  |    +----------ENA_OQ437985_OQ437985_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |     |  |  +----|
+|              |     |  |       +--------ENA_OQ449343_OQ449343_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |     +--|
+|              |        |         +-----ENA_OQ437950_OQ437950_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |        |  +------|
+|              |        |  |      |  +--ENA_OQ437990_OQ437990_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |        |  |      +**|
+|              |        |  |         +-----------ENA_OQ449344_OQ449344_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|              |        +--|
+|              |           +-------ENA_OQ437981_OQ437981_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        +-----|
+|        |     |              +--ENA_OQ437932_OQ437932_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |        +-----|
+|        |     |        |     +-------ENA_OQ437969_OQ437969_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     +--|
+|        |     |     |  |        +-------ENA_OQ437941_OQ437941_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |  |     +--|
+|        |     |     |  |     |  +-----ENA_OQ437975_OQ437975_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |  |  +--|
+|        |     |     |  |  |  +----ENA_OQ437989_OQ437989_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |  +**|
+|        |     |     |     |             +-------ENA_OQ437930_OQ437930_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |     |     +-------|
+|        |     |     |     |     |       +------ENA_OQ437948_OQ437948_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |     |  +--|
+|        |     |     |     |  |  |  +-------------ENA_OQ437983_OQ437983_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |     |  |  +--|
+|        |     |     |     |  |     +---------ENA_OQ437970_OQ437970_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     |     |     +**|
+|        |     |     |        |  +**ENA_OL320069_OL320069_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|        |     |     |        +--|
+|        |     |     |           +**ENA_OL320072_OL320072_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
+|        |     |  +--|
+|        |     |  |  +--ENA_OQ437959_OQ437959_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |     +**|
+|        |        |                +--ENA_OQ437940_OQ437940_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        |             +--|
+|        |        |             |  +--ENA_OQ437982_OQ437982_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        |          +--|
+|        |        |          |  |  +--ENA_OQ437927_OQ437927_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        |          |  +**|
+|        |        |          |     |   +--ENA_OQ437988_OQ437988_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        |          |     +---|
+|        |        |          |         +**ENA_OQ437961_OQ437961_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        |  +-------|
+|        |        |  |       +--ENA_OQ437939_OQ437939_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+|        |        +--|
+|        |           +--ENA_OL318841_OL318841_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_
++--------|
+         |       +--------ENA_OQ437934_OQ437934_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+         +-------|
+                 +-------------------ENA_OQ437943_OQ437943_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_
+
+Tree in newick format:
+
+(MN908947_WUHAN_HU_1_2019_:0.0002277408,(((((ENA_OQ437945_OQ437945_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004375787,ENA_OQ437921_OQ437921_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000990361):0.0010514023,(ENA_OQ437962_OQ437962_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000329713,(ENA_OQ437957_OQ437957_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000676411,ENA_OQ437960_OQ437960_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003882077):0.0001012950):0.0011932199):0.0004610458,(((ENA_OQ437928_OQ437928_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002678441,ENA_OQ437958_OQ437958_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002656989):0.0000335080,ENA_OQ437918_OQ437918_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003273678):0.0002187066,ENA_OQ437986_OQ437986_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002518621):0.0005987417):0.0005892693,ENA_OQ437976_OQ437976_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0010203611):0.0002784013,(ENA_ON840422_ON840422_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0004546618,((((((ENA_OP014916_OP014916_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001671427,(ENA_OP019222_OP019222_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP019219_OP019219_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0001804641):0.0000009375,(ENA_OP019246_OP019246_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000713059,ENA_OP015021_OP015021_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000985466):0.0000009375):0.0000009375,(((ENA_OP014636_OP014636_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001669696,ENA_OP014634_OP014634_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000662133):0.0000009375,ENA_OP015005_OP015005_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321098):0.0000321077,ENA_OP014853_OP014853_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001311977):0.0000009375):0.0000321126,((((((ENA_OP019191_OP019191_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000387832,ENA_OP015027_OP015027_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321101):0.0000767902,ENA_OP014943_OP014943_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001664970):0.0000009375,ENA_OP014850_OP014850_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000653114):0.0000387101,(ENA_OP014796_OP014796_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000994770,ENA_OP014844_OP014844_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321167):0.0001633826):0.0000772204,((((ENA_OP019249_OP019249_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000991103,ENA_OP014644_OP014644_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001316545):0.0000009375,(ENA_OP014811_OP014811_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000671886,ENA_OP015012_OP015012_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000994789):0.0000330771):0.0000009375,ENA_OP014819_OP014819_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001005576):0.0000018793,ENA_OP014977_OP014977_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001727000):0.0000623851):0.0000009375,((((((ENA_OP019218_OP019218_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001199234,ENA_OP015352_OP015352_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000468559):0.0000620217,ENA_OP014825_OP014825_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001981518):0.0000009375,((ENA_OP014795_OP014795_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000330636,ENA_OP019407_OP019407_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001967281):0.0000009375,(ENA_OP014820_OP014820_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000974126,(ENA_OP014935_OP014935_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP014958_OP014958_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000321241):0.0000009375):0.0000321021):0.0000018793,ENA_OP014828_OP014828_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002294994):0.0000321044,((((((ENA_OP019240_OP019240_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP019239_OP019239_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000330651):0.0000009375,ENA_OP019243_OP019243_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000321061,ENA_OP014851_OP014851_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321133):0.0000648431,(ENA_OP014805_OP014805_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,(ENA_OP014814_OP014814_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP014804_OP014804_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375):0.0000647466):0.0000321105,ENA_OP014848_OP014848_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321024):0.0000009375,((ENA_OP019395_OP019395_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP015044_OP015044_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001678398):0.0000321031,(ENA_OP014812_OP014812_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000672076,(((((ENA_OP014974_OP014974_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001017117,ENA_OP015010_OP015010_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,ENA_OP015169_OP015169_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000979993):0.0000009375,(ENA_OP015011_OP015011_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000650153,ENA_OP015037_OP015037_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000650141):0.0000009375):0.0000009375,ENA_OP015054_OP015054_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321176):0.0000009375,ENA_OP015020_OP015020_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000979364):0.0000321097):0.0000009375):0.0000009375):0.0000009375):0.0000321276,(((((ENA_OP019223_OP019223_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001697415,ENA_OP014655_OP014655_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,ENA_OP014815_OP014815_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,ENA_OP015016_OP015016_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000662165):0.0000009375,ENA_OP016656_OP016656_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000662634):0.0001314731,(ENA_OP014624_OP014624_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000648396,ENA_OP014854_OP014854_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000649632):0.0000647869):0.0000330921):0.0000662988):0.0000009375):0.0000009375,((ENA_OP019392_OP019392_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321062,ENA_OP015373_OP015373_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000649616):0.0000009375,ENA_OP015024_OP015024_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000974185):0.0001308018):0.0000946677,(((((((((((((ENA_OP019211_OP019211_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0003017856,ENA_OP015252_OP015252_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001316258):0.0000009375,ENA_OP019233_OP019233_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000660910):0.0000009375,ENA_OP014793_OP014793_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000990793):0.0000009375,ENA_OP015058_OP015058_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000654504):0.0000009375,ENA_OP014976_OP014976_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,ENA_OP015505_OP015505_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000330914):0.0000009375,ENA_OP014787_OP014787_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000986410):0.0000009375,ENA_OP015064_OP015064_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001638948):0.0000009375,ENA_OP014810_OP014810_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001630356):0.0000410842,(ENA_OP019235_OP019235_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002642129,ENA_OP014952_OP014952_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000320678):0.0000654744):0.0000009375,((ENA_OP019248_OP019248_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001327355,((ENA_OP014642_OP014642_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OP014797_OP014797_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001309459):0.0000981489,ENA_OP014809_OP014809_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002008733):0.0000009375):0.0000009375,ENA_OP014801_OP014801_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000976815):0.0000320653):0.0000009375,ENA_OP014649_OP014649_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001303571):0.0000860883,(((ENA_OP019215_OP019215_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000340570,((((((((((((((ENA_OP019208_OP019208_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001684838,(ENA_OP019227_OP019227_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0003003928,ENA_OP019256_OP019256_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001314731):0.0000650459):0.0000009375,(ENA_OP014658_OP014658_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001967740,ENA_OP015014_OP015014_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000321372):0.0000644879):0.0000009375,ENA_OP014653_OP014653_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000644161):0.0000009375,(ENA_OP014834_OP014834_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000968254,ENA_OP015050_OP015050_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002330626):0.0000009375):0.0000009375,ENA_OP014841_OP014841_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000980940):0.0000009375,ENA_OP019226_OP019226_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001368743):0.0000009375,(ENA_OP019228_OP019228_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000994293,ENA_OP015018_OP015018_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001634263):0.0000652393):0.0000009375,ENA_OP016620_OP016620_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,(ENA_OP014988_OP014988_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0001643117,ENA_OP014836_OP014836_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002964233):0.0001629988):0.0000009375,(ENA_OP015103_OP015103_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000646758,ENA_OP014838_OP014838_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000979468):0.0000321180):0.0000009375,ENA_OP014662_OP014662_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000646286):0.0000009375,ENA_OP015039_OP015039_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0000009375,ENA_OP014874_OP014874_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000330749):0.0000009375,ENA_OP015589_OP015589_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000647602):0.0000009375):0.0000009375,ENA_OP019209_OP019209_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000661786):0.0001601368,ENA_OP019231_OP019231_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002604283):0.0001712793):0.0001439872):0.0012713468):0.0008435910):0.0000965884,(((((((((((ENA_OQ437954_OQ437954_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005388498,(ENA_OQ437926_OQ437926_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001661259,ENA_OQ437971_OQ437971_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000330617):0.0001340685):0.0000404464,ENA_OQ437922_OQ437922_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005805272):0.0000009375,ENA_OQ437938_OQ437938_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002188758):0.0001723884,ENA_OQ437912_OQ437912_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000773400):0.0001034021,(ENA_OQ437914_OQ437914_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001319805,ENA_OQ437955_OQ437955_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001669196):0.0003854121):0.0000018940,(ENA_OQ437942_OQ437942_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0006397093,ENA_OQ437935_OQ437935_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002061011):0.0003154584):0.0000018793,ENA_OQ466563_OQ466563_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0014551740):0.0000009375,((((ENA_OQ437980_OQ437980_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002958116,ENA_OQ437984_OQ437984_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000992750):0.0000639235,ENA_OQ437947_OQ437947_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002625199):0.0000009375,(((ENA_OQ437956_OQ437956_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001276094,ENA_OQ437920_OQ437920_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000679821):0.0000009375,ENA_OQ437949_OQ437949_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001059709):0.0000310495,ENA_OQ437977_OQ437977_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002923879):0.0000673881):0.0001334348,((ENA_OQ437936_OQ437936_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000662731,(ENA_OQ437933_OQ437933_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000009375,ENA_OQ437968_OQ437968_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000321291):0.0001296045):0.0003670270,ENA_OQ437987_OQ437987_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005247417):0.0000313840):0.0000682302):0.0000662456,((((((ENA_OQ437917_OQ437917_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001844277,ENA_OQ437972_OQ437972_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005183361):0.0006044967,(ENA_OQ437919_OQ437919_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002001299,ENA_OQ437937_OQ437937_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000998539):0.0006187352):0.0000351711,((ENA_OQ437931_OQ437931_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003524071,ENA_OQ437964_OQ437964_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001768730):0.0000756722,(ENA_OQ437925_OQ437925_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000340510,(ENA_OQ437924_OQ437924_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000009375,ENA_OQ437973_OQ437973_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000009375):0.0000382889):0.0002536135):0.0007952398):0.0000018793,ENA_OQ437974_OQ437974_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002374538):0.0000330838,(((((((ENA_OQ437916_OQ437916_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000009375,ENA_OQ437923_OQ437923_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000009375):0.0000009375,ENA_OQ437913_OQ437913_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001311987):0.0001316600,ENA_OQ437963_OQ437963_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001648141):0.0000985982,ENA_OQ437946_OQ437946_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001654053):0.0002105312,ENA_OQ437952_OQ437952_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002043299):0.0001112910,(ENA_OQ437967_OQ437967_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005721067,ENA_OQ437929_OQ437929_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004559861):0.0001993138):0.0000662173,((ENA_OQ437944_OQ437944_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001683982,ENA_OQ437953_OQ437953_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001382331):0.0006232294,(ENA_OQ437915_OQ437915_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001996385,ENA_OQ437979_OQ437979_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004659069):0.0001595697):0.0000009375):0.0000009375):0.0000703765,(((ENA_OQ437978_OQ437978_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0010989737,ENA_OQ437951_OQ437951_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005240023):0.0000308260,(ENA_OQ437985_OQ437985_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0006195912,ENA_OQ449343_OQ449343_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004890764):0.0003095060):0.0000018793,((ENA_OQ437950_OQ437950_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003327322,(ENA_OQ437990_OQ437990_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001013297,ENA_OQ449344_OQ449344_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0006563391):0.0000018793):0.0003790216,ENA_OQ437981_OQ437981_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004572671):0.0000682470):0.0000342012):0.0000009375):0.0000009375,((((ENA_OQ437932_OQ437932_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001741866,ENA_OQ437969_OQ437969_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004524441):0.0003295379,(((ENA_OQ437941_OQ437941_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004211107,ENA_OQ437975_OQ437975_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003168854):0.0000990234,ENA_OQ437989_OQ437989_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002886096):0.0002048528,(((ENA_OQ437930_OQ437930_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004428223,ENA_OQ437948_OQ437948_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0003893643):0.0004273532,(ENA_OQ437983_OQ437983_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0007703521,ENA_OQ437970_OQ437970_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0005737043):0.0001248874):0.0000365834,(ENA_OL320069_OL320069_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375,ENA_OL320072_OL320072_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0000009375):0.0001011980):0.0000009375):0.0000227158):0.0000444821,ENA_OQ437959_OQ437959_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001989985):0.0000333705,((((ENA_OQ437940_OQ437940_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001986565,ENA_OQ437982_OQ437982_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001004903):0.0001316763,(ENA_OQ437927_OQ437927_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001337783,(ENA_OQ437988_OQ437988_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0001325755,ENA_OQ437961_OQ437961_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0000325897):0.0002317348):0.0000018793):0.0000672436,ENA_OQ437939_OQ437939_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0002014507):0.0004238177,ENA_OL318841_OL318841_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN_HUMAN_:0.0002034443):0.0000985314):0.0000009375):0.0003440237,(ENA_OQ437934_OQ437934_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0004980016,ENA_OQ437943_OQ437943_1_SEVERE_ACUTE_RESPIRATORY_SDEER_DEER_:0.0010532095):0.0004385358):0.0005210604);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t mafft_alignment.fasta.treefile -m "GTR{0.308643,1.38675,0.191359,0.286766,6.06941}+F{0.298691,0.182958,0.196222,0.322129}+I{0.756086}+R4{0.124931,2.9256,0.108926,2.93467,0.00988923,27.0992,0.000168111,278.692}" --length 29994
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s mafft_alignment.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s mafft_alignment.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Sat Mar  2 09:11:29 2024
+Total CPU time used: 564.76 seconds (0h:9m:24s)
+Total wall-clock time used: 564.619 seconds (0h:9m:24s)
+

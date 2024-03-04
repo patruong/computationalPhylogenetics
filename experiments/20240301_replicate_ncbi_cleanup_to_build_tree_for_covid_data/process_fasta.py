@@ -108,7 +108,14 @@ def process_sequences(fasta_file, group1, group2, group1_n, group2_n, all_sequen
     seqs = list(df_res.sequence)
     transformed_seqnames = []
     for seqname in seqnames:
-        seqname = seqname.translate(str.maketrans("| ,()/.-;:", "__________")).replace("__", "_").upper()
+        seqname = seqname.upper()
+        specie = ""
+        if group1.upper() in seqname:
+            specie = group1
+        elif group2.upper() in seqname:
+            specie = group2
+        
+        seqname = seqname.translate(str.maketrans("| ,()/.-;:", "__________")).replace("__", "_").upper()[:50] + specie.upper()
         transformed_seqnames.append(seqname)
 
     # for building tree with mafft and fasttree, #requires fix_tags.py to transform äö to {}
@@ -117,9 +124,9 @@ def process_sequences(fasta_file, group1, group2, group1_n, group2_n, all_sequen
     with open(output_tagged, 'w') as fasta_file:
         for seqname, seq in zip(transformed_seqnames, seqs):
             if group1.upper() in seqname:
-                seqname += "Ö" + group1.upper() + "Ä" # Can change to CANINE 
+                seqname += "-_-" + group1.upper() + "._." # Can change to CANINE 
             elif group2.upper() in seqname:
-                seqname += "Ö" + group2.upper() + "Ä" # Can change to FELINE
+                seqname += "-_-" + group2.upper() + "._." # Can change to FELINE
             fasta_file.write(f'>{seqname}\n{seq}\n')
     # for difFUBAR
     #with open('parvo_panleu_trans.fasta', 'w') as fasta_file:
