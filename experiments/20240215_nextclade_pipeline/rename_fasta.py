@@ -17,10 +17,14 @@ import os
 os.chdir("/home/patrick/git/computationalPhylogenetics/experiments/20240215_nextclade_pipeline/data")
 deer_file = "deer_covid.fasta"  
 deer_output_file = "deer_covid_renamed.fasta"
-modify_sequence_names(deer_file, deer_output_file, "__" + "DEER" + "_-_")
+modify_sequence_names(deer_file, deer_output_file)
+
+#modify_sequence_names(deer_file, deer_output_file, "__" + "DEER" + "_-_")
 omicron_file = "omicron.fasta"  
 omicron_output_file = "omicron_renamed.fasta"
-modify_sequence_names(omicron_file, omicron_output_file, "__" + "OMICRON" + "_-_")
+modify_sequence_names(omicron_file, omicron_output_file)
+
+#modify_sequence_names(omicron_file, omicron_output_file, "__" + "OMICRON" + "_-_")
 
 # Open the input files and read their contents
 with open(deer_output_file, "r") as omicron_file:
@@ -62,3 +66,6 @@ combined_content = omicron_content + deer_covid_content
 # Write the combined content to a new file
 with open("combined_difFUBAR_input.fasta", "w") as combined_file:
     combined_file.write(combined_content)
+
+
+

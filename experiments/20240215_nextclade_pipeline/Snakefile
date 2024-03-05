@@ -1,11 +1,83 @@
+import os
+
+#input_fasta = "data/combined.fasta",
+
+output_dir = "results"
+reference_sequence = "data/reference.fasta"
+input_fasta1 = "data/deer_covid.fasta"
+input_fasta2 = "data/omicron.fasta"
+input_metadata = "data/combined_meta.tsv"
+input_clades = "data/clades.tsv"
+
+
 rule all:
     input:
-        nextclade_results ="results/nextclade_output/nextclade.tsv",
+        nextclade_results =os.path.join(output_dir, "nextclade_output/nextclade.tsv"),
+        nextclade_tree = os.path.join(output_dir, "nextclade_output", "nextclade.tagged.nwk"),
+        nextclade_fasta = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.postprocessed.fasta")
+        #results =os.path.join(output_dir, "tree.json"),
 
-input_fasta = "data/combined.fasta",
-input_reference_sequence = "data/reference.fasta",
-input_metadata = "data/combined_meta.tsv",
-input_clades = "data/clades.tsv"
+rule process_reference:
+    message:
+        """
+        Pre-processing reference fasta file.
+        """
+    input:
+        fasta_file = reference_sequence
+    output:
+        output = os.path.join(output_dir, "reference.fasta")
+    shell:
+        "python process_reference.py {input.fasta_file} --output {output.output}"
+
+
+rule combine_fasta:
+    message:
+        #"""
+        #Combining {input.reference_sequence}, {input.fasta1} and {input.fasta2}. The first seqeunce is the reference sequence and will be used to root the tree with iqtree2 when building the tree
+        #"""
+        """
+        Combining {input.fasta1} and {input.fasta2}. The first seqeunce is the reference sequence and will be used to root the tree with iqtree2 when building the tree
+        """
+    input:
+        #reference_sequence = rules.process_reference.output,
+        fasta1 = input_fasta1,
+        fasta2 = input_fasta2
+    output:
+        combined_fasta = os.path.join(output_dir, "combined.fasta")    
+    shell:
+        """
+        cat {input.fasta1} {input.fasta2} > {output.combined_fasta}
+        """
+        #"""
+        #cat {input.reference_sequence} {input.fasta1} {input.fasta2} > {output.combined_fasta}
+        #"""
+
+rule process_fasta:
+    message:
+        """
+        Pre-processing fasta file.
+        """
+    input:
+        fasta_file = rules.combine_fasta.output
+    params:
+        group1 = "human",
+        group2 = "deer"
+    output:
+        output = os.path.join(output_dir, "combined_transformed.fasta"),
+        output_tagged = os.path.join(output_dir, "combined_transformed_tagged.fasta")
+    shell:
+        "python process_fasta.py {input.fasta_file} --group1 {params.group1} --group2 {params.group2} --output {output.output} --output_tagged {output.output_tagged}"
+
+
+#rule alignment:
+#    input:
+#        fasta_file = rules.process_fasta.output.output_tagged
+#        #fasta_file = rules.fix_fasta_tag.output
+#    output:
+#        output = os.path.join(output_dir, "alignment.fasta")
+#    shell:
+#        "mafft --auto {input.fasta_file} > {output.output}"
+
 
 rule alignment:
     message:
@@ -14,18 +86,26 @@ rule alignment:
           - filling gaps with N
         """
     input:
-        sequences = input_fasta,
-        reference = input_reference_sequence
+        sequences = rules.process_fasta.output.output_tagged,
+        reference = rules.process_reference.output
     output:
-        alignment = "results/alignment.fasta"
+        alignment = os.path.join(output_dir, "alignment.fasta")
     shell:
         """
         augur align \
             --sequences {input.sequences} \
             --reference-sequence {input.reference} \
-            --output {output.alignment} \
-            --fill-gaps
+            --output {output.alignment}
         """
+        #"""
+        #augur align \
+        #    --sequences {input.sequences} \
+        #    --reference-sequence {input.reference} \
+        #    --output {output.alignment} \
+        #"""
+        #    --fill-gaps
+        #"""
+
 
 rule build_tree:
     message:
@@ -34,15 +114,16 @@ rule build_tree:
         """
     input:
         alignment = rules.alignment.output,
-        reference = input_reference_sequence
+        reference = rules.process_reference.output
     params:
         method = "iqtree"
     output:
-        tree = "results/tree_raw.nwk"
+        tree = os.path.join(output_dir, "tree_raw.nwk")
     shell:
         """
         augur tree --method {params.method} --alignment {input.alignment}  --output {output.tree} --vcf-reference {input.reference}
         """
+
 
 rule refine_tree:
     message:
@@ -59,8 +140,8 @@ rule refine_tree:
         coalescent = "opt",
         meta_id_columns = "accession_id"
     output:
-        tree = "results/tree.nwk",
-        node_data = "results/branch_lengths.json"
+        tree = os.path.join(output_dir, "tree.nwk"),
+        node_data = os.path.join(output_dir, "branch_lengths.json")
     shell:
         """
         augur refine \
@@ -72,14 +153,16 @@ rule refine_tree:
             --coalescent {params.coalescent} \
             --metadata-id-columns {params.meta_id_columns}
         """
+
+
 rule ancestral:
     message: "Reconstructing ancestral sequences and mutations"
     input:
         tree = rules.refine_tree.output.tree,
         alignment = rules.alignment.output,
-        reference = input_reference_sequence
+        reference = rules.process_reference.output
     output:
-        node_data = "results/nt_muts.json"
+        node_data = os.path.join(output_dir, "nt_muts.json")
     params:
         inference = "joint"
     shell:
@@ -93,7 +176,7 @@ rule traits:
         tree = rules.refine_tree.output.tree,
         metadata = input_metadata
     output:
-        node_data = "results/traits.json",
+        node_data =  os.path.join(output_dir, "traits.json")
     params:
         columns = "country",
         metadata_id_column = "lineage", # I think this is lineage
@@ -115,11 +198,12 @@ rule clades:
         mutations = rules.ancestral.output.node_data,
         clades = input_clades
     output:
-        node_data = "results/clades.json",
+        node_data = os.path.join(output_dir, "clades.json"),
     shell:
         """
         augur clades --tree {input.tree} --mutations {input.mutations} --clades {input.clades} --output-node-data {output.node_data}
         """
+
 
 rule export:
     message: "Exporting data files for for auspice"
@@ -133,7 +217,7 @@ rule export:
     params:
         metadata_columns = "accession_id"
     output:
-        auspice_json = "results/tree.json",
+        auspice_json = os.path.join(output_dir, "tree.json")
     shell: #colouring not working...
         """
         augur export v2 \
@@ -148,13 +232,63 @@ rule export:
 
 rule nextclade:
     input:
-        input_fasta = input_fasta,
-        input_reference = input_reference_sequence,
+        input_fasta = rules.process_fasta.output.output_tagged,
+        input_reference = rules.process_reference.output,
         auspice_tree = rules.export.output.auspice_json,
     output:
-        output_dir = "results/nextclade_output/",
-        output_tsv = "results/nextclade_output/nextclade.tsv"
+        output_dir = directory(os.path.join(output_dir, "nextclade_output")),
+        output_tsv = os.path.join(output_dir, "nextclade_output","nextclade.tsv"),
+        output_fasta = os.path.join(output_dir, "nextclade_output","nextclade.aligned.fasta"),
+        output_tree = os.path.join(output_dir, "nextclade_output","nextclade.nwk")
     shell:
         """
-        nextclade run --input-tree {input.auspice_tree} --output-all {output.output_dir} --output-tsv {output.output_tsv} --input-ref {input.input_reference} {input.input_fasta}  
+        nextclade run --input-tree {input.auspice_tree} --output-all {output.output_dir} \
+            --output-tsv {output.output_tsv} \
+            --output-fasta {output.output_fasta} \
+            --input-ref {input.input_reference} {input.input_fasta} \
+            --include-reference  
+        """
+
+rule fix_tag:
+    input:
+        tree_file = rules.nextclade.output.output_tree
+    output:
+        tree_file = os.path.join(output_dir, "nextclade_output", "nextclade.tagged.nwk")
+    shell:
+        """
+        python fix_tree_tags.py {input.tree_file} {output.tree_file}
+        """
+rule fix_tag_fasta:
+    input:
+        fasta_file = rules.nextclade.output.output_fasta
+    output:
+        fasta_file = os.path.join(output_dir, "nextclade_output","nextclade.aligned.tagged.fasta"),
+    shell:
+        """
+        python fix_tree_tags.py {input.fasta_file} {output.fasta_file}
+        """
+
+rule remove_tag_fasta:
+    input:
+        fasta_file = rules.fix_tag_fasta.output
+    output:
+        fasta_file = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.fasta"),
+    shell:
+        """
+        python remove_tags.py {input.fasta_file} {output.fasta_file}
+        """
+
+
+rule postprocess_fasta:
+    message:
+        """
+        Add "-" at the end of each sequence in a FASTA file ({input.fasta_file}) to make it divisible by 3 for the codon model in difFUBAR.        
+        """
+    input:
+        fasta_file = rules.remove_tag_fasta.output
+    output:
+        fasta_file = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.postprocessed.fasta"),
+    shell:
+        """
+        python postprocess_fasta.py {input.fasta_file} {output.fasta_file}
         """
