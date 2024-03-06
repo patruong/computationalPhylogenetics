@@ -10,7 +10,7 @@ tree_file = "nextclade_output/nextclade.tagged.internal.tag.nwk"
 exports = true
 verbosity = 1
 iters = 2500
-pos_thresh = 0.95
+pos_thresh = 0.75
 
 seqnames, seqs = read_fasta(fasta_file)
 #treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree(tree_file)

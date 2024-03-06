@@ -15,13 +15,13 @@ def modify_sequence_names(fasta_file, fasta_output, suffix = ""):
 
 import os
 os.chdir("/home/patrick/git/computationalPhylogenetics/experiments/20240215_nextclade_pipeline/data")
-deer_file = "deer_covid.fasta"  
-deer_output_file = "deer_covid_renamed.fasta"
+deer_file = "delta_deer.fasta"  
+deer_output_file = "delta_deer_renamed.fasta"
 modify_sequence_names(deer_file, deer_output_file)
 
 #modify_sequence_names(deer_file, deer_output_file, "__" + "DEER" + "_-_")
-omicron_file = "omicron.fasta"  
-omicron_output_file = "omicron_renamed.fasta"
+omicron_file = "delta_human.fasta"  
+omicron_output_file = "delta_human_renamed.fasta"
 modify_sequence_names(omicron_file, omicron_output_file)
 
 #modify_sequence_names(omicron_file, omicron_output_file, "__" + "OMICRON" + "_-_")
