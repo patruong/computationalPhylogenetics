@@ -2,8 +2,8 @@ using MolecularEvolution #read_fasta
 using CodonMolecularEvolution
 cd("/home/patrick/git/computationalPhylogenetics/experiments/20240215_nextclade_pipeline/results")
 analysis_name = "difFUBAR_output/results"
-fasta_file = "nextclade_output/nextclade.aligned.removed.tag.postprocessed.fasta"
-tree_file = "nextclade_output/nextclade.tagged.nwk"
+fasta_file = "nextclade_output/nextclade.cds_translation.S.fasta.aligned.removed.tag.postprocessed.fasta"
+tree_file = "nextclade_output/nextclade.tagged.internal.tag.nwk"
 
 
 

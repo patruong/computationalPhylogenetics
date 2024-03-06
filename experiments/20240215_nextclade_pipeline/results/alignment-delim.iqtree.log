@@ -4,18 +4,18 @@ Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan
 
 Host:    swizzle (AVX512, FMA3, 62 GB RAM)
 Command: iqtree2 -ntmax 1 -s results/alignment-delim.fasta -m GTR -ninit 2 -n 2 -me 0.05 -nt AUTO -redo
-Seed:    981983 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Tue Mar  5 08:11:51 2024
+Seed:    742360 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Mar  5 19:06:13 2024
 Kernel:  AVX+FMA - auto-detect threads (40 CPU cores detected)
 
 Reading alignment file results/alignment-delim.fasta ... Fasta format detected
-Reading fasta file: done in 0.222024 secs using 94% CPU
+Reading fasta file: done in 0.222422 secs using 99.83% CPU
 Alignment most likely contains DNA/RNA sequences
-Constructing alignment: done in 0.101379 secs using 72.29% CPU
+Constructing alignment: done in 0.10874 secs using 85.38% CPU
 Alignment has 185 sequences with 29903 columns, 3139 distinct patterns
 585 parsimony-informative, 596 singleton sites, 28722 constant sites
                                                                     Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 0.00402582 secs using 99.93% CPU
+Analyzing sequences: done in 0.00458258 secs using 99.94% CPU
    1  MN908947_WUHAN_HU_1_2019_                                             0.00%    passed     96.11%
    2  ENA_ON840422_ON840422_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN-_-HUMAN._.    1.15%    passed     99.16%
    3  ENA_OP014916_OP014916_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN-_-HUMAN._.    1.84%    passed     99.77%
@@ -203,65 +203,67 @@ Analyzing sequences: done in 0.00402582 secs using 99.93% CPU
  185  ENA_OQ437924_OQ437924_1_SEVERE_ACUTE_RESPIRATORY_SDEER-_-DEER._.      6.16%    passed     76.78%
 ****  TOTAL                                                                 2.39%  1 sequences failed composition chi2 test (p-value<5%; df=3)
 NOTE: ENA_OP014804_OP014804_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN-_-HUMAN._. is identical to ENA_OP014814_OP014814_1_SEVERE_ACUTE_RESPIRATORY_SHUMAN-_-HUMAN._. but kept for subsequent analysis
-Checking for duplicate sequences: done in 0.00502622 secs using 92.61% CPU
+Checking for duplicate sequences: done in 0.00642487 secs using 99.13% CPU
 
-Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.107 seconds
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.092 seconds
 
 NOTE: 18 MB RAM (0 GB) is required!
 Measuring multi-threading efficiency up to 1 CPU cores
-10 trees examined
-Threads: 1 / Time: 1.015 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -101243
-Determining AUTO threadcount: done in 1.01577 secs using 99.19% CPU
+6 trees examined
+Threads: 1 / Time: 1.199 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -104563
+Determining AUTO threadcount: done in 1.20109 secs using 98.19% CPU
 BEST NUMBER OF THREADS: 1
 
 Estimate model parameters (epsilon = 0.500)
-1. Initial log-likelihood: -56573.968
-2. Current log-likelihood: -55814.451
-3. Current log-likelihood: -55408.009
-Optimal log-likelihood: -55407.957
-Rate parameters:  A-C: 0.37777  A-G: 1.56507  A-T: 0.18784  C-G: 0.37895  C-T: 6.73414  G-T: 1.00000
+1. Initial log-likelihood: -56579.676
+2. Current log-likelihood: -55420.571
+3. Current log-likelihood: -55419.640
+Optimal log-likelihood: -55419.625
+Rate parameters:  A-C: 0.39267  A-G: 1.57738  A-T: 0.20331  C-G: 0.37960  C-T: 6.74691  G-T: 1.00000
 Base frequencies:  A: 0.299  C: 0.183  G: 0.196  T: 0.322
-Parameters optimization took 3 rounds (2.260 sec)
+Parameters optimization took 3 rounds (4.807 sec)
 Wrote distance file to... 
 Computing ML distances based on estimated model parameters...
-Calculating distance matrix: done in 0.240706 secs using 99.98% CPU
-Computing ML distances took 0.243770 sec (of wall-clock time) 0.243734 sec (of CPU time)
-Setting up auxiliary I and S matrices: done in 0.00110459 secs using 15.03% CPU
-Constructing RapidNJ tree: done in 0.00271851 secs using 6.916% CPU
-Computing RapidNJ tree took 0.003873 sec (of wall-clock time) 0.000380 sec (of CPU time)
-Log-likelihood of RapidNJ tree: -55497.065
+Calculating distance matrix: done in 0.621777 secs using 99.36% CPU
+Computing ML distances took 0.628585 sec (of wall-clock time) 0.624505 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00139475 secs using 98.73% CPU
+Constructing RapidNJ tree: done in 0.00413874 secs using 98.46% CPU
+Computing RapidNJ tree took 0.005623 sec (of wall-clock time) 0.005540 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -55497.123
 --------------------------------------------------------------------
 |             INITIALIZING CANDIDATE TREE SET                      |
 --------------------------------------------------------------------
 
 Do NNI search on 2 best initial trees
-Optimizing NNI: done in 0.946454 secs using 98.31% CPU
+Optimizing NNI: done in 1.51072 secs using 99.47% CPU
 Estimate model parameters (epsilon = 0.500)
-BETTER TREE FOUND at iteration 1: -55406.403
-Optimizing NNI: done in 0.985822 secs using 98.78% CPU
+BETTER TREE FOUND at iteration 1: -55419.495
+Optimizing NNI: done in 2.30694 secs using 99.48% CPU
+Estimate model parameters (epsilon = 0.500)
+BETTER TREE FOUND at iteration 2: -55411.554
 Finish initializing candidate tree set (4)
-Current best tree score: -55406.403 / CPU time: 2.170
+Current best tree score: -55411.554 / CPU time: 4.822
 Number of iterations: 2
-TREE SEARCH COMPLETED AFTER 2 ITERATIONS / Time: 0h:0m:6s
+TREE SEARCH COMPLETED AFTER 2 ITERATIONS / Time: 0h:0m:12s
 
 --------------------------------------------------------------------
 |                    FINALIZING TREE SEARCH                        |
 --------------------------------------------------------------------
 Performs final model parameters optimization
 Estimate model parameters (epsilon = 0.050)
-1. Initial log-likelihood: -55406.403
-Optimal log-likelihood: -55406.397
-Rate parameters:  A-C: 0.38641  A-G: 1.56558  A-T: 0.18930  C-G: 0.37739  C-T: 6.73377  G-T: 1.00000
+1. Initial log-likelihood: -55411.554
+Optimal log-likelihood: -55411.547
+Rate parameters:  A-C: 0.39049  A-G: 1.57673  A-T: 0.19250  C-G: 0.37887  C-T: 6.74759  G-T: 1.00000
 Base frequencies:  A: 0.299  C: 0.183  G: 0.196  T: 0.322
-Parameters optimization took 1 rounds (0.215 sec)
-BEST SCORE FOUND : -55406.397
+Parameters optimization took 1 rounds (0.402 sec)
+BEST SCORE FOUND : -55411.547
 Total tree length: 0.055
 
 Total number of iterations: 2
-CPU time used for tree search: 2.143 sec (0h:0m:2s)
-Wall-clock time used for tree search: 2.171 sec (0h:0m:2s)
-Total CPU time used: 6.280 sec (0h:0m:6s)
-Total wall-clock time used: 6.323 sec (0h:0m:6s)
+CPU time used for tree search: 4.799 sec (0h:0m:4s)
+Wall-clock time used for tree search: 4.823 sec (0h:0m:4s)
+Total CPU time used: 12.615 sec (0h:0m:12s)
+Total wall-clock time used: 12.676 sec (0h:0m:12s)
 
 Analysis results written to: 
   IQ-TREE report:                results/alignment-delim.fasta.iqtree
@@ -269,4 +271,4 @@ Analysis results written to:
   Likelihood distances:          results/alignment-delim.fasta.mldist
   Screen log file:               results/alignment-delim.fasta.log
 
-Date and Time: Tue Mar  5 08:11:59 2024
+Date and Time: Tue Mar  5 19:06:27 2024

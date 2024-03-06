@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 
 #input_fasta = "data/combined.fasta",
 
@@ -8,13 +9,24 @@ input_fasta1 = "data/deer_covid.fasta"
 input_fasta2 = "data/omicron.fasta"
 input_metadata = "data/combined_meta.tsv"
 input_clades = "data/clades.tsv"
+input_gff3 = "data/genemap.gff"
+
+columns = ['seqname', 'source', 'feature', 'start', 'end', 'score', 'strand', 'frame', 'attribute']
+df = pd.read_csv('data/genemap.gff', sep='\t', header=None, names=columns,  skiprows=4)
+df["genemap"] = df.attribute.map(lambda x:x.split("=")[1])
+gene_fasta = ["nextclade.cds_translation."+ gene +".fasta" for gene in df.genemap.to_list()]
 
 
 rule all:
     input:
         nextclade_results =os.path.join(output_dir, "nextclade_output/nextclade.tsv"),
-        nextclade_tree = os.path.join(output_dir, "nextclade_output", "nextclade.tagged.nwk"),
-        nextclade_fasta = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.postprocessed.fasta")
+        nextclade_tree = os.path.join(output_dir, "nextclade_output", "nextclade.tagged.internal.tag.nwk"),
+        nextclade_fasta = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.postprocessed.fasta"),
+        fasta_files = expand(os.path.join(output_dir, "nextclade_output", "{gene}.aligned.tagged.fasta"), gene=gene_fasta),
+        fasta_files_no_tag = expand(os.path.join(output_dir, "nextclade_output", "{gene}.aligned.removed.tag.fasta"), gene=gene_fasta),
+        fasta_files_no_tag_processed = expand(os.path.join(output_dir, "nextclade_output", "{gene}.aligned.removed.tag.postprocessed.fasta"), gene=gene_fasta)
+
+ 
         #results =os.path.join(output_dir, "tree.json"),
 
 rule process_reference:
@@ -234,6 +246,7 @@ rule nextclade:
     input:
         input_fasta = rules.process_fasta.output.output_tagged,
         input_reference = rules.process_reference.output,
+        input_gff3 = input_gff3,
         auspice_tree = rules.export.output.auspice_json,
     output:
         output_dir = directory(os.path.join(output_dir, "nextclade_output")),
@@ -246,7 +259,7 @@ rule nextclade:
             --output-tsv {output.output_tsv} \
             --output-fasta {output.output_fasta} \
             --input-ref {input.input_reference} {input.input_fasta} \
-            --include-reference  
+            --input-annotation {input.input_gff3} --include-reference  
         """
 
 rule fix_tag:
@@ -258,11 +271,23 @@ rule fix_tag:
         """
         python fix_tree_tags.py {input.tree_file} {output.tree_file}
         """
+
+
+#rule fix_tag_fasta:
+#    input:
+#        fasta_file = rules.nextclade.output.output_fasta
+#    output:
+#        fasta_file = os.path.join(output_dir, "nextclade_output","nextclade.aligned.tagged.fasta"),
+#    shell:
+#        """
+#        python fix_tree_tags.py {input.fasta_file} {output.fasta_file}
+#        """
+
 rule fix_tag_fasta:
     input:
-        fasta_file = rules.nextclade.output.output_fasta
+        fasta_file = lambda wildcards: os.path.join(output_dir, "nextclade_output", wildcards.gene)
     output:
-        fasta_file = os.path.join(output_dir, "nextclade_output","nextclade.aligned.tagged.fasta"),
+        fasta_file = os.path.join(output_dir, "nextclade_output", "{gene}.aligned.tagged.fasta")
     shell:
         """
         python fix_tree_tags.py {input.fasta_file} {output.fasta_file}
@@ -270,13 +295,28 @@ rule fix_tag_fasta:
 
 rule remove_tag_fasta:
     input:
-        fasta_file = rules.fix_tag_fasta.output
+        fasta_file = os.path.join(output_dir, "nextclade_output", "{gene}.aligned.tagged.fasta")
     output:
-        fasta_file = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.fasta"),
+        fasta_file = os.path.join(output_dir, "nextclade_output", "{gene}.aligned.removed.tag.fasta")
     shell:
         """
         python remove_tags.py {input.fasta_file} {output.fasta_file}
         """
+
+
+'''
+fasta_files = expand(os.path.join(output_dir, "nextclade_output", "{gene}.aligned.tagged.removed.tag.fasta"), gene=gene_fasta)
+
+#rule remove_tag_fasta:
+#    input:
+#        fasta_file = rules.fix_tag_fasta.output
+#    output:
+#        fasta_file = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.fasta"),
+#    shell:
+#        """
+#        python remove_tags.py {input.fasta_file} {output.fasta_file}
+#        """
+'''
 
 
 rule postprocess_fasta:
@@ -285,10 +325,23 @@ rule postprocess_fasta:
         Add "-" at the end of each sequence in a FASTA file ({input.fasta_file}) to make it divisible by 3 for the codon model in difFUBAR.        
         """
     input:
-        fasta_file = rules.remove_tag_fasta.output
+        fasta_file = os.path.join(output_dir, "nextclade_output", "{gene}.aligned.removed.tag.fasta")
     output:
-        fasta_file = os.path.join(output_dir, "nextclade_output", "nextclade.aligned.removed.tag.postprocessed.fasta"),
+        fasta_file = os.path.join(output_dir, "nextclade_output", "{gene}.aligned.removed.tag.postprocessed.fasta")
     shell:
         """
         python postprocess_fasta.py {input.fasta_file} {output.fasta_file}
         """
+
+
+rule tag_internal_nodes:
+    input:
+        tree_file = rules.fix_tag.output
+    output:
+        tree_file = os.path.join(output_dir, "nextclade_output", "nextclade.tagged.internal.tag.nwk")
+    shell:
+        """
+        julia tag_internal_nodes.jl -i {input.tree_file} -o {output.tree_file}
+        """
+
+

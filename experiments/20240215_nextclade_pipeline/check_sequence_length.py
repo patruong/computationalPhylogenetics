@@ -24,7 +24,7 @@ def read_fasta(file_path):
     return sequences
 
 # Example usage:
-fasta_file_path = "nextclade.aligned.removed.tag.postprocessed.fasta"  # Provide the path to your FASTA file
+fasta_file_path = "nextclade.cds_translation.S.fasta"  # Provide the path to your FASTA file
 sequences = read_fasta(fasta_file_path)
 
 
@@ -33,6 +33,7 @@ for name, sequence in sequences.items():
     print(f"Sequence Name: {name}")
     print(f"Sequence: {len(sequence)}")
 
+1274/3
 29994/3
 29904/3
 
