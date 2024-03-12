@@ -28,133 +28,162 @@ function get_unique_tags(json_file)
     return unique(values(tags))
 end
 
-function read_in_tree_from_hyphy_result_json(json_file, group1, group2, tags_dict)
+function read_in_tree_from_hyphy_result_json(json_file)
     json_data = JSON.parsefile(json_file)
     treestring = json_data["input"]["trees"]["0"]
+    tags = json_data["tested"]["0"]
+    return treestring, tags
+end
 
-    for (key, value) in tags_dict
-        if value in [group1, group2]
-            # Improved pattern to match key before any separator or colon
-            pattern = r"(?<=[\(\),])($key):"
-            matches = eachmatch(pattern, treestring)
-            for match in matches
-                start_index = match.offset
-                end_index = start_index + length(match.match) - 2  # Adjust for colon
-                tagged_string = treestring[start_index:end_index] * "{" * value * "}"
-                treestring = replace(replace(treestring, match.match => ""),
-                                   treestring[start_index:end_index] => tagged_string)
+
+
+function tag_hyphy_tree(treestring, tags, group1, group2)
+    pattern = r"[\(\),:]([^,:]+)(?=:)"
+    matches = eachmatch(pattern, treestring)
+    modified_treestring = treestring
+
+
+    function get_last_match_from_regex(matches)
+        last_match = nothing
+        for match in matches
+            last_match = match.match
+        end
+        return last_match
+    end
+
+    for match in matches
+        original_string = match.captures[1]
+        regex = r"[A-Za-z0-9_]+"
+        pruned_match = eachmatch(regex, original_string)
+        key = get_last_match_from_regex(pruned_match)
+        #println(key)
+        try
+            tag = tags[key]
+            if tag in [group1, group2]
+                replacement = original_string * "{$tag}" # Note this needs to be original_string, otherwise we interpret "Node22" as "Node2"*"2", the original string contains some crap before the string which makes it kinda unique.
+            else
+                replacement = original_string
             end
+            modified_treestring = replace(modified_treestring, original_string => replacement)
+        catch
+            println("No key $key")
         end
     end
+
+    return modified_treestring
+end
+
+
+# function to read and tag trees without branchlenght
+function tag_tree_without_branchlength(treestring, group1, group2, branchlength=0)
+    """
+    Do not use on a tree with branchlength as this will remove branchlength information
+    """
+    tree = gettreefromnewick(treestring, FelNode)
+    MolecularEvolution.binarize!(tree)
+    MolecularEvolution.ladderize!(tree)
+    for n in getnodelist(tree)
+        n.name = replace(n.name, "'" => "")
+        n.branchlength = rand()  # Appends a colon and a random float to the node name for id 
+    end
+    treestring = newick(tree)
+    tagged_treestring = tag_hyphy_tree(treestring, tags, group1, group2)
+    tree = gettreefromnewick(tagged_treestring, FelNode)
+    for n in getnodelist(tree)
+        n.name = replace(n.name, "'" => "")
+        n.branchlength = branchlength  # set fix value for branchlength
+    end
+    treestring = newick(tree)
     return treestring
 end
 
 
+#########################
+# 2 group + background  #
+# HIV envelope          #
+#########################
 
-
-json_data = JSON.parsefile(json_file)
-treestring = json_data["input"]["trees"]["0"]
-
-
-
-
-treestring
-tags = json_data["tested"]["0"]
-
-
-
-pattern = r"[\(\),:]([^,:]+)(?=:)"
-
-
-
-matches = eachmatch(pattern, treestring)
-
-
-modified_treestring = treestring
-
-
-# Loop through the matches and convert them using the dictionary
-for match in matches
-    original_string = match.captures[1]
-    extra_prune_pattern = r"\(?([^(),:]+)"
-
-    pruned_match= eachmatch(extra_prune_pattern, original_string)
-    key = first(pruned_match).captures[1]
-
-
-    println(original_string)
-    #println(key)
-    #replacement_value = get(tags, original_string, "test")
-    #print(replacement_value)
-    #break
-    #replacement = original_string * "{$replacement_value}"
-    #modified_treestring = replace(modified_treestring, original_string => replacement)
-end
-
-
-test_string = "((((((((HSX_2_CON_9029_1998"
-test_string = "((HSX_2_CON_9029_1998"
-test_string = ")HSX_2_CON_9029_1998"
-test_string = "0.0004927)Node228" # this does not work yet... make this work so i can parse tag the tree to run difFUBAR and contrastFEL
-matches = eachmatch(test_pattern, test_string)
-original_string = first(matches).captures[1]
-println(original_string)
-
-get(tags, ", "test")
-.captures[1]
-
-modified_treestring
-
-tags
-tags
-
-
-# 2 group + background
 fasta_file = "data/contrastFEL_empirical_data/hiv-1_envelope/HIV-env.fasta"
 json_file = "data/contrastFEL_empirical_data/hiv-1_envelope/HIV-env.fasta.FEL.json"
+seqnames, seqs = read_fasta(fasta_file)
+treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
-read_in_tree_from_hyphy_result_json(json_file, "HSX", "MSM")
+treestring = tag_hyphy_tree(treestring, tags, "HSX", "MSM")
+treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
+tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+
+tags
+exports = true
+verbosity = 1
+iters = 2500
+pos_thresh = 0.95
+analysis_name = "hiv-1_envelope/analysis"
+df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 
 
-# 4 group + background
-fasta_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta"
-json_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta.FEL.json"
-get_unique_tags(json_file)
+
+
 
 # 1 group + background
 fasta_file = "data/contrastFEL_empirical_data/epidermal_leaf_trichomes_BRT/BLTFull.fas"
 json_file = "data/contrastFEL_empirical_data/epidermal_leaf_trichomes_BRT/BLTFull.fas.FEL.json"
+seqnames, seqs = read_fasta(fasta_file)
+treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
+treestring = tag_hyphy_tree(treestring, tags, "Physaria", "background")
+treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
+tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+tags
+exports = true
+verbosity = 1
+iters = 2500
+pos_thresh = 0.95
+analysis_name = "epidermal_leaf/analysis"
+df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 
 # 2 group + background
-nex_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex"
-json_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex.FEL.json"
-get_unique_tags(json_file)
-
-# 2 group + background
-nex_file = "data/contrastFEL_empirical_data/rubisco_C3_vs_C4/rbcl.nex"
+fasta_file = "data/contrastFEL_empirical_data/rubisco_C3_vs_C4/rbcl.nex"
 json_file = "data/contrastFEL_empirical_data/rubisco_C3_vs_C4/rbcl.nex.FEL.json"
+seqnames, seqs = read_fasta(fasta_file)
+treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
+treestring = tag_hyphy_tree(treestring, tags, "C3", "C4")
+treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
+tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+tags
+exports = true
+verbosity = 1
+iters = 2500
+pos_thresh = 0.95
+analysis_name = "rubisco/analysis"
+df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 
 
 
+## special tagger
+# 2 group + background
+fasta_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex"
+json_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex.FEL.json"
+seqnames, seqs = read_fasta(fasta_file)
+
+treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
+get_unique_tags(json_file)
+treestring = tag_tree_without_branchlength(treestring, "NAIVE", "TREATED", 0)
 
 
 
+# 4 group + background # This is a bit harder to tag
+fasta_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta"
+json_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta.FEL.json"
+treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
+get_unique_tags(json_file)
+treestring = tag_tree_without_branchlength(treestring, "mammals", "Leucocytozoon", 0)
+treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
+tag_colors = CodonMolecularEvolution.generate_hex_colors(length(original_tags))
 
-group1 = "HSX"
-group2 = "background"
-
-json_data = JSON.parsefile(json_file)
-treestring = json_data["input"]["trees"]["0"]
-tags = json_data["tested"]["0"]
-unique(values(tags))
-
-
-
-treestring
-
-treestring = read_in_tree_from_hyphy_result_json(json_file)
+################
+# Run difFUBAR #
+################
 
 
 
@@ -163,13 +192,9 @@ exports = true
 verbosity = 1
 iters = 2500
 pos_thresh = 0.95
-
-seqnames, seqs = read_fasta(fasta_file)
-#treestring, tags, tag_colors = import_colored_figtree_nexus_as_tagged_tree(tree_file)
-treestring_group_labeled, treestring, group_tags, tags, tag_colors = import_grouped_label_tree(tree_file)
-
-
-
+analysis_name = "cytochrome_B/mammals_leucocytozoon/analysis"
 df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
+
+
 
 
