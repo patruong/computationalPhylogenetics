@@ -35,8 +35,6 @@ function read_in_tree_from_hyphy_result_json(json_file)
     return treestring, tags
 end
 
-
-
 function tag_hyphy_tree(treestring, tags, group1, group2)
     pattern = r"[\(\),:]([^,:]+)(?=:)"
     matches = eachmatch(pattern, treestring)
@@ -87,6 +85,12 @@ function tag_tree_without_branchlength(treestring, group1, group2, branchlength=
         n.branchlength = rand()  # Appends a colon and a random float to the node name for id 
     end
     treestring = newick(tree)
+    ## special tagger
+    # 2 group + background
+    #fasta_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex"
+    #json_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex.FEL.json"
+    # seqnames, seqs = read_fasta(fasta_file)
+
     tagged_treestring = tag_hyphy_tree(treestring, tags, group1, group2)
     tree = gettreefromnewick(tagged_treestring, FelNode)
     for n in getnodelist(tree)
@@ -95,6 +99,12 @@ function tag_tree_without_branchlength(treestring, group1, group2, branchlength=
     end
     treestring = newick(tree)
     return treestring
+end
+
+function write_string_to_file(filename, str)
+    file = open(filename, "w")
+    write(file, str)
+    close(file)
 end
 
 
@@ -112,6 +122,13 @@ treestring = tag_hyphy_tree(treestring, tags, "HSX", "MSM")
 treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
 tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
 
+
+# write tree for contrastFEL
+tree = gettreefromnewick(treestring, FelNode)
+MolecularEvolution.write_nexus("experiments/20240308_contrastFEL_empirical/data/hiv-1_envelope.nex", tree)
+write_string_to_file("experiments/20240308_contrastFEL_empirical/data/hiv-1_envelope.nwk", treestring)
+
+
 tags
 exports = true
 verbosity = 1
@@ -119,8 +136,6 @@ iters = 2500
 pos_thresh = 0.95
 analysis_name = "hiv-1_envelope/analysis"
 df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
-
-
 
 
 
@@ -133,6 +148,14 @@ get_unique_tags(json_file)
 treestring = tag_hyphy_tree(treestring, tags, "Physaria", "background")
 treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
 tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+
+# write tree for contrastFEL
+tree = gettreefromnewick(treestring, FelNode)
+MolecularEvolution.write_nexus("experiments/20240308_contrastFEL_empirical/data/epidermal_leaf_trichomes_BRT.nex", tree)
+write_string_to_file("experiments/20240308_contrastFEL_empirical/data/epidermal_leaf_trichomes_BRT.nwk", treestring)
+
+
+
 tags
 exports = true
 verbosity = 1
@@ -150,6 +173,15 @@ get_unique_tags(json_file)
 treestring = tag_hyphy_tree(treestring, tags, "C3", "C4")
 treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
 tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+
+
+# write tree for contrastFEL
+tree = gettreefromnewick(treestring, FelNode)
+MolecularEvolution.write_nexus("experiments/20240308_contrastFEL_empirical/data/rubisco_C3_vs_C4.nex", tree)
+write_string_to_file("experiments/20240308_contrastFEL_empirical/data/rubisco_C3_vs_C4.nwk", treestring)
+
+
+
 tags
 exports = true
 verbosity = 1
@@ -177,9 +209,20 @@ fasta_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cy
 json_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta.FEL.json"
 treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
-treestring = tag_tree_without_branchlength(treestring, "mammals", "Leucocytozoon", 0)
+treestring = tag_tree_without_branchlength(treestring, "mammals", "Leucocytozoon", 1)
+treestring = tag_tree_without_branchlength(treestring, "mammals", "background", 1)
+treestring = tag_tree_without_branchlength(treestring, "mammals", "birds", 1)
+treestring = tag_tree_without_branchlength(treestring, "mammals", "Haemoproteidae", 1)
 treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
-tag_colors = CodonMolecularEvolution.generate_hex_colors(length(original_tags))
+tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+
+
+
+# write tree for contrastFEL
+tree = gettreefromnewick(treestring, FelNode)
+MolecularEvolution.write_nexus("experiments/20240308_contrastFEL_empirical/data/cytb.nex", tree)
+write_string_to_file("experiments/20240308_contrastFEL_empirical/data/cytb_branchlength_1.nwk", treestring)
+
 
 ################
 # Run difFUBAR #
