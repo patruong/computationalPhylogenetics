@@ -198,17 +198,83 @@ fasta_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT
 json_file = "data/contrastFEL_empirical_data/hiv-1_reverse_transcriptase/HIV_RT.nex.FEL.json"
 seqnames, seqs = read_fasta(fasta_file)
 
+
+
 treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
-treestring = tag_tree_without_branchlength(treestring, "NAIVE", "TREATED", 0)
+treestring = tag_tree_without_branchlength(treestring, "NAIVE", "TREATED", 1)
 
 
+## EDIT
+
+group1 = "NAIVE"
+group2 = "TREATED"
+
+tree = gettreefromnewick(treestring, FelNode)
+MolecularEvolution.binarize!(tree)
+MolecularEvolution.ladderize!(tree)
+for n in getnodelist(tree)
+    n.name = replace(n.name, "'" => "")
+    n.branchlength = rand()  # Appends a colon and a random float to the node name for id 
+end
+treestring = newick(tree)
+
+tagged_treestring = tag_hyphy_tree(treestring, tags, group1, group2)
+tree = gettreefromnewick(tagged_treestring, FelNode)
+
+tagged_treestring
+
+branchlength = 1
+for n in getnodelist(tree)
+    n.name = replace(n.name, "'" => "")
+    n.branchlength = branchlength  # set fix value for branchlength
+end
+
+tree.children[1].branchlength
+
+treestring = newick(tree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+write_string_to_file("experiments/20240308_contrastFEL_empirical/data/HIV_RT_branchlength_1.nwk", treestring)
 
 # 4 group + background # This is a bit harder to tag
 fasta_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta"
 json_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta.FEL.json"
+seqnames, seqs = read_fasta(fasta_file)
+
 treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
+
+cleaned_seqs = []
+for i in 1:length(seqs)
+    seq = replace(seqs[1], " " => "")
+    push!(cleaned_seqs, seq)
+end
+seqs = cleaned_seqs
+seqs = [string(x) for x in seqs if isa(x, String)]
+
+typeof(seqs)
 get_unique_tags(json_file)
+
+treestring
 treestring = tag_tree_without_branchlength(treestring, "mammals", "Leucocytozoon", 1)
 treestring = tag_tree_without_branchlength(treestring, "mammals", "background", 1)
 treestring = tag_tree_without_branchlength(treestring, "mammals", "birds", 1)
@@ -217,6 +283,7 @@ treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_new
 tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
 
 
+tags
 
 # write tree for contrastFEL
 tree = gettreefromnewick(treestring, FelNode)
@@ -236,6 +303,7 @@ verbosity = 1
 iters = 2500
 pos_thresh = 0.95
 analysis_name = "cytochrome_B/mammals_leucocytozoon/analysis"
+df, results = difFUBAR(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 
 

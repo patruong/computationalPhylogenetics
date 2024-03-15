@@ -8,12 +8,15 @@ using Plots
 using Statistics
 using MolecularEvolution
 using CodonMolecularEvolution
+using ArgParse
 
 cd("/home/patrick/git/computationalPhylogenetics/")
+
 
 # Set threads
 using Base.Threads
 ENV["JULIA_NUM_THREADS"] = "20"
+
 
 function get_unique_tags(json_file)
     json_data = JSON.parsefile(json_file)
@@ -28,7 +31,6 @@ function read_in_tree_from_hyphy_result_json(json_file)
     tags = json_data["tested"]["0"]
     return treestring, tags
 end
-
 
 function tag_hyphy_tree(treestring, tags, group1, group2)
     pattern = r"[\(\),:]([^,:]+)(?=:)"
@@ -68,7 +70,7 @@ end
 
 
 # function to read and tag trees without branchlenght
-function tag_tree_without_branchlength(treestring, group1, group2, branchlength=0)
+function tag_tree_without_branchlength(treestring, tags, group1, group2, branchlength=1)
     """
     Do not use on a tree with branchlength as this will remove branchlength information
     """
@@ -80,6 +82,8 @@ function tag_tree_without_branchlength(treestring, group1, group2, branchlength=
         n.branchlength = rand()  # Appends a colon and a random float to the node name for id 
     end
     treestring = newick(tree)
+
+
     tagged_treestring = tag_hyphy_tree(treestring, tags, group1, group2)
     tree = gettreefromnewick(tagged_treestring, FelNode)
     for n in getnodelist(tree)
@@ -90,25 +94,66 @@ function tag_tree_without_branchlength(treestring, group1, group2, branchlength=
     return treestring
 end
 
-
-#########################
-# 2 group + background  #
-# HIV envelope          #
-#########################
-
-fasta_file = "experiments/20240308_contrastFEL_empirical/data/HIV_RT.fasta"
-tree_file = "experiments/20240308_contrastFEL_empirical/data/HIV_RT_branchlength_1.nwk"
-seqnames, seqs = read_fasta(fasta_file)
-treestring_group_labeled, treestring, group_tags, tags, tag_colors = import_grouped_label_tree(tree_file)
-
-# branchlength is 0, how does this work?
-tags
-exports = true
-verbosity = 1
-iters = 2500
-pos_thresh = 0.95
-analysis_name = "experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/analysis"
-df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
+function write_string_to_file(filename, str)
+    file = open(filename, "w")
+    write(file, str)
+    close(file)
+end
 
 
 
+function parse_commandline()
+    s = ArgParseSettings()
+
+    @add_arg_table s begin
+        "--group1", "-a"
+        help = "Group1 input"
+        arg_type = String
+        "--group2", "-b"
+        help = "Group2 input"
+        arg_type = String
+    end
+
+    return parse_args(s)
+end
+
+function main()
+    args = parse_commandline()
+
+    group1 = args["group1"]
+    group2 = args["group2"]
+
+
+
+    # 4 group + background # This is a bit harder to tag
+    fasta_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta"
+    json_file = "data/contrastFEL_empirical_data/cytochrome_B_of_Haemosporidians/Cytb.fasta.FEL.json"
+    seqnames, seqs = read_fasta(fasta_file)
+    cleaned_seqs = []
+    for i in 1:length(seqs)
+        seq = replace(seqs[1], " " => "")
+        push!(cleaned_seqs, seq)
+    end
+    seqs = cleaned_seqs
+    seqs = [string(x) for x in seqs if isa(x, String)]
+
+    treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
+    treestring = tag_tree_without_branchlength(treestring, tags, group1, group2, 1)
+    treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
+    tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+
+    ################
+    # Run difFUBAR #
+    ################
+
+    exports = true
+    verbosity = 1
+    iters = 2500
+    pos_thresh = 0.95
+    analysis_name = "cytochrome_B/" * group1 * "_" * group2 * "/analysis"
+    df, results = difFUBAR(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
+
+end
+
+
+main()
