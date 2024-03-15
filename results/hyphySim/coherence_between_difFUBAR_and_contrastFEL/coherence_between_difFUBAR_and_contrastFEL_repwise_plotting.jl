@@ -235,44 +235,46 @@ function merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
 end
 
 
-pos_thresh = 0.95
-sims = collect(1:500)
-reps = collect(1)
 
-# Initialize variables to store aggregated results
-aggregated_difFUBAR_res = DataFrame()
-aggregated_contrastFEL_res = DataFrame()
+function load_data(rep=1)
+    pos_thresh = 0.95
+    sims = collect(1:500)
+    reps = collect(rep)
 
-for sim in sims
-    for rep in reps
-        try
-            difFUBAR_res = read_in_difFUBAR_res(pos_thresh, sim, rep)
-            contrastFEL_res = read_in_contrastFEL_res(sim, rep)
-            simulator_settings, settings_cols = read_in_simulator_settings(sim)
-            difFUBAR_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
-            contrastFEL_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
-            difFUBAR_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
-            contrastFEL_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
-            difFUBAR_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
-            contrastFEL_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
-            # Append the current batch of data to the aggregated DataFrames
-            append!(aggregated_difFUBAR_res, difFUBAR_res)
-            append!(aggregated_contrastFEL_res, contrastFEL_res)
-        catch
-            println("Error reading files for sim $sim and rep $rep. Skipping this iteration.")
+    # Initialize variables to store aggregated results
+    aggregated_difFUBAR_res = DataFrame()
+    aggregated_contrastFEL_res = DataFrame()
+
+    for sim in sims
+        for rep in reps
+            try
+                difFUBAR_res = read_in_difFUBAR_res(pos_thresh, sim, rep)
+                contrastFEL_res = read_in_contrastFEL_res(sim, rep)
+                simulator_settings, settings_cols = read_in_simulator_settings(sim)
+                difFUBAR_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
+                contrastFEL_res[!, "actual_difference"] = simulator_settings[!, settings_cols[2]]
+                difFUBAR_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
+                contrastFEL_res[!, "actual_effect_difference"] = abs.(simulator_settings[!, settings_cols[1]])
+                difFUBAR_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
+                contrastFEL_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
+                # Append the current batch of data to the aggregated DataFrames
+                append!(aggregated_difFUBAR_res, difFUBAR_res)
+                append!(aggregated_contrastFEL_res, contrastFEL_res)
+            catch
+                println("Error reading files for sim $sim and rep $rep. Skipping this iteration.")
+            end
         end
     end
+
+
+    difFUBAR_res = aggregated_difFUBAR_res
+    contrastFEL_res = aggregated_contrastFEL_res
+    joined_res = merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
+    return joined_res
 end
 
-
-difFUBAR_res = aggregated_difFUBAR_res
-contrastFEL_res = aggregated_contrastFEL_res
-joined_res = merge_difFUBAR_contrastFEL_res(difFUBAR_res, contrastFEL_res)
-
-names(joined_res)
-joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"]
-joined_res[!, "contrastFEL_1-Pvalue"]
-
+rep = 5
+joined_res = load_data(rep)
 # Assuming joined_res is your DataFrame
 scatter(joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], joined_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
@@ -285,7 +287,7 @@ scatter(joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], joined_res[!, "contrastFEL_1-P
 #cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL")
 
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot.png")
+savefig(plot_dir * "1_coherence_scatterplot_rep$rep.png")
 
 
 actual_true_res = filter(row -> row["difFUBAR_actual_difference"] != false, joined_res)
@@ -299,7 +301,7 @@ scatter(actual_true_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_true_res[!, "contr
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
 )
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot_actual_true.png")
+savefig(plot_dir * "1_coherence_scatterplot_actual_true_rep$rep.png")
 
 
 actual_false_res = filter(row -> row["difFUBAR_actual_difference"] .== false, joined_res)
@@ -313,7 +315,19 @@ scatter(actual_false_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_false_res[!, "con
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
 )
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot_actual_false.png")
+savefig(plot_dir * "1_coherence_scatterplot_actual_false_rep$rep.png")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #########################################
