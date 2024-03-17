@@ -295,7 +295,7 @@ actual_true_res = filter(row -> row["difFUBAR_actual_difference"] != false, join
 #title="Scatter Plot of difFUBAR vs contrastFEL",
 
 scatter(actual_true_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_true_res[!, "contrastFEL_P-value (overall)"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
+    xlabel="difFUBAR P(ω1 ≠ ω2)", ylabel="contrastFEL P-value",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, actual_true_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -310,7 +310,7 @@ actual_false_res = filter(row -> row["difFUBAR_actual_difference"] .== false, jo
 #title="Scatter Plot of difFUBAR vs contrastFEL",
 
 scatter(actual_false_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_false_res[!, "contrastFEL_P-value (overall)"],
-    xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
+    xlabel="difFUBAR P(ω1 ≠ ω2)", ylabel="contrastFE P-value",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, actual_false_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
