@@ -274,9 +274,10 @@ joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"]
 joined_res[!, "contrastFEL_1-Pvalue"]
 
 # Assuming joined_res is your DataFrame
+#title="Scatter Plot of difFUBAR vs contrastFEL",
+
 scatter(joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], joined_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, joined_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -291,9 +292,10 @@ savefig(plot_dir * "1_coherence_scatterplot.png")
 actual_true_res = filter(row -> row["difFUBAR_actual_difference"] != false, joined_res)
 
 # Assuming joined_res is your DataFrame
+#title="Scatter Plot of difFUBAR vs contrastFEL",
+
 scatter(actual_true_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_true_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, actual_true_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
@@ -305,9 +307,10 @@ savefig(plot_dir * "1_coherence_scatterplot_actual_true.png")
 actual_false_res = filter(row -> row["difFUBAR_actual_difference"] .== false, joined_res)
 
 # Assuming joined_res is your DataFrame
+#title="Scatter Plot of difFUBAR vs contrastFEL",
+
 scatter(actual_false_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_false_res[!, "contrastFEL_1-Pvalue"],
     xlabel="difFUBAR_P(ω1 ≠ ω2)", ylabel="contrastFEL_1-Pvalue",
-    title="Scatter Plot of difFUBAR vs contrastFEL",
     legend=false, alpha=0.02, size=(800, 600),
     color=map(x -> x == 1 ? :blue : :red, actual_false_res[!, "contrastFEL_actual_difference"])
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])

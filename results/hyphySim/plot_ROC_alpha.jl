@@ -175,14 +175,14 @@ function calculate_TPR_and_FPR_list(df_list, p_col)
     return TPR_and_FPR_list
 end
 
-function calculate_ROC_values_threshold(df, threshold_col, threshold)
+function calculate_ROC_values_threshold(df, threshold_col, threshold, actual_difference_col="actual_difference")
     diff = df[df[!, threshold_col].>=threshold, :] # predicted true, no diff
     no_diff = df[df[!, threshold_col].<threshold, :] # predicted false, no diff
 
-    TP = sum(diff[!, "actual_difference"]) #TP
-    FP = sum(diff[!, "actual_difference"] .== false) #FP
-    FN = sum(no_diff[!, "actual_difference"]) #FN
-    TN = sum(no_diff[!, "actual_difference"] .== false) #TN
+    TP = sum(diff[!, actual_difference_col]) #TP
+    FP = sum(diff[!, actual_difference_col] .== false) #FP
+    FN = sum(no_diff[!, actual_difference_col]) #FN
+    TN = sum(no_diff[!, actual_difference_col] .== false) #TN
 
     TPR = TP / (TP + FN)
     FPR = FP / (FP + TN)
@@ -191,7 +191,7 @@ function calculate_ROC_values_threshold(df, threshold_col, threshold)
     return TP, FP, FN, TN, TPR, FPR, FDR, FNR
 end
 
-function calculate_ROC_threshold(df, threshold_col)
+function calculate_ROC_threshold(df, threshold_col, actual_difference_col="actual_difference")
     # Create an empty DataFrame to store the results
     result_df = DataFrame(
         Threshold=Float64[],
@@ -209,7 +209,7 @@ function calculate_ROC_threshold(df, threshold_col)
     threshold_slices .+= rand(length(threshold_slices)) .* 0.00000001
 
     for i in threshold_slices
-        TP, FP, FN, TN, TPR, FPR, FDR, FNR = calculate_ROC_values_threshold(df, threshold_col, i)
+        TP, FP, FN, TN, TPR, FPR, FDR, FNR = calculate_ROC_values_threshold(df, threshold_col, i, actual_difference_col)
         push!(result_df, (i, TP, FP, FN, TN, TPR, FPR, FDR, FNR))
     end
 
@@ -255,6 +255,31 @@ for sim in sims
             difFUBAR_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
             contrastFEL_res[!, "actual_directional_effect_difference"] = (simulator_settings[!, settings_cols[1]])
             # Append the current batch of data to the aggregated DataFrames
+
+            # should this be actually larger than alpha?
+            difFUBAR_res[!, "actual_omega1_larger_alpha"] = simulator_settings[!, "simulator.omega.class0"] .> simulator_settings[!, "alpha"]
+            difFUBAR_res[!, "actual_omega2_larger_alpha"] = simulator_settings[!, "simulator.omega.class1"] .> simulator_settings[!, "alpha"]
+            difFUBAR_res[!, "actual_omega1_larger_1"] = simulator_settings[!, "simulator.omega.class0"] .> 1
+            difFUBAR_res[!, "actual_omega2_larger_1"] = simulator_settings[!, "simulator.omega.class1"] .> 1
+
+            #difFUBAR_res[!, "actual_omega1_effect_size_alpha"] = abs.(simulator_settings[!, "simulator.omega.class0"] .- simulator_settings[!, "alpha"])
+            #difFUBAR_res[!, "actual_omega2_effect_size_alpha"] = abs.(simulator_settings[!, "simulator.omega.class1"] .- simulator_settings[!, "alpha"])
+            #difFUBAR_res[!, "actual_omega1_effect_size_1"] = abs.(simulator_settings[!, "simulator.omega.class0"] .- 1)
+            #difFUBAR_res[!, "actual_omega2_effect_size_1"] = abs.(simulator_settings[!, "simulator.omega.class1"] .- 1)
+
+            difFUBAR_res[!, "actual_omega1_effect_size_1"] = (simulator_settings[!, "simulator.omega.class0"] .- 1)
+            difFUBAR_res[!, "actual_omega2_effect_size_1"] = (simulator_settings[!, "simulator.omega.class1"] .- 1)
+            difFUBAR_res[!, "actual_alpha"] = (simulator_settings[!, "alpha"])
+            difFUBAR_res[!, "actual_beta1"] = (simulator_settings[!, "simulator.omega.class0"])
+            difFUBAR_res[!, "actual_beta2"] = (simulator_settings[!, "simulator.omega.class1"])
+
+
+            ### NT DONE IT*s something with omega alpha etc think about this sleep now
+            #difFUBAR_res[!, "actual_omega1_actual_difference_alpha"] = (simulator_settings[!, "alpha"] .!= simulator_settings[!, "simulator.omega.class0"])
+            #difFUBAR_res[!, "actual_omega2_actual_difference_alpha"] = (simulator_settings[!, "alpha"] .!= simulator_settings[!, "simulator.omega.class1"])
+            difFUBAR_res[!, "actual_omega1_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class0"] .> 1)
+            difFUBAR_res[!, "actual_omega2_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class1"] .> 1)
+
             append!(aggregated_difFUBAR_res, difFUBAR_res)
             append!(aggregated_contrastFEL_res, contrastFEL_res)
         catch
@@ -266,6 +291,29 @@ end
 
 difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
+names(difFUBAR_res)
+
+#difFUBAR_res[!, "actual_beta1"] = difFUBAR_res[!, "actual_omega1"] .* difFUBAR_res[!, "actual_alpha"]
+#difFUBAR_res[!, "actual_beta2"] = difFUBAR_res[!, "actual_omega2"] .* difFUBAR_res[!, "actual_alpha"]
+
+difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] .- difFUBAR_res[!, "actual_alpha"]
+difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] .- difFUBAR_res[!, "actual_alpha"]
+
+maximum(difFUBAR_res[!, "actual_alpha"])
+minimum(difFUBAR_res[!, "actual_alpha"])
+maximum(difFUBAR_res[!, "actual_beta1"])
+minimum(difFUBAR_res[!, "actual_beta1"])
+maximum(difFUBAR_res[!, "actual_beta2"])
+minimum(difFUBAR_res[!, "actual_beta2"])
+maximum(difFUBAR_res[!, "beta1_effect_size"])
+maximum(difFUBAR_res[!, "beta2_effect_size"])
+minimum(difFUBAR_res[!, "beta1_effect_size"])
+minimum(difFUBAR_res[!, "beta2_effect_size"])
+
+
+
+
+
 
 #############################################################
 # DO NOT USE BOTH FILTERS, IT WILL FILTER AWAY EVERYTHING   #
@@ -277,11 +325,14 @@ contrastFEL_res = aggregated_contrastFEL_res
 #difFUBAR_res = difFUBAR_res[difFUBAR_res[:, "actual_directional_effect_difference"].>=0, :]
 #contrastFEL_res = contrastFEL_res[contrastFEL_res[:, "actual_directional_effect_difference"].>=0, :]
 
+
+
+
 # Filter on w2 > w1
 #difFUBAR_res = difFUBAR_res[difFUBAR_res[:, "actual_directional_effect_difference"].<=0, :]
 #contrastFEL_res = contrastFEL_res[contrastFEL_res[:, "actual_directional_effect_difference"].<=0, :]
 
-
+# Filter on w1 > 1
 
 #maximum(difFUBAR_res[!, "P(ω1 ≠ ω2)"])
 #minimum(difFUBAR_res[!, "P(ω1 ≠ ω2)"])
@@ -326,59 +377,73 @@ end
 #contrastFEL_res = contrastFEL_res[contrastFEL_res[!, "1-Pvalue"].>0.95, :]
 
 
+names(difFUBAR_res)
+
+difFUBAR_res[!, "actual_omega2_actual_difference_1"]
+
+maximum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
+minimum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
+
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
 plot_colors = [:red, :blue, :green, :black]
 
 labels_added = false
 
-difFUBAR_plot_data = []
-contrastFEL_plot_data = []
+difFUBAR_ω1_plot_data = []
+difFUBAR_ω2_plot_data = []
+
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
-    difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
-    contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
-    push!(difFUBAR_plot_data, difFUBAR_plot)
-    push!(contrastFEL_plot_data, contrastFEL_plot)
+    difFUBAR_ω1_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "beta1_effect_size", lower_bound, upper_bound, true), "P(ω1 > 1)", "actual_omega1_actual_difference_1")
+    difFUBAR_ω2_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "beta2_effect_size", lower_bound, upper_bound, true), "P(ω2 > 1)", "actual_omega2_actual_difference_1")
+    #    contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, #"actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
+    push!(difFUBAR_ω1_plot_data, difFUBAR_ω1_plot)
+    push!(difFUBAR_ω2_plot_data, difFUBAR_ω2_plot)
 end
 
-difFUBAR_dot_threshold = 0.75
-contrastFEL_dot_threshold = 0.95
+names(difFUBAR_res)
+
+# TEST - Fill all negative effect size with 0
+difFUBAR_res[!, "beta1_effect_size"] .= max.(difFUBAR_res[!, "beta1_effect_size"], 0)
+difFUBAR_res[!, "beta2_effect_size"] .= max.(difFUBAR_res[!, "beta2_effect_size"], 0)
+
+difFUBAR_ω1_dot_threshold = 0.75
 
 plot()
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
-    difFUBAR_plot = difFUBAR_plot_data[i]
-    contrastFEL_plot = contrastFEL_plot_data[i]
+    difFUBAR_ω1_plot = difFUBAR_ω1_plot_data[i]
+    difFUBAR_ω2_plot = difFUBAR_ω2_plot_data[i]
 
-    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=1.5)
-    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="", line=(:dash, 1.5, plot_colors[i]))
+    p = plot!(difFUBAR_ω1_plot.FPR, difFUBAR_ω1_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=1.5)
+    p = plot!(difFUBAR_ω2_plot.FPR, difFUBAR_ω2_plot.TPR, label="", line=(:dash, 1.5, plot_colors[i]))
 
     display(p)
 
 end
 
 labels_added = false
-difFUBAR_dots = []
-contrastFEL_dots = []
+difFUBAR_ω1_dots = []
+difFUBAR_ω2_dots = []
 for i in 1:length(plot_colors)
-    difFUBAR_plot = difFUBAR_plot_data[i]
-    contrastFEL_plot = contrastFEL_plot_data[i]
+    difFUBAR_ω1_plot = difFUBAR_ω1_plot_data[i]
+    difFUBAR_ω2_plot = difFUBAR_ω2_plot_data[i]
 
     tolerance = 1e-5
-    dot_difFUBAR_plot = filter_df_closest_value(difFUBAR_plot, :Threshold, difFUBAR_dot_threshold, tolerance)
-    dot_contrasteFEL_plot = filter_df_closest_value(contrastFEL_plot, :Threshold, contrastFEL_dot_threshold, tolerance)
-    push!(difFUBAR_dots, dot_difFUBAR_plot)
-    push!(contrastFEL_dots, dot_contrasteFEL_plot)
+    dot_difFUBAR_ω1_plot = filter_df_closest_value(difFUBAR_ω1_plot, :Threshold, difFUBAR_ω1_dot_threshold, tolerance)
+    dot_difFUBAR_ω2_plot = filter_df_closest_value(difFUBAR_ω2_plot, :Threshold, difFUBAR_ω2_dot_threshold, tolerance)
+    push!(difFUBAR_ω1_dots, dot_difFUBAR_ω1_plot)
+    push!(difFUBAR_ω2_dots, dot_difFUBAR_ω2_plot)
 
     if !labels_added
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
         labels_added = true  # Set the variable to true once labels are added
     else
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
     end
 end
 
@@ -388,19 +453,20 @@ end
 #contrastFEL_dots.TPR
 
 legend_added = false  # Initialize a boolean variable to track whether legend entries have been added
-contrastfel_dot_label = round(1 - contrastFEL_dot_threshold, digits=2)
+#contrastfel_dot_label = round(1 - contrastFEL_dot_threshold, digits=2)
+difFUBAR_dot_threshold = 0.75
 
 for i in 1:length(plot_colors)
     if !legend_added
-        plot!([], [], line=:solid, linecolor=:black, label="difFUBAR")
-        plot!([], [], line=:dash, linecolor=:black, label="contrastFEL")
+        plot!([], [], line=:solid, linecolor=:black, label="ω1")
+        plot!([], [], line=:dash, linecolor=:black, label="ω2")
         plot!([], [], line=:solid, linecolor=:red, label="E = 0.0 to 0.25")
         plot!([], [], line=:solid, linecolor=:blue, label="E = 0.25 to 0.5")
         plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0")
         plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
 
-        scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
+        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
         legend_added = true  # Set the variable to true once legend entries are added
     end
 end
@@ -411,10 +477,10 @@ plot!(x -> slope * x, c=:grey, line=:dash, label="", legend=:bottomright)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
 
-savefig("results/hyphySim/ROC/ROC.svg")
+savefig("results/hyphySim/ROC/ROC_alpha.svg")
 
 # FPR plot
-plot()
+
 #for i in 1:length(plot_colors)
 #    lower_bound = bounds[i][1]
 #    upper_bound = bounds[i][2]
@@ -424,9 +490,17 @@ plot()
 #difFUBAR_plot = filter_on_effect_size(difFUBAR_res, lower_bound, upper_bound)
 #contrastFEL_plot = filter_on_effect_size(contrastFEL_res, lower_bound, upper_bound)
 difFUBAR_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω1 ≠ ω2)")
-#contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
-p = plot!(difFUBAR_plot.Threshold, difFUBAR_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=1.5)
+difFUBAR_ω1_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω1 > 1)")
+replace!(difFUBAR_ω1_plot[!, "Threshold"], -Inf => 0)
+difFUBAR_ω2_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω2 > 1)")
+replace!(difFUBAR_ω2_plot[!, "Threshold"], -Inf => 0)
+
+#contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
+plot()
+p = plot!(difFUBAR_ω1_plot.Threshold, difFUBAR_ω1_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω1", linecolor=:red, linewidth=1.5)
+p = plot!(difFUBAR_ω2_plot.Threshold, difFUBAR_ω2_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω2", linecolor=:blue, linewidth=1.5)
+
 #p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
 
 display(p)
@@ -435,8 +509,8 @@ slope = 1
 plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
-savefig("results/hyphySim/ROC/TPR_threshold.png")
-savefig("results/hyphySim/ROC/TPR_threshold.svg")
+savefig("results/hyphySim/ROC/TPR_threshold_alpha.png")
+savefig("results/hyphySim/ROC/TPR_threshold_alpha.svg")
 
 
 difFUBAR_plot
@@ -446,6 +520,7 @@ p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, xlabel="P-value Thre
 
 
 #### investigate FPR plot 
+
 lower_bound = 3.0
 upper_bound = Inf
 difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
@@ -481,11 +556,17 @@ end
 calculate_power(df, "P(ω1 ≠ ω2)", 0.75)
 #bin the data into range based on effect_size
 
-bins = cut(df.actual_effect_difference, -0.25:0.5:7, extend=true)
 
 
-df.effect_size_bins = bins
-df = sort(df, "actual_effect_difference")
+
+bins_ω1 = cut(df[!, "beta1_effect_size"], -0.25:0.5:7, extend=true)
+bins_ω2 = cut(df[!, "beta2_effect_size"], -0.25:0.5:7, extend=true)
+
+
+df.effect_size_bins_ω1 = bins_ω1
+df.effect_size_bins_ω2 = bins_ω2
+
+df = sort(df, "effect_size_bins_ω1")
 
 
 # Binomial confidence interval as defined by google BARD.
@@ -535,18 +616,31 @@ end
 
 
 
-bins = unique(df.effect_size_bins)
+bins = unique(df.effect_size_bins_ω1)
+bins = unique(df.effect_size_bins_ω2)
+
 bins[1]
-df_bin = df[df.effect_size_bins.==bins[1], :]
-power = calculate_power(df_bin, "P(ω1 ≠ ω2)", 0.75)
-df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
+
+df_bin_ω1 = df[df.effect_size_bins_ω1.==bins[1], :]
+df_bin_ω2 = df[df.effect_size_bins_ω2.==bins[1], :]
+
+power_ω1 = calculate_power(df_bin_ω1, "P(ω1 > 1)", 0.75)
+df_bin_ω1 = success_condition(df_bin_ω1, "P(ω2 > 1)", 0.75)
+
+power_ω2 = calculate_power(df_bin_ω2, "P(ω1 > 1)", 0.75)
+df_bin_ω2 = success_condition(df_bin_ω2, "P(ω2 > 1)", 0.75)
 
 
 # this seems about right
-success = sum(df_bin.success)
-n = length(df_bin.success)
-bin_ci = binomial_ci(success, n, 0.75)
-mu_bin_ci = mean(bin_ci)
+success_ω1 = sum(df_bin_ω1.success)
+n_ω1 = length(df_bin_ω1.success)
+bin_ci_ω1 = binomial_ci(success_ω1, n_ω1, 0.75)
+mu_bin_ci_ω1 = mean(bin_ci_ω1)
+
+success_ω2 = sum(df_bin_ω2.success)
+n_ω2 = length(df_bin_ω2.success)
+bin_ci_ω2 = binomial_ci(success_ω2, n_ω2, 0.75)
+mu_bin_ci_ω2 = mean(bin_ci_ω2)
 
 
 
@@ -556,28 +650,37 @@ mu_bin_ci = mean(bin_ci)
 # the actual plot
 
 
-plot_x = []
-plot_y = []
-plot_y_ci = []
-for bin in bins
-    df_bin = df[df.effect_size_bins.==bin, :]
-    df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
-    success = sum(df_bin.success)
-    n = length(df_bin.success)
+function get_power_plot_data(df, effect_size_bins, success, bin_ci, n, condition="P(ω1 ≠ ω2)")
+    plot_x = []
+    plot_y = []
+    plot_y_ci = []
+    for bin in bins
+        df_bin = df[df[!, effect_size_bins].==bin, :]
+        df_bin = success_condition(df_bin, condition, 0.75)
+        success = sum(df_bin.success)
+        n = length(df_bin.success)
 
-    bin = extract_values_from_bin(bin)
-    bin_ci = binomial_ci(success, n, 0.75)
-    mean_bin_ci = mean(bin_ci)
-    bin_ci = (bin_ci[1] - bin_ci[2]) / 2
-    push!(plot_x, mean(bin))
-    push!(plot_y, mean_bin_ci)
-    push!(plot_y_ci, bin_ci)
+        bin = extract_values_from_bin(bin)
+        bin_ci = binomial_ci(success, n, 0.75)
+        mean_bin_ci = mean(bin_ci)
+        bin_ci = (bin_ci[1] - bin_ci[2]) / 2
+        push!(plot_x, mean(bin))
+        push!(plot_y, mean_bin_ci)
+        push!(plot_y_ci, bin_ci)
+    end
+    return plot_x, plot_y, plot_y_ci
 end
 
 
+plot_x_ω1, plot_y_ω1, plot_y_ci_ω1 = get_power_plot_data(df, "effect_size_bins_ω1", success_ω1, bin_ci_ω1, n_ω1, "P(ω1 > 1)")
+plot_x_ω2, plot_y_ω2, plot_y_ci_ω2 = get_power_plot_data(df, "effect_size_bins_ω2", success_ω2, bin_ci_ω2, n_ω2, "P(ω1 > 1)")
+
 # Create a new plot with error bars and a line
-scatter(plot_x, plot_y, yerr=plot_y_ci, label="data", markercolor=:red)
-plot!(plot_x, plot_y, label="fit", linewidth=2)
+scatter(plot_x_ω1, plot_y_ci_ω1, yerr=plot_y_ci_ω1, label="data", markercolor=:red)
+plot!(plot_x_ω1, plot_y_ci_ω1, label="fit", linewidth=2)
+
+scatter!(plot_x_ω2, plot_y_ci_ω2, yerr=plot_y_ci_ω2, label="data", markercolor=:red)
+plot!(plot_x_ω2, plot_y_ci_ω2, label="fit", linewidth=2)
 
 
 df_bin = df[df.effect_size_bins.==bins[15], :]
@@ -587,46 +690,57 @@ n = length(df_bin.success)
 
 ### calculate power
 
-plot_x = []
-plot_y = []
-for bin in bins
-    df_bin = df[df.effect_size_bins.==bin, :]
-    df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
-    success = sum(df_bin.success)
-    n = length(df_bin.success)
-    power = calculate_power(df_bin)
-    bin = extract_values_from_bin(bin)
-    bin_ci = binomial_ci(success, n, 0.75)
-    push!(plot_x, mean(bin))
-    push!(plot_y, power)
+
+function power_plot_data(df, effect_size_bins, success, condition="P(ω1 ≠ ω2)")
+    plot_x = []
+    plot_y = []
+    for bin in bins
+        df_bin = df[df[!, effect_size_bins].==bin, :]
+        df_bin = success_condition(df_bin, condition, 0.75)
+        success = sum(df_bin.success)
+        n = length(df_bin.success)
+        power = calculate_power(df_bin)
+        bin = extract_values_from_bin(bin)
+        bin_ci = binomial_ci(success, n, 0.75)
+        push!(plot_x, mean(bin))
+        push!(plot_y, power)
+    end
+    return plot_x, plot_y
 end
 
-
+plot_x_ω1, plot_y_ω1 = power_plot_data(df, "effect_size_bins_ω1", success_ω1, "P(ω1 > 1)")
+plot_x_ω2, plot_y_ω2 = power_plot_data(df, "effect_size_bins_ω2", success_ω2, "P(ω2 > 1)")
 #similar
 #, title="Clopper-Pearson Intervals"
-p = plot(plot_x, plot_y, label="Point Estimate", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1])
+p = plot(plot_x_ω1, plot_y_ω1, label="Point Estimate", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1])
 
 
 #### Clopper-Pearson
 
-plot_x = []
-plot_y = []
-plot_y_lower_bound = []
-plot_y_upper_bound = []
-for bin in bins
-    df_bin = df[df.effect_size_bins.==bin, :]
-    df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
-    success = sum(df_bin.success)
-    n = length(df_bin.success)
-    point_estimate = success / n
-    binTest = BinomialTest(success, n, 0.75) # threshold at 0.75
-    bin_ci = confint(binTest; level=0.95, tail=:both, method=:clopper_pearson) # confidence interval at 0.95
-    bin = extract_values_from_bin(bin)
-    push!(plot_x, mean(bin))
-    push!(plot_y, point_estimate)
-    push!(plot_y_lower_bound, bin_ci[1])
-    push!(plot_y_upper_bound, bin_ci[2])
+
+function get_clopper_pearson_data(df, effect_size_bins, condition="P(ω1 ≠ ω2)")
+    plot_x = []
+    plot_y = []
+    plot_y_lower_bound = []
+    plot_y_upper_bound = []
+    for bin in bins
+        df_bin = df[df[!, effect_size_bins].==bin, :]
+        df_bin = success_condition(df_bin, condition, 0.75)
+        success = sum(df_bin.success)
+        n = length(df_bin.success)
+        point_estimate = success / n
+        binTest = BinomialTest(success, n, 0.75) # threshold at 0.75
+        bin_ci = confint(binTest; level=0.95, tail=:both, method=:clopper_pearson) # confidence interval at 0.95
+        bin = extract_values_from_bin(bin)
+        push!(plot_x, mean(bin))
+        push!(plot_y, point_estimate)
+        push!(plot_y_lower_bound, bin_ci[1])
+        push!(plot_y_upper_bound, bin_ci[2])
+    end
+    return plot_x, plot_y, plot_y_lower_bound, plot_y_upper_bound
 end
+
+plot_x, plot_y, plot_y_lower_bound, plot_y_upper_bound = get_clopper_pearson_data(df, "effect_size_bins_ω1", "P(ω1 > 1)")
 
 using Plots
 
@@ -639,5 +753,4 @@ end
 display(p)
 
 savefig("results/hyphySim/ROC/clopper_pearson_interval.png")
-
-
+"P(ω1 > 1)"
