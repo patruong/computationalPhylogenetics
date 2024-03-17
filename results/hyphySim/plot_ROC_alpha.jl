@@ -293,11 +293,20 @@ difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
 names(difFUBAR_res)
 
+
 #difFUBAR_res[!, "actual_beta1"] = difFUBAR_res[!, "actual_omega1"] .* difFUBAR_res[!, "actual_alpha"]
 #difFUBAR_res[!, "actual_beta2"] = difFUBAR_res[!, "actual_omega2"] .* difFUBAR_res[!, "actual_alpha"]
 
-difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] .- difFUBAR_res[!, "actual_alpha"]
-difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] .- difFUBAR_res[!, "actual_alpha"]
+difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"])
+difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"])
+
+
+eps = 1e-6
+difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] ./ (difFUBAR_res[!, "actual_alpha"])
+difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] ./ (difFUBAR_res[!, "actual_alpha"])
+replace!(difFUBAR_res[!, "beta1_effect_size"], NaN => Inf)
+replace!(difFUBAR_res[!, "beta2_effect_size"], NaN => Inf)
+
 
 maximum(difFUBAR_res[!, "actual_alpha"])
 minimum(difFUBAR_res[!, "actual_alpha"])
@@ -309,8 +318,9 @@ maximum(difFUBAR_res[!, "beta1_effect_size"])
 maximum(difFUBAR_res[!, "beta2_effect_size"])
 minimum(difFUBAR_res[!, "beta1_effect_size"])
 minimum(difFUBAR_res[!, "beta2_effect_size"])
+difFUBAR_res[!, "actual_alpha"]
 
-
+difFUBAR_res[!, "beta1_effect_size"]
 
 
 
@@ -384,6 +394,13 @@ difFUBAR_res[!, "actual_omega2_actual_difference_1"]
 maximum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
 minimum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
 
+
+# TEST - Fill all negative effect size with 0
+#difFUBAR_res_ω1 = filter(row -> row["beta1_effect_size"] >= 0, difFUBAR_res)
+#difFUBAR_res_ω2 = filter(row -> row["beta1_effect_size"] >= 0, difFUBAR_res)
+
+
+
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
 plot_colors = [:red, :blue, :green, :black]
 
@@ -402,13 +419,9 @@ for i in 1:length(plot_colors)
     push!(difFUBAR_ω2_plot_data, difFUBAR_ω2_plot)
 end
 
-names(difFUBAR_res)
 
-# TEST - Fill all negative effect size with 0
-difFUBAR_res[!, "beta1_effect_size"] .= max.(difFUBAR_res[!, "beta1_effect_size"], 0)
-difFUBAR_res[!, "beta2_effect_size"] .= max.(difFUBAR_res[!, "beta2_effect_size"], 0)
 
-difFUBAR_ω1_dot_threshold = 0.75
+difFUBAR_dot_threshold = 0.75
 
 plot()
 for i in 1:length(plot_colors)
@@ -432,8 +445,8 @@ for i in 1:length(plot_colors)
     difFUBAR_ω2_plot = difFUBAR_ω2_plot_data[i]
 
     tolerance = 1e-5
-    dot_difFUBAR_ω1_plot = filter_df_closest_value(difFUBAR_ω1_plot, :Threshold, difFUBAR_ω1_dot_threshold, tolerance)
-    dot_difFUBAR_ω2_plot = filter_df_closest_value(difFUBAR_ω2_plot, :Threshold, difFUBAR_ω2_dot_threshold, tolerance)
+    dot_difFUBAR_ω1_plot = filter_df_closest_value(difFUBAR_ω1_plot, :Threshold, difFUBAR_dot_threshold, tolerance)
+    dot_difFUBAR_ω2_plot = filter_df_closest_value(difFUBAR_ω2_plot, :Threshold, difFUBAR_dot_threshold, tolerance)
     push!(difFUBAR_ω1_dots, dot_difFUBAR_ω1_plot)
     push!(difFUBAR_ω2_dots, dot_difFUBAR_ω2_plot)
 
@@ -512,18 +525,16 @@ plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright)
 savefig("results/hyphySim/ROC/TPR_threshold_alpha.png")
 savefig("results/hyphySim/ROC/TPR_threshold_alpha.svg")
 
+#### investigate FPR plot 
 
 difFUBAR_plot
 
 contrastFEL_plot = calculate_ROC_threshold(contrastFEL_res, "1-Pvalue")
 p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, xlabel="P-value Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=1.5)
 
-
-#### investigate FPR plot 
-
 lower_bound = 3.0
 upper_bound = Inf
-difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
+difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 > 1)")
 contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
 difFUBAR_plot
@@ -542,31 +553,26 @@ using StatsAPI
 
 
 df = difFUBAR_res
+
 threshold_col = "P(ω1 ≠ ω2)"
 threshold = 0.75
 
-function calculate_power(df, threshold_col="P(ω1 ≠ ω2)", threshold=0.75)
-    TP, FP, FN, TN, TPR, FPR, FDR, FNR = calculate_ROC_values_threshold(df, threshold_col, threshold)
+function calculate_power(df, threshold_col, threshold, actual_difference_col)
+    TP, FP, FN, TN, TPR, FPR, FDR, FNR = calculate_ROC_values_threshold(df, threshold_col, threshold, actual_difference_col)
     power = 1 - FNR
     return power
 end
 
 
 
-calculate_power(df, "P(ω1 ≠ ω2)", 0.75)
+calculate_power(df, "P(ω1 > 1)", 0.75, "actual_omega1_actual_difference_1")
 #bin the data into range based on effect_size
 
+bins = cut(df[!, "actual_omega1_effect_size_1"], -0.25:0.5:7, extend=true)
 
 
-
-bins_ω1 = cut(df[!, "beta1_effect_size"], -0.25:0.5:7, extend=true)
-bins_ω2 = cut(df[!, "beta2_effect_size"], -0.25:0.5:7, extend=true)
-
-
-df.effect_size_bins_ω1 = bins_ω1
-df.effect_size_bins_ω2 = bins_ω2
-
-df = sort(df, "effect_size_bins_ω1")
+df.effect_size_bins = bins
+df = sort(df, "actual_omega1_actual_difference_1")
 
 
 # Binomial confidence interval as defined by google BARD.
@@ -616,31 +622,19 @@ end
 
 
 
-bins = unique(df.effect_size_bins_ω1)
-bins = unique(df.effect_size_bins_ω2)
+bins = unique(df.effect_size_bins)
 
 bins[1]
-
-df_bin_ω1 = df[df.effect_size_bins_ω1.==bins[1], :]
-df_bin_ω2 = df[df.effect_size_bins_ω2.==bins[1], :]
-
-power_ω1 = calculate_power(df_bin_ω1, "P(ω1 > 1)", 0.75)
-df_bin_ω1 = success_condition(df_bin_ω1, "P(ω2 > 1)", 0.75)
-
-power_ω2 = calculate_power(df_bin_ω2, "P(ω1 > 1)", 0.75)
-df_bin_ω2 = success_condition(df_bin_ω2, "P(ω2 > 1)", 0.75)
+df_bin = df[df.effect_size_bins.==bins[1], :]
+power = calculate_power(df_bin, "P(ω1 > 1)", 0.75)
+df_bin = success_condition(df_bin, "P(ω1 > 1)", 0.75)
 
 
 # this seems about right
-success_ω1 = sum(df_bin_ω1.success)
-n_ω1 = length(df_bin_ω1.success)
-bin_ci_ω1 = binomial_ci(success_ω1, n_ω1, 0.75)
-mu_bin_ci_ω1 = mean(bin_ci_ω1)
-
-success_ω2 = sum(df_bin_ω2.success)
-n_ω2 = length(df_bin_ω2.success)
-bin_ci_ω2 = binomial_ci(success_ω2, n_ω2, 0.75)
-mu_bin_ci_ω2 = mean(bin_ci_ω2)
+success = sum(df_bin.success)
+n = length(df_bin.success)
+bin_ci = binomial_ci(success, n, 0.75)
+mu_bin_ci = mean(bin_ci)
 
 
 
@@ -649,108 +643,124 @@ mu_bin_ci_ω2 = mean(bin_ci_ω2)
 
 # the actual plot
 
+plot_x = []
+plot_y = []
+plot_y_ci = []
+for bin in bins
+    df_bin = df[df.effect_size_bins.==bin, :]
+    df_bin = success_condition(df_bin, "P(ω1 > 1)", 0.75)
+    success = sum(df_bin.success)
+    n = length(df_bin.success)
 
-function get_power_plot_data(df, effect_size_bins, success, bin_ci, n, condition="P(ω1 ≠ ω2)")
-    plot_x = []
-    plot_y = []
-    plot_y_ci = []
-    for bin in bins
-        df_bin = df[df[!, effect_size_bins].==bin, :]
-        df_bin = success_condition(df_bin, condition, 0.75)
-        success = sum(df_bin.success)
-        n = length(df_bin.success)
-
-        bin = extract_values_from_bin(bin)
-        bin_ci = binomial_ci(success, n, 0.75)
-        mean_bin_ci = mean(bin_ci)
-        bin_ci = (bin_ci[1] - bin_ci[2]) / 2
-        push!(plot_x, mean(bin))
-        push!(plot_y, mean_bin_ci)
-        push!(plot_y_ci, bin_ci)
-    end
-    return plot_x, plot_y, plot_y_ci
+    bin = extract_values_from_bin(bin)
+    bin_ci = binomial_ci(success, n, 0.75)
+    mean_bin_ci = mean(bin_ci)
+    bin_ci = (bin_ci[1] - bin_ci[2]) / 2
+    push!(plot_x, mean(bin))
+    push!(plot_y, mean_bin_ci)
+    push!(plot_y_ci, bin_ci)
 end
 
 
-plot_x_ω1, plot_y_ω1, plot_y_ci_ω1 = get_power_plot_data(df, "effect_size_bins_ω1", success_ω1, bin_ci_ω1, n_ω1, "P(ω1 > 1)")
-plot_x_ω2, plot_y_ω2, plot_y_ci_ω2 = get_power_plot_data(df, "effect_size_bins_ω2", success_ω2, bin_ci_ω2, n_ω2, "P(ω1 > 1)")
-
 # Create a new plot with error bars and a line
-scatter(plot_x_ω1, plot_y_ci_ω1, yerr=plot_y_ci_ω1, label="data", markercolor=:red)
-plot!(plot_x_ω1, plot_y_ci_ω1, label="fit", linewidth=2)
-
-scatter!(plot_x_ω2, plot_y_ci_ω2, yerr=plot_y_ci_ω2, label="data", markercolor=:red)
-plot!(plot_x_ω2, plot_y_ci_ω2, label="fit", linewidth=2)
+scatter(plot_x, plot_y, yerr=plot_y_ci, label="data", markercolor=:red)
+plot!(plot_x, plot_y, label="fit", linewidth=2)
 
 
 df_bin = df[df.effect_size_bins.==bins[15], :]
-df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
+df_bin = success_condition(df_bin, "P(ω1 > 1)", 0.75)
 success = sum(df_bin.success)
 n = length(df_bin.success)
 
 ### calculate power
 
 
-function power_plot_data(df, effect_size_bins, success, condition="P(ω1 ≠ ω2)")
-    plot_x = []
-    plot_y = []
-    for bin in bins
-        df_bin = df[df[!, effect_size_bins].==bin, :]
-        df_bin = success_condition(df_bin, condition, 0.75)
-        success = sum(df_bin.success)
-        n = length(df_bin.success)
-        power = calculate_power(df_bin)
-        bin = extract_values_from_bin(bin)
-        bin_ci = binomial_ci(success, n, 0.75)
-        push!(plot_x, mean(bin))
-        push!(plot_y, power)
-    end
-    return plot_x, plot_y
+
+df = difFUBAR_res
+bins = cut(df[!, "actual_omega1_effect_size_1"], -0.25:0.5:7, extend=true)
+df.effect_size_bins = bins
+df = sort(df, "actual_omega1_actual_difference_1")
+bins = unique(df.effect_size_bins)
+
+plot_x = []
+plot_y = []
+plot_ci_upper = []
+plot_ci_lower = []
+
+for bin in bins
+    df_bin = df[df.effect_size_bins.==bin, :]
+    df_bin = success_condition(df_bin, "P(ω1 > 1)", 0.75)
+    success = sum(df_bin.success)
+    n = length(df_bin.success)
+    power = calculate_power(df_bin, "P(ω1 > 1)", 0.75, "actual_omega1_actual_difference_1")
+    bin = extract_values_from_bin(bin)
+    bin_ci = binomial_ci(success, n, 0.75)
+    bin_ci = (bin_ci[1] - bin_ci[2]) / 2
+    upper = power + bin_ci
+    lower = power - bin_ci
+    push!(plot_x, mean(bin))
+    push!(plot_y, power)
+    push!(plot_ci_upper, upper)
+    push!(plot_ci_lower, lower)
 end
 
-plot_x_ω1, plot_y_ω1 = power_plot_data(df, "effect_size_bins_ω1", success_ω1, "P(ω1 > 1)")
-plot_x_ω2, plot_y_ω2 = power_plot_data(df, "effect_size_bins_ω2", success_ω2, "P(ω2 > 1)")
+
+plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_lower)
+sort!(plot_data, "x")
 #similar
 #, title="Clopper-Pearson Intervals"
-p = plot(plot_x_ω1, plot_y_ω1, label="Point Estimate", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1])
-
-
-#### Clopper-Pearson
-
-
-function get_clopper_pearson_data(df, effect_size_bins, condition="P(ω1 ≠ ω2)")
-    plot_x = []
-    plot_y = []
-    plot_y_lower_bound = []
-    plot_y_upper_bound = []
-    for bin in bins
-        df_bin = df[df[!, effect_size_bins].==bin, :]
-        df_bin = success_condition(df_bin, condition, 0.75)
-        success = sum(df_bin.success)
-        n = length(df_bin.success)
-        point_estimate = success / n
-        binTest = BinomialTest(success, n, 0.75) # threshold at 0.75
-        bin_ci = confint(binTest; level=0.95, tail=:both, method=:clopper_pearson) # confidence interval at 0.95
-        bin = extract_values_from_bin(bin)
-        push!(plot_x, mean(bin))
-        push!(plot_y, point_estimate)
-        push!(plot_y_lower_bound, bin_ci[1])
-        push!(plot_y_upper_bound, bin_ci[2])
-    end
-    return plot_x, plot_y, plot_y_lower_bound, plot_y_upper_bound
-end
-
-plot_x, plot_y, plot_y_lower_bound, plot_y_upper_bound = get_clopper_pearson_data(df, "effect_size_bins_ω1", "P(ω1 > 1)")
-
-using Plots
-
-#p = plot(plot_x, plot_y, label="Point Estimate", xlabel="Effect Size", ylabel="Power", title="Clopper-Pearson Intervals", ylim=[0, 1])
-# Plot the vertical line
+p = plot(plot_data[!, "x"], plot_data[!, "y"], label="ω1", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red)
 for i in 1:length(plot_x)
-    plot!([plot_x[i], plot_x[i]], [plot_y_lower_bound[i], plot_y_upper_bound[i]], color=:red, label="")
+    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color=:red, label="")
 end
 
+plot!(xlim=(-0.25, 7), ylim=(0, 1))
 display(p)
 
-savefig("results/hyphySim/ROC/clopper_pearson_interval.png")
-"P(ω1 > 1)"
+
+# same for omega 2
+
+df = difFUBAR_res
+bins = cut(df[!, "actual_omega2_effect_size_1"], -0.25:0.5:7, extend=true)
+df.effect_size_bins = bins
+df = sort(df, "actual_omega2_actual_difference_1")
+bins = unique(df.effect_size_bins)
+
+plot_x = []
+plot_y = []
+plot_ci_upper = []
+plot_ci_lower = []
+
+for bin in bins
+    df_bin = df[df.effect_size_bins.==bin, :]
+    df_bin = success_condition(df_bin, "P(ω2 > 1)", 0.75)
+    success = sum(df_bin.success)
+    n = length(df_bin.success)
+    power = calculate_power(df_bin, "P(ω2 > 1)", 0.75, "actual_omega2_actual_difference_1")
+    bin = extract_values_from_bin(bin)
+    bin_ci = binomial_ci(success, n, 0.75)
+    bin_ci = (bin_ci[1] - bin_ci[2]) / 2
+    upper = power + bin_ci
+    lower = power - bin_ci
+    push!(plot_x, mean(bin))
+    push!(plot_y, power)
+    push!(plot_ci_upper, upper)
+    push!(plot_ci_lower, lower)
+end
+
+
+plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_lower)
+sort!(plot_data, "x")
+#similar
+#, title="Clopper-Pearson Intervals"
+plot!(plot_data[!, "x"], plot_data[!, "y"], label="ω2", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color="#1f77b4", linestyle=:dash)
+for i in 1:length(plot_x)
+    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color="#1f77b4", label="")
+end
+
+plot!(xlim=(0, 6.5), ylim=(0, 1))
+display(p)
+
+
+savefig("results/hyphySim/ROC/clopper_pearson_interval_alpha.png")
+
