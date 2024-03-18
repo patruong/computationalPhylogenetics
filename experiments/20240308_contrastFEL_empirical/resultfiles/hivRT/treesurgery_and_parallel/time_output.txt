@@ -1,0 +1,56 @@
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: experiments/20240308_contrastFEL_empirical/output/hiv_RT/analysis_tagged_input_tree.svg.
+Step 2: Optimizing global codon model parameters.
+difFUBAR baseline is used
+ERROR: LoadError: InexactError: Float64(-14.770774055603926 - 1.1312213673623152e-15im)
+Stacktrace:
+  [1] Real
+    @ ./complex.jl:44 [inlined]
+  [2] convert
+    @ ./number.jl:7 [inlined]
+  [3] setindex!
+    @ ./array.jl:969 [inlined]
+  [4] _unsafe_copyto!(dest::Vector{Float64}, doffs::Int64, src::Vector{ComplexF64}, soffs::Int64, n::Int64)
+    @ Base ./array.jl:250
+  [5] unsafe_copyto!
+    @ ./array.jl:304 [inlined]
+  [6] _copyto_impl!
+    @ ./array.jl:327 [inlined]
+  [7] copyto!
+    @ ./array.jl:314 [inlined]
+  [8] copyto!
+    @ ./array.jl:339 [inlined]
+  [9] copyto_axcheck!
+    @ ./abstractarray.jl:1182 [inlined]
+ [10] Vector{Float64}(x::Vector{ComplexF64})
+    @ Base ./array.jl:621
+ [11] convert
+    @ ./array.jl:613 [inlined]
+ [12] DiagonalizedCTMC(Q::Matrix{Float64})
+    @ MolecularEvolution ~/.julia/packages/MolecularEvolution/zoYTa/src/models/discrete_models/DiagonalizedCTMC.jl:15
+ [13] (::CodonMolecularEvolution.var"#cached_model#41"{MolecularEvolution.GeneticCode, CodonMolecularEvolution.var"#cached_model#40#42"{Dict{Any, DiagonalizedCTMC}}})(::Float64, ::Vararg{Any}; genetic_code::MolecularEvolution.GeneticCode)
+    @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/shared/shared.jl:284
+ [14] cached_model
+    @ ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/shared/shared.jl:282 [inlined]
+ [15] #128
+    @ ./none:0 [inlined]
+ [16] iterate
+    @ ./generator.jl:47 [inlined]
+ [17] collect_to!
+    @ ./array.jl:840 [inlined]
+ [18] collect_to_with_first!
+    @ ./array.jl:818 [inlined]
+ [19] collect(itr::Base.Generator{Vector{Float64}, CodonMolecularEvolution.var"#128#130"{CodonMolecularEvolution.var"#cached_model#41"{MolecularEvolution.GeneticCode, CodonMolecularEvolution.var"#cached_model#40#42"{Dict{Any, DiagonalizedCTMC}}}, Float64, Matrix{Float64}, Matrix{Float64}, MolecularEvolution.GeneticCode}})
+    @ Base ./array.jl:792
+ [20] N_Omegas_model_func
+    @ ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/difFUBAR/grids.jl:25 [inlined]
+ [21] difFUBAR_grid_baseline(tree::FelNode, tags::Vector{String}, GTRmat::Matrix{Float64}, F3x4_freqs::Matrix{Float64}, code::MolecularEvolution.GeneticCode, log_con_lik_matrix::Matrix{Float64}, codon_param_vec::Vector{Vector{Float64}}, alphagrid::Vector{Float64}, omegagrid::Vector{Float64}, background_omega_grid::Vector{Float64}, param_kinds::Vector{String}, is_background::Bool, num_groups::Int64, num_sites::Int64, nthreads::Int64; verbosity::Int64, foreground_grid::Int64, background_grid::Int64)
+    @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/difFUBAR/grids.jl:284
+ [22] difFUBAR_treesurgery_and_parallel(seqnames::Vector{String}, seqs::Vector{String}, treestring::String, tags::Vector{String}, tag_colors::Vector{String}, outpath::String; pos_thresh::Float64, iters::Int64, verbosity::Int64, exports::Bool, code::MolecularEvolution.GeneticCode)
+    @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/difFUBAR/difFUBAR.jl:419
+ [23] top-level scope
+    @ ~/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/run_hivRT.jl:111
+in expression starting at /home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/run_hivRT.jl:111
+
+real	31m15.862s
+user	279m3.664s
+sys	336m30.253s
