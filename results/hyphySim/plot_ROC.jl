@@ -604,7 +604,7 @@ end
 
 #similar
 #, title="Clopper-Pearson Intervals"
-p = plot(plot_x, plot_y, label="Point Estimate", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1])
+p = plot(plot_x, plot_y, label="Point Estimate", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red)
 
 
 #### Clopper-Pearson
