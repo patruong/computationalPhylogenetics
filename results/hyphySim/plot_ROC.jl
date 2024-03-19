@@ -342,7 +342,7 @@ for i in 1:length(plot_colors)
     push!(contrastFEL_plot_data, contrastFEL_plot)
 end
 
-difFUBAR_dot_threshold = 0.75
+difFUBAR_dot_threshold = 0.80
 contrastFEL_dot_threshold = 0.95
 
 plot()
@@ -373,12 +373,12 @@ for i in 1:length(plot_colors)
     push!(contrastFEL_dots, dot_contrasteFEL_plot)
 
     if !labels_added
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
         labels_added = true  # Set the variable to true once labels are added
     else
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
     end
 end
 
@@ -399,8 +399,11 @@ for i in 1:length(plot_colors)
         plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0")
         plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
 
-        scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=4, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=4, markerstrokecolor=:grey, markeralpha=0.85)
+
+        #scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=2, markerstrokecolor=:grey, markeralpha=0.3)
+        #scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=2, markerstrokecolor=:grey, markeralpha=0.3)
         legend_added = true  # Set the variable to true once legend entries are added
     end
 end

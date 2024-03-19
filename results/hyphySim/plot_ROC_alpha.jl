@@ -235,7 +235,7 @@ pos_thresh = 0.95
 #sims = [182, 250, 421, 466, 500]
 #sims = [182, 250, 421, 466] # sim 500 totally breaks
 #reps = [1, 2]
-sims = collect(0:500) # sim 500 totally breaks contrast-FEL
+sims = collect(1:500) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
 # Initialize variables to store aggregated results
@@ -261,11 +261,6 @@ for sim in sims
             difFUBAR_res[!, "actual_omega2_larger_alpha"] = simulator_settings[!, "simulator.omega.class1"] .> simulator_settings[!, "alpha"]
             difFUBAR_res[!, "actual_omega1_larger_1"] = simulator_settings[!, "simulator.omega.class0"] .> 1
             difFUBAR_res[!, "actual_omega2_larger_1"] = simulator_settings[!, "simulator.omega.class1"] .> 1
-
-            #difFUBAR_res[!, "actual_omega1_effect_size_alpha"] = abs.(simulator_settings[!, "simulator.omega.class0"] .- simulator_settings[!, "alpha"])
-            #difFUBAR_res[!, "actual_omega2_effect_size_alpha"] = abs.(simulator_settings[!, "simulator.omega.class1"] .- simulator_settings[!, "alpha"])
-            #difFUBAR_res[!, "actual_omega1_effect_size_1"] = abs.(simulator_settings[!, "simulator.omega.class0"] .- 1)
-            #difFUBAR_res[!, "actual_omega2_effect_size_1"] = abs.(simulator_settings[!, "simulator.omega.class1"] .- 1)
 
             difFUBAR_res[!, "actual_omega1_effect_size_1"] = (simulator_settings[!, "simulator.omega.class0"] .- 1)
             difFUBAR_res[!, "actual_omega2_effect_size_1"] = (simulator_settings[!, "simulator.omega.class1"] .- 1)
@@ -293,79 +288,13 @@ difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
 names(difFUBAR_res)
 
-
-#difFUBAR_res[!, "actual_beta1"] = difFUBAR_res[!, "actual_omega1"] .* difFUBAR_res[!, "actual_alpha"]
-#difFUBAR_res[!, "actual_beta2"] = difFUBAR_res[!, "actual_omega2"] .* difFUBAR_res[!, "actual_alpha"]
-
-difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"])
-difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"])
-
-
-eps = 1e-6
-difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] ./ (difFUBAR_res[!, "actual_alpha"])
-difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] ./ (difFUBAR_res[!, "actual_alpha"])
-replace!(difFUBAR_res[!, "beta1_effect_size"], NaN => Inf)
-replace!(difFUBAR_res[!, "beta2_effect_size"], NaN => Inf)
-
-
-maximum(difFUBAR_res[!, "actual_alpha"])
-minimum(difFUBAR_res[!, "actual_alpha"])
-maximum(difFUBAR_res[!, "actual_beta1"])
-minimum(difFUBAR_res[!, "actual_beta1"])
-maximum(difFUBAR_res[!, "actual_beta2"])
-minimum(difFUBAR_res[!, "actual_beta2"])
-maximum(difFUBAR_res[!, "beta1_effect_size"])
-maximum(difFUBAR_res[!, "beta2_effect_size"])
-minimum(difFUBAR_res[!, "beta1_effect_size"])
-minimum(difFUBAR_res[!, "beta2_effect_size"])
-difFUBAR_res[!, "actual_alpha"]
-
-difFUBAR_res[!, "beta1_effect_size"]
-
-
-
-
-#############################################################
-# DO NOT USE BOTH FILTERS, IT WILL FILTER AWAY EVERYTHING   #
-# - MAYBE I SHOULD SPLIT UP THIS CODE TO AVOID THIS MISTAKE #
-#############################################################
-
-
-# Filter on w1 > w2
-#difFUBAR_res = difFUBAR_res[difFUBAR_res[:, "actual_directional_effect_difference"].>=0, :]
-#contrastFEL_res = contrastFEL_res[contrastFEL_res[:, "actual_directional_effect_difference"].>=0, :]
-
-
-
-
-# Filter on w2 > w1
-#difFUBAR_res = difFUBAR_res[difFUBAR_res[:, "actual_directional_effect_difference"].<=0, :]
-#contrastFEL_res = contrastFEL_res[contrastFEL_res[:, "actual_directional_effect_difference"].<=0, :]
-
-# Filter on w1 > 1
-
-#maximum(difFUBAR_res[!, "P(ω1 ≠ ω2)"])
-#minimum(difFUBAR_res[!, "P(ω1 ≠ ω2)"])
-#difFUBAR_res[400, :]
-#contrastFEL_res[400, :]
-# Filtering, should we filter????
-#difFUBAR_res = filter(row -> row."P(ω1 ≠ ω2)" < 0.95, difFUBAR_res)
-#contrastFEL_res = filter(row -> row."P-value (overall)" < 0.5, contrastFEL_res)
+difFUBAR_res[!, "beta1_effect_size"] = abs.(difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"]))
+difFUBAR_res[!, "beta2_effect_size"] = abs.(difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"]))
 
 # sorting comes after aggregating batches
 difFUBAR_res = sort(difFUBAR_res, "P(ω1 ≠ ω2)", rev=true)
 contrastFEL_res = sort!(contrastFEL_res, "P-value (overall)")
 contrastFEL_res[!, "1-Pvalue"] = 1 .- contrastFEL_res[!, "P-value (overall)"]
-
-# We can filter on effect size to get the curves Ben has.
-#calculate_effect_size(difFUBAR_res, "mean(ω1)", "mean(ω2)")
-#calculate_effect_size(contrastFEL_res, "beta (background)", "beta (TEST)")
-
-#lower_bound = 0
-#upper_bound = 0.25
-#difFUBAR_plot = calculate_ROC_threshold(filter_on(difFUBAR_res, "actual_effect_difference", lower_bound, upper_bound, true), "P(ω1 ≠ ω2)")
-#contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
-
 
 function find_closest_value(df::DataFrame, column::Symbol, target::Float64)
     values = df[!, column]
@@ -376,29 +305,6 @@ end
 function filter_df_closest_value(df::DataFrame, target_column::Symbol, target_value::Float64, tolerance::Float64)
     return filter(row -> abs(row.Threshold - find_closest_value(df, :Threshold, target_value)) < tolerance, df)
 end
-
-
-#tolerance = 1e-5
-#filter_df_closest_value(difFUBAR_plot, :Threshold, 0.95, tolerance)
-
-
-
-#difFUBAR_res = difFUBAR_res[difFUBAR_res[!, "P(ω1 ≠ ω2)"].>0.75, :]
-#contrastFEL_res = contrastFEL_res[contrastFEL_res[!, "1-Pvalue"].>0.95, :]
-
-
-names(difFUBAR_res)
-
-difFUBAR_res[!, "actual_omega2_actual_difference_1"]
-
-maximum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
-minimum(difFUBAR_res[!, "actual_omega2_effect_size_1"])
-
-
-# TEST - Fill all negative effect size with 0
-#difFUBAR_res_ω1 = filter(row -> row["beta1_effect_size"] >= 0, difFUBAR_res)
-#difFUBAR_res_ω2 = filter(row -> row["beta1_effect_size"] >= 0, difFUBAR_res)
-
 
 
 bounds = [(0, 0.25), (0.25, 0.5), (0.5, 3.0), (3.0, Inf)]
@@ -421,7 +327,7 @@ end
 
 
 
-difFUBAR_dot_threshold = 0.75
+difFUBAR_dot_threshold = 0.8
 
 plot()
 for i in 1:length(plot_colors)
@@ -451,12 +357,12 @@ for i in 1:length(plot_colors)
     push!(difFUBAR_ω2_dots, dot_difFUBAR_ω2_plot)
 
     if !labels_added
-        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
         labels_added = true  # Set the variable to true once labels are added
     else
-        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
     end
 end
 
@@ -467,7 +373,7 @@ end
 
 legend_added = false  # Initialize a boolean variable to track whether legend entries have been added
 #contrastfel_dot_label = round(1 - contrastFEL_dot_threshold, digits=2)
-difFUBAR_dot_threshold = 0.75
+#difFUBAR_dot_threshold = 0.75
 
 for i in 1:length(plot_colors)
     if !legend_added
@@ -478,8 +384,8 @@ for i in 1:length(plot_colors)
         plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0")
         plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
 
-        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=8, markerstrokecolor=:grey)
-        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=8, markerstrokecolor=:grey)
+        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
         legend_added = true  # Set the variable to true once legend entries are added
     end
 end
