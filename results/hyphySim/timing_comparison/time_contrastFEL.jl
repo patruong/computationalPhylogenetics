@@ -362,7 +362,7 @@ x_min, x_max = extrema(df[:, :difFUBAR_real_time])
 y_diag = slope * (x_min:x_max) .+ offset
 plot(df[!, :difFUBAR_real_time], df[!, :contrastFEL_real_time],
     xlim=(0, 3000), ylim=(0, 80000),  # Set specific ranges for x and y axes
-    xlabel="difFUBAR time", ylabel="contrastFEL Time", title="difFUBAR vs Contrast-FEL Time", legend=false)
+    xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false) #title="difFUBAR vs Contrast-FEL Time"
 plot!(x_min:x_max, y_diag, linestyle=:dot, color=:lightgray)  # Adjust color name for different shades of grey
 
 savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_relative_time.png")  # Saves as PNG by default
@@ -385,7 +385,7 @@ plot(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
 
 df = sort(df, :contrastFEL_real_time)
 plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
-    xlabel="difFUBAR time", ylabel="contrastFEL Time", title="difFUBAR vs Contrast-FEL Time", legend=false)
+    xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false) #title="difFUBAR vs Contrast-FEL Time"
 plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
     xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)")
 savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.png")  # Saves as PNG by default
