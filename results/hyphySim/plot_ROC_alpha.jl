@@ -291,11 +291,11 @@ difFUBAR_res = aggregated_difFUBAR_res
 contrastFEL_res = aggregated_contrastFEL_res
 names(difFUBAR_res)
 
+#difFUBAR_res[!, "beta1_effect_size"] = difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"])
+#difFUBAR_res[!, "beta2_effect_size"] = difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"])
+
 difFUBAR_res[!, "beta1_effect_size"] = abs.(difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"]))
 difFUBAR_res[!, "beta2_effect_size"] = abs.(difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"]))
-
-#difFUBAR_res[!, "beta1_effect_size"] = abs.(difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"]))
-#difFUBAR_res[!, "beta2_effect_size"] = abs.(difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"]))
 
 # sorting comes after aggregating batches
 difFUBAR_res = sort(difFUBAR_res, "P(ω1 ≠ ω2)", rev=true)
