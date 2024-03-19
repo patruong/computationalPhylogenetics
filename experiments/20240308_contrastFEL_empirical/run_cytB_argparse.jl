@@ -131,7 +131,7 @@ function main()
     seqnames, seqs = read_fasta(fasta_file)
     cleaned_seqs = []
     for i in 1:length(seqs)
-        seq = replace(seqs[1], " " => "")
+        seq = replace(seqs[i], " " => "")
         push!(cleaned_seqs, seq)
     end
     seqs = cleaned_seqs

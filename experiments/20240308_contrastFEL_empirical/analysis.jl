@@ -142,8 +142,8 @@ function read_in_contrastFEL_res(filename)
     return contrastFEL_res
 end
 
-datasets_folder = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT_branchlength_1"]
-datasets_name = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT"]
+datasets_folder = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT_branchlength_1", "hivRT_pure", "rubisco_rerooted_retagged"]
+datasets_name = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT", "hivRT_pure", "rubisco_reroot"]
 
 range = (0.01:0.01:1)
 results = []
@@ -181,7 +181,9 @@ colors = Dict(
     "epidermal_leaf" => :blue,
     "hiv_envelope" => :green,
     "rubisco_C3_vs_C4" => :red,
-    "hivRT" => :orange
+    "hivRT" => :orange,
+    "hivRT_pure" => :yellow,
+    "rubisco_reroot" => :purple
 )
 
 line_styles = Dict(
@@ -189,7 +191,7 @@ line_styles = Dict(
     "contrastFEL" => :dash
 )
 
-datasets_name = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT"]
+datasets_name = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT", "hivRT_pure", "rubisco_reroot"]
 methods = ["difFUBAR", "contrastFEL"]
 
 plot()
@@ -212,10 +214,13 @@ plot!([], [], line=:solid, linecolor=:green, label="hiv_envelope")
 plot!([], [], line=:solid, linecolor=:blue, label="epidermal_leaf")
 plot!([], [], line=:solid, linecolor=:red, label="rubisco")
 plot!([], [], line=:solid, linecolor=:orange, label="hivRT")
-
+plot!([], [], line=:solid, linecolor=:yellow, label="rubisco_reroot")
+plot!([], [], line=:solid, linecolor=:purple, label="hivRT_pure")
 plot!(legend=:topleft)
 
 results
+
+savefig("experiments/20240308_contrastFEL_empirical/results/benchmark.png")
 # Set x-axis limits
 #xlims!(0, 0.2)
 #ylims!(0, 100)

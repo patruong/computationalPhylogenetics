@@ -232,7 +232,7 @@ simulator_settings, settings_cols = read_in_simulator_settings(sim)
 
 
 pos_thresh = 0.95
-sims = collect(1:500) # sim 500 totally breaks contrast-FEL
+sims = collect(100:200) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
 # Initialize variables to store aggregated results

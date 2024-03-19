@@ -56,7 +56,7 @@ end
 
 datasets_folder = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT_branchlength_1"]
 datasets_name = ["epidermal_leaf", "hiv_envelope", "rubisco_C3_vs_C4", "hivRT"]
-nwk_files = ["epidermal_leaf_trichomes_BRT.nwk", "hiv-1_envelope.nwk", "rubisco_C3_vs_C4.nwk", "HIV_RT_branchlength_1.nwk"]
+nwk_files = ["epidermal_leaf_trichomes_BRT.nwk", "hiv-1_envelope.nwk", "rubisco_C3_vs_C4.nwk", "HIV_RT_branchlength_1.nwk", "HIV_RT_pure_clade.nwk"]
 
 contrastFEL_time = []
 difFUBAR_time = []
