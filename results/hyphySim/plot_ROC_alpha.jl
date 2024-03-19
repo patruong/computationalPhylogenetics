@@ -232,9 +232,6 @@ simulator_settings, settings_cols = read_in_simulator_settings(sim)
 
 
 pos_thresh = 0.95
-#sims = [182, 250, 421, 466, 500]
-#sims = [182, 250, 421, 466] # sim 500 totally breaks
-#reps = [1, 2]
 sims = collect(1:500) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
@@ -272,8 +269,14 @@ for sim in sims
             ### NT DONE IT*s something with omega alpha etc think about this sleep now
             #difFUBAR_res[!, "actual_omega1_actual_difference_alpha"] = (simulator_settings[!, "alpha"] .!= simulator_settings[!, "simulator.omega.class0"])
             #difFUBAR_res[!, "actual_omega2_actual_difference_alpha"] = (simulator_settings[!, "alpha"] .!= simulator_settings[!, "simulator.omega.class1"])
-            difFUBAR_res[!, "actual_omega1_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class0"] .> 1)
-            difFUBAR_res[!, "actual_omega2_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class1"] .> 1)
+
+            # This simulator.omega.class0 is actually faulty labelled.
+            #difFUBAR_res[!, "actual_omega1_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class0"] .> 1)
+            #difFUBAR_res[!, "actual_omega2_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class1"] .> 1)
+
+            difFUBAR_res[!, "actual_omega1_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class0"] ./ (simulator_settings[!, "alpha"]) .> 1)
+            difFUBAR_res[!, "actual_omega2_actual_difference_1"] = (simulator_settings[!, "simulator.omega.class1"] ./ (simulator_settings[!, "alpha"]) .> 1)
+
 
             append!(aggregated_difFUBAR_res, difFUBAR_res)
             append!(aggregated_contrastFEL_res, contrastFEL_res)
@@ -290,6 +293,9 @@ names(difFUBAR_res)
 
 difFUBAR_res[!, "beta1_effect_size"] = abs.(difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"]))
 difFUBAR_res[!, "beta2_effect_size"] = abs.(difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"]))
+
+#difFUBAR_res[!, "beta1_effect_size"] = abs.(difFUBAR_res[!, "actual_beta1"] .- (difFUBAR_res[!, "actual_alpha"]))
+#difFUBAR_res[!, "beta2_effect_size"] = abs.(difFUBAR_res[!, "actual_beta2"] .- (difFUBAR_res[!, "actual_alpha"]))
 
 # sorting comes after aggregating batches
 difFUBAR_res = sort(difFUBAR_res, "P(ω1 ≠ ω2)", rev=true)
@@ -385,7 +391,7 @@ for i in 1:length(plot_colors)
         plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
 
         scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([], [], label="P(ω2 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
         legend_added = true  # Set the variable to true once legend entries are added
     end
 end
