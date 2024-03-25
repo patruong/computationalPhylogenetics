@@ -390,7 +390,50 @@ plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
     xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)")
 savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.png")  # Saves as PNG by default
 
+# speedup
+maximum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+minimum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+mean(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 
+minimum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+
+min_index = argmin(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+max_index = argmax(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+
+
+(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+min_row = df[2, :]
+min_row = df[10, :]
+
+
+max_row = df[max_index, :]
+
+
+# Find the maximum index
+max_index = argmax(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
+
+# Remove the maximum element from the array
+filtered_array = df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time]
+deleteat!(filtered_array, max_index)
+
+# Find the second maximum index
+second_max_index = argmax(filtered_array)
+
+# Remove the second maximum element from the array
+deleteat!(filtered_array, second_max_index)
+
+# Find the third maximum index
+third_max_index = argmax(filtered_array)
+
+# Display the indices
+println("Max Index: ", max_index)
+println("Second Max Index: ", second_max_index)
+println("Third Max Index: ", third_max_index)
+
+
+df[10, :]
+df[10, :]
+df[10, :]
 
 #################################
 # Mean Time vs Codon Sites plot #
