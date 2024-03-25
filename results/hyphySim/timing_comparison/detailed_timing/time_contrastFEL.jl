@@ -570,8 +570,10 @@ surface_plot = plot(
     st=:surface,
     xlabel="Purity",
     ylabel="Nodes",
-    zlabel="Mean difFUBAR Real Time",
-    zguidefontrotation=90,
+    zlabel="Mean difFUBAR Time",
+    xguidefontrotation=345, xguidefontsize=16,
+    yguidefontrotation=45, yguidefontsize=16,
+    zguidefontrotation=90, zguidefontsize=16,
     size=(800, 600)
 )
 savefig("results/hyphySim/timing_comparison/detailed_timing/difFUBAR_surface_realtime_nodes_purity.png")
@@ -590,8 +592,11 @@ surface_plot = plot(
     st=:surface,
     xlabel="Purity",
     ylabel="Nodes",
-    zlabel="Mean contrastFEL Real Time",
-    zguidefontrotation=90, size=(800, 600)
+    zlabel="Mean contrastFEL Time",
+    xguidefontrotation=345, xguidefontsize=16,
+    yguidefontrotation=45, yguidefontsize=16,
+    zguidefontrotation=90, zguidefontsize=16,
+    size=(800, 600)
 )
 savefig("results/hyphySim/timing_comparison/detailed_timing/contrastFEL_surface_realtime_nodes_purity.png")
 
