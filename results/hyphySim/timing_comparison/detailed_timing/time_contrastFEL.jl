@@ -562,6 +562,7 @@ pyplot();
 sort!(aggregated_df, [:purity, :nodes])
 
 # Create the surface plot
+#     title="Mean difFUBAR Real Time vs. Nodes and Purity",
 surface_plot = plot(
     aggregated_df.purity,
     aggregated_df.nodes,
@@ -570,7 +571,6 @@ surface_plot = plot(
     xlabel="Purity",
     ylabel="Nodes",
     zlabel="Mean difFUBAR Real Time",
-    title="Mean difFUBAR Real Time vs. Nodes and Purity",
     zguidefontrotation=90,
     size=(800, 600)
 )
@@ -581,6 +581,8 @@ display(surface_plot)
 
 
 # Create the surface plot
+#title="Mean contrastFEL Real Time vs. Nodes and Purity",
+
 surface_plot = plot(
     aggregated_df.purity,
     aggregated_df.nodes,
@@ -589,7 +591,6 @@ surface_plot = plot(
     xlabel="Purity",
     ylabel="Nodes",
     zlabel="Mean contrastFEL Real Time",
-    title="Mean contrastFEL Real Time vs. Nodes and Purity",
     zguidefontrotation=90, size=(800, 600)
 )
 savefig("results/hyphySim/timing_comparison/detailed_timing/contrastFEL_surface_realtime_nodes_purity.png")
@@ -622,6 +623,7 @@ pyplot();
 sort!(aggregated_df, [:purity, :codon_sites])
 
 # Create the surface plot
+#     title="Mean difFUBAR Real Time vs. Codon sites and Purity",
 surface_plot = plot(
     aggregated_df.purity,
     aggregated_df.codon_sites,
@@ -629,9 +631,7 @@ surface_plot = plot(
     st=:surface,
     xlabel="Purity",
     ylabel="Codon sites",
-    zlabel="Mean difFUBAR Real Time",
-    title="Mean difFUBAR Real Time vs. Codon sites and Purity",
-    zguidefontrotation=90, size=(800, 600)
+    zlabel="Mean difFUBAR Real Time", zguidefontrotation=90, size=(800, 600)
 )
 savefig("results/hyphySim/timing_comparison/detailed_timing/difFUBAR_surface_realtime_codonSites_purity.png")
 
@@ -640,6 +640,7 @@ display(surface_plot)
 
 
 # Create the surface plot
+#     title="Mean contrastFEL Real Time vs. Codon sites and Purity",
 surface_plot = plot(
     aggregated_df.purity,
     aggregated_df.codon_sites,
@@ -648,7 +649,6 @@ surface_plot = plot(
     xlabel="Purity",
     ylabel="Codon sites",
     zlabel="Mean contrastFEL Real Time",
-    title="Mean contrastFEL Real Time vs. Codon sites and Purity",
     zguidefontrotation=90, size=(800, 600)
 )
 savefig("results/hyphySim/timing_comparison/detailed_timing/contrastFEL_surface_realtime_codonSites_purity.png")
@@ -679,6 +679,8 @@ pyplot();
 sort!(aggregated_df, [:nodes, :codon_sites])
 
 # Create the surface plot
+#     title="Mean difFUBAR Real Time vs. Codon sites and Nodes",
+
 surface_plot = plot(
     aggregated_df.codon_sites,
     aggregated_df.nodes,
@@ -687,7 +689,6 @@ surface_plot = plot(
     xlabel="Codon sites",
     ylabel="Nodes",
     zlabel="Mean difFUBAR Real Time",
-    title="Mean difFUBAR Real Time vs. Codon sites and Nodes",
     zguidefontrotation=90,
     xflip=true, size=(800, 600)
 )
@@ -698,6 +699,8 @@ display(surface_plot)
 
 
 # Create the surface plot
+#title="Mean contrastFEL Real Time vs. Codon sites and Nodes",
+
 surface_plot = plot(
     aggregated_df.codon_sites,
     aggregated_df.nodes,
@@ -706,7 +709,6 @@ surface_plot = plot(
     xlabel="Codon sites",
     ylabel="Nodes",
     zlabel="Mean contrastFEL Real Time",
-    title="Mean contrastFEL Real Time vs. Codon sites and Nodes",
     zguidefontrotation=90,
     xflip=true, size=(800, 600)
 )
