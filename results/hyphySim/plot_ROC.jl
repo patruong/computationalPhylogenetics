@@ -345,7 +345,7 @@ end
 difFUBAR_dot_threshold = 0.80
 contrastFEL_dot_threshold = 0.95
 
-plot(size=(450, 500))
+plot(size=(450, 550))
 
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
@@ -430,7 +430,7 @@ plot()
 difFUBAR_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω1 ≠ ω2)")
 #contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
-plot(size=(450, 300))
+plot(size=(550, 300))
 p = plot!(difFUBAR_plot.Threshold, difFUBAR_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=1.5)
 #p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
 
@@ -609,7 +609,7 @@ end
 
 #similar
 #, title="Clopper-Pearson Intervals"
-plot(size=(450, 300))
+plot(size=(550, 300))
 p = plot!(plot_x, plot_y, label="", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color=:red)
 
 
