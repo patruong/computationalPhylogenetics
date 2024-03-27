@@ -232,7 +232,7 @@ simulator_settings, settings_cols = read_in_simulator_settings(sim)
 
 
 pos_thresh = 0.95
-sims = collect(100:200) # sim 500 totally breaks contrast-FEL
+sims = collect(0:500) # sim 500 totally breaks contrast-FEL
 reps = collect(1:5)
 
 # Initialize variables to store aggregated results
@@ -335,7 +335,7 @@ end
 
 difFUBAR_dot_threshold = 0.8
 
-plot()
+plot(size=(450, 475))
 for i in 1:length(plot_colors)
     lower_bound = bounds[i][1]
     upper_bound = bounds[i][2]
@@ -422,7 +422,7 @@ difFUBAR_ω2_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω2 > 1)")
 replace!(difFUBAR_ω2_plot[!, "Threshold"], -Inf => 0)
 
 #contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
-plot()
+plot(size=(550, 250))
 p = plot!(difFUBAR_ω1_plot.Threshold, difFUBAR_ω1_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω1", linecolor=:red, linewidth=1.5)
 p = plot!(difFUBAR_ω2_plot.Threshold, difFUBAR_ω2_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω2", linecolor=:blue, linewidth=1.5)
 
@@ -621,7 +621,9 @@ plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_low
 sort!(plot_data, "x")
 #similar
 #, title="Clopper-Pearson Intervals"
-p = plot(plot_data[!, "x"], plot_data[!, "y"], label="ω1", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red)
+p = plot(plot_data[!, "x"], plot_data[!, "y"], label="ω1", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red, size=(550, 250))
+
+
 for i in 1:length(plot_x)
     plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color=:red, label="")
 end
