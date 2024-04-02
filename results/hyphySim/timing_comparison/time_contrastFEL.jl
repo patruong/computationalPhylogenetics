@@ -8,7 +8,7 @@ using Plots
 using Statistics
 using MolecularEvolution
 using CodonMolecularEvolution
-
+using Compose
 cd("/home/patrick/git/computationalPhylogenetics/")
 
 
@@ -281,7 +281,7 @@ function get_simulation_node_and_purity(sim)
     tree = gettreefromnewick(treestring, FelNode)
     n_nodes = length(getnodelist(tree))
     num_groups = length(tag_colors)
-    purity, _, _ = get_purity_info(tree, tags, num_groups)
+    purity, _, _ = CodonMolecularEvolution.get_purity_info(tree, tags, num_groups)
     return n_nodes, purity
 end
 
@@ -374,21 +374,38 @@ index_values = axes(df, 1)
 df = sort(df, :codon_sites)
 df = sort(df, :n_nodes)
 df = sort(df, :purity)
+
+
 df = sort(df, :difFUBAR_real_time)
 plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
-    xlabel="difFUBAR time", ylabel="contrastFEL Time", title="difFUBAR vs Contrast-FEL Time", legend=false)
+    xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false, linecolor=:blue, linewidth=1.5) # title="difFUBAR vs Contrast-FEL Time"
 
 df = sort(df, :contrastFEL_real_time)
 plot(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
-    xlabel="difFUBAR time", ylabel="contrastFEL Time", title="difFUBAR vs Contrast-FEL Time", legend=false)
+    xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false, linecolor=:red, linewidth=1.5) # title="difFUBAR vs Contrast-FEL Time"
+
+
+# Panel plot version
+df = sort(df, :difFUBAR_real_time)
+plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
+    xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)", legend=false, linecolor=:blue, linewidth=1.5) # title="difFUBAR vs Contrast-FEL Time"
+
+df = sort(df, :contrastFEL_real_time)
+plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
+    xlabel="", ylabel="Time (s)", legend=false, linecolor=:blue, linewidth=2, size=(700, 300), margin=3mm) #title="difFUBAR vs Contrast-FEL Time"
+plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
+    xlabel="", ylabel="Time (s)", legend=false, linecolor=:red, linewidth=2, yscale=:log10)
+savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time_log.png")  # Saves as PNG by default
 
 
 df = sort(df, :contrastFEL_real_time)
 plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
-    xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false) #title="difFUBAR vs Contrast-FEL Time"
+    xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)", legend=false, linecolor=:blue, linewidth=2, size=(700, 300), margin=3mm) #title="difFUBAR vs Contrast-FEL Time"
 plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
-    xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)")
+    xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)", legend=false, linecolor=:red, linewidth=2)
 savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.png")  # Saves as PNG by default
+
+
 
 # speedup
 maximum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
