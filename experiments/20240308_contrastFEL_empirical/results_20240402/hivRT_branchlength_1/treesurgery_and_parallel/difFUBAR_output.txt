@@ -1,0 +1,40 @@
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/analysis_tagged_input_tree.svg.
+["{NAIVE}", "{TREATED}"]
+["#0000FF", "#FF0000", "black"]
+Step 2: Optimizing global codon model parameters.
+difFUBAR baseline is used
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 62 - P(ω1 > ω2):0.001; P(ω2 > ω1):0.9895; P(ω1 > 1):0.0; P(ω2 > 1):0.0
+Site 64 - P(ω1 > ω2):0.0875; P(ω2 > ω1):0.7335; P(ω1 > 1):0.8395; P(ω2 > 1):0.9925
+Site 65 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.9985; P(ω1 > 1):0.0; P(ω2 > 1):0.119
+Site 67 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.996; P(ω1 > 1):0.0; P(ω2 > 1):0.0135
+Site 69 - P(ω1 > ω2):0.001; P(ω2 > ω1):0.9865; P(ω1 > 1):0.004; P(ω2 > 1):0.4645
+Site 70 - P(ω1 > ω2):0.0005; P(ω2 > ω1):0.994; P(ω1 > 1):0.0; P(ω2 > 1):0.0555
+Site 74 - P(ω1 > ω2):0.005; P(ω2 > ω1):0.9835; P(ω1 > 1):0.0085; P(ω2 > 1):0.5765
+Site 75 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.998; P(ω1 > 1):0.0005; P(ω2 > 1):0.334
+Site 100 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.998; P(ω1 > 1):0.0; P(ω2 > 1):0.2175
+Site 103 - P(ω1 > ω2):0.0; P(ω2 > ω1):1.0; P(ω1 > 1):0.0; P(ω2 > 1):1.0
+Site 116 - P(ω1 > ω2):0.003; P(ω2 > ω1):0.9605; P(ω1 > 1):0.0; P(ω2 > 1):0.0
+Site 135 - P(ω1 > ω2):0.01; P(ω2 > ω1):0.9625; P(ω1 > 1):0.0005; P(ω2 > 1):0.228
+Site 151 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.999; P(ω1 > 1):0.0; P(ω2 > 1):0.4475
+Site 181 - P(ω1 > ω2):0.0; P(ω2 > ω1):1.0; P(ω1 > 1):0.0; P(ω2 > 1):0.0575
+Site 184 - P(ω1 > ω2):0.0; P(ω2 > ω1):1.0; P(ω1 > 1):0.0025; P(ω2 > 1):0.997
+Site 188 - P(ω1 > ω2):0.0; P(ω2 > ω1):1.0; P(ω1 > 1):0.045; P(ω2 > 1):0.9945
+Site 190 - P(ω1 > ω2):0.0; P(ω2 > ω1):1.0; P(ω1 > 1):0.0; P(ω2 > 1):0.258
+Site 200 - P(ω1 > ω2):0.004; P(ω2 > ω1):0.9805; P(ω1 > 1):0.0355; P(ω2 > 1):0.8315
+Site 215 - P(ω1 > ω2):0.0015; P(ω2 > ω1):0.988; P(ω1 > 1):0.002; P(ω2 > 1):0.609
+Site 219 - P(ω1 > ω2):0.0015; P(ω2 > ω1):0.9855; P(ω1 > 1):0.0; P(ω2 > 1):0.001
+Site 221 - P(ω1 > ω2):0.002; P(ω2 > ω1):0.991; P(ω1 > 1):0.005; P(ω2 > 1):0.4445
+Site 230 - P(ω1 > ω2):0.0155; P(ω2 > ω1):0.957; P(ω1 > 1):0.1135; P(ω2 > 1):0.6845
+Site 245 - P(ω1 > ω2):0.0045; P(ω2 > ω1):0.9775; P(ω1 > 1):0.001; P(ω2 > 1):0.5015
+
+If exports = true, writing results for all sites to CSV: experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	48m12.436s
+user	465m18.558s
+sys	484m14.355s

@@ -1,0 +1,185 @@
+No key 6504907875327932
+No key 8496140665981763
+No key 24348505867733372
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{Haemoproteidae}", 1="Haemoproteidae")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+LSÖALFKSÖKÖLAFKLSFA
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: output/cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_tagged_input_tree.svg.
+Step 2: Optimizing global codon model parameters.
+Step 3: Calculating grid of 12096-by-376 conditional likelihood values (the slowest step). Currently on:
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0% 
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 1 - P(ω1 > ω2):0.9595; P(ω2 > ω1):0.0125; P(ω1 > 1):0.3245; P(ω2 > 1):0.006
+Site 3 - P(ω1 > ω2):0.005; P(ω2 > ω1):0.9585; P(ω1 > 1):0.0; P(ω2 > 1):0.0075
+Site 160 - P(ω1 > ω2):0.984; P(ω2 > ω1):0.0025; P(ω1 > 1):0.03; P(ω2 > 1):0.0
+Site 225 - P(ω1 > ω2):0.014; P(ω2 > ω1):0.953; P(ω1 > 1):0.002; P(ω2 > 1):0.1565
+
+If exports = true, writing results for all sites to CSV: output/cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as output/cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_violin_*.pdf
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: n° of legend_column=3 is larger than n° of series=1
+└ @ Plots ~/.julia/packages/Plots/sxUvK/src/backends/gr.jl:1235
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: n° of legend_column=3 is larger than n° of series=2
+└ @ Plots ~/.julia/packages/Plots/sxUvK/src/backends/gr.jl:1235
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+[1, 3, 160, 225]
+4
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+
+real	12m12.271s
+user	104m34.902s
+sys	113m42.625s

@@ -1,0 +1,259 @@
+No key 23441985051358316
+No key 7109899937861913
+No key 1809951635061866
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{Leucocytozoon}", 1="Leucocytozoon")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+RegexMatch("{birds}", 1="birds")
+LSÖALFKSÖKÖLAFKLSFA
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: output/cytb/treesurgery_and_parallel/Leucocytozoon_birds/analysis_tagged_input_tree.svg.
+Step 2: Optimizing global codon model parameters.
+Step 3: Calculating grid of 12096-by-376 conditional likelihood values (the slowest step). Currently on:
+0.0% 4.0% 8.0% 12.0% 17.0% 21.0% 25.0% 29.0% 33.0% 37.0% 41.0% 45.0% 50.0% 54.0% 58.0% 62.0% 66.0% 70.0% 74.0% 79.0% 83.0% 87.0% 91.0% 95.0% 99.0% 
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 1 - P(ω1 > ω2):0.988; P(ω2 > ω1):0.0035; P(ω1 > 1):0.4425; P(ω2 > 1):0.0075
+Site 2 - P(ω1 > ω2):0.9945; P(ω2 > ω1):0.0; P(ω1 > 1):0.008; P(ω2 > 1):0.0
+Site 5 - P(ω1 > ω2):0.996; P(ω2 > ω1):0.0; P(ω1 > 1):0.0115; P(ω2 > 1):0.0
+Site 6 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.1235; P(ω2 > 1):0.0
+Site 20 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.3525; P(ω2 > 1):0.0
+Site 32 - P(ω1 > ω2):0.9975; P(ω2 > ω1):0.001; P(ω1 > 1):0.1095; P(ω2 > 1):0.0005
+Site 35 - P(ω1 > ω2):0.994; P(ω2 > ω1):0.0015; P(ω1 > 1):0.092; P(ω2 > 1):0.0
+Site 41 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.662; P(ω2 > 1):0.002
+Site 49 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.0455; P(ω2 > 1):0.0
+Site 55 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.02; P(ω2 > 1):0.0
+Site 56 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.0415; P(ω2 > 1):0.0
+Site 61 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.086; P(ω2 > 1):0.0
+Site 62 - P(ω1 > ω2):0.955; P(ω2 > ω1):0.0025; P(ω1 > 1):0.0105; P(ω2 > 1):0.0
+Site 64 - P(ω1 > ω2):0.9935; P(ω2 > ω1):0.0015; P(ω1 > 1):0.0545; P(ω2 > 1):0.0
+Site 65 - P(ω1 > ω2):0.975; P(ω2 > ω1):0.009; P(ω1 > 1):0.5675; P(ω2 > 1):0.0065
+Site 70 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.09; P(ω2 > 1):0.0
+Site 72 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.006; P(ω1 > 1):0.555; P(ω2 > 1):0.04
+Site 73 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.01; P(ω2 > 1):0.0
+Site 80 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.0035; P(ω2 > 1):0.0
+Site 85 - P(ω1 > ω2):0.9935; P(ω2 > ω1):0.0; P(ω1 > 1):0.0575; P(ω2 > 1):0.0
+Site 89 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.292; P(ω2 > 1):0.0
+Site 93 - P(ω1 > ω2):0.954; P(ω2 > ω1):0.004; P(ω1 > 1):0.0035; P(ω2 > 1):0.0
+Site 101 - P(ω1 > ω2):0.988; P(ω2 > ω1):0.0; P(ω1 > 1):0.0065; P(ω2 > 1):0.0
+Site 102 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.5335; P(ω2 > 1):0.0
+Site 109 - P(ω1 > ω2):0.996; P(ω2 > ω1):0.001; P(ω1 > 1):0.133; P(ω2 > 1):0.0
+Site 110 - P(ω1 > ω2):0.982; P(ω2 > ω1):0.0045; P(ω1 > 1):0.067; P(ω2 > 1):0.0
+Site 112 - P(ω1 > ω2):0.966; P(ω2 > ω1):0.002; P(ω1 > 1):0.0065; P(ω2 > 1):0.0
+Site 117 - P(ω1 > ω2):0.9965; P(ω2 > ω1):0.001; P(ω1 > 1):0.1135; P(ω2 > 1):0.0
+Site 118 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0005; P(ω1 > 1):0.102; P(ω2 > 1):0.0
+Site 120 - P(ω1 > ω2):0.99; P(ω2 > ω1):0.001; P(ω1 > 1):0.003; P(ω2 > 1):0.0
+Site 153 - P(ω1 > ω2):0.989; P(ω2 > ω1):0.003; P(ω1 > 1):0.3245; P(ω2 > 1):0.0005
+Site 155 - P(ω1 > ω2):0.9965; P(ω2 > ω1):0.0015; P(ω1 > 1):0.031; P(ω2 > 1):0.0
+Site 158 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.9115; P(ω2 > 1):0.007
+Site 160 - P(ω1 > ω2):0.9925; P(ω2 > ω1):0.0025; P(ω1 > 1):0.2785; P(ω2 > 1):0.0
+Site 166 - P(ω1 > ω2):0.9605; P(ω2 > ω1):0.0015; P(ω1 > 1):0.0055; P(ω2 > 1):0.0
+Site 171 - P(ω1 > ω2):0.988; P(ω2 > ω1):0.003; P(ω1 > 1):0.503; P(ω2 > 1):0.0005
+Site 179 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.7715; P(ω2 > 1):0.0
+Site 180 - P(ω1 > ω2):0.995; P(ω2 > ω1):0.0005; P(ω1 > 1):0.015; P(ω2 > 1):0.0
+Site 182 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.7785; P(ω2 > 1):0.0
+Site 183 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.2925; P(ω2 > 1):0.0
+Site 185 - P(ω1 > ω2):0.993; P(ω2 > ω1):0.001; P(ω1 > 1):0.0085; P(ω2 > 1):0.0
+Site 186 - P(ω1 > ω2):0.997; P(ω2 > ω1):0.0; P(ω1 > 1):0.4895; P(ω2 > 1):0.002
+Site 189 - P(ω1 > ω2):0.9855; P(ω2 > ω1):0.003; P(ω1 > 1):0.4845; P(ω2 > 1):0.0025
+Site 190 - P(ω1 > ω2):0.9815; P(ω2 > ω1):0.0055; P(ω1 > 1):0.023; P(ω2 > 1):0.0
+Site 193 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.2715; P(ω2 > 1):0.0
+Site 194 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.184; P(ω2 > 1):0.001
+Site 216 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.0035; P(ω1 > 1):0.6675; P(ω2 > 1):0.016
+Site 219 - P(ω1 > ω2):0.96; P(ω2 > ω1):0.004; P(ω1 > 1):0.0125; P(ω2 > 1):0.0005
+Site 222 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.38; P(ω2 > 1):0.004
+Site 223 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.054; P(ω2 > 1):0.0
+Site 227 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.0585; P(ω2 > 1):0.0
+Site 228 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0005; P(ω1 > 1):0.333; P(ω2 > 1):0.0
+Site 229 - P(ω1 > ω2):0.9855; P(ω2 > ω1):0.0; P(ω1 > 1):0.0005; P(ω2 > 1):0.0
+Site 231 - P(ω1 > ω2):0.9925; P(ω2 > ω1):0.0; P(ω1 > 1):0.5675; P(ω2 > 1):0.0
+Site 238 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.4155; P(ω2 > 1):0.0
+Site 239 - P(ω1 > ω2):0.995; P(ω2 > ω1):0.0025; P(ω1 > 1):0.7225; P(ω2 > 1):0.0055
+Site 247 - P(ω1 > ω2):0.9595; P(ω2 > ω1):0.0015; P(ω1 > 1):0.0025; P(ω2 > 1):0.0
+Site 250 - P(ω1 > ω2):0.993; P(ω2 > ω1):0.002; P(ω1 > 1):0.047; P(ω2 > 1):0.0005
+Site 251 - P(ω1 > ω2):0.9645; P(ω2 > ω1):0.0125; P(ω1 > 1):0.708; P(ω2 > 1):0.0745
+Site 252 - P(ω1 > ω2):0.9965; P(ω2 > ω1):0.0005; P(ω1 > 1):0.0145; P(ω2 > 1):0.0
+Site 253 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.0995; P(ω2 > 1):0.0
+Site 269 - P(ω1 > ω2):0.986; P(ω2 > ω1):0.006; P(ω1 > 1):0.465; P(ω2 > 1):0.0015
+Site 270 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.0635; P(ω2 > 1):0.0
+Site 279 - P(ω1 > ω2):0.9635; P(ω2 > ω1):0.001; P(ω1 > 1):0.004; P(ω2 > 1):0.0
+Site 282 - P(ω1 > ω2):0.961; P(ω2 > ω1):0.007; P(ω1 > 1):0.0335; P(ω2 > 1):0.0
+Site 283 - P(ω1 > ω2):0.9875; P(ω2 > ω1):0.0035; P(ω1 > 1):0.8345; P(ω2 > 1):0.0245
+Site 285 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.978; P(ω2 > 1):0.0035
+Site 286 - P(ω1 > ω2):0.957; P(ω2 > ω1):0.021; P(ω1 > 1):0.622; P(ω2 > 1):0.0105
+Site 289 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.593; P(ω2 > 1):0.001
+Site 292 - P(ω1 > ω2):0.9515; P(ω2 > ω1):0.0005; P(ω1 > 1):0.0005; P(ω2 > 1):0.0
+Site 304 - P(ω1 > ω2):0.9575; P(ω2 > ω1):0.0025; P(ω1 > 1):0.0085; P(ω2 > 1):0.0
+Site 309 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.986; P(ω2 > 1):0.002
+Site 310 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.188; P(ω2 > 1):0.0
+Site 312 - P(ω1 > ω2):0.9935; P(ω2 > ω1):0.001; P(ω1 > 1):0.386; P(ω2 > 1):0.0005
+Site 317 - P(ω1 > ω2):0.993; P(ω2 > ω1):0.001; P(ω1 > 1):0.759; P(ω2 > 1):0.005
+Site 318 - P(ω1 > ω2):0.9925; P(ω2 > ω1):0.001; P(ω1 > 1):0.1205; P(ω2 > 1):0.0
+Site 322 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.0035; P(ω1 > 1):0.541; P(ω2 > 1):0.0195
+Site 323 - P(ω1 > ω2):0.995; P(ω2 > ω1):0.001; P(ω1 > 1):0.1035; P(ω2 > 1):0.0005
+Site 324 - P(ω1 > ω2):0.995; P(ω2 > ω1):0.0015; P(ω1 > 1):0.0255; P(ω2 > 1):0.0
+Site 325 - P(ω1 > ω2):0.9975; P(ω2 > ω1):0.0; P(ω1 > 1):0.9775; P(ω2 > 1):0.0425
+Site 327 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.009; P(ω1 > 1):0.648; P(ω2 > 1):0.0295
+Site 328 - P(ω1 > ω2):0.981; P(ω2 > ω1):0.008; P(ω1 > 1):0.903; P(ω2 > 1):0.076
+Site 331 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.8315; P(ω2 > 1):0.0
+Site 334 - P(ω1 > ω2):0.9955; P(ω2 > ω1):0.002; P(ω1 > 1):0.8105; P(ω2 > 1):0.0125
+Site 338 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0005; P(ω1 > 1):0.819; P(ω2 > 1):0.0185
+Site 339 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.8455; P(ω2 > 1):0.003
+Site 340 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.033; P(ω2 > 1):0.0
+Site 341 - P(ω1 > ω2):0.984; P(ω2 > ω1):0.003; P(ω1 > 1):0.934; P(ω2 > 1):0.1095
+Site 343 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0005; P(ω1 > 1):0.994; P(ω2 > 1):0.0765
+Site 347 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.8465; P(ω2 > 1):0.0005
+Site 351 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.642; P(ω2 > 1):0.0
+Site 352 - P(ω1 > ω2):0.957; P(ω2 > ω1):0.0085; P(ω1 > 1):0.2355; P(ω2 > 1):0.0
+Site 354 - P(ω1 > ω2):0.975; P(ω2 > ω1):0.002; P(ω1 > 1):0.442; P(ω2 > 1):0.0
+Site 356 - P(ω1 > ω2):0.9565; P(ω2 > ω1):0.0095; P(ω1 > 1):0.1305; P(ω2 > 1):0.0
+Site 362 - P(ω1 > ω2):0.9955; P(ω2 > ω1):0.0005; P(ω1 > 1):0.29; P(ω2 > 1):0.0
+Site 366 - P(ω1 > ω2):0.96; P(ω2 > ω1):0.0115; P(ω1 > 1):0.505; P(ω2 > 1):0.005
+Site 368 - P(ω1 > ω2):0.98; P(ω2 > ω1):0.0065; P(ω1 > 1):0.8335; P(ω2 > 1):0.059
+
+If exports = true, writing results for all sites to CSV: output/cytb/treesurgery_and_parallel/Leucocytozoon_birds/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as output/cytb/treesurgery_and_parallel/Leucocytozoon_birds/analysis_violin_*.pdf
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: n° of legend_column=3 is larger than n° of series=1
+└ @ Plots ~/.julia/packages/Plots/sxUvK/src/backends/gr.jl:1235
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: n° of legend_column=3 is larger than n° of series=2
+└ @ Plots ~/.julia/packages/Plots/sxUvK/src/backends/gr.jl:1235
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+[1, 2, 5, 6, 20, 32, 35, 41, 49, 55, 56, 61, 62, 64, 65, 70, 72, 73, 80, 85, 89, 93, 101, 102, 109, 110, 112, 117, 118, 120, 153, 155, 158, 160, 166, 171, 179, 180, 182, 183, 185, 186, 189, 190, 193, 194, 216, 219, 222, 223, 227, 228, 229, 231, 238, 239, 247, 250, 251, 252, 253, 269, 270, 279, 282, 283, 285, 286, 289, 292, 304, 309, 310, 312, 317, 318, 322, 323, 324, 325, 327, 328, 331, 334, 338, 339, 340, 341, 343, 347, 351, 352, 354, 356, 362, 366, 368]
+97
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, vnc, offscreen, minimal, minimalegl, linuxfb, vkkhrdisplay, xcb.
+
+Aborted (core dumped)
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+
+real	12m16.167s
+user	104m53.471s
+sys	114m23.278s
