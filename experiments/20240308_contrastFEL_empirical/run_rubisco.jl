@@ -99,12 +99,12 @@ treestring, tags = read_in_tree_from_hyphy_result_json(json_file)
 get_unique_tags(json_file)
 treestring = tag_hyphy_tree(treestring, tags, "C3", "C4")
 treestring_group_labeled, group_tags, tags = CodonMolecularEvolution.replace_newick_tags(treestring)
-tag_colors = CodonMolecularEvolution.generate_hex_colors(length(tags))
+tag_colors = CodonMolecularEvolution.generate_hex_colors_predefined(length(tags))
 tags
 exports = true
 verbosity = 1
 iters = 2500
 pos_thresh = 0.95
-analysis_name = "experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/analysis"
+analysis_name = "experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis"
 df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 

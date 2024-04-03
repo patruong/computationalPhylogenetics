@@ -1,5 +1,5 @@
 #!/bin/bash
-output_dir=output/rubisco_C3_vs_C4
+output_dir=output/rubisco_reroot
 input_fasta=data/rbcl.nex
 input_tree=data/rubisco_reroot_retagged.nwk
 

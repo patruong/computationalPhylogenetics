@@ -107,7 +107,7 @@ exports = true
 verbosity = 1
 iters = 2500
 pos_thresh = 0.95
-analysis_name = "experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/analysis"
+analysis_name = "experiments/20240308_contrastFEL_empirical/output/hivRT_branchlength_1/treesurgery_and_parallel/analysis"
 df, results = difFUBAR_treesurgery_and_parallel(seqnames, seqs, treestring, tags, tag_colors, analysis_name, exports=exports, iters=iters, verbosity=verbosity)
 
 
