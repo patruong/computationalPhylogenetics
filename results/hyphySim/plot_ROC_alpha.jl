@@ -333,7 +333,7 @@ end
 
 
 
-difFUBAR_dot_threshold = 0.8
+difFUBAR_dot_threshold = 0.85
 
 plot(size=(450, 475))
 for i in 1:length(plot_colors)
@@ -342,8 +342,8 @@ for i in 1:length(plot_colors)
     difFUBAR_ω1_plot = difFUBAR_ω1_plot_data[i]
     difFUBAR_ω2_plot = difFUBAR_ω2_plot_data[i]
 
-    p = plot!(difFUBAR_ω1_plot.FPR, difFUBAR_ω1_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=1.5)
-    p = plot!(difFUBAR_ω2_plot.FPR, difFUBAR_ω2_plot.TPR, label="", line=(:dash, 1.5, plot_colors[i]))
+    p = plot!(difFUBAR_ω1_plot.FPR, difFUBAR_ω1_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=2)
+    p = plot!(difFUBAR_ω2_plot.FPR, difFUBAR_ω2_plot.TPR, label="", line=(:dash, 2, plot_colors[i]), linewidth=2)
 
     display(p)
 
@@ -363,12 +363,12 @@ for i in 1:length(plot_colors)
     push!(difFUBAR_ω2_dots, dot_difFUBAR_ω2_plot)
 
     if !labels_added
-        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
         labels_added = true  # Set the variable to true once labels are added
     else
-        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_ω1_plot.FPR], [dot_difFUBAR_ω1_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
+        scatter!([dot_difFUBAR_ω2_plot.FPR], [dot_difFUBAR_ω2_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
     end
 end
 
@@ -383,22 +383,22 @@ legend_added = false  # Initialize a boolean variable to track whether legend en
 
 for i in 1:length(plot_colors)
     if !legend_added
-        plot!([], [], line=:solid, linecolor=:black, label="ω1")
-        plot!([], [], line=:dash, linecolor=:black, label="ω2")
-        plot!([], [], line=:solid, linecolor=:red, label="E = 0.0 to 0.25")
-        plot!([], [], line=:solid, linecolor=:blue, label="E = 0.25 to 0.5")
-        plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0")
-        plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
+        plot!([], [], line=:solid, linecolor=:black, label="ω1", linewidth=2)
+        plot!([], [], line=:dash, linecolor=:black, label="ω2", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:red, label="E = 0.0 to 0.25", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:blue, label="E = 0.25 to 0.5", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf", linewidth=2)
 
-        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([], [], label="P(ω2 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([], [], label="P(ω1 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
+        scatter!([], [], label="P(ω2 > 1) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.9)
         legend_added = true  # Set the variable to true once legend entries are added
     end
 end
 
 
 slope = 1
-plot!(x -> slope * x, c=:grey, line=:dash, label="", legend=:bottomright)
+plot!(x -> slope * x, c=:grey, line=:dash, label="", legend=:bottomright, linewidth=2)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
 
@@ -423,15 +423,15 @@ replace!(difFUBAR_ω2_plot[!, "Threshold"], -Inf => 0)
 
 #contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 plot(size=(550, 250))
-p = plot!(difFUBAR_ω1_plot.Threshold, difFUBAR_ω1_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω1", linecolor=:red, linewidth=1.5)
-p = plot!(difFUBAR_ω2_plot.Threshold, difFUBAR_ω2_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω2", linecolor=:blue, linewidth=1.5)
+p = plot!(difFUBAR_ω1_plot.Threshold, difFUBAR_ω1_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω1", linecolor=:red, linewidth=2)
+p = plot!(difFUBAR_ω2_plot.Threshold, difFUBAR_ω2_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="ω2", linecolor=:blue, linewidth=2)
 
 #p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
 
 display(p)
 #end
 slope = 1
-plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright)
+plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright, linewidth=2)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
 savefig("results/hyphySim/ROC/TPR_threshold_alpha.png")
@@ -621,11 +621,11 @@ plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_low
 sort!(plot_data, "x")
 #similar
 #, title="Clopper-Pearson Intervals"
-p = plot(plot_data[!, "x"], plot_data[!, "y"], label="ω1", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red, size=(550, 250))
+p = plot(plot_data[!, "x"], plot_data[!, "y"], label="ω1", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color=:red, size=(550, 250), linewidth=2)
 
 
 for i in 1:length(plot_x)
-    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color=:red, label="")
+    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color=:red, label="", linewidth=2)
 end
 
 plot!(xlim=(-0.25, 7), ylim=(0, 1))
@@ -667,9 +667,9 @@ plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_low
 sort!(plot_data, "x")
 #similar
 #, title="Clopper-Pearson Intervals"
-plot!(plot_data[!, "x"], plot_data[!, "y"], label="ω2", xlabel="Effect Size", ylabel="Proportion of Successes / Power", ylim=[0, 1], color="#1f77b4", linestyle=:dash)
+plot!(plot_data[!, "x"], plot_data[!, "y"], label="ω2", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color="#1f77b4", linestyle=:dash, linewidth=2)
 for i in 1:length(plot_x)
-    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color="#1f77b4", label="")
+    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color="#1f77b4", label="", linewidth=2)
 end
 
 plot!(xlim=(0, 6.5), ylim=(0, 1))

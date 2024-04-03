@@ -342,7 +342,7 @@ for i in 1:length(plot_colors)
     push!(contrastFEL_plot_data, contrastFEL_plot)
 end
 
-difFUBAR_dot_threshold = 0.80
+difFUBAR_dot_threshold = 0.83
 contrastFEL_dot_threshold = 0.95
 
 plot(size=(450, 550))
@@ -353,8 +353,8 @@ for i in 1:length(plot_colors)
     difFUBAR_plot = difFUBAR_plot_data[i]
     contrastFEL_plot = contrastFEL_plot_data[i]
 
-    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=1.5)
-    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="", line=(:dash, 1.5, plot_colors[i]))
+    p = plot!(difFUBAR_plot.FPR, difFUBAR_plot.TPR, xlabel="FPR", ylabel="TPR", label="", linecolor=plot_colors[i], linewidth=2)
+    p = plot!(contrastFEL_plot.FPR, contrastFEL_plot.TPR, label="", line=(:dash, 2, plot_colors[i]))
 
     display(p)
 
@@ -374,12 +374,12 @@ for i in 1:length(plot_colors)
     push!(contrastFEL_dots, dot_contrasteFEL_plot)
 
     if !labels_added
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.90)
+        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.90)
         labels_added = true  # Set the variable to true once labels are added
     else
-        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([dot_difFUBAR_plot.FPR], [dot_difFUBAR_plot.TPR], label="", markershape=:circle, markercolor=:grey, markersize=5, markerstrokecolor=:grey, markeralpha=0.90)
+        scatter!([dot_contrasteFEL_plot.FPR], [dot_contrasteFEL_plot.TPR], label="", markershape=:circle, markercolor=:white, markersize=5, markerstrokecolor=:grey, markeralpha=0.90)
     end
 end
 
@@ -393,15 +393,15 @@ contrastfel_dot_label = round(1 - contrastFEL_dot_threshold, digits=2)
 
 for i in 1:length(plot_colors)
     if !legend_added
-        plot!([], [], line=:solid, linecolor=:black, label="difFUBAR")
-        plot!([], [], line=:dash, linecolor=:black, label="contrastFEL")
-        plot!([], [], line=:solid, linecolor=:red, label="E = 0.0 to 0.25")
-        plot!([], [], line=:solid, linecolor=:blue, label="E = 0.25 to 0.5")
-        plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0")
-        plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf")
+        plot!([], [], line=:solid, linecolor=:black, label="difFUBAR", linewidth=2)
+        plot!([], [], line=:dash, linecolor=:black, label="contrastFEL", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:red, label="E = 0.0 to 0.25", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:blue, label="E = 0.25 to 0.5", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:green, label="E = 0.5 to 3.0", linewidth=2)
+        plot!([], [], line=:solid, linecolor=:black, label="E = 3.0 to Inf", linewidth=2)
 
-        scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=4, markerstrokecolor=:grey, markeralpha=0.85)
-        scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=4, markerstrokecolor=:grey, markeralpha=0.85)
+        scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=4, markerstrokecolor=:grey, markeralpha=0.90)
+        scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=4, markerstrokecolor=:grey, markeralpha=0.90)
 
         #scatter!([], [], label="P(ω1 ≠ ω2) > $difFUBAR_dot_threshold", markershape=:circle, markercolor=:grey, markersize=2, markerstrokecolor=:grey, markeralpha=0.3)
         #scatter!([], [], label="P-value < $contrastfel_dot_label", markershape=:circle, markercolor=:white, markersize=2, markerstrokecolor=:grey, markeralpha=0.3)
@@ -411,7 +411,7 @@ end
 
 
 slope = 1
-plot!(x -> slope * x, c=:grey, line=:dash, label="", legend=:bottomright)
+plot!(x -> slope * x, c=:grey, line=:dash, label="", legend=:bottomright, linewidth=2)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
 
@@ -431,13 +431,13 @@ difFUBAR_plot = calculate_ROC_threshold(difFUBAR_res, "P(ω1 ≠ ω2)")
 #contrastFEL_plot = calculate_ROC_threshold(filter_on(contrastFEL_res, "actual_effect_difference", lower_bound, upper_bound, true), "1-Pvalue")
 
 plot(size=(550, 300))
-p = plot!(difFUBAR_plot.Threshold, difFUBAR_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=1.5)
+p = plot!(difFUBAR_plot.Threshold, difFUBAR_plot.FPR, xlabel="Posterior Probability Threshold", ylabel="FPR", label="False Positive", linecolor=:black, linewidth=2)
 #p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, label="contrastFEL, $lower_bound to $upper_bound", line=(:dash, 1.5, plot_colors[i]))
 
 display(p)
 #end
 slope = 1
-plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright)
+plot!(x -> 1 - slope * x, c=:grey, line=:dash, label="", legend=:topright, linewidth=2)
 #legend(:bottomright, title="Legend Title", framealpha=0.7)
 
 savefig("results/hyphySim/ROC/TPR_threshold.png")
@@ -447,7 +447,7 @@ savefig("results/hyphySim/ROC/TPR_threshold.svg")
 difFUBAR_plot
 
 contrastFEL_plot = calculate_ROC_threshold(contrastFEL_res, "1-Pvalue")
-p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, xlabel="P-value Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=1.5)
+p = plot!(contrastFEL_plot.Threshold, contrastFEL_plot.FPR, xlabel="P-value Threshold", ylabel="FPR", label="difFUBAR False Positive", linecolor=:black, linewidth=2)
 
 
 #### investigate FPR plot 
@@ -610,7 +610,7 @@ end
 #similar
 #, title="Clopper-Pearson Intervals"
 plot(size=(550, 300))
-p = plot!(plot_x, plot_y, label="", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color=:red)
+p = plot!(plot_x, plot_y, label="", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color=:red, linewidth=2)
 
 
 #### Clopper-Pearson
@@ -634,12 +634,18 @@ for bin in bins
     push!(plot_y_upper_bound, bin_ci[2])
 end
 
+
+plot_x = plot_x[2:end]
+plot_y = plot_y[2:end]
+plot_y_lower_bound = plot_y_lower_bound[2:end]
+plot_y_upper_bound = plot_y_upper_bound[2:end]
+
 using Plots
 
 #p = plot(plot_x, plot_y, label="Point Estimate", xlabel="Effect Size", ylabel="Power", title="Clopper-Pearson Intervals", ylim=[0, 1])
 # Plot the vertical line
 for i in 1:length(plot_x)
-    plot!([plot_x[i], plot_x[i]], [plot_y_lower_bound[i], plot_y_upper_bound[i]], color=:red, label="")
+    plot!([plot_x[i], plot_x[i]], [plot_y_lower_bound[i], plot_y_upper_bound[i]], color=:red, label="", linewidth=2)
 end
 
 display(p)
