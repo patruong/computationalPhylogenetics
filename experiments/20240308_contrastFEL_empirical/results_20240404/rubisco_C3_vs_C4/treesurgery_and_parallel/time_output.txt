@@ -1,0 +1,34 @@
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#FF0000", "#0000FF", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -11832.568478742724
+LL: -11832.030836952486
+LL: -11832.029164522046
+LL: -11832.029115049787
+Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 2 - P(ω1 > ω2):0.957; P(ω2 > ω1):0.016; P(ω1 > 1):0.9325; P(ω2 > 1):0.159
+Site 65 - P(ω1 > ω2):0.9805; P(ω2 > ω1):0.0055; P(ω1 > 1):0.826; P(ω2 > 1):0.043
+Site 228 - P(ω1 > ω2):0.956; P(ω2 > ω1):0.015; P(ω1 > 1):0.585; P(ω2 > 1):0.0345
+Site 230 - P(ω1 > ω2):0.977; P(ω2 > ω1):0.005; P(ω1 > 1):0.66; P(ω2 > 1):0.0365
+Site 241 - P(ω1 > ω2):0.954; P(ω2 > ω1):0.005; P(ω1 > 1):0.998; P(ω2 > 1):0.605
+Site 258 - P(ω1 > ω2):0.2465; P(ω2 > ω1):0.3555; P(ω1 > 1):0.966; P(ω2 > 1):0.964
+Site 260 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.997; P(ω1 > 1):0.3705; P(ω2 > 1):0.9995
+Site 288 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.999; P(ω1 > 1):0.035; P(ω2 > 1):0.8385
+Site 311 - P(ω1 > ω2):0.015; P(ω2 > ω1):0.96; P(ω1 > 1):0.1295; P(ω2 > 1):0.867
+Site 333 - P(ω1 > ω2):0.9855; P(ω2 > ω1):0.005; P(ω1 > 1):0.91; P(ω2 > 1):0.0895
+Site 346 - P(ω1 > ω2):0.9755; P(ω2 > ω1):0.0075; P(ω1 > 1):0.6945; P(ω2 > 1):0.0525
+Site 418 - P(ω1 > ω2):0.9785; P(ω2 > ω1):0.0055; P(ω1 > 1):0.979; P(ω2 > 1):0.1805
+Site 422 - P(ω1 > ω2):0.9975; P(ω2 > ω1):0.0; P(ω1 > 1):0.979; P(ω2 > 1):0.067
+
+If exports = true, writing results for all sites to CSV: experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	6m0.804s
+user	57m54.016s
+sys	45m44.266s

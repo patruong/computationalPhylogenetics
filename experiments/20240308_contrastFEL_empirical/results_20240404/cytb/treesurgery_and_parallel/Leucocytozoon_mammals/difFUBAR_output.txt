@@ -1,0 +1,33 @@
+No key 256446419514891
+No key 21134376536635946
+No key 5928957186244928
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/Leucocytozoon_mammals/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#b4bef7", "#5c74f7", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -24576.13471109592
+LL: -23004.729078554366
+LL: -22989.09104771425
+LL: -22988.994759522462
+LL: -22988.9919207046
+LL: -22988.991557894158
+LL: -22988.99148199603
+ERROR: LoadError: UndefVarError: `brents_method_minimize` not defined
+Stacktrace:
+ [1] optimize_codon_alpha_and_beta(seqnames::Vector{String}, seqs::Vector{String}, tree::FelNode, GTRmat::Matrix{Float64}; leaf_name_transform::Function, genetic_code::MolecularEvolution.GeneticCode)
+   @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/shared/shared.jl:293
+ [2] optimize_codon_alpha_and_beta
+   @ ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/shared/shared.jl:262 [inlined]
+ [3] difFUBAR_global_fit_2steps(seqnames::Vector{String}, seqs::Vector{String}, tree::FelNode, leaf_name_transform::Function, code::MolecularEvolution.GeneticCode; verbosity::Int64, optimize_branch_lengths::Bool)
+   @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/difFUBAR/difFUBAR.jl:150
+ [4] difFUBAR_treesurgery_and_parallel(seqnames::Vector{String}, seqs::Vector{String}, treestring::String, tags::Vector{String}, tag_colors::Vector{String}, outpath::String; pos_thresh::Float64, iters::Int64, verbosity::Int64, exports::Bool, code::MolecularEvolution.GeneticCode)
+   @ CodonMolecularEvolution ~/git/difFUBAR_grid/CodonMolecularEvolution.jl/src/difFUBAR/difFUBAR.jl:446
+ [5] main()
+   @ Main ~/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/run_cytB_argparse.jl:155
+ [6] top-level scope
+   @ ~/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/run_cytB_argparse.jl:160
+in expression starting at /home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/run_cytB_argparse.jl:160
+
+real	0m30.172s
+user	0m32.003s
+sys	0m10.327s
