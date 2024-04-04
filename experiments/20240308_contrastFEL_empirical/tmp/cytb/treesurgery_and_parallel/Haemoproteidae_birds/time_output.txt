@@ -1,0 +1,35 @@
+No key 2234652759209509
+No key 9725740433225755
+No key 1638711415497821
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/Haemoproteidae_birds/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#d1af2f", "#dbf471", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -24576.13471109592
+LL: -23004.729078554366
+LL: -22989.09104771425
+LL: -22988.994759522462
+LL: -22988.9919207046
+LL: -22988.991557894158
+LL: -22988.99148199603
+Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 1 - P(ω1 > ω2):0.962; P(ω2 > ω1):0.011; P(ω1 > 1):0.3665; P(ω2 > 1):0.007
+Site 3 - P(ω1 > ω2):0.008; P(ω2 > ω1):0.956; P(ω1 > 1):0.0; P(ω2 > 1):0.0415
+Site 160 - P(ω1 > ω2):0.992; P(ω2 > ω1):0.0015; P(ω1 > 1):0.1685; P(ω2 > 1):0.0
+Site 179 - P(ω1 > ω2):0.9505; P(ω2 > ω1):0.014; P(ω1 > 1):0.144; P(ω2 > 1):0.0
+Site 225 - P(ω1 > ω2):0.016; P(ω2 > ω1):0.9505; P(ω1 > 1):0.013; P(ω2 > 1):0.415
+Site 357 - P(ω1 > ω2):0.9575; P(ω2 > ω1):0.0085; P(ω1 > 1):0.0505; P(ω2 > 1):0.0
+Site 364 - P(ω1 > ω2):0.965; P(ω2 > ω1):0.006; P(ω1 > 1):0.4205; P(ω2 > 1):0.0175
+Site 366 - P(ω1 > ω2):0.959; P(ω2 > ω1):0.01; P(ω1 > 1):0.661; P(ω2 > 1):0.0275
+
+If exports = true, writing results for all sites to CSV: cytb/treesurgery_and_parallel/Haemoproteidae_birds/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as cytb/treesurgery_and_parallel/Haemoproteidae_birds/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	2m8.396s
+user	14m13.785s
+sys	11m59.201s

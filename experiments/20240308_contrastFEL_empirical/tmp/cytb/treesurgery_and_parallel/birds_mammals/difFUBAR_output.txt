@@ -1,0 +1,38 @@
+No key 9215281281232618
+No key 5737470259478111
+No key 08008115108556624
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/birds_mammals/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#35ab53", "#6b8132", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -24576.13471109592
+LL: -23004.729078554366
+LL: -22989.09104771425
+LL: -22988.994759522462
+LL: -22988.9919207046
+LL: -22988.991557894158
+LL: -22988.99148199603
+Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 116 - P(ω1 > ω2):0.963; P(ω2 > ω1):0.008; P(ω1 > 1):0.161; P(ω2 > 1):0.0
+Site 150 - P(ω1 > ω2):0.002; P(ω2 > ω1):0.993; P(ω1 > 1):0.0135; P(ω2 > 1):0.851
+Site 206 - P(ω1 > ω2):0.017; P(ω2 > ω1):0.9555; P(ω1 > 1):0.1185; P(ω2 > 1):0.8245
+Site 225 - P(ω1 > ω2):0.9695; P(ω2 > ω1):0.0045; P(ω1 > 1):0.4145; P(ω2 > 1):0.0025
+Site 234 - P(ω1 > ω2):0.0175; P(ω2 > ω1):0.9565; P(ω1 > 1):0.0085; P(ω2 > 1):0.301
+Site 237 - P(ω1 > ω2):0.005; P(ω2 > ω1):0.9615; P(ω1 > 1):0.0; P(ω2 > 1):0.0
+Site 248 - P(ω1 > ω2):0.0035; P(ω2 > ω1):0.9865; P(ω1 > 1):0.0515; P(ω2 > 1):0.731
+Site 256 - P(ω1 > ω2):0.0045; P(ω2 > ω1):0.961; P(ω1 > 1):0.0; P(ω2 > 1):0.0055
+Site 285 - P(ω1 > ω2):0.013; P(ω2 > ω1):0.9555; P(ω1 > 1):0.0035; P(ω2 > 1):0.213
+Site 286 - P(ω1 > ω2):0.017; P(ω2 > ω1):0.953; P(ω1 > 1):0.018; P(ω2 > 1):0.5115
+Site 351 - P(ω1 > ω2):0.002; P(ω2 > ω1):0.985; P(ω1 > 1):0.0; P(ω2 > 1):0.063
+
+If exports = true, writing results for all sites to CSV: cytb/treesurgery_and_parallel/birds_mammals/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as cytb/treesurgery_and_parallel/birds_mammals/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	1m39.123s
+user	7m49.550s
+sys	8m35.327s

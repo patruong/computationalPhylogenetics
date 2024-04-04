@@ -1,0 +1,850 @@
+
+Analysis Description
+--------------------
+Contrast-FEL (Fixed Effects Likelihood) investigates whether or not
+selective pressures differ between two or more sets of branches at a
+site. Site-specific synonymous (alpha) and non-synonymous (beta, one per
+branch set) substitution rates are estimated and then beta rates are
+tested for equality at each site. LRT and permutation tests ar used to
+assess significance at each site, and FDR is applied alignment wide to
+call sites with different selective profiles
+
+- __Additional information__: http://www.hyphy.org/methods/other/contrast-fel/
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree; only single partition
+data are supported
+
+- __Citation__: Mol Biol Evol (2021), (38)3 1184–1198
+
+- __Written by__: Sergei L Kosakovsky Pond and Steven Weaver
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.5
+
+
+>code => Universal
+/home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/data/cytb_branchlength_1.nwk
+data/cytb_branchlength_1.nwk
+
+>Loaded a multiple sequence alignment with **102** sequences, **376** codons, and **1** partitions from `/home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/data/Cytb.fasta`
+
+>branch-set => {
+ "0":"mammals",
+ "1":"Leucocytozoon"
+}
+
+>srv => Yes
+
+>permutations => Yes
+
+>Select nominal p-value threshold to use when testing for selection (FDR correction will be performed on all sites) (permissible range = [0,1], default value = 0.1): 
+>p-value => 1.00
+
+>Select nominal the q-value threshold to use when testing for selection (FDR reporting) (permissible range = [0,1], default value = 0.2): 
+>q-value => 1.00
+Only analyze sites whose 1-based indices match the following list (null to skip) : 
+>limit-to-sites => null
+For sites whose 1-based indices match the following list, write out likelihood function snapshots (null string to skip) : 
+>save-lf-for-sites => null
+
+
+### Branches to use as the test set in the FEL-contrast analysis
+Selected 3 sets of branches to test
+
+* Selected 18 branches in group _Leucocytozoon_ : `AB299369, KM610046, KM610045, Node184, Ldanilew, FJ168563, KF479480, KT162002, Node191, Node189, KT162004, Ldubreuili, Node195, KT162003, Lfrin345_13C, Node198, Node194, Node188`
+* 118 branches are in the background group : `Node182, Node187, Hcolumbae, Hmultipig, Node3, Hjenniae, Hiwa, Node6, Node2, AB302215, Hnoctuae, Hae840A, KJ499987, CvQ10987B, Node44, Node43, Node42, Hwitii, Hminutus, Node39, Hmotacil, Htartako, HOT800A, KT698209, HaePA213C, KT698210, Node54, Node32, Node31, Node30, Node29, AY733086, AY733087, Node16, Hvireonis, Hcoatney, Node19, Node15, Hpastoris, Hbalmorali, Hlanii, Hbelopol, Node25, Node23, Node22, Node14, Node13, Node12, Node11, Node10, LC090213, LC090214, LC090215, Node53, Node51, Pashfordi, OhoazinN, PlUN204A, Node110, Node109, NC_008279, Peng9_947, Phomopol, PlUN67A, Punalis, Pvaugha, Node105, Node104, Node102, Node100, Node98, Pkentro, Pcarmeli, Node68, NC_009961, Pvacuola, Node62, NC_009960, Pchirica, Node65, Node61, Node60, PlPCc330, Phomocircu, Pcircumf, Node81, AB250690, Pl8A_VE, Node75, PlSnowOwl, Prelictum, Node78, Node74, Node73, Pelongat, OhoazinH2A, PlUN234B, PlOT629D, Node92, KC138226, AY733089, PlMAP01C, Node88, Node87, Node86, Node85, Node84, Node72, Node71, Node59, Node58, Node57, Node115, Node124, Node114, Node56, Node50, Node9`
+* Selected 64 branches in group _mammals_ : `GQ355468, JX893151, Node121, GQ355479, NC_002235, AY282930, Node118, Node116, AF014116, AB599931, Node131, HQ712051, AF014115, M29000, Node127, Node126, Node125, FJ168565, HepaBP35, Hepa2SO4, Node178, Node176, HQ712053, HQ712052, Node166, HQ712057, HQ712056, HQ712054, HQ712055, Node171, Node170, Node169, Node165, AB354570, AY800111, AY800112, Node161, AY722799, AB354575, NC007232, Node157, Node156, AB434920, AB354574, Node153, AY598140, AB444123, Node141, KJ569808, AB354573, GQ355483, KJ569815, KJ569830, Node148, Node146, Node145, Node144, Node140, Node139, Node138, Node137, Node136, Node135, Node134`
+
+### **1** test will be performed at each site
+
+
+### Obtaining branch lengths and nucleotide substitution biases under the nucleotide GTR model
+
+>kill-zero-lengths => Yes
+
+### Deleted 4 zero-length internal branches: `Node140, Node141, Node43, Node88`
+* Log(L) = -22983.80, AIC-c = 46386.36 (209 estimated parameters)
+* 1 partition. Total tree length by partition (subs/site)  3.836
+
+### Obtaining the global omega estimate based on relative GTR branch lengths and nucleotide substitution biases
+* Log(L) = -20109.16, AIC-c = 40648.73 (214 estimated parameters)
+* 1 partition. Total tree length by partition (subs/site)  4.786
+* non-synonymous/synonymous rate ratio for *Leucocytozoon* =   0.1311
+* non-synonymous/synonymous rate ratio for *background* =   0.0675
+* non-synonymous/synonymous rate ratio for *mammals* =   0.0554
+
+### Improving branch lengths, nucleotide substitution biases, and global dN/dS ratios under a full codon model
+* Log(L) = -19875.49
+* non-synonymous/synonymous rate ratio for *Leucocytozoon* =   0.1328
+* non-synonymous/synonymous rate ratio for *background* =   0.0508
+* non-synonymous/synonymous rate ratio for *mammals* =   0.0411
+
+### For partition 1 these sites are significant at p <=1
+
+| Codon  |     alpha      |             beta             |        substitutions         |                  test                  |LRT p-value|Permutation p-value|
+|:------:|:--------------:|:----------------------------:|:----------------------------:|:--------------------------------------:|:---------:|:-----------------:|
+|   1    |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|   2    |        1.260   |        0.228 :      0.036    |             2, 4             |        Leucocytozoon vs mammals        |  0.2928   |      1.0000       |
+|   3    |        2.679   |        0.157 :      0.488    |             1, 4             |        Leucocytozoon vs mammals        |  0.3872   |      0.0500       |
+|   4    |        1.686   |        0.585 :      0.396    |             5, 9             |        Leucocytozoon vs mammals        |  0.3039   |      1.0000       |
+|   5    |        1.513   |        0.314 :      0.081    |             4, 4             |        Leucocytozoon vs mammals        |  0.0326   |      1.0000       |
+|   6    |        0.986   |        0.473 :      0.090    |             5, 3             |        Leucocytozoon vs mammals        |  0.0091   |      0.5000       |
+|   7    |        0.607   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9830   |      1.0000       |
+|   8    |        0.673   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9378   |      1.0000       |
+|   9    |        2.420   |        0.301 :      0.350    |             7, 5             |        Leucocytozoon vs mammals        |  0.6890   |      1.0000       |
+|   10   |        0.946   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9861   |      0.2000       |
+|   11   |        0.081   |        0.000 :      0.111    |             1, 2             |        Leucocytozoon vs mammals        |  0.2168   |      1.0000       |
+|   12   |        5.062   |        0.000 :      0.000    |             5, 3             |        Leucocytozoon vs mammals        |  0.9907   |      0.5000       |
+|   13   |        0.551   |        0.000 :      0.000    |             4, 1             |        Leucocytozoon vs mammals        |  0.9818   |      0.5000       |
+|   14   |        3.918   |        0.000 :      0.186    |             4, 7             |        Leucocytozoon vs mammals        |  0.0616   |      1.0000       |
+|   15   |        1.383   |        0.159 :      0.324    |             2, 1             |        Leucocytozoon vs mammals        |  0.1164   |      0.2500       |
+|   16   |        1.367   |        0.000 :      0.000    |             2, 9             |        Leucocytozoon vs mammals        |  0.9876   |      0.5000       |
+|   17   |        0.246   |        0.000 :      0.000    |             2, 0             |        Leucocytozoon vs mammals        |  0.9890   |      1.0000       |
+|   18   |        2.548   |        0.000 :      0.000    |             3, 3             |        Leucocytozoon vs mammals        |  0.9866   |      1.0000       |
+|   19   |        0.532   |        0.000 :      0.000    |             1, 4             |        Leucocytozoon vs mammals        |  0.9779   |      0.2000       |
+|   20   |        0.803   |        0.784 :      0.000    |             3, 1             |        Leucocytozoon vs mammals        |  0.0085   |      1.0000       |
+|   21   |        7.360   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9980   |      1.0000       |
+|   22   |        2.353   |        0.000 :      0.000    |             2, 5             |        Leucocytozoon vs mammals        |  0.9975   |      1.0000       |
+|   23   |        3.133   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.9898   |      1.0000       |
+|   24   |        0.810   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9970   |      0.2000       |
+|   25   |        0.229   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9927   |      1.0000       |
+|   26   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|   69   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  108   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  130   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  136   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  154   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  262   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|   27   |        3.048   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9867   |      1.0000       |
+|   28   |        5.323   |        0.000 :      0.000    |             0, 7             |        Leucocytozoon vs mammals        |  0.9990   |      1.0000       |
+|   29   |        0.523   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.9948   |      1.0000       |
+|   30   |        0.893   |        0.000 :      0.000    |             3, 3             |        Leucocytozoon vs mammals        |  0.9897   |      0.3333       |
+|   31   |        1.040   |        0.000 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.9913   |      1.0000       |
+|   32   |        1.021   |        0.527 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.0306   |      0.3333       |
+|   33   |        1.205   |        0.000 :      0.000    |             2, 6             |        Leucocytozoon vs mammals        |  0.9970   |      1.0000       |
+|   34   |        3.038   |        0.145 :      0.046    |             4, 8             |        Leucocytozoon vs mammals        |  0.1586   |      1.0000       |
+|   35   |        0.814   |        0.312 :      0.048    |             6, 1             |        Leucocytozoon vs mammals        |  0.0407   |      1.0000       |
+|   36   |        2.467   |        0.000 :      0.000    |            3, 12             |        Leucocytozoon vs mammals        |  0.9894   |      0.5000       |
+|   37   |        0.607   |        0.132 :      0.082    |             2, 2             |        Leucocytozoon vs mammals        |  0.6908   |      0.0526       |
+|   38   |        1.611   |        0.000 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.3327   |      0.3333       |
+|   39   |        0.567   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9858   |      0.0500       |
+|   40   |        1.660   |        0.000 :      0.000    |             3, 6             |        Leucocytozoon vs mammals        |  0.9879   |      1.0000       |
+|   41   |        1.170   |        0.718 :      0.141    |             4, 4             |        Leucocytozoon vs mammals        |  0.0084   |      1.0000       |
+|   42   |        0.884   |        0.000 :      0.000    |             3, 3             |        Leucocytozoon vs mammals        |  0.9980   |      1.0000       |
+|   43   |        0.265   |        0.000 :      0.000    |             2, 2             |        Leucocytozoon vs mammals        |  0.9973   |      1.0000       |
+|   44   |        0.581   |        0.152 :      0.048    |             1, 4             |        Leucocytozoon vs mammals        |  0.7037   |      1.0000       |
+|   45   |        1.732   |        0.000 :      0.059    |             2, 5             |        Leucocytozoon vs mammals        |  0.2487   |      0.5000       |
+|   46   |        0.114   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9897   |      1.0000       |
+|   47   |        1.446   |        0.000 :      0.000    |             4, 6             |        Leucocytozoon vs mammals        |  0.9949   |      0.1111       |
+|   48   |        0.366   |        0.110 :      0.036    |             3, 0             |        Leucocytozoon vs mammals        |  0.1589   |      1.0000       |
+|   49   |        1.351   |        0.543 :      0.050    |             3, 2             |        Leucocytozoon vs mammals        |  0.0048   |      0.2500       |
+|   50   |        0.811   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.3337   |      1.0000       |
+|   51   |        0.400   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.3281   |      1.0000       |
+|   52   |        0.729   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9987   |      0.3333       |
+|   53   |        0.514   |        0.130 :      0.042    |             1, 3             |        Leucocytozoon vs mammals        |  0.8905   |      0.2000       |
+|   54   |        2.930   |        0.000 :      0.140    |             5, 9             |        Leucocytozoon vs mammals        |  0.1708   |      0.2500       |
+|   55   |        1.513   |        0.400 :      0.000    |             4, 5             |        Leucocytozoon vs mammals        |  0.1457   |      0.1667       |
+|   56   |        3.491   |        0.622 :      0.000    |             4, 3             |        Leucocytozoon vs mammals        |  0.0057   |      0.5000       |
+|   57   |        0.717   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9887   |      0.0500       |
+|   58   |        4.609   |        0.159 :      0.000    |             4, 6             |        Leucocytozoon vs mammals        |  0.1594   |      1.0000       |
+|   59   |        2.457   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9915   |      1.0000       |
+|   60   |        1.421   |        0.000 :      0.000    |             2, 0             |        Leucocytozoon vs mammals        |  0.9927   |      0.1111       |
+|   61   |        1.236   |        0.565 :      0.098    |             5, 3             |        Leucocytozoon vs mammals        |  0.0079   |      0.3333       |
+|   62   |        1.652   |        0.149 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.9000   |      1.0000       |
+|   63   |        2.346   |        0.000 :      0.000    |             0, 3             |        Leucocytozoon vs mammals        |  0.9970   |      1.0000       |
+|   64   |        0.844   |        0.241 :      0.000    |             2, 5             |        Leucocytozoon vs mammals        |  0.0604   |      0.0500       |
+|   65   |        0.524   |        0.259 :      0.000    |             2, 5             |        Leucocytozoon vs mammals        |  0.8093   |      1.0000       |
+|   66   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|   95   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  313   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|   67   |        2.549   |        0.000 :      0.000    |             0, 3             |        Leucocytozoon vs mammals        |  0.9870   |      1.0000       |
+|   68   |        0.712   |        0.199 :      0.066    |             4, 2             |        Leucocytozoon vs mammals        |  0.1573   |      0.5000       |
+|   70   |        1.092   |        0.363 :      0.000    |             3, 1             |        Leucocytozoon vs mammals        |  0.0125   |      1.0000       |
+|   71   |        0.159   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9820   |      0.3333       |
+|   72   |    10000.000   |        0.352 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.0447   |      0.5000       |
+|   73   |        2.348   |        0.544 :      0.000    |             4, 2             |        Leucocytozoon vs mammals        |  0.2542   |      1.0000       |
+|   74   |        2.396   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.9906   |      0.1000       |
+|   75   |        0.202   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9872   |      0.3333       |
+|   76   |        2.537   |        0.000 :      0.000    |             4, 3             |        Leucocytozoon vs mammals        |  0.9888   |      1.0000       |
+|   77   |        2.294   |        0.000 :      0.060    |             0, 0             |        Leucocytozoon vs mammals        |  0.9548   |      0.1667       |
+|   78   |        4.430   |        0.000 :      0.000    |             3, 3             |        Leucocytozoon vs mammals        |  0.9806   |      0.3333       |
+|   79   |        1.510   |        0.000 :      0.073    |             3, 4             |        Leucocytozoon vs mammals        |  0.9894   |      1.0000       |
+|   80   |        2.905   |        0.395 :      0.000    |             7, 7             |        Leucocytozoon vs mammals        |  0.0891   |      0.5000       |
+|   81   |        0.735   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.9843   |      0.5000       |
+|   82   |        0.393   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9881   |      0.3333       |
+|   83   |        0.403   |        0.000 :      0.044    |             1, 2             |        Leucocytozoon vs mammals        |  0.9803   |      0.5000       |
+|   84   |        0.963   |        0.000 :      0.039    |             0, 3             |        Leucocytozoon vs mammals        |  0.9835   |      0.1429       |
+|   85   |        1.058   |        0.371 :      0.000    |             4, 2             |        Leucocytozoon vs mammals        |  0.0454   |      1.0000       |
+|   86   |        3.117   |        0.000 :      0.000    |             2, 8             |        Leucocytozoon vs mammals        |  0.9894   |      0.1667       |
+|   87   |        0.885   |        0.133 :      0.094    |             4, 4             |        Leucocytozoon vs mammals        |  0.8088   |      1.0000       |
+|   88   |        1.262   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9922   |      0.2500       |
+|   89   |        0.909   |        0.983 :      0.000    |             5, 4             |        Leucocytozoon vs mammals        |  0.0001   |      1.0000       |
+|   90   |        3.535   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9897   |      0.5000       |
+|   91   |        2.163   |        0.000 :      0.000    |             1, 7             |        Leucocytozoon vs mammals        |  0.9928   |      0.3333       |
+|   92   |        3.280   |        0.000 :      0.000    |             3, 6             |        Leucocytozoon vs mammals        |  0.9913   |      1.0000       |
+|   93   |        1.143   |        0.135 :      0.000    |             3, 1             |        Leucocytozoon vs mammals        |  0.1682   |      0.5000       |
+|   94   |        0.597   |        0.000 :      0.062    |             1, 3             |        Leucocytozoon vs mammals        |  0.9872   |      1.0000       |
+|   96   |        0.733   |        0.000 :      0.000    |             1, 4             |        Leucocytozoon vs mammals        |  0.9871   |      0.0500       |
+|   97   |        1.185   |        0.000 :      0.000    |             0, 3             |        Leucocytozoon vs mammals        |  0.9819   |      0.2500       |
+|   98   |        3.988   |        0.000 :      0.000    |             4, 5             |        Leucocytozoon vs mammals        |  0.9997   |      0.3333       |
+|   99   |        6.640   |        0.160 :      0.000    |             2, 6             |        Leucocytozoon vs mammals        |  0.1592   |      0.3333       |
+|  100   |        1.879   |        0.000 :      0.000    |             3, 6             |        Leucocytozoon vs mammals        |  0.9845   |      1.0000       |
+|  101   |        2.691   |        0.322 :      0.045    |             4, 3             |        Leucocytozoon vs mammals        |  0.0511   |      0.5000       |
+|  102   |        1.652   |        1.431 :      0.099    |             6, 5             |        Leucocytozoon vs mammals        |  0.0034   |      1.0000       |
+|  103   |        2.925   |        0.160 :      0.000    |             4, 3             |        Leucocytozoon vs mammals        |  0.1587   |      1.0000       |
+|  104   |        1.183   |        0.000 :      0.000    |             1, 7             |        Leucocytozoon vs mammals        |  0.9789   |      0.2000       |
+|  105   |        1.746   |        0.086 :      0.000    |             4, 8             |        Leucocytozoon vs mammals        |  0.1557   |      0.5000       |
+|  106   |        0.875   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9919   |      0.5000       |
+|  107   |        0.433   |        0.145 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.1595   |      0.1667       |
+|  109   |        2.099   |        0.542 :      0.046    |             6, 3             |        Leucocytozoon vs mammals        |  0.0095   |      1.0000       |
+|  110   |        2.000   |        0.397 :      0.249    |             5, 5             |        Leucocytozoon vs mammals        |  0.1477   |      1.0000       |
+|  111   |        0.676   |        0.000 :      0.000    |             0, 5             |        Leucocytozoon vs mammals        |  0.9204   |      0.2500       |
+|  112   |        1.789   |        0.162 :      0.000    |             2, 2             |        Leucocytozoon vs mammals        |  0.1848   |      1.0000       |
+|  113   |        4.532   |        0.536 :      0.615    |            6, 14             |        Leucocytozoon vs mammals        |  0.4142   |      0.0500       |
+|  114   |        0.747   |        0.143 :      0.045    |             1, 5             |        Leucocytozoon vs mammals        |  0.8246   |      0.5000       |
+|  115   |        2.325   |        0.000 :      0.000    |             4, 2             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  116   |        0.912   |        0.335 :      0.685    |             2, 1             |        Leucocytozoon vs mammals        |  0.0645   |      0.2000       |
+|  117   |        0.703   |        0.289 :      0.049    |             4, 3             |        Leucocytozoon vs mammals        |  0.0697   |      1.0000       |
+|  118   |        1.213   |        0.569 :      0.055    |             5, 3             |        Leucocytozoon vs mammals        |  0.0517   |      0.5000       |
+|  119   |        1.762   |        0.000 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.9910   |      1.0000       |
+|  120   |        3.277   |        0.349 :      0.071    |            2, 11             |        Leucocytozoon vs mammals        |  0.5289   |      1.0000       |
+|  121   |        1.921   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.9831   |      0.1000       |
+|  122   |        0.254   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9944   |      0.3333       |
+|  123   |        1.809   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9966   |      0.0714       |
+|  124   |        2.401   |        0.000 :      0.091    |             0, 7             |        Leucocytozoon vs mammals        |  0.9913   |      0.2500       |
+|  125   |        0.727   |        0.000 :      0.000    |             2, 2             |        Leucocytozoon vs mammals        |  0.9960   |      1.0000       |
+|  126   |        5.336   |        0.000 :      0.000    |             1, 6             |        Leucocytozoon vs mammals        |  0.9973   |      0.3333       |
+|  127   |        1.170   |        0.000 :      0.000    |             3, 5             |        Leucocytozoon vs mammals        |  0.9775   |      0.1111       |
+|  128   |        0.942   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9721   |      0.5000       |
+|  129   |        0.516   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9866   |      0.5000       |
+|  131   |        0.747   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9920   |      1.0000       |
+|  132   |        0.638   |        0.000 :      0.092    |             0, 0             |        Leucocytozoon vs mammals        |  0.9871   |      0.0500       |
+|  133   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  134   |        1.314   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  135   |        0.893   |        0.131 :      0.040    |             3, 1             |        Leucocytozoon vs mammals        |  0.1850   |      0.3333       |
+|  137   |        0.197   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9895   |      0.5000       |
+|  138   |        0.512   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9832   |      0.5000       |
+|  139   |        1.584   |        0.000 :      0.000    |             2, 8             |        Leucocytozoon vs mammals        |  0.9816   |      0.5000       |
+|  140   |        1.767   |        0.000 :      0.000    |             3, 5             |        Leucocytozoon vs mammals        |  0.9889   |      1.0000       |
+|  141   |        4.140   |        0.000 :      0.093    |             3, 5             |        Leucocytozoon vs mammals        |  0.9744   |      0.5000       |
+|  142   |        0.536   |        0.000 :      0.035    |             3, 1             |        Leucocytozoon vs mammals        |  0.9796   |      0.1667       |
+|  143   |        5.442   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.9872   |      1.0000       |
+|  144   |        1.217   |        0.000 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.9928   |      0.3333       |
+|  145   |        0.566   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  146   |        0.709   |        0.000 :      0.051    |             0, 2             |        Leucocytozoon vs mammals        |  0.9804   |      1.0000       |
+|  147   |        1.233   |        0.000 :      0.039    |             1, 4             |        Leucocytozoon vs mammals        |  0.1398   |      1.0000       |
+|  148   |        1.185   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.9876   |      1.0000       |
+|  149   |        1.133   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.9917   |      1.0000       |
+|  150   |        0.714   |        0.000 :      0.084    |             2, 9             |        Leucocytozoon vs mammals        |  0.0031   |      0.5000       |
+|  151   |        1.956   |        0.000 :      0.080    |             2, 5             |        Leucocytozoon vs mammals        |  0.9794   |      0.1000       |
+|  152   |        2.300   |        0.158 :      0.094    |            3, 12             |        Leucocytozoon vs mammals        |  0.1575   |      0.0909       |
+|  153   |        0.761   |        0.263 :      0.199    |             3, 6             |        Leucocytozoon vs mammals        |  0.7044   |      1.0000       |
+|  155   |        1.295   |        0.459 :      0.065    |             5, 0             |        Leucocytozoon vs mammals        |  0.0319   |      0.0909       |
+|  156   |        0.920   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9857   |      1.0000       |
+|  157   |        0.555   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9856   |      0.5000       |
+|  158   |        0.390   |        0.838 :      0.000    |             5, 2             |        Leucocytozoon vs mammals        |  0.0028   |      1.0000       |
+|  159   |        0.932   |        0.279 :      0.056    |             5, 1             |        Leucocytozoon vs mammals        |  0.0803   |      1.0000       |
+|  160   |        1.034   |        0.323 :      0.288    |             2, 8             |        Leucocytozoon vs mammals        |  0.1775   |      0.3333       |
+|  161   |        2.956   |        0.000 :      0.096    |            2, 12             |        Leucocytozoon vs mammals        |  0.9909   |      1.0000       |
+|  162   |        4.302   |        0.117 :      0.074    |             2, 0             |        Leucocytozoon vs mammals        |  0.1547   |      1.0000       |
+|  163   |        1.142   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9820   |      1.0000       |
+|  164   |        1.058   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9944   |      0.3333       |
+|  165   |        2.915   |        0.000 :      0.000    |             4, 8             |        Leucocytozoon vs mammals        |  0.9972   |      1.0000       |
+|  166   |        1.717   |        0.196 :      0.063    |             5, 6             |        Leucocytozoon vs mammals        |  0.1228   |      1.0000       |
+|  167   |        0.668   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9935   |      1.0000       |
+|  207   |        0.668   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9935   |      1.0000       |
+|  168   |        0.181   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9920   |      1.0000       |
+|  169   |        1.342   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9900   |      0.2500       |
+|  170   |        6.696   |        0.000 :      0.000    |             3, 3             |        Leucocytozoon vs mammals        |  0.9743   |      0.5000       |
+|  171   |        0.499   |        0.439 :      0.081    |             4, 3             |        Leucocytozoon vs mammals        |  0.2162   |      1.0000       |
+|  172   |        1.236   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9883   |      0.5000       |
+|  173   |       13.096   |        0.000 :      0.000    |             4, 6             |        Leucocytozoon vs mammals        |  0.9932   |      0.5000       |
+|  174   |        0.996   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9856   |      0.3333       |
+|  175   |        1.842   |        0.322 :      0.241    |             3, 4             |        Leucocytozoon vs mammals        |  0.0396   |      0.0833       |
+|  176   |        2.412   |        0.125 :      0.040    |             3, 2             |        Leucocytozoon vs mammals        |  0.1596   |      1.0000       |
+|  177   |        0.697   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9892   |      1.0000       |
+|  178   |        3.045   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  179   |        0.858   |        0.916 :      0.162    |             6, 6             |        Leucocytozoon vs mammals        |  0.0510   |      0.5000       |
+|  180   |        1.513   |        0.430 :      0.050    |             6, 5             |        Leucocytozoon vs mammals        |  0.0224   |      0.5000       |
+|  181   |        1.824   |        0.000 :      0.123    |             2, 3             |        Leucocytozoon vs mammals        |  0.9877   |      1.0000       |
+|  182   |        1.023   |        4.098 :      0.000    |            10, 0             |        Leucocytozoon vs mammals        |  0.0000   |      0.2000       |
+|  183   |        0.783   |        0.956 :      0.000    |             4, 2             |        Leucocytozoon vs mammals        |  0.0012   |      0.2000       |
+|  184   |        0.329   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9991   |      1.0000       |
+|  185   |        3.041   |        0.259 :      0.000    |             4, 1             |        Leucocytozoon vs mammals        |  0.0429   |      1.0000       |
+|  186   |        0.628   |        0.394 :      0.000    |             3, 2             |        Leucocytozoon vs mammals        |  0.0278   |      1.0000       |
+|  187   |        0.571   |        0.000 :      0.027    |             1, 0             |        Leucocytozoon vs mammals        |  0.9944   |      1.0000       |
+|  188   |        0.617   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9570   |      1.0000       |
+|  189   |        0.372   |        0.284 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.0368   |      1.0000       |
+|  190   |        1.368   |        0.274 :      0.039    |             2, 4             |        Leucocytozoon vs mammals        |  0.0392   |      0.2500       |
+|  191   |        1.693   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9902   |      0.3333       |
+|  192   |        1.839   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9965   |      1.0000       |
+|  193   |        1.239   |        0.931 :      0.000    |             5, 1             |        Leucocytozoon vs mammals        |  0.0038   |      1.0000       |
+|  194   |        0.758   |        0.407 :      0.046    |             4, 1             |        Leucocytozoon vs mammals        |  0.0061   |      0.5000       |
+|  195   |        0.061   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  196   |        0.043   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9988   |      1.0000       |
+|  197   |        1.624   |        0.111 :      0.075    |             1, 6             |        Leucocytozoon vs mammals        |  0.1563   |      1.0000       |
+|  198   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  199   |        0.256   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.9929   |      0.1429       |
+|  200   |        0.213   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9872   |      1.0000       |
+|  201   |        0.196   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9881   |      0.0833       |
+|  202   |        0.540   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9851   |      1.0000       |
+|  203   |        0.000   |        0.111 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.7117   |      0.1111       |
+|  204   |        0.618   |        0.000 :      0.000    |             2, 0             |        Leucocytozoon vs mammals        |  0.9524   |      0.5000       |
+|  205   |        0.623   |        0.194 :      0.108    |             3, 4             |        Leucocytozoon vs mammals        |  0.3596   |      0.3333       |
+|  206   |        0.113   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.1007   |      1.0000       |
+|  208   |        0.000   |        0.000 :      0.045    |             0, 0             |        Leucocytozoon vs mammals        |  0.9738   |      1.0000       |
+|  209   |        0.172   |        0.000 :      0.027    |             0, 2             |        Leucocytozoon vs mammals        |  0.9824   |      0.1429       |
+|  210   |        0.444   |        0.000 :      0.000    |             0, 7             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  211   |        0.238   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9806   |      0.2500       |
+|  212   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  213   |        0.254   |        0.110 :      0.108    |             1, 0             |        Leucocytozoon vs mammals        |  0.1586   |      0.3333       |
+|  214   |        0.205   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9887   |      0.5000       |
+|  215   |        0.115   |        0.199 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.1574   |      0.5000       |
+|  216   |        0.169   |        0.247 :      0.126    |             2, 1             |        Leucocytozoon vs mammals        |  0.2771   |      1.0000       |
+|  217   |        0.810   |        0.000 :      0.000    |             2, 0             |        Leucocytozoon vs mammals        |  0.9991   |      1.0000       |
+|  218   |        0.930   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9819   |      0.2000       |
+|  219   |        1.051   |        0.147 :      0.094    |             1, 5             |        Leucocytozoon vs mammals        |  0.1609   |      1.0000       |
+|  220   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  272   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  277   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  221   |        0.341   |        0.180 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.1561   |      0.2000       |
+|  222   |        0.736   |        0.515 :      0.000    |             4, 0             |        Leucocytozoon vs mammals        |  0.0077   |      0.0556       |
+|  223   |        1.590   |        0.516 :      0.072    |             6, 1             |        Leucocytozoon vs mammals        |  0.0034   |      1.0000       |
+|  224   |        0.777   |        0.141 :      0.035    |             2, 0             |        Leucocytozoon vs mammals        |  0.1316   |      1.0000       |
+|  225   |        0.839   |        0.155 :      0.319    |             3, 5             |        Leucocytozoon vs mammals        |  0.6833   |      1.0000       |
+|  226   |        0.814   |        0.197 :      0.194    |             2, 4             |        Leucocytozoon vs mammals        |  0.8729   |      1.0000       |
+|  227   |        1.803   |        0.493 :      0.097    |             6, 3             |        Leucocytozoon vs mammals        |  0.1001   |      0.5000       |
+|  228   |        1.050   |        0.665 :      0.141    |             4, 2             |        Leucocytozoon vs mammals        |  0.1069   |      1.0000       |
+|  229   |        5.645   |        0.265 :      0.079    |             6, 5             |        Leucocytozoon vs mammals        |  0.0413   |      1.0000       |
+|  230   |        0.884   |        0.193 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.8928   |      1.0000       |
+|  231   |        2.327   |        0.769 :      0.400    |             4, 8             |        Leucocytozoon vs mammals        |  0.2203   |      1.0000       |
+|  232   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  373   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  233   |        1.036   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9832   |      0.1667       |
+|  234   |        0.650   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.0787   |      0.5000       |
+|  235   |        0.250   |        0.138 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.1433   |      0.5000       |
+|  236   |        1.285   |        0.000 :      0.000    |             3, 5             |        Leucocytozoon vs mammals        |  0.9988   |      1.0000       |
+|  237   |        2.554   |        0.146 :      0.000    |            1, 10             |        Leucocytozoon vs mammals        |  0.3906   |      1.0000       |
+|  238   |        1.023   |        0.626 :      0.157    |             4, 3             |        Leucocytozoon vs mammals        |  0.1367   |      0.3333       |
+|  239   |        0.333   |        0.297 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.0105   |      1.0000       |
+|  240   |        0.346   |        0.196 :      0.063    |             1, 2             |        Leucocytozoon vs mammals        |  0.1593   |      0.1667       |
+|  241   |        1.244   |        0.000 :      0.042    |             4, 3             |        Leucocytozoon vs mammals        |  0.9767   |      1.0000       |
+|  242   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  243   |        1.271   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.9972   |      0.0500       |
+|  244   |        0.256   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9860   |      0.5000       |
+|  245   |        2.204   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9880   |      0.2500       |
+|  246   |        1.200   |        0.113 :      0.036    |             1, 5             |        Leucocytozoon vs mammals        |  0.8574   |      1.0000       |
+|  247   |        1.505   |        0.160 :      0.000    |             3, 7             |        Leucocytozoon vs mammals        |  0.1447   |      0.5000       |
+|  248   |        0.600   |        0.182 :      0.200    |             1, 9             |        Leucocytozoon vs mammals        |  0.0832   |      0.0500       |
+|  249   |        1.899   |        0.000 :      0.000    |            2, 11             |        Leucocytozoon vs mammals        |  0.9839   |      1.0000       |
+|  250   |        1.221   |        0.225 :      0.037    |             2, 1             |        Leucocytozoon vs mammals        |  0.0453   |      0.5000       |
+|  251   |        0.320   |        0.442 :      0.101    |             2, 2             |        Leucocytozoon vs mammals        |  0.0130   |      0.2500       |
+|  252   |        2.468   |        0.336 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.0441   |      1.0000       |
+|  253   |        1.517   |        0.685 :      0.078    |             4, 6             |        Leucocytozoon vs mammals        |  0.0025   |      1.0000       |
+|  254   |        0.887   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9829   |      0.5000       |
+|  255   |        0.581   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9852   |      0.3333       |
+|  256   |        1.683   |        0.000 :      0.139    |             0, 9             |        Leucocytozoon vs mammals        |  0.0476   |      1.0000       |
+|  257   |        1.144   |        0.000 :      0.028    |             0, 1             |        Leucocytozoon vs mammals        |  0.9801   |      1.0000       |
+|  258   |        1.095   |        0.000 :      0.000    |             2, 9             |        Leucocytozoon vs mammals        |  0.9805   |      1.0000       |
+|  259   |        0.489   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9933   |      0.1000       |
+|  260   |        1.978   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.9876   |      0.2500       |
+|  261   |        0.539   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9907   |      1.0000       |
+|  263   |        4.000   |        0.000 :      0.000    |             2, 4             |        Leucocytozoon vs mammals        |  0.9879   |      0.1000       |
+|  264   |        0.523   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9958   |      1.0000       |
+|  265   |        0.718   |        0.000 :      0.000    |             1, 2             |        Leucocytozoon vs mammals        |  0.9900   |      0.5000       |
+|  266   |        0.806   |        0.000 :      0.084    |             1, 3             |        Leucocytozoon vs mammals        |  0.9828   |      0.3333       |
+|  267   |        1.842   |        0.000 :      0.000    |             3, 2             |        Leucocytozoon vs mammals        |  0.9896   |      1.0000       |
+|  268   |        0.549   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9849   |      0.0769       |
+|  269   |        0.388   |        0.239 :      0.000    |             3, 0             |        Leucocytozoon vs mammals        |  0.0411   |      0.1000       |
+|  270   |        5.964   |        0.340 :      0.000    |             6, 3             |        Leucocytozoon vs mammals        |  0.3644   |      0.5000       |
+|  271   |        1.521   |        0.000 :      0.064    |             5, 1             |        Leucocytozoon vs mammals        |  0.9934   |      1.0000       |
+|  273   |        1.340   |        0.000 :      0.035    |             2, 3             |        Leucocytozoon vs mammals        |  0.3296   |      0.1111       |
+|  274   |        0.801   |        0.000 :      0.095    |             1, 3             |        Leucocytozoon vs mammals        |  0.9923   |      1.0000       |
+|  275   |        0.278   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  276   |        1.366   |        0.000 :      0.036    |             0, 0             |        Leucocytozoon vs mammals        |  0.9434   |      1.0000       |
+|  278   |        4.174   |        0.000 :      0.035    |             3, 8             |        Leucocytozoon vs mammals        |  0.3341   |      0.3333       |
+|  279   |        1.337   |        0.134 :      0.035    |             2, 4             |        Leucocytozoon vs mammals        |  0.1359   |      0.5000       |
+|  280   |        0.552   |        0.000 :      0.000    |             1, 5             |        Leucocytozoon vs mammals        |  0.9800   |      0.0833       |
+|  281   |        0.772   |        0.000 :      0.000    |             1, 4             |        Leucocytozoon vs mammals        |  0.9902   |      1.0000       |
+|  282   |        1.074   |        0.188 :      0.063    |             1, 7             |        Leucocytozoon vs mammals        |  0.7030   |      0.2500       |
+|  283   |        0.350   |        0.619 :      0.180    |             4, 0             |        Leucocytozoon vs mammals        |  0.0092   |      1.0000       |
+|  284   |        0.396   |        0.000 :      0.031    |             0, 0             |        Leucocytozoon vs mammals        |  0.9866   |      0.2500       |
+|  285   |        0.680   |        1.392 :      0.224    |             5, 5             |        Leucocytozoon vs mammals        |  0.0978   |      0.0833       |
+|  286   |        0.245   |        0.206 :      0.121    |             3, 5             |        Leucocytozoon vs mammals        |  0.9130   |      1.0000       |
+|  287   |        0.441   |        0.000 :      0.048    |             1, 3             |        Leucocytozoon vs mammals        |  0.9898   |      0.1429       |
+|  288   |        0.795   |        0.192 :      0.000    |             3, 2             |        Leucocytozoon vs mammals        |  0.1618   |      1.0000       |
+|  289   |        1.555   |        1.160 :      0.000    |             3, 0             |        Leucocytozoon vs mammals        |  0.0002   |      0.5000       |
+|  290   |        0.398   |        0.000 :      0.380    |             0, 2             |        Leucocytozoon vs mammals        |  0.9750   |      1.0000       |
+|  291   |        1.047   |        0.000 :      0.000    |             2, 3             |        Leucocytozoon vs mammals        |  0.3310   |      0.5000       |
+|  292   |        2.105   |        0.125 :      0.000    |             3, 2             |        Leucocytozoon vs mammals        |  0.1542   |      0.5000       |
+|  293   |        1.004   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.9909   |      0.2000       |
+|  294   |        0.680   |        0.188 :      0.064    |             2, 3             |        Leucocytozoon vs mammals        |  0.7773   |      0.3333       |
+|  295   |        2.725   |        0.000 :      0.000    |             4, 9             |        Leucocytozoon vs mammals        |  0.9875   |      0.3333       |
+|  296   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  297   |        1.270   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.9840   |      1.0000       |
+|  298   |        0.000   |        0.000 :      0.050    |             0, 0             |        Leucocytozoon vs mammals        |  0.9974   |      0.1429       |
+|  299   |        3.536   |        0.231 :      0.108    |            3, 10             |        Leucocytozoon vs mammals        |  0.6434   |      0.0909       |
+|  300   |        1.121   |        0.000 :      0.063    |             3, 2             |        Leucocytozoon vs mammals        |  0.9925   |      1.0000       |
+|  301   |        1.702   |        0.109 :      0.035    |             3, 4             |        Leucocytozoon vs mammals        |  0.1591   |      1.0000       |
+|  302   |        0.565   |        0.122 :      0.113    |             1, 0             |        Leucocytozoon vs mammals        |  0.1444   |      1.0000       |
+|  303   |        1.767   |        0.000 :      0.326    |             2, 2             |        Leucocytozoon vs mammals        |  0.9656   |      1.0000       |
+|  304   |        1.454   |        0.150 :      0.000    |             4, 1             |        Leucocytozoon vs mammals        |  0.1513   |      1.0000       |
+|  305   |        3.008   |        0.179 :      0.144    |             2, 1             |        Leucocytozoon vs mammals        |  0.1321   |      1.0000       |
+|  306   |        0.717   |        0.138 :      0.082    |             1, 2             |        Leucocytozoon vs mammals        |  0.1427   |      1.0000       |
+|  307   |        0.553   |        0.000 :      0.000    |             0, 0             |        Leucocytozoon vs mammals        |  0.9906   |      1.0000       |
+|  308   |        2.292   |        0.126 :      0.077    |             2, 0             |        Leucocytozoon vs mammals        |  0.1166   |      0.0625       |
+|  309   |        0.921   |        2.274 :      0.367    |             8, 9             |        Leucocytozoon vs mammals        |  0.1098   |      0.5000       |
+|  310   |        1.581   |        0.767 :      0.039    |             4, 2             |        Leucocytozoon vs mammals        |  0.0009   |      0.1667       |
+|  311   |        0.699   |        0.156 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.6559   |      1.0000       |
+|  312   |        0.885   |        0.472 :      0.103    |             4, 3             |        Leucocytozoon vs mammals        |  0.0477   |      0.3333       |
+|  314   |       12.969   |        0.114 :      0.172    |             1, 3             |        Leucocytozoon vs mammals        |  0.7667   |      0.0500       |
+|  315   |        6.141   |        0.000 :      0.052    |             2, 5             |        Leucocytozoon vs mammals        |  0.9751   |      0.3333       |
+|  316   |        3.234   |        0.000 :      0.000    |            2, 11             |        Leucocytozoon vs mammals        |  0.9890   |      0.5000       |
+|  317   |        0.638   |        0.799 :      0.160    |             3, 3             |        Leucocytozoon vs mammals        |  0.0945   |      0.1667       |
+|  318   |        0.864   |        0.416 :      0.068    |             6, 4             |        Leucocytozoon vs mammals        |  0.0046   |      0.3333       |
+|  319   |        3.544   |        0.505 :      0.419    |             5, 6             |        Leucocytozoon vs mammals        |  0.5237   |      0.5000       |
+|  320   |        2.138   |        0.150 :      0.000    |             5, 1             |        Leucocytozoon vs mammals        |  0.6814   |      1.0000       |
+|  321   |    10000.000   |        0.000 :      0.055    |             0, 0             |        Leucocytozoon vs mammals        |  0.9165   |      0.2500       |
+|  322   |        0.227   |        0.291 :      0.040    |             2, 1             |        Leucocytozoon vs mammals        |  0.2770   |      0.3333       |
+|  323   |        0.973   |        0.321 :      0.088    |             4, 0             |        Leucocytozoon vs mammals        |  0.0174   |      1.0000       |
+|  324   |        1.624   |        0.333 :      0.000    |             4, 1             |        Leucocytozoon vs mammals        |  0.0431   |      0.5000       |
+|  325   |        0.079   |        0.479 :      0.080    |             4, 1             |        Leucocytozoon vs mammals        |  0.1061   |      1.0000       |
+|  326   |        0.275   |        0.000 :      0.000    |             3, 0             |        Leucocytozoon vs mammals        |  0.9857   |      0.5000       |
+|  327   |        0.259   |        0.339 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  0.0434   |      0.2500       |
+|  328   |        0.062   |        0.235 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.0424   |      0.3333       |
+|  329   |        1.170   |        0.000 :      0.000    |             4, 1             |        Leucocytozoon vs mammals        |  0.9808   |      1.0000       |
+|  330   |        1.835   |        0.094 :      0.121    |             1, 6             |        Leucocytozoon vs mammals        |  0.2741   |      0.5000       |
+|  331   |      136.957   |        3.419 :      0.000    |             9, 0             |        Leucocytozoon vs mammals        |  0.0000   |      0.1250       |
+|  332   |        0.835   |        0.000 :      0.000    |             4, 3             |        Leucocytozoon vs mammals        |  0.3248   |      1.0000       |
+|  333   |        0.501   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.9926   |      1.0000       |
+|  334   |        0.193   |        0.869 :      0.077    |             4, 1             |        Leucocytozoon vs mammals        |  0.1028   |      1.0000       |
+|  335   |        2.782   |        0.000 :      0.000    |             0, 3             |        Leucocytozoon vs mammals        |  0.3312   |      1.0000       |
+|  336   |        0.222   |        0.000 :      0.000    |             0, 2             |        Leucocytozoon vs mammals        |  0.9914   |      1.0000       |
+|  337   |        0.766   |        0.000 :      0.000    |             0, 4             |        Leucocytozoon vs mammals        |  0.9971   |      1.0000       |
+|  338   |        0.000   |        0.790 :      0.000    |             3, 0             |        Leucocytozoon vs mammals        |  0.0013   |      0.5000       |
+|  339   |        0.405   |        0.508 :      0.155    |             5, 4             |        Leucocytozoon vs mammals        |  0.2418   |      1.0000       |
+|  340   |        1.524   |        0.457 :      0.000    |             4, 5             |        Leucocytozoon vs mammals        |  0.0139   |      0.3333       |
+|  341   |        0.372   |        0.736 :      0.300    |             6, 2             |        Leucocytozoon vs mammals        |  0.0018   |      1.0000       |
+|  342   |        0.322   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9894   |      1.0000       |
+|  343   |        0.202   |        1.206 :      0.530    |             5, 1             |        Leucocytozoon vs mammals        |  0.0014   |      0.5000       |
+|  344   |        0.249   |        0.000 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.9639   |      0.0500       |
+|  345   |        0.379   |        0.000 :      0.000    |             2, 2             |        Leucocytozoon vs mammals        |  0.9894   |      0.1250       |
+|  346   |        0.499   |        0.000 :      0.000    |             1, 3             |        Leucocytozoon vs mammals        |  0.9754   |      0.3333       |
+|  347   |        0.590   |        0.840 :      0.253    |             6, 2             |        Leucocytozoon vs mammals        |  0.0035   |      0.5000       |
+|  348   |        1.545   |        0.000 :      0.000    |             2, 1             |        Leucocytozoon vs mammals        |  0.9931   |      0.1667       |
+|  349   |        0.528   |        0.000 :      0.000    |             1, 4             |        Leucocytozoon vs mammals        |  0.9982   |      0.5000       |
+|  350   |        0.278   |        0.489 :      0.361    |             3, 1             |        Leucocytozoon vs mammals        |  0.0120   |      1.0000       |
+|  351   |        1.512   |        0.695 :      0.064    |             4, 8             |        Leucocytozoon vs mammals        |  0.7674   |      0.0500       |
+|  352   |        0.989   |        0.428 :      0.123    |             4, 8             |        Leucocytozoon vs mammals        |  0.1092   |      1.0000       |
+|  353   |        1.251   |        0.000 :      0.040    |             3, 5             |        Leucocytozoon vs mammals        |  0.9806   |      1.0000       |
+|  354   |        1.262   |        0.783 :      0.615    |             4, 8             |        Leucocytozoon vs mammals        |  0.4542   |      1.0000       |
+|  355   |        0.205   |        0.000 :      0.116    |             0, 0             |        Leucocytozoon vs mammals        |  0.9807   |      0.5000       |
+|  356   |        1.488   |        0.565 :      0.277    |             4, 5             |        Leucocytozoon vs mammals        |  0.1016   |      1.0000       |
+|  357   |        1.549   |        0.195 :      0.181    |             1, 4             |        Leucocytozoon vs mammals        |  0.7277   |      0.5000       |
+|  358   |        2.319   |        0.132 :      0.081    |             1, 5             |        Leucocytozoon vs mammals        |  0.1475   |      0.0769       |
+|  359   |        0.430   |        0.110 :      0.354    |             1, 8             |        Leucocytozoon vs mammals        |  0.0686   |      0.0500       |
+|  360   |        0.180   |        0.000 :      0.035    |             0, 0             |        Leucocytozoon vs mammals        |  0.9805   |      1.0000       |
+|  361   |        0.562   |        0.150 :      0.097    |             1, 3             |        Leucocytozoon vs mammals        |  0.1586   |      1.0000       |
+|  362   |        2.736   |        0.430 :      0.180    |             3, 5             |        Leucocytozoon vs mammals        |  0.5846   |      0.5000       |
+|  363   |        1.157   |        0.445 :      0.288    |             3, 4             |        Leucocytozoon vs mammals        |  0.8384   |      1.0000       |
+|  364   |        0.848   |        0.142 :      0.301    |             1, 2             |        Leucocytozoon vs mammals        |  0.8821   |      0.2500       |
+|  365   |        0.462   |        0.214 :      0.356    |             1, 2             |        Leucocytozoon vs mammals        |  0.6523   |      0.5000       |
+|  366   |        0.662   |        0.432 :      0.365    |             5, 1             |        Leucocytozoon vs mammals        |  0.0136   |      1.0000       |
+|  367   |        0.591   |        0.094 :      0.211    |             2, 4             |        Leucocytozoon vs mammals        |  0.4974   |      1.0000       |
+|  368   |        0.000   |        0.286 :      0.052    |             2, 0             |        Leucocytozoon vs mammals        |  0.0738   |      1.0000       |
+|  369   |        0.000   |        0.115 :      0.000    |             1, 0             |        Leucocytozoon vs mammals        |  0.1830   |      1.0000       |
+|  370   |        0.000   |        0.000 :      0.000    |             1, 1             |        Leucocytozoon vs mammals        |  1.0000   |      1.0000       |
+|  371   |        0.000   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.3298   |      1.0000       |
+|  372   |        0.319   |        0.119 :      0.000    |             4, 5             |        Leucocytozoon vs mammals        |  0.8621   |      0.0500       |
+|  374   |        0.000   |        0.000 :      0.000    |             0, 1             |        Leucocytozoon vs mammals        |  0.1550   |      0.2500       |
+|  375   |        0.043   |        0.105 :      0.069    |             1, 2             |        Leucocytozoon vs mammals        |  0.8299   |      1.0000       |
+|  376   |        1.566   |        0.000 :      0.047    |             1, 3             |        Leucocytozoon vs mammals        |  0.9846   |      1.0000       |
+
+### ** Found _376_ sites with different _Leucocytozoon vs mammals_ dN/dS at p <= 1**
+
+### ### False discovery rate correction
+There are 376 sites where the overall p-value passes the False Discovery Rate threshold of 1
+
+|     Codon     |       q-value        |
+|:-------------:|:--------------------:|
+|       182     |       0.0002511030   |
+|       331     |       0.0005863392   |
+|        89     |       0.0153616616   |
+|       289     |       0.0202559703   |
+|       343     |       0.0679241316   |
+|       338     |       0.0684897514   |
+|       310     |       0.0708708214   |
+|       341     |       0.0734320036   |
+|       183     |       0.0779135427   |
+|       347     |       0.0868271028   |
+|       193     |       0.0904549690   |
+|       223     |       0.0922604751   |
+|       253     |       0.0940406703   |
+|       158     |       0.0957746614   |
+|       150     |       0.0973789512   |
+|       102     |       0.0984749578   |
+|        49     |       0.0992791786   |
+|       318     |       0.1021523137   |
+|        56     |       0.1134639031   |
+|       194     |       0.1150080515   |
+|       109     |       0.1321695012   |
+|       283     |       0.1331621953   |
+|        20     |       0.1332500441   |
+|        61     |       0.1357080403   |
+|         6     |       0.1363029649   |
+|        41     |       0.1380255484   |
+|       222     |       0.1381575314   |
+|       239     |       0.1408778172   |
+|       350     |       0.1559867913   |
+|        70     |       0.1567156177   |
+|       251     |       0.1576881895   |
+|       340     |       0.1578485214   |
+|       366     |       0.1594451066   |
+|       323     |       0.1927112131   |
+|       180     |       0.2411670704   |
+|       186     |       0.2904867140   |
+|        32     |       0.3114675522   |
+|         5     |       0.3144705440   |
+|       155     |       0.3157671542   |
+|        85     |       0.3222398260   |
+|       312     |       0.3258274920   |
+|       250     |       0.3272984844   |
+|        72     |       0.3297384560   |
+|       252     |       0.3317105836   |
+|       256     |       0.3317342680   |
+|       327     |       0.3329998118   |
+|       118     |       0.3349195795   |
+|       101     |       0.3369329045   |
+|       324     |       0.3376617131   |
+|       179     |       0.3424554099   |
+|       185     |       0.3429269033   |
+|       229     |       0.3452756720   |
+|       189     |       0.3456567625   |
+|       328     |       0.3463287838   |
+|       269     |       0.3509507058   |
+|       175     |       0.3541079532   |
+|        35     |       0.3555423319   |
+|       190     |       0.3591356557   |
+|        64     |       0.3847454356   |
+|        14     |       0.3858346901   |
+|       116     |       0.3978529115   |
+|       359     |       0.4157527341   |
+|       117     |       0.4161078493   |
+|       368     |       0.4334612127   |
+|       234     |       0.4554204092   |
+|       159     |       0.4573373277   |
+|       248     |       0.4667446621   |
+|        80     |       0.4924732082   |
+|       317     |       0.5150400400   |
+|       334     |       0.5225055381   |
+|       356     |       0.5234824868   |
+|       288     |       0.5243430793   |
+|       285     |       0.5253505229   |
+|       219     |       0.5259469971   |
+|       206     |       0.5259680644   |
+|       176     |       0.5262960336   |
+|       228     |       0.5289638197   |
+|       309     |       0.5290990691   |
+|       227     |       0.5300703779   |
+|       107     |       0.5306935064   |
+|       325     |       0.5320291323   |
+|       352     |       0.5330526056   |
+|        58     |       0.5349679859   |
+|       240     |       0.5395119590   |
+|        93     |       0.5405028188   |
+|        99     |       0.5440762098   |
+|        54     |       0.5442695460   |
+|       308     |       0.5478465755   |
+|       301     |       0.5489244618   |
+|        48     |       0.5533668411   |
+|        15     |       0.5542313858   |
+|       103     |       0.5576006762   |
+|       160     |       0.5607668967   |
+|        34     |       0.5626370573   |
+|       213     |       0.5678927918   |
+|       166     |       0.5699023661   |
+|       135     |       0.5701518861   |
+|       361     |       0.5732631683   |
+|       369     |       0.5733619624   |
+|       112     |       0.5741496395   |
+|       152     |       0.5750606907   |
+|       215     |       0.5803799854   |
+|        68     |       0.5854645917   |
+|       197     |       0.5876650696   |
+|       221     |       0.5929151745   |
+|       110     |       0.5972236398   |
+|       105     |       0.5975072038   |
+|       305     |       0.5982788991   |
+|       374     |       0.6006478995   |
+|        55     |       0.6019195704   |
+|       358     |       0.6027476993   |
+|       224     |       0.6033836219   |
+|       247     |       0.6043306056   |
+|       238     |       0.6049027265   |
+|       304     |       0.6053260342   |
+|       162     |       0.6059878579   |
+|       279     |       0.6084550562   |
+|       302     |       0.6101333287   |
+|       292     |       0.6104918026   |
+|       147     |       0.6113317169   |
+|       235     |       0.6124626193   |
+|       306     |       0.6166309253   |
+|        11     |       0.6574977848   |
+|       171     |       0.6608227688   |
+|       231     |       0.6626275182   |
+|       339     |       0.7216199828   |
+|        45     |       0.7364560449   |
+|        73     |       0.7467723816   |
+|       216     |       0.7952009306   |
+|       330     |       0.7988076138   |
+|       322     |       0.8011514293   |
+|         2     |       0.8339107896   |
+|         4     |       0.8592828750   |
+|       278     |       0.8847782485   |
+|        50     |       0.8898503373   |
+|        38     |       0.8935666374   |
+|       335     |       0.8959555284   |
+|       291     |       0.9017547610   |
+|       371     |       0.9052553739   |
+|       273     |       0.9113026783   |
+|       332     |       0.9113301169   |
+|        51     |       0.9137032235   |
+|       205     |       0.9455413382   |
+|       270     |       0.9515300842   |
+|       346     |       1.0000000000   |
+|       177     |       1.0000000000   |
+|        17     |       1.0000000000   |
+|        39     |       1.0000000000   |
+|       316     |       1.0000000000   |
+|       244     |       1.0000000000   |
+|       156     |       1.0000000000   |
+|       315     |       1.0000000000   |
+|        10     |       1.0000000000   |
+|        76     |       1.0000000000   |
+|       284     |       1.0000000000   |
+|       140     |       1.0000000000   |
+|       214     |       1.0000000000   |
+|        57     |       1.0000000000   |
+|       129     |       1.0000000000   |
+|       132     |       1.0000000000   |
+|        18     |       1.0000000000   |
+|       290     |       1.0000000000   |
+|        67     |       1.0000000000   |
+|       345     |       1.0000000000   |
+|        27     |       1.0000000000   |
+|       342     |       1.0000000000   |
+|        30     |       1.0000000000   |
+|        36     |       1.0000000000   |
+|        86     |       1.0000000000   |
+|       267     |       1.0000000000   |
+|       241     |       1.0000000000   |
+|       137     |       1.0000000000   |
+|       157     |       1.0000000000   |
+|        79     |       1.0000000000   |
+|       174     |       1.0000000000   |
+|        81     |       1.0000000000   |
+|       170     |       1.0000000000   |
+|       100     |       1.0000000000   |
+|       255     |       1.0000000000   |
+|       326     |       1.0000000000   |
+|       376     |       1.0000000000   |
+|       141     |       1.0000000000   |
+|       268     |       1.0000000000   |
+|       249     |       1.0000000000   |
+|       297     |       1.0000000000   |
+|       202     |       1.0000000000   |
+|        82     |       1.0000000000   |
+|        16     |       1.0000000000   |
+|        19     |       1.0000000000   |
+|       201     |       1.0000000000   |
+|       245     |       1.0000000000   |
+|       295     |       1.0000000000   |
+|        40     |       1.0000000000   |
+|       172     |       1.0000000000   |
+|       148     |       1.0000000000   |
+|       260     |       1.0000000000   |
+|       127     |       1.0000000000   |
+|       181     |       1.0000000000   |
+|       143     |       1.0000000000   |
+|       263     |       1.0000000000   |
+|        75     |       1.0000000000   |
+|       200     |       1.0000000000   |
+|        94     |       1.0000000000   |
+|       281     |       1.0000000000   |
+|       293     |       1.0000000000   |
+|       124     |       1.0000000000   |
+|        31     |       1.0000000000   |
+|       336     |       1.0000000000   |
+|        92     |       1.0000000000   |
+|        96     |       1.0000000000   |
+|       191     |       1.0000000000   |
+|       119     |       1.0000000000   |
+|       208     |       1.0000000000   |
+|        12     |       1.0000000000   |
+|       128     |       1.0000000000   |
+|       307     |       1.0000000000   |
+|        74     |       1.0000000000   |
+|       261     |       1.0000000000   |
+|        23     |       1.0000000000   |
+|       161     |       1.0000000000   |
+|       265     |       1.0000000000   |
+|       287     |       1.0000000000   |
+|       169     |       1.0000000000   |
+|        46     |       1.0000000000   |
+|        97     |       1.0000000000   |
+|       280     |       1.0000000000   |
+|       211     |       1.0000000000   |
+|       163     |       1.0000000000   |
+|       353     |       1.0000000000   |
+|        83     |       1.0000000000   |
+|       146     |       1.0000000000   |
+|       257     |       1.0000000000   |
+|       360     |       1.0000000000   |
+|       104     |       1.0000000000   |
+|       258     |       1.0000000000   |
+|        90     |       1.0000000000   |
+|        71     |       1.0000000000   |
+|       151     |       1.0000000000   |
+|       139     |       1.0000000000   |
+|       142     |       1.0000000000   |
+|        13     |       1.0000000000   |
+|       329     |       1.0000000000   |
+|       218     |       1.0000000000   |
+|       355     |       1.0000000000   |
+|         7     |       1.0000000000   |
+|       209     |       1.0000000000   |
+|       121     |       1.0000000000   |
+|        78     |       1.0000000000   |
+|       254     |       1.0000000000   |
+|       138     |       1.0000000000   |
+|       266     |       1.0000000000   |
+|       233     |       1.0000000000   |
+|       207     |       1.0000000000   |
+|       349     |       1.0000000000   |
+|       272     |       1.0000000000   |
+|       167     |       1.0000000000   |
+|       296     |       1.0000000000   |
+|       196     |       1.0000000000   |
+|       236     |       1.0000000000   |
+|        52     |       1.0000000000   |
+|       373     |       1.0000000000   |
+|       130     |       1.0000000000   |
+|       136     |       1.0000000000   |
+|       195     |       1.0000000000   |
+|        21     |       1.0000000000   |
+|       262     |       1.0000000000   |
+|        42     |       1.0000000000   |
+|        84     |       1.0000000000   |
+|       275     |       1.0000000000   |
+|       187     |       1.0000000000   |
+|       242     |       1.0000000000   |
+|        63     |       1.0000000000   |
+|       337     |       1.0000000000   |
+|       123     |       1.0000000000   |
+|       277     |       1.0000000000   |
+|        33     |       1.0000000000   |
+|       192     |       1.0000000000   |
+|        24     |       1.0000000000   |
+|       217     |       1.0000000000   |
+|       168     |       1.0000000000   |
+|        91     |       1.0000000000   |
+|        28     |       1.0000000000   |
+|       333     |       1.0000000000   |
+|       164     |       1.0000000000   |
+|       300     |       1.0000000000   |
+|        59     |       1.0000000000   |
+|       106     |       1.0000000000   |
+|       199     |       1.0000000000   |
+|        87     |       1.0000000000   |
+|       149     |       1.0000000000   |
+|        65     |       1.0000000000   |
+|       131     |       1.0000000000   |
+|       274     |       1.0000000000   |
+|       144     |       1.0000000000   |
+|        88     |       1.0000000000   |
+|        25     |       1.0000000000   |
+|       259     |       1.0000000000   |
+|       271     |       1.0000000000   |
+|        60     |       1.0000000000   |
+|       173     |       1.0000000000   |
+|       264     |       1.0000000000   |
+|       348     |       1.0000000000   |
+|       125     |       1.0000000000   |
+|        47     |       1.0000000000   |
+|       114     |       1.0000000000   |
+|        29     |       1.0000000000   |
+|        43     |       1.0000000000   |
+|       122     |       1.0000000000   |
+|       294     |       1.0000000000   |
+|       298     |       1.0000000000   |
+|       126     |       1.0000000000   |
+|        22     |       1.0000000000   |
+|       243     |       1.0000000000   |
+|       313     |       1.0000000000   |
+|       198     |       1.0000000000   |
+|       165     |       1.0000000000   |
+|       212     |       1.0000000000   |
+|       375     |       1.0000000000   |
+|       220     |       1.0000000000   |
+|       210     |       1.0000000000   |
+|       232     |       1.0000000000   |
+|       370     |       1.0000000000   |
+|        98     |       1.0000000000   |
+|       134     |       1.0000000000   |
+|       154     |       1.0000000000   |
+|         1     |       1.0000000000   |
+|        26     |       1.0000000000   |
+|       108     |       1.0000000000   |
+|       184     |       1.0000000000   |
+|        95     |       1.0000000000   |
+|       351     |       1.0000000000   |
+|       145     |       1.0000000000   |
+|       115     |       1.0000000000   |
+|        69     |       1.0000000000   |
+|       178     |       1.0000000000   |
+|        66     |       1.0000000000   |
+|       111     |       1.0000000000   |
+|       226     |       1.0000000000   |
+|         8     |       1.0000000000   |
+|       372     |       1.0000000000   |
+|       364     |       1.0000000000   |
+|       133     |       1.0000000000   |
+|        53     |       1.0000000000   |
+|       363     |       1.0000000000   |
+|       286     |       1.0000000000   |
+|       321     |       1.0000000000   |
+|       246     |       1.0000000000   |
+|        62     |       1.0000000000   |
+|        77     |       1.0000000000   |
+|       230     |       1.0000000000   |
+|       204     |       1.0000000000   |
+|       188     |       1.0000000000   |
+|       276     |       1.0000000000   |
+|       344     |       1.0000000000   |
+|       319     |       1.0000000000   |
+|         9     |       1.0000000000   |
+|       225     |       1.0000000000   |
+|        44     |       1.0000000000   |
+|       120     |       1.0000000000   |
+|       153     |       1.0000000000   |
+|       282     |       1.0000000000   |
+|       314     |       1.0000000000   |
+|       303     |       1.0000000000   |
+|        37     |       1.0000000000   |
+|       357     |       1.0000000000   |
+|       365     |       1.0000000000   |
+|       203     |       1.0000000000   |
+|       299     |       1.0000000000   |
+|       362     |       1.0000000000   |
+|       311     |       1.0000000000   |
+|       237     |       1.0000000000   |
+|       320     |       1.0000000000   |
+|       367     |       1.0000000000   |
+|       113     |       1.0000000000   |
+|         3     |       1.0000000000   |
+|       354     |       1.0000000000   |
+
+real	47m9.588s
+user	190m39.922s
+sys	0m58.616s
