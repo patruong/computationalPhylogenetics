@@ -1,0 +1,35 @@
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#FF0000", "#0000FF", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -11832.568478742724
+LL: -11832.030836952486
+LL: -11832.029164522046
+LL: -11832.029115049787
+Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 2 - P(ω1 > ω2):0.961; P(ω2 > ω1):0.014; P(ω1 > 1):0.9315; P(ω2 > 1):0.172
+Site 65 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.003; P(ω1 > 1):0.8195; P(ω2 > 1):0.0415
+Site 228 - P(ω1 > ω2):0.951; P(ω2 > ω1):0.0155; P(ω1 > 1):0.589; P(ω2 > 1):0.043
+Site 230 - P(ω1 > ω2):0.976; P(ω2 > ω1):0.0065; P(ω1 > 1):0.646; P(ω2 > 1):0.037
+Site 241 - P(ω1 > ω2):0.9585; P(ω2 > ω1):0.003; P(ω1 > 1):0.9985; P(ω2 > 1):0.6015
+Site 258 - P(ω1 > ω2):0.2645; P(ω2 > ω1):0.3455; P(ω1 > 1):0.959; P(ω2 > 1):0.952
+Site 260 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.9985; P(ω1 > 1):0.378; P(ω2 > 1):0.9995
+Site 261 - P(ω1 > ω2):0.952; P(ω2 > ω1):0.0215; P(ω1 > 1):0.793; P(ω2 > 1):0.103
+Site 288 - P(ω1 > ω2):0.0005; P(ω2 > ω1):0.9975; P(ω1 > 1):0.0395; P(ω2 > 1):0.836
+Site 311 - P(ω1 > ω2):0.0245; P(ω2 > ω1):0.9505; P(ω1 > 1):0.1435; P(ω2 > 1):0.8775
+Site 333 - P(ω1 > ω2):0.9845; P(ω2 > ω1):0.004; P(ω1 > 1):0.9145; P(ω2 > 1):0.084
+Site 346 - P(ω1 > ω2):0.9665; P(ω2 > ω1):0.0125; P(ω1 > 1):0.7025; P(ω2 > 1):0.0555
+Site 418 - P(ω1 > ω2):0.983; P(ω2 > ω1):0.0025; P(ω1 > 1):0.9835; P(ω2 > 1):0.172
+Site 422 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.9805; P(ω2 > 1):0.0655
+
+If exports = true, writing results for all sites to CSV: experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	6m19.421s
+user	60m39.906s
+sys	49m18.405s
