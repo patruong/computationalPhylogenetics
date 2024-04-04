@@ -9,20 +9,17 @@ LL: -11832.029115049787
 Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
 Step 4: Running Gibbs sampler to infer site categories.
 Step 5: Tabulating and plotting. Detected sites:
-Site 2 - P(ω1 > ω2):0.961; P(ω2 > ω1):0.014; P(ω1 > 1):0.9315; P(ω2 > 1):0.172
-Site 65 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.003; P(ω1 > 1):0.8195; P(ω2 > 1):0.0415
-Site 228 - P(ω1 > ω2):0.951; P(ω2 > ω1):0.0155; P(ω1 > 1):0.589; P(ω2 > 1):0.043
-Site 230 - P(ω1 > ω2):0.976; P(ω2 > ω1):0.0065; P(ω1 > 1):0.646; P(ω2 > 1):0.037
-Site 241 - P(ω1 > ω2):0.9585; P(ω2 > ω1):0.003; P(ω1 > 1):0.9985; P(ω2 > 1):0.6015
-Site 258 - P(ω1 > ω2):0.2645; P(ω2 > ω1):0.3455; P(ω1 > 1):0.959; P(ω2 > 1):0.952
-Site 260 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.9985; P(ω1 > 1):0.378; P(ω2 > 1):0.9995
-Site 261 - P(ω1 > ω2):0.952; P(ω2 > ω1):0.0215; P(ω1 > 1):0.793; P(ω2 > 1):0.103
-Site 288 - P(ω1 > ω2):0.0005; P(ω2 > ω1):0.9975; P(ω1 > 1):0.0395; P(ω2 > 1):0.836
-Site 311 - P(ω1 > ω2):0.0245; P(ω2 > ω1):0.9505; P(ω1 > 1):0.1435; P(ω2 > 1):0.8775
-Site 333 - P(ω1 > ω2):0.9845; P(ω2 > ω1):0.004; P(ω1 > 1):0.9145; P(ω2 > 1):0.084
-Site 346 - P(ω1 > ω2):0.9665; P(ω2 > ω1):0.0125; P(ω1 > 1):0.7025; P(ω2 > 1):0.0555
-Site 418 - P(ω1 > ω2):0.983; P(ω2 > ω1):0.0025; P(ω1 > 1):0.9835; P(ω2 > 1):0.172
-Site 422 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.9805; P(ω2 > 1):0.0655
+Site 65 - P(ω1 > ω2):0.9855; P(ω2 > ω1):0.006; P(ω1 > 1):0.8235; P(ω2 > 1):0.038
+Site 228 - P(ω1 > ω2):0.9605; P(ω2 > ω1):0.0105; P(ω1 > 1):0.585; P(ω2 > 1):0.033
+Site 230 - P(ω1 > ω2):0.97; P(ω2 > ω1):0.0075; P(ω1 > 1):0.6335; P(ω2 > 1):0.0435
+Site 241 - P(ω1 > ω2):0.9505; P(ω2 > ω1):0.003; P(ω1 > 1):0.998; P(ω2 > 1):0.6035
+Site 258 - P(ω1 > ω2):0.252; P(ω2 > ω1):0.3505; P(ω1 > 1):0.963; P(ω2 > 1):0.959
+Site 260 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.9985; P(ω1 > 1):0.3575; P(ω2 > 1):0.999
+Site 288 - P(ω1 > ω2):0.0005; P(ω2 > ω1):0.9975; P(ω1 > 1):0.035; P(ω2 > 1):0.8395
+Site 333 - P(ω1 > ω2):0.985; P(ω2 > ω1):0.0055; P(ω1 > 1):0.9; P(ω2 > 1):0.0845
+Site 346 - P(ω1 > ω2):0.9635; P(ω2 > ω1):0.011; P(ω1 > 1):0.705; P(ω2 > 1):0.0475
+Site 418 - P(ω1 > ω2):0.9815; P(ω2 > ω1):0.001; P(ω1 > 1):0.9755; P(ω2 > 1):0.167
+Site 422 - P(ω1 > ω2):0.9985; P(ω2 > ω1):0.0; P(ω1 > 1):0.977; P(ω2 > 1):0.063
 
 If exports = true, writing results for all sites to CSV: experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_posteriors.csv
 Plotting alpha and omega distributions. If exports = true, saved as experiments/20240308_contrastFEL_empirical/output/rubisco_C3_vs_C4/treesurgery_and_parallel/analysis_violin_*.pdf
@@ -30,6 +27,6 @@ sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 
-real	6m19.421s
-user	60m39.906s
-sys	49m18.405s
+real	6m38.364s
+user	59m28.279s
+sys	56m48.659s

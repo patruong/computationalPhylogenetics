@@ -1,0 +1,42 @@
+Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: experiments/20240308_contrastFEL_empirical/output/epidermal_reroot/treesurgery_and_parallel/analysis_tagged_input_tree.svg.
+Running 2step global fit
+["#FF0000", "#0000FF", "black"]
+Step 2: Optimizing global codon model parameters.
+LL: -9053.290263958386
+LL: -9047.09122184249
+LL: -9046.84050789207
+LL: -9046.834741308498
+LL: -9046.83457679763
+LL: -9046.834571973022
+Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
+Step 4: Running Gibbs sampler to infer site categories.
+Step 5: Tabulating and plotting. Detected sites:
+Site 27 - P(ω1 > ω2):0.0655; P(ω2 > ω1):0.886; P(ω1 > 1):0.307; P(ω2 > 1):0.9655
+Site 122 - P(ω1 > ω2):0.0035; P(ω2 > ω1):0.9775; P(ω1 > 1):0.076; P(ω2 > 1):0.8095
+Site 153 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0005; P(ω1 > 1):0.9885; P(ω2 > 1):0.1495
+Site 167 - P(ω1 > ω2):0.999; P(ω2 > ω1):0.0; P(ω1 > 1):0.9985; P(ω2 > 1):0.3935
+Site 171 - P(ω1 > ω2):0.997; P(ω2 > ω1):0.0; P(ω1 > 1):0.574; P(ω2 > 1):0.0
+Site 173 - P(ω1 > ω2):0.9865; P(ω2 > ω1):0.001; P(ω1 > 1):0.927; P(ω2 > 1):0.1825
+Site 174 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):1.0; P(ω2 > 1):0.109
+Site 175 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0005; P(ω1 > 1):0.914; P(ω2 > 1):0.0055
+Site 176 - P(ω1 > ω2):0.9765; P(ω2 > ω1):0.0075; P(ω1 > 1):0.5295; P(ω2 > 1):0.0065
+Site 179 - P(ω1 > ω2):0.9875; P(ω2 > ω1):0.0035; P(ω1 > 1):0.623; P(ω2 > 1):0.002
+Site 180 - P(ω1 > ω2):0.9995; P(ω2 > ω1):0.0; P(ω1 > 1):0.969; P(ω2 > 1):0.0225
+Site 187 - P(ω1 > ω2):0.969; P(ω2 > ω1):0.0115; P(ω1 > 1):0.5435; P(ω2 > 1):0.0115
+Site 188 - P(ω1 > ω2):0.9535; P(ω2 > ω1):0.0175; P(ω1 > 1):0.162; P(ω2 > 1):0.0
+Site 190 - P(ω1 > ω2):0.9935; P(ω2 > ω1):0.001; P(ω1 > 1):0.921; P(ω2 > 1):0.1055
+Site 191 - P(ω1 > ω2):0.987; P(ω2 > ω1):0.0015; P(ω1 > 1):0.902; P(ω2 > 1):0.0765
+Site 198 - P(ω1 > ω2):0.9745; P(ω2 > ω1):0.0105; P(ω1 > 1):0.697; P(ω2 > 1):0.0075
+Site 216 - P(ω1 > ω2):0.0055; P(ω2 > ω1):0.9505; P(ω1 > 1):0.0325; P(ω2 > 1):0.3875
+Site 255 - P(ω1 > ω2):0.9645; P(ω2 > ω1):0.006; P(ω1 > 1):0.115; P(ω2 > 1):0.0
+Site 270 - P(ω1 > ω2):0.974; P(ω2 > ω1):0.0055; P(ω1 > 1):0.0665; P(ω2 > 1):0.0
+
+If exports = true, writing results for all sites to CSV: experiments/20240308_contrastFEL_empirical/output/epidermal_reroot/treesurgery_and_parallel/analysis_posteriors.csv
+Plotting alpha and omega distributions. If exports = true, saved as experiments/20240308_contrastFEL_empirical/output/epidermal_reroot/treesurgery_and_parallel/analysis_violin_*.pdf
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+sys:1: UserWarning: The figure layout has changed to tight
+
+real	0m43.491s
+user	1m37.271s
+sys	1m37.997s

@@ -1,0 +1,740 @@
+
+Analysis Description
+--------------------
+Contrast-FEL (Fixed Effects Likelihood) investigates whether or not
+selective pressures differ between two or more sets of branches at a
+site. Site-specific synonymous (alpha) and non-synonymous (beta, one per
+branch set) substitution rates are estimated and then beta rates are
+tested for equality at each site. LRT and permutation tests ar used to
+assess significance at each site, and FDR is applied alignment wide to
+call sites with different selective profiles
+
+- __Additional information__: http://www.hyphy.org/methods/other/contrast-fel/
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree; only single partition
+data are supported
+
+- __Citation__: Mol Biol Evol (2021), (38)3 1184–1198
+
+- __Written by__: Sergei L Kosakovsky Pond and Steven Weaver
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 0.5
+
+
+>code => Universal
+
+-------
+>[WARNING] This dataset contains 1 duplicate sequence. Identical
+sequences do not contribute any information to the analysis and only
+slow down computation. Please consider removing duplicate or 'nearly'
+duplicate sequences, e.g. using
+https://github.com/veg/hyphy-analyses/tree/master/remove-duplicates
+prior to running selection analyses
+-------
+/home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/data/epidermal_leaf_trichomes_BRT.nwk
+data/epidermal_leaf_trichomes_BRT.nwk
+
+>Loaded a multiple sequence alignment with **58** sequences, **318** codons, and **1** partitions from `/home/patrick/git/computationalPhylogenetics/experiments/20240308_contrastFEL_empirical/data/BLTFull.fas`
+
+>branch-set => {
+ "0":"Physaria",
+ "1":"background"
+}
+
+>srv => Yes
+
+>permutations => Yes
+
+>Select nominal p-value threshold to use when testing for selection (FDR correction will be performed on all sites) (permissible range = [0,1], default value = 0.1): 
+>p-value => 1.00
+
+>Select nominal the q-value threshold to use when testing for selection (FDR reporting) (permissible range = [0,1], default value = 0.2): 
+>q-value => 1.00
+Only analyze sites whose 1-based indices match the following list (null to skip) : 
+>limit-to-sites => null
+For sites whose 1-based indices match the following list, write out likelihood function snapshots (null string to skip) : 
+>save-lf-for-sites => null
+
+
+### Branches to use as the test set in the FEL-contrast analysis
+Selected 2 sets of branches to test
+
+* 64 branches are in the background group : `CHORISPORA_BUNGEANA, SISYMBRIUM_IRIO, RAPHANUS_RAPHANISTRUM, RAPHANUS_SATIVUS, Node12, BRASSICA_RAPA, BRASSICA_OLERACEA, Node15, Node11, BIVONAEA_LUTEA, Node10, Node8, SCHRENKIELLA_PARVULA, Node7, THLASPI_ARVENSE, EUTREMA_SALSUGINEUM, Node21, ARABIS_ALPINA, NOCCAEA_CAERULESCENS, Node24, Node20, Node6, BERTEROA_INCANA, Node5, Node3, TARENAYA_HASSLERIANA, AETHIONEMA_ARABICUM, Node29, LEAVENWORTHIA_ALABAMICA, Node28, Node2, MALCOLMIA_MARITIMA, ARABIDOPSIS_LYRATA, ARABIDOPSIS_THALIANA, Node35, Node33, Node1, PAYSONIA_AURICULATA_20320, PAYSONIA_AURICULATA_345712, Node42, PAYSONIA_LESCURII, PAYSONIA_STONENSIS, PAYSONIA_DENSIPILA_315051, PAYSONIA_DENSIPILA_355035, Node49, Node47, Node45, Node41, PAYSONIA_LASIOCARPA, PAYSONIA_GRANDIFLORA, Node52, Node40, Node39, SYNTHLIPSIS_GREGGII, LYROCARPA_COULTERI, NERISYRENIA_JOHNSTONII, Node106, Node104, Node38, BOECHERA_GUNNISONIANA, CAMELINA_SATIVA, CAPSELLA_RUBELLA, Node111, Node109`
+* Selected 49 branches in group _Physaria_ : `PHYSARIA_MEXICANA, PHYSARIA_ARGYRAEA_20816, PHYSARIA_FENDLERI_596455, Node59, Node57, PHYSARIA_FENDLERI_355037, PHYSARIA_TENELLA, PHYSARIA_SUBUMBELLATA, PHYSARIA_ARGYRAEA_20864, PHYSARIA_GOODRICHII, PHYSARIA_OCCIDENTALIS_379, PHYSARIA_HEMIPHYSARIA, Node80, Node78, PHYSARIA_PYCNANTHA, PHYSARIA_NELSONII, Node83, Node77, PHYSARIA_OCCIDENTALIS_518, Node76, PHYSARIA_INTERMEDIA, Node75, Node73, PHYSARIA_NEWBERRYI, PHYSARIA_ACUTIFOLIA, Node90, PHYSARIA_BELLII, Node89, PHYSARIA_ARGYRAEA_643169, PHYSARIA_ARIZONICA, Node94, Node88, Node72, Node70, Node68, PHYSARIA_HUMILIS, Node67, Node65, PHYSARIA_PALLIDA, Node64, PHYSARIA_ERIOCARPA, PHYSARIA_SPATULATA, Node99, Node63, PHYSARIA_FILIFORMIS, Node62, Node56, PHYSARIA_JOHNSTONII, Node55`
+
+### **1** test will be performed at each site
+
+
+### Obtaining branch lengths and nucleotide substitution biases under the nucleotide GTR model
+
+>kill-zero-lengths => Yes
+
+### Deleted 3 zero-length internal branches: `Node47, Node62, Node68`
+* Log(L) = -9046.83, AIC-c = 18336.19 (121 estimated parameters)
+* 1 partition. Total tree length by partition (subs/site)  2.560
+
+### Obtaining the global omega estimate based on relative GTR branch lengths and nucleotide substitution biases
+* Log(L) = -8773.71, AIC-c = 17801.17 (126 estimated parameters)
+* 1 partition. Total tree length by partition (subs/site)  2.653
+* non-synonymous/synonymous rate ratio for *Physaria* =   0.4168
+* non-synonymous/synonymous rate ratio for *background* =   0.3421
+
+### Improving branch lengths, nucleotide substitution biases, and global dN/dS ratios under a full codon model
+* Log(L) = -8751.17
+* non-synonymous/synonymous rate ratio for *Physaria* =   0.5050
+* non-synonymous/synonymous rate ratio for *background* =   0.2950
+
+### For partition 1 these sites are significant at p <=1
+
+| Codon  |     alpha      |             beta             |        substitutions         |                  test                  |LRT p-value|Permutation p-value|
+|:------:|:--------------:|:----------------------------:|:----------------------------:|:--------------------------------------:|:---------:|:-----------------:|
+|   1    |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   2    |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   3    |        0.000   |        0.154 -      1.780    |              0               |                overall                 |  0.9897   |      1.0000       |
+|   4    |        0.000   |        0.758 -     80.586    |              2               |                overall                 |  0.0319   |      1.0000       |
+|   5    |        0.670   |        0.000 -      1.065    |              0               |                overall                 |  0.4149   |      1.0000       |
+|   6    |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   62   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   7    |    10000.000   |        0.282 -      0.840    |              0               |                overall                 |  0.9520   |      1.0000       |
+|   8    |        1.531   |        0.000 -      0.300    |              0               |                overall                 |  0.6750   |      0.5000       |
+|   9    |        0.000   |        0.000 -      0.273    |              0               |                overall                 |  0.6824   |      0.5000       |
+|   10   |        0.696   |        0.000 -      0.758    |              0               |                overall                 |  0.6063   |      0.5000       |
+|   11   |        1.627   |        0.000 -      0.190    |              1               |                overall                 |  0.7592   |      0.1111       |
+|   12   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   13   |    10000.000   |        0.110 -      4.387    |              1               |                overall                 |  0.0586   |      0.5000       |
+|   14   |        0.744   |        0.000 -      0.141    |              1               |                overall                 |  0.8021   |      1.0000       |
+|   15   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   16   |        0.000   |        0.000 -      0.115    |              0               |                overall                 |  0.8037   |      0.3333       |
+|   17   |        1.439   |        0.000 -      0.341    |              1               |                overall                 |  0.6438   |      0.5000       |
+|   18   |        0.355   |        0.000 -      0.432    |              0               |                overall                 |  0.6504   |      1.0000       |
+|   19   |        0.383   |        0.000 -      0.235    |              1               |                overall                 |  0.7032   |      1.0000       |
+|   20   |        0.000   |        0.126 -      0.405    |              0               |                overall                 |  0.9963   |      1.0000       |
+|   21   |        0.000   |        0.644 -      4.007    |              0               |                overall                 |  0.8751   |      1.0000       |
+|   22   |        1.337   |        0.006 -      0.902    |              0               |                overall                 |  0.9779   |      0.5000       |
+|   23   |        2.806   |        0.000 -      1.256    |              0               |                overall                 |  0.9738   |      1.0000       |
+|   24   |        3.846   |        0.000 -      0.482    |              0               |                overall                 |  0.9850   |      0.1667       |
+|   25   |        1.346   |        0.048 -      1.317    |              0               |                overall                 |  0.9812   |      0.2500       |
+|   26   |        1.003   |        1.009 -      1.025    |              0               |                overall                 |  0.9619   |      0.0500       |
+|   27   |        0.000   |        0.000 -      2.807    |              0               |                overall                 |  0.3060   |      1.0000       |
+|   28   |        1.478   |        0.000 -      2.013    |              0               |                overall                 |  0.4206   |      0.5000       |
+|   29   |        0.617   |        0.000 -      1.013    |              0               |                overall                 |  0.5548   |      0.1111       |
+|   30   |        0.000   |        0.477 -      1.880    |              0               |                overall                 |  0.9915   |      0.5000       |
+|   31   |    10000.000   |        0.676 -      0.912    |              0               |                overall                 |  0.8765   |      1.0000       |
+|   32   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   33   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   34   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   35   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   36   |        0.000   |        0.000 -      0.368    |              0               |                overall                 |  0.6588   |      0.5000       |
+|   37   |        2.458   |        0.000 -      1.097    |              1               |                overall                 |  0.4593   |      1.0000       |
+|   38   |        0.000   |        0.000 -      0.467    |              0               |                overall                 |  0.6075   |      1.0000       |
+|   39   |        0.000   |        0.000 -      0.102    |              0               |                overall                 |  0.8053   |      1.0000       |
+|   40   |        4.900   |        0.000 -      0.259    |              0               |                overall                 |  0.6137   |      1.0000       |
+|   41   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   42   |        0.399   |        0.000 -      0.572    |              0               |                overall                 |  0.6092   |      1.0000       |
+|   43   |        0.687   |        0.000 -      4.263    |              1               |                overall                 |  0.0110   |      0.5000       |
+|   44   |        0.220   |        0.000 -      0.966    |              0               |                overall                 |  0.5922   |      1.0000       |
+|   45   |        1.010   |        0.000 -      0.721    |              1               |                overall                 |  0.5602   |      1.0000       |
+|   46   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   47   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   48   |        9.003   |        0.000 -      0.175    |              0               |                overall                 |  0.8058   |      1.0000       |
+|   49   |        0.509   |        0.000 -      0.109    |              0               |                overall                 |  0.8116   |      0.2000       |
+|   50   |        2.462   |        0.000 -      0.000    |              0               |                overall                 |  0.8702   |      1.0000       |
+|   51   |       25.314   |        0.000 -      0.216    |              0               |                overall                 |  0.7284   |      0.1000       |
+|   52   |        2.236   |        0.000 -      0.000    |              0               |                overall                 |  0.8670   |      0.3333       |
+|   53   |        1.725   |        0.000 -      0.000    |              0               |                overall                 |  0.7572   |      1.0000       |
+|   54   |        0.458   |        0.660 -      1.227    |              1               |                overall                 |  0.7689   |      0.3333       |
+|   55   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   56   |        1.244   |        0.807 -      1.435    |              1               |                overall                 |  0.7651   |      0.3333       |
+|   57   |        1.677   |        0.000 -      0.437    |              0               |                overall                 |  0.5108   |      1.0000       |
+|   58   |        1.590   |        0.000 -      1.174    |              0               |                overall                 |  0.2940   |      0.0500       |
+|   59   |        8.120   |        0.819 -      7.649    |              1               |                overall                 |  0.1125   |      0.2000       |
+|   60   |        0.000   |        0.817 -     58.184    |              1               |                overall                 |  0.0263   |      1.0000       |
+|   61   |        0.000   |        0.752 -      2.277    |              0               |                overall                 |  0.9837   |      0.5000       |
+|   63   |        0.000   |        0.000 -      0.841    |              0               |                overall                 |  0.3965   |      1.0000       |
+|   64   |        1.574   |        0.000 -      0.000    |              0               |                overall                 |  0.8402   |      1.0000       |
+|   65   |        3.218   |        0.000 -      0.901    |              0               |                overall                 |  0.4227   |      0.0500       |
+|   66   |        5.003   |        0.279 -      2.365    |              2               |                overall                 |  0.2871   |      1.0000       |
+|   67   |    10000.000   |        0.210 -      0.587    |              0               |                overall                 |  0.9042   |      1.0000       |
+|   68   |    10000.000   |        0.000 -      0.677    |              0               |                overall                 |  0.9690   |      1.0000       |
+|   69   |     1821.419   |        0.000 -      1.219    |              0               |                overall                 |  1.0000   |      1.0000       |
+|   70   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   71   |        0.677   |        0.000 -      0.271    |              0               |                overall                 |  0.6596   |      0.2000       |
+|   72   |        1.382   |        0.000 -      0.383    |              0               |                overall                 |  0.4985   |      0.1250       |
+|   73   |        0.534   |        0.000 -      0.141    |              0               |                overall                 |  0.7512   |      0.5000       |
+|   74   |        0.781   |        0.000 -      0.111    |              0               |                overall                 |  0.7203   |      0.2500       |
+|   75   |        1.462   |        0.000 -      0.000    |              0               |                overall                 |  0.8222   |      0.3333       |
+|   76   |        0.516   |        0.000 -      0.341    |              0               |                overall                 |  0.5288   |      1.0000       |
+|   77   |        1.127   |        0.000 -      0.186    |              0               |                overall                 |  0.6040   |      0.2500       |
+|   78   |        1.461   |        0.000 -      0.000    |              1               |                overall                 |  0.7974   |      0.5000       |
+|   79   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   80   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   81   |        1.501   |        0.000 -      0.000    |              0               |                overall                 |  0.7156   |      0.3333       |
+|   82   |        4.488   |        0.000 -      0.000    |              0               |                overall                 |  0.9659   |      1.0000       |
+|   83   |        0.580   |        0.000 -      0.000    |              1               |                overall                 |  0.9631   |      1.0000       |
+|   84   |        0.711   |        0.000 -      0.500    |              0               |                overall                 |  0.4538   |      1.0000       |
+|   85   |        1.186   |        0.000 -      0.587    |              0               |                overall                 |  0.5013   |      0.2500       |
+|   86   |        1.611   |        0.000 -      0.263    |              1               |                overall                 |  0.6090   |      1.0000       |
+|   87   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   88   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|   89   |        0.432   |        0.000 -      0.000    |              0               |                overall                 |  0.9755   |      0.5000       |
+|   90   |        0.763   |        0.000 -      0.260    |              3               |                overall                 |  0.3070   |      0.2000       |
+|   91   |        0.703   |        0.000 -      0.123    |              0               |                overall                 |  0.5622   |      1.0000       |
+|   92   |        0.457   |        0.000 -      0.000    |              0               |                overall                 |  0.9786   |      0.0500       |
+|   93   |        2.540   |        0.541 -      0.616    |              1               |                overall                 |  0.9037   |      0.5000       |
+|   94   |        0.322   |        0.000 -      0.283    |              0               |                overall                 |  0.4048   |      0.0909       |
+|   95   |        0.160   |        0.000 -      0.084    |              0               |                overall                 |  0.5648   |      1.0000       |
+|   96   |        0.645   |        0.000 -      0.547    |              0               |                overall                 |  0.2380   |      1.0000       |
+|   97   |        1.504   |        0.468 -      0.479    |              5               |                overall                 |  0.9805   |      1.0000       |
+|   98   |        0.000   |        0.371 -      0.661    |              1               |                overall                 |  0.6404   |      1.0000       |
+|   99   |        0.994   |        0.000 -      0.000    |              2               |                overall                 |  0.7856   |      0.5000       |
+|  100   |        0.668   |        0.000 -      0.906    |              0               |                overall                 |  0.1308   |      0.1667       |
+|  101   |        1.681   |        0.000 -      0.498    |              0               |                overall                 |  0.2476   |      0.2500       |
+|  102   |        4.114   |        0.110 -      0.571    |              1               |                overall                 |  0.2662   |      1.0000       |
+|  103   |        1.556   |        0.000 -      0.000    |              0               |                overall                 |  0.7829   |      1.0000       |
+|  104   |        0.445   |        0.000 -      0.357    |              0               |                overall                 |  0.2390   |      1.0000       |
+|  105   |        0.812   |        0.000 -      0.112    |              0               |                overall                 |  0.5615   |      0.5000       |
+|  106   |        0.634   |        0.000 -      0.000    |              0               |                overall                 |  0.8963   |      1.0000       |
+|  107   |        0.932   |        0.159 -      1.704    |              3               |                overall                 |  0.0123   |      0.0500       |
+|  108   |        0.389   |        0.000 -      0.000    |              0               |                overall                 |  0.9489   |      1.0000       |
+|  109   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  117   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  165   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  110   |        1.093   |        0.000 -      0.000    |              0               |                overall                 |  0.7751   |      0.0500       |
+|  111   |        0.323   |        0.000 -      0.135    |              0               |                overall                 |  0.5544   |      1.0000       |
+|  112   |        0.349   |        0.262 -      0.455    |              2               |                overall                 |  0.6564   |      1.0000       |
+|  113   |        0.782   |        0.000 -      0.000    |              2               |                overall                 |  0.8173   |      1.0000       |
+|  114   |        0.515   |        0.000 -      0.495    |              0               |                overall                 |  0.2201   |      1.0000       |
+|  115   |        2.953   |        0.000 -      0.000    |              4               |                overall                 |  0.7480   |      1.0000       |
+|  116   |        0.459   |        0.000 -      0.261    |              0               |                overall                 |  0.2992   |      0.5000       |
+|  118   |        0.931   |        0.000 -      0.524    |              0               |                overall                 |  0.2207   |      1.0000       |
+|  119   |        0.364   |        0.000 -      0.854    |              1               |                overall                 |  0.0953   |      0.0500       |
+|  120   |        0.000   |        0.000 -      0.081    |              0               |                overall                 |  0.5562   |      1.0000       |
+|  121   |        0.400   |        0.000 -      0.251    |              1               |                overall                 |  0.4074   |      1.0000       |
+|  122   |        0.213   |        0.000 -      1.401    |              0               |                overall                 |  0.0309   |      1.0000       |
+|  123   |        0.835   |        0.000 -      0.000    |              2               |                overall                 |  0.7893   |      1.0000       |
+|  124   |        1.128   |        0.575 -      1.367    |              4               |                overall                 |  0.2539   |      1.0000       |
+|  125   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  126   |        1.621   |        0.081 -      0.892    |              2               |                overall                 |  0.0466   |      1.0000       |
+|  127   |        0.985   |        0.536 -      0.551    |              2               |                overall                 |  0.9731   |      1.0000       |
+|  128   |        1.950   |        0.000 -      0.118    |              0               |                overall                 |  0.5501   |      0.2500       |
+|  129   |        4.775   |        0.490 -      1.289    |              4               |                overall                 |  0.3040   |      1.0000       |
+|  130   |        1.305   |        0.000 -      0.241    |              2               |                overall                 |  0.3966   |      0.3333       |
+|  131   |        0.505   |        0.000 -      0.000    |              0               |                overall                 |  0.9870   |      1.0000       |
+|  132   |        1.419   |        0.911 -      1.230    |              2               |                overall                 |  0.6915   |      0.2000       |
+|  133   |        0.654   |        0.698 -      1.570    |              4               |                overall                 |  0.2746   |      1.0000       |
+|  134   |        0.499   |        0.000 -      0.000    |              0               |                overall                 |  0.9893   |      1.0000       |
+|  135   |        0.000   |        0.000 -      0.122    |              0               |                overall                 |  0.5556   |      1.0000       |
+|  136   |        1.708   |        0.534 -      0.902    |              2               |                overall                 |  0.5498   |      1.0000       |
+|  137   |        1.737   |        0.000 -      0.390    |              0               |                overall                 |  0.2823   |      1.0000       |
+|  138   |        0.000   |        0.000 -      0.233    |              0               |                overall                 |  0.4027   |      1.0000       |
+|  139   |       14.101   |        0.510 -      1.255    |              3               |                overall                 |  0.2375   |      1.0000       |
+|  140   |        0.684   |        0.000 -      0.521    |              0               |                overall                 |  0.2046   |      0.2000       |
+|  141   |        0.428   |        0.000 -      0.456    |              0               |                overall                 |  0.1719   |      1.0000       |
+|  142   |        1.418   |        0.000 -      0.392    |              2               |                overall                 |  0.2101   |      0.5000       |
+|  143   |        1.390   |        0.567 -      0.651    |              1               |                overall                 |  0.8972   |      0.5000       |
+|  144   |        1.854   |        0.000 -      0.178    |              6               |                overall                 |  0.3933   |      1.0000       |
+|  145   |        2.137   |        0.000 -      0.387    |              1               |                overall                 |  0.2921   |      0.2000       |
+|  146   |        0.730   |        0.289 -      0.713    |              1               |                overall                 |  0.4902   |      1.0000       |
+|  147   |        1.377   |        0.000 -      0.000    |              0               |                overall                 |  0.7864   |      1.0000       |
+|  148   |        0.292   |        0.000 -      0.551    |              0               |                overall                 |  0.1427   |      1.0000       |
+|  149   |        1.784   |        0.000 -      0.436    |              2               |                overall                 |  0.0668   |      0.0500       |
+|  150   |        0.999   |        0.000 -      0.598    |              0               |                overall                 |  0.0840   |      1.0000       |
+|  151   |        1.212   |        0.345 -      0.929    |              6               |                overall                 |  0.3075   |      1.0000       |
+|  152   |        3.374   |        0.000 -      0.000    |              3               |                overall                 |  0.8781   |      0.3333       |
+|  153   |        0.244   |        0.230 -      4.176    |              6               |                overall                 |  0.0001   |      1.0000       |
+|  154   |        0.000   |        0.000 -      0.229    |              0               |                overall                 |  0.4065   |      0.5000       |
+|  155   |        0.544   |        0.374 -      0.411    |              1               |                overall                 |  0.9363   |      1.0000       |
+|  156   |        0.657   |        0.666 -      2.908    |              7               |                overall                 |  0.0282   |      0.5000       |
+|  157   |        2.852   |        0.000 -      0.214    |              4               |                overall                 |  0.3775   |      0.3333       |
+|  158   |        0.000   |        0.000 -      0.178    |              0               |                overall                 |  0.3716   |      1.0000       |
+|  159   |        0.316   |        0.000 -      0.448    |              0               |                overall                 |  0.2850   |      1.0000       |
+|  160   |        0.697   |        0.598 -      0.670    |              4               |                overall                 |  0.9208   |      0.0833       |
+|  161   |        0.468   |        0.214 -      0.442    |              1               |                overall                 |  0.5700   |      0.5000       |
+|  162   |        0.686   |        0.581 -      0.889    |              2               |                overall                 |  0.6204   |      1.0000       |
+|  163   |        0.353   |        0.120 -      1.313    |              2               |                overall                 |  0.0472   |      0.5000       |
+|  164   |        0.322   |        0.251 -      2.036    |              3               |                overall                 |  0.0266   |      1.0000       |
+|  166   |        0.240   |        0.000 -      0.000    |              0               |                overall                 |  0.9337   |      1.0000       |
+|  167   |        0.366   |        0.705 -      6.545    |              10              |                overall                 |  0.0000   |      0.5000       |
+|  168   |        0.000   |        0.000 -      0.415    |              2               |                overall                 |  0.0523   |      0.2500       |
+|  169   |        5.024   |        0.068 -      0.739    |              4               |                overall                 |  0.0475   |      1.0000       |
+|  170   |        1.483   |        0.522 -      1.537    |              1               |                overall                 |  0.2496   |      0.5000       |
+|  171   |        2.026   |        0.000 -      4.010    |              4               |                overall                 |  0.0000   |      1.0000       |
+|  172   |        2.266   |        0.000 -      0.173    |              0               |                overall                 |  0.4735   |      0.0500       |
+|  173   |        0.474   |        0.357 -      4.116    |              6               |                overall                 |  0.0011   |      0.2000       |
+|  174   |        0.000   |        0.308 -     11.600    |              8               |                overall                 |  0.0000   |      0.1250       |
+|  175   |        0.850   |        0.000 -      3.668    |              7               |                overall                 |  0.0000   |      0.1667       |
+|  176   |        0.559   |        0.000 -      1.215    |              1               |                overall                 |  0.0057   |      0.0500       |
+|  177   |        0.332   |        0.000 -      0.000    |              0               |                overall                 |  0.9734   |      1.0000       |
+|  178   |        1.291   |        0.117 -      1.936    |              3               |                overall                 |  0.0085   |      0.2000       |
+|  179   |        0.772   |        0.000 -      1.849    |              2               |                overall                 |  0.0008   |      0.2500       |
+|  180   |        0.170   |        0.000 -      2.221    |              3               |                overall                 |  0.0001   |      0.2000       |
+|  181   |        1.304   |        0.000 -      0.000    |              0               |                overall                 |  0.9980   |      1.0000       |
+|  182   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  183   |        0.388   |        0.000 -      0.000    |              1               |                overall                 |  0.9462   |      0.3333       |
+|  184   |        2.264   |        0.000 -      0.571    |              5               |                overall                 |  0.0547   |      1.0000       |
+|  185   |        4.544   |        0.000 -      0.491    |              0               |                overall                 |  0.1406   |      1.0000       |
+|  186   |        0.000   |        0.000 -      0.260    |              0               |                overall                 |  0.2890   |      0.0588       |
+|  187   |        0.456   |        0.000 -      0.907    |              2               |                overall                 |  0.0066   |      1.0000       |
+|  188   |        1.308   |        0.000 -      1.036    |              3               |                overall                 |  0.0075   |      1.0000       |
+|  189   |        0.000   |        0.088 -      0.885    |              2               |                overall                 |  0.0544   |      0.2500       |
+|  190   |        0.000   |        0.068 -      1.469    |              4               |                overall                 |  0.0015   |      0.3333       |
+|  191   |        0.452   |        0.130 -      2.484    |              4               |                overall                 |  0.0025   |      1.0000       |
+|  192   |        2.902   |        0.000 -      0.000    |              1               |                overall                 |  0.8282   |      1.0000       |
+|  193   |        1.365   |        0.000 -      0.605    |              1               |                overall                 |  0.0595   |      0.1429       |
+|  194   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  195   |        1.212   |        0.000 -      0.473    |              1               |                overall                 |  0.0742   |      1.0000       |
+|  196   |        0.378   |        0.000 -      0.359    |              1               |                overall                 |  0.2126   |      1.0000       |
+|  197   |        3.581   |        0.000 -      0.130    |              1               |                overall                 |  0.5437   |      0.1111       |
+|  198   |        0.661   |        0.000 -      2.179    |              2               |                overall                 |  0.0026   |      1.0000       |
+|  199   |        2.955   |        0.000 -      0.127    |              1               |                overall                 |  0.5368   |      0.0909       |
+|  200   |        2.498   |        0.617 -      1.315    |              5               |                overall                 |  0.4156   |      1.0000       |
+|  201   |        0.905   |        0.000 -      0.303    |              0               |                overall                 |  0.6974   |      1.0000       |
+|  202   |        3.422   |        0.000 -      0.264    |              0               |                overall                 |  0.7253   |      0.5000       |
+|  203   |        0.382   |        0.796 -      6.390    |              1               |                overall                 |  0.1517   |      1.0000       |
+|  204   |        0.000   |        0.000 -      0.470    |              0               |                overall                 |  0.7032   |      1.0000       |
+|  205   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  206   |        1.437   |        0.000 -      0.945    |              1               |                overall                 |  0.1409   |      0.1667       |
+|  207   |        1.160   |        0.000 -      0.866    |              0               |                overall                 |  0.1664   |      0.1111       |
+|  208   |        1.814   |        1.084 -      2.639    |              5               |                overall                 |  0.2468   |      1.0000       |
+|  209   |        0.610   |        0.000 -      1.028    |              0               |                overall                 |  0.1368   |      1.0000       |
+|  210   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  211   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  269   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  212   |        1.309   |        0.000 -      0.665    |              2               |                overall                 |  0.1399   |      1.0000       |
+|  213   |        1.906   |        0.000 -      0.333    |              1               |                overall                 |  0.2636   |      1.0000       |
+|  214   |        0.793   |        0.602 -      1.174    |              2               |                overall                 |  0.5017   |      0.3333       |
+|  215   |        1.275   |        0.645 -      0.833    |              2               |                overall                 |  0.7593   |      0.5000       |
+|  216   |        0.659   |        0.000 -      0.866    |              0               |                overall                 |  0.0528   |      1.0000       |
+|  217   |        0.000   |        0.290 -      2.351    |              0               |                overall                 |  0.9901   |      1.0000       |
+|  218   |        0.000   |        0.752 -      2.212    |              0               |                overall                 |  0.5265   |      1.0000       |
+|  219   |        1.052   |        0.000 -      0.136    |              1               |                overall                 |  0.5522   |      0.5000       |
+|  220   |        0.693   |        0.312 -      0.399    |              2               |                overall                 |  0.8259   |      1.0000       |
+|  221   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  222   |        0.212   |        0.000 -      0.188    |              0               |                overall                 |  0.4804   |      0.3333       |
+|  223   |        0.319   |        0.000 -      0.473    |              0               |                overall                 |  0.2056   |      1.0000       |
+|  224   |        1.899   |        0.000 -      0.000    |              8               |                overall                 |  0.6210   |      1.0000       |
+|  225   |        0.445   |        0.000 -      0.363    |              0               |                overall                 |  0.2972   |      1.0000       |
+|  226   |        0.499   |        0.000 -      0.000    |              0               |                overall                 |  0.9889   |      0.2000       |
+|  227   |        2.725   |        0.292 -      0.453    |              3               |                overall                 |  0.7148   |      1.0000       |
+|  228   |        1.114   |        0.000 -      0.841    |              1               |                overall                 |  0.0504   |      0.0500       |
+|  229   |        0.879   |        0.000 -      0.069    |              1               |                overall                 |  0.5622   |      1.0000       |
+|  230   |        0.480   |        0.000 -      0.340    |              0               |                overall                 |  0.4562   |      0.3333       |
+|  231   |        4.460   |        0.000 -      0.263    |              2               |                overall                 |  0.4076   |      0.1250       |
+|  232   |        2.004   |        0.648 -      1.013    |              1               |                overall                 |  0.6978   |      0.5000       |
+|  233   |    10000.000   |        0.000 -      2.727    |              0               |                overall                 |  0.8664   |      1.0000       |
+|  234   |        1.750   |        0.530 -      1.183    |              0               |                overall                 |  0.9917   |      1.0000       |
+|  235   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  236   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  237   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  238   |     1262.958   |        0.015 -      0.598    |              0               |                overall                 |  0.9550   |      0.5000       |
+|  239   |        1.386   |        0.124 -      0.654    |              0               |                overall                 |  0.9836   |      0.5000       |
+|  240   |        0.000   |        0.420 -      5.436    |              0               |                overall                 |  0.1544   |      0.0769       |
+|  241   |        0.000   |        0.578 -      8.924    |              0               |                overall                 |  0.8780   |      1.0000       |
+|  242   |        0.000   |        0.500 -      5.470    |              0               |                overall                 |  0.7580   |      0.0500       |
+|  243   |        0.000   |        0.000 -      0.570    |              0               |                overall                 |  0.8136   |      1.0000       |
+|  244   |        1.546   |        0.524 -    522.065    |              0               |                overall                 |  1.0000   |      1.0000       |
+|  245   |        0.000   |        0.582 -      0.778    |              0               |                overall                 |  0.9760   |      1.0000       |
+|  246   |       53.576   |        0.000 -      0.910    |              0               |                overall                 |  1.0000   |      1.0000       |
+|  247   |        0.000   |        1.228 -      2.047    |              0               |                overall                 |  0.9986   |      0.5000       |
+|  248   |        0.000   |        2.666 -      3.357    |              0               |                overall                 |  0.3594   |      0.0500       |
+|  249   |        0.699   |        0.000 -      0.535    |              0               |                overall                 |  0.3105   |      1.0000       |
+|  250   |        1.084   |        0.000 -      0.796    |              2               |                overall                 |  0.2557   |      0.2000       |
+|  251   |        2.039   |        1.429 -      3.906    |              3               |                overall                 |  0.1770   |      1.0000       |
+|  252   |        2.439   |        0.000 -      1.250    |              0               |                overall                 |  0.1309   |      0.2500       |
+|  253   |        0.000   |        0.000 -      0.581    |              1               |                overall                 |  0.0590   |      1.0000       |
+|  254   |        0.758   |        0.000 -      0.000    |              0               |                overall                 |  0.9233   |      1.0000       |
+|  255   |        2.059   |        0.072 -      1.471    |              3               |                overall                 |  0.0047   |      1.0000       |
+|  256   |        2.330   |        0.000 -      0.444    |              1               |                overall                 |  0.4202   |      0.2500       |
+|  257   |        6.394   |        0.000 -      0.000    |              1               |                overall                 |  0.9674   |      1.0000       |
+|  258   |        1.279   |        0.000 -      0.263    |              0               |                overall                 |  0.3967   |      0.3333       |
+|  259   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  260   |        0.000   |        0.115 -      0.712    |              1               |                overall                 |  0.2358   |      0.5000       |
+|  261   |        1.017   |        0.000 -      0.102    |              0               |                overall                 |  0.5175   |      1.0000       |
+|  262   |        1.432   |        0.172 -      1.273    |              3               |                overall                 |  0.0320   |      1.0000       |
+|  263   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  264   |        0.126   |        0.000 -      0.335    |              0               |                overall                 |  0.2707   |      0.1667       |
+|  265   |        0.504   |        0.000 -      0.186    |              1               |                overall                 |  0.3601   |      1.0000       |
+|  266   |        0.000   |        0.091 -     13.806    |              0               |                overall                 |  0.9843   |      0.3333       |
+|  267   |        0.838   |        0.000 -      1.082    |              0               |                overall                 |  0.9495   |      1.0000       |
+|  268   |        0.665   |        0.000 -      1.317    |              0               |                overall                 |  0.9852   |      0.1429       |
+|  270   |        2.326   |        0.000 -      0.867    |              3               |                overall                 |  0.0047   |      0.5000       |
+|  271   |        0.709   |        0.000 -      0.158    |              0               |                overall                 |  0.3953   |      0.5000       |
+|  272   |        0.256   |        0.000 -      0.255    |              0               |                overall                 |  0.3924   |      0.5000       |
+|  273   |        0.757   |        0.000 -      0.564    |              1               |                overall                 |  0.0567   |      0.1250       |
+|  274   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  275   |    10000.000   |        0.085 -      0.431    |              1               |                overall                 |  0.2715   |      0.1250       |
+|  276   |        0.000   |        0.000 -      0.126    |              0               |                overall                 |  0.5463   |      1.0000       |
+|  277   |        1.991   |        0.000 -      0.000    |              0               |                overall                 |  0.7334   |      0.3333       |
+|  278   |        1.639   |        0.000 -      0.863    |              1               |                overall                 |  0.0319   |      0.5000       |
+|  279   |        0.271   |        0.129 -      0.665    |              1               |                overall                 |  0.2731   |      1.0000       |
+|  280   |        1.751   |        0.000 -      0.123    |              1               |                overall                 |  0.5602   |      0.3333       |
+|  281   |        0.397   |        0.000 -      0.152    |              0               |                overall                 |  0.5400   |      0.5000       |
+|  282   |        2.029   |        0.000 -      0.211    |              2               |                overall                 |  0.5556   |      0.2000       |
+|  283   |        0.739   |        0.000 -      0.164    |              0               |                overall                 |  0.7282   |      1.0000       |
+|  284   |        0.000   |        0.000 -      0.639    |              0               |                overall                 |  0.5246   |      1.0000       |
+|  285   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  286   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  287   |        1.724   |        0.000 -      0.146    |              0               |                overall                 |  0.7315   |      0.0500       |
+|  288   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  289   |        2.411   |        0.000 -      0.463    |              1               |                overall                 |  0.6806   |      0.5000       |
+|  290   |        3.394   |        0.000 -      0.164    |              0               |                overall                 |  0.8016   |      1.0000       |
+|  291   |        2.201   |        0.000 -      0.196    |              0               |                overall                 |  0.7252   |      1.0000       |
+|  292   |        1.954   |        0.000 -      0.000    |              1               |                overall                 |  0.8148   |      1.0000       |
+|  293   |        2.228   |        0.000 -      0.363    |              1               |                overall                 |  0.7310   |      0.2500       |
+|  294   |        0.000   |        0.000 -      0.436    |              0               |                overall                 |  0.6639   |      0.3333       |
+|  295   |        0.676   |        0.000 -      0.000    |              0               |                overall                 |  0.9381   |      1.0000       |
+|  296   |        0.454   |        0.000 -      0.334    |              0               |                overall                 |  0.6779   |      0.5000       |
+|  297   |        0.614   |        0.000 -      0.000    |              0               |                overall                 |  0.9549   |      1.0000       |
+|  298   |        0.348   |        0.000 -      0.122    |              0               |                overall                 |  0.8042   |      0.3333       |
+|  299   |        1.061   |        0.000 -      0.000    |              0               |                overall                 |  0.7913   |      1.0000       |
+|  300   |        0.391   |        0.000 -      0.000    |              0               |                overall                 |  0.9258   |      0.5000       |
+|  301   |        0.000   |        0.470 -      7.938    |              1               |                overall                 |  0.1166   |      0.1429       |
+|  302   |        0.490   |        0.000 -      0.157    |              0               |                overall                 |  0.8039   |      1.0000       |
+|  303   |        0.000   |        0.000 -      0.305    |              0               |                overall                 |  0.7451   |      1.0000       |
+|  304   |        1.627   |        0.000 -      0.124    |              0               |                overall                 |  0.8038   |      1.0000       |
+|  305   |        2.069   |        0.000 -      0.257    |              0               |                overall                 |  0.7039   |      0.2000       |
+|  306   |        1.932   |        0.000 -      0.000    |              1               |                overall                 |  0.8073   |      0.0667       |
+|  307   |        0.422   |        0.000 -      0.166    |              0               |                overall                 |  0.7993   |      1.0000       |
+|  308   |        0.959   |        0.000 -      0.356    |              0               |                overall                 |  0.6473   |      0.5000       |
+|  309   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  310   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  311   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  312   |        0.751   |        0.000 -      1.174    |              0               |                overall                 |  0.4624   |      0.5000       |
+|  313   |        0.290   |        0.000 -      0.576    |              0               |                overall                 |  0.5551   |      0.5000       |
+|  314   |        0.000   |        0.000 -      0.865    |              0               |                overall                 |  0.5048   |      1.0000       |
+|  315   |        0.497   |        0.630 -      3.571    |              1               |                overall                 |  0.3168   |      0.5000       |
+|  316   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+|  317   |        1.314   |        0.000 -      0.000    |              0               |                overall                 |  0.7755   |      0.2500       |
+|  318   |        0.000   |        0.000 -      0.000    |              1               |                overall                 |  1.0000   |      1.0000       |
+
+### ** Found _318_ sites with different _overall_ dN/dS at p <= 1**
+
+### ### False discovery rate correction
+There are 318 sites where the overall p-value passes the False Discovery Rate threshold of 1
+
+|     Codon     |       q-value        |
+|:-------------:|:--------------------:|
+|       174     |       0.0000002233   |
+|       175     |       0.0021445622   |
+|       167     |       0.0031362424   |
+|       171     |       0.0033273451   |
+|       153     |       0.0056452572   |
+|       180     |       0.0064510795   |
+|       179     |       0.0377487730   |
+|       173     |       0.0433667875   |
+|       190     |       0.0532224804   |
+|       198     |       0.0752789619   |
+|       191     |       0.0797077910   |
+|       270     |       0.1151790019   |
+|       255     |       0.1238947635   |
+|       176     |       0.1301302486   |
+|       187     |       0.1405927929   |
+|       188     |       0.1490124568   |
+|       178     |       0.1594790723   |
+|        43     |       0.1935879704   |
+|       107     |       0.2056506368   |
+|       262     |       0.3908952294   |
+|       164     |       0.4026156190   |
+|       278     |       0.4058108864   |
+|       156     |       0.4079096561   |
+|        60     |       0.4189178879   |
+|         4     |       0.4224193932   |
+|       122     |       0.4274148309   |
+|       193     |       0.4976988839   |
+|       253     |       0.5069593285   |
+|       184     |       0.5119983815   |
+|       273     |       0.5154080163   |
+|        13     |       0.5175076755   |
+|       169     |       0.5207737070   |
+|       189     |       0.5239081420   |
+|       216     |       0.5250931414   |
+|       228     |       0.5339293566   |
+|       168     |       0.5360596668   |
+|       163     |       0.5364674223   |
+|       149     |       0.5443918704   |
+|       126     |       0.5491488927   |
+|       195     |       0.5900253995   |
+|       150     |       0.6516099352   |
+|       119     |       0.7216916174   |
+|        59     |       0.8321610196   |
+|       301     |       0.8428008793   |
+|       148     |       0.8896751470   |
+|       206     |       0.8964055508   |
+|       252     |       0.9048848341   |
+|       185     |       0.9127133094   |
+|       100     |       0.9240660286   |
+|       209     |       0.9259147720   |
+|       240     |       0.9261310439   |
+|       212     |       0.9269964274   |
+|       203     |       0.9277695056   |
+|       207     |       0.9799872042   |
+|       141     |       0.9941596769   |
+|       289     |       1.0000000000   |
+|       290     |       1.0000000000   |
+|        49     |       1.0000000000   |
+|       299     |       1.0000000000   |
+|        74     |       1.0000000000   |
+|        78     |       1.0000000000   |
+|       123     |       1.0000000000   |
+|       296     |       1.0000000000   |
+|       307     |       1.0000000000   |
+|       202     |       1.0000000000   |
+|        51     |       1.0000000000   |
+|       291     |       1.0000000000   |
+|       283     |       1.0000000000   |
+|        35     |       1.0000000000   |
+|        16     |       1.0000000000   |
+|       298     |       1.0000000000   |
+|        14     |       1.0000000000   |
+|       302     |       1.0000000000   |
+|        39     |       1.0000000000   |
+|       304     |       1.0000000000   |
+|        48     |       1.0000000000   |
+|        26     |       1.0000000000   |
+|       310     |       1.0000000000   |
+|       306     |       1.0000000000   |
+|       238     |       1.0000000000   |
+|         6     |       1.0000000000   |
+|       297     |       1.0000000000   |
+|        83     |       1.0000000000   |
+|         7     |       1.0000000000   |
+|        82     |       1.0000000000   |
+|       115     |       1.0000000000   |
+|        71     |       1.0000000000   |
+|       294     |       1.0000000000   |
+|       257     |       1.0000000000   |
+|        73     |       1.0000000000   |
+|         8     |       1.0000000000   |
+|       112     |       1.0000000000   |
+|       277     |       1.0000000000   |
+|       303     |       1.0000000000   |
+|        36     |       1.0000000000   |
+|       287     |       1.0000000000   |
+|       254     |       1.0000000000   |
+|       246     |       1.0000000000   |
+|       205     |       1.0000000000   |
+|       293     |       1.0000000000   |
+|        12     |       1.0000000000   |
+|       211     |       1.0000000000   |
+|       285     |       1.0000000000   |
+|       182     |       1.0000000000   |
+|       274     |       1.0000000000   |
+|       143     |       1.0000000000   |
+|       267     |       1.0000000000   |
+|       237     |       1.0000000000   |
+|       183     |       1.0000000000   |
+|       155     |       1.0000000000   |
+|       230     |       1.0000000000   |
+|       108     |       1.0000000000   |
+|        84     |       1.0000000000   |
+|       295     |       1.0000000000   |
+|       300     |       1.0000000000   |
+|        93     |       1.0000000000   |
+|       166     |       1.0000000000   |
+|        67     |       1.0000000000   |
+|       311     |       1.0000000000   |
+|        37     |       1.0000000000   |
+|       160     |       1.0000000000   |
+|       210     |       1.0000000000   |
+|       288     |       1.0000000000   |
+|       236     |       1.0000000000   |
+|       235     |       1.0000000000   |
+|       309     |       1.0000000000   |
+|       244     |       1.0000000000   |
+|        20     |       1.0000000000   |
+|       221     |       1.0000000000   |
+|       312     |       1.0000000000   |
+|       234     |       1.0000000000   |
+|       181     |       1.0000000000   |
+|        30     |       1.0000000000   |
+|       247     |       1.0000000000   |
+|       232     |       1.0000000000   |
+|       227     |       1.0000000000   |
+|        69     |       1.0000000000   |
+|       204     |       1.0000000000   |
+|        81     |       1.0000000000   |
+|        19     |       1.0000000000   |
+|       201     |       1.0000000000   |
+|       305     |       1.0000000000   |
+|       132     |       1.0000000000   |
+|        54     |       1.0000000000   |
+|       222     |       1.0000000000   |
+|       147     |       1.0000000000   |
+|        56     |       1.0000000000   |
+|        99     |       1.0000000000   |
+|         9     |       1.0000000000   |
+|       110     |       1.0000000000   |
+|       172     |       1.0000000000   |
+|       317     |       1.0000000000   |
+|        11     |       1.0000000000   |
+|       215     |       1.0000000000   |
+|       103     |       1.0000000000   |
+|       242     |       1.0000000000   |
+|        64     |       1.0000000000   |
+|        31     |       1.0000000000   |
+|       192     |       1.0000000000   |
+|       106     |       1.0000000000   |
+|       152     |       1.0000000000   |
+|        53     |       1.0000000000   |
+|       241     |       1.0000000000   |
+|        65     |       1.0000000000   |
+|        52     |       1.0000000000   |
+|       233     |       1.0000000000   |
+|        28     |       1.0000000000   |
+|        50     |       1.0000000000   |
+|       113     |       1.0000000000   |
+|        21     |       1.0000000000   |
+|        75     |       1.0000000000   |
+|       220     |       1.0000000000   |
+|       292     |       1.0000000000   |
+|        92     |       1.0000000000   |
+|       131     |       1.0000000000   |
+|       268     |       1.0000000000   |
+|         3     |       1.0000000000   |
+|        97     |       1.0000000000   |
+|       217     |       1.0000000000   |
+|       134     |       1.0000000000   |
+|       146     |       1.0000000000   |
+|       243     |       1.0000000000   |
+|       226     |       1.0000000000   |
+|        72     |       1.0000000000   |
+|        61     |       1.0000000000   |
+|        85     |       1.0000000000   |
+|       239     |       1.0000000000   |
+|        25     |       1.0000000000   |
+|       266     |       1.0000000000   |
+|        23     |       1.0000000000   |
+|        24     |       1.0000000000   |
+|        22     |       1.0000000000   |
+|        89     |       1.0000000000   |
+|       177     |       1.0000000000   |
+|       245     |       1.0000000000   |
+|       127     |       1.0000000000   |
+|        34     |       1.0000000000   |
+|        87     |       1.0000000000   |
+|       269     |       1.0000000000   |
+|        80     |       1.0000000000   |
+|        55     |       1.0000000000   |
+|        70     |       1.0000000000   |
+|        62     |       1.0000000000   |
+|        32     |       1.0000000000   |
+|        41     |       1.0000000000   |
+|        79     |       1.0000000000   |
+|       256     |       1.0000000000   |
+|        47     |       1.0000000000   |
+|        68     |       1.0000000000   |
+|       316     |       1.0000000000   |
+|       200     |       1.0000000000   |
+|        15     |       1.0000000000   |
+|         5     |       1.0000000000   |
+|       125     |       1.0000000000   |
+|       117     |       1.0000000000   |
+|        46     |       1.0000000000   |
+|        88     |       1.0000000000   |
+|       263     |       1.0000000000   |
+|         1     |       1.0000000000   |
+|       109     |       1.0000000000   |
+|       165     |       1.0000000000   |
+|       259     |       1.0000000000   |
+|       318     |       1.0000000000   |
+|        33     |       1.0000000000   |
+|       194     |       1.0000000000   |
+|       286     |       1.0000000000   |
+|       161     |       1.0000000000   |
+|       219     |       1.0000000000   |
+|       218     |       1.0000000000   |
+|       284     |       1.0000000000   |
+|        76     |       1.0000000000   |
+|        29     |       1.0000000000   |
+|       313     |       1.0000000000   |
+|        44     |       1.0000000000   |
+|       111     |       1.0000000000   |
+|       281     |       1.0000000000   |
+|       276     |       1.0000000000   |
+|       199     |       1.0000000000   |
+|       197     |       1.0000000000   |
+|        95     |       1.0000000000   |
+|       136     |       1.0000000000   |
+|       214     |       1.0000000000   |
+|       128     |       1.0000000000   |
+|         2     |       1.0000000000   |
+|       314     |       1.0000000000   |
+|        77     |       1.0000000000   |
+|        57     |       1.0000000000   |
+|       280     |       1.0000000000   |
+|        91     |       1.0000000000   |
+|        45     |       1.0000000000   |
+|       261     |       1.0000000000   |
+|       105     |       1.0000000000   |
+|       120     |       1.0000000000   |
+|       229     |       1.0000000000   |
+|       282     |       1.0000000000   |
+|       224     |       1.0000000000   |
+|        86     |       1.0000000000   |
+|        38     |       1.0000000000   |
+|       135     |       1.0000000000   |
+|       162     |       1.0000000000   |
+|        10     |       1.0000000000   |
+|        40     |       1.0000000000   |
+|        17     |       1.0000000000   |
+|        98     |       1.0000000000   |
+|        42     |       1.0000000000   |
+|       308     |       1.0000000000   |
+|       250     |       1.0000000000   |
+|       144     |       1.0000000000   |
+|        27     |       1.0000000000   |
+|       124     |       1.0000000000   |
+|        90     |       1.0000000000   |
+|        63     |       1.0000000000   |
+|       130     |       1.0000000000   |
+|       271     |       1.0000000000   |
+|       116     |       1.0000000000   |
+|        58     |       1.0000000000   |
+|       129     |       1.0000000000   |
+|       225     |       1.0000000000   |
+|       170     |       1.0000000000   |
+|       157     |       1.0000000000   |
+|       248     |       1.0000000000   |
+|       272     |       1.0000000000   |
+|       265     |       1.0000000000   |
+|       315     |       1.0000000000   |
+|       158     |       1.0000000000   |
+|       249     |       1.0000000000   |
+|       121     |       1.0000000000   |
+|       101     |       1.0000000000   |
+|       154     |       1.0000000000   |
+|       151     |       1.0000000000   |
+|       231     |       1.0000000000   |
+|        94     |       1.0000000000   |
+|        18     |       1.0000000000   |
+|       138     |       1.0000000000   |
+|       137     |       1.0000000000   |
+|       264     |       1.0000000000   |
+|       102     |       1.0000000000   |
+|       258     |       1.0000000000   |
+|       133     |       1.0000000000   |
+|       213     |       1.0000000000   |
+|       279     |       1.0000000000   |
+|        66     |       1.0000000000   |
+|       159     |       1.0000000000   |
+|       275     |       1.0000000000   |
+|       186     |       1.0000000000   |
+|       196     |       1.0000000000   |
+|       104     |       1.0000000000   |
+|       139     |       1.0000000000   |
+|       142     |       1.0000000000   |
+|        96     |       1.0000000000   |
+|       145     |       1.0000000000   |
+|       114     |       1.0000000000   |
+|       208     |       1.0000000000   |
+|       118     |       1.0000000000   |
+|       251     |       1.0000000000   |
+|       260     |       1.0000000000   |
+|       140     |       1.0000000000   |
+|       223     |       1.0000000000   |
+
+real	11m28.746s
+user	45m44.056s
+sys	0m17.540s
