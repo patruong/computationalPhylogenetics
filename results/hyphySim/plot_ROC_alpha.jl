@@ -667,9 +667,9 @@ plot_data = DataFrame(x=plot_x, y=plot_y, upper=plot_ci_upper, lower=plot_ci_low
 sort!(plot_data, "x")
 #similar
 #, title="Clopper-Pearson Intervals"
-plot!(plot_data[!, "x"], plot_data[!, "y"], label="ω2", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color="#1f77b4", linestyle=:dash, linewidth=2)
+plot!(plot_data[!, "x"], plot_data[!, "y"], label="ω2", xlabel="Effect Size", ylabel="Power", ylim=[0, 1], color=:blue, linestyle=:dash, linewidth=2) #color="#1f77b4"
 for i in 1:length(plot_x)
-    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color="#1f77b4", label="", linewidth=2)
+    plot!([plot_data[i, "x"], plot_data[i, "x"]], [plot_data[i, "lower"], plot_data[i, "upper"]], color=:blue, label="", linewidth=2) #color="#1f77b4"
 end
 
 plot!(xlim=(0, 6.5), ylim=(0, 1))
