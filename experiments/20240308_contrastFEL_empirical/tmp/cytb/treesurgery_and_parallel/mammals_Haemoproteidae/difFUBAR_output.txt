@@ -1,9 +1,9 @@
-No key 49593156575361863
-No key 6079530416527523
-No key 36739194185366497
+No key 49482587720309745
+No key 4252426361660214
+No key 4776083847106871
 Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/mammals_Haemoproteidae/analysis_tagged_input_tree.svg.
 Running 2step global fit
-["#1a3109", "#21954c", "black"]
+["#e2fade", "#c739ac", "black"]
 Step 2: Optimizing global codon model parameters.
 LL: -24576.13471109592
 LL: -23004.729078554366
@@ -15,17 +15,17 @@ LL: -22988.99148199603
 Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
 Step 4: Running Gibbs sampler to infer site categories.
 Step 5: Tabulating and plotting. Detected sites:
-Site 113 - P(ω1 > ω2):0.9695; P(ω2 > ω1):0.0025; P(ω1 > 1):0.0065; P(ω2 > 1):0.0
-Site 116 - P(ω1 > ω2):0.959; P(ω2 > ω1):0.013; P(ω1 > 1):0.2055; P(ω2 > 1):0.001
-Site 150 - P(ω1 > ω2):0.0095; P(ω2 > ω1):0.972; P(ω1 > 1):0.046; P(ω2 > 1):0.8465
-Site 160 - P(ω1 > ω2):0.973; P(ω2 > ω1):0.004; P(ω1 > 1):0.187; P(ω2 > 1):0.0
-Site 248 - P(ω1 > ω2):0.011; P(ω2 > ω1):0.967; P(ω1 > 1):0.053; P(ω2 > 1):0.765
-Site 341 - P(ω1 > ω2):0.9635; P(ω2 > ω1):0.016; P(ω1 > 1):0.4665; P(ω2 > 1):0.0055
-Site 343 - P(ω1 > ω2):0.9915; P(ω2 > ω1):0.002; P(ω1 > 1):0.84; P(ω2 > 1):0.01
-Site 350 - P(ω1 > ω2):1.0; P(ω2 > ω1):0.0; P(ω1 > 1):0.9475; P(ω2 > 1):0.0145
-Site 351 - P(ω1 > ω2):0.01; P(ω2 > ω1):0.9575; P(ω1 > 1):0.001; P(ω2 > 1):0.0545
-Site 364 - P(ω1 > ω2):0.9545; P(ω2 > ω1):0.0095; P(ω1 > 1):0.3935; P(ω2 > 1):0.021
-Site 366 - P(ω1 > ω2):0.9975; P(ω2 > ω1):0.0005; P(ω1 > 1):0.715; P(ω2 > 1):0.001
+Site 113 - P(ω1 > ω2):0.967; P(ω2 > ω1):0.0025; P(ω1 > 1):0.0115; P(ω2 > 1):0.0
+Site 116 - P(ω1 > ω2):0.9505; P(ω2 > ω1):0.0135; P(ω1 > 1):0.217; P(ω2 > 1):0.0
+Site 150 - P(ω1 > ω2):0.0085; P(ω2 > ω1):0.9665; P(ω1 > 1):0.0495; P(ω2 > 1):0.869
+Site 160 - P(ω1 > ω2):0.976; P(ω2 > ω1):0.004; P(ω1 > 1):0.189; P(ω2 > 1):0.0
+Site 248 - P(ω1 > ω2):0.0115; P(ω2 > ω1):0.968; P(ω1 > 1):0.0445; P(ω2 > 1):0.7705
+Site 341 - P(ω1 > ω2):0.956; P(ω2 > ω1):0.017; P(ω1 > 1):0.4675; P(ω2 > 1):0.003
+Site 343 - P(ω1 > ω2):0.9945; P(ω2 > ω1):0.0025; P(ω1 > 1):0.851; P(ω2 > 1):0.016
+Site 350 - P(ω1 > ω2):0.998; P(ω2 > ω1):0.0; P(ω1 > 1):0.943; P(ω2 > 1):0.0175
+Site 351 - P(ω1 > ω2):0.0125; P(ω2 > ω1):0.959; P(ω1 > 1):0.0025; P(ω2 > 1):0.0665
+Site 364 - P(ω1 > ω2):0.956; P(ω2 > ω1):0.0095; P(ω1 > 1):0.4085; P(ω2 > 1):0.028
+Site 366 - P(ω1 > ω2):0.996; P(ω2 > ω1):0.0; P(ω1 > 1):0.6905; P(ω2 > 1):0.002
 
 If exports = true, writing results for all sites to CSV: cytb/treesurgery_and_parallel/mammals_Haemoproteidae/analysis_posteriors.csv
 Plotting alpha and omega distributions. If exports = true, saved as cytb/treesurgery_and_parallel/mammals_Haemoproteidae/analysis_violin_*.pdf
@@ -33,6 +33,6 @@ sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 
-real	2m11.304s
-user	15m0.461s
-sys	12m17.496s
+real	2m12.293s
+user	14m58.860s
+sys	12m32.271s

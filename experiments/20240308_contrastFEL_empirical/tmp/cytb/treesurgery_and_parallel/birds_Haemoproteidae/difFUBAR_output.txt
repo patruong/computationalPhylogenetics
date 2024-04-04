@@ -1,9 +1,9 @@
-No key 15560535681220566
-No key 859237241000167
-No key 8460774821419761
+No key 6793985288289061
+No key 7035767680394066
+No key 585063113755706
 Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_tagged_input_tree.svg.
 Running 2step global fit
-["#05b1ae", "#5a4b4c", "black"]
+["#06b16e", "#500052", "black"]
 Step 2: Optimizing global codon model parameters.
 LL: -24576.13471109592
 LL: -23004.729078554366
@@ -15,12 +15,14 @@ LL: -22988.99148199603
 Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
 Step 4: Running Gibbs sampler to infer site categories.
 Step 5: Tabulating and plotting. Detected sites:
-Site 1 - P(ω1 > ω2):0.957; P(ω2 > ω1):0.0075; P(ω1 > 1):0.389; P(ω2 > 1):0.0135
-Site 3 - P(ω1 > ω2):0.0065; P(ω2 > ω1):0.9585; P(ω1 > 1):0.0005; P(ω2 > 1):0.0415
-Site 160 - P(ω1 > ω2):0.987; P(ω2 > ω1):0.0025; P(ω1 > 1):0.1925; P(ω2 > 1):0.0005
-Site 357 - P(ω1 > ω2):0.9625; P(ω2 > ω1):0.009; P(ω1 > 1):0.0575; P(ω2 > 1):0.0
-Site 364 - P(ω1 > ω2):0.963; P(ω2 > ω1):0.007; P(ω1 > 1):0.404; P(ω2 > 1):0.015
-Site 366 - P(ω1 > ω2):0.962; P(ω2 > ω1):0.006; P(ω1 > 1):0.645; P(ω2 > 1):0.0245
+Site 1 - P(ω1 > ω2):0.967; P(ω2 > ω1):0.0105; P(ω1 > 1):0.375; P(ω2 > 1):0.013
+Site 3 - P(ω1 > ω2):0.0085; P(ω2 > ω1):0.958; P(ω1 > 1):0.0; P(ω2 > 1):0.045
+Site 160 - P(ω1 > ω2):0.9925; P(ω2 > ω1):0.002; P(ω1 > 1):0.1835; P(ω2 > 1):0.0
+Site 225 - P(ω1 > ω2):0.0115; P(ω2 > ω1):0.9575; P(ω1 > 1):0.01; P(ω2 > 1):0.4205
+Site 228 - P(ω1 > ω2):0.951; P(ω2 > ω1):0.0135; P(ω1 > 1):0.106; P(ω2 > 1):0.0
+Site 357 - P(ω1 > ω2):0.9705; P(ω2 > ω1):0.0065; P(ω1 > 1):0.058; P(ω2 > 1):0.0
+Site 364 - P(ω1 > ω2):0.972; P(ω2 > ω1):0.005; P(ω1 > 1):0.419; P(ω2 > 1):0.019
+Site 366 - P(ω1 > ω2):0.958; P(ω2 > ω1):0.01; P(ω1 > 1):0.659; P(ω2 > 1):0.031
 
 If exports = true, writing results for all sites to CSV: cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_posteriors.csv
 Plotting alpha and omega distributions. If exports = true, saved as cytb/treesurgery_and_parallel/birds_Haemoproteidae/analysis_violin_*.pdf
@@ -28,6 +30,6 @@ sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 
-real	2m18.653s
-user	14m32.512s
-sys	15m18.781s
+real	2m6.990s
+user	14m8.374s
+sys	11m40.750s

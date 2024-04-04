@@ -1,9 +1,9 @@
-No key 24119090960521616
-No key 2327835920057083
-No key 8848229078274374
+No key 44665990229717967
+No key 7982845386406675
+No key 48658170298346837
 Step 1: Initialization. If exports = true, tree showing the assignment of branches to groups/colors will be exported to: cytb/treesurgery_and_parallel/mammals_birds/analysis_tagged_input_tree.svg.
 Running 2step global fit
-["#a1475f", "#3e1d21", "black"]
+["#666ed3", "#371a16", "black"]
 Step 2: Optimizing global codon model parameters.
 LL: -24576.13471109592
 LL: -23004.729078554366
@@ -15,14 +15,16 @@ LL: -22988.99148199603
 Int(ceil(log(high_tol / (upper_bound - lower_bound)) / log(MolecularEvolution.invphi))) = 23
 Step 4: Running Gibbs sampler to infer site categories.
 Step 5: Tabulating and plotting. Detected sites:
-Site 116 - P(ω1 > ω2):0.966; P(ω2 > ω1):0.011; P(ω1 > 1):0.1555; P(ω2 > 1):0.0
-Site 150 - P(ω1 > ω2):0.0005; P(ω2 > ω1):0.9935; P(ω1 > 1):0.0175; P(ω2 > 1):0.8585
-Site 225 - P(ω1 > ω2):0.9645; P(ω2 > ω1):0.01; P(ω1 > 1):0.4045; P(ω2 > 1):0.0015
-Site 237 - P(ω1 > ω2):0.0045; P(ω2 > ω1):0.9655; P(ω1 > 1):0.0; P(ω2 > 1):0.0005
-Site 248 - P(ω1 > ω2):0.003; P(ω2 > ω1):0.983; P(ω1 > 1):0.056; P(ω2 > 1):0.731
-Site 256 - P(ω1 > ω2):0.0065; P(ω2 > ω1):0.957; P(ω1 > 1):0.0; P(ω2 > 1):0.003
-Site 286 - P(ω1 > ω2):0.0125; P(ω2 > ω1):0.9585; P(ω1 > 1):0.0205; P(ω2 > 1):0.523
-Site 351 - P(ω1 > ω2):0.0015; P(ω2 > ω1):0.988; P(ω1 > 1):0.0; P(ω2 > 1):0.0675
+Site 116 - P(ω1 > ω2):0.967; P(ω2 > ω1):0.01; P(ω1 > 1):0.159; P(ω2 > 1):0.0
+Site 150 - P(ω1 > ω2):0.0; P(ω2 > ω1):0.9925; P(ω1 > 1):0.0145; P(ω2 > 1):0.849
+Site 206 - P(ω1 > ω2):0.021; P(ω2 > ω1):0.9505; P(ω1 > 1):0.1265; P(ω2 > 1):0.84
+Site 225 - P(ω1 > ω2):0.9755; P(ω2 > ω1):0.0035; P(ω1 > 1):0.399; P(ω2 > 1):0.004
+Site 234 - P(ω1 > ω2):0.0165; P(ω2 > ω1):0.9545; P(ω1 > 1):0.006; P(ω2 > 1):0.2835
+Site 237 - P(ω1 > ω2):0.0035; P(ω2 > ω1):0.958; P(ω1 > 1):0.0; P(ω2 > 1):0.0005
+Site 248 - P(ω1 > ω2):0.0015; P(ω2 > ω1):0.9825; P(ω1 > 1):0.05; P(ω2 > 1):0.727
+Site 256 - P(ω1 > ω2):0.0085; P(ω2 > ω1):0.9545; P(ω1 > 1):0.0; P(ω2 > 1):0.0015
+Site 286 - P(ω1 > ω2):0.015; P(ω2 > ω1):0.954; P(ω1 > 1):0.0295; P(ω2 > 1):0.524
+Site 351 - P(ω1 > ω2):0.001; P(ω2 > ω1):0.9895; P(ω1 > 1):0.0005; P(ω2 > 1):0.0665
 
 If exports = true, writing results for all sites to CSV: cytb/treesurgery_and_parallel/mammals_birds/analysis_posteriors.csv
 Plotting alpha and omega distributions. If exports = true, saved as cytb/treesurgery_and_parallel/mammals_birds/analysis_violin_*.pdf
@@ -30,6 +32,6 @@ sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 sys:1: UserWarning: The figure layout has changed to tight
 
-real	1m38.868s
-user	7m59.385s
-sys	8m30.960s
+real	1m34.749s
+user	7m54.132s
+sys	7m0.144s
