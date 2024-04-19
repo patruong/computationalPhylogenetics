@@ -1,5 +1,3 @@
-
-using Pkg
 using Revise
 using CSV
 using JSON
@@ -285,6 +283,80 @@ function get_simulation_node_and_purity(sim)
     return n_nodes, purity
 end
 
+using Glob
+
+function read_fasta(filename::String)
+    fasta_dict = Dict{String,String}()
+    current_id = ""
+    current_sequence = ""
+
+    for line in eachline(filename)
+        if startswith(line, '>')
+            # If a line starts with '>', it indicates a new sequence
+            if !isempty(current_id)
+                fasta_dict[current_id] = current_sequence
+            end
+            current_id = split(line[2:end])[1]  # Extracting the ID
+            current_sequence = ""
+        else
+            current_sequence *= strip(line)  # Concatenate sequence lines
+        end
+    end
+
+    # Adding the last sequence to the dictionary
+    if !isempty(current_id)
+        fasta_dict[current_id] = current_sequence
+    end
+
+    return fasta_dict
+end
+
+function sequence_count(sequences)
+    #all_sequences = vdf_filtered = filter(row -> row["sim"] == "285", df)
+    all_sequences = values(sequences)
+    num_all_seq = length(all_sequences)
+    unique_sequences = unique(all_sequences)
+    num_unique_sequences = length(unique_sequences)
+    ratio = num_unique_sequences / num_all_seq
+    #println("Number of all sequences:", num_all_seq)
+    #println("Number of unique sequences:", num_unique_sequences)
+    #println("Ratio of unique seqeunces to all sequences:", ratio)
+    return num_all_seq, num_unique_sequences, ratio
+end
+
+function hyphy_sim_n_seqs(dir, min_unique_seq)
+    files = readdir(dir)
+    filtered_files = filter(file -> occursin(r"[1-5]$", file), files)
+
+    sim_list = []
+    rep_list = []
+    n_all_seq_list = []
+    n_unique_seq_list = []
+    ratio_unique_to_all_list = []
+    for file in filtered_files
+        fasta_file = dir * "/" * file
+        parts = split(fasta_file, '.')
+        sim = parts[2]
+        rep = parts[5]
+        sequences = read_fasta(fasta_file)
+        n_all_seq, n_unique_seq, ratio_unique_to_all = sequence_count(sequences)
+        push!(sim_list, sim)
+        push!(rep_list, rep)
+        push!(n_all_seq_list, n_all_seq)
+        push!(n_unique_seq_list, n_unique_seq)
+        push!(ratio_unique_to_all_list, ratio_unique_to_all)
+    end
+
+    df = DataFrame(sim=sim_list, rep=rep_list, n_all_seq=n_all_seq_list, n_unique_seq_list=n_unique_seq_list, ratio_unique_to_all=ratio_unique_to_all_list)
+
+    #df_filtered = filter(row -> row["sim"] == "279", df)
+    #df_filtered = filter(row -> row["sim"] == "194", df)
+    #df_filtered = filter(row -> row["sim"] == "285", df)
+
+    filtered_df = filter(row -> row["n_unique_seq_list"] >= 20, df)
+    filtered_df[:, "sim_rep"] = string.(filtered_df.sim, "_", filtered_df.rep)
+    return filtered_df
+end
 
 
 pos_thresh = 0.95
@@ -342,6 +414,11 @@ end
 
 
 df = DataFrame(sim=sim_list, rep=rep_list, contrastFEL_codon_sites=contrastFEL_codon_site, difFUBAR_codon_sites=difFUBAR_codon_site, contrastFEL_real_time=contrastFEL_real_time_list, difFUBAR_real_time=difFUBAR_real_time_list, contrastFEL_user_time=contrastFEL_user_time_list, difFUBAR_user_time=difFUBAR_user_time_list, contrastFEL_sys_time=contrastFEL_sys_time_list, difFUBAR_sys_time=difFUBAR_sys_time_list, n_nodes=n_nodes_list, purity=purity_list)
+dir = "contrastFEL_data/omnibus"
+hyphy_num_seqs = hyphy_sim_n_seqs(dir, 15)
+df[:, "sim_rep"] = string.(df.sim, "_", df.rep)
+filter_list = hyphy_num_seqs[:, "sim_rep"]
+df = filter(row -> in(row[:sim_rep], filter_list), df)
 
 
 if sum(df[!, "contrastFEL_codon_sites"] .== df[!, "difFUBAR_codon_sites"]) == nrow(df)
@@ -375,7 +452,6 @@ df = sort(df, :codon_sites)
 df = sort(df, :n_nodes)
 df = sort(df, :purity)
 
-
 df = sort(df, :difFUBAR_real_time)
 plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
     xlabel="difFUBAR time", ylabel="contrastFEL Time", legend=false, linecolor=:blue, linewidth=1.5) # title="difFUBAR vs Contrast-FEL Time"
@@ -391,6 +467,10 @@ plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
     xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="Time (s)", legend=false, linecolor=:blue, linewidth=1.5) # title="difFUBAR vs Contrast-FEL Time"
 
 df = sort(df, :contrastFEL_real_time)
+
+#df
+deleteat!(df, 1) #remove first time (sim 1, rep 1) contrastFEL crashes here
+df = filter(row -> row["sim"] != 279, df)
 plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
     xlabel="", ylabel="log\$_{10}\$(s)", legend=false, linecolor=:blue, linewidth=2, size=(700, 300), margin=4mm) #title="difFUBAR vs Contrast-FEL Time"
 plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
