@@ -353,7 +353,7 @@ function hyphy_sim_n_seqs(dir, min_unique_seq)
     #df_filtered = filter(row -> row["sim"] == "194", df)
     #df_filtered = filter(row -> row["sim"] == "285", df)
 
-    filtered_df = filter(row -> row["n_unique_seq_list"] >= 20, df)
+    filtered_df = filter(row -> row["n_unique_seq_list"] >= min_unique_seq, df)
     filtered_df[:, "sim_rep"] = string.(filtered_df.sim, "_", filtered_df.rep)
     return filtered_df
 end
@@ -415,7 +415,7 @@ end
 
 df = DataFrame(sim=sim_list, rep=rep_list, contrastFEL_codon_sites=contrastFEL_codon_site, difFUBAR_codon_sites=difFUBAR_codon_site, contrastFEL_real_time=contrastFEL_real_time_list, difFUBAR_real_time=difFUBAR_real_time_list, contrastFEL_user_time=contrastFEL_user_time_list, difFUBAR_user_time=difFUBAR_user_time_list, contrastFEL_sys_time=contrastFEL_sys_time_list, difFUBAR_sys_time=difFUBAR_sys_time_list, n_nodes=n_nodes_list, purity=purity_list)
 dir = "contrastFEL_data/omnibus"
-hyphy_num_seqs = hyphy_sim_n_seqs(dir, 15)
+hyphy_num_seqs = hyphy_sim_n_seqs(dir, 20)
 df[:, "sim_rep"] = string.(df.sim, "_", df.rep)
 filter_list = hyphy_num_seqs[:, "sim_rep"]
 df = filter(row -> in(row[:sim_rep], filter_list), df)
@@ -488,19 +488,22 @@ savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.png")  
 
 
 # speedup
+df[!, :speed_up] = df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time]
 maximum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 minimum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 mean(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 
-minimum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 
+
+
+minimum(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 min_index = argmin(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 max_index = argmax(df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
 
 
 (df[!, :contrastFEL_real_time] ./ df[!, :difFUBAR_real_time])
-min_row = df[2, :]
-min_row = df[10, :]
+min_row = df[min_index, :]
+max_row = df[max_index, :]
 
 
 max_row = df[max_index, :]

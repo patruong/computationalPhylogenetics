@@ -342,7 +342,7 @@ for i in 1:length(plot_colors)
     push!(contrastFEL_plot_data, contrastFEL_plot)
 end
 
-difFUBAR_dot_threshold = 0.83
+difFUBAR_dot_threshold = 0.85
 contrastFEL_dot_threshold = 0.95
 
 plot(size=(450, 550))
