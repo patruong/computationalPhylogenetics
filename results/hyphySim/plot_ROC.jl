@@ -589,9 +589,6 @@ df_bin = df[df.effect_size_bins.==bins[15], :]
 df_bin = success_condition(df_bin, "P(ω1 ≠ ω2)", 0.75)
 success = sum(df_bin.success)
 n = length(df_bin.success)
-
-### calculate power
-
 plot_x = []
 plot_y = []
 for bin in bins
@@ -650,6 +647,6 @@ end
 
 display(p)
 
-savefig("results/hyphySim/ROC/clopper_pearson_interval.png")
+savefig("results/hyphySim/ROC/clopper_pearson_interval.svg")
 
 

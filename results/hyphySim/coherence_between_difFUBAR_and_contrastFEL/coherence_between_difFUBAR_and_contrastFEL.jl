@@ -286,7 +286,7 @@ scatter(joined_res[!, "difFUBAR_P(ω1 ≠ ω2)"], joined_res[!, "contrastFEL_P-v
 #cd("/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL")
 
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot.png")
+savefig(plot_dir * "1_coherence_scatterplot.svg")
 
 
 actual_true_res = filter(row -> row["difFUBAR_actual_difference"] != false, joined_res)

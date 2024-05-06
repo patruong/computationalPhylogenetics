@@ -676,5 +676,5 @@ plot!(xlim=(0, 6.5), ylim=(0, 1))
 display(p)
 
 
-savefig("results/hyphySim/ROC/clopper_pearson_interval_alpha.png")
+savefig("results/hyphySim/ROC/clopper_pearson_interval_alpha.svg")
 
