@@ -301,7 +301,7 @@ scatter(actual_true_res[!, "difFUBAR_P(ω1 ≠ ω2)"], actual_true_res[!, "contr
     #color=[:blue, :red][joined_res[!, "difFUBAR_actual_difference"].+1])
 )
 plot_dir = "/home/patrick/git/computationalPhylogenetics/results/hyphySim/coherence_between_difFUBAR_and_contrastFEL/"
-savefig(plot_dir * "1_coherence_scatterplot_actual_true.png")
+savefig(plot_dir * "1_coherence_scatterplot_actual_true.svg")
 
 
 actual_false_res = filter(row -> row["difFUBAR_actual_difference"] .== false, joined_res)
