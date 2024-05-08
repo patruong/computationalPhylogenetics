@@ -475,7 +475,7 @@ plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
     xlabel="", ylabel="log\$_{10}\$(s)", legend=false, linecolor=:blue, linewidth=2, size=(700, 300), margin=4mm) #title="difFUBAR vs Contrast-FEL Time"
 plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
     xlabel="", ylabel="log\$_{10}\$(s)", legend=false, linecolor=:red, linewidth=2, yscale=:log10)
-savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time_log.png")  # Saves as PNG by default
+savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time_log.svg")  # Saves as PNG by default
 
 
 df = sort(df, :contrastFEL_real_time)
@@ -483,7 +483,7 @@ plot(index_values=axes(df, 1), df[!, :difFUBAR_real_time],
     xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="s", legend=false, linecolor=:blue, linewidth=2, size=(700, 300), margin=3mm) #title="difFUBAR vs Contrast-FEL Time"
 plot!(index_values=axes(df, 1), df[!, :contrastFEL_real_time],
     xlabel="Simulations sorted by increasing contrastFEL Time", ylabel="s", legend=false, linecolor=:red, linewidth=2)
-savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.png")  # Saves as PNG by default
+savefig("results/hyphySim/timing_comparison/difFUBAR_vs_contrastFEL_time.svg")  # Saves as PNG by default
 
 
 

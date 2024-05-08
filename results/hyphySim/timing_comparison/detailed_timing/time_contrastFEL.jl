@@ -280,12 +280,14 @@ function parse_time(time_output_file)
     return real_time, user_time, sys_time
 end
 
+
+
 function get_purity_from_newick(newick_file)
     treestring_group_labeled, treestring, group_tags, original_tags, tag_colors = import_grouped_label_tree(newick_file)
     tree = gettreefromnewick(treestring, FelNode)
     n_nodes = length(getnodelist(tree))
     num_groups = length(tag_colors)
-    purity, _, _ = get_purity_info(tree, original_tags, num_groups)
+    purity, _, _ = CodonMolecularEvolution.get_purity_info(tree, original_tags, num_groups)
     return purity, n_nodes
 end
 
@@ -576,7 +578,7 @@ surface_plot = plot(
     zguidefontrotation=90, zguidefontsize=16,
     size=(800, 600)
 )
-savefig("results/hyphySim/timing_comparison/detailed_timing/difFUBAR_surface_realtime_nodes_purity.png")
+savefig("results/hyphySim/timing_comparison/detailed_timing/difFUBAR_surface_realtime_nodes_purity.svg")
 
 # Show the plot
 display(surface_plot)
@@ -598,7 +600,7 @@ surface_plot = plot(
     zguidefontrotation=90, zguidefontsize=16,
     size=(800, 600)
 )
-savefig("results/hyphySim/timing_comparison/detailed_timing/contrastFEL_surface_realtime_nodes_purity.png")
+savefig("results/hyphySim/timing_comparison/detailed_timing/contrastFEL_surface_realtime_nodes_purity.svg")
 
 
 # Show the plot
