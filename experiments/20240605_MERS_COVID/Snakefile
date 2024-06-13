@@ -1,0 +1,142 @@
+import os
+
+output_dir = "results"
+input_fastas = ["data/H5N1_cattle_50_seqlen_2280.fasta", "data/H5N1_avian_50_seqlen_2280.fasta"]
+reference_fasta = "data/H5N1_reference.fasta"
+
+sample_to_tag = {
+    "H5N1_cattle_50_seqlen_2280": "[CATTLE]",
+    "H5N1_avian_50_seqlen_2280": "[AVIAN]",
+    "H5N1_reference" : "",
+}
+
+samples = ["H5N1_reference"] + [os.path.basename(fasta).split(".")[0] for fasta in input_fastas]
+
+cleaned_fastas = expand(os.path.join(output_dir, "{sample}_cleaned.fasta"), sample=samples)
+tagged_fastas = expand(os.path.join(output_dir, "{sample}_tagged.fasta"), sample=samples)
+
+rule all:
+    input:
+        tree = os.path.join(output_dir, "result.newick"),
+        fasta = os.path.join(output_dir, "result.fasta")
+
+rule process_fasta:
+    message:
+        """
+        Pre-processing fasta files.
+        """
+    input:
+        fasta_file = lambda wildcards: "data/{}.fasta".format(wildcards.sample)
+    output:
+        output = os.path.join(output_dir, "{sample}_cleaned.fasta")
+    shell:
+        "sed -f clean_fasta_header.sh {input.fasta_file} > {output.output}"
+
+rule add_tag:
+    message:
+        """
+        Adding tag to fasta files.
+        """
+    input:
+        fasta = os.path.join(output_dir, "{sample}_cleaned.fasta")
+    output:
+        fasta = os.path.join(output_dir, "{sample}_tagged.fasta")
+    run:
+        tag = sample_to_tag.get(wildcards.sample, "")
+        if tag:
+            shell("bash add_tag_to_fasta.sh {input.fasta} {tag} {output.fasta}")
+        else:
+            # If the tag is empty, just copy the file
+            shell("cp {input.fasta} {output.fasta}")
+
+rule concatenate_fastas:
+    message:
+        """
+        Concatenating fasta files.
+        """
+    input:
+        tagged_fastas
+    output:
+        concatenated = os.path.join(output_dir, "concatenated_sequences.fasta")
+    shell:
+        "cat {input} > {output.concatenated}"
+
+
+rule align_fastas:
+    message:
+        """
+        Aligning concatenated fasta files.
+        """
+    input:
+        concatenated = os.path.join(output_dir, "concatenated_sequences.fasta")
+    output:
+        aligned = os.path.join(output_dir, "aligned_sequences.clw")
+    shell:
+        "mafft --auto --clustalout {input.concatenated} > {output.aligned}"
+
+rule trim_alignment:
+    message:
+        """
+        Trimming alignment using pytrimAI.py.
+        """
+    input:
+        aligned = os.path.join(output_dir, "aligned_sequences.clw")
+    output:
+        trimmed = os.path.join(output_dir, "trimmed_sequences.fasta")
+    shell:
+        "python pytrimAI.py {input.aligned} {output.trimmed} --remove_duplicates"
+
+rule tmp_modify_brackets_for_iqtree2:
+    message:
+        """
+        Temporarily swapping out brackets for building phylogenetic tree.
+        """
+    input:
+        trimmed = rules.trim_alignment.output
+    output:
+        tmp = os.path.join(output_dir, "modified_sequences.fasta")
+    shell:
+        """
+        sed 's/\[/left_bracket/g; s/\]/right_bracket/g' {input.trimmed} > {output.tmp}
+        sed -i 's/\.right_bracket//g' {output.tmp}
+        """
+
+
+rule build_phylogenetic_tree:
+    message:
+        """
+        Building phylogenetic tree using IQ-TREE2.
+        """
+    input:
+        removed_duplicated = rules.tmp_modify_brackets_for_iqtree2.output
+    params:
+        prefix = os.path.join(output_dir, "phylogenetic_tree")
+    output:
+        treefile = os.path.join(output_dir, "phylogenetic_tree.treefile"),
+        iqtree = os.path.join(output_dir, "phylogenetic_tree.iqtree"),
+        mldist = os.path.join(output_dir, "phylogenetic_tree.mldist"),
+        splits = os.path.join(output_dir, "phylogenetic_tree.splits.nex"),
+        contree = os.path.join(output_dir, "phylogenetic_tree.contree"),
+        log = os.path.join(output_dir, "phylogenetic_tree.log")
+    shell:
+        """
+        iqtree2 -s {input.removed_duplicated} -nt AUTO -m TEST -bb 1000 -alrt 1000 -pre {params.prefix}
+        """
+
+rule post_processing_strings:
+    message:
+        """
+        Cleaning up sequence names in phylogenetic tree and fasta file.
+        """
+    input:
+        fasta = rules.tmp_modify_brackets_for_iqtree2.output.tmp,
+        tree = rules.build_phylogenetic_tree.output.treefile
+    output:
+        fasta_results = os.path.join(output_dir, "result.fasta"),
+        tree_results = os.path.join(output_dir, "result.newick")
+    shell:
+        """
+        sed 's/left_bracket/{{/g; s/right_bracket/}}/g' {input.tree} > {output.tree_results}
+        sed 's/left_bracket/{{/g; s/right_bracket/}}/g' {input.fasta} | sed 's/{{[^}}]*}}//g' > {output.fasta_results}
+        """
+
