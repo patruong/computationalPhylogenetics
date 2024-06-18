@@ -1,0 +1,1379 @@
+IQ-TREE 2.2.6 COVID-edition built Dec  8 2023
+
+Input file name: results_aves_mammal_150/modified_sequences.fasta
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 943631
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 294 sequences with 1995 nucleotide sites
+Number of constant sites: 373 (= 18.6967% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 373 (= 18.6967% of all sites)
+Number of parsimony informative sites: 978
+Number of distinct site patterns: 1267
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: GTR+F+G4
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+GTR+F+G4         -47953.137   97094.275 +    0.249   97599.175 +    0.482  100419.724 +    0.845
+GTR+F+I+G4       -47951.035   97092.071 +    0.751   97599.033 +    0.518  100423.118 +    0.155
+TIM+F+G4         -48044.448   97272.896 - 4.07e-40   97773.689 - 6.14e-39  100587.148 - 3.73e-37
+TVM+F+G4         -48041.292   97268.583 - 3.52e-39   97771.427 -  1.9e-38  100588.434 - 1.96e-37
+TIM+F+I+G4       -48042.422   97270.843 - 1.14e-39   97773.687 - 6.14e-39  100590.694 - 6.33e-38
+TVM+F+I+G4       -48039.231   97266.462 - 1.02e-38   97771.362 - 1.96e-38  100591.911 - 3.44e-38
+TIM2+F+G4        -48062.584   97309.168 - 5.41e-48   97809.961 - 8.16e-47  100623.421 - 4.95e-45
+TIM2+F+I+G4      -48060.506   97307.013 - 1.59e-47   97809.856 -  8.6e-47  100626.863 - 8.85e-46
+TN+F+G4          -48117.983   97417.966 - 1.28e-71   97916.715 - 5.37e-70  100726.620 - 1.93e-67
+TN+F+I+G4        -48115.963   97415.926 - 3.56e-71   97916.719 - 5.36e-70  100730.178 - 3.26e-68
+TIM3+F+G4        -48117.844   97419.688 - 5.42e-72   97920.482 - 8.17e-71  100733.941 - 4.96e-69
+TIM3+F+I+G4      -48115.825   97417.650 -  1.5e-71   97920.494 - 8.12e-71  100737.501 - 8.37e-70
+K3Pu+F+G4        -48133.076   97448.152 - 3.58e-78   97946.900 -  1.5e-76  100756.806 - 5.38e-74
+K3Pu+F+I+G4      -48131.086   97446.172 - 9.62e-78   97946.965 - 1.45e-76  100760.424 - 8.81e-75
+TPM2u+F+G4       -48150.154   97482.308 - 1.37e-85   97981.057 - 5.74e-84  100790.962 - 2.06e-81
+TPM2u+F+I+G4     -48148.111   97480.223 - 3.88e-85   97981.016 - 5.85e-84  100794.475 - 3.55e-82
+HKY+F+G4         -48205.594   97591.187 - 3.12e-109   98087.897 - 3.62e-107  100894.243 - 7.7e-104
+TVMe+G4          -48205.600   97591.199 - 3.1e-109   98087.909 - 3.6e-107  100894.255 - 7.65e-104
+SYM+G4           -48202.413   97586.825 - 2.76e-108   98085.574 - 1.16e-106  100895.479 - 4.15e-104
+HKY+F+I+G4       -48203.611   97589.222 - 8.32e-109   98087.971 - 3.49e-107  100897.876 - 1.25e-104
+TVMe+I+G4        -48203.927   97589.854 - 6.07e-109   98088.603 - 2.54e-107  100898.508 - 9.12e-105
+SYM+I+G4         -48200.729   97585.458 - 5.47e-108   98086.251 - 8.24e-107  100899.710 -   5e-105
+TPM3u+F+G4       -48205.558   97593.116 - 1.19e-109   98091.864 - 4.98e-108  100901.770 - 1.79e-105
+TPM3u+F+I+G4     -48203.565   97591.130 - 3.21e-109   98091.923 - 4.83e-108  100905.383 - 2.93e-106
+TPM2+G4          -48314.060   97804.119 - 1.8e-155   98296.768 - 1.6e-152  101095.978 - 1.2e-147
+TIM2e+G4         -48310.754   97799.509 - 1.81e-154   98294.185 - 5.8e-152  101096.966 - 7.34e-148
+TPM2+I+G4        -48312.395   97802.791 - 3.5e-155   98297.467 - 1.12e-152  101100.248 - 1.42e-148
+TIM2e+I+G4       -48309.095   97798.190 - 3.5e-154   98294.900 - 4.06e-152  101101.246 - 8.64e-149
+K3P+G4           -48333.948   97843.895 - 4.16e-164   98336.544 - 3.68e-161  101135.754 - 2.77e-156
+TIMe+G4          -48331.488   97840.976 - 1.79e-163   98335.652 - 5.74e-161  101138.433 - 7.26e-157
+K3P+I+G4         -48332.254   97842.509 - 8.32e-164   98337.185 - 2.67e-161  101139.966 - 3.38e-157
+TIMe+I+G4        -48329.785   97839.569 - 3.62e-163   98336.279 - 4.2e-161  101142.625 - 8.93e-158
+K2P+G4           -48400.878   97975.755 - 9.68e-193   98466.382 - 2.35e-189  101262.016 - 1.06e-183
+TNe+G4           -48398.269   97972.537 - 4.84e-192   98465.186 - 4.28e-189  101264.396 - 3.23e-184
+TPM3+G4          -48399.103   97974.205 - 2.1e-192   98466.854 - 1.86e-189  101266.064 - 1.4e-184
+K2P+I+G4         -48399.203   97974.406 - 1.9e-192   98467.054 - 1.68e-189  101266.265 - 1.27e-184
+TIM3e+G4         -48396.494   97970.988 - 1.05e-191   98465.664 - 3.37e-189  101268.445 - 4.26e-185
+TNe+I+G4         -48396.585   97971.171 - 9.58e-192   98465.847 - 3.07e-189  101268.628 - 3.89e-185
+TPM3+I+G4        -48397.430   97972.860 - 4.11e-192   98467.537 - 1.32e-189  101270.318 - 1.67e-185
+TIM3e+I+G4       -48394.792   97969.585 - 2.12e-191   98466.294 - 2.46e-189  101272.640 - 5.23e-186
+GTR+F+I          -52535.328  106258.656 -        0  106763.556 -        0  109584.106 -        0
+F81+F+G4         -53229.340  107636.679 -        0  108131.355 -        0  110934.136 -        0
+F81+F+I+G4       -53229.032  107638.063 -        0  108134.772 -        0  110941.119 -        0
+JC+G4            -53679.436  108530.872 -        0  109019.483 -        0  111811.534 -        0
+JC+I+G4          -53679.355  108532.709 -        0  109023.336 -        0  111818.970 -        0
+GTR+F            -53874.737  108935.473 -        0  109438.317 -        0  112255.324 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.5429
+  A-G: 9.4968
+  A-T: 0.8275
+  C-G: 0.0809
+  C-T: 14.2471
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3446
+  pi(C) = 0.1776
+  pi(G) = 0.2617
+  pi(T) = 0.2161
+
+Rate matrix Q:
+
+  A   -0.9071    0.0846    0.7673   0.05519
+  C    0.1641    -1.121  0.006534    0.9503
+  G      1.01  0.004435    -1.082    0.0667
+  T   0.08804    0.7813   0.08079   -0.9501
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.3564
+
+ Category  Relative_rate  Proportion
+  1         0.01096        0.25
+  2         0.1485         0.25
+  3         0.6795         0.25
+  4         3.161          0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -47949.3169 (s.e. 1158.8495)
+Unconstrained log-likelihood (without tree): -13452.7335
+Number of free parameters (#branches + #model parameters): 594
+Akaike information criterion (AIC) score: 97086.6338
+Corrected Akaike information criterion (AICc) score: 97591.5338
+Bayesian information criterion (BIC) score: 100412.0830
+
+Total tree length (sum of branch lengths): 34.6999
+Sum of internal branch lengths: 12.1827 (35.1088% of tree length)
+
+WARNING: 88 near-zero internal branches (<0.0005) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+WARNING: 3 too long branches (>9.8000) should be treated with caution!
+NOTE: Tree is UNROOTED although outgroup taxon 'NC_007362' is drawn at root
+Numbers in parentheses are SH-aLRT support (%) / ultrafast bootstrap support (%)
+
++---------------------------------------------------------NC_007362
+|
+|                                                                                                +**KP413270.1left_bracketAVIright_bracket
+|                                                                                             +--| (95.5/100)
+|                                                                                             |  +**KP286534.1left_bracketAVIright_bracket
+|                                                                                          +**| (0/75)
+|                                                                                          |  +--KP415953.1left_bracketAVIright_bracket
+|                                                                                       +--| (100/100)
+|                                                                                       |  +--KP416362.1left_bracketAVIright_bracket
+|                                                                                    +**| (62.2/99)
+|                                                                                    |  +--KF260894.1left_bracketAVIright_bracket
+|                                                                                 +--| (93.1/100)
+|                                                                                 |  |     +**KF260875.1left_bracketAVIright_bracket
+|                                                                                 |  |  +--| (98.9/100)
+|                                                                                 |  |  |  +**KF260874.1left_bracketAVIright_bracket
+|                                                                                 |  +**| (72.2/100)
+|                                                                                 |     +--KX598523.1left_bracketAVIright_bracket
+|                                                                              +--| (84.8/99)
+|                                                                              |  +--KP416194.1left_bracketAVIright_bracket
+|                                                                           +--| (95.9/100)
+|                                                                           |  +--MF113125.1left_bracketAVIright_bracket
+|                                                                        +--| (100/98)
+|                                                                        |  |                                      +**MW105029.1left_bracketAVIright_bracket
+|                                                                        |  |                                   +--| (100/100)
+|                                                                        |  |                                   |  +**MW108413.1left_bracketAVIright_bracket
+|                                                                        |  |                                +**| (0/74)
+|                                                                        |  |                                |  |  +--MW965659.1left_bracketAVIright_bracket
+|                                                                        |  |                                |  +**| (0/77)
+|                                                                        |  |                                |     |  +--KY751295.1left_bracketAVIright_bracket
+|                                                                        |  |                                |     +--| (99.5/100)
+|                                                                        |  |                                |        +--OR497659.1left_bracketAVIright_bracket
+|                                                                        |  |                             +**| (0/16)
+|                                                                        |  |                             |  |     +--MW106709.1left_bracketAVIright_bracket
+|                                                                        |  |                             |  |  +--| (71.2/90)
+|                                                                        |  |                             |  |  |  +--MW094629.1left_bracketAVIright_bracket
+|                                                                        |  |                             |  +--| (97/100)
+|                                                                        |  |                             |     +--MW095026.1left_bracketAVIright_bracket
+|                                                                        |  |                          +--| (94.9/100)
+|                                                                        |  |                          |  +--MK446827.1left_bracketAVIright_bracket
+|                                                                        |  |                       +**| (71.2/99)
+|                                                                        |  |                       |  |  +--MW106053.1left_bracketAVIright_bracket
+|                                                                        |  |                       |  +--| (99.8/100)
+|                                                                        |  |                       |     +--MW105877.1left_bracketAVIright_bracket
+|                                                                        |  |                    +--| (97.3/98)
+|                                                                        |  |                    |  +--MF629978.1left_bracketAVIright_bracket
+|                                                                        |  |                 +**| (72.8/71)
+|                                                                        |  |                 |  |  +**MK446813.1left_bracketAVIright_bracket
+|                                                                        |  |                 |  +--| (100/100)
+|                                                                        |  |                 |     +**MK446814.1left_bracketAVIright_bracket
+|                                                                        |  |              +**| (0/59)
+|                                                                        |  |              |  |  +--MK446789.1left_bracketAVIright_bracket
+|                                                                        |  |              |  +**| (73.2/71)
+|                                                                        |  |              |     +--KX598539.1left_bracketAVIright_bracket
+|                                                                        |  |           +--| (97.6/100)
+|                                                                        |  |           |  |              +--OQ293818.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |           +--| (99.9/100)
+|                                                                        |  |           |  |           |  +**OQ293162.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |        +--| (100/100)
+|                                                                        |  |           |  |        |  |     +--OQ826091.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |        |  |  +--| (99.9/100)
+|                                                                        |  |           |  |        |  |  |  +--OQ293490.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |        |  +**| (0/87)
+|                                                                        |  |           |  |        |     |  +--OQ292594.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |        |     +--| (100/100)
+|                                                                        |  |           |  |        |        +**OQ292586.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |     +**| (66.1/100)
+|                                                                        |  |           |  |     |  +--MW106317.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |  +--| (95/100)
+|                                                                        |  |           |  |  |  |     +--MW105005.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |  |  |  +--| (86.5/100)
+|                                                                        |  |           |  |  |  |  |  +--PP091191.1left_bracketAVIright_bracket
+|                                                                        |  |           |  |  |  +**| (76.5/100)
+|                                                                        |  |           |  |  |     +--MN647475.1left_bracketAVIright_bracket
+|                                                                        |  |           |  +**| (73.1/100)
+|                                                                        |  |           |     +--KP287499.1left_bracketAVIright_bracket
+|                                                                        |  |        +--| (96.2/100)
+|                                                                        |  |        |  +--KP865883.1left_bracketAVIright_bracket
+|                                                                        |  |     +--| (99/100)
+|                                                                        |  |     |  +--KT449712.1left_bracketAVIright_bracket
+|                                                                        |  |  +--| (70/98)
+|                                                                        |  |  |  |           +--KP413904.1left_bracketAVIright_bracket
+|                                                                        |  |  |  |        +**| (0/80)
+|                                                                        |  |  |  |        |  +--KP413834.1left_bracketAVIright_bracket
+|                                                                        |  |  |  |     +**| (75/100)
+|                                                                        |  |  |  |     |  +--KP417655.1left_bracketAVIright_bracket
+|                                                                        |  |  |  |  +--| (98/100)
+|                                                                        |  |  |  |  |  +--MF630210.1left_bracketAVIright_bracket
+|                                                                        |  |  |  +--| (100/100)
+|                                                                        |  |  |     |        +--MH209304.1left_bracketAVIright_bracket
+|                                                                        |  |  |     |     +--| (87.9/100)
+|                                                                        |  |  |     |     |  +--MW094458.1left_bracketAVIright_bracket
+|                                                                        |  |  |     |  +--| (96.7/100)
+|                                                                        |  |  |     |  |  |  +--MW265019.1left_bracketAVIright_bracket
+|                                                                        |  |  |     |  |  +--| (62.4/95)
+|                                                                        |  |  |     |  |     |  +**KP417875.1left_bracketAVIright_bracket
+|                                                                        |  |  |     |  |     +--| (92.6/100)
+|                                                                        |  |  |     |  |        +--KP418433.1left_bracketAVIright_bracket
+|                                                                        |  |  |     +--| (79.8/100)
+|                                                                        |  |  |        +--KF357825.1left_bracketAVIright_bracket
+|                                                                        |  +**| (69.8/87)
+|                                                                        |     |  +--JX312549.1left_bracketAVIright_bracket
+|                                                                        |     +--| (98/98)
+|                                                                        |        |  +--KF260903.1left_bracketAVIright_bracket
+|                                                                        |        +--| (99.6/98)
+|                                                                        |           +--KP285066.1left_bracketAVIright_bracket
+|                                                                     +--| (82.9/97)
+|                                                                     |  +--JN869514.1left_bracketAVIright_bracket
+|                                                                  +--| (99.9/97)
+|                                                                  |  |     +--MF112278.1left_bracketAVIright_bracket
+|                                                                  |  |  +--| (100/100)
+|                                                                  |  |  |  |     +--MF112277.1left_bracketAVIright_bracket
+|                                                                  |  |  |  |  +**| (76.6/100)
+|                                                                  |  |  |  |  |  +--MF112339.1left_bracketAVIright_bracket
+|                                                                  |  |  |  +--| (96/100)
+|                                                                  |  |  |     +--MF112272.1left_bracketAVIright_bracket
+|                                                                  |  +--| (97.5/100)
+|                                                                  |     +--KJ426318.1left_bracketAVIright_bracket
+|                                                               +--| (91.7/96)
+|                                                               |  |  +--KP285370.1left_bracketAVIright_bracket
+|                                                               |  +--| (1.4/64)
+|                                                               |     +--CY109303.1left_bracketAVIright_bracket
+|                                                            +--| (95.9/95)
+|                                                            |  +--JF965021.1left_bracketAVIright_bracket
+|                                                         +--| (0/88)
+|                                                         |  |                          +--OQ794132.1left_bracketAVIright_bracket
+|                                                         |  |                       +--| (97.3/100)
+|                                                         |  |                       |  +--OQ794100.1left_bracketAVIright_bracket
+|                                                         |  |                    +--| (97.4/100)
+|                                                         |  |                    |  +--OM333407.1left_bracketAVIright_bracket
+|                                                         |  |                 +--| (99.7/100)
+|                                                         |  |                 |  +--MG891832.1left_bracketAVIright_bracket
+|                                                         |  |              +--| (97/100)
+|                                                         |  |              |  +--MF973222.1left_bracketAVIright_bracket
+|                                                         |  |           +--| (100/100)
+|                                                         |  |           |  |  +--MW412625.1left_bracketAVIright_bracket
+|                                                         |  |           |  +--| (98.4/100)
+|                                                         |  |           |     +--OL370403.1left_bracketAVIright_bracket
+|                                                         |  |        +--| (84.2/100)
+|                                                         |  |        |  +--CY146569.1left_bracketAVIright_bracket
+|                                                         |  |     +--| (99.8/100)
+|                                                         |  |     |  |  +--MN171439.1left_bracketAVIright_bracket
+|                                                         |  |     |  +--| (94.2/100)
+|                                                         |  |     |     +--CY185346.1left_bracketAVIright_bracket
+|                                                         |  |  +--| (97.2/99)
+|                                                         |  |  |  +--MW132957.1left_bracketAVIright_bracket
+|                                                         |  +--| (49.7/63)
+|                                                         |     |              +--OQ967193.1left_bracketAVIright_bracket
+|                                                         |     |           +--| (100/100)
+|                                                         |     |           |  +**OQ961761.1left_bracketAVIright_bracket
+|                                                         |     |        +--| (100/100)
+|                                                         |     |        |  +--KP417116.1left_bracketAVIright_bracket
+|                                                         |     |     +--| (100/99)
+|                                                         |     |     |  +--KC986316.1left_bracketAVIright_bracket
+|                                                         |     |  +--| (30.2/86)
+|                                                         |     |  |  |     +--ON374814.1left_bracketAVIright_bracket
+|                                                         |     |  |  |  +--| (100/100)
+|                                                         |     |  |  |  |  +--MG706984.1left_bracketAVIright_bracket
+|                                                         |     |  |  +--| (85.8/99)
+|                                                         |     |  |     |  +--JN817611.1left_bracketAVIright_bracket
+|                                                         |     |  |     +--| (100/100)
+|                                                         |     |  |        +--KP732577.1left_bracketAVIright_bracket
+|                                                         |     +--| (85.6/76)
+|                                                         |        +--CY146665.1left_bracketAVIright_bracket
++---------------------------------------------------------| (100/100)
+|                                                         |                                      +--MF613918.1left_bracketAVIright_bracket
+|                                                         |                                   +--| (99.9/100)
+|                                                         |                                   |  +--KY584031.1left_bracketAVIright_bracket
+|                                                         |                                +--| (86.2/100)
+|                                                         |                                |  +--MT444223.1left_bracketAVIright_bracket
+|                                                         |                             +--| (100/100)
+|                                                         |                             |  |  +--MW872184.1left_bracketAVIright_bracket
+|                                                         |                             |  +--| (99.7/100)
+|                                                         |                             |     +--OQ964441.1left_bracketAVIright_bracket
+|                                                         |                          +--| (100/100)
+|                                                         |                          |  |           +--MN988187.1left_bracketAVIright_bracket
+|                                                         |                          |  |        +--| (93.8/100)
+|                                                         |                          |  |        |  +--MT421309.1left_bracketAVIright_bracket
+|                                                         |                          |  |     +--| (99.7/100)
+|                                                         |                          |  |     |  |  +--MN988442.1left_bracketAVIright_bracket
+|                                                         |                          |  |     |  +--| (97/100)
+|                                                         |                          |  |     |     |  +--OQ962145.1left_bracketAVIright_bracket
+|                                                         |                          |  |     |     +--| (100/100)
+|                                                         |                          |  |     |        +--PP755980.1left_bracketMAMright_bracket
+|                                                         |                          |  |  +--| (74.3/99)
+|                                                         |                          |  |  |  |     +--MF613741.1left_bracketAVIright_bracket
+|                                                         |                          |  |  |  |  +--| (99.8/100)
+|                                                         |                          |  |  |  |  |  +**MG599659.1left_bracketAVIright_bracket
+|                                                         |                          |  |  |  +--| (100/100)
+|                                                         |                          |  |  |     +--MH932377.2left_bracketAVIright_bracket
+|                                                         |                          |  +--| (92/100)
+|                                                         |                          |     |  +--KY584017.1left_bracketAVIright_bracket
+|                                                         |                          |     +--| (99.1/100)
+|                                                         |                          |        +--MN988355.1left_bracketAVIright_bracket
+|                                                         |                       +--| (37/99)
+|                                                         |                       |  +--MH579071.1left_bracketAVIright_bracket
+|                                                         |                    +--| (99.8/100)
+|                                                         |                    |  |        +--OQ964801.1left_bracketAVIright_bracket
+|                                                         |                    |  |     +--| (100/100)
+|                                                         |                    |  |     |  +--OQ965769.1left_bracketAVIright_bracket
+|                                                         |                    |  |  +--| (98.8/100)
+|                                                         |                    |  |  |  |     +--OQ960361.1left_bracketAVIright_bracket
+|                                                         |                    |  |  |  |  +**| (0/72)
+|                                                         |                    |  |  |  |  |  |  +**OQ959553.1left_bracketAVIright_bracket
+|                                                         |                    |  |  |  |  |  +**| (84.3/93)
+|                                                         |                    |  |  |  |  |     +--OQ965065.1left_bracketAVIright_bracket
+|                                                         |                    |  |  |  +--| (100/100)
+|                                                         |                    |  |  |     +--OQ962593.1left_bracketAVIright_bracket
+|                                                         |                    |  +--| (90.6/100)
+|                                                         |                    |     +--MH498696.1left_bracketAVIright_bracket
+|                                                         |                 +--| (98.4/98)
+|                                                         |                 |  |           +--KY550838.1left_bracketAVIright_bracket
+|                                                         |                 |  |        +--| (99.9/100)
+|                                                         |                 |  |        |  +**KY550752.1left_bracketAVIright_bracket
+|                                                         |                 |  |     +--| (99.3/100)
+|                                                         |                 |  |     |  +--MH498795.1left_bracketAVIright_bracket
+|                                                         |                 |  |  +--| (99.7/100)
+|                                                         |                 |  |  |  |  +--MK627840.1left_bracketAVIright_bracket
+|                                                         |                 |  |  |  +--| (72/99)
+|                                                         |                 |  |  |     |  +--MZ564889.1left_bracketAVIright_bracket
+|                                                         |                 |  |  |     +--| (100/100)
+|                                                         |                 |  |  |        |  +--MZ564977.1left_bracketAVIright_bracket
+|                                                         |                 |  |  |        +--| (92.5/99)
+|                                                         |                 |  |  |           +--MZ565305.1left_bracketAVIright_bracket
+|                                                         |                 |  +--| (44.4/96)
+|                                                         |                 |     +--MH579285.1left_bracketAVIright_bracket
+|                                                         |              +--| (99.7/99)
+|                                                         |              |  |                    +--OR730444.1left_bracketMAMright_bracket
+|                                                         |              |  |                 +--| (87.2/100)
+|                                                         |              |  |                 |  +--PP577775.1left_bracketMAMright_bracket
+|                                                         |              |  |              +--| (100/100)
+|                                                         |              |  |              |  |  +--MH922886.1left_bracketMAMright_bracket
+|                                                         |              |  |              |  +--| (99.1/100)
+|                                                         |              |  |              |     +--MT233558.1left_bracketMAMright_bracket
+|                                                         |              |  |           +--| (93.1/98)
+|                                                         |              |  |           |  +--KX264685.1left_bracketMAMright_bracket
+|                                                         |              |  |        +--| (99.9/100)
+|                                                         |              |  |        |  |        +--KY509887.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     +--| (99.4/100)
+|                                                         |              |  |        |  |     |  |        +--KX907903.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |  |     +--| (95.8/100)
+|                                                         |              |  |        |  |     |  |     |  +**KJ528296.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |  |  +--| (98.2/100)
+|                                                         |              |  |        |  |     |  |  |  |  +--KC471470.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |  |  |  +**| (0/77)
+|                                                         |              |  |        |  |     |  |  |     +--CY131628.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |  +--| (99.1/100)
+|                                                         |              |  |        |  |     |     |                 +--MK651337.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |              +--| (95.4/100)
+|                                                         |              |  |        |  |     |     |              |  +--OR472746.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |           +**| (73.1/100)
+|                                                         |              |  |        |  |     |     |           |  +--MG521054.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |        +--| (97.3/100)
+|                                                         |              |  |        |  |     |     |        |  |  +**MK535814.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |        |  +**| (76.7/100)
+|                                                         |              |  |        |  |     |     |        |     +**MK109754.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |     +--| (98.6/100)
+|                                                         |              |  |        |  |     |     |     |  |  +--MZ665315.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |     |  +--| (99/100)
+|                                                         |              |  |        |  |     |     |     |     +--OQ695102.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  +--| (87.9/99)
+|                                                         |              |  |        |  |     |     |  |  |                    +--MT823504.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |                 +--| (88.9/100)
+|                                                         |              |  |        |  |     |     |  |  |                 |  |  +--OQ786442.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |                 |  +**| (19.8/99)
+|                                                         |              |  |        |  |     |     |  |  |                 |     +--MN198828.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |              +**| (0/79)
+|                                                         |              |  |        |  |     |     |  |  |              |  +--MH620507.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |           +--| (95/100)
+|                                                         |              |  |        |  |     |     |  |  |           |  +**MG784652.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |        +--| (98.8/100)
+|                                                         |              |  |        |  |     |     |  |  |        |  +--MH425048.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |     +**| (4.9/88)
+|                                                         |              |  |        |  |     |     |  |  |     |  +--MZ460879.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  |  +--| (87.7/99)
+|                                                         |              |  |        |  |     |     |  |  |  |  +--MK535422.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     |  |  +**| (0/85)
+|                                                         |              |  |        |  |     |     |  |     +--MK848558.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |     |     +--| (99.5/100)
+|                                                         |              |  |        |  |     |        +--KX631943.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  |  +--| (78.9/79)
+|                                                         |              |  |        |  |  |  +--CY086917.1left_bracketMAMright_bracket
+|                                                         |              |  |        |  +--| (84.1/79)
+|                                                         |              |  |        |     |  +--KR057308.1left_bracketMAMright_bracket
+|                                                         |              |  |        |     +--| (98/100)
+|                                                         |              |  |        |        +--CY246072.1left_bracketMAMright_bracket
+|                                                         |              |  |     +--| (66.4/100)
+|                                                         |              |  |     |  +--MK651427.1left_bracketMAMright_bracket
+|                                                         |              |  |  +--| (69.9/96)
+|                                                         |              |  |  |  |                                         +**PP398345.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                      +--| (99.9/100)
+|                                                         |              |  |  |  |                                      |  +**PP553301.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                   +**| (0/13)
+|                                                         |              |  |  |  |                                   |  |        +--PP558072.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                   |  |     +**| (0/28)
+|                                                         |              |  |  |  |                                   |  |     |  +--PP432532.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                   |  |  +**| (0/45)
+|                                                         |              |  |  |  |                                   |  |  |  +--PP417047.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                   |  +**| (71.1/91)
+|                                                         |              |  |  |  |                                   |     +--PP459870.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                +**| (0/9)
+|                                                         |              |  |  |  |                                |  |           +--PP338972.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                |  |        +**| (76.4/100)
+|                                                         |              |  |  |  |                                |  |        |  +--PP260775.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                |  |     +--| (99.5/100)
+|                                                         |              |  |  |  |                                |  |     |  +**PP498399.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                |  |  +**| (0/16)
+|                                                         |              |  |  |  |                                |  |  |  +--PP072709.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                                |  +**| (0/5)
+|                                                         |              |  |  |  |                                |     +--OQ796022.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                             +**| (0/63)
+|                                                         |              |  |  |  |                             |  +--PP072596.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                          +**| (0/90)
+|                                                         |              |  |  |  |                          |  +--OY282673.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                       +--| (77.1/99)
+|                                                         |              |  |  |  |                       |  +--OR166947.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                    +--| (89.8/99)
+|                                                         |              |  |  |  |                    |  +--OY979861.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 +--| (94.5/99)
+|                                                         |              |  |  |  |                 |  |     +--OQ796973.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |  |  +**| (0/75)
+|                                                         |              |  |  |  |                 |  |  |  +--PP698969.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |  +--| (88.8/100)
+|                                                         |              |  |  |  |                 |     |           +**PP193665.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |     |        +**| (0/21)
+|                                                         |              |  |  |  |                 |     |        |  +--PP399538.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |     |     +**| (0/22)
+|                                                         |              |  |  |  |                 |     |     |  |  +--PP093627.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |     |     |  +**| (0/31)
+|                                                         |              |  |  |  |                 |     |     |     +--PP073114.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |     |  +--| (97/100)
+|                                                         |              |  |  |  |                 |     |  |  +--PP072473.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |     +--| (98/100)
+|                                                         |              |  |  |  |                 |        |  +--OR728930.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |                 |        +--| (85.6/99)
+|                                                         |              |  |  |  |                 |           +--OR439806.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |              +--| (89.4/99)
+|                                                         |              |  |  |  |              |  |  +--MN170143.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |              |  +**| (0/20)
+|                                                         |              |  |  |  |              |     |  +--OQ695094.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |              |     +**| (0/32)
+|                                                         |              |  |  |  |              |        +--MK785746.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |           +**| (41.4/71)
+|                                                         |              |  |  |  |           |  +--MN169943.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        +--| (98.3/100)
+|                                                         |              |  |  |  |        |  |     +--MK502655.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        |  |  +**| (74.5/77)
+|                                                         |              |  |  |  |        |  |  |  +--OQ459870.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        |  +**| (0/67)
+|                                                         |              |  |  |  |        |     |  +--MH156540.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        |     +**| (73.8/98)
+|                                                         |              |  |  |  |        |        |  +--MK869074.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        |        +--| (98.4/100)
+|                                                         |              |  |  |  |        |           |  +**MK927643.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |        |           +**| (0/80)
+|                                                         |              |  |  |  |        |              +**MK576961.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |     +--| (81/100)
+|                                                         |              |  |  |  |     |  +--MT041178.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  |  +--| (99.9/100)
+|                                                         |              |  |  |  |  |  +--KR052678.1left_bracketMAMright_bracket
+|                                                         |              |  |  |  +--| (100/100)
+|                                                         |              |  |  |     |              +--KM028468.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |           +--| (99.1/100)
+|                                                         |              |  |  |     |           |  +--KM028700.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |        +**| (0/6)
+|                                                         |              |  |  |     |        |  +--KC471366.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |     +**| (0/1)
+|                                                         |              |  |  |     |     |  |  +--KP765853.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |     |  +**| (0/2)
+|                                                         |              |  |  |     |     |     +--CY065291.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |  +**| (0/12)
+|                                                         |              |  |  |     |  |  |     +--KM029140.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |  |  |  +**| (0/27)
+|                                                         |              |  |  |     |  |  |  |  +--KX264688.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |  |  +**| (91.6/49)
+|                                                         |              |  |  |     |  |     |  +--KC780717.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     |  |     +**| (0/38)
+|                                                         |              |  |  |     |  |        +--JQ695876.1left_bracketMAMright_bracket
+|                                                         |              |  |  |     +--| (80.3/59)
+|                                                         |              |  |  |        |  +--KM029924.1left_bracketMAMright_bracket
+|                                                         |              |  |  |        +--| (88.7/50)
+|                                                         |              |  |  |           +**KC473861.1left_bracketMAMright_bracket
+|                                                         |              |  +--| (100/100)
+|                                                         |              |     +--CY159654.1left_bracketMAMright_bracket
+|                                                         |           +--| (78/95)
+|                                                         |           |  |  +--KM359863.1left_bracketMAMright_bracket
+|                                                         |           |  +--| (100/100)
+|                                                         |           |     +**CY067275.1left_bracketMAMright_bracket
+|                                                         |        +--| (100/76)
+|                                                         |        |  |                             +**KU591850.1left_bracketMAMright_bracket
+|                                                         |        |  |                          +--| (95.5/100)
+|                                                         |        |  |                          |  +--MG279269.1left_bracketMAMright_bracket
+|                                                         |        |  |                       +**| (87.4/99)
+|                                                         |        |  |                       |  |                       +--OP954299.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                    +--| (84.6/99)
+|                                                         |        |  |                       |  |                    |  |           +--OP085911.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                    |  |        +**| (0/12)
+|                                                         |        |  |                       |  |                    |  |        |  +**OP096952.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                    |  |     +**| (0/5)
+|                                                         |        |  |                       |  |                    |  |     |  +--OP959858.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                    |  |  +**| (0/4)
+|                                                         |        |  |                       |  |                    |  |  |  +**OP952387.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                    |  +**| (0/38)
+|                                                         |        |  |                       |  |                    |     +**OP951745.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |                 +--| (74.3/100)
+|                                                         |        |  |                       |  |                 |  +--OQ240670.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |              +--| (99.2/100)
+|                                                         |        |  |                       |  |              |  +--OP096989.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |           +--| (92.1/100)
+|                                                         |        |  |                       |  |           |  |  +--MK927689.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |           |  +--| (93.5/100)
+|                                                         |        |  |                       |  |           |     +--OQ652859.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        +--| (96/100)
+|                                                         |        |  |                       |  |        |  |           +**OP590460.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |        +--| (91.3/99)
+|                                                         |        |  |                       |  |        |  |        |  |  +**OP590682.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |        |  +**| (79/99)
+|                                                         |        |  |                       |  |        |  |        |     |  +--OR479494.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |        |     +**| (0/80)
+|                                                         |        |  |                       |  |        |  |        |        +--OR483614.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     +--| (100/100)
+|                                                         |        |  |                       |  |        |  |     |  |              +--OQ507027.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  |           +--| (88/99)
+|                                                         |        |  |                       |  |        |  |     |  |           |  +--OR699593.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  |        +**| (77.3/77)
+|                                                         |        |  |                       |  |        |  |     |  |        |  +**OQ368242.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  |     +**| (0/48)
+|                                                         |        |  |                       |  |        |  |     |  |     |  |  +--OQ917451.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  |     |  +**| (0/50)
+|                                                         |        |  |                       |  |        |  |     |  |     |     +--OQ796513.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  |  +--| (94/100)
+|                                                         |        |  |                       |  |        |  |     |  |  |  +--OQ754651.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |  +**| (74.2/99)
+|                                                         |        |  |                       |  |        |  |     |     |        +**PP508619.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |     |     +**| (0/5)
+|                                                         |        |  |                       |  |        |  |     |     |     |  |  +--PP509446.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |     |     |  +**| (0/4)
+|                                                         |        |  |                       |  |        |  |     |     |     |     +--PP416341.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |     |  +**| (85.5/100)
+|                                                         |        |  |                       |  |        |  |     |     |  |  +**PP522580.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |     +--| (94.7/100)
+|                                                         |        |  |                       |  |        |  |     |        |     +--PP557881.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |        |  +**| (0/11)
+|                                                         |        |  |                       |  |        |  |     |        |  |  +--PP508659.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |     |        +**| (0/17)
+|                                                         |        |  |                       |  |        |  |     |           +**PP193407.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |  +**| (74.1/99)
+|                                                         |        |  |                       |  |        |  |  |  |  +--MK743385.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  |  |  +--| (92.2/100)
+|                                                         |        |  |                       |  |        |  |  |     +--MK576719.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |        |  +**| (74.1/100)
+|                                                         |        |  |                       |  |        |     +--MN573262.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |     +--| (94.1/100)
+|                                                         |        |  |                       |  |     |  +--MG198917.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  +**| (0/28)
+|                                                         |        |  |                       |  |  |  |     +--MK960355.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  +--| (99.4/100)
+|                                                         |        |  |                       |  |  |  |  |  |  +--MK869122.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  |  +--| (88.8/99)
+|                                                         |        |  |                       |  |  |  |  |     |        +**MK839850.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  |     |     +**| (85.1/100)
+|                                                         |        |  |                       |  |  |  |  |     |     |  |  +--MN608558.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  |     |     |  +**| (0/75)
+|                                                         |        |  |                       |  |  |  |  |     |     |     +--MN081489.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  |     |  +**| (0/76)
+|                                                         |        |  |                       |  |  |  |  |     |  |  +**MK960531.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  |  |     +--| (88.1/100)
+|                                                         |        |  |                       |  |  |  |  |        +--MN873859.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |  +--| (91.8/99)
+|                                                         |        |  |                       |  |  |     |  +--MG914218.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  |  |     +**| (0/71)
+|                                                         |        |  |                       |  |  |        +--KU589995.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |  +**| (0/36)
+|                                                         |        |  |                       |     |  +--KU590005.1left_bracketMAMright_bracket
+|                                                         |        |  |                       |     +**| (82.4/100)
+|                                                         |        |  |                       |        +**KT843720.1left_bracketMAMright_bracket
+|                                                         |        |  |                    +**| (0/78)
+|                                                         |        |  |                    |  +--KT841469.1left_bracketMAMright_bracket
+|                                                         |        |  |                 +--| (97.6/100)
+|                                                         |        |  |                 |  +**KY089204.1left_bracketMAMright_bracket
+|                                                         |        |  |              +**| (0/75)
+|                                                         |        |  |              |  +--MK640856.1left_bracketMAMright_bracket
+|                                                         |        |  |           +--| (88.8/99)
+|                                                         |        |  |           |  +--KT840917.1left_bracketMAMright_bracket
+|                                                         |        |  |        +--| (92.7/97)
+|                                                         |        |  |        |  |     +**PP658633.1left_bracketMAMright_bracket
+|                                                         |        |  |        |  |  +**| (77.6/100)
+|                                                         |        |  |        |  |  |  +**PP658617.1left_bracketMAMright_bracket
+|                                                         |        |  |        |  +--| (88.9/99)
+|                                                         |        |  |        |     +--PP658635.1left_bracketMAMright_bracket
+|                                                         |        |  |     +--| (100/100)
+|                                                         |        |  |     |  +--KT838108.1left_bracketMAMright_bracket
+|                                                         |        |  |  +--| (100/100)
+|                                                         |        |  |  |  +--CY116312.1left_bracketMAMright_bracket
+|                                                         |        |  +--| (100/100)
+|                                                         |        |     +--CY013564.1left_bracketMAMright_bracket
+|                                                         |     +--| (88/41)
+|                                                         |     |  |                 +**CY030966.1left_bracketAVIright_bracket
+|                                                         |     |  |              +--| (100/100)
+|                                                         |     |  |              |  +**CY030950.1left_bracketAVIright_bracket
+|                                                         |     |  |           +--| (100/100)
+|                                                         |     |  |           |  |        +--CY040955.1left_bracketAVIright_bracket
+|                                                         |     |  |           |  |     +**| (76.1/100)
+|                                                         |     |  |           |  |     |  +--CY030926.1left_bracketAVIright_bracket
+|                                                         |     |  |           |  |  +**| (61.5/94)
+|                                                         |     |  |           |  |  |  |  +--JN807899.1left_bracketAVIright_bracket
+|                                                         |     |  |           |  |  |  +--| (96.1/100)
+|                                                         |     |  |           |  |  |     +--LC279793.1left_bracketAVIright_bracket
+|                                                         |     |  |           |  +--| (100/100)
+|                                                         |     |  |           |     +--KC261451.1left_bracketAVIright_bracket
+|                                                         |     |  |        +--| (97.2/100)
+|                                                         |     |  |        |  |                 +**KU201845.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |              +--| (90.4/100)
+|                                                         |     |  |        |  |              |  +--MG965789.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |           +--| (100/100)
+|                                                         |     |  |        |  |           |  +--KT388561.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |        +--| (68/93)
+|                                                         |     |  |        |  |        |  |  +--OL372100.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |        |  +--| (89.3/100)
+|                                                         |     |  |        |  |        |     +--KY971035.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |     +--| (89.1/95)
+|                                                         |     |  |        |  |     |  +--OM373259.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  |  +**| (70.4/94)
+|                                                         |     |  |        |  |  |  +--MK964487.1left_bracketAVIright_bracket
+|                                                         |     |  |        |  +**| (0/82)
+|                                                         |     |  |        |     |  +--HM145738.1left_bracketAVIright_bracket
+|                                                         |     |  |        |     +--| (100/100)
+|                                                         |     |  |        |        +--HQ014837.1left_bracketAVIright_bracket
+|                                                         |     |  |     +--| (86.7/98)
+|                                                         |     |  |     |  |  +--MH285289.1left_bracketAVIright_bracket
+|                                                         |     |  |     |  +--| (99.3/100)
+|                                                         |     |  |     |     +--KP865916.1left_bracketAVIright_bracket
+|                                                         |     |  |  +--| (99.5/99)
+|                                                         |     |  |  |  |  +--MN988762.1left_bracketAVIright_bracket
+|                                                         |     |  |  |  +--| (64.2/94)
+|                                                         |     |  |  |     |     +--KX061823.1left_bracketAVIright_bracket
+|                                                         |     |  |  |     |  +--| (93.9/100)
+|                                                         |     |  |  |     |  |  +--KT589154.1left_bracketAVIright_bracket
+|                                                         |     |  |  |     +--| (100/100)
+|                                                         |     |  |  |        +--KP416916.1left_bracketAVIright_bracket
+|                                                         |     |  +--| (76.2/89)
+|                                                         |     |     |              +--MW169656.1left_bracketMAMright_bracket
+|                                                         |     |     |           +--| (97.3/100)
+|                                                         |     |     |           |  +--KU322884.1left_bracketMAMright_bracket
+|                                                         |     |     |        +--| (99.9/100)
+|                                                         |     |     |        |  +--MN934398.1left_bracketMAMright_bracket
+|                                                         |     |     |     +--| (95.5/98)
+|                                                         |     |     |     |  |  +--KM028324.1left_bracketMAMright_bracket
+|                                                         |     |     |     |  +--| (99.9/100)
+|                                                         |     |     |     |     +--MN416351.1left_bracketMAMright_bracket
+|                                                         |     |     |  +--| (74.1/98)
+|                                                         |     |     |  |  |  +--MZ477664.1left_bracketMAMright_bracket
+|                                                         |     |     |  |  +--| (100/100)
+|                                                         |     |     |  |     +--MT666264.1left_bracketMAMright_bracket
+|                                                         |     |     +--| (100/97)
+|                                                         |     |        +--CY116063.1left_bracketMAMright_bracket
+|                                                         |  +--| (96.7/31)
+|                                                         |  |  |  +--CY196514.1left_bracketAVIright_bracket
+|                                                         |  |  +--| (100/98)
+|                                                         |  |     +--CY196771.1left_bracketAVIright_bracket
+|                                                         +**| (0/13)
+|                                                            |        +--HM145672.1left_bracketAVIright_bracket
+|                                                            |     +--| (100/100)
+|                                                            |     |  |     +--CY109519.1left_bracketAVIright_bracket
+|                                                            |     |  |  +--| (98.1/100)
+|                                                            |     |  |  |  +--CY110663.1left_bracketAVIright_bracket
+|                                                            |     |  +--| (86.3/100)
+|                                                            |     |     +--HM145686.1left_bracketAVIright_bracket
+|                                                            |  +--| (100/100)
+|                                                            |  |  |              +--KY402070.1left_bracketAVIright_bracket
+|                                                            |  |  |           +--| (99.9/100)
+|                                                            |  |  |           |  +--MN566025.1left_bracketAVIright_bracket
+|                                                            |  |  |        +--| (90.7/100)
+|                                                            |  |  |        |  +--ON716316.1left_bracketAVIright_bracket
+|                                                            |  |  |     +--| (100/100)
+|                                                            |  |  |     |  |  +--MT828575.1left_bracketAVIright_bracket
+|                                                            |  |  |     |  +--| (81.2/100)
+|                                                            |  |  |     |     +--MW108605.1left_bracketAVIright_bracket
+|                                                            |  |  |  +--| (2.1/35)
+|                                                            |  |  |  |  |  +--MK964972.1left_bracketAVIright_bracket
+|                                                            |  |  |  |  +--| (100/100)
+|                                                            |  |  |  |     +--MK964583.1left_bracketAVIright_bracket
+|                                                            |  |  +--| (92.2/82)
+|                                                            |  |     +--HM145667.1left_bracketAVIright_bracket
+|                                                            +--| (99.8/99)
+|                                                               +--MN530165.1left_bracketAVIright_bracket
+|
++---------------------------------------------------------KJ018190.1left_bracketAVIright_bracket
+
+Tree in newick format:
+
+(NC_007362:9.9999988812,((((((((((((((KP413270.1left_bracketAVIright_bracket:0.0000010000,KP286534.1left_bracketAVIright_bracket:0.0004853420)95.5/100:0.0014595288,KP415953.1left_bracketAVIright_bracket:0.0009720853)0/75:0.0000024098,KP416362.1left_bracketAVIright_bracket:0.0034202771)100/100:0.0122423301,KF260894.1left_bracketAVIright_bracket:0.0071500475)62.2/99:0.0002312837,((KF260875.1left_bracketAVIright_bracket:0.0000010000,KF260874.1left_bracketAVIright_bracket:0.0004854013)98.9/100:0.0034724838,KX598523.1left_bracketAVIright_bracket:0.0049502988)72.2/100:0.0004410426)93.1/100:0.0019574865,KP416194.1left_bracketAVIright_bracket:0.0115236496)84.8/99:0.0013854763,MF113125.1left_bracketAVIright_bracket:0.0030250607)95.9/100:0.0030208158,(((((((((((((MW105029.1left_bracketAVIright_bracket:0.0004850135,MW108413.1left_bracketAVIright_bracket:0.0000010000)100/100:0.0053941626,(MW965659.1left_bracketAVIright_bracket:0.0080289002,(KY751295.1left_bracketAVIright_bracket:0.0013287290,OR497659.1left_bracketAVIright_bracket:0.0239936344)99.5/100:0.0056783210)0/77:0.0003834597)0/74:0.0000023001,((MW106709.1left_bracketAVIright_bracket:0.0027754051,MW094629.1left_bracketAVIright_bracket:0.0026868487)71.2/90:0.0029148440,MW095026.1left_bracketAVIright_bracket:0.0098011237)97/100:0.0032165302)0/16:0.0000010000,MK446827.1left_bracketAVIright_bracket:0.0119545169)94.9/100:0.0019549063,(MW106053.1left_bracketAVIright_bracket:0.0009127201,MW105877.1left_bracketAVIright_bracket:0.0085052538)99.8/100:0.0070148062)71.2/99:0.0004811059,MF629978.1left_bracketAVIright_bracket:0.0029340083)97.3/98:0.0035181405,(MK446813.1left_bracketAVIright_bracket:0.0000010000,MK446814.1left_bracketAVIright_bracket:0.0004858326)100/100:0.0091618252)72.8/71:0.0004120656,(MK446789.1left_bracketAVIright_bracket:0.0071371871,KX598539.1left_bracketAVIright_bracket:0.0055096352)73.2/71:0.0003793422)0/59:0.0000010000,(((((OQ293818.1left_bracketAVIright_bracket:0.0009717267,OQ293162.1left_bracketAVIright_bracket:0.0000010000)99.9/100:0.0083782204,((OQ826091.1left_bracketAVIright_bracket:0.0070366457,OQ293490.1left_bracketAVIright_bracket:0.0043789427)99.9/100:0.0080928208,(OQ292594.1left_bracketAVIright_bracket:0.0009715629,OQ292586.1left_bracketAVIright_bracket:0.0004881937)100/100:0.0119781831)0/87:0.0000029567)100/100:0.0156538354,MW106317.1left_bracketAVIright_bracket:0.0130639069)66.1/100:0.0004686846,((MW105005.1left_bracketAVIright_bracket:0.0056279904,PP091191.1left_bracketAVIright_bracket:0.0338622293)86.5/100:0.0017612103,MN647475.1left_bracketAVIright_bracket:0.0019505527)76.5/100:0.0004913468)95/100:0.0019726195,KP287499.1left_bracketAVIright_bracket:0.0039412711)73.1/100:0.0004637366)97.6/100:0.0034384399,KP865883.1left_bracketAVIright_bracket:0.0044651308)96.2/100:0.0039247240,KT449712.1left_bracketAVIright_bracket:0.0117221824)99/100:0.0057438012,((((KP413904.1left_bracketAVIright_bracket:0.0009708670,KP413834.1left_bracketAVIright_bracket:0.0014568353)0/80:0.0000010000,KP417655.1left_bracketAVIright_bracket:0.0039050465)75/100:0.0004791408,MF630210.1left_bracketAVIright_bracket:0.0014647752)98/100:0.0035000827,(((MH209304.1left_bracketAVIright_bracket:0.0112699706,MW094458.1left_bracketAVIright_bracket:0.0129821248)87.9/100:0.0023272749,(MW265019.1left_bracketAVIright_bracket:0.0017338286,(KP417875.1left_bracketAVIright_bracket:0.0000010000,KP418433.1left_bracketAVIright_bracket:0.0019485679)92.6/100:0.0021730559)62.4/95:0.0024558970)96.7/100:0.0031676624,KF357825.1left_bracketAVIright_bracket:0.0019628846)79.8/100:0.0009285419)100/100:0.0163433320)70/98:0.0013442412,(JX312549.1left_bracketAVIright_bracket:0.0027918044,(KF260903.1left_bracketAVIright_bracket:0.0035567633,KP285066.1left_bracketAVIright_bracket:0.0084168838)99.6/98:0.0065969686)98/98:0.0036686245)69.8/87:0.0004365656)100/98:0.0139330871,JN869514.1left_bracketAVIright_bracket:0.0148920577)82.9/97:0.0020515235,((MF112278.1left_bracketAVIright_bracket:0.0038819487,((MF112277.1left_bracketAVIright_bracket:0.0009808457,MF112339.1left_bracketAVIright_bracket:0.0049230907)76.6/100:0.0004692428,MF112272.1left_bracketAVIright_bracket:0.0014744849)96/100:0.0040247500)100/100:0.0184430891,KJ426318.1left_bracketAVIright_bracket:0.0018784531)97.5/100:0.0043521499)99.9/97:0.0094628657,(KP285370.1left_bracketAVIright_bracket:0.0266525561,CY109303.1left_bracketAVIright_bracket:0.0096709149)1.4/64:0.0014316566)91.7/96:0.0041042920,JF965021.1left_bracketAVIright_bracket:0.0363604452)95.9/95:0.0078376446,(((((((((OQ794132.1left_bracketAVIright_bracket:0.0019533453,OQ794100.1left_bracketAVIright_bracket:0.0009761653)97.3/100:0.0034678494,OM333407.1left_bracketAVIright_bracket:0.0024502184)97.4/100:0.0052779325,MG891832.1left_bracketAVIright_bracket:0.0134783907)99.7/100:0.0095585605,MF973222.1left_bracketAVIright_bracket:0.0159529153)97/100:0.0054421546,(MW412625.1left_bracketAVIright_bracket:0.0116044550,OL370403.1left_bracketAVIright_bracket:0.0082249401)98.4/100:0.0063536506)100/100:0.0123557973,CY146569.1left_bracketAVIright_bracket:0.0198156057)84.2/100:0.0024934914,(MN171439.1left_bracketAVIright_bracket:0.0145642146,CY185346.1left_bracketAVIright_bracket:0.0085475428)94.2/100:0.0053955928)99.8/100:0.0143247864,MW132957.1left_bracketAVIright_bracket:0.0322031655)97.2/99:0.0089812203,(((((OQ967193.1left_bracketAVIright_bracket:0.0014559160,OQ961761.1left_bracketAVIright_bracket:0.0000028047)100/100:0.0285590931,KP417116.1left_bracketAVIright_bracket:0.0082857786)100/100:0.0226404561,KC986316.1left_bracketAVIright_bracket:0.0202497417)100/99:0.0159254872,((ON374814.1left_bracketAVIright_bracket:0.0041134282,MG706984.1left_bracketAVIright_bracket:0.0063172206)100/100:0.0360812792,(JN817611.1left_bracketAVIright_bracket:0.0109624269,KP732577.1left_bracketAVIright_bracket:0.0226130441)100/100:0.0151633636)85.8/99:0.0033920675)30.2/86:0.0019736210,CY146665.1left_bracketAVIright_bracket:0.0345168511)85.6/76:0.0031527879)49.7/63:0.0043502280)0/88:0.0362445228,(((((((((((((MF613918.1left_bracketAVIright_bracket:0.0070381193,KY584031.1left_bracketAVIright_bracket:0.0013140207)99.9/100:0.0098995333,MT444223.1left_bracketAVIright_bracket:0.0147008843)86.2/100:0.0020880014,(MW872184.1left_bracketAVIright_bracket:0.0059476245,OQ964441.1left_bracketAVIright_bracket:0.0029175903)99.7/100:0.0085213704)100/100:0.0123242846,((((MN988187.1left_bracketAVIright_bracket:0.0116211477,MT421309.1left_bracketAVIright_bracket:0.0112518594)93.8/100:0.0035087460,(MN988442.1left_bracketAVIright_bracket:0.0123115288,(OQ962145.1left_bracketAVIright_bracket:0.0032456179,PP755980.1left_bracketMAMright_bracket:0.0081774619)100/100:0.0099816294)97/100:0.0054312151)99.7/100:0.0074503686,((MF613741.1left_bracketAVIright_bracket:0.0009666403,MG599659.1left_bracketAVIright_bracket:0.0000010000)99.8/100:0.0075291696,MH932377.2left_bracketAVIright_bracket:0.0028815148)100/100:0.0208005729)74.3/99:0.0008566720,(KY584017.1left_bracketAVIright_bracket:0.0108561812,MN988355.1left_bracketAVIright_bracket:0.0146408547)99.1/100:0.0068029484)92/100:0.0032545502)100/100:0.0189001630,MH579071.1left_bracketAVIright_bracket:0.0259027995)37/99:0.0023052452,(((OQ964801.1left_bracketAVIright_bracket:0.0009357534,OQ965769.1left_bracketAVIright_bracket:0.0010016530)100/100:0.0132280573,((OQ960361.1left_bracketAVIright_bracket:0.0009664846,(OQ959553.1left_bracketAVIright_bracket:0.0000021110,OQ965065.1left_bracketAVIright_bracket:0.0019367061)84.3/93:0.0004827034)0/72:0.0000028172,OQ962593.1left_bracketAVIright_bracket:0.0014509320)100/100:0.0168394360)98.8/100:0.0097330105,MH498696.1left_bracketAVIright_bracket:0.0250905311)90.6/100:0.0038563875)99.8/100:0.0181305804,((((KY550838.1left_bracketAVIright_bracket:0.0019339375,KY550752.1left_bracketAVIright_bracket:0.0000029612)99.9/100:0.0156885021,MH498795.1left_bracketAVIright_bracket:0.0324191760)99.3/100:0.0145930175,(MK627840.1left_bracketAVIright_bracket:0.0261187892,(MZ564889.1left_bracketAVIright_bracket:0.0192102749,(MZ564977.1left_bracketAVIright_bracket:0.0249309220,MZ565305.1left_bracketAVIright_bracket:0.0195214829)92.5/99:0.0071554876)100/100:0.0354917438)72/99:0.0040680067)99.7/100:0.0202991326,MH579285.1left_bracketAVIright_bracket:0.0281923110)44.4/96:0.0018314156)98.4/98:0.0248745009,(((((((OR730444.1left_bracketMAMright_bracket:0.0186721842,PP577775.1left_bracketMAMright_bracket:0.0244915822)87.2/100:0.0029956245,(MH922886.1left_bracketMAMright_bracket:0.0110956005,MT233558.1left_bracketMAMright_bracket:0.0105766612)99.1/100:0.0075051813)100/100:0.0130086018,KX264685.1left_bracketMAMright_bracket:0.0077562013)93.1/98:0.0062776436,(((KY509887.1left_bracketMAMright_bracket:0.0311071368,(((KX907903.1left_bracketMAMright_bracket:0.0039385068,KJ528296.1left_bracketMAMright_bracket:0.0004722801)95.8/100:0.0019561478,(KC471470.1left_bracketMAMright_bracket:0.0009700701,CY131628.1left_bracketMAMright_bracket:0.0014545732)0/77:0.0000010000)98.2/100:0.0062855159,((((((MK651337.1left_bracketMAMright_bracket:0.0019471123,OR472746.1left_bracketMAMright_bracket:0.0151226628)95.4/100:0.0030005657,MG521054.1left_bracketMAMright_bracket:0.0019432153)73.1/100:0.0004911445,(MK535814.1left_bracketMAMright_bracket:0.0004834285,MK109754.1left_bracketMAMright_bracket:0.0000010000)76.7/100:0.0004830655)97.3/100:0.0035980722,(MZ665315.1left_bracketMAMright_bracket:0.0095208014,OQ695102.1left_bracketMAMright_bracket:0.0028854686)99/100:0.0053689965)98.6/100:0.0053195777,(((((((MT823504.1left_bracketMAMright_bracket:0.0053589124,(OQ786442.1left_bracketMAMright_bracket:0.0140915165,MN198828.1left_bracketMAMright_bracket:0.0035450558)19.8/99:0.0003663225)88.9/100:0.0010090812,MH620507.1left_bracketMAMright_bracket:0.0009675725)0/79:0.0000027078,MG784652.1left_bracketMAMright_bracket:0.0004829738)95/100:0.0025695725,MH425048.1left_bracketMAMright_bracket:0.0044256022)98.8/100:0.0055977412,MZ460879.1left_bracketMAMright_bracket:0.0189592751)4.9/88:0.0003058506,MK535422.1left_bracketMAMright_bracket:0.0052653701)87.7/99:0.0009977910,MK848558.1left_bracketMAMright_bracket:0.0151278191)0/85:0.0000028448)87.9/99:0.0018800528,KX631943.1left_bracketMAMright_bracket:0.0127407563)99.5/100:0.0078145255)99.1/100:0.0086219797)99.4/100:0.0114973377,CY086917.1left_bracketMAMright_bracket:0.0169764457)78.9/79:0.0010786468,(KR057308.1left_bracketMAMright_bracket:0.0169496343,CY246072.1left_bracketMAMright_bracket:0.0219903468)98/100:0.0065719594)84.1/79:0.0024102657)99.9/100:0.0141345832,MK651427.1left_bracketMAMright_bracket:0.0044050406)66.4/100:0.0005200316,((((((((((((((PP398345.1left_bracketMAMright_bracket:0.0000010000,PP553301.1left_bracketMAMright_bracket:0.0004862513)99.9/100:0.0044022556,(((PP558072.1left_bracketMAMright_bracket:0.0019470725,PP432532.1left_bracketMAMright_bracket:0.0024343430)0/28:0.0000010000,PP417047.1left_bracketMAMright_bracket:0.0009712001)0/45:0.0000020830,PP459870.1left_bracketMAMright_bracket:0.0034204276)71.1/91:0.0004847603)0/13:0.0000020553,((((PP338972.1left_bracketMAMright_bracket:0.0009720571,PP260775.1left_bracketMAMright_bracket:0.0009710799)76.4/100:0.0004876271,PP498399.1left_bracketMAMright_bracket:0.0004858609)99.5/100:0.0034170456,PP072709.1left_bracketMAMright_bracket:0.0034170403)0/16:0.0000028894,OQ796022.1left_bracketMAMright_bracket:0.0009714993)0/5:0.0000010000)0/9:0.0000028339,PP072596.1left_bracketMAMright_bracket:0.0024362097)0/63:0.0000021152,OY282673.1left_bracketMAMright_bracket:0.0020567204)0/90:0.0004840579,OR166947.1left_bracketMAMright_bracket:0.0024400783)77.1/99:0.0027306381,OY979861.1left_bracketMAMright_bracket:0.0073991925)89.8/99:0.0057553104,((OQ796973.1left_bracketMAMright_bracket:0.0058899696,PP698969.1left_bracketMAMright_bracket:0.0053914440)0/75:0.0000026389,((((PP193665.1left_bracketMAMright_bracket:0.0004867736,PP399538.1left_bracketMAMright_bracket:0.0009721159)0/21:0.0000010000,(PP093627.1left_bracketMAMright_bracket:0.0034334341,PP073114.1left_bracketMAMright_bracket:0.0009722257)0/31:0.0000010000)0/22:0.0000010000,PP072473.1left_bracketMAMright_bracket:0.0014597284)97/100:0.0024582732,(OR728930.1left_bracketMAMright_bracket:0.0029380026,OR439806.1left_bracketMAMright_bracket:0.0009763622)85.6/99:0.0009597704)98/100:0.0029444434)88.8/100:0.0014576194)94.5/99:0.0024558611,(MN170143.1left_bracketMAMright_bracket:0.0009703050,(OQ695094.1left_bracketMAMright_bracket:0.0034153678,MK785746.1left_bracketMAMright_bracket:0.0009708074)0/32:0.0000010000)0/20:0.0000010000)89.4/99:0.0009859056,MN169943.1left_bracketMAMright_bracket:0.0054043358)41.4/71:0.0004716678,((MK502655.1left_bracketMAMright_bracket:0.0029956186,OQ459870.1left_bracketMAMright_bracket:0.0089757673)74.5/77:0.0004166409,(MH156540.1left_bracketMAMright_bracket:0.0034510147,(MK869074.1left_bracketMAMright_bracket:0.0024384888,(MK927643.1left_bracketMAMright_bracket:0.0004841543,MK576961.1left_bracketMAMright_bracket:0.0000010000)0/80:0.0000010000)98.4/100:0.0029543850)73.8/98:0.0004572539)0/67:0.0000020050)98.3/100:0.0040138632,MT041178.1left_bracketMAMright_bracket:0.0059388710)81/100:0.0008794767,KR052678.1left_bracketMAMright_bracket:0.0015247440)99.9/100:0.0127631366,(((((KM028468.1left_bracketMAMright_bracket:0.0034399721,KM028700.1left_bracketMAMright_bracket:0.0019540304)99.1/100:0.0039421147,KC471366.1left_bracketMAMright_bracket:0.0068826106)0/6:0.0000010000,(KP765853.1left_bracketMAMright_bracket:0.0039054888,CY065291.1left_bracketMAMright_bracket:0.0014566510)0/2:0.0000028225)0/1:0.0000010000,((KM029140.1left_bracketMAMright_bracket:0.0058894300,KX264688.1left_bracketMAMright_bracket:0.0139770683)0/27:0.0000021298,(KC780717.1left_bracketMAMright_bracket:0.0014570127,JQ695876.1left_bracketMAMright_bracket:0.0034157083)0/38:0.0000010000)91.6/49:0.0004845752)0/12:0.0000010000,(KM029924.1left_bracketMAMright_bracket:0.0109245008,KC473861.1left_bracketMAMright_bracket:0.0000028926)88.7/50:0.0009708537)80.3/59:0.0023474220)100/100:0.0256234926)69.9/96:0.0033092338,CY159654.1left_bracketMAMright_bracket:0.0165192615)100/100:0.0475281120)99.7/99:0.0465084192,(KM359863.1left_bracketMAMright_bracket:0.0146590360,CY067275.1left_bracketMAMright_bracket:0.0000025911)100/100:0.0981495010)78/95:0.0122485204,((((((((((KU591850.1left_bracketMAMright_bracket:0.0004708030,MG279269.1left_bracketMAMright_bracket:0.0044740078)95.5/100:0.0019878452,((((((((OP954299.1left_bracketMAMright_bracket:0.0014688007,((((OP085911.1left_bracketMAMright_bracket:0.0009778902,OP096952.1left_bracketMAMright_bracket:0.0004890258)0/12:0.0000010000,OP959858.1left_bracketMAMright_bracket:0.0009781201)0/5:0.0000010000,OP952387.1left_bracketMAMright_bracket:0.0000010000)0/4:0.0000010000,OP951745.1left_bracketMAMright_bracket:0.0004883952)0/38:0.0000010000)84.6/99:0.0009738044,OQ240670.1left_bracketMAMright_bracket:0.0049385524)74.3/100:0.0005014810,OP096989.1left_bracketMAMright_bracket:0.0024508849)99.2/100:0.0039594877,(MK927689.1left_bracketMAMright_bracket:0.0024650272,OQ652859.1left_bracketMAMright_bracket:0.0019747544)93.5/100:0.0019659927)92.1/100:0.0014941571,((((OP590460.1left_bracketMAMright_bracket:0.0004886086,(OP590682.1left_bracketMAMright_bracket:0.0000010000,(OR479494.1left_bracketMAMright_bracket:0.0009759717,OR483614.1left_bracketMAMright_bracket:0.0009778369)0/80:0.0000010000)79/99:0.0004886270)91.3/99:0.0015098476,(((((OQ507027.1left_bracketMAMright_bracket:0.0014678293,OR699593.1left_bracketMAMright_bracket:0.0014721036)88/99:0.0009807718,OQ368242.1left_bracketMAMright_bracket:0.0004876455)77.3/77:0.0004892268,(OQ917451.1left_bracketMAMright_bracket:0.0009771383,OQ796513.1left_bracketMAMright_bracket:0.0009770995)0/50:0.0000026229)0/48:0.0000027600,OQ754651.1left_bracketMAMright_bracket:0.0019582348)94/100:0.0019692024,(((PP508619.1left_bracketMAMright_bracket:0.0000010000,(PP509446.1left_bracketMAMright_bracket:0.0009783557,PP416341.1left_bracketMAMright_bracket:0.0009770131)0/4:0.0000010000)0/5:0.0000010000,PP522580.1left_bracketMAMright_bracket:0.0004882606)85.5/100:0.0004876617,((PP557881.1left_bracketMAMright_bracket:0.0009787248,PP508659.1left_bracketMAMright_bracket:0.0009768398)0/11:0.0000010000,PP193407.1left_bracketMAMright_bracket:0.0004885801)0/17:0.0000010000)94.7/100:0.0019672416)74.2/99:0.0004465436)100/100:0.0106225828,(MK743385.1left_bracketMAMright_bracket:0.0019643784,MK576719.1left_bracketMAMright_bracket:0.0049971764)92.2/100:0.0020274567)74.1/99:0.0004406378,MN573262.1left_bracketMAMright_bracket:0.0019646126)74.1/100:0.0004813600)96/100:0.0024708092,MG198917.1left_bracketMAMright_bracket:0.0014796505)94.1/100:0.0019691048,((MK960355.1left_bracketMAMright_bracket:0.0039888712,(MK869122.1left_bracketMAMright_bracket:0.0019727764,(((MK839850.1left_bracketMAMright_bracket:0.0000010000,(MN608558.1left_bracketMAMright_bracket:0.0019666399,MN081489.1left_bracketMAMright_bracket:0.0009792957)0/75:0.0000010000)85.1/100:0.0004900202,MK960531.1left_bracketMAMright_bracket:0.0004900197)0/76:0.0000010000,MN873859.1left_bracketMAMright_bracket:0.0009795000)88.1/100:0.0009812471)88.8/99:0.0014492669)99.4/100:0.0045287046,(MG914218.1left_bracketMAMright_bracket:0.0039485539,KU589995.1left_bracketMAMright_bracket:0.0014709286)0/71:0.0000028756)91.8/99:0.0009793174)0/28:0.0000023420,(KU590005.1left_bracketMAMright_bracket:0.0014714511,KT843720.1left_bracketMAMright_bracket:0.0000010000)82.4/100:0.0004900160)0/36:0.0000010000)87.4/99:0.0004889358,KT841469.1left_bracketMAMright_bracket:0.0024547719)0/78:0.0000023193,KY089204.1left_bracketMAMright_bracket:0.0004889006)97.6/100:0.0029511557,MK640856.1left_bracketMAMright_bracket:0.0039439048)0/75:0.0000024322,KT840917.1left_bracketMAMright_bracket:0.0059437254)88.8/99:0.0014667164,((PP658633.1left_bracketMAMright_bracket:0.0000010000,PP658617.1left_bracketMAMright_bracket:0.0004893204)77.6/100:0.0004873252,PP658635.1left_bracketMAMright_bracket:0.0009853967)88.9/99:0.0014883501)92.7/97:0.0064202116,KT838108.1left_bracketMAMright_bracket:0.0068406604)100/100:0.0479226665,CY116312.1left_bracketMAMright_bracket:0.0447610434)100/100:0.0540413786,CY013564.1left_bracketMAMright_bracket:0.0825252149)100/100:0.0618431741)100/76:0.0806697089,((((((CY030966.1left_bracketAVIright_bracket:0.0000010000,CY030950.1left_bracketAVIright_bracket:0.0004847814)100/100:0.0195964324,(((CY040955.1left_bracketAVIright_bracket:0.0044135527,CY030926.1left_bracketAVIright_bracket:0.0019714075)76.1/100:0.0004540312,(JN807899.1left_bracketAVIright_bracket:0.0201337266,LC279793.1left_bracketAVIright_bracket:0.0477248596)96.1/100:0.0056682649)61.5/94:0.0004355844,KC261451.1left_bracketAVIright_bracket:0.0193894152)100/100:0.0134388688)100/100:0.0130672135,((((((KU201845.1left_bracketAVIright_bracket:0.0004901595,MG965789.1left_bracketAVIright_bracket:0.0019493635)90.4/100:0.0020758258,KT388561.1left_bracketAVIright_bracket:0.0023425408)100/100:0.0425910764,(OL372100.1left_bracketAVIright_bracket:0.0305446519,KY971035.1left_bracketAVIright_bracket:0.0051584506)89.3/100:0.0030570817)68/93:0.0007599167,OM373259.1left_bracketAVIright_bracket:0.0132675213)89.1/95:0.0016737341,MK964487.1left_bracketAVIright_bracket:0.0317101642)70.4/94:0.0003698958,(HM145738.1left_bracketAVIright_bracket:0.0054042466,HQ014837.1left_bracketAVIright_bracket:0.0102040891)100/100:0.0150005554)0/82:0.0001663539)97.2/100:0.0090683667,(MH285289.1left_bracketAVIright_bracket:0.0847051818,KP865916.1left_bracketAVIright_bracket:0.0274619238)99.3/100:0.0208874779)86.7/98:0.0065904419,(MN988762.1left_bracketAVIright_bracket:0.0849337913,((KX061823.1left_bracketAVIright_bracket:0.0062998888,KT589154.1left_bracketAVIright_bracket:0.0215316063)93.9/100:0.0094278373,KP416916.1left_bracketAVIright_bracket:0.0253382916)100/100:0.0395555294)64.2/94:0.0064097684)99.5/99:0.0261865574,(((((MW169656.1left_bracketMAMright_bracket:0.0383780372,KU322884.1left_bracketMAMright_bracket:0.0237498278)97.3/100:0.0101530669,MN934398.1left_bracketMAMright_bracket:0.0388397289)99.9/100:0.0273901124,(KM028324.1left_bracketMAMright_bracket:0.0334968764,MN416351.1left_bracketMAMright_bracket:0.0151589830)99.9/100:0.0197272624)95.5/98:0.0086640178,(MZ477664.1left_bracketMAMright_bracket:0.0429126411,MT666264.1left_bracketMAMright_bracket:0.0341097024)100/100:0.0305769516)74.1/98:0.0028990980,CY116063.1left_bracketMAMright_bracket:0.0288690697)100/97:0.0549136939)76.2/89:0.0150151954)88/41:0.0171176889,(CY196514.1left_bracketAVIright_bracket:0.0037451129,CY196771.1left_bracketAVIright_bracket:0.0093482356)100/98:0.1156024314)96.7/31:0.0227546816,(((HM145672.1left_bracketAVIright_bracket:0.0038105519,((CY109519.1left_bracketAVIright_bracket:0.0034805185,CY110663.1left_bracketAVIright_bracket:0.0044947892)98.1/100:0.0044872827,HM145686.1left_bracketAVIright_bracket:0.0082195609)86.3/100:0.0022272312)100/100:0.0184837509,(((((KY402070.1left_bracketAVIright_bracket:0.0040070198,MN566025.1left_bracketAVIright_bracket:0.0009320506)99.9/100:0.0089611081,ON716316.1left_bracketAVIright_bracket:0.0249407889)90.7/100:0.0033878696,(MT828575.1left_bracketAVIright_bracket:0.0078474823,MW108605.1left_bracketAVIright_bracket:0.0093894596)81.2/100:0.0014891363)100/100:0.0368366747,(MK964972.1left_bracketAVIright_bracket:0.0102324666,MK964583.1left_bracketAVIright_bracket:0.0060828134)100/100:0.0221308310)2.1/35:0.0007322313,HM145667.1left_bracketAVIright_bracket:0.0220039703)92.2/82:0.0056063767)100/100:0.0338792265,MN530165.1left_bracketAVIright_bracket:0.0675499764)99.8/99:0.0262311282)0/13:0.0000022086)100/100:9.9999983530,KJ018190.1left_bracketAVIright_bracket:9.9999981159);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -47949.695708
+Robinson-Foulds distance between ML tree and consensus tree: 48
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++---------------------------------------------------------NC_007362
+|
+|                                                                                                         +--KP413270.1left_bracketAVIright_bracket
+|                                                                                                      +--| (100)
+|                                                                                                      |  +--KP286534.1left_bracketAVIright_bracket
+|                                                                                                   +--| (75)
+|                                                                                                   |  +--KP415953.1left_bracketAVIright_bracket
+|                                                                                                +--| (100)
+|                                                                                                |  +--KP416362.1left_bracketAVIright_bracket
+|                                                                                             +--| (99)
+|                                                                                             |  +--KF260894.1left_bracketAVIright_bracket
+|                                                                                          +--| (100)
+|                                                                                          |  |     +--KF260875.1left_bracketAVIright_bracket
+|                                                                                          |  |  +--| (100)
+|                                                                                          |  |  |  +--KF260874.1left_bracketAVIright_bracket
+|                                                                                          |  +--| (100)
+|                                                                                          |     +--KX598523.1left_bracketAVIright_bracket
+|                                                                                       +--| (99)
+|                                                                                       |  +--KP416194.1left_bracketAVIright_bracket
+|                                                                                    +--| (100)
+|                                                                                    |  +--MF113125.1left_bracketAVIright_bracket
+|                                                                                 +--| (98)
+|                                                                                 |  |                                   +--MW105029.1left_bracketAVIright_bracket
+|                                                                                 |  |                                +--| (100)
+|                                                                                 |  |                                |  +--MW108413.1left_bracketAVIright_bracket
+|                                                                                 |  |                             +--| (74)
+|                                                                                 |  |                             |  |  +--MW965659.1left_bracketAVIright_bracket
+|                                                                                 |  |                             |  +--| (77)
+|                                                                                 |  |                             |     |  +--KY751295.1left_bracketAVIright_bracket
+|                                                                                 |  |                             |     +--| (100)
+|                                                                                 |  |                             |        +--OR497659.1left_bracketAVIright_bracket
+|                                                                                 |  |                          +--| (100)
+|                                                                                 |  |                          |  |  +--MK446827.1left_bracketAVIright_bracket
+|                                                                                 |  |                          |  +--| (68)
+|                                                                                 |  |                          |     |     +--MW106709.1left_bracketAVIright_bracket
+|                                                                                 |  |                          |     |  +--| (90)
+|                                                                                 |  |                          |     |  |  +--MW094629.1left_bracketAVIright_bracket
+|                                                                                 |  |                          |     +--| (100)
+|                                                                                 |  |                          |        +--MW095026.1left_bracketAVIright_bracket
+|                                                                                 |  |                       +--| (99)
+|                                                                                 |  |                       |  |  +--MW106053.1left_bracketAVIright_bracket
+|                                                                                 |  |                       |  +--| (100)
+|                                                                                 |  |                       |     +--MW105877.1left_bracketAVIright_bracket
+|                                                                                 |  |                    +--| (98)
+|                                                                                 |  |                    |  +--MF629978.1left_bracketAVIright_bracket
+|                                                                                 |  |                 +--| (71)
+|                                                                                 |  |                 |  |  +--MK446813.1left_bracketAVIright_bracket
+|                                                                                 |  |                 |  +--| (100)
+|                                                                                 |  |                 |     +--MK446814.1left_bracketAVIright_bracket
+|                                                                                 |  |              +--| (59)
+|                                                                                 |  |              |  |  +--MK446789.1left_bracketAVIright_bracket
+|                                                                                 |  |              |  +--| (71)
+|                                                                                 |  |              |     +--KX598539.1left_bracketAVIright_bracket
+|                                                                                 |  |           +--| (100)
+|                                                                                 |  |           |  |              +--OQ293818.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |           +--| (100)
+|                                                                                 |  |           |  |           |  +--OQ293162.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |        +--| (100)
+|                                                                                 |  |           |  |        |  |     +--OQ826091.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |        |  |  +--| (100)
+|                                                                                 |  |           |  |        |  |  |  +--OQ293490.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |        |  +--| (87)
+|                                                                                 |  |           |  |        |     |  +--OQ292594.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |        |     +--| (100)
+|                                                                                 |  |           |  |        |        +--OQ292586.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |     +--| (100)
+|                                                                                 |  |           |  |     |  +--MW106317.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |  +--| (100)
+|                                                                                 |  |           |  |  |  |     +--MW105005.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |  |  |  +--| (100)
+|                                                                                 |  |           |  |  |  |  |  +--PP091191.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  |  |  +--| (100)
+|                                                                                 |  |           |  |  |     +--MN647475.1left_bracketAVIright_bracket
+|                                                                                 |  |           |  +--| (100)
+|                                                                                 |  |           |     +--KP287499.1left_bracketAVIright_bracket
+|                                                                                 |  |        +--| (100)
+|                                                                                 |  |        |  +--KP865883.1left_bracketAVIright_bracket
+|                                                                                 |  |     +--| (100)
+|                                                                                 |  |     |  +--KT449712.1left_bracketAVIright_bracket
+|                                                                                 |  |  +--| (98)
+|                                                                                 |  |  |  |           +--KP413904.1left_bracketAVIright_bracket
+|                                                                                 |  |  |  |        +--| (80)
+|                                                                                 |  |  |  |        |  +--KP413834.1left_bracketAVIright_bracket
+|                                                                                 |  |  |  |     +--| (100)
+|                                                                                 |  |  |  |     |  +--KP417655.1left_bracketAVIright_bracket
+|                                                                                 |  |  |  |  +--| (100)
+|                                                                                 |  |  |  |  |  +--MF630210.1left_bracketAVIright_bracket
+|                                                                                 |  |  |  +--| (100)
+|                                                                                 |  |  |     |        +--MH209304.1left_bracketAVIright_bracket
+|                                                                                 |  |  |     |     +--| (100)
+|                                                                                 |  |  |     |     |  +--MW094458.1left_bracketAVIright_bracket
+|                                                                                 |  |  |     |  +--| (100)
+|                                                                                 |  |  |     |  |  |  +--MW265019.1left_bracketAVIright_bracket
+|                                                                                 |  |  |     |  |  +--| (95)
+|                                                                                 |  |  |     |  |     |  +--KP417875.1left_bracketAVIright_bracket
+|                                                                                 |  |  |     |  |     +--| (100)
+|                                                                                 |  |  |     |  |        +--KP418433.1left_bracketAVIright_bracket
+|                                                                                 |  |  |     +--| (100)
+|                                                                                 |  |  |        +--KF357825.1left_bracketAVIright_bracket
+|                                                                                 |  +--| (87)
+|                                                                                 |     |  +--JX312549.1left_bracketAVIright_bracket
+|                                                                                 |     +--| (98)
+|                                                                                 |        |  +--KF260903.1left_bracketAVIright_bracket
+|                                                                                 |        +--| (98)
+|                                                                                 |           +--KP285066.1left_bracketAVIright_bracket
+|                                                                              +--| (97)
+|                                                                              |  +--JN869514.1left_bracketAVIright_bracket
+|                                                                           +--| (97)
+|                                                                           |  |     +--MF112278.1left_bracketAVIright_bracket
+|                                                                           |  |  +--| (100)
+|                                                                           |  |  |  |     +--MF112277.1left_bracketAVIright_bracket
+|                                                                           |  |  |  |  +--| (100)
+|                                                                           |  |  |  |  |  +--MF112339.1left_bracketAVIright_bracket
+|                                                                           |  |  |  +--| (100)
+|                                                                           |  |  |     +--MF112272.1left_bracketAVIright_bracket
+|                                                                           |  +--| (100)
+|                                                                           |     +--KJ426318.1left_bracketAVIright_bracket
+|                                                                        +--| (96)
+|                                                                        |  |  +--KP285370.1left_bracketAVIright_bracket
+|                                                                        |  +--| (64)
+|                                                                        |     +--CY109303.1left_bracketAVIright_bracket
+|                                                                     +--| (95)
+|                                                                     |  +--JF965021.1left_bracketAVIright_bracket
+|                                                                  +--| (88)
+|                                                                  |  |                          +--OQ794132.1left_bracketAVIright_bracket
+|                                                                  |  |                       +--| (100)
+|                                                                  |  |                       |  +--OQ794100.1left_bracketAVIright_bracket
+|                                                                  |  |                    +--| (100)
+|                                                                  |  |                    |  +--OM333407.1left_bracketAVIright_bracket
+|                                                                  |  |                 +--| (100)
+|                                                                  |  |                 |  +--MG891832.1left_bracketAVIright_bracket
+|                                                                  |  |              +--| (100)
+|                                                                  |  |              |  +--MF973222.1left_bracketAVIright_bracket
+|                                                                  |  |           +--| (100)
+|                                                                  |  |           |  |  +--MW412625.1left_bracketAVIright_bracket
+|                                                                  |  |           |  +--| (100)
+|                                                                  |  |           |     +--OL370403.1left_bracketAVIright_bracket
+|                                                                  |  |        +--| (100)
+|                                                                  |  |        |  +--CY146569.1left_bracketAVIright_bracket
+|                                                                  |  |     +--| (100)
+|                                                                  |  |     |  |  +--MN171439.1left_bracketAVIright_bracket
+|                                                                  |  |     |  +--| (100)
+|                                                                  |  |     |     +--CY185346.1left_bracketAVIright_bracket
+|                                                                  |  |  +--| (99)
+|                                                                  |  |  |  +--MW132957.1left_bracketAVIright_bracket
+|                                                                  |  +--| (63)
+|                                                                  |     |              +--OQ967193.1left_bracketAVIright_bracket
+|                                                                  |     |           +--| (100)
+|                                                                  |     |           |  +--OQ961761.1left_bracketAVIright_bracket
+|                                                                  |     |        +--| (100)
+|                                                                  |     |        |  +--KP417116.1left_bracketAVIright_bracket
+|                                                                  |     |     +--| (99)
+|                                                                  |     |     |  +--KC986316.1left_bracketAVIright_bracket
+|                                                                  |     |  +--| (86)
+|                                                                  |     |  |  |     +--ON374814.1left_bracketAVIright_bracket
+|                                                                  |     |  |  |  +--| (100)
+|                                                                  |     |  |  |  |  +--MG706984.1left_bracketAVIright_bracket
+|                                                                  |     |  |  +--| (99)
+|                                                                  |     |  |     |  +--JN817611.1left_bracketAVIright_bracket
+|                                                                  |     |  |     +--| (100)
+|                                                                  |     |  |        +--KP732577.1left_bracketAVIright_bracket
+|                                                                  |     +--| (76)
+|                                                                  |        +--CY146665.1left_bracketAVIright_bracket
+|                                                               +--| (82)
+|                                                               |  |        +--HM145672.1left_bracketAVIright_bracket
+|                                                               |  |     +--| (100)
+|                                                               |  |     |  |     +--CY109519.1left_bracketAVIright_bracket
+|                                                               |  |     |  |  +--| (100)
+|                                                               |  |     |  |  |  +--CY110663.1left_bracketAVIright_bracket
+|                                                               |  |     |  +--| (100)
+|                                                               |  |     |     +--HM145686.1left_bracketAVIright_bracket
+|                                                               |  |  +--| (100)
+|                                                               |  |  |  |           +--KY402070.1left_bracketAVIright_bracket
+|                                                               |  |  |  |        +--| (100)
+|                                                               |  |  |  |        |  +--MN566025.1left_bracketAVIright_bracket
+|                                                               |  |  |  |     +--| (100)
+|                                                               |  |  |  |     |  +--ON716316.1left_bracketAVIright_bracket
+|                                                               |  |  |  |  +--| (100)
+|                                                               |  |  |  |  |  |  +--MT828575.1left_bracketAVIright_bracket
+|                                                               |  |  |  |  |  +--| (100)
+|                                                               |  |  |  |  |     +--MW108605.1left_bracketAVIright_bracket
+|                                                               |  |  |  +--| (82)
+|                                                               |  |  |     |  +--HM145667.1left_bracketAVIright_bracket
+|                                                               |  |  |     +--| (49)
+|                                                               |  |  |        |  +--MK964972.1left_bracketAVIright_bracket
+|                                                               |  |  |        +--| (100)
+|                                                               |  |  |           +--MK964583.1left_bracketAVIright_bracket
+|                                                               |  +--| (99)
+|                                                               |     +--MN530165.1left_bracketAVIright_bracket
+|                                                            +--| (63)
+|                                                            |  |  +--CY196514.1left_bracketAVIright_bracket
+|                                                            |  +--| (98)
+|                                                            |     +--CY196771.1left_bracketAVIright_bracket
+|                                                         +--| (47)
+|                                                         |  |                 +--CY030966.1left_bracketAVIright_bracket
+|                                                         |  |              +--| (100)
+|                                                         |  |              |  +--CY030950.1left_bracketAVIright_bracket
+|                                                         |  |           +--| (100)
+|                                                         |  |           |  |        +--CY040955.1left_bracketAVIright_bracket
+|                                                         |  |           |  |     +--| (100)
+|                                                         |  |           |  |     |  +--CY030926.1left_bracketAVIright_bracket
+|                                                         |  |           |  |  +--| (94)
+|                                                         |  |           |  |  |  |  +--JN807899.1left_bracketAVIright_bracket
+|                                                         |  |           |  |  |  +--| (100)
+|                                                         |  |           |  |  |     +--LC279793.1left_bracketAVIright_bracket
+|                                                         |  |           |  +--| (100)
+|                                                         |  |           |     +--KC261451.1left_bracketAVIright_bracket
+|                                                         |  |        +--| (100)
+|                                                         |  |        |  |                 +--KU201845.1left_bracketAVIright_bracket
+|                                                         |  |        |  |              +--| (100)
+|                                                         |  |        |  |              |  +--MG965789.1left_bracketAVIright_bracket
+|                                                         |  |        |  |           +--| (100)
+|                                                         |  |        |  |           |  +--KT388561.1left_bracketAVIright_bracket
+|                                                         |  |        |  |        +--| (93)
+|                                                         |  |        |  |        |  |  +--OL372100.1left_bracketAVIright_bracket
+|                                                         |  |        |  |        |  +--| (100)
+|                                                         |  |        |  |        |     +--KY971035.1left_bracketAVIright_bracket
+|                                                         |  |        |  |     +--| (95)
+|                                                         |  |        |  |     |  +--OM373259.1left_bracketAVIright_bracket
+|                                                         |  |        |  |  +--| (94)
+|                                                         |  |        |  |  |  +--MK964487.1left_bracketAVIright_bracket
+|                                                         |  |        |  +--| (82)
+|                                                         |  |        |     |  +--HM145738.1left_bracketAVIright_bracket
+|                                                         |  |        |     +--| (100)
+|                                                         |  |        |        +--HQ014837.1left_bracketAVIright_bracket
+|                                                         |  |     +--| (98)
+|                                                         |  |     |  |  +--MH285289.1left_bracketAVIright_bracket
+|                                                         |  |     |  +--| (100)
+|                                                         |  |     |     +--KP865916.1left_bracketAVIright_bracket
+|                                                         |  |  +--| (99)
+|                                                         |  |  |  |  +--MN988762.1left_bracketAVIright_bracket
+|                                                         |  |  |  +--| (94)
+|                                                         |  |  |     |     +--KX061823.1left_bracketAVIright_bracket
+|                                                         |  |  |     |  +--| (100)
+|                                                         |  |  |     |  |  +--KT589154.1left_bracketAVIright_bracket
+|                                                         |  |  |     +--| (100)
+|                                                         |  |  |        +--KP416916.1left_bracketAVIright_bracket
+|                                                         |  +--| (89)
+|                                                         |     |              +--MW169656.1left_bracketMAMright_bracket
+|                                                         |     |           +--| (100)
+|                                                         |     |           |  +--KU322884.1left_bracketMAMright_bracket
+|                                                         |     |        +--| (100)
+|                                                         |     |        |  +--MN934398.1left_bracketMAMright_bracket
+|                                                         |     |     +--| (98)
+|                                                         |     |     |  |  +--KM028324.1left_bracketMAMright_bracket
+|                                                         |     |     |  +--| (100)
+|                                                         |     |     |     +--MN416351.1left_bracketMAMright_bracket
+|                                                         |     |  +--| (98)
+|                                                         |     |  |  |  +--MZ477664.1left_bracketMAMright_bracket
+|                                                         |     |  |  +--| (100)
+|                                                         |     |  |     +--MT666264.1left_bracketMAMright_bracket
+|                                                         |     +--| (97)
+|                                                         |        +--CY116063.1left_bracketMAMright_bracket
++---------------------------------------------------------| (100)
+|                                                         |                             +--MF613918.1left_bracketAVIright_bracket
+|                                                         |                          +--| (100)
+|                                                         |                          |  +--KY584031.1left_bracketAVIright_bracket
+|                                                         |                       +--| (100)
+|                                                         |                       |  +--MT444223.1left_bracketAVIright_bracket
+|                                                         |                    +--| (100)
+|                                                         |                    |  |  +--MW872184.1left_bracketAVIright_bracket
+|                                                         |                    |  +--| (100)
+|                                                         |                    |     +--OQ964441.1left_bracketAVIright_bracket
+|                                                         |                 +--| (100)
+|                                                         |                 |  |           +--MN988187.1left_bracketAVIright_bracket
+|                                                         |                 |  |        +--| (100)
+|                                                         |                 |  |        |  +--MT421309.1left_bracketAVIright_bracket
+|                                                         |                 |  |     +--| (100)
+|                                                         |                 |  |     |  |  +--MN988442.1left_bracketAVIright_bracket
+|                                                         |                 |  |     |  +--| (100)
+|                                                         |                 |  |     |     |  +--OQ962145.1left_bracketAVIright_bracket
+|                                                         |                 |  |     |     +--| (100)
+|                                                         |                 |  |     |        +--PP755980.1left_bracketMAMright_bracket
+|                                                         |                 |  |  +--| (99)
+|                                                         |                 |  |  |  |     +--MF613741.1left_bracketAVIright_bracket
+|                                                         |                 |  |  |  |  +--| (100)
+|                                                         |                 |  |  |  |  |  +--MG599659.1left_bracketAVIright_bracket
+|                                                         |                 |  |  |  +--| (100)
+|                                                         |                 |  |  |     +--MH932377.2left_bracketAVIright_bracket
+|                                                         |                 |  +--| (100)
+|                                                         |                 |     |  +--KY584017.1left_bracketAVIright_bracket
+|                                                         |                 |     +--| (100)
+|                                                         |                 |        +--MN988355.1left_bracketAVIright_bracket
+|                                                         |              +--| (99)
+|                                                         |              |  +--MH579071.1left_bracketAVIright_bracket
+|                                                         |           +--| (100)
+|                                                         |           |  |        +--OQ964801.1left_bracketAVIright_bracket
+|                                                         |           |  |     +--| (100)
+|                                                         |           |  |     |  +--OQ965769.1left_bracketAVIright_bracket
+|                                                         |           |  |  +--| (100)
+|                                                         |           |  |  |  |     +--OQ960361.1left_bracketAVIright_bracket
+|                                                         |           |  |  |  |  +--| (72)
+|                                                         |           |  |  |  |  |  |  +--OQ959553.1left_bracketAVIright_bracket
+|                                                         |           |  |  |  |  |  +--| (93)
+|                                                         |           |  |  |  |  |     +--OQ965065.1left_bracketAVIright_bracket
+|                                                         |           |  |  |  +--| (100)
+|                                                         |           |  |  |     +--OQ962593.1left_bracketAVIright_bracket
+|                                                         |           |  +--| (100)
+|                                                         |           |     +--MH498696.1left_bracketAVIright_bracket
+|                                                         |        +--| (98)
+|                                                         |        |  |           +--KY550838.1left_bracketAVIright_bracket
+|                                                         |        |  |        +--| (100)
+|                                                         |        |  |        |  +--KY550752.1left_bracketAVIright_bracket
+|                                                         |        |  |     +--| (100)
+|                                                         |        |  |     |  +--MH498795.1left_bracketAVIright_bracket
+|                                                         |        |  |  +--| (100)
+|                                                         |        |  |  |  |  +--MK627840.1left_bracketAVIright_bracket
+|                                                         |        |  |  |  +--| (99)
+|                                                         |        |  |  |     |  +--MZ564889.1left_bracketAVIright_bracket
+|                                                         |        |  |  |     +--| (100)
+|                                                         |        |  |  |        |  +--MZ564977.1left_bracketAVIright_bracket
+|                                                         |        |  |  |        +--| (99)
+|                                                         |        |  |  |           +--MZ565305.1left_bracketAVIright_bracket
+|                                                         |        |  +--| (96)
+|                                                         |        |     +--MH579285.1left_bracketAVIright_bracket
+|                                                         |     +--| (99)
+|                                                         |     |  |                    +--OR730444.1left_bracketMAMright_bracket
+|                                                         |     |  |                 +--| (100)
+|                                                         |     |  |                 |  +--PP577775.1left_bracketMAMright_bracket
+|                                                         |     |  |              +--| (100)
+|                                                         |     |  |              |  |  +--MH922886.1left_bracketMAMright_bracket
+|                                                         |     |  |              |  +--| (100)
+|                                                         |     |  |              |     +--MT233558.1left_bracketMAMright_bracket
+|                                                         |     |  |           +--| (98)
+|                                                         |     |  |           |  +--KX264685.1left_bracketMAMright_bracket
+|                                                         |     |  |        +--| (100)
+|                                                         |     |  |        |  |        +--KY509887.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     +--| (100)
+|                                                         |     |  |        |  |     |  |        +--KX907903.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |  |     +--| (100)
+|                                                         |     |  |        |  |     |  |     |  +--KJ528296.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |  |  +--| (100)
+|                                                         |     |  |        |  |     |  |  |  |  +--KC471470.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |  |  |  +--| (77)
+|                                                         |     |  |        |  |     |  |  |     +--CY131628.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |  +--| (100)
+|                                                         |     |  |        |  |     |     |                 +--MK651337.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |              +--| (100)
+|                                                         |     |  |        |  |     |     |              |  +--OR472746.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |           +--| (100)
+|                                                         |     |  |        |  |     |     |           |  +--MG521054.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |        +--| (100)
+|                                                         |     |  |        |  |     |     |        |  |  +--MK535814.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |        |  +--| (100)
+|                                                         |     |  |        |  |     |     |        |     +--MK109754.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |     +--| (100)
+|                                                         |     |  |        |  |     |     |     |  |  +--MZ665315.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |     |  +--| (100)
+|                                                         |     |  |        |  |     |     |     |     +--OQ695102.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  +--| (99)
+|                                                         |     |  |        |  |     |     |  |  |                    +--MT823504.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |                 +--| (100)
+|                                                         |     |  |        |  |     |     |  |  |                 |  |  +--OQ786442.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |                 |  +--| (99)
+|                                                         |     |  |        |  |     |     |  |  |                 |     +--MN198828.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |              +--| (79)
+|                                                         |     |  |        |  |     |     |  |  |              |  +--MH620507.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |           +--| (100)
+|                                                         |     |  |        |  |     |     |  |  |           |  +--MG784652.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |        +--| (100)
+|                                                         |     |  |        |  |     |     |  |  |        |  +--MH425048.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |     +--| (88)
+|                                                         |     |  |        |  |     |     |  |  |     |  +--MZ460879.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  |  +--| (99)
+|                                                         |     |  |        |  |     |     |  |  |  |  +--MK535422.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     |  |  +--| (85)
+|                                                         |     |  |        |  |     |     |  |     +--MK848558.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |     |     +--| (100)
+|                                                         |     |  |        |  |     |        +--KX631943.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  |  +--| (79)
+|                                                         |     |  |        |  |  |  +--CY086917.1left_bracketMAMright_bracket
+|                                                         |     |  |        |  +--| (79)
+|                                                         |     |  |        |     |  +--KR057308.1left_bracketMAMright_bracket
+|                                                         |     |  |        |     +--| (100)
+|                                                         |     |  |        |        +--CY246072.1left_bracketMAMright_bracket
+|                                                         |     |  |     +--| (100)
+|                                                         |     |  |     |  +--MK651427.1left_bracketMAMright_bracket
+|                                                         |     |  |  +--| (96)
+|                                                         |     |  |  |  |                                                  +--PP398345.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                               +--| (100)
+|                                                         |     |  |  |  |                                               |  +--PP553301.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                            +--| (30)
+|                                                         |     |  |  |  |                                            |  |     +--PP338972.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                            |  |  +--| (100)
+|                                                         |     |  |  |  |                                            |  |  |  +--PP260775.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                            |  +--| (100)
+|                                                         |     |  |  |  |                                            |     +--PP498399.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                         +--| (14)
+|                                                         |     |  |  |  |                                         |  |        +--PP558072.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                         |  |     +--| (28)
+|                                                         |     |  |  |  |                                         |  |     |  +--PP432532.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                         |  |  +--| (45)
+|                                                         |     |  |  |  |                                         |  |  |  +--PP417047.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                         |  +--| (91)
+|                                                         |     |  |  |  |                                         |     +--PP459870.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                      +--| (9)
+|                                                         |     |  |  |  |                                      |  |  +--OQ796022.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                      |  +--| (21)
+|                                                         |     |  |  |  |                                      |     +--PP072709.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                   +--| (63)
+|                                                         |     |  |  |  |                                   |  +--PP072596.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                                +--| (90)
+|                                                         |     |  |  |  |                                |  +--OY282673.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                             +--| (99)
+|                                                         |     |  |  |  |                             |  +--OR166947.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                          +--| (99)
+|                                                         |     |  |  |  |                          |  +--OY979861.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       +--| (99)
+|                                                         |     |  |  |  |                       |  |     +--OQ796973.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |  |  +--| (75)
+|                                                         |     |  |  |  |                       |  |  |  +--PP698969.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |  +--| (100)
+|                                                         |     |  |  |  |                       |     |           +--PP193665.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |     |        +--| (24)
+|                                                         |     |  |  |  |                       |     |        |  +--PP072473.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |     |     +--| (33)
+|                                                         |     |  |  |  |                       |     |     |  |  +--PP399538.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |     |     |  +--| (20)
+|                                                         |     |  |  |  |                       |     |     |     +--PP073114.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |     |  +--| (100)
+|                                                         |     |  |  |  |                       |     |  |  +--PP093627.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |     +--| (100)
+|                                                         |     |  |  |  |                       |        |  +--OR728930.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                       |        +--| (99)
+|                                                         |     |  |  |  |                       |           +--OR439806.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                    +--| (44)
+|                                                         |     |  |  |  |                    |  +--OQ695094.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |                 +--| (34)
+|                                                         |     |  |  |  |                 |  +--MN170143.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |              +--| (99)
+|                                                         |     |  |  |  |              |  +--MK785746.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |           +--| (71)
+|                                                         |     |  |  |  |           |  +--MN169943.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        +--| (100)
+|                                                         |     |  |  |  |        |  |     +--MK502655.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        |  |  +--| (77)
+|                                                         |     |  |  |  |        |  |  |  +--OQ459870.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        |  +--| (67)
+|                                                         |     |  |  |  |        |     |  +--MH156540.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        |     +--| (98)
+|                                                         |     |  |  |  |        |        |  +--MK869074.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        |        +--| (100)
+|                                                         |     |  |  |  |        |           |  +--MK927643.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |        |           +--| (80)
+|                                                         |     |  |  |  |        |              +--MK576961.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |     +--| (100)
+|                                                         |     |  |  |  |     |  +--MT041178.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  |  +--| (100)
+|                                                         |     |  |  |  |  |  +--KR052678.1left_bracketMAMright_bracket
+|                                                         |     |  |  |  +--| (100)
+|                                                         |     |  |  |     |              +--KM028468.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |           +--| (100)
+|                                                         |     |  |  |     |           |  +--KM028700.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |        +--| (10)
+|                                                         |     |  |  |     |        |  |  +--KM029924.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |        |  +--| (50)
+|                                                         |     |  |  |     |        |     +--KC473861.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |     +--| (5)
+|                                                         |     |  |  |     |     |  |        +--KM029140.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |     |  |     +--| (27)
+|                                                         |     |  |  |     |     |  |     |  +--KX264688.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |     |  |  +--| (49)
+|                                                         |     |  |  |     |     |  |  |  |  +--KC780717.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |     |  |  |  +--| (38)
+|                                                         |     |  |  |     |     |  |  |     +--JQ695876.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |     |  +--| (14)
+|                                                         |     |  |  |     |     |     +--KP765853.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     |  +--| (20)
+|                                                         |     |  |  |     |  |  +--KC471366.1left_bracketMAMright_bracket
+|                                                         |     |  |  |     +--| (59)
+|                                                         |     |  |  |        +--CY065291.1left_bracketMAMright_bracket
+|                                                         |     |  +--| (100)
+|                                                         |     |     +--CY159654.1left_bracketMAMright_bracket
+|                                                         |  +--| (95)
+|                                                         |  |  |  +--KM359863.1left_bracketMAMright_bracket
+|                                                         |  |  +--| (100)
+|                                                         |  |     +--CY067275.1left_bracketMAMright_bracket
+|                                                         +--| (76)
+|                                                            |                             +--KU591850.1left_bracketMAMright_bracket
+|                                                            |                          +--| (100)
+|                                                            |                          |  +--MG279269.1left_bracketMAMright_bracket
+|                                                            |                       +--| (99)
+|                                                            |                       |  |                       +--OP954299.1left_bracketMAMright_bracket
+|                                                            |                       |  |                    +--| (99)
+|                                                            |                       |  |                    |  |  +--OP085911.1left_bracketMAMright_bracket
+|                                                            |                       |  |                    |  +--| (38)
+|                                                            |                       |  |                    |     |     +--OP952387.1left_bracketMAMright_bracket
+|                                                            |                       |  |                    |     |  +--| (11)
+|                                                            |                       |  |                    |     |  |  +--OP951745.1left_bracketMAMright_bracket
+|                                                            |                       |  |                    |     +--| (8)
+|                                                            |                       |  |                    |        |  +--OP096952.1left_bracketMAMright_bracket
+|                                                            |                       |  |                    |        +--| (16)
+|                                                            |                       |  |                    |           +--OP959858.1left_bracketMAMright_bracket
+|                                                            |                       |  |                 +--| (100)
+|                                                            |                       |  |                 |  +--OQ240670.1left_bracketMAMright_bracket
+|                                                            |                       |  |              +--| (100)
+|                                                            |                       |  |              |  +--OP096989.1left_bracketMAMright_bracket
+|                                                            |                       |  |           +--| (100)
+|                                                            |                       |  |           |  |  +--MK927689.1left_bracketMAMright_bracket
+|                                                            |                       |  |           |  +--| (100)
+|                                                            |                       |  |           |     +--OQ652859.1left_bracketMAMright_bracket
+|                                                            |                       |  |        +--| (100)
+|                                                            |                       |  |        |  |           +--OP590460.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |        +--| (99)
+|                                                            |                       |  |        |  |        |  |  +--OP590682.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |        |  +--| (99)
+|                                                            |                       |  |        |  |        |     |  +--OR479494.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |        |     +--| (80)
+|                                                            |                       |  |        |  |        |        +--OR483614.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     +--| (100)
+|                                                            |                       |  |        |  |     |  |              +--OQ507027.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  |           +--| (99)
+|                                                            |                       |  |        |  |     |  |           |  +--OR699593.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  |        +--| (77)
+|                                                            |                       |  |        |  |     |  |        |  +--OQ368242.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  |     +--| (48)
+|                                                            |                       |  |        |  |     |  |     |  |  +--OQ917451.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  |     |  +--| (50)
+|                                                            |                       |  |        |  |     |  |     |     +--OQ796513.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  |  +--| (100)
+|                                                            |                       |  |        |  |     |  |  |  +--OQ754651.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |  +--| (99)
+|                                                            |                       |  |        |  |     |     |              +--PP508619.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     |           +--| (45)
+|                                                            |                       |  |        |  |     |     |           |  |  +--PP416341.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     |           |  +--| (51)
+|                                                            |                       |  |        |  |     |     |           |     +--PP522580.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     |        +--| (100)
+|                                                            |                       |  |        |  |     |     |        |  +--PP509446.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     |     +--| (34)
+|                                                            |                       |  |        |  |     |     |     |  +--PP557881.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     |  +--| (45)
+|                                                            |                       |  |        |  |     |     |  |  +--PP193407.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |     |     +--| (100)
+|                                                            |                       |  |        |  |     |        +--PP508659.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |  +--| (99)
+|                                                            |                       |  |        |  |  |  |  +--MK743385.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  |  |  +--| (100)
+|                                                            |                       |  |        |  |  |     +--MK576719.1left_bracketMAMright_bracket
+|                                                            |                       |  |        |  +--| (100)
+|                                                            |                       |  |        |     +--MN573262.1left_bracketMAMright_bracket
+|                                                            |                       |  |     +--| (100)
+|                                                            |                       |  |     |  +--MG198917.1left_bracketMAMright_bracket
+|                                                            |                       |  |  +--| (28)
+|                                                            |                       |  |  |  |     +--MK960355.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  +--| (100)
+|                                                            |                       |  |  |  |  |  |  +--MK869122.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  |  +--| (99)
+|                                                            |                       |  |  |  |  |     |        +--MK839850.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  |     |     +--| (100)
+|                                                            |                       |  |  |  |  |     |     |  |  +--MN608558.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  |     |     |  +--| (75)
+|                                                            |                       |  |  |  |  |     |     |     +--MN081489.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  |     |  +--| (76)
+|                                                            |                       |  |  |  |  |     |  |  +--MK960531.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  |  |     +--| (100)
+|                                                            |                       |  |  |  |  |        +--MN873859.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |  +--| (99)
+|                                                            |                       |  |  |     |  +--MG914218.1left_bracketMAMright_bracket
+|                                                            |                       |  |  |     +--| (71)
+|                                                            |                       |  |  |        +--KU589995.1left_bracketMAMright_bracket
+|                                                            |                       |  +--| (36)
+|                                                            |                       |     |  +--KU590005.1left_bracketMAMright_bracket
+|                                                            |                       |     +--| (100)
+|                                                            |                       |        +--KT843720.1left_bracketMAMright_bracket
+|                                                            |                    +--| (78)
+|                                                            |                    |  +--KT841469.1left_bracketMAMright_bracket
+|                                                            |                 +--| (100)
+|                                                            |                 |  +--KY089204.1left_bracketMAMright_bracket
+|                                                            |              +--| (75)
+|                                                            |              |  +--MK640856.1left_bracketMAMright_bracket
+|                                                            |           +--| (99)
+|                                                            |           |  +--KT840917.1left_bracketMAMright_bracket
+|                                                            |        +--| (97)
+|                                                            |        |  |     +--PP658633.1left_bracketMAMright_bracket
+|                                                            |        |  |  +--| (100)
+|                                                            |        |  |  |  +--PP658617.1left_bracketMAMright_bracket
+|                                                            |        |  +--| (99)
+|                                                            |        |     +--PP658635.1left_bracketMAMright_bracket
+|                                                            |     +--| (100)
+|                                                            |     |  +--KT838108.1left_bracketMAMright_bracket
+|                                                            |  +--| (100)
+|                                                            |  |  +--CY116312.1left_bracketMAMright_bracket
+|                                                            +--| (100)
+|                                                               +--CY013564.1left_bracketMAMright_bracket
+|
++---------------------------------------------------------KJ018190.1left_bracketAVIright_bracket
+
+
+Consensus tree in newick format: 
+
+(NC_007362:9.9999989787,(((((((((((((((((KP413270.1left_bracketAVIright_bracket:0.0000029567,KP286534.1left_bracketAVIright_bracket:0.0004852501)100:0.0014592401,KP415953.1left_bracketAVIright_bracket:0.0009718935)75:0.0000029567,KP416362.1left_bracketAVIright_bracket:0.0034186649)100:0.0122392947,KF260894.1left_bracketAVIright_bracket:0.0071467998)99:0.0002308176,((KF260875.1left_bracketAVIright_bracket:0.0000029567,KF260874.1left_bracketAVIright_bracket:0.0004852866)100:0.0034709097,KX598523.1left_bracketAVIright_bracket:0.0049479851)100:0.0004403781)100:0.0019558306,KP416194.1left_bracketAVIright_bracket:0.0115206134)99:0.0013852696,MF113125.1left_bracketAVIright_bracket:0.0030237282)100:0.0030190768,((((((((((((MW105029.1left_bracketAVIright_bracket:0.0004850146,MW108413.1left_bracketAVIright_bracket:0.0000029567)100:0.0053916142,(MW965659.1left_bracketAVIright_bracket:0.0080260745,(KY751295.1left_bracketAVIright_bracket:0.0013281958,OR497659.1left_bracketAVIright_bracket:0.0239872107)100:0.0056762890)77:0.0003837588)74:0.0000029567,(MK446827.1left_bracketAVIright_bracket:0.0119515217,((MW106709.1left_bracketAVIright_bracket:0.0027737035,MW094629.1left_bracketAVIright_bracket:0.0026849150)90:0.0029128809,MW095026.1left_bracketAVIright_bracket:0.0097979217)100:0.0032147875)68:0.0000029612)100:0.0019533990,(MW106053.1left_bracketAVIright_bracket:0.0009128967,MW105877.1left_bracketAVIright_bracket:0.0085023919)100:0.0070124164)99:0.0004817266,MF629978.1left_bracketAVIright_bracket:0.0029330914)98:0.0035163198,(MK446813.1left_bracketAVIright_bracket:0.0000029567,MK446814.1left_bracketAVIright_bracket:0.0004857637)100:0.0091586174)71:0.0004126298,(MK446789.1left_bracketAVIright_bracket:0.0071336627,KX598539.1left_bracketAVIright_bracket:0.0055068596)71:0.0003797878)59:0.0000029567,(((((OQ293818.1left_bracketAVIright_bracket:0.0009712498,OQ293162.1left_bracketAVIright_bracket:0.0000029567)100:0.0083755531,((OQ826091.1left_bracketAVIright_bracket:0.0070345016,OQ293490.1left_bracketAVIright_bracket:0.0043769093)100:0.0080901910,(OQ292594.1left_bracketAVIright_bracket:0.0009716365,OQ292586.1left_bracketAVIright_bracket:0.0004881830)100:0.0119742241)87:0.0000024733)100:0.0156494296,MW106317.1left_bracketAVIright_bracket:0.0130601235)100:0.0004690260,((MW105005.1left_bracketAVIright_bracket:0.0056251593,PP091191.1left_bracketAVIright_bracket:0.0338528171)100:0.0017606831,MN647475.1left_bracketAVIright_bracket:0.0019496434)100:0.0004912869)100:0.0019716639,KP287499.1left_bracketAVIright_bracket:0.0039394002)100:0.0004638810)100:0.0034368548,KP865883.1left_bracketAVIright_bracket:0.0044630256)100:0.0039229199,KT449712.1left_bracketAVIright_bracket:0.0117192936)100:0.0057409714,((((KP413904.1left_bracketAVIright_bracket:0.0009707183,KP413834.1left_bracketAVIright_bracket:0.0014566103)80:0.0000029567,KP417655.1left_bracketAVIright_bracket:0.0039032359)100:0.0004785717,MF630210.1left_bracketAVIright_bracket:0.0014641127)100:0.0034983666,(((MH209304.1left_bracketAVIright_bracket:0.0112668762,MW094458.1left_bracketAVIright_bracket:0.0129783125)100:0.0023266563,(MW265019.1left_bracketAVIright_bracket:0.0017325369,(KP417875.1left_bracketAVIright_bracket:0.0000029567,KP418433.1left_bracketAVIright_bracket:0.0019476636)100:0.0021729362)95:0.0024547462)100:0.0031674442,KF357825.1left_bracketAVIright_bracket:0.0019619271)100:0.0009277910)100:0.0163390137)98:0.0013437486,(JX312549.1left_bracketAVIright_bracket:0.0027904648,(KF260903.1left_bracketAVIright_bracket:0.0035551624,KP285066.1left_bracketAVIright_bracket:0.0084139430)98:0.0065937965)98:0.0036669366)87:0.0004363838)98:0.0139293467,JN869514.1left_bracketAVIright_bracket:0.0148881502)97:0.0020509714,((MF112278.1left_bracketAVIright_bracket:0.0038802290,((MF112277.1left_bracketAVIright_bracket:0.0009803624,MF112339.1left_bracketAVIright_bracket:0.0049207847)100:0.0004689777,MF112272.1left_bracketAVIright_bracket:0.0014740906)100:0.0040227970)100:0.0184383365,KJ426318.1left_bracketAVIright_bracket:0.0018770508)100:0.0043497845)97:0.0094588727,(KP285370.1left_bracketAVIright_bracket:0.0266449058,CY109303.1left_bracketAVIright_bracket:0.0096656529)64:0.0014337012)96:0.0041041243,JF965021.1left_bracketAVIright_bracket:0.0363479805)95:0.0078359470,(((((((((OQ794132.1left_bracketAVIright_bracket:0.0019524553,OQ794100.1left_bracketAVIright_bracket:0.0009757108)100:0.0034662640,OM333407.1left_bracketAVIright_bracket:0.0024490911)100:0.0052756031,MG891832.1left_bracketAVIright_bracket:0.0134746155)100:0.0095551316,MF973222.1left_bracketAVIright_bracket:0.0159486371)100:0.0054397551,(MW412625.1left_bracketAVIright_bracket:0.0116013090,OL370403.1left_bracketAVIright_bracket:0.0082221248)100:0.0063507178)100:0.0123519877,CY146569.1left_bracketAVIright_bracket:0.0198099506)100:0.0024922283,(MN171439.1left_bracketAVIright_bracket:0.0145611908,CY185346.1left_bracketAVIright_bracket:0.0085432586)100:0.0053966330)100:0.0143138613,MW132957.1left_bracketAVIright_bracket:0.0321898569)99:0.0089831088,(((((OQ967193.1left_bracketAVIright_bracket:0.0014558744,OQ961761.1left_bracketAVIright_bracket:0.0000029567)100:0.0285520896,KP417116.1left_bracketAVIright_bracket:0.0082833853)100:0.0226331686,KC986316.1left_bracketAVIright_bracket:0.0202453671)99:0.0159202812,((ON374814.1left_bracketAVIright_bracket:0.0041121313,MG706984.1left_bracketAVIright_bracket:0.0063161824)100:0.0360712666,(JN817611.1left_bracketAVIright_bracket:0.0109590972,KP732577.1left_bracketAVIright_bracket:0.0226062744)100:0.0151585828)99:0.0033899609)86:0.0019733946,CY146665.1left_bracketAVIright_bracket:0.0345084070)76:0.0031531660)63:0.0043486973)88:0.0362757879,(((HM145672.1left_bracketAVIright_bracket:0.0037658473,((CY109519.1left_bracketAVIright_bracket:0.0034777040,CY110663.1left_bracketAVIright_bracket:0.0044927235)100:0.0044849015,HM145686.1left_bracketAVIright_bracket:0.0082177991)100:0.0022702517)100:0.0183376218,((((KY402070.1left_bracketAVIright_bracket:0.0040056239,MN566025.1left_bracketAVIright_bracket:0.0009309691)100:0.0089560940,ON716316.1left_bracketAVIright_bracket:0.0249454020)100:0.0034638411,(MT828575.1left_bracketAVIright_bracket:0.0078365089,MW108605.1left_bracketAVIright_bracket:0.0093903663)100:0.0014127881)100:0.0369487528,(HM145667.1left_bracketAVIright_bracket:0.0219054412,(MK964972.1left_bracketAVIright_bracket:0.0102709280,MK964583.1left_bracketAVIright_bracket:0.0060392974)100:0.0223659743)49:0.0007960122)82:0.0054598287)100:0.0338531096,MN530165.1left_bracketAVIright_bracket:0.0673496893)99:0.0263636171)82:0.0227548677,(CY196514.1left_bracketAVIright_bracket:0.0037438745,CY196771.1left_bracketAVIright_bracket:0.0093452752)98:0.1154875431)63:0.0170412330,((((((CY030966.1left_bracketAVIright_bracket:0.0000029567,CY030950.1left_bracketAVIright_bracket:0.0004839056)100:0.0195903249,(((CY040955.1left_bracketAVIright_bracket:0.0044122735,CY030926.1left_bracketAVIright_bracket:0.0019708541)100:0.0004527334,(JN807899.1left_bracketAVIright_bracket:0.0201286146,LC279793.1left_bracketAVIright_bracket:0.0477106111)100:0.0056659246)94:0.0004358454,KC261451.1left_bracketAVIright_bracket:0.0193832963)100:0.0134348643)100:0.0130634514,((((((KU201845.1left_bracketAVIright_bracket:0.0004891197,MG965789.1left_bracketAVIright_bracket:0.0019488331)100:0.0020751697,KT388561.1left_bracketAVIright_bracket:0.0023419637)100:0.0425778903,(OL372100.1left_bracketAVIright_bracket:0.0305351840,KY971035.1left_bracketAVIright_bracket:0.0051577622)100:0.0030562943)93:0.0007594727,OM373259.1left_bracketAVIright_bracket:0.0132635628)95:0.0016726253,MK964487.1left_bracketAVIright_bracket:0.0317004809)94:0.0003697045,(HM145738.1left_bracketAVIright_bracket:0.0054039710,HQ014837.1left_bracketAVIright_bracket:0.0101999438)100:0.0149971471)82:0.0001663538)100:0.0090629338,(MH285289.1left_bracketAVIright_bracket:0.0846771565,KP865916.1left_bracketAVIright_bracket:0.0274537699)100:0.0208836800)98:0.0065865356,(MN988762.1left_bracketAVIright_bracket:0.0849023724,((KX061823.1left_bracketAVIright_bracket:0.0062990768,KT589154.1left_bracketAVIright_bracket:0.0215244215)100:0.0094259062,KP416916.1left_bracketAVIright_bracket:0.0253298244)100:0.0395458376)94:0.0064097445)99:0.0261702665,(((((MW169656.1left_bracketMAMright_bracket:0.0383665668,KU322884.1left_bracketMAMright_bracket:0.0237425576)100:0.0101504779,MN934398.1left_bracketMAMright_bracket:0.0388281829)100:0.0273813716,(KM028324.1left_bracketMAMright_bracket:0.0334867900,MN416351.1left_bracketMAMright_bracket:0.0151539234)100:0.0197221041)98:0.0086585715,(MZ477664.1left_bracketMAMright_bracket:0.0429015834,MT666264.1left_bracketMAMright_bracket:0.0340958261)100:0.0305664882)98:0.0029002630,CY116063.1left_bracketMAMright_bracket:0.0288585665)97:0.0548875836)89:0.0151659361)47:0.0633997613,((((((((((MF613918.1left_bracketAVIright_bracket:0.0070359882,KY584031.1left_bracketAVIright_bracket:0.0013133202)100:0.0098960808,MT444223.1left_bracketAVIright_bracket:0.0146960322)100:0.0020869297,(MW872184.1left_bracketAVIright_bracket:0.0059460309,OQ964441.1left_bracketAVIright_bracket:0.0029155847)100:0.0085182742)100:0.0123197288,((((MN988187.1left_bracketAVIright_bracket:0.0116171354,MT421309.1left_bracketAVIright_bracket:0.0112487128)100:0.0035070085,(MN988442.1left_bracketAVIright_bracket:0.0123075409,(OQ962145.1left_bracketAVIright_bracket:0.0032446423,PP755980.1left_bracketMAMright_bracket:0.0081749192)100:0.0099788452)100:0.0054294726)100:0.0074477579,((MF613741.1left_bracketAVIright_bracket:0.0009662964,MG599659.1left_bracketAVIright_bracket:0.0000029567)100:0.0075267474,MH932377.2left_bracketAVIright_bracket:0.0028805544)100:0.0207950734)99:0.0008562350,(KY584017.1left_bracketAVIright_bracket:0.0108530165,MN988355.1left_bracketAVIright_bracket:0.0146357752)100:0.0068010233)100:0.0032533704)100:0.0188943315,MH579071.1left_bracketAVIright_bracket:0.0258945983)99:0.0023040975,(((OQ964801.1left_bracketAVIright_bracket:0.0009348369,OQ965769.1left_bracketAVIright_bracket:0.0010010153)100:0.0132239543,((OQ960361.1left_bracketAVIright_bracket:0.0009658864,(OQ959553.1left_bracketAVIright_bracket:0.0000029567,OQ965065.1left_bracketAVIright_bracket:0.0019359844)93:0.0004814509)72:0.0000029567,OQ962593.1left_bracketAVIright_bracket:0.0014500188)100:0.0168344811)100:0.0097300520,MH498696.1left_bracketAVIright_bracket:0.0250831804)100:0.0038547703)100:0.0181257960,((((KY550838.1left_bracketAVIright_bracket:0.0019330794,KY550752.1left_bracketAVIright_bracket:0.0000029612)100:0.0156832427,MH498795.1left_bracketAVIright_bracket:0.0324092596)100:0.0145879298,(MK627840.1left_bracketAVIright_bracket:0.0261098492,(MZ564889.1left_bracketAVIright_bracket:0.0192032835,(MZ564977.1left_bracketAVIright_bracket:0.0249232034,MZ565305.1left_bracketAVIright_bracket:0.0195154461)99:0.0071536359)100:0.0354791368)99:0.0040683913)100:0.0202923323,MH579285.1left_bracketAVIright_bracket:0.0281840741)96:0.0018310442)98:0.0248544845,(((((((OR730444.1left_bracketMAMright_bracket:0.0186667573,PP577775.1left_bracketMAMright_bracket:0.0244846485)100:0.0029950120,(MH922886.1left_bracketMAMright_bracket:0.0110918893,MT233558.1left_bracketMAMright_bracket:0.0105732628)100:0.0075029491)100:0.0130039638,KX264685.1left_bracketMAMright_bracket:0.0077536778)98:0.0062748535,(((KY509887.1left_bracketMAMright_bracket:0.0310983235,(((KX907903.1left_bracketMAMright_bracket:0.0039381196,KJ528296.1left_bracketMAMright_bracket:0.0004713710)100:0.0019552844,(KC471470.1left_bracketMAMright_bracket:0.0009696631,CY131628.1left_bracketMAMright_bracket:0.0014539289)77:0.0000029567)100:0.0062836702,((((((MK651337.1left_bracketMAMright_bracket:0.0019462754,OR472746.1left_bracketMAMright_bracket:0.0151178602)100:0.0029990857,MG521054.1left_bracketMAMright_bracket:0.0019424706)100:0.0004902506,(MK535814.1left_bracketMAMright_bracket:0.0004825567,MK109754.1left_bracketMAMright_bracket:0.0000029567)100:0.0004812620)100:0.0035976886,(MZ665315.1left_bracketMAMright_bracket:0.0095177505,OQ695102.1left_bracketMAMright_bracket:0.0028843070)100:0.0053673005)100:0.0053175982,(((((((MT823504.1left_bracketMAMright_bracket:0.0053572142,(OQ786442.1left_bracketMAMright_bracket:0.0140868811,MN198828.1left_bracketMAMright_bracket:0.0035445440)99:0.0003665930)100:0.0010083139,MH620507.1left_bracketMAMright_bracket:0.0009666876)79:0.0000029567,MG784652.1left_bracketMAMright_bracket:0.0004829080)100:0.0025685571,MH425048.1left_bracketMAMright_bracket:0.0044241421)100:0.0055966501,MZ460879.1left_bracketMAMright_bracket:0.0189529489)88:0.0003060194,MK535422.1left_bracketMAMright_bracket:0.0052633287)99:0.0009970462,MK848558.1left_bracketMAMright_bracket:0.0151232885)85:0.0000024733)99:0.0018791049,KX631943.1left_bracketMAMright_bracket:0.0127370564)100:0.0078116428)100:0.0086184946)100:0.0114942191,CY086917.1left_bracketMAMright_bracket:0.0169710042)79:0.0010775227,(KR057308.1left_bracketMAMright_bracket:0.0169440342,CY246072.1left_bracketMAMright_bracket:0.0219839453)100:0.0065701502)79:0.0024095115)100:0.0141297608,MK651427.1left_bracketMAMright_bracket:0.0044034895)100:0.0005201288,(((((((((((((((((PP398345.1left_bracketMAMright_bracket:0.0000029567,PP553301.1left_bracketMAMright_bracket:0.0004853572)100:0.0044009205,((PP338972.1left_bracketMAMright_bracket:0.0009717622,PP260775.1left_bracketMAMright_bracket:0.0009707823)100:0.0004865856,PP498399.1left_bracketMAMright_bracket:0.0004841302)100:0.0034167848)30:0.0000029567,(((PP558072.1left_bracketMAMright_bracket:0.0019463597,PP432532.1left_bracketMAMright_bracket:0.0024335878)28:0.0000029567,PP417047.1left_bracketMAMright_bracket:0.0009708400)45:0.0000029567,PP459870.1left_bracketMAMright_bracket:0.0034193745)91:0.0004838542)14:0.0000029567,(OQ796022.1left_bracketMAMright_bracket:0.0009706567,PP072709.1left_bracketMAMright_bracket:0.0034167943)21:0.0000029567)9:0.0000029567,PP072596.1left_bracketMAMright_bracket:0.0024354491)63:0.0004440978,OY282673.1left_bracketMAMright_bracket:0.0020543278)90:0.0000352344,OR166947.1left_bracketMAMright_bracket:0.0024430282)99:0.0027564015,OY979861.1left_bracketMAMright_bracket:0.0073831245)99:0.0057083659,((OQ796973.1left_bracketMAMright_bracket:0.0058881004,PP698969.1left_bracketMAMright_bracket:0.0053897386)75:0.0000029567,((((PP193665.1left_bracketMAMright_bracket:0.0004849232,PP072473.1left_bracketMAMright_bracket:0.0014595810)24:0.0000029567,(PP399538.1left_bracketMAMright_bracket:0.0009717194,PP073114.1left_bracketMAMright_bracket:0.0009713764)20:0.0000029567)33:0.0000029567,PP093627.1left_bracketMAMright_bracket:0.0034322875)100:0.0024574091,(OR728930.1left_bracketMAMright_bracket:0.0029370012,OR439806.1left_bracketMAMright_bracket:0.0009755088)99:0.0009595322)100:0.0029441425)100:0.0014582046)99:0.0024543821,OQ695094.1left_bracketMAMright_bracket:0.0034141903)44:0.0000029567,MN170143.1left_bracketMAMright_bracket:0.0009699161)34:0.0000029567,MK785746.1left_bracketMAMright_bracket:0.0009699547)99:0.0009855120,MN169943.1left_bracketMAMright_bracket:0.0054025998)71:0.0004712689,((MK502655.1left_bracketMAMright_bracket:0.0029944370,OQ459870.1left_bracketMAMright_bracket:0.0089729289)77:0.0004168466,(MH156540.1left_bracketMAMright_bracket:0.0034507802,(MK869074.1left_bracketMAMright_bracket:0.0024376451,(MK927643.1left_bracketMAMright_bracket:0.0004833012,MK576961.1left_bracketMAMright_bracket:0.0000029567)80:0.0000029567)100:0.0029533783)98:0.0004566296)67:0.0000029567)100:0.0040135360,MT041178.1left_bracketMAMright_bracket:0.0059369146)100:0.0008796815,KR052678.1left_bracketMAMright_bracket:0.0015243869)100:0.0127593769,(((((KM028468.1left_bracketMAMright_bracket:0.0034387343,KM028700.1left_bracketMAMright_bracket:0.0019533749)100:0.0039418530,(KM029924.1left_bracketMAMright_bracket:0.0109209668,KC473861.1left_bracketMAMright_bracket:0.0000024733)50:0.0009701665)10:0.0000024733,(((KM029140.1left_bracketMAMright_bracket:0.0058875379,KX264688.1left_bracketMAMright_bracket:0.0139725791)27:0.0000029567,(KC780717.1left_bracketMAMright_bracket:0.0014568297,JQ695876.1left_bracketMAMright_bracket:0.0034144976)38:0.0000029567)49:0.0004837110,KP765853.1left_bracketMAMright_bracket:0.0039051665)14:0.0000029567)5:0.0000029567,KC471366.1left_bracketMAMright_bracket:0.0068804290)20:0.0000029567,CY065291.1left_bracketMAMright_bracket:0.0014558256)59:0.0023477050)100:0.0256147342)96:0.0033081303,CY159654.1left_bracketMAMright_bracket:0.0165126958)100:0.0475249163)99:0.0464992541,(KM359863.1left_bracketMAMright_bracket:0.0146549669,CY067275.1left_bracketMAMright_bracket:0.0000023709)100:0.0980956162)95:0.0122344254,((((((((((KU591850.1left_bracketMAMright_bracket:0.0004706346,MG279269.1left_bracketMAMright_bracket:0.0044717684)100:0.0019861524,((((((((OP954299.1left_bracketMAMright_bracket:0.0014676976,(OP085911.1left_bracketMAMright_bracket:0.0009779913,((OP952387.1left_bracketMAMright_bracket:0.0000029567,OP951745.1left_bracketMAMright_bracket:0.0004886129)11:0.0000029567,(OP096952.1left_bracketMAMright_bracket:0.0004886145,OP959858.1left_bracketMAMright_bracket:0.0009782257)16:0.0000029567)8:0.0000029567)38:0.0000029567)99:0.0009739073,OQ240670.1left_bracketMAMright_bracket:0.0049361088)100:0.0005010578,OP096989.1left_bracketMAMright_bracket:0.0024489332)100:0.0039575394,(MK927689.1left_bracketMAMright_bracket:0.0024630839,OQ652859.1left_bracketMAMright_bracket:0.0019731636)100:0.0019644293)100:0.0014929365,((((OP590460.1left_bracketMAMright_bracket:0.0004882508,(OP590682.1left_bracketMAMright_bracket:0.0000029567,(OR479494.1left_bracketMAMright_bracket:0.0009763015,OR483614.1left_bracketMAMright_bracket:0.0009781721)80:0.0000029567)99:0.0004882113)99:0.0015090353,(((((OQ507027.1left_bracketMAMright_bracket:0.0014666738,OR699593.1left_bracketMAMright_bracket:0.0014709389)99:0.0009811586,OQ368242.1left_bracketMAMright_bracket:0.0004871019)77:0.0004893787,(OQ917451.1left_bracketMAMright_bracket:0.0009774653,OQ796513.1left_bracketMAMright_bracket:0.0009774268)50:0.0000029567)48:0.0000029567,OQ754651.1left_bracketMAMright_bracket:0.0019572768)100:0.0019676240,(((((PP508619.1left_bracketMAMright_bracket:0.0000029567,(PP416341.1left_bracketMAMright_bracket:0.0009770851,PP522580.1left_bracketMAMright_bracket:0.0004878517)51:0.0000029567)45:0.0000029567,PP509446.1left_bracketMAMright_bracket:0.0009784314)100:0.0004878433,PP557881.1left_bracketMAMright_bracket:0.0009788005)34:0.0000029567,PP193407.1left_bracketMAMright_bracket:0.0004881746)45:0.0000029567,PP508659.1left_bracketMAMright_bracket:0.0009771561)100:0.0019656993)99:0.0004469714)100:0.0106188440,(MK743385.1left_bracketMAMright_bracket:0.0019628157,MK576719.1left_bracketMAMright_bracket:0.0049946996)100:0.0020258778)99:0.0004407809,MN573262.1left_bracketMAMright_bracket:0.0019630511)100:0.0004811174)100:0.0024688428,MG198917.1left_bracketMAMright_bracket:0.0014784678)100:0.0019675411,((MK960355.1left_bracketMAMright_bracket:0.0039868478,(MK869122.1left_bracketMAMright_bracket:0.0019711937,(((MK839850.1left_bracketMAMright_bracket:0.0000029567,(MN608558.1left_bracketMAMright_bracket:0.0019650804,MN081489.1left_bracketMAMright_bracket:0.0009793965)75:0.0000029567)100:0.0004892325,MK960531.1left_bracketMAMright_bracket:0.0004902332)76:0.0000029567,MN873859.1left_bracketMAMright_bracket:0.0009796133)100:0.0009813731)99:0.0014481328)100:0.0045264299,(MG914218.1left_bracketMAMright_bracket:0.0039466045,KU589995.1left_bracketMAMright_bracket:0.0014697980)71:0.0000029567)99:0.0009793797)28:0.0000029567,(KU590005.1left_bracketMAMright_bracket:0.0014702845,KT843720.1left_bracketMAMright_bracket:0.0000029567)100:0.0004892274)36:0.0000029567)99:0.0004891336,KT841469.1left_bracketMAMright_bracket:0.0024528210)78:0.0000029567,KY089204.1left_bracketMAMright_bracket:0.0004891018)100:0.0029498991,MK640856.1left_bracketMAMright_bracket:0.0039419459)75:0.0000029567,KT840917.1left_bracketMAMright_bracket:0.0059407714)99:0.0014655246,((PP658633.1left_bracketMAMright_bracket:0.0000029567,PP658617.1left_bracketMAMright_bracket:0.0004889078)100:0.0004869167,PP658635.1left_bracketMAMright_bracket:0.0009858218)99:0.0014872280)97:0.0064185492,KT838108.1left_bracketMAMright_bracket:0.0068382177)100:0.0479266208,CY116312.1left_bracketMAMright_bracket:0.0447224062)100:0.0540153661,CY013564.1left_bracketMAMright_bracket:0.0825222891)100:0.0618215136)76:0.0170950148)100:9.9999983427,KJ018190.1left_bracketAVIright_bracket:9.9999987646);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t results_aves_mammal_150/phylogenetic_tree.treefile -m "GTR{1.54285,9.49684,0.827525,0.0808734,14.2471}+F{0.344625,0.177628,0.261697,0.21605}+G4{0.356421}" --length 1995
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s results_aves_mammal_150/modified_sequences.fasta --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s results_aves_mammal_150/modified_sequences.fasta --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue Jun 18 06:44:15 2024
+Total CPU time used: 992.02932 seconds (0h:16m:32s)
+Total wall-clock time used: 174.882097 seconds (0h:2m:54s)
+
