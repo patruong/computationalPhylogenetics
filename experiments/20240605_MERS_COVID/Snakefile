@@ -1,24 +1,38 @@
 import os
 
-output_dir = "results"
-input_fastas = ["data/H5N1_cattle_50_seqlen_2280.fasta", "data/H5N1_avian_50_seqlen_2280.fasta"]
-reference_fasta = "data/H5N1_reference.fasta"
 
+##########
+# Params #
+##########
+
+
+output_dir = "results_aves_mammal_150"
+input_fastas = ["data/H5N1_aves_150_2280.fasta", "data/H5N1_mammal_150_2280.fasta"]
+#reference_fasta = "data/H5N1_reference.fasta"
+#sample_to_tag = {
+#    "H5N1_aves_150_2280": "[AVIAN]",
+#    "H5N1_mammal_150_2280": "[MAMMAL]",
+#    "H5N1_reference" : "",
+#}
 sample_to_tag = {
-    "H5N1_cattle_50_seqlen_2280": "[CATTLE]",
-    "H5N1_avian_50_seqlen_2280": "[AVIAN]",
-    "H5N1_reference" : "",
+    "H5N1_aves_150_2280": "[AVIAN]",
+    "H5N1_mammal_150_2280": "[MAMMAL]",
 }
 
-samples = ["H5N1_reference"] + [os.path.basename(fasta).split(".")[0] for fasta in input_fastas]
 
+#############
+# Snakemake #
+#############
+
+#samples = ["H5N1_reference"] + [os.path.basename(fasta).split(".")[0] for fasta in input_fastas]
+samples = [os.path.basename(fasta).split(".")[0] for fasta in input_fastas]
 cleaned_fastas = expand(os.path.join(output_dir, "{sample}_cleaned.fasta"), sample=samples)
 tagged_fastas = expand(os.path.join(output_dir, "{sample}_tagged.fasta"), sample=samples)
-
 rule all:
     input:
         tree = os.path.join(output_dir, "result.newick"),
-        fasta = os.path.join(output_dir, "result.fasta")
+        fasta = os.path.join(output_dir, "result.fasta"),
+        analysis_results = os.path.join(output_dir, "difFUBAR/results", "runtime.txt")
 
 rule process_fasta:
     message:
@@ -61,6 +75,20 @@ rule concatenate_fastas:
     shell:
         "cat {input} > {output.concatenated}"
 
+rule find_longest_ORF:
+    message:
+        """
+        Find the longest ORF in fasta.
+        """
+    input:
+        input = rules.concatenate_fastas.output
+    output:
+        output = os.path.join(output_dir, "concatenated_sequences_longest_ORF.fasta")
+    shell:
+        """
+        python find_longest_ORF.py {input} {output}
+        """
+
 
 rule align_fastas:
     message:
@@ -68,7 +96,7 @@ rule align_fastas:
         Aligning concatenated fasta files.
         """
     input:
-        concatenated = os.path.join(output_dir, "concatenated_sequences.fasta")
+        concatenated = rules.find_longest_ORF.output
     output:
         aligned = os.path.join(output_dir, "aligned_sequences.clw")
     shell:
@@ -120,7 +148,7 @@ rule build_phylogenetic_tree:
         log = os.path.join(output_dir, "phylogenetic_tree.log")
     shell:
         """
-        iqtree2 -s {input.removed_duplicated} -nt AUTO -m TEST -bb 1000 -alrt 1000 -pre {params.prefix}
+        iqtree2 -s {input.removed_duplicated} -T AUTO -nt AUTO -m TEST -bb 1000 -alrt 1000 -pre {params.prefix}
         """
 
 rule post_processing_strings:
@@ -132,7 +160,7 @@ rule post_processing_strings:
         fasta = rules.tmp_modify_brackets_for_iqtree2.output.tmp,
         tree = rules.build_phylogenetic_tree.output.treefile
     output:
-        fasta_results = os.path.join(output_dir, "result.fasta"),
+        fasta_results = os.path.join(output_dir, "result_unadj.fasta"),
         tree_results = os.path.join(output_dir, "result.newick")
     shell:
         """
@@ -140,3 +168,36 @@ rule post_processing_strings:
         sed 's/left_bracket/{{/g; s/right_bracket/}}/g' {input.fasta} | sed 's/{{[^}}]*}}//g' > {output.fasta_results}
         """
 
+rule adjust_fasta_result_make_divisble_by_three:
+    message:
+        """
+        Prune fasta sequence so they are divisble by three by removing characters from end.
+        """
+    input:
+        input = rules.post_processing_strings.output.fasta_results
+    output:
+        output = os.path.join(output_dir, "result.fasta"),
+    shell:
+        """
+        python adjust_sequence_to_divisible_by_3.py {input.input} {output.output}
+        """
+
+rule run_difFUBAR:
+    message:
+        """
+        Running difFUBAR analysis.
+        """
+    input:
+        fasta = rules.adjust_fasta_result_make_divisble_by_three.output,
+        tree = rules.post_processing_strings.output.tree_results
+    params:
+        analysis_name = os.path.join(output_dir, "difFUBAR/results"),
+        iters = 2500,
+        verbosity = 1,
+        pos_thresh = 0.95
+    output:
+        analysis_results = os.path.join(output_dir, "difFUBAR/results", "runtime.txt")
+    shell:
+        """
+        julia difFUBAR.jl --analysis_name {params.analysis_name} --fasta_file {input.fasta} --newick_file {input.tree} --iters {params.iters} --verbosity {params.verbosity} --pos_thresh {params.pos_thresh}
+        """
