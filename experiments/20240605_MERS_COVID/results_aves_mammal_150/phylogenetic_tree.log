@@ -4,764 +4,616 @@ Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan
 
 Host:    swizzle (AVX512, FMA3, 62 GB RAM)
 Command: iqtree2 -s results_aves_mammal_150/modified_sequences.fasta -T AUTO -nt AUTO -m TEST -bb 1000 -alrt 1000 -pre results_aves_mammal_150/phylogenetic_tree
-Seed:    435368 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Tue Jun 18 09:58:32 2024
+Seed:    308771 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Jun 18 10:44:12 2024
 Kernel:  AVX+FMA - auto-detect threads (40 CPU cores detected)
 
 Reading alignment file results_aves_mammal_150/modified_sequences.fasta ... Fasta format detected
-Reading fasta file: done in 0.01897 secs using 95.98% CPU
+Reading fasta file: done in 0.0177069 secs using 91.17% CPU
 Alignment most likely contains DNA/RNA sequences
-Constructing alignment: done in 0.00535107 secs using 99.98% CPU
-Alignment has 282 sequences with 2632 columns, 996 distinct patterns
-607 parsimony-informative, 270 singleton sites, 1755 constant sites
+Constructing alignment: done in 0.00535417 secs using 99.23% CPU
+Alignment has 281 sequences with 2659 columns, 931 distinct patterns
+603 parsimony-informative, 176 singleton sites, 1880 constant sites
                                         Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 0.000707865 secs using 99.74% CPU
-   1  KP413270.1left_bracketAVIright_bracket   49.05%    passed     90.04%
-   2  MF613918.1left_bracketAVIright_bracket   74.05%    passed     50.94%
-   3  MN988187.1left_bracketAVIright_bracket   73.94%    passed     64.15%
-   4  OQ794132.1left_bracketAVIright_bracket   48.48%    passed     76.61%
-   5  MW105029.1left_bracketAVIright_bracket   51.79%    passed     91.79%
-   6  MW106053.1left_bracketAVIright_bracket   51.79%    passed     84.69%
-   7  OQ964801.1left_bracketAVIright_bracket   49.28%    passed     61.42%
-   8  MW965659.1left_bracketAVIright_bracket   51.79%    passed     88.44%
-   9  CY196514.1left_bracketAVIright_bracket   53.31%    passed     96.59%
-  10  CY030966.1left_bracketAVIright_bracket   50.11%    passed     96.00%
-  11  HM145672.1left_bracketAVIright_bracket   54.67%    passed     50.16%
-  12  MW412625.1left_bracketAVIright_bracket   59.76%    passed     92.04%
-  13  OQ293818.1left_bracketAVIright_bracket   55.47%    passed     99.97%
-  14  MN988442.1left_bracketAVIright_bracket   60.52%    passed     83.86%
-  15  MF112278.1left_bracketAVIright_bracket   55.43%    passed     82.34%
-  16  MF113125.1left_bracketAVIright_bracket   51.90%    passed     96.75%
-  17  KY402070.1left_bracketAVIright_bracket   55.13%    passed     78.36%
-  18  KY550838.1left_bracketAVIright_bracket   74.05%    passed     90.94%
-  19  JN869514.1left_bracketAVIright_bracket   55.47%    passed     92.58%
-  20  MW105005.1left_bracketAVIright_bracket   55.59%    passed     96.56%
-  21  KU201845.1left_bracketAVIright_bracket   55.51%    passed     66.24%
-  22  MN988762.1left_bracketAVIright_bracket   53.61%    passed     35.68%
-  23  OL372100.1left_bracketAVIright_bracket   50.08%    passed     60.32%
-  24  MH285289.1left_bracketAVIright_bracket   50.30%    passed     90.92%
-  25  MG891832.1left_bracketAVIright_bracket   59.88%    passed     90.97%
-  26  HM145667.1left_bracketAVIright_bracket   54.56%    passed     36.63%
-  27  MN171439.1left_bracketAVIright_bracket   55.70%    passed     99.10%
-  28  KP413904.1left_bracketAVIright_bracket   54.45%    passed     98.04%
-  29  OQ794100.1left_bracketAVIright_bracket   59.65%    passed     91.60%
-  30  OQ967193.1left_bracketAVIright_bracket   52.13%    passed     96.18%
-  31  MK627840.1left_bracketAVIright_bracket   74.05%    passed     92.64%
-  32  MW872184.1left_bracketAVIright_bracket   73.94%    passed     81.79%
-  33  MZ564889.1left_bracketAVIright_bracket   74.28%    passed     98.21%
-  34  MF630210.1left_bracketAVIright_bracket   54.45%    passed     96.57%
-  35  KY550752.1left_bracketAVIright_bracket   74.05%    passed     92.42%
-  36  CY040955.1left_bracketAVIright_bracket   50.11%    passed     93.18%
-  37  KP415953.1left_bracketAVIright_bracket   49.05%    passed     96.15%
-  38  MF613741.1left_bracketAVIright_bracket   71.05%    passed     57.24%
-  39  MK446827.1left_bracketAVIright_bracket   51.90%    passed     80.05%
-  40  OQ965769.1left_bracketAVIright_bracket   49.28%    passed     59.80%
-  41  KP865916.1left_bracketAVIright_bracket   49.20%    passed     96.99%
-  42  CY185346.1left_bracketAVIright_bracket   55.59%    passed     99.70%
-  43  MK446813.1left_bracketAVIright_bracket   55.36%    passed     99.48%
-  44  KF260894.1left_bracketAVIright_bracket   51.86%    passed     92.27%
-  45  KP417116.1left_bracketAVIright_bracket   52.13%    passed     69.91%
-  46  CY146569.1left_bracketAVIright_bracket   55.59%    passed     89.32%
-  47  MH579285.1left_bracketAVIright_bracket   48.94%    passed     95.46%
-  48  KP417655.1left_bracketAVIright_bracket   54.45%    passed     96.57%
-  49  KX061823.1left_bracketAVIright_bracket   55.66%    passed     88.21%
-  50  MG965789.1left_bracketAVIright_bracket   55.51%    passed     66.24%
-  51  KP413834.1left_bracketAVIright_bracket   54.45%    passed     98.04%
-  52  KY751295.1left_bracketAVIright_bracket   50.99%    passed     95.43%
-  53  MW105877.1left_bracketAVIright_bracket   51.94%    passed     76.21%
-  54  ON716316.1left_bracketAVIright_bracket   70.55%    passed     95.27%
-  55  MN566025.1left_bracketAVIright_bracket   54.22%    passed     67.52%
-  56  OQ960361.1left_bracketAVIright_bracket   50.04%    passed     63.80%
-  57  KP416194.1left_bracketAVIright_bracket   51.67%    passed     94.50%
-  58  MT444223.1left_bracketAVIright_bracket   74.05%    passed     51.37%
-  59  OQ826091.1left_bracketAVIright_bracket   52.01%    passed     82.56%
-  60  CY146665.1left_bracketAVIright_bracket   55.59%    passed     95.05%
-  61  OQ959553.1left_bracketAVIright_bracket   50.04%    passed     62.82%
-  62  OQ964441.1left_bracketAVIright_bracket   73.94%    passed     65.47%
-  63  OL370403.1left_bracketAVIright_bracket   59.76%    passed     96.59%
-  64  JF965021.1left_bracketAVIright_bracket   55.47%    passed     97.66%
-  65  OQ962593.1left_bracketAVIright_bracket   50.04%    passed     65.15%
-  66  JN807899.1left_bracketAVIright_bracket   49.39%    passed     97.88%
-  67  MF112277.1left_bracketAVIright_bracket   55.43%    passed     80.04%
-  68  KC261451.1left_bracketAVIright_bracket   49.24%    passed     86.30%
-  69  OQ961761.1left_bracketAVIright_bracket   52.13%    passed     95.55%
-  70  KF260875.1left_bracketAVIright_bracket   51.79%    passed     93.09%
-  71  MK964972.1left_bracketAVIright_bracket   62.20%    passed     47.02%
-  72  KY584017.1left_bracketAVIright_bracket   73.90%    passed     57.59%
-  73  MF112272.1left_bracketAVIright_bracket   55.43%    passed     84.30%
-  74  LC279793.1left_bracketAVIright_bracket   55.66%    passed     93.30%
-  75  JX312549.1left_bracketAVIright_bracket   51.79%    passed     75.59%
-  76  MH209304.1left_bracketAVIright_bracket   51.82%    passed     88.20%
-  77  KP865883.1left_bracketAVIright_bracket   51.79%    passed     96.71%
-  78  KP285370.1left_bracketAVIright_bracket   55.59%    passed     98.67%
-  79  MZ564977.1left_bracketAVIright_bracket   94.64%    passed     38.80%
-  80  CY030950.1left_bracketAVIright_bracket   48.78%    passed     95.54%
-  81  OQ292594.1left_bracketAVIright_bracket   51.90%    passed     90.79%
-  82  KY584031.1left_bracketAVIright_bracket   73.94%    passed     47.81%
-  83  KC986316.1left_bracketAVIright_bracket   55.47%    passed     92.73%
-  84  OQ293162.1left_bracketAVIright_bracket   55.47%    passed     99.93%
-  85  KJ426318.1left_bracketAVIright_bracket   55.24%    passed     90.97%
-  86  CY030926.1left_bracketAVIright_bracket   50.00%    passed     96.27%
-  87  MH498696.1left_bracketAVIright_bracket   50.04%    passed     67.81%
-  88  OQ962145.1left_bracketAVIright_bracket   73.94%    passed     56.38%
-  89  KP416362.1left_bracketAVIright_bracket   49.05%    passed     90.90%
-  90  MT828575.1left_bracketAVIright_bracket   54.33%    passed     85.03%
-  91  MN530165.1left_bracketAVIright_bracket   52.96%    passed     81.46%
-  92  MW106709.1left_bracketAVIright_bracket   51.82%    passed     88.76%
-  93  MK964583.1left_bracketAVIright_bracket   62.20%    passed     31.05%
-  94  MK446789.1left_bracketAVIright_bracket   55.36%    passed     99.56%
-  95  KT589154.1left_bracketAVIright_bracket   49.24%    passed     71.32%
-  96  MW108605.1left_bracketAVIright_bracket   54.29%    passed     71.19%
-  97  MF973222.1left_bracketAVIright_bracket   59.88%    passed     88.18%
-  98  KP286534.1left_bracketAVIright_bracket   48.48%    passed     94.21%
-  99  MT421309.1left_bracketAVIright_bracket   73.94%    passed     88.20%
- 100  ON374814.1left_bracketAVIright_bracket   50.27%    passed     21.51%
- 101  CY109519.1left_bracketAVIright_bracket   54.56%    passed     60.50%
- 102  MF112339.1left_bracketAVIright_bracket   55.55%    passed     82.37%
- 103  KX598539.1left_bracketAVIright_bracket   55.36%    passed     99.67%
- 104  KF357825.1left_bracketAVIright_bracket   51.90%    passed     88.18%
- 105  MW106317.1left_bracketAVIright_bracket   55.47%    passed     94.89%
- 106  MW265019.1left_bracketAVIright_bracket   55.36%    passed     97.06%
- 107  MW132957.1left_bracketAVIright_bracket   55.81%    passed     74.82%
- 108  HM145686.1left_bracketAVIright_bracket   62.08%    passed     73.94%
- 109  OM373259.1left_bracketAVIright_bracket   55.85%    passed     97.46%
- 110  OQ292586.1left_bracketAVIright_bracket   51.90%    passed     86.24%
- 111  MH932377.2left_bracketAVIright_bracket   73.94%    passed     86.84%
- 112  OQ965065.1left_bracketAVIright_bracket   50.04%    passed     66.28%
- 113  MW094629.1left_bracketAVIright_bracket   51.79%    passed     93.77%
- 114  MN647475.1left_bracketAVIright_bracket   55.36%    passed     98.68%
- 115  JN817611.1left_bracketAVIright_bracket   55.59%    passed     96.64%
- 116  OR497659.1left_bracketAVIright_bracket   55.43%    passed     99.37%
- 117  CY109303.1left_bracketAVIright_bracket   55.47%    passed     98.39%
- 118  HM145738.1left_bracketAVIright_bracket   50.19%    passed     79.90%
- 119  OM333407.1left_bracketAVIright_bracket   59.76%    passed     88.78%
- 120  KF260903.1left_bracketAVIright_bracket   51.79%    passed     75.36%
- 121  MN988355.1left_bracketAVIright_bracket   60.41%    passed     68.43%
- 122  CY196771.1left_bracketAVIright_bracket   55.85%    passed     96.93%
- 123  PP091191.1left_bracketAVIright_bracket   55.28%    passed     87.24%
- 124  MG599659.1left_bracketAVIright_bracket   71.09%    passed     58.24%
- 125  KP417875.1left_bracketAVIright_bracket   51.79%    passed     90.99%
- 126  KP418433.1left_bracketAVIright_bracket   51.79%    passed     91.69%
- 127  MH579071.1left_bracketAVIright_bracket   73.90%    passed     63.60%
- 128  OQ293490.1left_bracketAVIright_bracket   52.77%    passed     91.39%
- 129  MZ565305.1left_bracketAVIright_bracket   74.28%    passed     99.84%
- 130  MG706984.1left_bracketAVIright_bracket   50.27%    passed     20.45%
- 131  CY110663.1left_bracketAVIright_bracket   54.67%    passed     54.48%
- 132  KX598523.1left_bracketAVIright_bracket   50.91%    passed     88.53%
- 133  KP416916.1left_bracketAVIright_bracket   55.78%    passed     93.07%
- 134  KP732577.1left_bracketAVIright_bracket   55.47%    passed     99.50%
- 135  KY971035.1left_bracketAVIright_bracket   49.43%    passed     89.59%
- 136  MH498795.1left_bracketAVIright_bracket   51.79%    passed     76.58%
- 137  KP287499.1left_bracketAVIright_bracket   51.79%    passed     97.29%
- 138  MW095026.1left_bracketAVIright_bracket   50.91%    passed     93.53%
- 139  MW094458.1left_bracketAVIright_bracket   47.11%    passed     93.24%
- 140  KT388561.1left_bracketAVIright_bracket   55.51%    passed     66.47%
- 141  MK964487.1left_bracketAVIright_bracket   55.85%    passed     97.58%
- 142  MF629978.1left_bracketAVIright_bracket   51.79%    passed     87.42%
- 143  KF260874.1left_bracketAVIright_bracket   51.79%    passed     91.01%
- 144  KP285066.1left_bracketAVIright_bracket   51.79%    passed     83.89%
- 145  KT449712.1left_bracketAVIright_bracket   47.11%    passed     96.07%
- 146  HQ014837.1left_bracketAVIright_bracket   48.71%    passed     76.45%
- 147  OR730444.1left_bracketMAMright_bracket   55.59%    passed     76.38%
- 148  PP398345.1left_bracketMAMright_bracket   74.16%    passed     92.78%
- 149  KU591850.1left_bracketMAMright_bracket   51.82%    passed     73.10%
- 150  KY509887.1left_bracketMAMright_bracket   74.01%    passed     94.82%
- 151  MW169656.1left_bracketMAMright_bracket   55.85%    passed     43.61%
- 152  KM028468.1left_bracketMAMright_bracket    1.14%    passed     91.73%
- 153  PP338972.1left_bracketMAMright_bracket   74.16%    passed     87.24%
- 154  PP658633.1left_bracketMAMright_bracket   51.79%    passed     78.72%
- 155  OP954299.1left_bracketMAMright_bracket   51.79%    passed     83.44%
- 156  KT840917.1left_bracketMAMright_bracket   51.79%    passed     77.03%
- 157  KX907903.1left_bracketMAMright_bracket   84.73%    passed     46.73%
- 158  OP085911.1left_bracketMAMright_bracket   51.79%    passed     89.83%
- 159  CY159654.1left_bracketMAMright_bracket   83.13%    passed     32.29%
- 160  MK651427.1left_bracketMAMright_bracket   52.13%    passed     88.40%
- 161  MK502655.1left_bracketMAMright_bracket    1.10%    passed     89.50%
- 162  MK960355.1left_bracketMAMright_bracket   51.79%    passed     79.50%
- 163  OQ796973.1left_bracketMAMright_bracket    1.10%    passed     97.61%
- 164  PP193665.1left_bracketMAMright_bracket    1.10%    passed     95.29%
- 165  KM029140.1left_bracketMAMright_bracket    0.95%    passed     87.54%
- 166  MK651337.1left_bracketMAMright_bracket   74.13%    passed     99.84%
- 167  PP698969.1left_bracketMAMright_bracket   68.81%    passed     73.40%
- 168  OP590460.1left_bracketMAMright_bracket   51.67%    passed     99.42%
- 169  MT041178.1left_bracketMAMright_bracket    1.18%    passed     91.67%
- 170  OP952387.1left_bracketMAMright_bracket   51.79%    passed     88.18%
- 171  MN170143.1left_bracketMAMright_bracket    1.10%    passed     96.84%
- 172  MZ665315.1left_bracketMAMright_bracket   50.04%    passed     99.98%
- 173  MH156540.1left_bracketMAMright_bracket    1.10%    passed     85.38%
- 174  MG914218.1left_bracketMAMright_bracket   51.79%    passed     78.13%
- 175  OQ507027.1left_bracketMAMright_bracket   51.67%    passed     98.59%
- 176  MK869074.1left_bracketMAMright_bracket    1.22%    passed     88.03%
- 177  KP765853.1left_bracketMAMright_bracket    1.18%    passed     93.43%
- 178  PP508619.1left_bracketMAMright_bracket   51.67%    passed     98.00%
- 179  MZ477664.1left_bracketMAMright_bracket   70.67%    passed     88.84%
- 180  KM028324.1left_bracketMAMright_bracket   57.26%    passed     75.15%
- 181  PP558072.1left_bracketMAMright_bracket   74.16%    passed     88.66%
- 182  MT823504.1left_bracketMAMright_bracket   49.92%    passed     99.36%
- 183  PP553301.1left_bracketMAMright_bracket   74.16%    passed     93.36%
- 184  KM359863.1left_bracketMAMright_bracket   74.28%    passed     48.19%
- 185  OQ695094.1left_bracketMAMright_bracket    1.10%    passed     97.90%
- 186  KX631943.1left_bracketMAMright_bracket   50.04%    passed     96.22%
- 187  CY086917.1left_bracketMAMright_bracket   50.04%    passed     97.78%
- 188  PP416341.1left_bracketMAMright_bracket   51.67%    passed     98.67%
- 189  OR472746.1left_bracketMAMright_bracket   50.15%    passed     99.47%
- 190  MK927689.1left_bracketMAMright_bracket   51.79%    passed     96.90%
- 191  KR057308.1left_bracketMAMright_bracket   74.13%    passed     99.08%
- 192  OR166947.1left_bracketMAMright_bracket   74.16%    passed     92.78%
- 193  CY246072.1left_bracketMAMright_bracket   55.59%    passed     95.55%
- 194  OQ786442.1left_bracketMAMright_bracket   52.01%    passed     92.70%
- 195  MK927643.1left_bracketMAMright_bracket    1.10%    passed     89.20%
- 196  PP399538.1left_bracketMAMright_bracket    1.10%    passed     94.46%
- 197  OQ695102.1left_bracketMAMright_bracket   50.11%    passed     94.08%
- 198  PP755980.1left_bracketMAMright_bracket   73.94%    passed     39.64%
- 199  MG198917.1left_bracketMAMright_bracket   51.79%    passed     89.44%
- 200  PP658635.1left_bracketMAMright_bracket   51.79%    passed     78.57%
- 201  MK535422.1left_bracketMAMright_bracket   52.13%    passed     92.85%
- 202  PP072596.1left_bracketMAMright_bracket   74.16%    passed     89.98%
- 203  MK869122.1left_bracketMAMright_bracket   51.79%    passed     74.51%
- 204  KU589995.1left_bracketMAMright_bracket   51.79%    passed     83.44%
- 205  CY013564.1left_bracketMAMright_bracket   68.31%    passed     79.73%
- 206  OQ240670.1left_bracketMAMright_bracket   51.90%    passed     90.05%
- 207  KU590005.1left_bracketMAMright_bracket   51.79%    passed     78.72%
- 208  PP498399.1left_bracketMAMright_bracket   74.16%    passed     95.52%
- 209  MZ460879.1left_bracketMAMright_bracket   52.24%    passed     90.08%
- 210  PP557881.1left_bracketMAMright_bracket   51.67%    passed     96.82%
- 211  CY116063.1left_bracketMAMright_bracket   62.20%    passed     70.18%
- 212  MK839850.1left_bracketMAMright_bracket   51.79%    passed     74.51%
- 213  KC471470.1left_bracketMAMright_bracket   50.04%    passed     98.14%
- 214  PP577775.1left_bracketMAMright_bracket   55.81%    passed     99.02%
- 215  PP459870.1left_bracketMAMright_bracket   74.13%    passed     91.24%
- 216  MK743385.1left_bracketMAMright_bracket   51.79%    passed     88.52%
- 217  KX264688.1left_bracketMAMright_bracket   74.24%    passed     93.91%
- 218  MK576961.1left_bracketMAMright_bracket    1.10%    passed     87.26%
- 219  KX264685.1left_bracketMAMright_bracket   52.01%    passed     91.27%
- 220  MH922886.1left_bracketMAMright_bracket   55.70%    passed     93.19%
- 221  PP093627.1left_bracketMAMright_bracket    0.99%    passed     97.68%
- 222  KM029924.1left_bracketMAMright_bracket    1.06%    passed     90.71%
- 223  MK785746.1left_bracketMAMright_bracket    1.10%    passed     96.98%
- 224  MN573262.1left_bracketMAMright_bracket   53.65%    passed     86.01%
- 225  PP432532.1left_bracketMAMright_bracket   74.16%    passed     83.30%
- 226  KT838108.1left_bracketMAMright_bracket   74.05%    passed     31.92%
- 227  PP260775.1left_bracketMAMright_bracket   74.16%    passed     93.36%
- 228  KR052678.1left_bracketMAMright_bracket    1.06%    passed     89.03%
- 229  MN608558.1left_bracketMAMright_bracket   53.53%    passed     77.40%
- 230  OP590682.1left_bracketMAMright_bracket   51.67%    passed     99.57%
- 231  PP073114.1left_bracketMAMright_bracket    1.10%    passed     96.95%
- 232  KT843720.1left_bracketMAMright_bracket   51.79%    passed     83.44%
- 233  OR728930.1left_bracketMAMright_bracket    1.10%    passed     96.13%
- 234  OY282673.1left_bracketMAMright_bracket   72.61%    passed     89.76%
- 235  MN198828.1left_bracketMAMright_bracket   49.92%    passed     96.26%
- 236  OQ459870.1left_bracketMAMright_bracket    1.10%    passed     93.81%
- 237  MG784652.1left_bracketMAMright_bracket   49.92%    passed     97.53%
- 238  PP522580.1left_bracketMAMright_bracket   51.67%    passed     97.07%
- 239  MN873859.1left_bracketMAMright_bracket   51.79%    passed     76.76%
- 240  MK535814.1left_bracketMAMright_bracket   52.13%    passed     95.85%
- 241  OP096952.1left_bracketMAMright_bracket   51.79%    passed     85.40%
- 242  KC471366.1left_bracketMAMright_bracket    1.06%    passed     92.61%
- 243  MT233558.1left_bracketMAMright_bracket   55.59%    passed     83.88%
- 244  CY065291.1left_bracketMAMright_bracket    1.06%    passed     90.46%
- 245  PP072473.1left_bracketMAMright_bracket    1.10%    passed     93.86%
- 246  MN169943.1left_bracketMAMright_bracket    1.10%    passed     95.22%
- 247  OQ754651.1left_bracketMAMright_bracket   53.42%    passed     97.93%
- 248  MK109754.1left_bracketMAMright_bracket   52.13%    passed     94.31%
- 249  MG279269.1left_bracketMAMright_bracket   51.71%    passed     79.14%
- 250  OP959858.1left_bracketMAMright_bracket   51.79%    passed     86.26%
- 251  MH425048.1left_bracketMAMright_bracket   50.15%    passed     98.03%
- 252  MN934398.1left_bracketMAMright_bracket   70.67%    passed     63.85%
- 253  OQ652859.1left_bracketMAMright_bracket   53.53%    passed     90.36%
- 254  OR699593.1left_bracketMAMright_bracket   53.42%    passed     96.87%
- 255  KC780717.1left_bracketMAMright_bracket    1.06%    passed     88.47%
- 256  OQ917451.1left_bracketMAMright_bracket   53.53%    passed     98.36%
- 257  MN416351.1left_bracketMAMright_bracket   51.86%    passed     86.65%
- 258  OP951745.1left_bracketMAMright_bracket   51.79%    passed     88.18%
- 259  PP072709.1left_bracketMAMright_bracket   74.16%    passed     89.98%
- 260  KT841469.1left_bracketMAMright_bracket   51.79%    passed     90.59%
- 261  MN081489.1left_bracketMAMright_bracket   51.79%    passed     76.76%
- 262  PP508659.1left_bracketMAMright_bracket   51.67%    passed     95.85%
- 263  JQ695876.1left_bracketMAMright_bracket    1.06%    passed     89.88%
- 264  CY116312.1left_bracketMAMright_bracket   70.55%    passed     68.87%
- 265  OP096989.1left_bracketMAMright_bracket   51.90%    passed     88.62%
- 266  KY089204.1left_bracketMAMright_bracket   51.90%    passed     80.60%
- 267  OR439806.1left_bracketMAMright_bracket    1.10%    passed     95.73%
- 268  MG521054.1left_bracketMAMright_bracket   52.13%    passed     97.51%
- 269  PP417047.1left_bracketMAMright_bracket   74.16%    passed     90.60%
- 270  OR483614.1left_bracketMAMright_bracket   51.67%    passed     99.25%
- 271  OQ368242.1left_bracketMAMright_bracket   51.67%    passed     98.66%
- 272  KC473861.1left_bracketMAMright_bracket    1.18%    passed     91.71%
- 273  MT666264.1left_bracketMAMright_bracket   62.31%    passed     90.12%
- 274  KU322884.1left_bracketMAMright_bracket   52.17%    passed     74.39%
- 275  MK848558.1left_bracketMAMright_bracket   71.12%    passed     98.29%
- 276  MH620507.1left_bracketMAMright_bracket   49.92%    passed     96.13%
- 277  CY131628.1left_bracketMAMright_bracket   50.04%    passed     98.39%
- 278  KJ528296.1left_bracketMAMright_bracket   84.73%    passed     46.73%
- 279  CY067275.1left_bracketMAMright_bracket   74.28%    passed     46.66%
- 280  MK640856.1left_bracketMAMright_bracket   51.79%    passed     83.44%
- 281  KM028700.1left_bracketMAMright_bracket    1.06%    passed     91.63%
- 282  MK576719.1left_bracketMAMright_bracket   74.05%    passed     42.76%
-WARNING: 230 sequences contain more than 50% gaps/ambiguity
-****  TOTAL                                    51.34%  0 sequences failed composition chi2 test (p-value<5%; df=3)
-Checking for duplicate sequences: done in 0.00122619 secs using 79.92% CPU
+Analyzing sequences: done in 0.000657797 secs using 47.58% CPU
+   1  KP413270.1left_bracketAVIright_bracket   48.78%    passed     89.59%
+   2  MF613918.1left_bracketAVIright_bracket   74.46%    passed     41.12%
+   3  MN988187.1left_bracketAVIright_bracket   74.35%    passed     53.36%
+   4  OQ794132.1left_bracketAVIright_bracket   48.21%    passed     79.27%
+   5  MW105029.1left_bracketAVIright_bracket   51.49%    passed     94.85%
+   6  MW106053.1left_bracketAVIright_bracket   51.49%    passed     84.71%
+   7  OQ964801.1left_bracketAVIright_bracket   48.89%    passed     80.88%
+   8  MW965659.1left_bracketAVIright_bracket   51.49%    passed     92.76%
+   9  CY196514.1left_bracketAVIright_bracket   52.91%    passed     96.50%
+  10  CY030966.1left_bracketAVIright_bracket   49.76%    passed     90.79%
+  11  HM145672.1left_bracketAVIright_bracket   54.27%    passed     59.77%
+  12  MW412625.1left_bracketAVIright_bracket   59.91%    passed     96.28%
+  13  OQ293818.1left_bracketAVIright_bracket   55.13%    passed     99.88%
+  14  MN988442.1left_bracketAVIright_bracket   60.55%    passed     91.96%
+  15  MF112278.1left_bracketAVIright_bracket   55.10%    passed     87.30%
+  16  MF113125.1left_bracketAVIright_bracket   51.60%    passed     97.61%
+  17  KY402070.1left_bracketAVIright_bracket   54.72%    passed     75.37%
+  18  KY550838.1left_bracketAVIright_bracket   74.46%    passed     88.76%
+  19  JN869514.1left_bracketAVIright_bracket   55.13%    passed     95.33%
+  20  MW105005.1left_bracketAVIright_bracket   55.25%    passed     97.96%
+  21  KU201845.1left_bracketAVIright_bracket   55.10%    passed     76.67%
+  22  MN988762.1left_bracketAVIright_bracket   53.10%    passed     30.61%
+  23  OL372100.1left_bracketAVIright_bracket   49.72%    passed     58.67%
+  24  MH285289.1left_bracketAVIright_bracket   50.09%    passed     95.81%
+  25  MG891832.1left_bracketAVIright_bracket   60.02%    passed     96.13%
+  26  HM145667.1left_bracketAVIright_bracket   54.16%    passed     42.40%
+  27  MN171439.1left_bracketAVIright_bracket   55.36%    passed     97.21%
+  28  KP413904.1left_bracketAVIright_bracket   54.12%    passed     98.59%
+  29  OQ794100.1left_bracketAVIright_bracket   59.80%    passed     95.19%
+  30  OQ967193.1left_bracketAVIright_bracket   51.71%    passed     95.75%
+  31  MK627840.1left_bracketAVIright_bracket   74.46%    passed     91.02%
+  32  MW872184.1left_bracketAVIright_bracket   74.35%    passed     71.19%
+  33  MZ564889.1left_bracketAVIright_bracket   74.69%    passed     99.82%
+  34  MF630210.1left_bracketAVIright_bracket   54.12%    passed     96.05%
+  35  KY550752.1left_bracketAVIright_bracket   74.46%    passed     90.47%
+  36  CY040955.1left_bracketAVIright_bracket   49.76%    passed     84.86%
+  37  KP415953.1left_bracketAVIright_bracket   48.78%    passed     95.60%
+  38  MF613741.1left_bracketAVIright_bracket   71.53%    passed     43.61%
+  39  MK446827.1left_bracketAVIright_bracket   51.60%    passed     82.55%
+  40  OQ965769.1left_bracketAVIright_bracket   48.89%    passed     75.82%
+  41  KP865916.1left_bracketAVIright_bracket   48.93%    passed     96.50%
+  42  CY185346.1left_bracketAVIright_bracket   55.25%    passed     99.45%
+  43  MK446813.1left_bracketAVIright_bracket   55.02%    passed     99.45%
+  44  KF260894.1left_bracketAVIright_bracket   51.56%    passed     93.86%
+  45  KP417116.1left_bracketAVIright_bracket   51.82%    passed     67.54%
+  46  CY146569.1left_bracketAVIright_bracket   55.25%    passed     78.69%
+  47  MH579285.1left_bracketAVIright_bracket   48.55%    passed     97.84%
+  48  KP417655.1left_bracketAVIright_bracket   54.12%    passed     96.05%
+  49  KX061823.1left_bracketAVIright_bracket   55.25%    passed     83.67%
+  50  MG965789.1left_bracketAVIright_bracket   55.10%    passed     76.67%
+  51  KP413834.1left_bracketAVIright_bracket   54.12%    passed     97.57%
+  52  KY751295.1left_bracketAVIright_bracket   50.51%    passed     96.51%
+  53  MW105877.1left_bracketAVIright_bracket   51.64%    passed     72.64%
+  54  ON716316.1left_bracketAVIright_bracket   71.04%    passed     95.36%
+  55  MN566025.1left_bracketAVIright_bracket   53.82%    passed     67.07%
+  56  OQ960361.1left_bracketAVIright_bracket   49.64%    passed     79.87%
+  57  KP416194.1left_bracketAVIright_bracket   51.37%    passed     94.56%
+  58  MT444223.1left_bracketAVIright_bracket   74.46%    passed     44.52%
+  59  OQ826091.1left_bracketAVIright_bracket   51.71%    passed     84.63%
+  60  CY146665.1left_bracketAVIright_bracket   55.25%    passed     93.23%
+  61  OQ959553.1left_bracketAVIright_bracket   49.64%    passed     79.30%
+  62  OQ964441.1left_bracketAVIright_bracket   74.35%    passed     54.99%
+  63  OL370403.1left_bracketAVIright_bracket   59.91%    passed     98.24%
+  64  JF965021.1left_bracketAVIright_bracket   55.13%    passed     96.73%
+  65  OQ962593.1left_bracketAVIright_bracket   49.64%    passed     80.68%
+  66  JN807899.1left_bracketAVIright_bracket   49.04%    passed     96.69%
+  67  MF112277.1left_bracketAVIright_bracket   55.10%    passed     83.48%
+  68  KC261451.1left_bracketAVIright_bracket   48.89%    passed     76.38%
+  69  OQ961761.1left_bracketAVIright_bracket   51.71%    passed     94.51%
+  70  KF260875.1left_bracketAVIright_bracket   51.49%    passed     94.20%
+  71  MK964972.1left_bracketAVIright_bracket   62.73%    passed     62.31%
+  72  KY584017.1left_bracketAVIright_bracket   74.31%    passed     46.57%
+  73  MF112272.1left_bracketAVIright_bracket   55.10%    passed     88.94%
+  74  LC279793.1left_bracketAVIright_bracket   55.25%    passed     94.32%
+  75  JX312549.1left_bracketAVIright_bracket   51.49%    passed     79.31%
+  76  MH209304.1left_bracketAVIright_bracket   51.52%    passed     89.69%
+  77  KP865883.1left_bracketAVIright_bracket   51.49%    passed     96.19%
+  78  KP285370.1left_bracketAVIright_bracket   55.25%    passed     98.73%
+  79  MZ564977.1left_bracketAVIright_bracket   94.70%    passed     31.88%
+  80  CY030950.1left_bracketAVIright_bracket   48.44%    passed     89.75%
+  81  OQ292594.1left_bracketAVIright_bracket   51.60%    passed     90.69%
+  82  KY584031.1left_bracketAVIright_bracket   74.35%    passed     39.98%
+  83  KC986316.1left_bracketAVIright_bracket   55.13%    passed     90.20%
+  84  OQ293162.1left_bracketAVIright_bracket   55.13%    passed     99.90%
+  85  KJ426318.1left_bracketAVIright_bracket   54.91%    passed     93.91%
+  86  CY030926.1left_bracketAVIright_bracket   49.64%    passed     89.77%
+  87  MH498696.1left_bracketAVIright_bracket   49.64%    passed     86.35%
+  88  OQ962145.1left_bracketAVIright_bracket   74.35%    passed     47.49%
+  89  KP416362.1left_bracketAVIright_bracket   48.78%    passed     90.01%
+  90  MT828575.1left_bracketAVIright_bracket   53.93%    passed     90.76%
+  91  MN530165.1left_bracketAVIright_bracket   52.58%    passed     89.35%
+  92  MW106709.1left_bracketAVIright_bracket   51.52%    passed     91.57%
+  93  MK964583.1left_bracketAVIright_bracket   62.73%    passed     44.54%
+  94  MK446789.1left_bracketAVIright_bracket   55.02%    passed     99.36%
+  95  KT589154.1left_bracketAVIright_bracket   48.89%    passed     65.65%
+  96  MW108605.1left_bracketAVIright_bracket   53.89%    passed     83.72%
+  97  MF973222.1left_bracketAVIright_bracket   60.02%    passed     94.78%
+  98  KP286534.1left_bracketAVIright_bracket   48.21%    passed     93.92%
+  99  MT421309.1left_bracketAVIright_bracket   74.35%    passed     80.41%
+ 100  ON374814.1left_bracketAVIright_bracket   49.98%    passed     17.84%
+ 101  CY109519.1left_bracketAVIright_bracket   54.16%    passed     69.28%
+ 102  MF112339.1left_bracketAVIright_bracket   55.21%    passed     84.96%
+ 103  KX598539.1left_bracketAVIright_bracket   55.02%    passed     99.74%
+ 104  KF357825.1left_bracketAVIright_bracket   51.60%    passed     89.79%
+ 105  MW106317.1left_bracketAVIright_bracket   55.13%    passed     96.05%
+ 106  MW265019.1left_bracketAVIright_bracket   55.02%    passed     96.48%
+ 107  MW132957.1left_bracketAVIright_bracket   55.47%    passed     68.39%
+ 108  HM145686.1left_bracketAVIright_bracket   62.62%    passed     90.32%
+ 109  OM373259.1left_bracketAVIright_bracket   55.43%    passed     94.53%
+ 110  OQ292586.1left_bracketAVIright_bracket   51.60%    passed     88.14%
+ 111  MH932377.2left_bracketAVIright_bracket   74.35%    passed     78.66%
+ 112  OQ965065.1left_bracketAVIright_bracket   49.64%    passed     81.78%
+ 113  MW094629.1left_bracketAVIright_bracket   51.49%    passed     95.32%
+ 114  MN647475.1left_bracketAVIright_bracket   55.02%    passed     99.29%
+ 115  JN817611.1left_bracketAVIright_bracket   55.25%    passed     94.23%
+ 116  OR497659.1left_bracketAVIright_bracket   54.91%    passed     98.11%
+ 117  CY109303.1left_bracketAVIright_bracket   55.13%    passed     98.36%
+ 118  HM145738.1left_bracketAVIright_bracket   49.91%    passed     74.33%
+ 119  OM333407.1left_bracketAVIright_bracket   59.91%    passed     93.55%
+ 120  KF260903.1left_bracketAVIright_bracket   51.49%    passed     79.20%
+ 121  MN988355.1left_bracketAVIright_bracket   60.44%    passed     75.45%
+ 122  CY196771.1left_bracketAVIright_bracket   55.43%    passed     95.46%
+ 123  PP091191.1left_bracketAVIright_bracket   54.91%    passed     92.07%
+ 124  MG599659.1left_bracketAVIright_bracket   71.57%    passed     44.31%
+ 125  KP417875.1left_bracketAVIright_bracket   51.49%    passed     92.10%
+ 126  KP418433.1left_bracketAVIright_bracket   51.49%    passed     92.60%
+ 127  MH579071.1left_bracketAVIright_bracket   74.31%    passed     63.25%
+ 128  OQ293490.1left_bracketAVIright_bracket   52.46%    passed     92.05%
+ 129  MZ565305.1left_bracketAVIright_bracket   74.69%    passed     99.98%
+ 130  MG706984.1left_bracketAVIright_bracket   49.98%    passed     16.57%
+ 131  CY110663.1left_bracketAVIright_bracket   54.27%    passed     66.86%
+ 132  KX598523.1left_bracketAVIright_bracket   50.62%    passed     89.27%
+ 133  KP416916.1left_bracketAVIright_bracket   55.36%    passed     89.12%
+ 134  KP732577.1left_bracketAVIright_bracket   55.13%    passed     98.95%
+ 135  KY971035.1left_bracketAVIright_bracket   49.08%    passed     81.94%
+ 136  MH498795.1left_bracketAVIright_bracket   51.37%    passed     81.58%
+ 137  KP287499.1left_bracketAVIright_bracket   51.49%    passed     97.68%
+ 138  MW095026.1left_bracketAVIright_bracket   50.62%    passed     92.72%
+ 139  MW094458.1left_bracketAVIright_bracket   46.86%    passed     91.49%
+ 140  KT388561.1left_bracketAVIright_bracket   55.10%    passed     75.82%
+ 141  MK964487.1left_bracketAVIright_bracket   55.32%    passed     93.51%
+ 142  MF629978.1left_bracketAVIright_bracket   51.49%    passed     88.62%
+ 143  KF260874.1left_bracketAVIright_bracket   51.49%    passed     92.67%
+ 144  KP285066.1left_bracketAVIright_bracket   51.49%    passed     84.72%
+ 145  KT449712.1left_bracketAVIright_bracket   46.86%    passed     96.09%
+ 146  HQ014837.1left_bracketAVIright_bracket   48.36%    passed     75.21%
+ 147  OR730444.1left_bracketMAMright_bracket   55.32%    passed     72.55%
+ 148  PP398345.1left_bracketMAMright_bracket   74.58%    passed     87.93%
+ 149  KU591850.1left_bracketMAMright_bracket   51.49%    passed     71.92%
+ 150  KY509887.1left_bracketMAMright_bracket   74.43%    passed     92.58%
+ 151  MW169656.1left_bracketMAMright_bracket   55.43%    passed     47.13%
+ 152  KM028468.1left_bracketMAMright_bracket    1.17%    passed     87.40%
+ 153  PP338972.1left_bracketMAMright_bracket   74.58%    passed     82.62%
+ 154  PP658633.1left_bracketMAMright_bracket   51.45%    passed     81.14%
+ 155  OP954299.1left_bracketMAMright_bracket   51.45%    passed     80.71%
+ 156  KT840917.1left_bracketMAMright_bracket   51.45%    passed     81.55%
+ 157  KX907903.1left_bracketMAMright_bracket   84.62%    passed     33.16%
+ 158  OP085911.1left_bracketMAMright_bracket   51.45%    passed     87.23%
+ 159  CY159654.1left_bracketMAMright_bracket   83.04%    passed     23.73%
+ 160  MK651427.1left_bracketMAMright_bracket   51.79%    passed     89.07%
+ 161  MK502655.1left_bracketMAMright_bracket    1.13%    passed     79.89%
+ 162  MK960355.1left_bracketMAMright_bracket   51.45%    passed     76.10%
+ 163  OQ796973.1left_bracketMAMright_bracket    1.13%    passed     94.81%
+ 164  PP193665.1left_bracketMAMright_bracket    1.13%    passed     89.85%
+ 165  KM029140.1left_bracketMAMright_bracket    1.09%    passed     78.44%
+ 166  MK651337.1left_bracketMAMright_bracket   74.54%    passed     99.72%
+ 167  PP698969.1left_bracketMAMright_bracket   69.27%    passed     56.29%
+ 168  OP590460.1left_bracketMAMright_bracket   51.45%    passed     97.51%
+ 169  MT041178.1left_bracketMAMright_bracket    1.20%    passed     86.49%
+ 170  OP952387.1left_bracketMAMright_bracket   51.45%    passed     85.78%
+ 171  MN170143.1left_bracketMAMright_bracket    1.13%    passed     92.75%
+ 172  MZ665315.1left_bracketMAMright_bracket   49.72%    passed     99.83%
+ 173  MH156540.1left_bracketMAMright_bracket    1.13%    passed     76.73%
+ 174  MG914218.1left_bracketMAMright_bracket   51.45%    passed     77.58%
+ 175  OQ507027.1left_bracketMAMright_bracket   51.45%    passed     93.88%
+ 176  MK869074.1left_bracketMAMright_bracket    1.24%    passed     79.76%
+ 177  KP765853.1left_bracketMAMright_bracket    1.20%    passed     88.73%
+ 178  PP508619.1left_bracketMAMright_bracket   51.45%    passed     96.95%
+ 179  MZ477664.1left_bracketMAMright_bracket   71.15%    passed     79.12%
+ 180  KM028324.1left_bracketMAMright_bracket   57.05%    passed     83.57%
+ 181  PP558072.1left_bracketMAMright_bracket   74.58%    passed     81.64%
+ 182  MT823504.1left_bracketMAMright_bracket   49.72%    passed     98.73%
+ 183  PP553301.1left_bracketMAMright_bracket   74.58%    passed     89.95%
+ 184  KM359863.1left_bracketMAMright_bracket   74.69%    passed     48.50%
+ 185  OQ695094.1left_bracketMAMright_bracket    1.13%    passed     95.55%
+ 186  KX631943.1left_bracketMAMright_bracket   49.72%    passed     93.78%
+ 187  CY086917.1left_bracketMAMright_bracket   49.72%    passed     98.17%
+ 188  PP416341.1left_bracketMAMright_bracket   51.45%    passed     97.32%
+ 189  OR472746.1left_bracketMAMright_bracket   49.83%    passed     98.56%
+ 190  MK927689.1left_bracketMAMright_bracket   51.45%    passed     95.35%
+ 191  KR057308.1left_bracketMAMright_bracket   74.54%    passed     99.00%
+ 192  OR166947.1left_bracketMAMright_bracket   74.58%    passed     87.93%
+ 193  CY246072.1left_bracketMAMright_bracket   55.21%    passed     97.59%
+ 194  OQ786442.1left_bracketMAMright_bracket   51.79%    passed     92.11%
+ 195  MK927643.1left_bracketMAMright_bracket    1.13%    passed     81.82%
+ 196  PP399538.1left_bracketMAMright_bracket    1.13%    passed     89.29%
+ 197  OQ695102.1left_bracketMAMright_bracket   49.79%    passed     91.49%
+ 198  PP755980.1left_bracketMAMright_bracket   74.35%    passed     33.80%
+ 199  MG198917.1left_bracketMAMright_bracket   51.45%    passed     87.59%
+ 200  PP658635.1left_bracketMAMright_bracket   51.45%    passed     80.71%
+ 201  MK535422.1left_bracketMAMright_bracket   51.79%    passed     94.13%
+ 202  PP072596.1left_bracketMAMright_bracket   74.58%    passed     84.48%
+ 203  MK869122.1left_bracketMAMright_bracket   51.45%    passed     71.82%
+ 204  KU589995.1left_bracketMAMright_bracket   51.45%    passed     82.45%
+ 205  CY013564.1left_bracketMAMright_bracket   68.79%    passed     73.50%
+ 206  OQ240670.1left_bracketMAMright_bracket   51.56%    passed     90.19%
+ 207  KU590005.1left_bracketMAMright_bracket   51.45%    passed     78.73%
+ 208  PP498399.1left_bracketMAMright_bracket   74.58%    passed     92.73%
+ 209  MZ460879.1left_bracketMAMright_bracket   51.90%    passed     88.62%
+ 210  PP557881.1left_bracketMAMright_bracket   51.45%    passed     94.43%
+ 211  CY116063.1left_bracketMAMright_bracket   62.73%    passed     76.34%
+ 212  MK839850.1left_bracketMAMright_bracket   51.45%    passed     71.82%
+ 213  KC471470.1left_bracketMAMright_bracket   49.72%    passed     98.63%
+ 214  PP577775.1left_bracketMAMright_bracket   55.55%    passed     98.54%
+ 215  PP459870.1left_bracketMAMright_bracket   74.54%    passed     87.69%
+ 216  MK743385.1left_bracketMAMright_bracket   51.45%    passed     86.11%
+ 217  KX264688.1left_bracketMAMright_bracket   74.65%    passed     90.06%
+ 218  MK576961.1left_bracketMAMright_bracket    1.13%    passed     79.86%
+ 219  KX264685.1left_bracketMAMright_bracket   51.67%    passed     88.69%
+ 220  MH922886.1left_bracketMAMright_bracket   55.43%    passed     92.18%
+ 221  PP093627.1left_bracketMAMright_bracket    1.02%    passed     92.04%
+ 222  KM029924.1left_bracketMAMright_bracket    1.09%    passed     83.25%
+ 223  MK785746.1left_bracketMAMright_bracket    1.13%    passed     93.33%
+ 224  MN573262.1left_bracketMAMright_bracket   53.29%    passed     84.78%
+ 225  PP432532.1left_bracketMAMright_bracket   74.58%    passed     78.16%
+ 226  KT838108.1left_bracketMAMright_bracket   74.35%    passed     36.57%
+ 227  PP260775.1left_bracketMAMright_bracket   74.58%    passed     89.95%
+ 228  KR052678.1left_bracketMAMright_bracket    1.09%    passed     84.17%
+ 229  MN608558.1left_bracketMAMright_bracket   53.18%    passed     78.55%
+ 230  OP590682.1left_bracketMAMright_bracket   51.45%    passed     97.35%
+ 231  PP073114.1left_bracketMAMright_bracket    1.13%    passed     92.17%
+ 232  KT843720.1left_bracketMAMright_bracket   51.45%    passed     82.45%
+ 233  OR728930.1left_bracketMAMright_bracket    1.13%    passed     91.78%
+ 234  MN198828.1left_bracketMAMright_bracket   49.72%    passed     95.51%
+ 235  OQ459870.1left_bracketMAMright_bracket    1.13%    passed     94.01%
+ 236  MG784652.1left_bracketMAMright_bracket   49.72%    passed     96.67%
+ 237  PP522580.1left_bracketMAMright_bracket   51.45%    passed     96.38%
+ 238  MN873859.1left_bracketMAMright_bracket   51.45%    passed     73.43%
+ 239  MK535814.1left_bracketMAMright_bracket   51.79%    passed     95.51%
+ 240  OP096952.1left_bracketMAMright_bracket   51.45%    passed     82.45%
+ 241  KC471366.1left_bracketMAMright_bracket    1.09%    passed     89.20%
+ 242  MT233558.1left_bracketMAMright_bracket   55.32%    passed     79.73%
+ 243  CY065291.1left_bracketMAMright_bracket    1.09%    passed     84.86%
+ 244  PP072473.1left_bracketMAMright_bracket    1.13%    passed     87.40%
+ 245  MN169943.1left_bracketMAMright_bracket    1.13%    passed     92.91%
+ 246  OQ754651.1left_bracketMAMright_bracket   53.18%    passed     98.43%
+ 247  MK109754.1left_bracketMAMright_bracket   51.79%    passed     93.88%
+ 248  MG279269.1left_bracketMAMright_bracket   51.49%    passed     75.99%
+ 249  OP959858.1left_bracketMAMright_bracket   51.45%    passed     84.07%
+ 250  MH425048.1left_bracketMAMright_bracket   49.94%    passed     96.05%
+ 251  MN934398.1left_bracketMAMright_bracket   71.15%    passed     65.23%
+ 252  OQ652859.1left_bracketMAMright_bracket   53.18%    passed     90.39%
+ 253  OR699593.1left_bracketMAMright_bracket   53.18%    passed     97.87%
+ 254  KC780717.1left_bracketMAMright_bracket    1.09%    passed     81.38%
+ 255  OQ917451.1left_bracketMAMright_bracket   53.29%    passed     97.48%
+ 256  MN416351.1left_bracketMAMright_bracket   51.56%    passed     77.01%
+ 257  OP951745.1left_bracketMAMright_bracket   51.45%    passed     86.12%
+ 258  PP072709.1left_bracketMAMright_bracket   74.58%    passed     84.48%
+ 259  KT841469.1left_bracketMAMright_bracket   51.45%    passed     88.67%
+ 260  MN081489.1left_bracketMAMright_bracket   51.45%    passed     73.43%
+ 261  PP508659.1left_bracketMAMright_bracket   51.45%    passed     95.60%
+ 262  JQ695876.1left_bracketMAMright_bracket    1.09%    passed     83.42%
+ 263  CY116312.1left_bracketMAMright_bracket   71.04%    passed     72.63%
+ 264  OP096989.1left_bracketMAMright_bracket   51.56%    passed     85.10%
+ 265  KY089204.1left_bracketMAMright_bracket   51.56%    passed     78.85%
+ 266  OR439806.1left_bracketMAMright_bracket    1.13%    passed     90.88%
+ 267  MG521054.1left_bracketMAMright_bracket   51.79%    passed     97.47%
+ 268  PP417047.1left_bracketMAMright_bracket   74.58%    passed     86.57%
+ 269  OR483614.1left_bracketMAMright_bracket   51.45%    passed     96.42%
+ 270  OQ368242.1left_bracketMAMright_bracket   51.45%    passed     96.61%
+ 271  KC473861.1left_bracketMAMright_bracket    1.20%    passed     85.86%
+ 272  MT666264.1left_bracketMAMright_bracket   62.84%    passed     83.19%
+ 273  KU322884.1left_bracketMAMright_bracket   51.79%    passed     71.93%
+ 274  MK848558.1left_bracketMAMright_bracket   71.61%    passed     93.72%
+ 275  MH620507.1left_bracketMAMright_bracket   49.72%    passed     95.35%
+ 276  CY131628.1left_bracketMAMright_bracket   49.72%    passed     98.56%
+ 277  KJ528296.1left_bracketMAMright_bracket   84.62%    passed     37.65%
+ 278  CY067275.1left_bracketMAMright_bracket   74.69%    passed     52.83%
+ 279  MK640856.1left_bracketMAMright_bracket   51.45%    passed     84.56%
+ 280  KM028700.1left_bracketMAMright_bracket    1.09%    passed     84.46%
+ 281  MK576719.1left_bracketMAMright_bracket   74.35%    passed     42.17%
+WARNING: 210 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                    51.13%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 0.00104284 secs using 99.92% CPU
 
 
-Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.060 seconds
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.044 seconds
 Measuring multi-threading efficiency up to 40 CPU cores
 Increase to 10 rounds for branch lengths
-66 trees examined
-Threads: 1 / Time: 40.252 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -92139
-Threads: 2 / Time: 22.471 sec / Speedup: 1.791 / Efficiency: 90% / LogL: -92139
-Threads: 3 / Time: 22.049 sec / Speedup: 1.826 / Efficiency: 61% / LogL: -92139
-Threads: 4 / Time: 19.583 sec / Speedup: 2.055 / Efficiency: 51% / LogL: -92139
-Threads: 5 / Time: 19.059 sec / Speedup: 2.112 / Efficiency: 42% / LogL: -92139
-Determining AUTO threadcount: done in 123.423 secs using 262.9% CPU
-BEST NUMBER OF THREADS: 4
+74 trees examined
+Threads: 1 / Time: 40.523 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -92077
+Threads: 2 / Time: 25.923 sec / Speedup: 1.563 / Efficiency: 78% / LogL: -92077
+Threads: 3 / Time: 23.106 sec / Speedup: 1.754 / Efficiency: 58% / LogL: -92077
+Threads: 4 / Time: 20.689 sec / Speedup: 1.959 / Efficiency: 49% / LogL: -92077
+Determining AUTO threadcount: done in 110.242 secs using 221.6% CPU
+BEST NUMBER OF THREADS: 3
 
 Perform fast likelihood tree search using GTR+I+G model...
 Estimate model parameters (epsilon = 5.000)
 Perform nearest neighbor interchange...
-Optimizing NNI: done in 0.464847 secs using 399.6% CPU
+Optimizing NNI: done in 0.291883 secs using 298.6% CPU
 Estimate model parameters (epsilon = 1.000)
-1. Initial log-likelihood: -27934.151
-Optimal log-likelihood: -27933.578
-Rate parameters:  A-C: 0.56581  A-G: 10.21539  A-T: 0.58363  C-G: 0.07377  C-T: 7.17124  G-T: 1.00000
-Base frequencies:  A: 0.202  C: 0.268  G: 0.187  T: 0.342
-Proportion of invariable sites: 0.323
-Gamma shape alpha: 0.552
-Parameters optimization took 1 rounds (0.273 sec)
-Time for fast ML tree search: 2.226 seconds
+1. Initial log-likelihood: -27587.443
+Optimal log-likelihood: -27587.318
+Rate parameters:  A-C: 0.54366  A-G: 10.16672  A-T: 0.59266  C-G: 0.06526  C-T: 7.08086  G-T: 1.00000
+Base frequencies:  A: 0.205  C: 0.271  G: 0.186  T: 0.338
+Proportion of invariable sites: 0.382
+Gamma shape alpha: 0.614
+Parameters optimization took 1 rounds (0.140 sec)
+Time for fast ML tree search: 2.127 seconds
 
-NOTE: ModelFinder requires 40 MB RAM!
-ModelFinder will test up to 88 DNA models (sample size: 2632) ...
+NOTE: ModelFinder requires 37 MB RAM!
+ModelFinder will test up to 88 DNA models (sample size: 2659) ...
  No. Model         -LnL         df  AIC          AICc         BIC
-  1  GTR+F         31448.603    569 64035.207    64349.785    67378.366
-  2  GTR+F+I       29094.742    570 59329.485    59645.322    62678.519
-  3  GTR+F+G4      27923.365    570 56986.730    57302.567    60335.765
-  4  GTR+F+I+G4    27931.856    571 57005.711    57322.810    60360.622
-  7  SYM+G4        28075.148    567 57284.296    57596.366    60615.704
- 11  TVM+F+G4      27966.229    569 57070.458    57385.036    60413.617
- 15  TVMe+G4       28079.819    566 57291.638    57602.458    60617.170
- 19  TIM3+F+G4     27964.839    568 57065.677    57379.000    60402.961
- 23  TIM3e+G4      28115.938    565 57361.876    57671.450    60681.533
- 27  TIM2+F+G4     28001.745    568 57139.490    57452.813    60476.774
- 31  TIM2e+G4      28166.914    565 57463.828    57773.402    60783.485
- 35  TIM+F+G4      27973.622    568 57083.245    57396.567    60420.529
- 39  TIMe+G4       28140.501    565 57411.002    57720.576    60730.659
- 43  TPM3u+F+G4    28008.039    567 57150.078    57462.148    60481.486
- 47  TPM3+G4       28120.491    564 57368.983    57677.314    60682.765
- 51  TPM2u+F+G4    28045.648    567 57225.297    57537.366    60556.705
- 55  TPM2+G4       28170.628    564 57469.255    57777.586    60783.037
- 59  K3Pu+F+G4     28017.612    567 57169.224    57481.293    60500.632
- 63  K3P+G4        28144.155    564 57416.309    57724.640    60730.091
- 67  TN+F+G4       28001.785    567 57137.570    57449.640    60468.978
- 71  TNe+G4        28167.041    564 57462.082    57770.413    60775.863
- 75  HKY+F+G4      28045.659    566 57223.319    57534.139    60548.851
- 79  K2P+G4        28170.735    563 57467.471    57774.561    60775.377
- 83  F81+F+G4      30989.630    565 63109.260    63418.835    66428.918
- 87  JC+G4         31271.630    562 63667.260    63973.114    66969.291
-Akaike Information Criterion:           GTR+F+G4
-Corrected Akaike Information Criterion: GTR+F+G4
+  1  GTR+F         31239.991    567 63613.982    63922.022    66951.176
+  2  GTR+F+I       28280.925    568 57697.850    58007.124    61040.930
+  3  GTR+F+G4      27590.029    568 56316.057    56625.332    59659.138
+  4  GTR+F+I+G4    27587.166    569 56312.333    56622.845    59661.299
+  7  SYM+G4        27728.285    565 56586.570    56892.151    59911.994
+  8  SYM+I+G4      27719.677    566 56571.355    56878.164    59902.664
+ 11  TVM+F+G4      27630.020    567 56394.039    56702.079    59731.234
+ 12  TVM+F+I+G4    27621.033    568 56378.067    56687.341    59721.147
+ 15  TVMe+G4       27732.937    564 56593.874    56898.229    59913.412
+ 16  TVMe+I+G4     27724.124    565 56578.248    56883.828    59903.671
+ 19  TIM3+F+G4     27634.219    566 56400.437    56707.246    59731.746
+ 20  TIM3+F+I+G4   27631.799    567 56397.599    56705.639    59734.794
+ 23  TIM3e+G4      27771.783    563 56669.567    56972.700    59983.219
+ 24  TIM3e+I+G4    27763.226    564 56654.452    56958.808    59973.990
+ 27  TIM2+F+G4     27674.191    566 56480.381    56787.190    59811.690
+ 28  TIM2+F+I+G4   27673.931    567 56481.861    56789.901    59819.056
+ 31  TIM2e+G4      27823.891    563 56773.783    57076.916    60087.435
+ 32  TIM2e+I+G4    27819.772    564 56767.545    57071.900    60087.083
+ 35  TIM+F+G4      27645.405    566 56422.810    56729.619    59754.119
+ 36  TIM+F+I+G4    27644.870    567 56423.741    56731.781    59760.935
+ 39  TIMe+G4       27797.130    563 56720.260    57023.393    60033.912
+ 40  TIMe+I+G4     27792.968    564 56713.937    57018.292    60033.475
+ 43  TPM3u+F+G4    27674.368    565 56478.736    56784.317    59804.160
+ 44  TPM3u+F+I+G4  27665.455    566 56462.909    56769.718    59794.219
+ 47  TPM3+G4       27776.364    562 56676.728    56978.642    59984.495
+ 48  TPM3+I+G4     27767.749    563 56661.497    56964.630    59975.149
+ 51  TPM2u+F+G4    27715.246    565 56560.492    56866.072    59885.915
+ 52  TPM2u+F+I+G4  27708.319    566 56548.638    56855.447    59879.948
+ 55  TPM2+G4       27827.792    562 56779.584    57081.498    60087.351
+ 56  TPM2+I+G4     27823.463    563 56772.926    57076.059    60086.578
+ 59  K3Pu+F+G4     27686.640    565 56503.279    56808.860    59828.703
+ 60  K3Pu+F+I+G4   27679.419    566 56490.838    56797.647    59822.147
+ 63  K3P+G4        27800.946    562 56725.892    57027.806    60033.658
+ 64  K3P+I+G4      27796.553    563 56719.106    57022.239    60032.758
+ 67  TN+F+G4       27674.270    565 56478.541    56784.121    59803.964
+ 68  TN+F+I+G4     27674.081    566 56480.161    56786.970    59811.471
+ 71  TNe+G4        27824.081    562 56772.162    57074.076    60079.928
+ 72  TNe+I+G4      27819.892    563 56765.785    57068.918    60079.437
+ 75  HKY+F+G4      27715.272    564 56558.544    56862.899    59878.082
+ 76  HKY+F+I+G4    27708.449    565 56546.898    56852.479    59872.322
+ 79  K2P+G4        27827.958    561 56777.917    57078.615    60079.798
+ 80  K2P+I+G4      27823.596    562 56771.192    57073.107    60078.959
+ 83  F81+F+G4      30679.132    563 62484.265    62787.398    65797.917
+ 84  F81+F+I+G4    30671.227    564 62470.454    62774.809    65789.992
+ 87  JC+G4         30939.017    560 62998.033    63297.518    66294.028
+ 88  JC+I+G4       30944.184    561 63010.368    63311.066    66312.249
+Akaike Information Criterion:           GTR+F+I+G4
+Corrected Akaike Information Criterion: GTR+F+I+G4
 Bayesian Information Criterion:         GTR+F+G4
 Best-fit model: GTR+F+G4 chosen according to BIC
 
 All model information printed to results_aves_mammal_150/phylogenetic_tree.model.gz
-CPU time for ModelFinder: 378.294 seconds (0h:6m:18s)
-Wall-clock time for ModelFinder: 136.994 seconds (0h:2m:16s)
-Generating 1000 samples for ultrafast bootstrap (seed: 435368)...
+CPU time for ModelFinder: 322.103 seconds (0h:5m:22s)
+Wall-clock time for ModelFinder: 136.232 seconds (0h:2m:16s)
+Generating 1000 samples for ultrafast bootstrap (seed: 308771)...
 
-NOTE: 40 MB RAM (0 GB) is required!
+NOTE: 37 MB RAM (0 GB) is required!
 Estimate model parameters (epsilon = 0.100)
-1. Initial log-likelihood: -27923.365
-Optimal log-likelihood: -27923.364
-Rate parameters:  A-C: 0.57738  A-G: 10.18730  A-T: 0.59174  C-G: 0.07951  C-T: 7.12710  G-T: 1.00000
-Base frequencies:  A: 0.202  C: 0.268  G: 0.187  T: 0.342
-Gamma shape alpha: 0.216
-Parameters optimization took 1 rounds (0.117 sec)
+1. Initial log-likelihood: -27590.029
+Optimal log-likelihood: -27590.026
+Rate parameters:  A-C: 0.56520  A-G: 10.15045  A-T: 0.59501  C-G: 0.07347  C-T: 7.17670  G-T: 1.00000
+Base frequencies:  A: 0.205  C: 0.271  G: 0.186  T: 0.338
+Gamma shape alpha: 0.209
+Parameters optimization took 1 rounds (0.135 sec)
 Wrote distance file to... 
 Computing ML distances based on estimated model parameters...
-Calculating distance matrix: done in 0.09074 secs using 400.7% CPU
-Computing ML distances took 0.091153 sec (of wall-clock time) 0.364546 sec (of CPU time)
-Setting up auxiliary I and S matrices: done in 0.000689983 secs using 453.3% CPU
-Constructing RapidNJ tree: done in 0.0110681 secs using 482.5% CPU
-Computing RapidNJ tree took 0.011806 sec (of wall-clock time) 0.058593 sec (of CPU time)
-Log-likelihood of RapidNJ tree: -28350.598
+Calculating distance matrix: done in 0.141432 secs using 300.4% CPU
+Computing ML distances took 0.141878 sec (of wall-clock time) 0.425639 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000913143 secs using 318.2% CPU
+Constructing RapidNJ tree: done in 0.010066 secs using 338.8% CPU
+Computing RapidNJ tree took 0.011031 sec (of wall-clock time) 0.038064 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -27934.824
 --------------------------------------------------------------------
 |             INITIALIZING CANDIDATE TREE SET                      |
 --------------------------------------------------------------------
-Generating 98 parsimony trees... 4.980 second
-Computing log-likelihood of 98 initial trees ... 3.662 seconds
-Current best score: -27923.364
+Generating 98 parsimony trees... 4.862 second
+Computing log-likelihood of 98 initial trees ... 4.017 seconds
+Current best score: -27590.026
 
 Do NNI search on 20 best initial trees
-Optimizing NNI: done in 0.378534 secs using 394.7% CPU
+Optimizing NNI: done in 0.482376 secs using 295.9% CPU
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 1: -27921.819
-Optimizing NNI: done in 0.973013 secs using 399.1% CPU
-Optimizing NNI: done in 1.04945 secs using 395.8% CPU
-Optimizing NNI: done in 1.11234 secs using 397.9% CPU
-Optimizing NNI: done in 1.10034 secs using 396.4% CPU
-Optimizing NNI: done in 1.17678 secs using 396.2% CPU
+BETTER TREE FOUND at iteration 1: -27589.292
+Optimizing NNI: done in 1.09232 secs using 297.3% CPU
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 6: -27919.911
-Optimizing NNI: done in 1.0059 secs using 398% CPU
-Optimizing NNI: done in 1.10679 secs using 394.5% CPU
-Optimizing NNI: done in 1.18995 secs using 397.2% CPU
-Optimizing NNI: done in 1.02874 secs using 395.9% CPU
-Iteration 10 / LogL: -27937.871 / Time: 0h:0m:19s
-Optimizing NNI: done in 1.05366 secs using 398.1% CPU
-Optimizing NNI: done in 1.11504 secs using 397% CPU
-Optimizing NNI: done in 1.01318 secs using 396.4% CPU
-Optimizing NNI: done in 0.938451 secs using 397.3% CPU
-Optimizing NNI: done in 1.09264 secs using 397.5% CPU
-Optimizing NNI: done in 1.02887 secs using 395.3% CPU
-Optimizing NNI: done in 1.05553 secs using 395.8% CPU
-Optimizing NNI: done in 1.03683 secs using 395.2% CPU
-Optimizing NNI: done in 1.16411 secs using 397.5% CPU
-Optimizing NNI: done in 1.17602 secs using 397.8% CPU
+BETTER TREE FOUND at iteration 2: -27576.384
+Optimizing NNI: done in 1.07644 secs using 297% CPU
+Optimizing NNI: done in 0.973635 secs using 297.5% CPU
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 20: -27919.380
-Iteration 20 / LogL: -27919.380 / Time: 0h:0m:30s
+BETTER TREE FOUND at iteration 4: -27575.677
+Optimizing NNI: done in 1.11436 secs using 298.5% CPU
+Optimizing NNI: done in 1.13325 secs using 296.8% CPU
+Optimizing NNI: done in 1.08487 secs using 298.5% CPU
+Optimizing NNI: done in 1.04394 secs using 296.2% CPU
+Optimizing NNI: done in 1.15978 secs using 300% CPU
+Optimizing NNI: done in 1.11217 secs using 297.8% CPU
+Iteration 10 / LogL: -27576.344 / Time: 0h:0m:20s
+Optimizing NNI: done in 1.01506 secs using 297.8% CPU
+Optimizing NNI: done in 0.984685 secs using 297.6% CPU
+Optimizing NNI: done in 1.03203 secs using 297.6% CPU
+Optimizing NNI: done in 1.07129 secs using 299.1% CPU
+Optimizing NNI: done in 1.02104 secs using 299.2% CPU
+Optimizing NNI: done in 1.04911 secs using 298.4% CPU
+Optimizing NNI: done in 1.0628 secs using 298.3% CPU
+Optimizing NNI: done in 1.23457 secs using 297.4% CPU
+Optimizing NNI: done in 1.10129 secs using 297.5% CPU
+Optimizing NNI: done in 1.03132 secs using 299.1% CPU
+Iteration 20 / LogL: -27592.539 / Time: 0h:0m:30s
 Finish initializing candidate tree set (20)
-Current best tree score: -27919.380 / CPU time: 30.003
+Current best tree score: -27575.677 / CPU time: 30.402
 Number of iterations: 20
 --------------------------------------------------------------------
 |               OPTIMIZING CANDIDATE TREE SET                      |
 --------------------------------------------------------------------
-Optimizing NNI: done in 0.824012 secs using 398.4% CPU
-Optimizing NNI: done in 1.00672 secs using 398% CPU
-Optimizing NNI: done in 0.89873 secs using 397.7% CPU
-Optimizing NNI: done in 0.722671 secs using 398.3% CPU
+Optimizing NNI: done in 1.20948 secs using 299.1% CPU
+Optimizing NNI: done in 0.979564 secs using 299.6% CPU
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 24: -27918.728
-Optimizing NNI: done in 1.0446 secs using 398% CPU
-Optimizing NNI: done in 0.907183 secs using 398.2% CPU
-Optimizing NNI: done in 0.874133 secs using 399.4% CPU
-Optimizing NNI: done in 0.866247 secs using 400% CPU
-Optimizing NNI: done in 0.898997 secs using 398.7% CPU
-Optimizing NNI: done in 0.900185 secs using 399.3% CPU
-Iteration 30 / LogL: -27925.732 / Time: 0h:0m:40s (0h:2m:9s left)
-Optimizing NNI: done in 0.867628 secs using 399.5% CPU
-Optimizing NNI: done in 1.01398 secs using 398.9% CPU
-Optimizing NNI: done in 0.954502 secs using 399.2% CPU
-Optimizing NNI: done in 1.0728 secs using 399% CPU
-Optimizing NNI: done in 0.985394 secs using 396.8% CPU
-Optimizing NNI: done in 0.942649 secs using 399.1% CPU
-Optimizing NNI: done in 0.778769 secs using 399% CPU
-Optimizing NNI: done in 0.963384 secs using 398.7% CPU
-Optimizing NNI: done in 0.817541 secs using 398.4% CPU
-Optimizing NNI: done in 1.02057 secs using 398.3% CPU
-Iteration 40 / LogL: -27925.364 / Time: 0h:0m:49s (0h:1m:46s left)
-Optimizing NNI: done in 0.94524 secs using 398.3% CPU
-Optimizing NNI: done in 0.899332 secs using 399.1% CPU
-Optimizing NNI: done in 0.921371 secs using 398% CPU
+BETTER TREE FOUND at iteration 22: -27573.602
+Optimizing NNI: done in 0.988471 secs using 300% CPU
+Optimizing NNI: done in 0.946283 secs using 299.6% CPU
+Optimizing NNI: done in 1.10611 secs using 298.9% CPU
+Optimizing NNI: done in 0.840265 secs using 300% CPU
+Optimizing NNI: done in 1.00536 secs using 300% CPU
+Optimizing NNI: done in 0.825306 secs using 299.8% CPU
+Optimizing NNI: done in 1.21853 secs using 299.3% CPU
+Optimizing NNI: done in 0.973914 secs using 298.7% CPU
+Iteration 30 / LogL: -27575.567 / Time: 0h:0m:41s (0h:2m:11s left)
+Optimizing NNI: done in 0.931221 secs using 300% CPU
+Optimizing NNI: done in 0.811842 secs using 300% CPU
+Optimizing NNI: done in 1.27524 secs using 299.1% CPU
+Optimizing NNI: done in 0.939621 secs using 297.8% CPU
+Optimizing NNI: done in 1.10121 secs using 299.6% CPU
+Optimizing NNI: done in 0.962903 secs using 299.6% CPU
+Optimizing NNI: done in 0.848974 secs using 299.5% CPU
+Optimizing NNI: done in 1.17957 secs using 298.2% CPU
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 43: -27918.259
-Optimizing NNI: done in 0.890275 secs using 398.9% CPU
-Optimizing NNI: done in 0.817755 secs using 399.4% CPU
-Optimizing NNI: done in 0.75375 secs using 397.2% CPU
-Optimizing NNI: done in 1.02276 secs using 398.8% CPU
-Optimizing NNI: done in 0.876803 secs using 399.1% CPU
-Optimizing NNI: done in 1.07395 secs using 396.9% CPU
-Optimizing NNI: done in 0.913833 secs using 400% CPU
-Iteration 50 / LogL: -27920.186 / Time: 0h:0m:59s (0h:1m:52s left)
-Log-likelihood cutoff on original alignment: -27956.772
-Optimizing NNI: done in 0.957958 secs using 399.1% CPU
-Optimizing NNI: done in 0.965979 secs using 398.8% CPU
-Optimizing NNI: done in 0.828807 secs using 399% CPU
-Optimizing NNI: done in 0.896392 secs using 398.2% CPU
-Optimizing NNI: done in 1.1542 secs using 396.5% CPU
-Optimizing NNI: done in 0.712923 secs using 399.7% CPU
-Optimizing NNI: done in 0.994848 secs using 399.1% CPU
-Optimizing NNI: done in 0.934468 secs using 397.8% CPU
-Optimizing NNI: done in 0.607463 secs using 399.3% CPU
-Optimizing NNI: done in 1.19606 secs using 397.3% CPU
-Iteration 60 / LogL: -27924.594 / Time: 0h:1m:9s (0h:1m:37s left)
-Optimizing NNI: done in 0.90687 secs using 399.2% CPU
-Optimizing NNI: done in 0.852983 secs using 398.9% CPU
-Optimizing NNI: done in 1.03996 secs using 399.1% CPU
-Optimizing NNI: done in 0.892973 secs using 399.2% CPU
-Optimizing NNI: done in 0.964259 secs using 397.1% CPU
-Optimizing NNI: done in 1.01184 secs using 399.2% CPU
-Optimizing NNI: done in 0.780109 secs using 399.9% CPU
-Optimizing NNI: done in 0.998692 secs using 398.7% CPU
-Optimizing NNI: done in 0.979416 secs using 398.6% CPU
-Optimizing NNI: done in 0.967747 secs using 399.1% CPU
-Iteration 70 / LogL: -27925.094 / Time: 0h:1m:19s (0h:1m:23s left)
-Optimizing NNI: done in 0.850135 secs using 398.8% CPU
-Optimizing NNI: done in 0.922509 secs using 398.2% CPU
-Optimizing NNI: done in 0.771723 secs using 398.7% CPU
-Optimizing NNI: done in 0.912472 secs using 398.3% CPU
-Optimizing NNI: done in 0.826698 secs using 399.2% CPU
-Optimizing NNI: done in 0.913224 secs using 396.8% CPU
-Optimizing NNI: done in 1.06523 secs using 399.2% CPU
-Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 77: -27918.041
-Optimizing NNI: done in 1.01676 secs using 398% CPU
-Optimizing NNI: done in 0.855622 secs using 399% CPU
-Optimizing NNI: done in 1.00891 secs using 398.4% CPU
-Iteration 80 / LogL: -27918.055 / Time: 0h:1m:28s (0h:1m:48s left)
-Optimizing NNI: done in 0.883157 secs using 397.3% CPU
-Optimizing NNI: done in 0.969378 secs using 399.6% CPU
-Optimizing NNI: done in 0.964673 secs using 399.2% CPU
-Optimizing NNI: done in 0.79682 secs using 399% CPU
-Optimizing NNI: done in 0.875738 secs using 399.1% CPU
-Optimizing NNI: done in 0.99488 secs using 399% CPU
-Optimizing NNI: done in 0.923361 secs using 397.5% CPU
-Optimizing NNI: done in 1.02453 secs using 398.4% CPU
-Optimizing NNI: done in 1.02538 secs using 396.9% CPU
-Optimizing NNI: done in 1.00751 secs using 397.5% CPU
-Iteration 90 / LogL: -27936.829 / Time: 0h:1m:38s (0h:1m:35s left)
-Optimizing NNI: done in 1.1291 secs using 398.9% CPU
-Optimizing NNI: done in 0.819835 secs using 398.1% CPU
-Optimizing NNI: done in 0.749411 secs using 398.8% CPU
-Optimizing NNI: done in 0.96672 secs using 398.3% CPU
-Optimizing NNI: done in 0.90912 secs using 397.4% CPU
-Optimizing NNI: done in 0.879848 secs using 399.1% CPU
-Optimizing NNI: done in 0.77033 secs using 399.5% CPU
-Optimizing NNI: done in 0.845583 secs using 396% CPU
-Optimizing NNI: done in 0.737803 secs using 399.7% CPU
-Optimizing NNI: done in 1.08677 secs using 398.8% CPU
-Iteration 100 / LogL: -27928.561 / Time: 0h:1m:47s (0h:1m:23s left)
-Log-likelihood cutoff on original alignment: -27956.772
-NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.998
-Optimizing NNI: done in 0.814635 secs using 399.9% CPU
-Optimizing NNI: done in 0.95929 secs using 398.8% CPU
-Optimizing NNI: done in 0.757682 secs using 399.4% CPU
-Optimizing NNI: done in 0.741238 secs using 398.3% CPU
-Optimizing NNI: done in 1.08427 secs using 399% CPU
-Optimizing NNI: done in 0.924122 secs using 398.6% CPU
-Optimizing NNI: done in 1.02613 secs using 399.2% CPU
-Optimizing NNI: done in 0.850495 secs using 398.6% CPU
-Optimizing NNI: done in 1.08543 secs using 397.7% CPU
-Optimizing NNI: done in 1.13338 secs using 398.8% CPU
-Iteration 110 / LogL: -27927.676 / Time: 0h:1m:57s (0h:1m:37s left)
-Optimizing NNI: done in 0.764678 secs using 400% CPU
-Optimizing NNI: done in 0.943762 secs using 399.6% CPU
-Optimizing NNI: done in 0.99605 secs using 398.8% CPU
-Optimizing NNI: done in 0.824902 secs using 398.5% CPU
-Optimizing NNI: done in 0.8838 secs using 400% CPU
-Optimizing NNI: done in 0.930126 secs using 398.6% CPU
-Optimizing NNI: done in 0.887412 secs using 400% CPU
-Optimizing NNI: done in 1.07904 secs using 397% CPU
-Optimizing NNI: done in 1.0272 secs using 397.2% CPU
-Optimizing NNI: done in 0.931299 secs using 398.7% CPU
-Iteration 120 / LogL: -27918.104 / Time: 0h:2m:7s (0h:1m:25s left)
-Optimizing NNI: done in 0.756196 secs using 399.3% CPU
-Optimizing NNI: done in 0.776369 secs using 399% CPU
-Optimizing NNI: done in 0.85745 secs using 397.9% CPU
-Optimizing NNI: done in 1.12582 secs using 397.5% CPU
-Optimizing NNI: done in 1.05598 secs using 399.3% CPU
-Optimizing NNI: done in 0.692079 secs using 399.5% CPU
-Optimizing NNI: done in 0.936087 secs using 397.6% CPU
-Optimizing NNI: done in 1.02157 secs using 399.2% CPU
-Optimizing NNI: done in 0.913136 secs using 399.3% CPU
-Optimizing NNI: done in 0.911672 secs using 398.4% CPU
-Iteration 130 / LogL: -27947.167 / Time: 0h:2m:16s (0h:1m:14s left)
-Optimizing NNI: done in 0.798971 secs using 399.6% CPU
-Optimizing NNI: done in 0.928287 secs using 399% CPU
-Optimizing NNI: done in 0.896679 secs using 397.6% CPU
-Optimizing NNI: done in 0.788259 secs using 400% CPU
-Optimizing NNI: done in 0.852206 secs using 397.6% CPU
-Optimizing NNI: done in 1.05587 secs using 397% CPU
-Optimizing NNI: done in 0.950291 secs using 398.7% CPU
-Optimizing NNI: done in 0.730261 secs using 398.4% CPU
-Optimizing NNI: done in 0.893417 secs using 396.3% CPU
-Optimizing NNI: done in 1.09958 secs using 398% CPU
-Iteration 140 / LogL: -27924.935 / Time: 0h:2m:25s (0h:1m:2s left)
-Optimizing NNI: done in 0.869801 secs using 398.9% CPU
-Optimizing NNI: done in 1.00801 secs using 398.8% CPU
-Optimizing NNI: done in 0.943981 secs using 398.3% CPU
-Optimizing NNI: done in 0.892828 secs using 399.7% CPU
-Optimizing NNI: done in 0.723009 secs using 399.7% CPU
-Optimizing NNI: done in 0.86479 secs using 398.5% CPU
-Optimizing NNI: done in 0.963386 secs using 399.3% CPU
-Optimizing NNI: done in 0.677444 secs using 399.3% CPU
-Optimizing NNI: done in 0.982012 secs using 399% CPU
-Optimizing NNI: done in 0.899419 secs using 398.6% CPU
-Iteration 150 / LogL: -27919.183 / Time: 0h:2m:34s (0h:0m:51s left)
-Log-likelihood cutoff on original alignment: -27956.772
-Optimizing NNI: done in 0.909706 secs using 400.1% CPU
-Optimizing NNI: done in 0.850894 secs using 399.5% CPU
-Optimizing NNI: done in 0.794768 secs using 399.9% CPU
-Optimizing NNI: done in 0.983858 secs using 398.2% CPU
-Optimizing NNI: done in 0.64964 secs using 398.1% CPU
-Optimizing NNI: done in 0.856303 secs using 399.5% CPU
-Optimizing NNI: done in 1.19265 secs using 399.2% CPU
-Optimizing NNI: done in 0.978829 secs using 398.1% CPU
-Optimizing NNI: done in 0.918999 secs using 399.2% CPU
-Optimizing NNI: done in 1.0342 secs using 398.9% CPU
-Iteration 160 / LogL: -27920.241 / Time: 0h:2m:45s (0h:0m:41s left)
-Optimizing NNI: done in 0.824912 secs using 398.7% CPU
-Optimizing NNI: done in 0.998573 secs using 398.7% CPU
-Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 162: -27918.022
-Optimizing NNI: done in 1.07418 secs using 398.7% CPU
-Optimizing NNI: done in 0.975028 secs using 396.7% CPU
-Optimizing NNI: done in 0.93352 secs using 399.3% CPU
-Optimizing NNI: done in 0.73951 secs using 398.9% CPU
-Optimizing NNI: done in 0.768157 secs using 398.4% CPU
-Optimizing NNI: done in 0.94103 secs using 399.6% CPU
-Optimizing NNI: done in 0.78993 secs using 399.4% CPU
-Optimizing NNI: done in 0.773914 secs using 399.2% CPU
-Iteration 170 / LogL: -27980.653 / Time: 0h:2m:54s (0h:1m:34s left)
-Optimizing NNI: done in 1.16164 secs using 397.2% CPU
-Optimizing NNI: done in 0.865208 secs using 398.9% CPU
-Optimizing NNI: done in 1.1388 secs using 397.9% CPU
-Optimizing NNI: done in 0.895521 secs using 399.8% CPU
-Optimizing NNI: done in 0.709491 secs using 398.9% CPU
-Optimizing NNI: done in 0.903729 secs using 399.5% CPU
-Optimizing NNI: done in 0.784603 secs using 398.6% CPU
-Optimizing NNI: done in 0.87876 secs using 398.2% CPU
-Optimizing NNI: done in 0.985472 secs using 397.1% CPU
-Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 179: -27917.908
-Optimizing NNI: done in 0.998528 secs using 399.1% CPU
-Iteration 180 / LogL: -27942.712 / Time: 0h:3m:4s (0h:1m:41s left)
-Optimizing NNI: done in 0.956318 secs using 398.9% CPU
-Optimizing NNI: done in 0.995955 secs using 398.8% CPU
-Optimizing NNI: done in 1.05042 secs using 399.5% CPU
-Optimizing NNI: done in 0.951102 secs using 399.2% CPU
-Optimizing NNI: done in 0.84589 secs using 399.5% CPU
-Optimizing NNI: done in 1.06773 secs using 398.4% CPU
-Optimizing NNI: done in 1.19367 secs using 398.7% CPU
-Optimizing NNI: done in 0.899096 secs using 399.1% CPU
-Optimizing NNI: done in 0.867098 secs using 398.1% CPU
-Optimizing NNI: done in 0.708107 secs using 398.9% CPU
-Iteration 190 / LogL: -28008.719 / Time: 0h:3m:13s (0h:1m:31s left)
-Optimizing NNI: done in 0.772184 secs using 399.3% CPU
-Optimizing NNI: done in 0.874319 secs using 397.1% CPU
-Optimizing NNI: done in 1.13557 secs using 398.2% CPU
-Optimizing NNI: done in 0.947425 secs using 396.9% CPU
-Optimizing NNI: done in 0.757034 secs using 397.3% CPU
-Optimizing NNI: done in 1.02179 secs using 398.8% CPU
-Optimizing NNI: done in 1.01674 secs using 399.2% CPU
-Optimizing NNI: done in 0.903496 secs using 397.6% CPU
-Optimizing NNI: done in 0.781557 secs using 399.5% CPU
-Optimizing NNI: done in 0.95597 secs using 399.6% CPU
-Iteration 200 / LogL: -27940.930 / Time: 0h:3m:23s (0h:1m:20s left)
-Log-likelihood cutoff on original alignment: -27956.772
-NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.997
-Optimizing NNI: done in 0.78972 secs using 399.1% CPU
-Optimizing NNI: done in 0.83567 secs using 399% CPU
-Optimizing NNI: done in 0.948855 secs using 398.6% CPU
-Optimizing NNI: done in 0.979485 secs using 398.8% CPU
-Optimizing NNI: done in 1.01109 secs using 396.8% CPU
-Optimizing NNI: done in 0.842419 secs using 400% CPU
-Optimizing NNI: done in 0.903517 secs using 399.1% CPU
-Optimizing NNI: done in 0.833539 secs using 398.5% CPU
-Optimizing NNI: done in 1.0108 secs using 398.8% CPU
-Optimizing NNI: done in 0.686545 secs using 399.9% CPU
-Iteration 210 / LogL: -27994.318 / Time: 0h:3m:33s (0h:1m:31s left)
-Optimizing NNI: done in 0.839761 secs using 398.6% CPU
-Optimizing NNI: done in 1.11188 secs using 397.6% CPU
-Optimizing NNI: done in 0.851569 secs using 399.1% CPU
-Optimizing NNI: done in 0.835879 secs using 399% CPU
-Optimizing NNI: done in 1.06829 secs using 397.7% CPU
-Optimizing NNI: done in 0.824747 secs using 399% CPU
-Optimizing NNI: done in 0.948563 secs using 399.9% CPU
-Optimizing NNI: done in 0.972285 secs using 397.9% CPU
-Optimizing NNI: done in 0.949663 secs using 396.8% CPU
-Optimizing NNI: done in 0.987458 secs using 397.2% CPU
-Iteration 220 / LogL: -27921.879 / Time: 0h:3m:43s (0h:1m:21s left)
-Optimizing NNI: done in 0.794162 secs using 399% CPU
-Optimizing NNI: done in 0.889095 secs using 400% CPU
-Optimizing NNI: done in 1.07503 secs using 399.1% CPU
-Optimizing NNI: done in 0.965868 secs using 399.1% CPU
-Optimizing NNI: done in 0.705181 secs using 399.8% CPU
-Optimizing NNI: done in 1.21959 secs using 398.6% CPU
-Optimizing NNI: done in 0.727054 secs using 399.8% CPU
-Optimizing NNI: done in 0.946752 secs using 398.6% CPU
-Optimizing NNI: done in 1.0341 secs using 398.3% CPU
-Optimizing NNI: done in 0.989374 secs using 398.3% CPU
-Iteration 230 / LogL: -27928.218 / Time: 0h:3m:52s (0h:1m:11s left)
-Optimizing NNI: done in 1.00885 secs using 397.6% CPU
-Optimizing NNI: done in 0.811138 secs using 399.2% CPU
-Optimizing NNI: done in 1.05059 secs using 397% CPU
-Optimizing NNI: done in 0.687978 secs using 399.7% CPU
-Optimizing NNI: done in 1.01928 secs using 399.5% CPU
-Optimizing NNI: done in 1.03386 secs using 399.2% CPU
-Optimizing NNI: done in 0.992295 secs using 398.8% CPU
-Optimizing NNI: done in 0.877171 secs using 398% CPU
-Optimizing NNI: done in 0.802794 secs using 399.5% CPU
-Optimizing NNI: done in 1.01971 secs using 398.5% CPU
-Iteration 240 / LogL: -27918.824 / Time: 0h:4m:2s (0h:1m:0s left)
-Optimizing NNI: done in 0.915387 secs using 399% CPU
-Optimizing NNI: done in 1.0224 secs using 399% CPU
-Optimizing NNI: done in 0.950179 secs using 399% CPU
-Optimizing NNI: done in 0.987045 secs using 399.2% CPU
-Optimizing NNI: done in 0.796547 secs using 399.3% CPU
-Optimizing NNI: done in 0.774473 secs using 399% CPU
-Optimizing NNI: done in 0.741774 secs using 400% CPU
-Optimizing NNI: done in 1.04713 secs using 399.2% CPU
-Optimizing NNI: done in 1.02548 secs using 399.2% CPU
-Optimizing NNI: done in 0.993734 secs using 398.3% CPU
-Iteration 250 / LogL: -27918.651 / Time: 0h:4m:12s (0h:0m:50s left)
-Log-likelihood cutoff on original alignment: -27956.772
-Optimizing NNI: done in 0.792461 secs using 400% CPU
-Optimizing NNI: done in 1.08188 secs using 397.4% CPU
-Optimizing NNI: done in 0.972422 secs using 399.1% CPU
-Optimizing NNI: done in 0.873969 secs using 398.7% CPU
-Optimizing NNI: done in 0.770644 secs using 399.4% CPU
-Optimizing NNI: done in 0.847118 secs using 398.8% CPU
-Optimizing NNI: done in 0.94504 secs using 398.7% CPU
-Optimizing NNI: done in 0.846651 secs using 398.6% CPU
-Optimizing NNI: done in 0.847422 secs using 399.1% CPU
-Optimizing NNI: done in 0.909259 secs using 399.1% CPU
-Iteration 260 / LogL: -27928.105 / Time: 0h:4m:22s (0h:0m:40s left)
-Optimizing NNI: done in 0.761008 secs using 398.8% CPU
-Optimizing NNI: done in 1.0798 secs using 398.4% CPU
-Optimizing NNI: done in 1.01725 secs using 398.8% CPU
-Optimizing NNI: done in 0.925682 secs using 398.4% CPU
-Optimizing NNI: done in 1.15009 secs using 398.6% CPU
-Optimizing NNI: done in 1.10088 secs using 398.8% CPU
-Optimizing NNI: done in 0.856037 secs using 399.5% CPU
-Optimizing NNI: done in 0.855725 secs using 399.7% CPU
-Optimizing NNI: done in 0.899239 secs using 396% CPU
-Optimizing NNI: done in 0.8042 secs using 399.9% CPU
-Iteration 270 / LogL: -27964.268 / Time: 0h:4m:32s (0h:0m:30s left)
-Optimizing NNI: done in 1.03163 secs using 398% CPU
-Optimizing NNI: done in 1.02314 secs using 399.2% CPU
-Optimizing NNI: done in 1.03433 secs using 398.5% CPU
-Optimizing NNI: done in 0.987607 secs using 399.5% CPU
-Optimizing NNI: done in 0.863583 secs using 400% CPU
-Optimizing NNI: done in 0.702343 secs using 400% CPU
-Optimizing NNI: done in 0.979081 secs using 397.5% CPU
-Optimizing NNI: done in 0.915545 secs using 399.2% CPU
-Optimizing NNI: done in 0.863711 secs using 399.5% CPU
-Optimizing NNI: done in 1.01952 secs using 398.4% CPU
-Iteration 280 / LogL: -27918.425 / Time: 0h:4m:41s (0h:0m:20s left)
-TREE SEARCH COMPLETED AFTER 280 ITERATIONS / Time: 0h:4m:41s
+BETTER TREE FOUND at iteration 38: -27572.599
+Optimizing NNI: done in 1.07016 secs using 299.6% CPU
+Optimizing NNI: done in 0.915094 secs using 299.6% CPU
+Iteration 40 / LogL: -27588.475 / Time: 0h:0m:51s (0h:2m:10s left)
+Optimizing NNI: done in 1.11081 secs using 296.7% CPU
+Optimizing NNI: done in 0.733626 secs using 300% CPU
+Optimizing NNI: done in 1.08734 secs using 298.9% CPU
+Optimizing NNI: done in 0.951186 secs using 298.3% CPU
+Optimizing NNI: done in 0.957971 secs using 297.5% CPU
+Optimizing NNI: done in 0.735804 secs using 300% CPU
+Optimizing NNI: done in 0.975041 secs using 298.8% CPU
+Optimizing NNI: done in 0.937905 secs using 300% CPU
+Optimizing NNI: done in 1.08348 secs using 298.9% CPU
+Optimizing NNI: done in 1.08946 secs using 298.9% CPU
+Iteration 50 / LogL: -27574.699 / Time: 0h:1m:1s (0h:1m:50s left)
+Log-likelihood cutoff on original alignment: -27617.756
+Optimizing NNI: done in 1.0157 secs using 299.2% CPU
+Optimizing NNI: done in 1.18825 secs using 299.5% CPU
+Optimizing NNI: done in 0.931938 secs using 299.1% CPU
+Optimizing NNI: done in 1.09538 secs using 298.5% CPU
+Optimizing NNI: done in 0.923186 secs using 298.7% CPU
+Optimizing NNI: done in 1.08486 secs using 299% CPU
+Optimizing NNI: done in 1.16294 secs using 298% CPU
+Optimizing NNI: done in 0.842434 secs using 299.9% CPU
+Optimizing NNI: done in 1.01755 secs using 299.6% CPU
+Optimizing NNI: done in 1.05823 secs using 299.6% CPU
+Iteration 60 / LogL: -27573.262 / Time: 0h:1m:13s (0h:1m:36s left)
+Optimizing NNI: done in 1.21837 secs using 298% CPU
+Optimizing NNI: done in 1.15962 secs using 299.4% CPU
+Optimizing NNI: done in 1.06547 secs using 299.6% CPU
+Optimizing NNI: done in 0.862271 secs using 299.2% CPU
+Optimizing NNI: done in 0.894855 secs using 299.1% CPU
+Optimizing NNI: done in 1.02326 secs using 298.5% CPU
+Optimizing NNI: done in 1.09689 secs using 297.8% CPU
+Optimizing NNI: done in 1.15542 secs using 298.6% CPU
+Optimizing NNI: done in 0.944955 secs using 300% CPU
+Optimizing NNI: done in 0.994152 secs using 298.8% CPU
+Iteration 70 / LogL: -27573.825 / Time: 0h:1m:23s (0h:1m:22s left)
+Optimizing NNI: done in 1.14185 secs using 298.2% CPU
+Optimizing NNI: done in 0.768837 secs using 299.7% CPU
+Optimizing NNI: done in 0.898146 secs using 299.1% CPU
+Optimizing NNI: done in 1.03065 secs using 297.9% CPU
+Optimizing NNI: done in 0.907324 secs using 300% CPU
+Optimizing NNI: done in 1.11263 secs using 298.6% CPU
+Optimizing NNI: done in 1.04773 secs using 298.9% CPU
+Optimizing NNI: done in 1.00848 secs using 300% CPU
+Optimizing NNI: done in 0.838066 secs using 299.2% CPU
+Optimizing NNI: done in 0.926262 secs using 300% CPU
+Iteration 80 / LogL: -27607.797 / Time: 0h:1m:33s (0h:1m:8s left)
+Optimizing NNI: done in 0.883334 secs using 299.6% CPU
+Optimizing NNI: done in 0.960844 secs using 299.6% CPU
+Optimizing NNI: done in 1.12127 secs using 298.6% CPU
+Optimizing NNI: done in 0.954195 secs using 298.3% CPU
+Optimizing NNI: done in 0.833144 secs using 299% CPU
+Optimizing NNI: done in 0.966456 secs using 299.5% CPU
+Optimizing NNI: done in 0.75528 secs using 299.7% CPU
+Optimizing NNI: done in 0.762017 secs using 299.2% CPU
+Optimizing NNI: done in 1.11369 secs using 299.3% CPU
+Optimizing NNI: done in 0.888679 secs using 298.2% CPU
+Iteration 90 / LogL: -27573.834 / Time: 0h:1m:43s (0h:0m:55s left)
+Optimizing NNI: done in 1.07334 secs using 299.2% CPU
+Optimizing NNI: done in 0.958597 secs using 297.6% CPU
+Optimizing NNI: done in 1.06512 secs using 298% CPU
+Optimizing NNI: done in 1.02264 secs using 298.8% CPU
+Optimizing NNI: done in 0.778039 secs using 299.5% CPU
+Optimizing NNI: done in 1.24323 secs using 299.8% CPU
+Optimizing NNI: done in 0.970655 secs using 299.2% CPU
+Optimizing NNI: done in 0.865531 secs using 299.5% CPU
+Optimizing NNI: done in 0.884827 secs using 298.4% CPU
+Optimizing NNI: done in 0.93956 secs using 299.6% CPU
+Iteration 100 / LogL: -27598.607 / Time: 0h:1m:53s (0h:0m:43s left)
+Log-likelihood cutoff on original alignment: -27617.441
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.996
+Optimizing NNI: done in 1.17603 secs using 299.7% CPU
+Optimizing NNI: done in 0.97564 secs using 299.8% CPU
+Optimizing NNI: done in 0.923114 secs using 298.7% CPU
+Optimizing NNI: done in 1.0847 secs using 298.6% CPU
+Optimizing NNI: done in 0.972857 secs using 299.2% CPU
+Optimizing NNI: done in 1.01326 secs using 299.2% CPU
+Optimizing NNI: done in 0.829051 secs using 299.6% CPU
+Optimizing NNI: done in 1.12969 secs using 298.7% CPU
+Optimizing NNI: done in 1.03959 secs using 299.4% CPU
+Optimizing NNI: done in 0.981762 secs using 299.4% CPU
+Iteration 110 / LogL: -27573.810 / Time: 0h:2m:4s (0h:1m:42s left)
+Optimizing NNI: done in 1.04261 secs using 299.6% CPU
+Optimizing NNI: done in 0.982639 secs using 300% CPU
+Optimizing NNI: done in 1.17424 secs using 298.6% CPU
+Optimizing NNI: done in 0.980144 secs using 299.1% CPU
+Optimizing NNI: done in 1.05467 secs using 299.6% CPU
+Optimizing NNI: done in 1.06567 secs using 299.5% CPU
+Optimizing NNI: done in 1.14277 secs using 299.5% CPU
+Optimizing NNI: done in 1.08873 secs using 299.7% CPU
+Optimizing NNI: done in 0.763935 secs using 299.9% CPU
+Optimizing NNI: done in 1.05273 secs using 299.2% CPU
+Iteration 120 / LogL: -27574.414 / Time: 0h:2m:14s (0h:1m:30s left)
+Optimizing NNI: done in 0.827504 secs using 300% CPU
+Optimizing NNI: done in 1.10068 secs using 299.2% CPU
+Optimizing NNI: done in 0.88211 secs using 299% CPU
+Optimizing NNI: done in 0.985648 secs using 298.8% CPU
+Optimizing NNI: done in 1.09494 secs using 299.3% CPU
+Optimizing NNI: done in 0.972738 secs using 300% CPU
+Optimizing NNI: done in 0.903696 secs using 300% CPU
+Optimizing NNI: done in 1.00498 secs using 298.4% CPU
+Optimizing NNI: done in 1.00332 secs using 299.2% CPU
+Optimizing NNI: done in 1.04919 secs using 298.9% CPU
+Iteration 130 / LogL: -27573.617 / Time: 0h:2m:25s (0h:1m:18s left)
+Optimizing NNI: done in 1.084 secs using 299.1% CPU
+Optimizing NNI: done in 1.23059 secs using 298.4% CPU
+Optimizing NNI: done in 1.09702 secs using 299.6% CPU
+Optimizing NNI: done in 0.961195 secs using 299.6% CPU
+Optimizing NNI: done in 1.03443 secs using 298.2% CPU
+Optimizing NNI: done in 1.22399 secs using 299% CPU
+Optimizing NNI: done in 1.15456 secs using 298.9% CPU
+Optimizing NNI: done in 1.11409 secs using 298.2% CPU
+Optimizing NNI: done in 0.94817 secs using 299.1% CPU
+TREE SEARCH COMPLETED AFTER 139 ITERATIONS / Time: 0h:2m:35s
 
 --------------------------------------------------------------------
 |                    FINALIZING TREE SEARCH                        |
 --------------------------------------------------------------------
 Performs final model parameters optimization
 Estimate model parameters (epsilon = 0.010)
-1. Initial log-likelihood: -27917.908
-Optimal log-likelihood: -27917.908
-Rate parameters:  A-C: 0.58229  A-G: 10.40581  A-T: 0.60702  C-G: 0.08177  C-T: 7.25771  G-T: 1.00000
-Base frequencies:  A: 0.202  C: 0.268  G: 0.187  T: 0.342
-Gamma shape alpha: 0.216
-Parameters optimization took 1 rounds (0.109 sec)
-BEST SCORE FOUND : -27917.908
+1. Initial log-likelihood: -27572.599
+Optimal log-likelihood: -27572.598
+Rate parameters:  A-C: 0.56356  A-G: 10.14005  A-T: 0.59083  C-G: 0.07372  C-T: 7.19073  G-T: 1.00000
+Base frequencies:  A: 0.205  C: 0.271  G: 0.186  T: 0.338
+Gamma shape alpha: 0.207
+Parameters optimization took 1 rounds (0.132 sec)
+BEST SCORE FOUND : -27572.598
 
 Testing tree branches by SH-like aLRT with 1000 replicates...
-Alternative NNI shows better log-likelihood -27917.845 > -27917.908
-2.967 sec.
+3.855 sec.
 Creating bootstrap support values...
 Split supports printed to NEXUS file results_aves_mammal_150/phylogenetic_tree.splits.nex
-Total tree length: 14.198
+Total tree length: 4.206
 
-Total number of iterations: 280
-CPU time used for tree search: 1095.392 sec (0h:18m:15s)
-Wall-clock time used for tree search: 280.996 sec (0h:4m:40s)
-Total CPU time used: 1112.614 sec (0h:18m:32s)
-Total wall-clock time used: 285.664 sec (0h:4m:45s)
+Total number of iterations: 139
+CPU time used for tree search: 450.024 sec (0h:7m:30s)
+Wall-clock time used for tree search: 154.518 sec (0h:2m:34s)
+Total CPU time used: 465.121 sec (0h:7m:45s)
+Total wall-clock time used: 159.846 sec (0h:2m:39s)
 
 Computing bootstrap consensus tree...
 Reading input file results_aves_mammal_150/phylogenetic_tree.splits.nex...
-282 taxa and 1626 splits.
+281 taxa and 1503 splits.
 Consensus tree written to results_aves_mammal_150/phylogenetic_tree.contree
 Reading input trees file results_aves_mammal_150/phylogenetic_tree.contree
-Log-likelihood of consensus tree: -27918.127
+Log-likelihood of consensus tree: -27571.808
 
 Analysis results written to: 
   IQ-TREE report:                results_aves_mammal_150/phylogenetic_tree.iqtree
@@ -773,4 +625,4 @@ Ultrafast bootstrap approximation results written to:
   Consensus tree:                results_aves_mammal_150/phylogenetic_tree.contree
   Screen log file:               results_aves_mammal_150/phylogenetic_tree.log
 
-Date and Time: Tue Jun 18 10:05:35 2024
+Date and Time: Tue Jun 18 10:49:08 2024
