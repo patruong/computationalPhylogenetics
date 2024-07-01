@@ -30,9 +30,10 @@ cleaned_fastas = expand(os.path.join(output_dir, "{sample}_cleaned.fasta"), samp
 tagged_fastas = expand(os.path.join(output_dir, "{sample}_tagged.fasta"), sample=samples)
 rule all:
     input:
-        tree = os.path.join(output_dir, "result.newick"),
-        fasta = os.path.join(output_dir, "result.fasta"),
-        analysis_results = os.path.join(output_dir, "difFUBAR/results", "runtime.txt")
+        output_log = os.path.join(output_dir, "phylogenetic_tree.log")
+        #tree = os.path.join(output_dir, "result.newick"),
+        #fasta = os.path.join(output_dir, "result.fasta"),
+        #analysis_results = os.path.join(output_dir, "difFUBAR/results", "runtime.txt")
 
 rule process_fasta:
     message:
@@ -147,58 +148,3 @@ rule build_phylogenetic_tree:
         FastTree -nt -gtr < {input.removed_duplicated} > {output.treefile} 2> {output.log}
         """
 
-
-##################################
-# manual trimming using aliview ##
-##################################
-
-rule post_processing_strings:
-    message:
-        """
-        Cleaning up sequence names in phylogenetic tree and fasta file.
-        """
-    input:
-        fasta = rules.tmp_modify_brackets_for_iqtree2.output.tmp,
-        tree = rules.build_phylogenetic_tree.output.treefile
-    output:
-        fasta_results = os.path.join(output_dir, "result_unadj.fasta"),
-        tree_results = os.path.join(output_dir, "result.newick")
-    shell:
-        """
-        sed 's/left_bracket/{{/g; s/right_bracket/}}/g' {input.tree} > {output.tree_results}
-        sed 's/left_bracket/{{/g; s/right_bracket/}}/g' {input.fasta} | sed 's/{{[^}}]*}}//g' > {output.fasta_results}
-        """
-
-rule adjust_fasta_result_make_divisble_by_three:
-    message:
-        """
-        Prune fasta sequence so they are divisble by three by removing characters from end.
-        """
-    input:
-        input = rules.post_processing_strings.output.fasta_results
-    output:
-        output = os.path.join(output_dir, "result.fasta"),
-    shell:
-        """
-        python adjust_sequence_to_divisible_by_3.py {input.input} {output.output}
-        """
-
-rule run_difFUBAR:
-    message:
-        """
-        Running difFUBAR analysis.
-        """
-    input:
-        fasta = rules.adjust_fasta_result_make_divisble_by_three.output,
-        tree = rules.post_processing_strings.output.tree_results
-    params:
-        analysis_name = os.path.join(output_dir, "difFUBAR/results"),
-        iters = 2500,
-        verbosity = 1,
-        pos_thresh = 0.95
-    output:
-        analysis_results = os.path.join(output_dir, "difFUBAR/results", "runtime.txt")
-    shell:
-        """
-        julia difFUBAR.jl --analysis_name {params.analysis_name} --fasta_file {input.fasta} --newick_file {input.tree} --iters {params.iters} --verbosity {params.verbosity} --pos_thresh {params.pos_thresh}
-        """
